@@ -53,7 +53,7 @@ export const fleet: Vehicle[] = [
         name: "Toyota Fortuner",
         type: "Premium SUV",
         category: "Premium",
-        img: "/wellness.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1524095838546-2d9b8d00f212?q=80&w=1200&auto=format&fit=crop",
         features: ["4x4 Capability", "High Ground Clearance", "Rugged Luxury", "Professional Chauffeur"],
         passengers: 6,
         luggage: "3 bags",
@@ -65,7 +65,7 @@ export const fleet: Vehicle[] = [
         name: "Luxury Tempo (12-Seater)",
         type: "Luxury Coach",
         category: "Premium",
-        img: "/jaipur-mahal.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1495433488004-859bdc27b1f4?q=80&w=1200&auto=format&fit=crop",
         features: ["Pilot Seats", "LED TV", "Ice Box", "Individual AC"],
         passengers: 12,
         luggage: "8-10 bags",
@@ -77,7 +77,7 @@ export const fleet: Vehicle[] = [
         name: "Force Tempo (17-Seater)",
         type: "Luxury Coach",
         category: "Standard",
-        img: "/wedding.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1596720426673-e4e14290f0cc?q=80&w=1200&auto=format&fit=crop",
         features: ["Pushback Seats", "Stereo System", "Spacious Aisle", "Professional Guide"],
         passengers: 17,
         luggage: "12 bags",
@@ -89,7 +89,7 @@ export const fleet: Vehicle[] = [
         name: "Force Urbania",
         type: "Luxury Coach",
         category: "Elite",
-        img: "/taj-golden.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1544365558-35aa4afcf11f?q=80&w=1200&auto=format&fit=crop",
         features: ["European Design", "Panoramic Vista", "Extra Silent", "Executive Interior"],
         passengers: 13,
         luggage: "10 bags",
@@ -101,7 +101,7 @@ export const fleet: Vehicle[] = [
         name: "MG Gloster",
         type: "Premium SUV",
         category: "Elite",
-        img: "/innova.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=1200&auto=format&fit=crop",
         features: ["ADAS Tech", "Massage Seats", "6-Seater VIP", "Smart Sunroof"],
         passengers: 6,
         luggage: "3 bags",
@@ -113,7 +113,7 @@ export const fleet: Vehicle[] = [
         name: "Maruti Suzuki Ciaz",
         type: "Executive Sedan",
         category: "Standard",
-        img: "/hero-taj.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1607908510714-62c8f96afa1e?q=80&w=1200&auto=format&fit=crop",
         features: ["Efficient AC", "Smooth Ride", "Ample Rear Space", "Local Expert Chauffeur"],
         passengers: 3,
         luggage: "2 bags",
@@ -125,7 +125,7 @@ export const fleet: Vehicle[] = [
         name: "Volvo Luxury Coach",
         type: "Luxury Coach",
         category: "Elite",
-        img: "/wellness.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1601026968316-caf71eab96d8?q=80&w=1200&auto=format&fit=crop",
         features: ["45 Seats", "Washroom Onboard", "Onboard Pantry", "Air Suspension"],
         passengers: 45,
         luggage: "40 bags",
@@ -137,7 +137,7 @@ export const fleet: Vehicle[] = [
         name: "Toyota Vellfire",
         type: "Premium SUV",
         category: "Elite",
-        img: "/taj-golden.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1521499420147-36d5bfc2781f?q=80&w=1200&auto=format&fit=crop",
         features: ["Electronic Ottoman", "Ambient Roof", "Twin Sunroof", "VIP Chauffeur"],
         passengers: 4,
         luggage: "4 bags",
@@ -149,7 +149,7 @@ export const fleet: Vehicle[] = [
         name: "Mercedes S-Class",
         type: "Luxury Sedan",
         category: "Elite",
-        img: "/hero-taj.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1609521233053-345bfa8b6f17?q=80&w=1200&auto=format&fit=crop",
         features: ["Massage Seats", "Burmester 4D", "Soft Close Doors", "Red Carpet Service"],
         passengers: 3,
         luggage: "2 bags",
@@ -161,7 +161,7 @@ export const fleet: Vehicle[] = [
         name: "Kia Carnival",
         type: "Premium SUV",
         category: "Premium",
-        img: "/wellness.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1653022779664-3a9d0616548c?q=80&w=1200&auto=format&fit=crop",
         features: ["VIP Limousine Seats", "Dual Sunroof", "Rear Entertainment", "Smart Slide"],
         passengers: 6,
         luggage: "4 bags",
@@ -173,7 +173,7 @@ export const fleet: Vehicle[] = [
         name: "Audi A6 Matrix",
         type: "Luxury Sedan",
         category: "Elite",
-        img: "/jaipur-mahal.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1534184037517-d21b187f20a1?q=80&w=1200&auto=format&fit=crop",
         features: ["Matrix LED", "Bose Surround", "Quattro Drive", "Business Lounge"],
         passengers: 3,
         luggage: "2 bags",
@@ -185,7 +185,7 @@ export const fleet: Vehicle[] = [
         name: "Maruti Ertiga",
         type: "Executive Sedan",
         category: "Standard",
-        img: "/innova.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1521499420147-36d5bfc2781f?q=80&w=1200&auto=format&fit=crop",
         features: ["Hybrid Tech", "Reliable AC", "Flexible Seating", "Local Expert Chauffeur"],
         passengers: 5,
         luggage: "2 bags",
@@ -197,7 +197,7 @@ export const fleet: Vehicle[] = [
         name: "Vintage Bentley (1950s)",
         type: "Luxury Sedan",
         category: "Elite",
-        img: "/wedding.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1549923574-571d10215747?q=80&w=1200&auto=format&fit=crop",
         features: ["Heritage Restoration", "Original Leather", "Wedding Decor", "Ceremonial Pilot"],
         passengers: 2,
         luggage: "0 bags",
@@ -209,7 +209,7 @@ export const fleet: Vehicle[] = [
         name: "Rolls Royce Ghost",
         type: "Luxury Sedan",
         category: "Elite",
-        img: "/taj-golden.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1522255272218-7ac5249be344?q=80&w=1200&auto=format&fit=crop",
         features: ["Starlight Headliner", "Coach Doors", "Lambswool Carpets", "Supreme Privacy"],
         passengers: 3,
         luggage: "2 bags",
@@ -221,7 +221,7 @@ export const fleet: Vehicle[] = [
         name: "Premium Tempo (9-Seater)",
         type: "Luxury Coach",
         category: "Premium",
-        img: "/hero-taj.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1495433488004-859bdc27b1f4?q=80&w=1200&auto=format&fit=crop",
         features: ["Maharaja Seats", "Wooden Finish", "Mini Fridge", "Wi-Fi Hub"],
         passengers: 9,
         luggage: "6 bags",
@@ -233,7 +233,7 @@ export const fleet: Vehicle[] = [
         name: "Honda City (ZX)",
         type: "Executive Sedan",
         category: "Standard",
-        img: "/wellness.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1570303278489-041bd897a873?q=80&w=1200&auto=format&fit=crop",
         features: ["Sunroof", "VTEC Performance", "Premium Cabin", "Professional Chauffeur"],
         passengers: 3,
         luggage: "2 bags",
@@ -245,7 +245,7 @@ export const fleet: Vehicle[] = [
         name: "Eco-Luxury Electric Coach",
         type: "Luxury Coach",
         category: "Premium",
-        img: "/jaipur-mahal.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1525962898597-a4ae6402826e?q=80&w=1200&auto=format&fit=crop",
         features: ["Zero Emission", "Silent Drive", "USB Charging", "Panoramic Vision"],
         passengers: 25,
         luggage: "20 bags",

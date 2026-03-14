@@ -8,7 +8,7 @@ import {
   Search, MapPin, Car, Map, Calendar, ChevronDown,
   MessageCircle, X, ChevronRight, ShieldCheck, Star,
   Clock, Quote, Phone, Mail, Award, Heart, Utensils, Camera, Zap, Plus,
-  Stethoscope, Users, Building, HelpCircle
+  Stethoscope, Users, Building, HelpCircle, Wind, Droplets, Activity
 } from "lucide-react";
 import Navbar, { Logo3D } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -156,7 +156,7 @@ export default function Home() {
 
   const packages = [
     { city: "Heritage & Culture", title: "The Classic Triangle", desc: "Taj Mahal Sunrise + Jaipur Forts. Private chauffeured tour with skip-the-line palace entry.", duration: "5 Days", theme: "Royal Heritage", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-2 md:row-span-2" },
-    { city: "Jungle & Forts", title: "Wildlife & Wonders", desc: "Golden Triangle + Ranthambore Safari. Amer Fort & City Palace guided heritage walk.", duration: "8 Days", theme: "Adventure", img: "https://images.unsplash.com/photo-1587295656906-b06dca8f2340?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { city: "Jungle & Forts", title: "Wildlife & Wonders", desc: "Golden Triangle + Ranthambore Safari. Amer Fort & City Palace guided heritage walk.", duration: "8 Days", theme: "Wildlife", img: "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
     { city: "Ganges & Spirits", title: "Spiritual Soul", desc: "Golden Triangle + Varanasi Aarti. Exploring Old Delhi's hidden culinary gems.", duration: "10 Days", theme: "Spiritual", img: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
   ];
 
@@ -289,6 +289,36 @@ export default function Home() {
             <motion.div variants={itemVariants} className="relative h-[800px] rounded-[4rem] overflow-hidden order-1 lg:order-2 shadow-2xl">
               <Image src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2670&auto=format&fit=crop" alt="Medical Recovery Room" fill className="object-cover" />
               <div className="absolute inset-0 bg-royal-blue/10 backdrop-blur-[1px]" />
+            </motion.div>
+          </div>
+
+          {/* Other Wellness Programs */}
+          <div className="grid md:grid-cols-3 gap-8 mt-20">
+            <motion.div variants={itemVariants} className="glass-card p-8 rounded-3xl border border-royal-blue/10 hover:border-sunset-orange/30 transition-all duration-500 group">
+              <div className="w-16 h-16 rounded-2xl bg-blue-50 text-royal-blue flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                <Wind size={32} />
+              </div>
+              <h4 className="text-xl font-black text-royal-blue uppercase mb-3">Yoga & Soul</h4>
+              <p className="text-dark-slate/60 font-bold italic text-sm mb-6">Master-led sessions designed to synchronize your frequency with spiritual meridians.</p>
+              <Link href="/wellness/yoga-soul" className="text-sunset-orange font-black uppercase text-[10px] tracking-widest flex items-center gap-2">Explore Protocol <ChevronRight size={14} /></Link>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="glass-card p-8 rounded-3xl border border-royal-blue/10 hover:border-sunset-orange/30 transition-all duration-500 group">
+              <div className="w-16 h-16 rounded-2xl bg-orange-50 text-sunset-orange flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                <Droplets size={32} />
+              </div>
+              <h4 className="text-xl font-black text-royal-blue uppercase mb-3">Ayurvedic Alchemy</h4>
+              <p className="text-dark-slate/60 font-bold italic text-sm mb-6">Ancient biological optimization protocols using 5000-year-old traditional healing science.</p>
+              <Link href="/wellness/ayurvedic" className="text-sunset-orange font-black uppercase text-[10px] tracking-widest flex items-center gap-2">Explore Protocol <ChevronRight size={14} /></Link>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="glass-card p-8 rounded-3xl border border-royal-blue/10 hover:border-sunset-orange/30 transition-all duration-500 group">
+              <div className="w-16 h-16 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                <Activity size={32} />
+              </div>
+              <h4 className="text-xl font-black text-royal-blue uppercase mb-3">Massage & Recovery</h4>
+              <p className="text-dark-slate/60 font-bold italic text-sm mb-6">Elite recovery protocols focused on deep muscular reset and neural pathway relaxation.</p>
+              <Link href="/wellness/massage" className="text-sunset-orange font-black uppercase text-[10px] tracking-widest flex items-center gap-2">Explore Protocol <ChevronRight size={14} /></Link>
             </motion.div>
           </div>
         </motion.section>
