@@ -155,9 +155,9 @@ export default function Home() {
   ];
 
   const packages = [
-    { city: "Heritage & Culture", title: "The Classic Triangle", desc: "Taj Mahal Sunrise + Jaipur Forts. Private chauffeured tour with skip-the-line palace entry.", duration: "5 Days", theme: "Royal Heritage", img: "/taj-golden.png", size: "md:col-span-2 md:row-span-2" },
-    { city: "Jungle & Forts", title: "Wildlife & Wonders", desc: "Golden Triangle + Ranthambore Safari. Amer Fort & City Palace guided heritage walk.", duration: "8 Days", theme: "Adventure", img: "/jaipur-mahal.png", size: "md:col-span-1 md:row-span-1" },
-    { city: "Ganges & Spirits", title: "Spiritual Soul", desc: "Golden Triangle + Varanasi Aarti. Exploring Old Delhi's hidden culinary gems.", duration: "10 Days", theme: "Spiritual", img: "/hero-taj.png", size: "md:col-span-1 md:row-span-1" },
+    { city: "Heritage & Culture", title: "The Classic Triangle", desc: "Taj Mahal Sunrise + Jaipur Forts. Private chauffeured tour with skip-the-line palace entry.", duration: "5 Days", theme: "Royal Heritage", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-2 md:row-span-2" },
+    { city: "Jungle & Forts", title: "Wildlife & Wonders", desc: "Golden Triangle + Ranthambore Safari. Amer Fort & City Palace guided heritage walk.", duration: "8 Days", theme: "Adventure", img: "https://images.unsplash.com/photo-1587295656906-b06dca8f2340?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { city: "Ganges & Spirits", title: "Spiritual Soul", desc: "Golden Triangle + Varanasi Aarti. Exploring Old Delhi's hidden culinary gems.", duration: "10 Days", theme: "Spiritual", img: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
   ];
 
   return (
@@ -179,7 +179,7 @@ export default function Home() {
         {/* Section A: Hero */}
         <section id="hero-section" className="relative min-h-screen flex flex-col justify-center pt-32 pb-20 overflow-hidden z-20">
           <div ref={heroImageRef} className="absolute inset-0">
-            <Image src="/taj-golden.png" alt="Luxury India Travel" fill className="object-cover" priority />
+            <Image src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=2676&auto=format&fit=crop" alt="Luxury India Travel" fill className="object-cover" priority />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-royal-blue/70 via-royal-blue/20 to-royal-blue/90" />
 
@@ -287,7 +287,7 @@ export default function Home() {
               </motion.div>
             </div>
             <motion.div variants={itemVariants} className="relative h-[800px] rounded-[4rem] overflow-hidden order-1 lg:order-2 shadow-2xl">
-              <Image src="/wellness.png" alt="Medical Recovery Room" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2670&auto=format&fit=crop" alt="Medical Recovery Room" fill className="object-cover" />
               <div className="absolute inset-0 bg-royal-blue/10 backdrop-blur-[1px]" />
             </motion.div>
           </div>
@@ -296,13 +296,13 @@ export default function Home() {
         {/* Section F: Weddings */}
         <section id="wedding-section" className="relative h-screen flex items-center justify-center overflow-hidden z-20">
           <div ref={weddingImageRef} className="absolute inset-0">
-            <Image src="/wedding.png" alt="Royal Wedding India" fill className="object-cover" />
+            <Image src="https://images.unsplash.com/photo-1583939003507-28d8b13c19e5?q=80&w=2670&auto=format&fit=crop" alt="Royal Wedding India" fill className="object-cover" />
             <div className="absolute inset-0 bg-royal-blue/50 backdrop-blur-sm" />
           </div>
           <div className="relative z-10 w-full max-w-6xl px-6 text-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
               <motion.div variants={itemVariants}><Heart className="text-sunset-orange mx-auto mb-10" size={60} fill="currentColor" /></motion.div>
-              <CharBlurIn text="ROYAL WEDDINGS" className="text-7xl md:text-[10rem] font-black text-white uppercase tracking-tighter leading-none block mb-12" />
+              <CharBlurIn text="ROYAL WEDDINGS" className="text-4xl md:text-[5rem] lg:text-[7rem] whitespace-nowrap font-black text-white uppercase tracking-tighter leading-none block mb-12" />
               <motion.div variants={itemVariants} className="glass-card p-12 md:p-20 rounded-[3rem] border-white/20">
                 <p className="text-2xl text-white font-bold mb-16 italic opacity-80 underline decoration-sunset-orange underline-offset-8">We orchestrate your union with a 48-hour guest logistics experience across the Golden Triangle.</p>
                 <div className="grid md:grid-cols-3 gap-8 text-left mb-12">

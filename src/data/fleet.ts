@@ -17,7 +17,7 @@ export const fleet: Vehicle[] = [
         name: "Innova Crysta",
         type: "Premium SUV",
         category: "Premium",
-        img: "/innova.png",
+        img: "https://images.unsplash.com/photo-1570829194611-71a926d70ff8?q=80&w=1200&auto=format&fit=crop",
         features: ["Dual AC", "Plush Leather", "Wi-Fi", "Chauffeur"],
         passengers: 6,
         luggage: "3-4 bags",
@@ -29,7 +29,7 @@ export const fleet: Vehicle[] = [
         name: "BMW 5 Series",
         type: "Luxury Sedan",
         category: "Elite",
-        img: "/hero-taj.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200&auto=format&fit=crop",
         features: ["Nappa Leather", "Harman Kardon", "Climate Zone", "VIP Status"],
         passengers: 3,
         luggage: "2 bags",
@@ -41,7 +41,7 @@ export const fleet: Vehicle[] = [
         name: "Mercedes E-Class",
         type: "Luxury Sedan",
         category: "Elite",
-        img: "/taj-golden.png", // Placeholder
+        img: "https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?q=80&w=1200&auto=format&fit=crop",
         features: ["Ambient Lighting", "Burmester Sound", "Panoramic Roof", "White Glove"],
         passengers: 3,
         luggage: "2 bags",

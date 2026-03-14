@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView, AnimatePresence, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import {
     Utensils, Camera, Heart, Sparkles, MapPin,
-    Clock, Navigation2, ChevronRight, Zap, ChevronLeft
+    Clock, Navigation2, ChevronRight, Zap, ChevronLeft, Car
 } from "lucide-react";
 import Lenis from "lenis";
 
@@ -236,18 +236,30 @@ export const RouteVisualizer = () => {
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
     const pathLength = useTransform(scrollYProgress, [0.3, 0.7], [0, 1]);
     const rotate = useTransform(scrollYProgress, [0, 1], [0, 15]);
-    const cities = [{ name: "Delhi", x: 30, y: 30, best: "Heritage & Street Food", dist: "Start" }, { name: "Agra", x: 70, y: 40, best: "The Eternal Taj", dist: "233 KM" }, { name: "Jaipur", x: 50, y: 80, best: "Royal Grandeur", dist: "240 KM" }];
+    const cities = [{ name: "Delhi", x: 50, y: 20, best: "Heritage & Street Food", dist: "Start" }, { name: "Agra", x: 80, y: 70, best: "The Eternal Taj", dist: "233 KM" }, { name: "Jaipur", x: 20, y: 70, best: "Royal Grandeur", dist: "240 KM" }];
     return (
         <div ref={ref} className="relative w-full h-[650px] glass-card rounded-[4rem] overflow-hidden border-royal-blue/5 bg-royal-blue/[0.02]">
             <div className="absolute inset-0 bg-gradient-to-br from-royal-blue/[0.05] to-sunset-orange/[0.05] backdrop-blur-3xl" />
             <motion.div style={{ rotateX: rotate, perspective: "1000px" }} className="absolute inset-0 w-full h-full">
                 <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <path d="M30,30 L70,40 L50,80 Z" fill="rgba(30,64,175,0.03)" stroke="rgba(30,64,175,0.05)" strokeWidth="0.2" />
-                    {["M30,30 L50,45", "M70,40 L50,45", "M50,80 L50,45"].map((d, i) => (
+                    <path d="M50,20 L80,70 L20,70 Z" fill="rgba(30,64,175,0.03)" stroke="rgba(30,64,175,0.05)" strokeWidth="0.2" />
+                    {["M50,20 L50,55", "M80,70 L50,55", "M20,70 L50,55"].map((d, i) => (
                         <motion.path key={`facet-${i}`} d={d} fill="none" stroke="rgba(249,115,22,0.1)" strokeWidth="0.1" style={{ pathLength }} />
                     ))}
-                    <motion.path d="M30,30 L70,40 L50,80 Z" fill="none" stroke="#F97316" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" style={{ pathLength }} className="drop-shadow-[0_0_15px_rgba(249,115,22,0.6)]" />
-                    <motion.circle r="0.8" fill="#fff" className="drop-shadow-[0_0_10px_#fff]"><animateMotion dur="4s" repeatCount="indefinite" path="M30,30 L70,40 L50,80 L30,30" /></motion.circle>
+                    <motion.path d="M50,20 L80,70 L20,70 Z" fill="none" stroke="#F97316" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" style={{ pathLength }} className="drop-shadow-[0_0_15px_rgba(249,115,22,0.6)]" />
+                    <g>
+                        <animateMotion dur="8s" repeatCount="indefinite" path="M50,20 L80,70 L20,70 L50,20" rotate="auto" />
+                        <g transform="scale(0.3)" className="drop-shadow-[0_4px_10px_rgba(249,115,22,0.6)]">
+                            {/* Car Body */}
+                            <rect x="-10" y="-5" width="20" height="10" rx="3" fill="#F97316" stroke="white" strokeWidth="1.5" />
+                            {/* Windows */}
+                            <rect x="-3" y="-4.5" width="7" height="9" rx="1.5" fill="white" />
+                            <rect x="-1" y="-3.5" width="4" height="7" rx="0.5" fill="#1E40AF" />
+                            {/* Headlights */}
+                            <circle cx="9" cy="-3.5" r="1.5" fill="#FDE047" />
+                            <circle cx="9" cy="3.5" r="1.5" fill="#FDE047" />
+                        </g>
+                    </g>
                 </svg>
                 {cities.map((city, idx) => (
                     <motion.div key={idx} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 + idx * 0.3 }} style={{ left: `${city.x}%`, top: `${city.y}%`, position: 'absolute', transform: 'translate(-50%, -50%)' }} className="z-20 group">
@@ -257,7 +269,7 @@ export const RouteVisualizer = () => {
                                 <div className="w-3 h-3 bg-white rounded-full shadow-[0_0_20px_white] z-10" />
                                 <div className="w-5 h-5 border-2 border-sunset-orange rounded-full z-0" />
                             </div>
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-6 glass-card p-6 rounded-2xl border-white/20 w-56 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100 pointer-events-none">
+                            <div className={`absolute left-1/2 -translate-x-1/2 glass-card p-6 rounded-2xl border-white/20 w-56 opacity-100 transition-all duration-500 scale-100 pointer-events-none ${city.name === "Delhi" ? "bottom-full mb-6" : "top-full mt-6"}`}>
                                 <div className="text-sunset-orange font-black text-[9px] uppercase tracking-[0.4em] mb-2">{city.dist}</div>
                                 <h4 className="font-black text-royal-blue uppercase tracking-tighter text-xl mb-1">{city.name}</h4>
                                 <p className="text-[10px] font-bold text-dark-slate opacity-40 italic leading-tight">{city.best}</p>
