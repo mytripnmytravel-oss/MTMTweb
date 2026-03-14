@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mytripmytravel.com
+
+# Sitemaps
+Sitemap: https://mytripmytravel.com/sitemap.xml
