@@ -67,10 +67,10 @@ export const Logo3D = ({ isScrolled }: { isScrolled: boolean }) => {
             </Magnetic>
 
             <div className="flex flex-col">
-                <span className={`text-xl font-black tracking-tighter uppercase leading-none transition-colors duration-500 whitespace-nowrap ${isScrolled ? "text-white" : "text-royal-blue"}`}>
+                <span className={`text-lg sm:text-xl font-black tracking-tighter uppercase leading-none transition-colors duration-500 whitespace-nowrap ${isScrolled ? "text-white" : "text-royal-blue"}`}>
                     MYTRIP<span className="text-sunset-orange">MYTRAVEL</span>
                 </span>
-                <span className="text-[7px] font-black tracking-[0.4em] text-sunset-orange uppercase mt-1 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Beyond Travel</span>
+                <span className="text-[6px] sm:text-[7px] font-black tracking-[0.4em] text-sunset-orange uppercase mt-1 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Beyond Travel</span>
             </div>
         </Link>
     );
@@ -90,7 +90,7 @@ export default function Navbar() {
 
     return (
         <>
-            <header className={`fixed top-0 w-full z-[2000] transition-all duration-700 ${isScrolled ? "py-4" : "py-8"}`}>
+            <header className={`fixed top-0 w-full z-[2000] transition-all duration-700 ${isScrolled ? "py-2 md:py-4" : "py-4 md:py-8"}`}>
                 <div className="container mx-auto px-4 transition-all duration-700 max-w-7xl">
                     <div className={`flex items-center justify-between px-6 py-4 transition-all duration-700 ${isScrolled
                         ? "glass-card border-royal-blue/10 rounded-full shadow-2xl !bg-royal-blue text-white"
@@ -113,19 +113,19 @@ export default function Navbar() {
                             <NavItem title="Car Rental" href="/services/car-rental" />
                         </nav>
 
-                        <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-3 md:gap-6">
                             <Magnetic>
-                                <Link href="/booking">
+                                <Link href="/booking" className="hidden md:block">
                                     <button className="bg-sunset-orange text-white px-8 py-3 font-black text-sm tracking-widest uppercase hover:bg-white hover:text-sunset-orange transition-all duration-500 rounded-full shadow-lg shadow-sunset-orange/20">
                                         Book Now
                                     </button>
                                 </Link>
                             </Magnetic>
                             <button
-                                className="lg:hidden"
+                                className="lg:hidden text-inherit"
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             >
-                                {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+                                {isMobileMenuOpen ? <X size={24} className="md:w-8 md:h-8" /> : <Menu size={24} className="md:w-8 md:h-8" />}
                             </button>
                         </div>
                     </div>

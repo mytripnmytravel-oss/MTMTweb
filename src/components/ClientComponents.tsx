@@ -199,8 +199,8 @@ export const CountingStat = ({ value, label }: { value: number; label: string })
 
     return (
         <div ref={ref} className="text-center group">
-            <div className="text-6xl font-black text-royal-blue mb-2 group-hover:text-sunset-orange transition-colors">{count}+</div>
-            <div className="text-xs font-black uppercase tracking-[0.4em] text-dark-slate opacity-60">{label}</div>
+            <div className="text-4xl md:text-6xl font-black text-royal-blue mb-2 group-hover:text-sunset-orange transition-colors">{count}+</div>
+            <div className="text-[8px] md:text-xs font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-dark-slate opacity-60 px-2">{label}</div>
         </div>
     );
 };
@@ -238,7 +238,7 @@ export const RouteVisualizer = () => {
     const rotate = useTransform(scrollYProgress, [0, 1], [0, 15]);
     const cities = [{ name: "Delhi", x: 50, y: 20, best: "Heritage & Street Food", dist: "Start" }, { name: "Agra", x: 80, y: 70, best: "The Eternal Taj", dist: "233 KM" }, { name: "Jaipur", x: 20, y: 70, best: "Royal Grandeur", dist: "240 KM" }];
     return (
-        <div ref={ref} className="relative w-full h-[650px] glass-card rounded-[4rem] overflow-hidden border-royal-blue/5 bg-royal-blue/[0.02]">
+        <div ref={ref} className="relative w-full h-[500px] md:h-[650px] glass-card rounded-[2rem] md:rounded-[4rem] overflow-hidden border-royal-blue/5 bg-royal-blue/[0.02]">
             <div className="absolute inset-0 bg-gradient-to-br from-royal-blue/[0.05] to-sunset-orange/[0.05] backdrop-blur-3xl" />
             <motion.div style={{ rotateX: rotate, perspective: "1000px" }} className="absolute inset-0 w-full h-full">
                 <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -269,19 +269,19 @@ export const RouteVisualizer = () => {
                                 <div className="w-3 h-3 bg-white rounded-full shadow-[0_0_20px_white] z-10" />
                                 <div className="w-5 h-5 border-2 border-sunset-orange rounded-full z-0" />
                             </div>
-                            <div className={`absolute left-1/2 -translate-x-1/2 glass-card p-6 rounded-2xl border-white/20 w-56 opacity-100 transition-all duration-500 scale-100 pointer-events-none ${city.name === "Delhi" ? "bottom-full mb-6" : "top-full mt-6"}`}>
-                                <div className="text-sunset-orange font-black text-[9px] uppercase tracking-[0.4em] mb-2">{city.dist}</div>
-                                <h4 className="font-black text-royal-blue uppercase tracking-tighter text-xl mb-1">{city.name}</h4>
-                                <p className="text-[10px] font-bold text-dark-slate opacity-40 italic leading-tight">{city.best}</p>
+                            <div className={`absolute left-1/2 -translate-x-1/2 glass-card p-4 md:p-6 rounded-2xl border-white/20 w-44 md:w-56 opacity-100 transition-all duration-500 scale-100 pointer-events-none ${city.name === "Delhi" ? "bottom-full mb-4 md:mb-6" : "top-full mt-4 md:mt-6"}`}>
+                                <div className="text-sunset-orange font-black text-[7px] md:text-[9px] uppercase tracking-[0.4em] mb-2">{city.dist}</div>
+                                <h4 className="font-black text-royal-blue uppercase tracking-tighter text-lg md:text-xl mb-1">{city.name}</h4>
+                                <p className="text-[8px] md:text-[10px] font-bold text-dark-slate opacity-40 italic leading-tight">{city.best}</p>
                             </div>
                         </div>
                     </motion.div>
                 ))}
             </motion.div>
-            <div className="absolute top-12 left-12 max-w-sm z-30 pointer-events-none">
-                <div className="flex items-center gap-4 mb-6"><div className="w-12 h-[1px] bg-sunset-orange" /><span className="text-[10px] font-black uppercase tracking-[0.5em] text-sunset-orange">Live Refraction</span></div>
-                <h3 className="text-4xl font-black text-royal-blue uppercase mb-4 tracking-tighter leading-none">The Golden Prism</h3>
-                <p className="text-dark-slate font-bold opacity-50 leading-relaxed italic text-sm">Translating high-speed chauffeured intent into a 3D geometric sanctuary of travel.</p>
+            <div className="absolute top-8 left-8 md:top-12 md:left-12 max-w-[240px] md:max-w-sm z-30 pointer-events-none">
+                <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6"><div className="w-8 md:w-12 h-[1px] bg-sunset-orange" /><span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.5em] text-sunset-orange">Live Refraction</span></div>
+                <h3 className="text-2xl md:text-4xl font-black text-royal-blue uppercase mb-3 md:mb-4 tracking-tighter leading-none">The Golden Prism</h3>
+                <p className="text-dark-slate font-bold opacity-50 leading-relaxed italic text-xs md:text-sm">Translating high-speed chauffeured intent into a 3D geometric sanctuary of travel.</p>
             </div>
         </div>
     );
@@ -342,7 +342,7 @@ export const ItineraryPreviewer = () => {
     };
 
     return (
-        <div className="glass-card p-12 rounded-[3.5rem] border-royal-blue/5 overflow-hidden relative min-h-[600px] flex flex-col justify-center">
+        <div className="glass-card p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] border-royal-blue/5 overflow-hidden relative min-h-[500px] md:min-h-[600px] flex flex-col justify-center">
             {/* Generative Background Overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-royal-blue/[0.02] to-sunset-orange/[0.02] pointer-events-none" />
 
@@ -364,16 +364,16 @@ export const ItineraryPreviewer = () => {
                             <div className="absolute inset-4 border-b-4 border-royal-blue/20 rounded-full animate-reverse-spin" />
                             <Zap className="absolute inset-0 m-auto text-sunset-orange" size={40} fill="currentColor" />
                         </div>
-                        <h3 className="text-3xl font-black text-royal-blue uppercase tracking-tighter mb-4">Architecting Your Mission</h3>
-                        <p className="text-dark-slate font-bold italic opacity-50">Prism AI is calculating geometric routes and elite asset availability...</p>
+                        <h3 className="text-2xl md:text-3xl font-black text-royal-blue uppercase tracking-tighter mb-4">Architecting Your Mission</h3>
+                        <p className="text-xs md:text-sm font-bold italic opacity-50">Prism AI is calculating geometric routes and elite asset availability...</p>
                     </motion.div>
                 ) : step === 1 ? (
                     <motion.div key="step1" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}>
-                        <h4 className="text-[10px] font-black uppercase tracking-[0.6em] text-sunset-orange mb-8 text-center md:text-left">Target Environment</h4>
-                        <h3 className="text-4xl md:text-6xl font-black text-royal-blue uppercase mb-16 tracking-tighter text-center md:text-left">SELECT YOUR DESTINATION</h3>
+                        <h4 className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em] md:tracking-[0.6em] text-sunset-orange mb-6 md:mb-8 text-center md:text-left">Target Environment</h4>
+                        <h3 className="text-2xl sm:text-4xl md:text-6xl font-black text-royal-blue uppercase mb-8 md:mb-16 tracking-tighter text-center md:text-left">SELECT YOUR DESTINATION</h3>
                         <div className="grid md:grid-cols-2 gap-6 mb-16">
                             {destinations.map((d) => (
-                                <button key={d} onClick={() => setConfig({ ...config, destination: d })} className={`p-8 rounded-3xl text-left border-2 transition-all duration-500 font-black uppercase tracking-widest ${config.destination === d ? "bg-royal-blue text-white border-royal-blue shadow-2xl scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
+                                <button key={d} onClick={() => setConfig({ ...config, destination: d })} className={`p-4 md:p-8 rounded-2xl md:rounded-3xl text-left border-2 transition-all duration-500 font-black uppercase tracking-widest text-[10px] md:text-base ${config.destination === d ? "bg-royal-blue text-white border-royal-blue shadow-2xl scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
                                     {d}
                                 </button>
                             ))}
@@ -390,7 +390,7 @@ export const ItineraryPreviewer = () => {
                         <h3 className="text-4xl md:text-6xl font-black text-royal-blue uppercase mb-16 tracking-tighter text-center md:text-left">DURATION OF MISSION</h3>
                         <div className="grid md:grid-cols-2 gap-6 mb-16">
                             {durations.map((d) => (
-                                <button key={d} onClick={() => setConfig({ ...config, duration: d })} className={`p-8 rounded-3xl text-left border-2 transition-all duration-500 font-black uppercase tracking-widest ${config.duration === d ? "bg-royal-blue text-white border-royal-blue shadow-2xl scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
+                                <button key={d} onClick={() => setConfig({ ...config, duration: d })} className={`p-4 md:p-8 rounded-2xl md:rounded-3xl text-left border-2 transition-all duration-500 font-black uppercase tracking-widest text-[10px] md:text-base ${config.duration === d ? "bg-royal-blue text-white border-royal-blue shadow-2xl scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
                                     {d}
                                 </button>
                             ))}
@@ -408,7 +408,7 @@ export const ItineraryPreviewer = () => {
                         <h3 className="text-4xl md:text-6xl font-black text-royal-blue uppercase mb-16 tracking-tighter text-center md:text-left">WHAT IS YOUR VIBE?</h3>
                         <div className="grid md:grid-cols-2 gap-6 mb-16">
                             {vibes.map((v) => (
-                                <button key={v} onClick={() => setConfig({ ...config, vibe: v })} className={`p-8 rounded-3xl text-left border-2 transition-all duration-500 font-black uppercase tracking-widest ${config.vibe === v ? "bg-royal-blue text-white border-royal-blue shadow-2xl scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
+                                <button key={v} onClick={() => setConfig({ ...config, vibe: v })} className={`p-4 md:p-8 rounded-2xl md:rounded-3xl text-left border-2 transition-all duration-500 font-black uppercase tracking-widest text-[10px] md:text-base ${config.vibe === v ? "bg-royal-blue text-white border-royal-blue shadow-2xl scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
                                     {v}
                                 </button>
                             ))}
@@ -429,7 +429,7 @@ export const ItineraryPreviewer = () => {
                                 <div className="p-3 bg-sunset-orange rounded-xl text-white"><Sparkles size={24} /></div>
                                 <h4 className="text-xs font-black uppercase tracking-[0.4em] text-sunset-orange">Prism AI Generated Manifest</h4>
                             </div>
-                            <h3 className="text-5xl md:text-7xl font-black text-royal-blue uppercase mb-10 tracking-tighter leading-none">{itineraryResults[config.vibe].title}</h3>
+                            <h3 className="text-3xl sm:text-5xl md:text-7xl font-black text-royal-blue uppercase mb-6 md:mb-10 tracking-tighter leading-none">{itineraryResults[config.vibe].title}</h3>
                             <div className="flex flex-wrap gap-4 mb-12">
                                 <span className="px-5 py-2 glass-card rounded-full text-[10px] font-black uppercase text-royal-blue border-royal-blue/10">{config.destination}</span>
                                 <span className="px-5 py-2 glass-card rounded-full text-[10px] font-black uppercase text-royal-blue border-royal-blue/10">{config.duration}</span>
@@ -438,15 +438,15 @@ export const ItineraryPreviewer = () => {
                             <ul className="space-y-6 mb-12">
                                 {itineraryResults[config.vibe].highlights.map((h, i) => (
                                     <li key={i} className="flex items-center gap-4 group">
-                                        <div className="w-10 h-10 rounded-xl bg-royal-blue/5 flex items-center justify-center text-sunset-orange group-hover:bg-sunset-orange group-hover:text-white transition-all">
-                                            <ChevronRight size={20} />
+                                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-royal-blue/5 flex items-center justify-center text-sunset-orange group-hover:bg-sunset-orange group-hover:text-white transition-all">
+                                            <ChevronRight size={16} />
                                         </div>
-                                        <span className="text-lg font-bold italic text-royal-blue/80">{h}</span>
+                                        <span className="text-base md:text-lg font-bold italic text-royal-blue/80">{h}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                        <div className="flex flex-col justify-center gap-12 border-l border-royal-blue/5 pl-12">
+                        <div className="flex flex-col justify-center gap-8 md:gap-12 border-t md:border-t-0 md:border-l border-royal-blue/5 pt-8 md:pt-0 md:pl-12">
                             {itineraryResults[config.vibe].stats.map((s, i) => (
                                 <div key={i} className="group">
                                     <div className="text-[10px] font-black uppercase tracking-widest text-royal-blue/20 mb-2">Metrics Layer {i + 1}</div>

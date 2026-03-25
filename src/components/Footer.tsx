@@ -8,7 +8,7 @@ import { Magnetic } from "./ClientComponents";
 
 export const Footer = () => {
     return (
-        <footer className="bg-royal-blue pt-60 pb-20 relative overflow-hidden z-20">
+        <footer className="bg-royal-blue pt-20 md:pt-60 pb-20 relative overflow-hidden z-20">
             {/* Animated Background Element */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-sunset-orange to-transparent opacity-30" />
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-sunset-orange/5 blur-[150px] -translate-y-1/2 translate-x-1/2 rounded-full" />
@@ -40,7 +40,7 @@ export const Footer = () => {
                 </div>
 
                 {/* --- Footer Middle: Link Directory --- */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-16 mb-40">
+                <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 md:gap-16 mb-20 md:mb-40">
                     <div className="col-span-2">
                         <div className="mb-12">
                             <Logo3D isScrolled={true} />

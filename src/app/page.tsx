@@ -62,21 +62,21 @@ const BentoCard = ({ title, city, desc, duration, theme, img, size }: any) => (
     <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/95 via-royal-blue/30 to-transparent" />
 
     {/* Floating Badges */}
-    <div className="absolute top-8 left-8 flex gap-2">
-      <span className="glass-card px-4 py-2 rounded-full text-[10px] font-black uppercase text-white tracking-widest border-white/10 group-hover:border-sunset-orange/40 transition-colors">
+    <div className="absolute top-4 left-4 md:top-8 md:left-8 flex gap-2">
+      <span className="glass-card px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[8px] md:text-[10px] font-black uppercase text-white tracking-widest border-white/10 group-hover:border-sunset-orange/40 transition-colors">
         {duration}
       </span>
-      <span className="bg-sunset-orange/80 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-black uppercase text-white tracking-widest">
+      <span className="bg-sunset-orange/80 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[8px] md:text-[10px] font-black uppercase text-white tracking-widest">
         {theme}
       </span>
     </div>
 
-    <div className="absolute bottom-0 left-0 p-10 w-full">
-      <div className="flex items-center gap-2 text-sunset-orange font-black uppercase text-[10px] tracking-widest mb-4">
-        <MapPin size={12} /> {city}
+    <div className="absolute bottom-0 left-0 p-6 md:p-10 w-full">
+      <div className="flex items-center gap-2 text-sunset-orange font-black uppercase text-[8px] md:text-[10px] tracking-widest mb-2 md:mb-4">
+        <MapPin size={10} /> {city}
       </div>
-      <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter mb-4">{title}</h3>
-      <p className="text-white/60 text-sm font-bold opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 line-clamp-2">
+      <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tighter mb-2 md:mb-4">{title}</h3>
+      <p className="text-white/60 text-xs md:text-sm font-bold opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 line-clamp-2">
         {desc}
       </p>
     </div>
@@ -84,22 +84,22 @@ const BentoCard = ({ title, city, desc, duration, theme, img, size }: any) => (
 );
 
 const FleetCard = ({ name, type, img, features }: any) => (
-  <motion.div variants={itemVariants} className="glass-card rounded-[3rem] p-10 group overflow-hidden h-full">
-    <div className="relative h-64 mb-10 overflow-hidden rounded-2xl">
+  <motion.div variants={itemVariants} className="glass-card rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 group overflow-hidden h-full">
+    <div className="relative h-48 md:h-64 mb-6 md:mb-10 overflow-hidden rounded-2xl">
       <Image src={img} alt={name} fill className="object-cover transition-transform duration-700" />
     </div>
-    <div className="flex justify-between items-start mb-6">
+    <div className="flex justify-between items-start mb-4 md:mb-6">
       <div>
-        <h4 className="text-sm font-black text-sunset-orange tracking-[0.3em] uppercase mb-2">{type}</h4>
-        <h3 className="text-3xl font-black text-royal-blue uppercase tracking-tighter">{name}</h3>
+        <h4 className="text-[10px] md:text-sm font-black text-sunset-orange tracking-[0.2em] md:tracking-[0.3em] uppercase mb-1 md:mb-2">{type}</h4>
+        <h3 className="text-xl md:text-3xl font-black text-royal-blue uppercase tracking-tighter">{name}</h3>
       </div>
-      <div className="bg-royal-blue/5 p-4 rounded-xl">
-        <Car className="text-royal-blue" size={24} />
+      <div className="bg-royal-blue/5 p-3 md:p-4 rounded-xl">
+        <Car className="text-royal-blue" size={20} />
       </div>
     </div>
-    <div className="flex flex-wrap gap-4 mb-10">
+    <div className="flex flex-wrap gap-2 md:gap-4 mb-8 md:mb-10">
       {features.map((f: string, i: number) => (
-        <span key={i} className="text-[10px] font-black uppercase tracking-widest bg-royal-blue/5 text-royal-blue px-4 py-2 rounded-full">{f}</span>
+        <span key={i} className="text-[8px] md:text-[10px] font-black uppercase tracking-widest bg-royal-blue/5 text-royal-blue px-3 py-1.5 md:px-4 md:py-2 rounded-full">{f}</span>
       ))}
     </div>
     <Magnetic>
@@ -177,7 +177,7 @@ export default function Home() {
         </div>
 
         {/* Section A: Hero */}
-        <section id="hero-section" className="relative min-h-screen flex flex-col justify-center pt-32 pb-20 overflow-hidden z-20">
+        <section id="hero-section" className="relative min-h-screen flex flex-col justify-center pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden z-20">
           <div ref={heroImageRef} className="absolute inset-0">
             <Image src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=2676&auto=format&fit=crop" alt="Luxury India Travel" fill className="object-cover" priority />
           </div>
@@ -185,20 +185,20 @@ export default function Home() {
 
           <div className="relative z-10 container mx-auto px-6 text-center">
             <motion.div initial="hidden" animate="visible" variants={sectionVariants}>
-              <motion.h1 variants={itemVariants} className="text-7xl md:text-[10rem] font-black text-white mb-8 tracking-tighter leading-[0.85] uppercase">
+              <motion.h1 variants={itemVariants} className="text-5xl sm:text-7xl md:text-[10rem] font-black text-white mb-6 md:mb-8 tracking-tighter leading-[0.85] uppercase">
                 <CharBlurIn text="BEYOND" /> <br /> <span className="text-sunset-orange italic"><CharBlurIn text="TRAVEL." /></span>
               </motion.h1>
-              <motion.p variants={itemVariants} className="text-xl md:text-2xl text-white/80 mb-16 max-w-4xl mx-auto font-black italic tracking-tight underline decoration-sunset-orange underline-offset-8">
+              <motion.p variants={itemVariants} className="text-lg md:text-2xl text-white/80 mb-10 md:mb-16 max-w-4xl mx-auto font-black italic tracking-tight underline decoration-sunset-orange underline-offset-8">
                 Specializing in Golden Triangle tours, airport transfers, and bespoke northern India itineraries.
               </motion.p>
               <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
-                <div className="glass-card p-4 rounded-full flex flex-col md:flex-row items-center border border-white/20 shadow-2xl">
-                  <div className="flex-1 flex items-center gap-6 px-10 w-full mb-2 md:mb-0">
-                    <Search className="text-sunset-orange" size={28} />
-                    <input type="text" placeholder="Where do you want to travel?" className="bg-transparent border-none focus:ring-0 text-white placeholder:text-white/40 w-full text-xl py-4 font-black uppercase tracking-tight" />
+                <div className="glass-card p-2 md:p-4 rounded-3xl md:rounded-full flex flex-col md:flex-row items-center border border-white/20 shadow-2xl overflow-hidden">
+                  <div className="flex-1 flex items-center gap-4 md:gap-6 px-6 md:px-10 w-full mb-2 md:mb-0">
+                    <Search className="text-sunset-orange shrink-0 w-6 h-6 md:w-7 md:h-7" />
+                    <input type="text" placeholder="Where to?" className="bg-transparent border-none focus:ring-0 text-white placeholder:text-white/40 w-full text-lg md:text-xl py-4 font-black uppercase tracking-tight" />
                   </div>
                   <Magnetic>
-                    <button className="w-full md:w-auto bg-sunset-orange text-white px-16 py-6 font-black uppercase tracking-widest text-sm rounded-full hover:bg-white hover:text-sunset-orange transition-all duration-500 shadow-xl">
+                    <button className="w-full md:w-auto bg-sunset-orange text-white px-10 md:px-16 py-4 md:py-6 font-black uppercase tracking-widest text-xs md:text-sm rounded-2xl md:rounded-full hover:bg-white hover:text-sunset-orange transition-all duration-500 shadow-xl">
                       Search
                     </button>
                   </Magnetic>
@@ -209,8 +209,8 @@ export default function Home() {
         </section>
 
         {/* Section B: Trust Strip */}
-        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="py-24 glass-card border-none rounded-none z-20 relative">
-          <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12">
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} className="py-12 md:py-24 glass-card border-none rounded-none z-20 relative">
+          <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
             <motion.div variants={itemVariants}><CountingStat value={15} label="Years Performance" /></motion.div>
             <motion.div variants={itemVariants}><CountingStat value={500} label="Elite Vehicles" /></motion.div>
             <motion.div variants={itemVariants}><CountingStat value={25000} label="Safe Journeys" /></motion.div>
@@ -219,18 +219,18 @@ export default function Home() {
         </motion.section>
 
         {/* Section C: Golden Triangle (Bento) */}
-        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={sectionVariants} className="py-40 container mx-auto px-6 z-20 relative">
-          <div className="text-center mb-24">
-            <motion.h4 variants={itemVariants} className="text-sunset-orange font-black uppercase tracking-[0.6em] text-sm mb-4">Curated Journeys</motion.h4>
-            <CharBlurIn text="GOLDEN CIRCUIT" className="text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter block mb-12" />
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={sectionVariants} className="py-20 md:py-40 container mx-auto px-6 z-20 relative">
+          <div className="text-center mb-16 md:mb-24">
+            <motion.h4 variants={itemVariants} className="text-sunset-orange font-black uppercase tracking-[0.4em] md:tracking-[0.6em] text-[10px] md:text-sm mb-4">Curated Journeys</motion.h4>
+            <CharBlurIn text="GOLDEN CIRCUIT" className="text-4xl sm:text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter block mb-6 md:mb-12" />
           </div>
-          <div className="grid md:grid-cols-3 md:grid-rows-2 gap-8 min-h-[800px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 md:gap-8 min-h-[600px] md:min-h-[800px]">
             {packages.map((pkg, i) => (<BentoCard key={i} {...pkg} />))}
           </div>
 
-          <motion.div variants={itemVariants} className="mt-24 flex justify-center">
+          <motion.div variants={itemVariants} className="mt-12 md:mt-24 flex justify-center">
             <Magnetic>
-              <Link href="/tours/golden-triangle-all" className="relative px-20 py-8 bg-sunset-orange text-white rounded-full font-black uppercase tracking-widest group overflow-hidden shadow-[0_20px_50px_rgba(249,115,22,0.4)] block text-center">
+              <Link href="/tours/golden-triangle-all" className="relative px-8 md:px-20 py-6 md:py-8 bg-sunset-orange text-white rounded-full font-black uppercase tracking-widest group overflow-hidden shadow-[0_20px_50px_rgba(249,115,22,0.4)] block text-center text-xs md:text-base">
                 <span className="relative z-10">Explore All 20+ Golden Triangle Variations</span>
                 <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex items-center justify-center">
                   <span className="text-sunset-orange relative z-10 transition-colors duration-500">Explore All 20+ Golden Triangle Variations</span>
@@ -243,10 +243,10 @@ export default function Home() {
         {/* Section D: Fleet */}
         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={sectionVariants} className="py-40 bg-royal-blue/5 z-20 relative">
           <div className="container mx-auto px-6">
-            <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-8">
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 md:mb-24 gap-8">
               <motion.div variants={itemVariants}>
-                <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-sm mb-4">The Garage</h4>
-                <CharBlurIn text="ELITE FLEET" className="text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter" />
+                <h4 className="text-sunset-orange font-black uppercase tracking-[0.4em] md:tracking-[0.6em] text-[10px] md:text-sm mb-4">The Garage</h4>
+                <CharBlurIn text="ELITE FLEET" className="text-4xl sm:text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter" />
               </motion.div>
               <Link href="/fleet">
                 <Magnetic>
@@ -266,9 +266,9 @@ export default function Home() {
         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={sectionVariants} className="py-40 container mx-auto px-6 z-20 relative">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1">
-              <motion.h4 variants={itemVariants} className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-6">Concierge Sanctuary</motion.h4>
-              <CharBlurIn text="ORTHOPEDIC WELLNESS" className="text-5xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter leading-none block mb-12" />
-              <motion.p variants={itemVariants} className="text-lg font-bold text-dark-slate/60 mb-12 max-w-xl italic">Silence is the ultimate luxury. Our recovery extensions combine world-class orthodontic bedding with silent heritage retreats.</motion.p>
+              <motion.h4 variants={itemVariants} className="text-sunset-orange font-black uppercase tracking-[0.6em] md:tracking-[0.8em] text-[10px] md:text-sm mb-4 md:mb-6">Concierge Sanctuary</motion.h4>
+              <CharBlurIn text="ORTHOPEDIC WELLNESS" className="text-3xl sm:text-4xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter leading-tight md:leading-none block mb-8 md:mb-12" />
+              <motion.p variants={itemVariants} className="text-sm md:text-lg font-bold text-dark-slate/60 mb-8 md:mb-12 max-w-xl italic">Silence is the ultimate luxury. Our recovery extensions combine world-class orthodontic bedding with silent heritage retreats.</motion.p>
               <ul className="space-y-6 mb-16">
                 {["Surgeon Coordination", "Sattvic Nutrition Plans", "Post-Op Transit", "Zero-Noise Havelis"].map((item, i) => (
                   <motion.li key={i} variants={itemVariants} className="flex items-center gap-4 text-xl font-black text-royal-blue italic">
@@ -286,7 +286,7 @@ export default function Home() {
                 <Magnetic><button className="btn-primary w-full mt-8">Submit Request</button></Magnetic>
               </motion.div>
             </div>
-            <motion.div variants={itemVariants} className="relative h-[800px] rounded-[4rem] overflow-hidden order-1 lg:order-2 shadow-2xl">
+            <motion.div variants={itemVariants} className="relative h-[400px] md:h-[800px] rounded-[2rem] md:rounded-[4rem] overflow-hidden order-1 lg:order-2 shadow-2xl">
               <Image src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2670&auto=format&fit=crop" alt="Medical Recovery Room" fill className="object-cover" />
               <div className="absolute inset-0 bg-royal-blue/10 backdrop-blur-[1px]" />
             </motion.div>
@@ -331,8 +331,8 @@ export default function Home() {
           </div>
           <div className="relative z-10 w-full max-w-6xl px-6 text-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-              <motion.div variants={itemVariants}><Heart className="text-sunset-orange mx-auto mb-10" size={60} fill="currentColor" /></motion.div>
-              <CharBlurIn text="ROYAL WEDDINGS" className="text-4xl md:text-[5rem] lg:text-[7rem] whitespace-nowrap font-black text-white uppercase tracking-tighter leading-none block mb-12" />
+              <motion.div variants={itemVariants}><Heart className="text-sunset-orange mx-auto mb-6 md:mb-10 w-10 h-10 md:w-14 md:h-14" fill="currentColor" /></motion.div>
+              <CharBlurIn text="ROYAL WEDDINGS" className="text-4xl sm:text-5xl md:text-[5rem] lg:text-[7rem] font-black text-white uppercase tracking-tighter leading-tight md:leading-none block mb-8 md:mb-12" />
               <motion.div variants={itemVariants} className="glass-card p-12 md:p-20 rounded-[3rem] border-white/20">
                 <p className="text-2xl text-white font-bold mb-16 italic opacity-80 underline decoration-sunset-orange underline-offset-8">We orchestrate your union with a 48-hour guest logistics experience across the Golden Triangle.</p>
                 <div className="grid md:grid-cols-3 gap-8 text-left mb-12">
@@ -346,7 +346,7 @@ export default function Home() {
                       const msg = "ROYAL WEDDING PROTOCOL: I am inquiring about guest logistics and heritage fleet planning for an upcoming union in the Golden Triangle.";
                       window.open(`https://wa.me/919997812237?text=${encodeURIComponent(msg)}`, '_blank');
                     }}
-                    className="bg-white text-royal-blue px-20 py-8 rounded-full font-black uppercase tracking-widest hover:bg-sunset-orange hover:text-white transition-all duration-500 shadow-2xl"
+                    className="bg-white text-royal-blue px-10 md:px-20 py-5 md:py-8 rounded-full font-black uppercase tracking-widest hover:bg-sunset-orange hover:text-white transition-all duration-500 shadow-2xl text-xs md:text-base"
                   >
                     Inquire for Royal Wedding
                   </button>
@@ -358,9 +358,9 @@ export default function Home() {
 
         {/* Section G: Food/Guides */}
         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={sectionVariants} className="py-40 container mx-auto px-6 z-20 relative">
-          <div className="text-center mb-32">
-            <motion.h4 variants={itemVariants} className="text-sunset-orange font-black uppercase tracking-[0.6em] text-sm mb-4">The Human Element</motion.h4>
-            <CharBlurIn text="PASSION & PALATE" className="text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter" />
+          <div className="text-center mb-16 md:mb-32">
+            <motion.h4 variants={itemVariants} className="text-sunset-orange font-black uppercase tracking-[0.4em] md:tracking-[0.6em] text-[10px] md:text-sm mb-4">The Human Element</motion.h4>
+            <CharBlurIn text="PASSION & PALATE" className="text-4xl sm:text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter" />
           </div>
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div variants={itemVariants} className="glass-card p-12 rounded-[3.5rem] flex flex-col items-center text-center group h-full cursor-pointer transition-all duration-500 hover:border-sunset-orange/20">
@@ -443,10 +443,16 @@ export default function Home() {
         <Footer />
 
         {/* Floating Magnetic WhatsApp Button */}
-        <div className="fixed bottom-12 right-12 z-[500]">
+        <div className="fixed bottom-6 right-6 md:bottom-12 md:right-12 z-[500]">
           <Magnetic>
-            <button className="w-24 h-24 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform group">
-              <MessageCircle size={40} fill="white" className="group-hover:rotate-12 transition-transform" />
+            <button
+              onClick={() => {
+                const msg = "I am inquiring about a luxury tour or car rental service in India.";
+                window.open(`https://wa.me/919997812237?text=${encodeURIComponent(msg)}`, '_blank');
+              }}
+              className="w-16 h-16 md:w-24 md:h-24 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform group"
+            >
+              <MessageCircle fill="white" className="w-8 h-8 md:w-10 md:h-10 group-hover:rotate-12 transition-transform" />
             </button>
           </Magnetic>
         </div>
