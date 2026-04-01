@@ -11,11 +11,11 @@ import { MapPin, ArrowRight } from "lucide-react";
 
 const destinations = [
     { title: "Golden Triangle", desc: "The definitive route covering Delhi, Agra, and Jaipur.", img: "/taj-golden.png", link: "/tours/golden-triangle-all" },
-    { title: "Rajasthan Escapes", desc: "Deep immersions into the royal heartland of India.", img: "/jaipur-mahal.png", link: "/booking" },
-    { title: "Kerala Backwaters", desc: "Lush, tropical ecosystems for complete down-regulation.", img: "/wellness.png", link: "/booking" },
-    { title: "Himalayan Peaks", desc: "High-altitude missions for spiritual and physical clarity.", img: "/wedding.png", link: "/booking" },
-    { title: "Sikkim Silk Route", desc: "Exclusive access to the ancient, high-frequency trade paths.", img: "/hero-taj.png", link: "/booking" },
-    { title: "Andaman Islands", desc: "Private island sanctuaries and ultra-luxury marine operations.", img: "/wellness.png", link: "/booking" }
+    { title: "Rajasthan Escapes", desc: "Deep immersions into the royal heartland of India.", img: "/jaipur-mahal.png", link: "/destinations/rajasthan" },
+    { title: "Kerala Backwaters", desc: "Lush, tropical ecosystems for complete down-regulation.", img: "/wellness.png", link: "/destinations/kerala" },
+    { title: "Himalayan Peaks", desc: "High-altitude missions for spiritual and physical clarity.", img: "/wedding.png", link: "/destinations/himalayas" },
+    { title: "Sikkim Silk Route", desc: "Exclusive access to the ancient, high-frequency trade paths.", img: "/hero-taj.png", link: "/destinations/sikkim" },
+    { title: "Andaman Islands", desc: "Private island sanctuaries and ultra-luxury marine operations.", img: "/wellness.png", link: "/destinations/andaman" }
 ];
 
 export default function DestinationsPage() {

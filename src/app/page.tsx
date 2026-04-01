@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
+import { packages as allPackages } from "@/data/tours";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
@@ -22,7 +23,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-import { fleet } from "@/data/fleet";
+import { fleet, Vehicle } from "@/data/fleet";
+import { FleetInquiryModal } from "@/components/FleetInquiryModal";
 
 // --- Framer Motion Variants (Staggered Children) ---
 
@@ -53,12 +55,12 @@ const itemVariants = {
 
 // --- Sub-Components ---
 
-const BentoCard = ({ title, city, desc, duration, theme, img, size }: any) => (
-  <motion.div
-    variants={itemVariants}
-    className={`relative group rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 h-full min-h-[350px] ${size}`}
+const BentoCard = ({ id, title, city, desc, duration, theme, img, size }: any) => (
+  <Link 
+    href={`/tours/${id}`}
+    className={`relative group rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 h-full min-h-[350px] ${size} block overflow-hidden`}
   >
-    <Image src={img} alt={title} fill className="object-cover transition-transform duration-1000" />
+    <Image src={img} alt={title} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
     <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/95 via-royal-blue/30 to-transparent" />
 
     {/* Floating Badges */}
@@ -72,18 +74,18 @@ const BentoCard = ({ title, city, desc, duration, theme, img, size }: any) => (
     </div>
 
     <div className="absolute bottom-0 left-0 p-6 md:p-10 w-full">
-      <div className="flex items-center gap-2 text-sunset-orange font-black uppercase text-[8px] md:text-[10px] tracking-widest mb-2 md:mb-4">
+      <div className="flex items-center gap-2 text-sunset-orange font-black uppercase text-[8px] md:text-[10px] tracking-widest mb-1 md:mb-2">
         <MapPin size={10} /> {city}
       </div>
-      <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tighter mb-2 md:mb-4">{title}</h3>
-      <p className="text-white/60 text-xs md:text-sm font-bold opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 line-clamp-2">
+      <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tighter mb-2 md:mb-3 drop-shadow-lg">{title}</h3>
+      <p className="text-white/60 text-[10px] md:text-xs font-bold transition-all duration-500 line-clamp-2 md:line-clamp-none group-hover:text-white group-hover:opacity-100">
         {desc}
       </p>
     </div>
-  </motion.div>
+  </Link>
 );
 
-const FleetCard = ({ name, type, img, features }: any) => (
+const FleetCard = ({ name, type, img, features, onClick }: any) => (
   <motion.div variants={itemVariants} className="glass-card rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 group overflow-hidden h-full">
     <div className="relative h-48 md:h-64 mb-6 md:mb-10 overflow-hidden rounded-2xl">
       <Image src={img} alt={name} fill className="object-cover transition-transform duration-700" />
@@ -103,19 +105,50 @@ const FleetCard = ({ name, type, img, features }: any) => (
       ))}
     </div>
     <Magnetic>
-      <button className="w-full bg-royal-blue text-white py-6 px-12 rounded-2xl font-black uppercase tracking-widest hover:bg-sunset-orange transition-colors">
+      <button 
+        onClick={onClick}
+        className="w-full bg-royal-blue text-white py-6 px-12 rounded-2xl font-black uppercase tracking-widest hover:bg-sunset-orange transition-colors"
+      >
         Check Availability
       </button>
     </Magnetic>
   </motion.div>
 );
 
-// --- Main Page ---
-
 export default function Home() {
   const heroImageRef = useRef(null);
   const weddingImageRef = useRef(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const itinerarySuggestions = useMemo(() => 
+    allPackages.map((p: any) => p.title).slice(0, 10), 
+  []);
+
+  const filteredSuggestions = allPackages.filter((p: any) => 
+    p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    p.location.toLowerCase().includes(searchQuery.toLowerCase())
+  ).slice(0, 5);
+
+  const handlePursuit = () => {
+    if (searchQuery) {
+      window.location.href = `/tours/golden-triangle-all?search=${encodeURIComponent(searchQuery)}`;
+    }
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    setSearchQuery(suggestion);
+    setShowSuggestions(false);
+    window.location.href = `/tours/golden-triangle-all?search=${encodeURIComponent(suggestion)}`;
+  };
+
+  const handleCheckAvailability = (v: Vehicle | null) => {
+    setSelectedVehicle(v || fleet[0]);
+    setIsModalOpen(true);
+  };
 
   useEffect(() => {
     // GSAP Parallax Zoom for Hero Image
@@ -155,9 +188,15 @@ export default function Home() {
   ];
 
   const packages = [
-    { city: "Heritage & Culture", title: "The Classic Triangle", desc: "Taj Mahal Sunrise + Jaipur Forts. Private chauffeured tour with skip-the-line palace entry.", duration: "5 Days", theme: "Royal Heritage", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-2 md:row-span-2" },
-    { city: "Jungle & Forts", title: "Wildlife & Wonders", desc: "Golden Triangle + Ranthambore Safari. Amer Fort & City Palace guided heritage walk.", duration: "8 Days", theme: "Wildlife", img: "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
-    { city: "Ganges & Spirits", title: "Spiritual Soul", desc: "Golden Triangle + Varanasi Aarti. Exploring Old Delhi's hidden culinary gems.", duration: "10 Days", theme: "Spiritual", img: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 11, city: "Heritage & Culture", title: "The Classic Triangle", desc: "Taj Mahal Sunrise + Jaipur Forts. Private chauffeured tour with skip-the-line palace entry.", duration: "5 Days", theme: "Royal Heritage", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-2 md:row-span-2" },
+    { id: 10, city: "Jungle & Forts", title: "Wildlife & Wonders", desc: "Golden Triangle + Ranthambore Safari. Amer Fort & City Palace guided heritage walk.", duration: "8 Days", theme: "Wildlife", img: "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 19, city: "Ganges & Spirits", title: "Spiritual Soul", desc: "Golden Triangle + Varanasi Aarti. Exploring Old Delhi's hidden culinary gems.", duration: "10 Days", theme: "Spiritual", img: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 12, city: "Ultra Luxury", title: "Luxury Weekend Protocol", desc: "Helicopter transfers & palatial stays. The absolute gold standard of Golden Triangle travel.", duration: "5 Days", theme: "Elite", img: "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=2676&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 28, city: "Island Sanctuary", title: "Andaman Adventure", desc: "Private island sanctuaries and ultra-luxury marine operations in the heart of the ocean.", duration: "7 Days", theme: "Luxury", img: "https://images.unsplash.com/photo-1589366444820-2c701721f579?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 3, city: "Lakes & Romance", title: "Udaipur Extension", desc: "The Venice of the East meets the Golden Triangle. Sunset boat rides and palace dining.", duration: "9 Days", theme: "Heritage", img: "https://images.unsplash.com/photo-1552033999-70bd63d41fe0?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 22, city: "Tropical Backwaters", title: "Kerala Backwater Bliss", desc: "Private houseboats and spice garden retreats in the heart of God's Own Country.", duration: "7 Days", theme: "Nature", img: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 26, city: "High Passes", title: "Ladakh Leh Expedition", desc: "The land of high passes. Pangong Lake and Nubra Valley camel treks with elite support.", duration: "10 Days", theme: "Adventure", img: "https://images.unsplash.com/photo-1581791538302-03537b0c0f4f?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 29, city: "Mountain Mist", title: "Meghalaya Monsoon", desc: "Living root bridges and the wettest places on earth. Professional guided trekking.", duration: "6 Days", theme: "Nature", img: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
   ];
 
   return (
@@ -166,6 +205,12 @@ export default function Home() {
         <GlassyProgressBar />
         <GoldenPathLoader />
         <Navbar />
+
+        <FleetInquiryModal 
+          vehicle={selectedVehicle} 
+          isOpen={isModalOpen} 
+          onClose={() => setIsModalOpen(false)} 
+        />
 
         {/* --- Structured Data --- */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([{ "@context": "https://schema.org", "@type": "TravelAgency", "name": "MyTripMyTravel", "description": "Premiere private tours and luxury car rentals in India's Golden Triangle.", "url": "https://mytripmytravel.com", "areaServed": "Delhi, Agra, Jaipur, Rajasthan" }, { "@context": "https://schema.org", "@type": "MedicalBusiness", "name": "MyTripMyTravel Wellness Concierge", "medicalSpecialty": ["Orthopedic", "Wellness"], "description": "Luxury medical tourism and orthopedic recovery facilitation." }, { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }]) }} />
@@ -181,27 +226,87 @@ export default function Home() {
           <div ref={heroImageRef} className="absolute inset-0">
             <Image src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=2676&auto=format&fit=crop" alt="Luxury India Travel" fill className="object-cover" priority />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-royal-blue/70 via-royal-blue/20 to-royal-blue/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-royal-blue/90" />
 
-          <div className="relative z-10 container mx-auto px-6 text-center">
+          <div className="relative z-10 text-center">
             <motion.div initial="hidden" animate="visible" variants={sectionVariants}>
               <motion.h1 variants={itemVariants} className="text-5xl sm:text-7xl md:text-[10rem] font-black text-white mb-6 md:mb-8 tracking-tighter leading-[0.85] uppercase">
                 <CharBlurIn text="BEYOND" /> <br /> <span className="text-sunset-orange italic"><CharBlurIn text="TRAVEL." /></span>
               </motion.h1>
-              <motion.p variants={itemVariants} className="text-lg md:text-2xl text-white/80 mb-10 md:mb-16 max-w-4xl mx-auto font-black italic tracking-tight underline decoration-sunset-orange underline-offset-8">
-                Specializing in Golden Triangle tours, airport transfers, and bespoke northern India itineraries.
+              <motion.p variants={itemVariants} className="text-lg md:text-2xl text-white mb-10 md:mb-16 max-w-4xl mx-auto font-black italic tracking-tight underline decoration-sunset-orange underline-offset-8 drop-shadow-xl">
+                <CharBlurIn text="Specializing in Golden Triangle tours, airport transfers, and bespoke northern India itineraries." />
               </motion.p>
-              <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
-                <div className="glass-card p-2 md:p-4 rounded-3xl md:rounded-full flex flex-col md:flex-row items-center border border-white/20 shadow-2xl overflow-hidden">
-                  <div className="flex-1 flex items-center gap-4 md:gap-6 px-6 md:px-10 w-full mb-2 md:mb-0">
-                    <Search className="text-sunset-orange shrink-0 w-6 h-6 md:w-7 md:h-7" />
-                    <input type="text" placeholder="Where to?" className="bg-transparent border-none focus:ring-0 text-white placeholder:text-white/40 w-full text-lg md:text-xl py-4 font-black uppercase tracking-tight" />
+              
+              {/* Re-engineered Itinerary Search with Suggestions */}
+              <motion.div variants={itemVariants} className="max-w-4xl mx-auto relative group">
+                <div className="glass-card p-2 md:p-4 rounded-3xl md:rounded-full flex flex-col md:flex-row items-center border border-white/20 shadow-2xl overflow-visible mb-8">
+                  <div className="flex-1 flex items-center gap-4 md:gap-6 px-6 md:px-10 w-full mb-2 md:mb-0 relative">
+                    <Map className="text-sunset-orange shrink-0 w-6 h-6 md:w-7 md:h-7" />
+                    <input 
+                      type="text" 
+                      value={searchQuery}
+                      onChange={(e) => {
+                        setSearchQuery(e.target.value);
+                        setShowSuggestions(true);
+                      }}
+                      onFocus={() => setShowSuggestions(true)}
+                      onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+                      placeholder="DESTINATION INTELLIGENCE (e.g. AGRA, JAIPUR)" 
+                      className="bg-transparent border-none focus:ring-0 text-white placeholder:text-white/70 w-full text-lg md:text-xl py-4 font-black uppercase tracking-tight" 
+                    />
+                    
+                    {/* Floating Suggestions List */}
+                    <AnimatePresence>
+                      {showSuggestions && filteredSuggestions.length > 0 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          className="absolute top-full left-0 right-0 mt-4 bg-royal-blue/95 backdrop-blur-3xl rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden z-[100] text-left p-4"
+                        >
+                          <div className="text-[10px] font-black text-sunset-orange uppercase tracking-[0.2em] mb-4 px-4 opacity-60">Neural Suggestions</div>
+                          <div className="space-y-1">
+                            {filteredSuggestions.map((suggestion: any, idx: number) => (
+                              <button
+                                key={idx}
+                                onClick={() => handleSuggestionClick(suggestion.title)}
+                                className="w-full text-left px-6 py-4 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-all font-bold uppercase tracking-tight text-xs flex items-center gap-4 group/item"
+                              >
+                                <Zap size={14} className="text-sunset-orange opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                                {suggestion.title}
+                              </button>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                   <Magnetic>
-                    <button className="w-full md:w-auto bg-sunset-orange text-white px-10 md:px-16 py-4 md:py-6 font-black uppercase tracking-widest text-xs md:text-sm rounded-2xl md:rounded-full hover:bg-white hover:text-sunset-orange transition-all duration-500 shadow-xl">
-                      Search
+                    <button 
+                      onClick={handlePursuit}
+                      className="w-full md:w-auto bg-sunset-orange text-white px-10 md:px-16 py-4 md:py-6 font-black uppercase tracking-widest text-xs md:text-sm rounded-2xl md:rounded-full hover:bg-white hover:text-sunset-orange transition-all duration-500 shadow-xl"
+                    >
+                      Execute Pursuit
                     </button>
                   </Magnetic>
+                </div>
+
+                {/* Quick Selection Protocols */}
+                <div className="flex flex-wrap items-center justify-center gap-4">
+                  <span className="text-[10px] font-black text-white/40 uppercase tracking-widest mr-2">Quick Protocols:</span>
+                  {["Heritage", "Wildlife", "Metropolis", "Wellness"].map((tag) => (
+                    <button 
+                      key={tag}
+                      onClick={() => {
+                        setSearchQuery(tag);
+                        const section = document.getElementById("itinerary-circuit");
+                        if (section) section.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="px-6 py-2 rounded-full border border-white/10 text-[10px] font-black text-white uppercase tracking-widest hover:border-sunset-orange/50 hover:text-sunset-orange hover:bg-sunset-orange/5 transition-all duration-300"
+                    >
+                      {tag}
+                    </button>
+                  ))}
                 </div>
               </motion.div>
             </motion.div>
@@ -219,22 +324,22 @@ export default function Home() {
         </motion.section>
 
         {/* Section C: Golden Triangle (Bento) */}
-        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={sectionVariants} className="py-20 md:py-40 container mx-auto px-6 z-20 relative">
+        <motion.section id="itinerary-circuit" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={sectionVariants} className="py-20 md:py-40 container mx-auto px-6 z-20 relative">
           <div className="text-center mb-16 md:mb-24">
             <motion.h4 variants={itemVariants} className="text-sunset-orange font-black uppercase tracking-[0.4em] md:tracking-[0.6em] text-[10px] md:text-sm mb-4">Curated Journeys</motion.h4>
             <CharBlurIn text="GOLDEN CIRCUIT" className="text-4xl sm:text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter block mb-6 md:mb-12" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 md:gap-8 min-h-[600px] md:min-h-[800px]">
-            {packages.map((pkg, i) => (<BentoCard key={i} {...pkg} />))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {packages.map((pkg: any, i: number) => (<BentoCard key={i} {...pkg} />))}
           </div>
 
           <motion.div variants={itemVariants} className="mt-12 md:mt-24 flex justify-center">
             <Magnetic>
-              <Link href="/tours/golden-triangle-all" className="relative px-8 md:px-20 py-6 md:py-8 bg-sunset-orange text-white rounded-full font-black uppercase tracking-widest group overflow-hidden shadow-[0_20px_50px_rgba(249,115,22,0.4)] block text-center text-xs md:text-base">
-                <span className="relative z-10">Explore All 20+ Golden Triangle Variations</span>
-                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex items-center justify-center">
-                  <span className="text-sunset-orange relative z-10 transition-colors duration-500">Explore All 20+ Golden Triangle Variations</span>
-                </div>
+              <Link 
+                href="/tours/golden-triangle-all" 
+                className="px-8 md:px-20 py-6 md:py-8 bg-sunset-orange text-white rounded-full font-black uppercase tracking-widest block text-center text-xs md:text-base transition-all duration-500 hover:bg-royal-blue hover:scale-105 shadow-[0_20px_50px_rgba(249,115,22,0.4)] hover:shadow-[0_20px_50px_rgba(30,64,175,0.3)]"
+              >
+                Explore All 20+ Golden Triangle Variations
               </Link>
             </Magnetic>
           </motion.div>
@@ -256,7 +361,14 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-3 gap-10">
               {fleet.slice(0, 3).map((v, i) => (
-                <FleetCard key={i} name={v.name} type={v.type} img={v.img} features={v.features} />
+                <FleetCard 
+                  key={i} 
+                  name={v.name} 
+                  type={v.type} 
+                  img={v.img} 
+                  features={v.features} 
+                  onClick={() => handleCheckAvailability(v)}
+                />
               ))}
             </div>
           </div>

@@ -100,6 +100,13 @@ export default function Navbar() {
                         <Logo3D isScrolled={isScrolled} />
 
                         <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
+                            <NavItem title="Destinations" href="/destinations" items={[
+                                { label: "Rajasthan", href: "/destinations/rajasthan" },
+                                { label: "Kerala", href: "/destinations/kerala" },
+                                { label: "Himalayas", href: "/destinations/himalayas" },
+                                { label: "Sikkim", href: "/destinations/sikkim" },
+                                { label: "Andaman", href: "/destinations/andaman" }
+                            ]} />
                             <NavItem title="Tour Master Packages" href="/tours/golden-triangle-all" />
                             <NavItem title="Elite Fleet" href="/fleet" />
                             <NavItem title="Medical Sanctuary" href="/wellness" items={[
@@ -147,6 +154,7 @@ export default function Navbar() {
                         >
                             <X size={40} />
                         </button>
+                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/destinations" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">DESTINATIONS</Link>
                         <Link onClick={() => setIsMobileMenuOpen(false)} href="/tours/golden-triangle-all" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">TOUR MASTER PACKAGES</Link>
                         <Link onClick={() => setIsMobileMenuOpen(false)} href="/fleet" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">ELITE FLEET</Link>
                         <Link onClick={() => setIsMobileMenuOpen(false)} href="/wellness" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">MEDICAL SANCTUARY</Link>

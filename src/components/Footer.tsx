@@ -67,11 +67,11 @@ export const Footer = () => {
                         <ul className="space-y-6">
                             {[
                                 { label: 'Golden Triangle', href: '/tours/golden-triangle-all' },
-                                { label: 'Rajasthan Escapes', href: '/destinations' },
-                                { label: 'Kerala Backwaters', href: '/destinations' },
-                                { label: 'Himalayan Peaks', href: '/destinations' },
-                                { label: 'Sikkim Silk Route', href: '/destinations' },
-                                { label: 'Andaman Islands', href: '/destinations' }
+                                { label: 'Rajasthan Escapes', href: '/destinations/rajasthan' },
+                                { label: 'Kerala Backwaters', href: '/destinations/kerala' },
+                                { label: 'Himalayan Peaks', href: '/destinations/himalayas' },
+                                { label: 'Sikkim Silk Route', href: '/destinations/sikkim' },
+                                { label: 'Andaman Islands', href: '/destinations/andaman' }
                             ].map((item) => (
                                 <li key={item.label}>
                                     <Link href={item.href} className="text-white font-black uppercase text-[10px] tracking-widest opacity-60 hover:opacity-100 hover:text-sunset-orange transition-all flex items-center gap-3">

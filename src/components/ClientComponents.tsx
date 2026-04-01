@@ -73,7 +73,7 @@ export const CharBlurIn = ({ text, className }: { text: string, className?: stri
                         delay: i * 0.03,
                         ease: [0.22, 1, 0.36, 1]
                     }}
-                    className="inline-block"
+                    className="inline-block drop-shadow-[0_2px_15px_rgba(0,0,0,0.5)]"
                 >
                     {char === " " ? "\u00A0" : char}
                 </motion.span>

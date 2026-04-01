@@ -5,9 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-    Car, ShieldCheck, Users, Briefcase, ChevronRight,
-    Filter, Zap, Info, ArrowRight, Star,
-    CheckCircle2, MapPin, Gauge, X, Send, Mail, Phone, Calendar as CalendarIcon, Clock, MessageCircle
+    Filter, Zap, Star,
+    CheckCircle2, MapPin, Gauge, X, MessageCircle, Users, Briefcase
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -15,6 +14,7 @@ import {
     Magnetic, CharBlurIn, SmoothScroll,
     GlassyProgressBar, Tilt3D
 } from "@/components/ClientComponents";
+import { FleetInquiryModal } from "@/components/FleetInquiryModal";
 import { fleet, Vehicle } from "@/data/fleet";
 
 const sectionVariants = {
@@ -54,163 +54,7 @@ const FilterButton = ({ active, onClick, children }: { active: boolean, onClick:
     </button>
 );
 
-const FleetInquiryModal = ({ vehicle, isOpen, onClose }: { vehicle: Vehicle | null, isOpen: boolean, onClose: () => void }) => {
-    const [formState, setFormState] = useState("idle"); // idle, submitting, success
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setFormState("submitting");
-        // Simulate email submission
-        setTimeout(() => {
-            setFormState("success");
-        }, 2000);
-    };
-
-    if (!isOpen || !vehicle) return null;
-
-    return (
-        <AnimatePresence>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 z-[3000] flex items-center justify-center p-4 md:p-8 bg-royal-blue/90 backdrop-blur-xl"
-            >
-                <motion.div
-                    initial={{ scale: 0.9, y: 20, opacity: 0 }}
-                    animate={{ scale: 1, y: 0, opacity: 1 }}
-                    exit={{ scale: 0.9, y: 20, opacity: 0 }}
-                    className="relative w-full max-w-4xl bg-white rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row"
-                >
-                    {/* Close Button */}
-                    <button
-                        onClick={onClose}
-                        className="absolute top-8 right-8 z-[3100] w-12 h-12 bg-royal-blue/5 rounded-full flex items-center justify-center text-royal-blue hover:bg-sunset-orange hover:text-white transition-all shadow-lg"
-                    >
-                        <X size={24} />
-                    </button>
-
-                    {/* Left Side: Vehicle Info */}
-                    <div className="md:w-1/3 bg-royal-blue p-12 text-white relative flex flex-col justify-center">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-sunset-orange/10 blur-3xl -translate-y-1/2 translate-x-1/2 rounded-full" />
-                        <div className="relative z-10">
-                            <h4 className="text-xs font-black uppercase tracking-[0.4em] text-sunset-orange mb-6">Selected Asset</h4>
-                            <div className="relative aspect-video rounded-2xl overflow-hidden mb-8 shadow-2xl border border-white/10">
-                                <Image src={vehicle.img} alt={vehicle.name} fill className="object-cover" />
-                            </div>
-                            <h3 className="text-3xl font-black uppercase tracking-tighter leading-none mb-4">{vehicle.name}</h3>
-                            <p className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-8">{vehicle.type} • {vehicle.category} Class</p>
-                            
-                            <div className="space-y-4 pt-8 border-t border-white/10">
-                                <div className="flex items-center gap-3">
-                                    <Users size={16} className="text-sunset-orange" />
-                                    <span className="text-[10px] font-black uppercase tracking-widest">{vehicle.passengers} Max Passengers</span>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <Briefcase size={16} className="text-sunset-orange" />
-                                    <span className="text-[10px] font-black uppercase tracking-widest">{vehicle.luggage} Luggage Space</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right Side: Form */}
-                    <div className="md:w-2/3 p-12 md:p-16 bg-white max-h-[90vh] overflow-y-auto">
-                        <AnimatePresence mode="wait">
-                            {formState === "success" ? (
-                                <motion.div
-                                    key="success"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    className="h-full flex flex-col items-center justify-center text-center py-20"
-                                >
-                                    <div className="w-24 h-24 bg-emerald-500 rounded-full flex items-center justify-center mb-8 shadow-2xl">
-                                        <Send className="text-white" size={40} />
-                                    </div>
-                                    <h3 className="text-4xl font-black text-royal-blue uppercase tracking-tighter mb-4">Inquiry Transmitted</h3>
-                                    <p className="text-dark-slate/60 font-bold italic mb-6">
-                                        Your availability request for the {vehicle.name} has been sent to our dispatch center.
-                                    </p>
-                                    <div className="p-6 bg-royal-blue/5 rounded-2xl border border-royal-blue/10 mb-10 w-full">
-                                        <p className="text-[10px] font-black uppercase tracking-widest text-royal-blue/40 mb-2">Notifications sent to:</p>
-                                        <p className="text-sm font-black text-royal-blue">info@mytripmytravel.com</p>
-                                        <p className="text-sm font-black text-royal-blue">mytripmytravel@gmail.com</p>
-                                    </div>
-                                    <button
-                                        onClick={onClose}
-                                        className="bg-royal-blue text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-sunset-orange transition-all shadow-xl"
-                                    >
-                                        Close Terminal
-                                    </button>
-                                </motion.div>
-                            ) : (
-                                <motion.div key="form">
-                                    <h3 className="text-4xl font-black text-royal-blue uppercase tracking-tighter mb-4">Availability Protocol</h3>
-                                    <p className="text-dark-slate/40 text-sm font-bold italic mb-12">Complete the transmission to secure your fleet reservation.</p>
-                                    
-                                    <form onSubmit={handleSubmit} className="space-y-8">
-                                        <div className="grid md:grid-cols-2 gap-8">
-                                            <div className="space-y-4">
-                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Full Name</label>
-                                                <input required type="text" placeholder="ALEXANDER VANCE" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all" />
-                                            </div>
-                                            <div className="space-y-4">
-                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Email Address</label>
-                                                <input required type="email" placeholder="VANCE@MISSION.COM" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all" />
-                                            </div>
-                                        </div>
-
-                                        <div className="grid md:grid-cols-2 gap-8">
-                                            <div className="space-y-4">
-                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Pickup Date</label>
-                                                <div className="relative">
-                                                    <input required type="date" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none" />
-                                                    <CalendarIcon className="absolute right-6 top-1/2 -translate-y-1/2 text-royal-blue/20 pointer-events-none" size={20} />
-                                                </div>
-                                            </div>
-                                            <div className="space-y-4">
-                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Duration (Days)</label>
-                                                <select className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none cursor-pointer">
-                                                    <option>Single Day Master</option>
-                                                    <option>2-4 Day Mission</option>
-                                                    <option>5-7 Day Deployment</option>
-                                                    <option>Extended Strategic Tour</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div className="space-y-4">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Specific Directives</label>
-                                            <textarea rows={3} placeholder="ENTER EXTRA REQUIREMENTS OR MISSION DETAILS..." className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all resize-none"></textarea>
-                                        </div>
-
-                                        <div className="flex items-center gap-4 p-6 bg-sunset-orange/5 rounded-2xl border border-sunset-orange/10">
-                                            <ShieldCheck className="text-sunset-orange" size={20} />
-                                            <p className="text-[9px] font-bold text-royal-blue/60 uppercase tracking-widest italic leading-relaxed">
-                                                By submitting, you authorize MyTripMyTravel HQ to proceed with fleet allocation.
-                                            </p>
-                                        </div>
-
-                                        <Magnetic>
-                                            <button
-                                                type="submit"
-                                                disabled={formState === "submitting"}
-                                                className="bg-royal-blue text-white px-12 py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs shadow-2xl shadow-royal-blue/20 flex items-center gap-6 hover:bg-sunset-orange transition-all duration-500 disabled:opacity-50"
-                                            >
-                                                {formState === "submitting" ? "TRANSMITTING DATA..." : "AUTHORIZE AVAILABILITY CHECK"}
-                                                <ArrowRight />
-                                            </button>
-                                        </Magnetic>
-                                    </form>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                </motion.div>
-            </motion.div>
-        </AnimatePresence>
-    );
-};
 
 export default function FleetPage() {
     const [activeType, setActiveType] = useState<string>("All");
