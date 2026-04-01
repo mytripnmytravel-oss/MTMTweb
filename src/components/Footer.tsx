@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { HelpCircle, Mail, Phone, MapPin, Instagram, Linkedin, Facebook, Twitter, ShieldCheck, Award, Users } from "lucide-react";
+import { HelpCircle, Mail, Phone, MapPin, Instagram, Facebook, Sparkles, ShieldCheck, Award, Users } from "lucide-react";
 import { Logo3D } from "./Navbar";
 import { Magnetic } from "./ClientComponents";
 
@@ -49,8 +49,13 @@ export const Footer = () => {
                             The absolute standard for private tours, luxury transport, and medical facilitator services in India. Architecting journeys beyond conventional travel.
                         </p>
                         <div className="flex gap-6">
-                            {[Instagram, Linkedin, Facebook, Twitter].map((Icon, i) => (
-                                <a key={i} href="#" className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-sunset-orange hover:border-sunset-orange transition-all duration-500 group">
+                            {[
+                                { Icon: Instagram, href: "https://www.instagram.com/mytripmytravel/" },
+                                { Icon: Facebook, href: "https://www.facebook.com/mytripmytravel.worldtouradvisor" },
+                                { Icon: MapPin, href: "https://www.tripadvisor.in/Attraction_Review-g297683-d6456397-Reviews-MyTripMyTravel_Same_Day_Tour_Taj_Mahal-Agra_Agra_District_Uttar_Pradesh.html" },
+                                { Icon: Sparkles, href: "https://www.google.com/search?q=mytripmytravel&rlz=1C5CHFA_enIN1099IN1099&oq=mytripmytravel+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIHCAIQABjvBTIKCAMQABiABBiiBDIKCAQQABiABBiiBDIHCAUQABjvBTIGCAYQRRg8MgYIBxBFGD3SAQgzNDYyajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x397476fc8f281e49:0x5df41654f6755e44,1,,,," }
+                            ].map(({ Icon, href }, i) => (
+                                <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-sunset-orange hover:border-sunset-orange transition-all duration-500 group">
                                     <Icon size={18} />
                                 </a>
                             ))}
