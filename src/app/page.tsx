@@ -65,10 +65,10 @@ const BentoCard = ({ id, title, city, desc, duration, theme, img, size }: any) =
 
     {/* Floating Badges */}
     <div className="absolute top-4 left-4 md:top-8 md:left-8 flex gap-2">
-      <span className="glass-card px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[8px] md:text-[10px] font-black uppercase text-white tracking-widest border-white/10 group-hover:border-sunset-orange/40 transition-colors">
+      <span className="bg-white/90 backdrop-blur-3xl px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[8px] md:text-[10px] font-black uppercase text-royal-blue tracking-widest border border-white/20 group-hover:border-sunset-orange/40 transition-all shadow-xl">
         {duration}
       </span>
-      <span className="bg-sunset-orange/80 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[8px] md:text-[10px] font-black uppercase text-white tracking-widest">
+      <span className="bg-sunset-orange backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[8px] md:text-[10px] font-black uppercase text-white tracking-widest shadow-xl">
         {theme}
       </span>
     </div>

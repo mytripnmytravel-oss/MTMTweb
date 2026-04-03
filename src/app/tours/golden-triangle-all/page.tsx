@@ -77,7 +77,7 @@ export default function TourDirectory() {
 
     return (
         <SmoothScroll>
-            <main className="min-h-screen bg-white relative overflow-hidden">
+            <main className="min-h-screen bg-white relative overflow-clip">
                 <GlassyProgressBar />
                 <Navbar />
 
@@ -287,11 +287,12 @@ export default function TourDirectory() {
                     <aside className="lg:col-span-1">
                         <div className="sticky top-60 space-y-12">
                             {/* The Hook Card */}
-                            <div className="p-12 rounded-[3.5rem] !bg-royal-blue !text-white border-none relative overflow-hidden group shadow-3xl">
-                                <div className="absolute top-0 right-0 p-8">
-                                    <Zap className="text-sunset-orange animate-pulse" size={40} fill="currentColor" />
+                            <div className="p-12 rounded-[3.5rem] bg-royal-blue backdrop-blur-3xl border border-white/10 text-white relative overflow-hidden group shadow-4xl mb-12">
+                                <div className="absolute top-0 right-0 p-8 z-10">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-sunset-orange/20 blur-[60px] -translate-y-1/2 translate-x-1/2 rounded-full" />
+                                    <Zap className="text-sunset-orange animate-pulse relative z-10" size={40} fill="currentColor" />
                                 </div>
-                                <h3 className="text-4xl font-black uppercase tracking-tighter mb-8 leading-[0.9] !text-white">Architect Your Own Path.</h3>
+                                <h3 className="text-4xl font-black uppercase tracking-tighter mb-8 leading-[0.9] text-white">Architect Your Own Path.</h3>
                                 <p className="text-white/70 font-bold italic mb-12">Don&apos;t settle for a template. Our AI engine can merge any variations in under 60 seconds.</p>
 
                                 <div className="space-y-6 mb-12">

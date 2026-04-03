@@ -3,134 +3,84 @@
 @theme {
   --color-royal-blue: #1E40AF;
   --color-sunset-orange: #F97316;
-  --color-dark-slate: #1E293B;
-  --color-luxury-white: #FFFFFF;
+  --color-dark-slate: #0F172A;
+  --color-soft-white: #F8FAFC;
+  
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-outfit: var(--font-outfit), sans-serif;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #1E293B;
+@layer base {
+  body {
+    @apply bg-soft-white font-sans text-dark-slate overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit font-black;
+  }
 }
 
-body {
-  background: #ffffff;
-  color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
-  scroll-behavior: auto;
-  /* Managed by Lenis */
-  overflow-x: hidden;
-  position: relative;
+@layer components {
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-3xl border border-white/20 shadow-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-royal-blue text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-sunset-orange transition-all duration-500 shadow-xl;
+  }
 }
 
-/* Cinematic Noise Overlay */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.03;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  mix-blend-mode: overlay;
+/* Custom Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
 }
 
-/* Glassmorphism Utility */
-.glass-card {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(25px) saturate(180%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
-/* Liquid Background Gradients */
+/* Liquid BG */
 .liquid-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
+  @apply fixed inset-0 z-[-1] overflow-hidden;
+  background: radial-gradient(circle at 50% 50%, #f1f5f9 0%, #e2e8f0 100%);
 }
 
 .liquid-blob-1 {
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(30, 64, 175, 0.12) 0%, transparent 70%);
-  border-radius: 50%;
-  top: -200px;
-  left: -200px;
-  animation: move-1 25s infinite alternate ease-in-out;
+  @apply absolute -top-[10%] -right-[10%] w-[60vw] h-[60vw] bg-royal-blue/5 rounded-full blur-[80px];
+  animation: blob-float 20s infinite alternate;
 }
 
-.liquid-blob-2 {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  bottom: -100px;
-  right: -100px;
-  animation: move-2 30s infinite alternate ease-in-out;
+@keyframes blob-float {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to { transform: translate(-10%, 10%) rotate(20deg); }
 }
 
-@keyframes move-1 {
-  from {
-    transform: translate(0, 0);
+/* 🏁 MISSION BRIEF PRINT PROTOCOL */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  
+  #printable-brief, #printable-brief * {
+    visibility: visible !important;
   }
 
-  to {
-    transform: translate(30vw, 40vh);
+  #printable-brief {
+    visibility: visible !important;
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    background: white !important;
+    color: #1E40AF !important;
   }
-}
 
-@keyframes move-2 {
-  from {
-    transform: translate(0, 0);
-  }
-
-  to {
-    transform: translate(-40vw, -30vh);
-  }
-}
-
-.gradient-accent {
-  background: linear-gradient(135deg, #F97316 0%, #FBBF24 100%);
-}
-
-.btn-primary {
-  @apply relative overflow-hidden bg-sunset-orange text-white font-black uppercase tracking-[0.2em] px-8 py-4 transition-all duration-500 shadow-xl;
-  border-radius: 9999px;
-}
-
-.btn-primary::after {
-  content: '';
-  @apply absolute inset-0 bg-white/20 translate-x-[-100%] transition-transform duration-500 skew-x-[-20deg];
-}
-
-.btn-primary:hover::after {
-  @apply translate-x-[100%];
-}
-
-.btn-primary:hover {
-  @apply scale-[1.05];
-  box-shadow: 0 20px 40px rgba(249, 115, 22, 0.4);
-}
-
-/* Bento Grid Helpers */
-.bento-item {
-  @apply relative overflow-hidden rounded-3xl border border-white/20 shadow-xl transition-all duration-500 hover:shadow-2xl;
-}
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  .text-royal-blue { color: #1E40AF !important; }
+  .text-sunset-orange { color: #F97316 !important; }
+  .bg-royal-blue { background-color: #1E40AF !important; }
+  .text-white { color: #ffffff !important; }
 }
