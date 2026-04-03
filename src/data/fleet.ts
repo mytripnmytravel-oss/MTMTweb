@@ -22,7 +22,7 @@ export const fleet: Vehicle[] = [
         passengers: 6,
         luggage: "3-4 bags",
         description: "The gold standard for Indian road travel. Robust, comfortable, and perfect for family tours.",
-        priceRange: "$$"
+        priceRange: "₹₹"
     },
     {
         id: "bmw-5",
@@ -34,7 +34,7 @@ export const fleet: Vehicle[] = [
         passengers: 3,
         luggage: "2 bags",
         description: "Experience the Golden Triangle with German engineering and ultimate executive comfort.",
-        priceRange: "$$$"
+        priceRange: "₹₹₹"
     },
     {
         id: "mercedes-e",
@@ -46,7 +46,7 @@ export const fleet: Vehicle[] = [
         passengers: 3,
         luggage: "2 bags",
         description: "The peak of luxury chauffeuring. Ideal for high-profile business or anniversary trips.",
-        priceRange: "$$$"
+        priceRange: "₹₹₹"
     },
     {
         id: "toyota-fortuner",
@@ -58,7 +58,7 @@ export const fleet: Vehicle[] = [
         passengers: 6,
         luggage: "3 bags",
         description: "Command the road with power and presence. Great for longer circuits and varied terrains.",
-        priceRange: "$$"
+        priceRange: "₹₹"
     },
     {
         id: "tempo-12",
@@ -70,7 +70,7 @@ export const fleet: Vehicle[] = [
         passengers: 12,
         luggage: "8-10 bags",
         description: "Specifically modified for group luxury. Large windows for sightseeing and ample legroom.",
-        priceRange: "$$"
+        priceRange: "₹₹"
     },
     {
         id: "tempo-17",
@@ -82,7 +82,7 @@ export const fleet: Vehicle[] = [
         passengers: 17,
         luggage: "12 bags",
         description: "The reliable choice for larger family groups or corporate site visits.",
-        priceRange: "$"
+        priceRange: "₹"
     },
     {
         id: "urbania",
@@ -94,7 +94,7 @@ export const fleet: Vehicle[] = [
         passengers: 13,
         luggage: "10 bags",
         description: "The next generation of luxury coaches in India. Exceptional ride quality and modern tech.",
-        priceRange: "$$$"
+        priceRange: "₹₹₹"
     },
     {
         id: "mg-gloster",
@@ -106,7 +106,7 @@ export const fleet: Vehicle[] = [
         passengers: 6,
         luggage: "3 bags",
         description: "A luxury apartment on wheels. Advanced safety and uncompromised comfort.",
-        priceRange: "$$$"
+        priceRange: "₹₹₹"
     },
     {
         id: "maruti-ciaz",
@@ -118,7 +118,7 @@ export const fleet: Vehicle[] = [
         passengers: 3,
         luggage: "2 bags",
         description: "The efficient and comfortable choice for city transfers and short triangle stays.",
-        priceRange: "$"
+        priceRange: "₹"
     },
     {
         id: "coach-large",
@@ -130,7 +130,7 @@ export const fleet: Vehicle[] = [
         passengers: 45,
         luggage: "40 bags",
         description: "The ultimate solution for high-capacity corporate missions or wedding movements.",
-        priceRange: "$$$"
+        priceRange: "₹₹₹"
     },
     {
         id: "toyota-vellfire",
@@ -142,7 +142,7 @@ export const fleet: Vehicle[] = [
         passengers: 4,
         luggage: "4 bags",
         description: "The masterpiece of executive travel. Private business lounge experience across the Golden Triangle.",
-        priceRange: "$$$$"
+        priceRange: "₹₹₹₹"
     },
     {
         id: "mercedes-s",
@@ -154,7 +154,7 @@ export const fleet: Vehicle[] = [
         passengers: 3,
         luggage: "2 bags",
         description: "The world's premier chauffeur-driven car. Reserved for heads of state and elite wedding launches.",
-        priceRange: "$$$$"
+        priceRange: "₹₹₹₹"
     },
     {
         id: "kia-carnival",
@@ -166,7 +166,7 @@ export const fleet: Vehicle[] = [
         passengers: 6,
         luggage: "4 bags",
         description: "Ultra-comfortable family transit. Bridging the gap between standard SUVs and elite limousines.",
-        priceRange: "$$$"
+        priceRange: "₹₹₹"
     },
     {
         id: "audi-a6",
@@ -178,7 +178,7 @@ export const fleet: Vehicle[] = [
         passengers: 3,
         luggage: "2 bags",
         description: "Sophisticated performance for high-speed northern India circuits. Modern luxury defined.",
-        priceRange: "$$$"
+        priceRange: "₹₹₹"
     },
     {
         id: "ertiga",
@@ -190,7 +190,7 @@ export const fleet: Vehicle[] = [
         passengers: 5,
         luggage: "2 bags",
         description: "The efficient and smart choice for small families and budget-conscious heritage hops.",
-        priceRange: "$"
+        priceRange: "₹"
     },
     {
         id: "bentley-vintage",
@@ -202,7 +202,7 @@ export const fleet: Vehicle[] = [
         passengers: 2,
         luggage: "0 bags",
         description: "The ultimate showstopper for royal weddings and cinematic heritage entries.",
-        priceRange: "$$$$$"
+        priceRange: "₹₹₹₹₹"
     },
     {
         id: "rolls-ghost",
@@ -214,7 +214,7 @@ export const fleet: Vehicle[] = [
         passengers: 3,
         luggage: "2 bags",
         description: "Absolute silent serenity. The pinnacle of global chauffeuring for VVIP mission execution.",
-        priceRange: "$$$$$"
+        priceRange: "₹₹₹₹₹"
     },
     {
         id: "tempo-9-premium",
@@ -226,7 +226,7 @@ export const fleet: Vehicle[] = [
         passengers: 9,
         luggage: "6 bags",
         description: "Specially modified for small groups seeking Maharaja-style road comfort.",
-        priceRange: "$$"
+        priceRange: "₹₹"
     },
     {
         id: "honda-city",
@@ -238,7 +238,7 @@ export const fleet: Vehicle[] = [
         passengers: 3,
         luggage: "2 bags",
         description: "The classic executive sedan. Perfect for point-to-point transfers in Delhi and Agra.",
-        priceRange: "$$"
+        priceRange: "₹₹"
     },
     {
         id: "electric-coach",
@@ -250,6 +250,6 @@ export const fleet: Vehicle[] = [
         passengers: 25,
         luggage: "20 bags",
         description: "Sustainable heritage touring. The silent way to explore historical monuments.",
-        priceRange: "$$$"
+        priceRange: "₹₹₹"
     }
 ];
