@@ -20,23 +20,24 @@ import { packages, type Package } from "@/data/tours";
 const FilterButton = ({ active, label, onClick }: any) => (
     <button
         onClick={onClick}
-        className={`px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-500 whitespace-nowrap border-2 ${active
-            ? "bg-sunset-orange border-sunset-orange text-white shadow-xl scale-105"
-            : "bg-white border-royal-blue/10 text-royal-blue hover:border-sunset-orange"
-            }`}
+        className={`px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 border ${
+            active
+            ? "bg-sunset-orange border-sunset-orange text-white shadow-md scale-105"
+            : "bg-white border-royal-blue/10 text-royal-blue/70 hover:border-sunset-orange hover:text-sunset-orange"
+        }`}
     >
         {label}
     </button>
 );
 
 const FeatureItem = ({ icon: Icon, title, desc }: any) => (
-    <div className="flex gap-6 items-start">
-        <div className="w-14 h-14 glass-card rounded-2xl flex items-center justify-center shrink-0 border-royal-blue/5">
-            <Icon size={24} className="text-sunset-orange" />
+    <div className="flex gap-3 items-start">
+        <div className="w-8 h-8 bg-royal-blue/5 rounded-xl flex items-center justify-center shrink-0">
+            <Icon size={15} className="text-sunset-orange" />
         </div>
         <div>
-            <h5 className="font-black text-royal-blue uppercase text-sm mb-2">{title}</h5>
-            <p className="text-dark-slate/60 text-xs font-bold italic leading-relaxed">{desc}</p>
+            <h5 className="font-black text-royal-blue uppercase text-[10px] tracking-widest mb-1">{title}</h5>
+            <p className="text-dark-slate/50 text-[10px] font-bold italic leading-relaxed">{desc}</p>
         </div>
     </div>
 );
@@ -126,47 +127,80 @@ export default function TourDirectory() {
                     </div>
                 </section>
 
-                {/* --- Sticky Filter Bar --- */}
-                <section className="sticky top-[120px] z-[1500] bg-white border-y border-royal-blue/10 py-10 mb-20 shadow-xl">
-                    <div className="container mx-auto px-6 flex flex-col gap-10">
-                        <div className="flex flex-col lg:flex-row gap-12 items-center justify-between">
-                            <div className="flex flex-wrap gap-4 items-center">
+                {/* --- Main Content Grid --- */}
+                <section className="container mx-auto px-4 sm:px-6 pb-40 grid grid-cols-1 lg:grid-cols-[220px_1fr_260px] gap-6 xl:gap-10 relative z-[500] mt-8">
+                    
+                    {/* --- Left Sidebar: Filters --- */}
+                    <aside className="self-start">
+                        {/* Mobile Horizontal Filters (Hidden on Desktop) */}
+                        <div className="lg:hidden flex flex-col gap-6 mb-12 bg-white p-6 rounded-3xl shadow-sm border border-royal-blue/5">
+                            <div className="flex flex-col gap-3">
                                 <span className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Map size={14} /> Region:</span>
-                                <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+                                <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar fade-edges w-full">
                                     {locations.map(loc => (
                                         <FilterButton key={loc} label={loc} active={activeLocation === loc} onClick={() => setActiveLocation(loc)} />
                                     ))}
                                 </div>
                             </div>
-                        </div>
-                        <div className="flex flex-col lg:flex-row gap-12 items-center justify-between">
-                            <div className="flex flex-wrap gap-4 items-center">
+                            <div className="flex flex-col gap-3 border-t border-royal-blue/5 pt-6">
                                 <span className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Filter size={14} /> Theme:</span>
-                                <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+                                <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar fade-edges w-full">
                                     {themes.map(t => (
                                         <FilterButton key={t} label={t} active={activeTheme === t} onClick={() => setActiveTheme(t)} />
                                     ))}
                                 </div>
                             </div>
-                            <div className="flex flex-wrap gap-4 items-center">
+                            <div className="flex flex-col gap-3 border-t border-royal-blue/5 pt-6">
                                 <span className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Clock size={14} /> Duration:</span>
-                                <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+                                <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar fade-edges w-full">
                                     {durations.map(d => (
                                         <FilterButton key={d} label={d} active={activeDuration === d} onClick={() => setActiveDuration(d)} />
                                     ))}
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
 
-                {/* --- Main Content Grid --- */}
-                <section className="container mx-auto px-6 pb-40 grid lg:grid-cols-4 gap-16 relative z-[500]">
-                    <div className="lg:col-span-3">
+                        {/* Desktop Vertical Sticky Filters (Hidden on Mobile) */}
+                        <div className="hidden lg:block sticky top-32 h-[calc(100vh-140px)] border-r border-royal-blue/10 pr-2">
+                            <div className="h-full overflow-y-auto overscroll-contain no-scrollbar pr-4 pb-10">
+                                <div className="space-y-8 pt-1">
+                                    <div>
+                                        <h4 className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Map size={14} className="text-sunset-orange" /> Region</h4>
+                                        <div className="flex flex-wrap gap-3">
+                                            {locations.map(loc => (
+                                                <FilterButton key={loc} label={loc} active={activeLocation === loc} onClick={() => setActiveLocation(loc)} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Filter size={14} className="text-sunset-orange" /> Theme</h4>
+                                        <div className="flex flex-wrap gap-3">
+                                            {themes.map(t => (
+                                                <FilterButton key={t} label={t} active={activeTheme === t} onClick={() => setActiveTheme(t)} />
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Clock size={14} className="text-sunset-orange" /> Duration</h4>
+                                        <div className="flex flex-wrap gap-3">
+                                            {durations.map(d => (
+                                                <FilterButton key={d} label={d} active={activeDuration === d} onClick={() => setActiveDuration(d)} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    {/* --- Main Cards --- */}
+                    <div className="min-w-0">
                         <AnimatePresence mode="popLayout">
                             <motion.div
                                 layout
-                                className="grid md:grid-cols-2 gap-12"
+                                className="grid grid-cols-1 sm:grid-cols-2 gap-6"
                             >
                                 {paginatedPackages.map((pkg) => (
                                     <motion.div
@@ -197,26 +231,26 @@ export default function TourDirectory() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="p-10">
-                                            <h4 className="text-[10px] font-black text-sunset-orange uppercase tracking-[0.4em] mb-4">{pkg.theme}</h4>
-                                            <h3 className="text-3xl font-black text-royal-blue uppercase tracking-tighter mb-4 leading-none underline decoration-royal-blue/5 underline-offset-8 group-hover:decoration-sunset-orange transition-all">{pkg.title}</h3>
-                                            <p className="text-dark-slate/60 font-bold italic text-sm mb-12 leading-relaxed">{pkg.highlight}</p>
-                                            <div className="flex items-center justify-between pt-8 border-t border-royal-blue/5">
+                                        <div className="p-6 sm:p-8">
+                                            <h4 className="text-[10px] font-black text-sunset-orange uppercase tracking-[0.4em] mb-3">{pkg.theme}</h4>
+                                            <h3 className="text-xl sm:text-2xl font-black text-royal-blue uppercase tracking-tighter mb-3 leading-tight group-hover:text-sunset-orange transition-all duration-300">{pkg.title}</h3>
+                                            <p className="text-dark-slate/60 font-bold italic text-sm mb-6 leading-relaxed line-clamp-2">{pkg.highlight}</p>
+                                            <div className="flex flex-col gap-4 pt-5 border-t border-royal-blue/5">
                                                 <div>
                                                     <span className="text-[10px] uppercase font-black text-royal-blue/40 block mb-1">Starting At</span>
-                                                    <span className="text-3xl font-black text-royal-blue">{pkg.price}</span>
+                                                    <span className="text-2xl font-black text-royal-blue">{pkg.price}</span>
                                                 </div>
-                                                <div className="flex gap-4">
+                                                <div className="flex gap-3 flex-wrap">
                                                     <Magnetic>
                                                         <button
                                                             onClick={() => setSelectedPackage(pkg)}
-                                                            className="bg-royal-blue text-white px-8 py-4 rounded-2xl font-black uppercase text-[10px] tracking-widest hover:bg-sunset-orange transition-colors shadow-lg"
+                                                            className="bg-royal-blue text-white px-5 py-3 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-sunset-orange transition-colors shadow-md"
                                                         >
                                                             View Itinerary
                                                         </button>
                                                     </Magnetic>
                                                     <Magnetic>
-                                                        <button className="bg-sunset-orange text-white px-8 py-4 rounded-2xl font-black uppercase text-[10px] tracking-widest hover:bg-royal-blue transition-colors shadow-lg">
+                                                        <button className="bg-sunset-orange text-white px-5 py-3 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-royal-blue transition-colors shadow-md">
                                                             Reserve
                                                         </button>
                                                     </Magnetic>
@@ -284,35 +318,33 @@ export default function TourDirectory() {
                     </div>
 
                     {/* --- Sidebar Lead Gen & Features --- */}
-                    <aside className="lg:col-span-1">
-                        <div className="sticky top-60 space-y-12">
+                    <aside className="hidden lg:block">
+                        <div className="sticky top-32 space-y-6">
                             {/* The Hook Card */}
-                            <div className="p-12 rounded-[3.5rem] bg-royal-blue backdrop-blur-3xl border border-white/10 text-white relative overflow-hidden group shadow-4xl mb-12">
-                                <div className="absolute top-0 right-0 p-8 z-10">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-sunset-orange/20 blur-[60px] -translate-y-1/2 translate-x-1/2 rounded-full" />
-                                    <Zap className="text-sunset-orange animate-pulse relative z-10" size={40} fill="currentColor" />
+                            <div className="p-7 rounded-3xl bg-royal-blue border border-white/10 text-white relative overflow-hidden shadow-2xl">
+                                <div className="absolute top-0 right-0 p-4 z-10">
+                                    <div className="absolute top-0 right-0 w-20 h-20 bg-sunset-orange/20 blur-[40px] -translate-y-1/2 translate-x-1/2 rounded-full" />
+                                    <Zap className="text-sunset-orange animate-pulse relative z-10" size={24} fill="currentColor" />
                                 </div>
-                                <h3 className="text-4xl font-black uppercase tracking-tighter mb-8 leading-[0.9] text-white">Architect Your Own Path.</h3>
-                                <p className="text-white/70 font-bold italic mb-12">Don&apos;t settle for a template. Our AI engine can merge any variations in under 60 seconds.</p>
+                                <h3 className="text-xl font-black uppercase tracking-tight mb-4 leading-tight text-white">Architect Your Own Path.</h3>
+                                <p className="text-white/70 font-bold italic text-sm mb-6">Don&apos;t settle for a template. Our AI engine can merge any variations in under 60 seconds.</p>
 
-                                <div className="space-y-6 mb-12">
+                                <div className="space-y-3 mb-6">
                                     {["Custom Stop-Overs", "Specific Hotel Vibe", "Dietary Ready", "24/7 Human Backup"].map((f, i) => (
-                                        <div key={i} className="flex items-center gap-4 text-xs font-black uppercase tracking-widest text-white/80">
-                                            <CheckCircle2 size={16} className="text-sunset-orange" /> {f}
+                                        <div key={i} className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-white/80">
+                                            <CheckCircle2 size={13} className="text-sunset-orange shrink-0" /> {f}
                                         </div>
                                     ))}
                                 </div>
 
-                                <Magnetic>
-                                    <button className="w-full bg-sunset-orange text-white py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-white hover:text-sunset-orange transition-all duration-500 shadow-xl text-xs">
-                                        Build Custom Itinerary
-                                    </button>
-                                </Magnetic>
+                                <button className="w-full bg-sunset-orange text-white py-3 rounded-xl font-black uppercase tracking-widest hover:bg-white hover:text-sunset-orange transition-all duration-500 shadow-lg text-[10px]">
+                                    Build Custom Itinerary
+                                </button>
                             </div>
 
                             {/* Authority Points */}
-                            <div className="glass-card p-10 rounded-[3rem] space-y-10 !bg-white border-royal-blue/10 shadow-2xl">
-                                <h4 className="text-[10px] font-black uppercase tracking-[0.5em] text-royal-blue mb-8">The MyTripMyTravel Standard</h4>
+                            <div className="bg-white border border-royal-blue/10 p-6 rounded-3xl space-y-6 shadow-md">
+                                <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-royal-blue">The MyTripMyTravel Standard</h4>
                                 <FeatureItem
                                     icon={Map}
                                     title="Live Telemetry"
@@ -331,13 +363,13 @@ export default function TourDirectory() {
                             </div>
 
                             {/* Support Card */}
-                            <div className="glass-card p-10 rounded-[2.5rem] flex items-center gap-6 group hover:border-sunset-orange/20 transition-all cursor-pointer">
-                                <div className="w-16 h-16 bg-soft-white rounded-full flex items-center justify-center shrink-0 group-hover:bg-sunset-orange transition-all">
-                                    <HelpCircle className="text-royal-blue group-hover:text-white" size={28} />
+                            <div className="bg-white border border-royal-blue/10 p-5 rounded-2xl flex items-center gap-4 group hover:border-sunset-orange/30 transition-all cursor-pointer shadow-sm">
+                                <div className="w-11 h-11 bg-royal-blue/5 rounded-full flex items-center justify-center shrink-0 group-hover:bg-sunset-orange transition-all">
+                                    <HelpCircle className="text-royal-blue group-hover:text-white" size={20} />
                                 </div>
                                 <div>
-                                    <h5 className="font-black text-royal-blue uppercase text-xs tracking-widest mb-1">Human Desk</h5>
-                                    <p className="text-[10px] font-bold text-dark-slate opacity-40 uppercase tracking-widest">Chat with an Architect</p>
+                                    <h5 className="font-black text-royal-blue uppercase text-[10px] tracking-widest mb-0.5">Human Desk</h5>
+                                    <p className="text-[10px] font-bold text-dark-slate/40 uppercase tracking-widest">Chat with an Architect</p>
                                 </div>
                             </div>
                         </div>

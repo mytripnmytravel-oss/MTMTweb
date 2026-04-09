@@ -45,9 +45,9 @@ const itemVariants = {
 const FilterButton = ({ active, onClick, children }: { active: boolean, onClick: () => void, children: React.ReactNode }) => (
     <button
         onClick={onClick}
-        className={`px-8 py-3 rounded-full font-black uppercase text-[10px] tracking-widest transition-all duration-500 border ${active
-            ? "bg-sunset-orange text-white border-sunset-orange shadow-[0_10px_30px_rgba(249,115,22,0.3)] scale-110"
-            : "bg-white/50 text-royal-blue border-royal-blue/10 hover:border-sunset-orange/30"
+        className={`px-4 py-2 rounded-full font-black uppercase text-[10px] tracking-widest transition-all duration-300 border ${active
+            ? "bg-sunset-orange text-white border-sunset-orange shadow-md scale-105"
+            : "bg-white/50 text-royal-blue/70 border-royal-blue/10 hover:border-sunset-orange/50 hover:text-sunset-orange"
             }`}
     >
         {children}
