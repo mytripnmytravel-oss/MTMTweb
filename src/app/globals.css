@@ -14,8 +14,11 @@
   body {
     @apply bg-soft-white font-sans text-dark-slate overflow-x-hidden;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, p, span {
     @apply font-outfit font-black;
+    word-break: keep-all;
+    overflow-wrap: break-word; /* break-word allows wrapping between words but not within them in most cases */
+    hyphens: none;
   }
 }
 

@@ -52,7 +52,7 @@ export const CharBlurIn = ({ text, className }: { text: string, className?: stri
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-    const sentence = text.split("");
+    const words = text.split(" ");
 
     return (
         <motion.span
@@ -61,22 +61,28 @@ export const CharBlurIn = ({ text, className }: { text: string, className?: stri
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
         >
-            {sentence.map((char, i) => (
-                <motion.span
-                    key={i}
-                    variants={{
-                        hidden: { filter: "blur(20px)", opacity: 0, y: 10 },
-                        visible: { filter: "blur(0px)", opacity: 1, y: 0 }
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        delay: i * 0.03,
-                        ease: [0.22, 1, 0.36, 1]
-                    }}
-                    className="inline-block drop-shadow-[0_2px_15px_rgba(0,0,0,0.5)]"
-                >
-                    {char === " " ? "\u00A0" : char}
-                </motion.span>
+            {words.map((word, wordIndex) => (
+                <span key={wordIndex} className="inline-block whitespace-nowrap">
+                    {word.split("").map((char, charIndex) => (
+                        <motion.span
+                            key={charIndex}
+                            variants={{
+                                hidden: { filter: "blur(20px)", opacity: 0, y: 10 },
+                                visible: { filter: "blur(0px)", opacity: 1, y: 0 }
+                            }}
+                            transition={{
+                                duration: 1.2,
+                                delay: (wordIndex * 5 + charIndex) * 0.03, // Slight delay offset for words
+                                ease: [0.22, 1, 0.36, 1]
+                            }}
+                            className="inline-block drop-shadow-[0_2px_15px_rgba(0,0,0,0.5)]"
+                        >
+                            {char}
+                        </motion.span>
+                    ))}
+                    {/* Add space between words */}
+                    {wordIndex < words.length - 1 && <span className="inline-block">&nbsp;</span>}
+                </span>
             ))}
         </motion.span>
     );

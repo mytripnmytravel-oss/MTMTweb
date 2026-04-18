@@ -69,7 +69,7 @@ export const Footer = () => {
                                 { label: 'Our Story & Team', href: '/about' },
                                 { label: 'The Methodology', href: '/methodology' },
                                 { label: 'Careers', href: '#' },
-                                { label: 'Digital Press', href: '/blog' }
+                                { label: 'Blogs', href: '/blog' }
                             ].map((item) => (
                                 <li key={item.label}>
                                     <Link href={item.href} className="text-white/40 hover:text-sunset-orange font-black uppercase text-[10px] tracking-widest transition-all flex items-center gap-4 group/item">
