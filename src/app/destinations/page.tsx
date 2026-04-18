@@ -10,12 +10,12 @@ import Link from "next/link";
 import { MapPin, ArrowRight } from "lucide-react";
 
 const destinations = [
-    { title: "Golden Triangle", desc: "The definitive route covering Delhi, Agra, and Jaipur.", img: "/taj-golden.png", link: "/tours/golden-triangle-all" },
-    { title: "Rajasthan Escapes", desc: "Deep immersions into the royal heartland of India.", img: "/jaipur-mahal.png", link: "/destinations/rajasthan" },
-    { title: "Kerala Backwaters", desc: "Lush, tropical ecosystems for complete down-regulation.", img: "/wellness.png", link: "/destinations/kerala" },
-    { title: "Himalayan Peaks", desc: "High-altitude missions for spiritual and physical clarity.", img: "/wedding.png", link: "/destinations/himalayas" },
-    { title: "Sikkim Silk Route", desc: "Exclusive access to the ancient, high-frequency trade paths.", img: "/hero-taj.png", link: "/destinations/sikkim" },
-    { title: "Andaman Islands", desc: "Private island sanctuaries and ultra-luxury marine operations.", img: "/wellness.png", link: "/destinations/andaman" }
+    { title: "Golden Triangle", desc: "The definitive route covering Delhi, Agra, and Jaipur.", img: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg", link: "/tours/golden-triangle-all" },
+    { title: "Rajasthan Escapes", desc: "Deep immersions into the royal heartland of India.", img: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jodhpur-Mehrangarh_Fort-06-Blue_city-20131011.jpg", link: "/destinations/rajasthan" },
+    { title: "Kerala Backwaters", desc: "Lush, tropical ecosystems for complete down-regulation.", img: "https://upload.wikimedia.org/wikipedia/commons/c/c5/The_Backwaters_of_Alleppey.jpg", link: "/destinations/kerala" },
+    { title: "Himalayan Peaks", desc: "High-altitude missions for spiritual and physical clarity.", img: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Sam_Sand_Dunes_Jaisalmer.jpg", link: "/destinations/himalayas" },
+    { title: "Sikkim Silk Route", desc: "Exclusive access to the ancient, high-frequency trade paths.", img: "https://upload.wikimedia.org/wikipedia/commons/7/74/Tsomgo_Lake%2C_Sikkim.jpg", link: "/destinations/sikkim" },
+    { title: "Andaman Islands", desc: "Private island sanctuaries and ultra-luxury marine operations.", img: "https://upload.wikimedia.org/wikipedia/commons/7/71/Radhanagar_Beach%2C_Havelock_Island%2C_Andaman%2C_India.jpg", link: "/destinations/andaman" }
 ];
 
 export default function DestinationsPage() {

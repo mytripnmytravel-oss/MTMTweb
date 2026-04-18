@@ -53,7 +53,7 @@ export default function YogaSoulPage() {
                             <Tilt3D>
                                 <div className="relative h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl">
                                     <Image
-                                        src="/wellness.png"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Yoga_Meditation%2C_Rishikesh.jpg"
                                         alt="Yoga Sanctuary"
                                         fill
                                         className="object-cover"
@@ -119,13 +119,13 @@ export default function YogaSoulPage() {
                         </div>
                         <div className="lg:col-span-8 grid grid-cols-2 gap-8">
                             <div className="h-[400px] rounded-[3rem] overflow-hidden relative group">
-                                <Image src="/hero-taj.png" alt="Rishikesh" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
+                                <Image src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Rishikesh_Ganga_View.jpg" alt="Rishikesh" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
                                 <div className="absolute inset-0 bg-stone-900/40 flex items-end p-10">
                                     <p className="text-white font-black uppercase tracking-widest text-xs">High Altitude Recovery</p>
                                 </div>
                             </div>
                             <div className="h-[400px] rounded-[3rem] overflow-hidden relative group mt-12">
-                                <Image src="/jaipur-mahal.png" alt="Jaipur" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
+                                <Image src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Rambagh_Palace_hotel_Jaipur_lobby_courtyard.jpg" alt="Jaipur" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
                                 <div className="absolute inset-0 bg-stone-900/40 flex items-end p-10">
                                     <p className="text-white font-black uppercase tracking-widest text-xs">Royal Courtyard Yoga</p>
                                 </div>

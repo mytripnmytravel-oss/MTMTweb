@@ -53,7 +53,7 @@ export default function MassagePage() {
                             <Tilt3D>
                                 <div className="relative h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl bg-purple-50">
                                     <Image
-                                        src="/wellness.png" // Placeholder
+                                        src="https://upload.wikimedia.org/wikipedia/commons/4/48/Massage_in_India.jpg" // Placeholder
                                         alt="Deep Tissue Massage"
                                         fill
                                         className="object-cover mix-blend-multiply opacity-80"

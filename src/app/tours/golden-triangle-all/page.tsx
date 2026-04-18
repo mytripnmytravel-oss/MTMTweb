@@ -400,7 +400,7 @@ export default function TourDirectory() {
                                 </div>
                             </div>
                             <div className="relative h-[700px] rounded-[4rem] overflow-hidden shadow-3xl">
-                                <Image src="/taj-golden.png" alt="Authority India Travel" fill className="object-cover" />
+                                <Image src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg" alt="Authority India Travel" fill className="object-cover" />
                                 <div className="absolute inset-0 bg-royal-blue/20 backdrop-blur-[2px]" />
                                 <div className="absolute bottom-12 left-12 glass-card p-10 rounded-3xl w-full max-w-sm">
                                     <Star className="text-sunset-orange mb-6" fill="currentColor" />

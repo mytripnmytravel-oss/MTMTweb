@@ -17,7 +17,7 @@ const weddingVenues = [
         features: ["Elephant Processions", "Royal Courtyards", "Fireworks"],
         theme: "from-orange-50 to-sunset-orange/10",
         accent: "text-sunset-orange",
-        image: "/wedding.png"
+        image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Umaid_Bhawan_Palace%2C_Jodhpur.JPG"
     },
     {
         title: "The Taj Matrix",
@@ -26,7 +26,7 @@ const weddingVenues = [
         features: ["Monument Views", "5-Star Global Catering", "VIP Air Transit"],
         theme: "from-blue-50 to-royal-blue/10",
         accent: "text-royal-blue",
-        image: "/taj-golden.png"
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg"
     },
     {
         title: "The Imperial Forts",
@@ -35,7 +35,7 @@ const weddingVenues = [
         features: ["Absolute Privacy", "Historical Tapestry", "Drone Surveillance"],
         theme: "from-purple-50 to-purple-600/10",
         accent: "text-purple-600",
-        image: "/jaipur-mahal.png"
+        image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jodhpur-Mehrangarh_Fort-06-Blue_city-20131011.jpg"
     }
 ];
 

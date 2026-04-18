@@ -21,7 +21,7 @@ const wellnessServices = [
         tags: ["Hatha", "Vinyasa", "Meditation"],
         theme: "from-blue-50 to-emerald-50",
         accent: "text-emerald-600",
-        image: "/wellness.png",
+        image: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Yoga_Meditation%2C_Rishikesh.jpg",
         href: "/wellness/yoga-soul"
     },
     {
@@ -31,7 +31,7 @@ const wellnessServices = [
         tags: ["Joint Care", "Spine Health", "Post-Op"],
         theme: "from-blue-50 to-slate-100",
         accent: "text-royal-blue",
-        image: "/innova.png",
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Hospital_Room_Interior.jpg",
         href: "/wellness/orthopedic"
     },
     {
@@ -41,7 +41,7 @@ const wellnessServices = [
         tags: ["Panchakarma", "Detox", "Herbal"],
         theme: "from-orange-50 to-sunset-orange/5",
         accent: "text-sunset-orange",
-        image: "/taj-golden.png",
+        image: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Ayurvedic_Oil_Massage.jpg",
         href: "/wellness/ayurvedic"
     },
     {
@@ -51,7 +51,7 @@ const wellnessServices = [
         tags: ["Deep Tissue", "Trigger Point", "Neural"],
         theme: "from-purple-50 to-royal-blue/5",
         accent: "text-purple-600",
-        image: "/jaipur-mahal.png",
+        image: "https://upload.wikimedia.org/wikipedia/commons/4/48/Massage_in_India.jpg",
         href: "/wellness/massage"
     }
 ];
@@ -221,7 +221,7 @@ export default function WellnessPage() {
 
                     <div className="relative h-[800px] rounded-[4rem] overflow-hidden group">
                         <Image
-                            src="/wellness.png"
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/de/Rawla_Narlai_Fort_Entrance.jpg"
                             alt="Silent Haveli"
                             fill
                             className="object-cover scale-105 group-hover:scale-100 transition-transform duration-[2s]"

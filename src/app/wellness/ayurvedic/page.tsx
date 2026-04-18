@@ -53,7 +53,7 @@ export default function AyurvedicPage() {
                             <Tilt3D>
                                 <div className="relative h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl bg-orange-50 border border-sunset-orange/10">
                                     <Image
-                                        src="/taj-golden.png" // Placeholder
+                                        src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Ayurvedic_Oil_Massage.jpg" // Placeholder
                                         alt="Ayurvedic Treatment"
                                         fill
                                         className="object-cover opacity-80 mix-blend-multiply filter contrast-125"

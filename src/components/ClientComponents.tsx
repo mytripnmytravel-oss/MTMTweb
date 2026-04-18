@@ -217,11 +217,31 @@ export const GoldenPathLoader = () => {
                 <motion.div key="loader" exit={{ opacity: 0, y: -100 }} transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }} className="fixed inset-0 z-[1000] bg-royal-blue flex flex-col items-center justify-center p-12 text-center">
                     <div className="w-full max-w-sm relative aspect-square mb-12">
                         <svg viewBox="0 0 100 100" className="w-full h-full">
-                            <path d="M20,80 L50,20 L80,80 Z" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
-                            <motion.path d="M20,80 L50,20 L80,80 Z" fill="none" stroke="#F97316" strokeWidth="4" strokeLinecap="round" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, ease: "easeInOut" }} />
-                            <motion.circle initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0 }} cx="20" cy="80" r="4" fill="white" />
-                            <motion.circle initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.8 }} cx="50" cy="20" r="4" fill="white" />
-                            <motion.circle initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.6 }} cx="80" cy="80" r="4" fill="white" />
+                            <defs>
+                                <linearGradient id="loaderPyramidGradient" x1="0" y1="0" x2="100" y2="100">
+                                    <stop offset="0%" stopColor="#FBBC05" />
+                                    <stop offset="100%" stopColor="#EA4335" />
+                                </linearGradient>
+                            </defs>
+                            {/* Static Ghost Outline */}
+                            <path d="M 50 20 L 80 70 L 20 70 Z" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+                            
+                            {/* Animated Pyramid Path */}
+                            <motion.path 
+                                d="M 50 20 L 80 70 L 20 70 Z" 
+                                fill="none" 
+                                stroke="url(#loaderPyramidGradient)" 
+                                strokeWidth="3" 
+                                strokeLinecap="round" 
+                                strokeLinejoin="round"
+                                initial={{ pathLength: 0 }} 
+                                animate={{ pathLength: 1 }} 
+                                transition={{ duration: 2, ease: "easeInOut" }} 
+                            />
+
+                            <motion.circle initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0 }} cx="20" cy="70" r="3" fill="white" />
+                            <motion.circle initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.8 }} cx="50" cy="20" r="3" fill="white" />
+                            <motion.circle initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.6 }} cx="80" cy="70" r="3" fill="white" />
                         </svg>
                     </div>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-white tracking-[0.6em] font-black uppercase text-xl">Mapping Your <span className="text-sunset-orange">Journey</span></motion.div>
@@ -234,33 +254,64 @@ export const GoldenPathLoader = () => {
 export const RouteVisualizer = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-    const pathLength = useTransform(scrollYProgress, [0.3, 0.7], [0, 1]);
+    const pathLength = useTransform(scrollYProgress, [0.1, 0.9], [0, 1]);
     const rotate = useTransform(scrollYProgress, [0, 1], [0, 15]);
+    
+    // Calculate precise car coordinates tied to scroll percentage
+    // Journey points: Delhi (50,20) -> Agra (80,70) -> Jaipur (20,70) -> Delhi (50,20)
+    const carLeft = useTransform(scrollYProgress, [0.1, 0.36, 0.63, 0.9], ["50%", "80%", "20%", "50%"]);
+    const carTop = useTransform(scrollYProgress, [0.1, 0.36, 0.63, 0.9], ["20%", "70%", "70%", "20%"]);
+    
+    // Rotate car depending on which segment of the journey is active
+    const carRotate = useTransform(
+        scrollYProgress,
+        [0.1, 0.359, 0.36, 0.629, 0.63, 0.9],
+        [59, 59, 180, 180, -59, -59]
+    );
+
     const cities = [{ name: "Delhi", x: 50, y: 20, best: "Heritage & Street Food", dist: "Start" }, { name: "Agra", x: 80, y: 70, best: "The Eternal Taj", dist: "233 KM" }, { name: "Jaipur", x: 20, y: 70, best: "Royal Grandeur", dist: "240 KM" }];
     return (
         <div ref={ref} className="relative w-full h-[500px] md:h-[650px] glass-card rounded-[2rem] md:rounded-[4rem] overflow-hidden border-royal-blue/5 bg-royal-blue/[0.02]">
             <div className="absolute inset-0 bg-gradient-to-br from-royal-blue/[0.05] to-sunset-orange/[0.05] backdrop-blur-3xl" />
             <motion.div style={{ rotateX: rotate, perspective: "1000px" }} className="absolute inset-0 w-full h-full">
                 <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <path d="M50,20 L80,70 L20,70 Z" fill="rgba(30,64,175,0.03)" stroke="rgba(30,64,175,0.05)" strokeWidth="0.2" />
+                    <defs>
+                        <linearGradient id="prismVisualizerGradient" x1="0" y1="0" x2="100" y2="100">
+                            <stop offset="0%" stopColor="#FBBC05" />
+                            <stop offset="100%" stopColor="#EA4335" />
+                        </linearGradient>
+                    </defs>
+                    {/* Ghost Fill */}
+                    <path d="M 50 20 L 80 70 L 20 70 Z" fill="rgba(30,64,175,0.02)" stroke="rgba(30,64,175,0.05)" strokeWidth="0.1" />
+                    
+                    {/* Facets */}
                     {["M50,20 L50,55", "M80,70 L50,55", "M20,70 L50,55"].map((d, i) => (
                         <motion.path key={`facet-${i}`} d={d} fill="none" stroke="rgba(249,115,22,0.1)" strokeWidth="0.1" style={{ pathLength }} />
                     ))}
-                    <motion.path d="M50,20 L80,70 L20,70 Z" fill="none" stroke="#F97316" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" style={{ pathLength }} className="drop-shadow-[0_0_15px_rgba(249,115,22,0.6)]" />
-                    <g>
-                        <animateMotion dur="8s" repeatCount="indefinite" path="M50,20 L80,70 L20,70 L50,20" rotate="auto" />
-                        <g transform="scale(0.3)" className="drop-shadow-[0_4px_10px_rgba(249,115,22,0.6)]">
-                            {/* Car Body */}
-                            <rect x="-10" y="-5" width="20" height="10" rx="3" fill="#F97316" stroke="white" strokeWidth="1.5" />
-                            {/* Windows */}
-                            <rect x="-3" y="-4.5" width="7" height="9" rx="1.5" fill="white" />
-                            <rect x="-1" y="-3.5" width="4" height="7" rx="0.5" fill="#1E40AF" />
-                            {/* Headlights */}
-                            <circle cx="9" cy="-3.5" r="1.5" fill="#FDE047" />
-                            <circle cx="9" cy="3.5" r="1.5" fill="#FDE047" />
-                        </g>
-                    </g>
+                    
+                    {/* Main Pyramid Outline */}
+                    <motion.path 
+                        d="M 50 20 L 80 70 L 20 70 Z" 
+                        fill="none" 
+                        stroke="url(#prismVisualizerGradient)" 
+                        strokeWidth="1.2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        style={{ pathLength }} 
+                        className="drop-shadow-[0_0_15px_rgba(249,115,22,0.4)]" 
+                    />
                 </svg>
+                
+                {/* Scroll Driven Car */}
+                <motion.div 
+                    className="absolute w-8 h-4 -ml-4 -mt-2 z-30"
+                    style={{ left: carLeft, top: carTop, rotate: carRotate }}
+                >
+                    <div className="relative w-full h-full bg-sunset-orange rounded-[4px] border-[1.5px] border-white shadow-[0_0_15px_#f97316] overflow-hidden">
+                        <div className="absolute top-[2px] bottom-[2px] right-1 w-2 bg-royal-blue/90 rounded-[1px]" />
+                        <div className="absolute top-1 bottom-1 left-2 w-1.5 bg-white/40" />
+                    </div>
+                </motion.div>
                 {cities.map((city, idx) => (
                     <motion.div key={idx} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 + idx * 0.3 }} style={{ left: `${city.x}%`, top: `${city.y}%`, position: 'absolute', transform: 'translate(-50%, -50%)' }} className="z-20 group">
                         <div className="relative">

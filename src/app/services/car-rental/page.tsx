@@ -106,28 +106,28 @@ export default function CarRental() {
     const fleet = [
         {
             title: "Executive Sedan",
-            image: "/hero-taj.png",
+            image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200&auto=format&fit=crop",
             capacity: "4 Pax",
             luggage: "2-3 Bags",
             description: "Premium Maruti Dzire or Toyota Etios for swift city transfers and business arrivals."
         },
         {
             title: "Premium SUV",
-            image: "/innova.png",
+            image: "https://images.unsplash.com/photo-1627927141576-0256f4c21ab1?q=80&w=1200&auto=format&fit=crop",
             capacity: "6 Pax",
             luggage: "4-5 Bags",
             description: "The Toyota Innova Crysta. Unmatched AC performance and legroom for long highway hauls."
         },
         {
             title: "Luxury SUV",
-            image: "/innova.png",
+            image: "https://images.unsplash.com/photo-1574701427742-acc058398496?q=80&w=1200&auto=format&fit=crop",
             capacity: "6 Pax",
             luggage: "4 Bags",
             description: "Elite status on the road. The Toyota Fortuner command presence for VIP state visits."
         },
         {
             title: "Large Group",
-            image: "/hero-taj.png",
+            image: "https://images.unsplash.com/photo-1758292109543-a5c7f0c4cb9b?q=80&w=1200&auto=format&fit=crop",
             capacity: "12-20 Pax",
             luggage: "15+ Bags",
             description: "Custom Force Tempo Traveller with specialized luggage racks and pilot seats."
@@ -147,7 +147,7 @@ export default function CarRental() {
             {/* Hero Section */}
             <section ref={heroRef} className="relative h-[80vh] w-full flex items-center overflow-hidden bg-royal-blue pt-20 z-10">
                 <motion.div style={{ y }} className="absolute inset-0 opacity-40">
-                    <Image src="/innova.png" alt="Luxury Car Rental" fill className="object-cover scale-110" />
+                    <Image src="https://images.unsplash.com/photo-1627927141576-0256f4c21ab1?q=80&w=1200&auto=format&fit=crop" alt="Luxury Car Rental" fill className="object-cover scale-110" />
                 </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-r from-royal-blue via-royal-blue/60 to-transparent" />
 

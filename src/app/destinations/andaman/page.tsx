@@ -43,7 +43,7 @@ export default function AndamanPage() {
                         className="absolute inset-0 z-0"
                     >
                         <Image 
-                            src="https://images.unsplash.com/photo-1589136777351-fdc9c9c85f95?q=80&w=2670&auto=format&fit=crop" 
+                            src="https://upload.wikimedia.org/wikipedia/commons/7/71/Radhanagar_Beach%2C_Havelock_Island%2C_Andaman%2C_India.jpg" 
                             alt="Andaman Islands" 
                             fill 
                             className="object-cover"
@@ -184,8 +184,8 @@ export default function AndamanPage() {
 
                         <div className="grid md:grid-cols-2 gap-12">
                             {[
-                                { title: "Elite Catamaran", desc: "Private charter for multi-island luxury voyages. Includes on-board chef and marine concierge.", img: "https://images.unsplash.com/photo-1540946485063-a40da27545f8?q=80&w=2670&auto=format&fit=crop" },
-                                { title: "Vector Speedboat", desc: "Tactical high-speed transit for prioritized inter-island missions. Zero-friction logistics.", img: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2670&auto=format&fit=crop" }
+                                { title: "Elite Catamaran", desc: "Private charter for multi-island luxury voyages. Includes on-board chef and marine concierge.", img: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Catamaran_Cruising.jpg" },
+                                { title: "Vector Speedboat", desc: "Tactical high-speed transit for prioritized inter-island missions. Zero-friction logistics.", img: "https://upload.wikimedia.org/wikipedia/commons/8/87/Speedboat_in_the_ocean.jpg" }
                             ].map((asset, i) => (
                                 <motion.div 
                                     key={i}
@@ -235,7 +235,7 @@ export default function AndamanPage() {
                     <div className="relative rounded-[4rem] overflow-hidden bg-royal-blue p-12 md:p-32 text-center border-t border-white/10">
                         <div className="absolute inset-0 z-0">
                             <Image 
-                                src="https://images.unsplash.com/photo-1544735745-b89b57c7eb8f?q=80&w=2670&auto=format&fit=crop" 
+                                src="https://upload.wikimedia.org/wikipedia/commons/d/de/Elephant_Beach%2C_Havelock_Island.jpg" 
                                 alt="Andaman Shore" 
                                 fill 
                                 className="object-cover opacity-20" 

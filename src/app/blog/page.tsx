@@ -16,7 +16,7 @@ const blogPosts = [
         excerpt: "A tactical breakdown of navigating Delhi, Agra, and Jaipur with absolute luxury and zero friction.",
         date: "March 10, 2026",
         category: "Strategic Routes",
-        image: "/taj-golden.png",
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg",
         slug: "golden-triangle-protocol"
     },
     {
@@ -25,7 +25,7 @@ const blogPosts = [
         excerpt: "Why our high-net-worth clients are abandoning massive resorts for secluded, acoustically optimized heritage properties.",
         date: "February 28, 2026",
         category: "Medical Sanctuary",
-        image: "/wellness.png",
+        image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Rambagh_Palace_hotel_Jaipur_lobby_courtyard.jpg",
         slug: "silent-havelis-reset"
     },
     {
@@ -34,7 +34,7 @@ const blogPosts = [
         excerpt: "An inside look at the military-precision logistics required to coordinate a 500-guest event at a 16th-century fortress.",
         date: "February 15, 2026",
         category: "Matrimonial Logistics",
-        image: "/wedding.png",
+        image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Umaid_Bhawan_Palace%2C_Jodhpur.JPG",
         slug: "architecting-royal-wedding"
     },
     {
@@ -43,7 +43,7 @@ const blogPosts = [
         excerpt: "Securing exclusive access to Ranthambore's core zones with vetted naturalists and custom-modified 4x4 interceptors.",
         date: "January 30, 2026",
         category: "Wildlife Tactics",
-        image: "/jaipur-mahal.png",
+        image: "https://upload.wikimedia.org/wikipedia/commons/f/ff/079_Bengal_tiger_in_Ranthambore_National_Park_Photo_by_Giles_Laurent.jpg",
         slug: "panthera-safari-mission"
     }
 ];

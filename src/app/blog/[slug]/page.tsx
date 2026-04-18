@@ -19,7 +19,7 @@ export function generateStaticParams() {
 const blogData: Record<string, any> = {
     'golden-triangle-protocol': {
         title: "THE GOLDEN TRIANGLE PROTOCOL: EXECUTING THE PERFECT ROUTE",
-        img: "/taj-golden.png",
+        img: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg",
         category: "Strategic Routes",
         date: "March 10, 2026",
         intro: "A tactical breakdown of navigating the subcontinent with absolute luxury and zero operational friction. Our elite perspective.",
@@ -33,7 +33,7 @@ const blogData: Record<string, any> = {
                 <p>A mission begins at the tarmac. We bypass the standard arrival chaos using priority VIP customs clearance. Our Elite Fleet—typically an armored-level luxury SUV—waits airside. The environment is divided into operational zones, and we secure movement corridors that avoid massive congestion.</p>
 
                 <div className="my-20 rounded-[3rem] overflow-hidden shadow-2xl relative border border-royal-blue/10">
-                    <Image src="/innova.png" alt="Elite Fleet" width={1200} height={600} className="w-full object-cover h-[500px]" />
+                    <Image src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200&auto=format&fit=crop" alt="Elite Fleet" width={1200} height={600} className="w-full object-cover h-[500px]" />
                     <div className="absolute bottom-0 w-full text-center p-6 text-[10px] font-black uppercase tracking-[0.3em] text-white bg-royal-blue/90 backdrop-blur-md">
                         Asset 01: Secure Surface Transport Active
                     </div>
@@ -58,7 +58,7 @@ const blogData: Record<string, any> = {
     },
     'silent-havelis-reset': {
         title: "SILENT HAVELIS: THE NEW STANDARD IN NEUROLOGICAL RESET",
-        img: "/wellness.png",
+        img: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Rambagh_Palace_hotel_Jaipur_lobby_courtyard.jpg",
         category: "Medical Sanctuary",
         date: "February 28, 2026",
         intro: "Why our high-net-worth clients are abandoning massive resorts for secluded, acoustically optimized heritage properties.",
@@ -85,7 +85,7 @@ const blogData: Record<string, any> = {
     },
     'architecting-royal-wedding': {
         title: "ARCHITECTING A ROYAL WEDDING: THE 6-MONTH LEAD TIME",
-        img: "/wedding.png",
+        img: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Umaid_Bhawan_Palace%2C_Jodhpur.JPG",
         category: "Matrimonial Logistics",
         date: "February 15, 2026",
         intro: "An inside look at the military-precision logistics required to coordinate a 500-guest event at a 16th-century fortress.",
@@ -112,7 +112,7 @@ const blogData: Record<string, any> = {
     },
     'panthera-safari-mission': {
         title: "THE PANTHERA MISSION: ELITE SAFARI DEPLOYMENTS",
-        img: "/jaipur-mahal.png",
+        img: "https://upload.wikimedia.org/wikipedia/commons/f/ff/079_Bengal_tiger_in_Ranthambore_National_Park_Photo_by_Giles_Laurent.jpg",
         category: "Wildlife Tactics",
         date: "January 30, 2026",
         intro: "Securing exclusive access to Ranthambore's core zones with vetted naturalists and custom-modified 4x4 interceptors.",

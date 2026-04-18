@@ -53,7 +53,7 @@ export default function OrthopedicPage() {
                             <Tilt3D>
                                 <div className="relative h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl bg-royal-blue/5">
                                     <Image
-                                        src="/innova.png" // Using high-quality car image as placeholder for tech
+                                        src="https://upload.wikimedia.org/wikipedia/commons/3/30/Hospital_Room_Interior.jpg"
                                         alt="Medical Technology"
                                         fill
                                         className="object-cover opacity-20"
@@ -121,9 +121,9 @@ export default function OrthopedicPage() {
                         </div>
                         <div className="grid md:grid-cols-3 gap-8">
                             {[
-                                { city: "NEW DELHI", desc: "Central high-performance trauma & reconstruction hub.", img: "/hero-taj.png" },
-                                { city: "AGRA", desc: "Home to specialized joint restoration sanctuaries.", img: "/taj-golden.png" },
-                                { city: "BENGALURU", desc: "Technology-first robotic surgical core.", img: "/jaipur-mahal.png" }
+                                { city: "NEW DELHI", desc: "Central high-performance trauma & reconstruction hub.", img: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Humayun%27s_tomb_at_sunset.jpg" },
+                                { city: "AGRA", desc: "Home to specialized joint restoration sanctuaries.", img: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg" },
+                                { city: "BENGALURU", desc: "Technology-first robotic surgical core.", img: "https://upload.wikimedia.org/wikipedia/commons/1/14/Vidhana_Soudha_Bengaluru.jpg" }
                             ].map((loc, i) => (
                                 <div key={i} className="relative h-[400px] rounded-[3rem] overflow-hidden group">
                                     <Image src={loc.img} alt={loc.city} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" />
