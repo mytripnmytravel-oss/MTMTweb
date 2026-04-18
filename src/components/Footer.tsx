@@ -40,7 +40,7 @@ export const Footer = () => {
                 </div>
 
                 {/* --- Footer Middle: Link Directory --- */}
-                <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 md:gap-16 mb-20 md:mb-40">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 md:gap-16 mb-20 md:mb-40">
                     <div className="col-span-2">
                         <div className="mb-12">
                             <Logo3D isScrolled={true} />
@@ -63,6 +63,25 @@ export const Footer = () => {
                     </div>
 
                     <div>
+                        <h4 className="font-black text-white/20 uppercase tracking-[0.5em] text-[10px] mb-10">Company</h4>
+                        <ul className="space-y-6">
+                            {[
+                                { label: 'Our Story & Team', href: '/about' },
+                                { label: 'The Methodology', href: '/corporate' },
+                                { label: 'Careers', href: '#' },
+                                { label: 'Digital Press', href: '/blog' }
+                            ].map((item) => (
+                                <li key={item.label}>
+                                    <Link href={item.href} className="text-white/40 hover:text-sunset-orange font-black uppercase text-[10px] tracking-widest transition-all flex items-center gap-4 group/item">
+                                        <div className="w-1.5 h-1.5 bg-sunset-orange/20 group-hover/item:bg-sunset-orange rounded-full transition-colors" /> 
+                                        <span>{item.label}</span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div>
                         <h4 className="font-black text-white/20 uppercase tracking-[0.5em] text-[10px] mb-10">Destinations</h4>
                         <ul className="space-y-6">
                             {[
@@ -74,8 +93,9 @@ export const Footer = () => {
                                 { label: 'Andaman Islands', href: '/destinations/andaman' }
                             ].map((item) => (
                                 <li key={item.label}>
-                                    <Link href={item.href} className="text-white font-black uppercase text-[10px] tracking-widest opacity-60 hover:opacity-100 hover:text-sunset-orange transition-all flex items-center gap-3">
-                                        <div className="w-1 h-1 bg-sunset-orange rounded-full" /> {item.label}
+                                    <Link href={item.href} className="text-white/40 hover:text-sunset-orange font-black uppercase text-[10px] tracking-widest transition-all flex items-center gap-4 group/item">
+                                        <div className="w-1.5 h-1.5 bg-sunset-orange/20 group-hover/item:bg-sunset-orange rounded-full transition-colors" /> 
+                                        <span>{item.label}</span>
                                     </Link>
                                 </li>
                             ))}
@@ -94,8 +114,9 @@ export const Footer = () => {
                                 { label: 'Fleet Telemetry', href: '/telemetry' }
                             ].map((item) => (
                                 <li key={item.label}>
-                                    <Link href={item.href} className="text-white font-black uppercase text-[10px] tracking-widest opacity-60 hover:opacity-100 hover:text-sunset-orange transition-all flex items-center gap-3">
-                                        <div className="w-1 h-1 bg-sunset-orange rounded-full" /> {item.label}
+                                    <Link href={item.href} className="text-white/40 hover:text-sunset-orange font-black uppercase text-[10px] tracking-widest transition-all flex items-center gap-4 group/item">
+                                        <div className="w-1.5 h-1.5 bg-sunset-orange/20 group-hover/item:bg-sunset-orange rounded-full transition-colors" /> 
+                                        <span>{item.label}</span>
                                     </Link>
                                 </li>
                             ))}

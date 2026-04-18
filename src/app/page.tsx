@@ -9,7 +9,7 @@ import {
   Search, MapPin, Car, Map, Calendar, ChevronDown,
   MessageCircle, X, ChevronRight, ShieldCheck, Star,
   Clock, Quote, Phone, Mail, Award, Heart, Utensils, Camera, Zap, Plus,
-  Stethoscope, Users, Building, HelpCircle, Wind, Droplets, Activity
+  Stethoscope, Users, Building, HelpCircle, Wind, Droplets, Activity, ArrowRight
 } from "lucide-react";
 import Navbar, { Logo3D } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -322,6 +322,35 @@ export default function Home() {
             <motion.div variants={itemVariants}><CountingStat value={100} label="Verified Guides" /></motion.div>
           </div>
         </motion.section>
+        {/* Section A.5: The Genesis (About Preview) */}
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={sectionVariants} className="py-20 md:py-32 bg-white container mx-auto px-6 z-20 relative overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
+            <div className="order-2 md:order-1 flex justify-center">
+               <div className="relative aspect-[4/5] w-full max-w-md rounded-[2rem] overflow-hidden glass-card p-2 transform -rotate-2 hover:rotate-0 transition-all duration-700">
+                  <Image src="/team-1.jpg" alt="Our Architects" fill className="object-cover rounded-xl filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700" />
+                  <div className="absolute inset-0 bg-royal-blue/20 mix-blend-multiply rounded-xl" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="bg-white/90 backdrop-blur-md p-4 rounded-xl border border-white/50 text-center">
+                       <span className="text-xl font-black text-royal-blue uppercase tracking-tighter">The Visionaries</span>
+                    </div>
+                  </div>
+               </div>
+            </div>
+            <div className="order-1 md:order-2">
+              <motion.h4 variants={itemVariants} className="text-sunset-orange font-black uppercase tracking-[0.6em] text-[10px] mb-4">Our Protocol</motion.h4>
+              <h2 className="text-4xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-8">Architects of<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-sunset-orange to-royal-blue">Journey.</span></h2>
+              <p className="text-dark-slate font-medium text-base md:text-lg opacity-80 leading-relaxed mb-10 max-w-lg">
+                India is an environment you must absorb, navigate, and respect. MyTripMyTravel was born from an obsession with perfect execution, bridging the gap between absolute luxury and authentic cultural immersion. We don't just sell tours; we engineer uncompromising travel protocols.
+              </p>
+              <Magnetic>
+                <Link href="/about" className="inline-flex items-center gap-4 bg-royal-blue text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-sunset-orange transition-colors">
+                  Read Our Story <ArrowRight size={16} />
+                </Link>
+              </Magnetic>
+            </div>
+          </div>
+        </motion.section>
+
 
         {/* Section C: Golden Triangle (Bento) */}
         <motion.section id="itinerary-circuit" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={sectionVariants} className="py-20 md:py-40 container mx-auto px-6 z-20 relative">
