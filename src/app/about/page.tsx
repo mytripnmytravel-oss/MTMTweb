@@ -107,8 +107,8 @@ export default function AboutPage() {
                         <div className="order-1 md:order-2 relative perspective-1000">
                              <div className="relative aspect-[4/5] glass-card p-4 rounded-3xl overflow-hidden transform md:rotate-y-[-10deg] md:rotate-x-[5deg]">
                                  <Image 
-                                    src="/hero-taj.png" 
-                                    alt="The Eternal Taj Archive" 
+                                    src="/about-story-inner.png" 
+                                    alt="The Eternal Heritage Protocol" 
                                     fill 
                                     className="object-cover rounded-2xl filter contrast-125"
                                  />
@@ -225,7 +225,7 @@ export default function AboutPage() {
                         </div>
                         <div className="relative group perspective-1000 hidden lg:block">
                             <div className="relative aspect-square glass-card p-4 rounded-[3rem] overflow-hidden transform transition-all duration-700 group-hover:rotate-y-12">
-                                <Image src="/hero-taj.png" alt="The Protocol" fill className="object-cover rounded-[2.5rem] grayscale group-hover:grayscale-0 transition-all duration-1000" />
+                                <Image src="/about-standards.png" alt="The Protocol Foundation" fill className="object-cover rounded-[2.5rem] grayscale group-hover:grayscale-0 transition-all duration-1000" />
                                 <div className="absolute inset-0 bg-gradient-to-tr from-sunset-orange/40 to-royal-blue/40 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                             </div>
                         </div>
