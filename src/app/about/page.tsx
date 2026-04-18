@@ -48,11 +48,11 @@ export default function AboutPage() {
                         
                         <CharBlurIn 
                             text="BEYOND" 
-                            className="text-7xl md:text-[12rem] font-black text-white leading-none tracking-tighter uppercase mb-4 drop-shadow-2xl"
+                            className="text-7xl md:text-[8rem] font-black text-white leading-none tracking-tighter uppercase mb-4 drop-shadow-2xl"
                         />
                         <CharBlurIn 
                             text="CONVENTIONAL" 
-                            className="text-7xl md:text-[12rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-sunset-orange to-royal-blue leading-none tracking-tighter uppercase filter drop-shadow-[0_0_30px_rgba(249,115,22,0.3)]"
+                            className="text-7xl md:text-[8rem] font-black text-white leading-none tracking-tighter uppercase filter drop-shadow-[0_10px_30px_rgba(249,115,22,0.4)]"
                         />
 
                         <motion.div 

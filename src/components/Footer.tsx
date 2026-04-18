@@ -67,7 +67,7 @@ export const Footer = () => {
                         <ul className="space-y-6">
                             {[
                                 { label: 'Our Story & Team', href: '/about' },
-                                { label: 'The Methodology', href: '/corporate' },
+                                { label: 'The Methodology', href: '/methodology' },
                                 { label: 'Careers', href: '#' },
                                 { label: 'Digital Press', href: '/blog' }
                             ].map((item) => (
