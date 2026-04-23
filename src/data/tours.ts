@@ -18,7 +18,7 @@ export const packages: Package[] = [
         price: "₹24,800",
         theme: "Short Tours",
         highlight: "For busy pulse-takers. Delhi, Agra, and Jaipur in a high-speed VIP sprint.",
-        img: "/hero-taj.png",
+        img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2670&auto=format&fit=crop",
         location: "Golden Triangle",
         itinerary: [
             { day: 1, plan: "Arrive in Delhi. Afternoon tour of Qutub Minar & Lotus Temple. Late night drive to Agra." },
@@ -83,7 +83,7 @@ export const packages: Package[] = [
         price: "₹74,600",
         theme: "Luxury",
         highlight: "Lakes and Palaces extension. The Venice of the East meets the Golden Triangle.",
-        img: "/tour_udaipur_lake.png",
+        img: "https://images.unsplash.com/photo-1590393533632-6858220f8646?q=80&w=2574&auto=format&fit=crop",
         location: "Rajasthan",
         itinerary: [
             { day: 1, plan: "Delhi Arrival & Luxury Stay. Evening Rickshaw tour." },
@@ -104,7 +104,7 @@ export const packages: Package[] = [
         price: "₹66,300",
         theme: "Spiritual",
         highlight: "Ganges Aarti and private Yoga sessions at the foothills of the Himalayas.",
-        img: "/tour_rishikesh_ganges.png",
+        img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2548&auto=format&fit=crop",
         location: "Himalayas",
         itinerary: [
             { day: 1, plan: "Delhi Arrival & Spiritual briefing. Evening at Birla Mandir." },
@@ -145,7 +145,7 @@ export const packages: Package[] = [
         price: "₹70,500",
         theme: "Luxury",
         highlight: "Explore the Blue City and the mighty Mehrangarh Fort.",
-        img: "https://images.unsplash.com/photo-1590393533632-6858220f8646?q=80&w=2574&auto=format&fit=crop",
+        img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2574&auto=format&fit=crop",
         location: "Rajasthan",
         itinerary: [
             { day: 1, plan: "Delhi Arrival. Evening cultural walk." },
@@ -165,7 +165,7 @@ export const packages: Package[] = [
         price: "₹62,200",
         theme: "Spiritual",
         highlight: "The UNESCO temples of Khajuraho mixed with the Golden Circuit.",
-        img: "/tour_khajuraho.png",
+        img: "https://images.unsplash.com/photo-1622329388062-817cc67a2166?q=80&w=2574&auto=format&fit=crop",
         location: "Central India",
         itinerary: [
             { day: 1, plan: "Delhi Arrival & half day sightseeing." },
@@ -224,7 +224,7 @@ export const packages: Package[] = [
         price: "₹66,300",
         theme: "Luxury",
         highlight: "The city of Nawabs, Awadhi cuisine, and sophisticated manners.",
-        img: "/tour_lucknow.png",
+        img: "https://images.unsplash.com/photo-1614713568397-b33b6680a656?q=80&w=2574&auto=format&fit=crop",
         location: "North India",
         itinerary: [
             { day: 1, plan: "Delhi Arrival & Luxury Stay." },
@@ -415,7 +415,7 @@ export const packages: Package[] = [
         price: "₹49,700",
         theme: "Luxury",
         highlight: "Professional scouting of high-end palace venues in Jaipur & Agra.",
-        img: "/tour_wedding_palace.png",
+        img: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2670&auto=format&fit=crop",
         location: "Golden Triangle",
         itinerary: [
             { day: 1, plan: "Delhi Arrival. Consultation with wedding planner & luxury car preview." },
@@ -471,7 +471,7 @@ export const packages: Package[] = [
         price: "₹45,600",
         theme: "Adventure",
         highlight: "Snow-capped peaks and valley treks through Manali and Shimla.",
-        img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2548&auto=format&fit=crop",
+        img: "https://images.unsplash.com/photo-1597041634447-062e245a499d?q=80&w=2548&auto=format&fit=crop",
         location: "Himalayas",
         itinerary: [
             { day: 1, plan: "Chandigarh Arrival. Drive to Shimla. Evening at The Mall Road." },
@@ -509,7 +509,7 @@ export const packages: Package[] = [
         price: "₹74,600",
         theme: "Spiritual",
         highlight: "Dravidian architecture and 1000-year-old temples across Madurai and Tanjore.",
-        img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2574&auto=format&fit=crop",
+        img: "https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=2574&auto=format&fit=crop",
         location: "South India",
         itinerary: [
             { day: 1, plan: "Chennai Arrival. Visit Kapaleeshwarar Temple." },
