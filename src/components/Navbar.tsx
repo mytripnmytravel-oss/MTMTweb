@@ -32,39 +32,17 @@ const NavItem = ({ title, items, href }: { title: string; items?: { label: strin
 );
 
 export const Logo3D = ({ isScrolled }: { isScrolled: boolean }) => {
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
-    const rotateX = useTransform(y, [-100, 100], [30, -30]);
-    const rotateY = useTransform(x, [-100, 100], [-30, 30]);
-
     return (
         <Link href="/" className="flex items-center gap-4 group">
-            <Magnetic>
-                <motion.div
-                    onMouseMove={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect();
-                        x.set(e.clientX - (rect.left + rect.width / 2));
-                        y.set(e.clientY - (rect.top + rect.height / 2));
-                    }}
-                    onMouseLeave={() => { x.set(0); y.set(0); }}
-                    style={{ perspective: 1000, rotateX, rotateY }}
-                    className="relative w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shrink-0"
-                >
-                    <div className="absolute inset-0 bg-sunset-orange/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <motion.div
-                        className="relative z-10 w-full h-full p-0 flex items-center justify-center transition-all duration-500"
-                        whileHover={{ scale: 1.15 }}
-                    >
-                        <Image
-                            src="/logo.png"
-                            alt="MyTripMyTravel Logo"
-                            width={56}
-                            height={56}
-                            className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)] mix-blend-normal"
-                        />
-                    </motion.div>
-                </motion.div>
-            </Magnetic>
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shrink-0">
+                <Image
+                    src="/logo.png"
+                    alt="MyTripMyTravel Logo"
+                    width={56}
+                    height={56}
+                    className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.1)]"
+                />
+            </div>
 
             <div className="flex flex-col">
                 <span className={`text-xl sm:text-2xl font-black tracking-tighter uppercase leading-none transition-colors duration-500 whitespace-nowrap ${isScrolled ? "text-white" : "text-royal-blue"}`}>

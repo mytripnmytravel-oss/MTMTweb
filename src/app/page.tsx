@@ -329,8 +329,8 @@ export default function Home() {
         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={sectionVariants} className="py-20 md:py-32 bg-white container mx-auto px-6 z-20 relative overflow-hidden">
           <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
             <div className="order-2 md:order-1 flex justify-center">
-               <div className="relative aspect-[4/5] w-full max-w-md rounded-[2rem] overflow-hidden glass-card p-2 transform -rotate-2 hover:rotate-0 transition-all duration-700">
-                  <Image src="/team-1.jpg" alt="Our Architects" fill className="object-cover rounded-xl filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700" />
+               <div className="relative aspect-[4/5] w-full max-w-md rounded-[2rem] overflow-hidden glass-card p-2 shadow-2xl">
+                  <Image src="/team-1.jpg" alt="Our Architects" fill className="object-cover rounded-xl transition-all duration-700" />
                   <div className="absolute inset-0 bg-royal-blue/20 mix-blend-multiply rounded-xl" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="bg-white/90 backdrop-blur-md p-4 rounded-xl border border-white/50 text-center">
