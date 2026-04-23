@@ -144,7 +144,7 @@ export default function AboutPage() {
                                 <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-1">Nitesh Jain</h3>
                                 <p className="text-sunset-orange text-[10px] font-black uppercase tracking-[0.4em] mb-3">Founder</p>
                                 <p className="text-white/60 font-medium text-sm leading-relaxed">
-                                    The visionary behind MyTripMyTravel. Nitesh architected the foundation of our elite service protocols, ensuring that 'Travel' transits into a premium geometric experience.
+                                    I started MyTripMyTravel with a simple belief, travel should be meaningful, seamless, and built on trust. After completing my MBA, I explored different paths, from recruitment consulting to eventually finding my passion in travel. That journey shaped how I see the world today. Travel has been my greatest teacher. It opened my eyes to cultures, people, and experiences that go far beyond destinations. With MyTripMyTravel, I wanted to create more than just packages, I wanted to create journeys that people remember for a lifetime. We are a close-knit team working across multiple countries, ensuring every trip is handled with care and precision. I personally oversee operations to make sure every experience meets our standards. We don’t believe in selling the cheapest options. We believe in delivering the right experience, with honesty, quality, and attention to detail. My vision is simple: to build one of India’s most trusted travel companies, where people choose us not just for where we take them, but for how we make them feel along the way.
                                 </p>
                             </div>
                         </div>
@@ -152,14 +152,14 @@ export default function AboutPage() {
                         {/* Team Member 2 */}
                         <div className="group md:mt-16">
                             <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-6 bg-white/5 border border-white/10">
-                                <Image src="/team-2.jpg" alt="Sara" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105" />
+                                <Image src="/team-2.jpg" alt="Sarah Sahai" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-transparent to-transparent opacity-80" />
                             </div>
                             <div className="pl-4 border-l-2 border-sunset-orange">
-                                <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-1">Sara</h3>
-                                <p className="text-sunset-orange text-[10px] font-black uppercase tracking-[0.4em] mb-3">Overseas Operations</p>
+                                <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-1">Sarah Sahai</h3>
+                                <p className="text-sunset-orange text-[10px] font-black uppercase tracking-[0.4em] mb-3">Market Expansion & Partnerships</p>
                                 <p className="text-white/60 font-medium text-sm leading-relaxed">
-                                    Sara orchestrates our international reach, bridging global luxury standards with localized execution for our overseas clientele and premium partners.
+                                    Ms. Sarah Sahai is the Founder of MindWave, a wellness and mental health platform focused on emotional well-being and personal growth. With a strong background in client relations, branding, and international outreach, she brings a people-first approach to business development. She has travelled to over 25 countries, giving her a deep understanding of global cultures and traveler expectations. Currently based across the UK and UAE, she leads market expansion and partnerships with a focus on creating meaningful and high-quality experiences.
                                 </p>
                             </div>
                         </div>
