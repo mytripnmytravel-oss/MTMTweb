@@ -191,14 +191,14 @@ export default function Home() {
   ];
 
   const packages = [
-    { id: 11, city: "Heritage & Culture", title: "The Classic Triangle", desc: "Taj Mahal Sunrise + Jaipur Forts. Private chauffeured tour with skip-the-line palace entry.", duration: "5 Days", theme: "Royal Heritage", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-2 md:row-span-2" },
-    { id: 10, city: "Jungle & Forts", title: "Wildlife & Wonders", desc: "Golden Triangle + Ranthambore Safari. Amer Fort & City Palace guided heritage walk.", duration: "8 Days", theme: "Wildlife", img: "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
-    { id: 19, city: "Ganges & Spirits", title: "Spiritual Soul", desc: "Golden Triangle + Varanasi Aarti. Exploring Old Delhi's hidden culinary gems.", duration: "10 Days", theme: "Spiritual", img: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
-    { id: 12, city: "Ultra Luxury", title: "Luxury Weekend Protocol", desc: "Helicopter transfers & palatial stays. The absolute gold standard of Golden Triangle travel.", duration: "5 Days", theme: "Elite", img: "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=2676&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
-    { id: 28, city: "Island Sanctuary", title: "Andaman Adventure", desc: "Private island sanctuaries and ultra-luxury marine operations in the heart of the ocean.", duration: "7 Days", theme: "Luxury", img: "https://images.unsplash.com/photo-1589366444820-2c701721f579?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
-    { id: 3, city: "Lakes & Romance", title: "Udaipur Extension", desc: "The Venice of the East meets the Golden Triangle. Sunset boat rides and palace dining.", duration: "9 Days", theme: "Heritage", img: "https://images.unsplash.com/photo-1552033999-70bd63d41fe0?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
-    { id: 22, city: "Tropical Backwaters", title: "Kerala Backwater Bliss", desc: "Private houseboats and spice garden retreats in the heart of God's Own Country.", duration: "7 Days", theme: "Nature", img: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
-    { id: 26, city: "High Passes", title: "Ladakh Leh Expedition", desc: "The land of high passes. Pangong Lake and Nubra Valley camel treks with elite support.", duration: "10 Days", theme: "Adventure", img: "https://images.unsplash.com/photo-1581791538302-03537b0c0f4f?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 11, city: "Heritage & Culture", title: "The Classic Triangle", desc: "Taj Mahal Sunrise + Jaipur Forts. Private chauffeured tour with skip-the-line palace entry.", duration: "5 Days", theme: "Royal Heritage", img: "/hero-taj.png", size: "md:col-span-2 md:row-span-2" },
+    { id: 10, city: "Jungle & Forts", title: "Wildlife & Wonders", desc: "Golden Triangle + Ranthambore Safari. Amer Fort & City Palace guided heritage walk.", duration: "8 Days", theme: "Wildlife", img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 19, city: "Ganges & Spirits", title: "Spiritual Soul", desc: "Golden Triangle + Varanasi Aarti. Exploring Old Delhi's hidden culinary gems.", duration: "10 Days", theme: "Spiritual", img: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=2676&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 12, city: "Ultra Luxury", title: "Luxury Weekend Protocol", desc: "Helicopter transfers & palatial stays. The absolute gold standard of Golden Triangle travel.", duration: "5 Days", theme: "Elite", img: "https://images.unsplash.com/photo-1590393533632-6858220f8646?q=80&w=2574&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 28, city: "Island Sanctuary", title: "Andaman Adventure", desc: "Private island sanctuaries and ultra-luxury marine operations in the heart of the ocean.", duration: "7 Days", theme: "Luxury", img: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=2574&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 3, city: "Lakes & Romance", title: "Udaipur Extension", desc: "The Venice of the East meets the Golden Triangle. Sunset boat rides and palace dining.", duration: "9 Days", theme: "Heritage", img: "/tour_udaipur_lake.png", size: "md:col-span-1 md:row-span-1" },
+    { id: 22, city: "Tropical Backwaters", title: "Kerala Backwater Bliss", desc: "Private houseboats and spice garden retreats in the heart of God's Own Country.", duration: "7 Days", theme: "Nature", img: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=2669&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
+    { id: 26, city: "High Passes", title: "Ladakh Leh Expedition", desc: "The land of high passes. Pangong Lake and Nubra Valley camel treks with elite support.", duration: "10 Days", theme: "Adventure", img: "https://images.unsplash.com/photo-1581791534721-e599df4417f7?q=80&w=2574&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
     { id: 29, city: "Mountain Mist", title: "Meghalaya Monsoon", desc: "Living root bridges and the wettest places on earth. Professional guided trekking.", duration: "6 Days", theme: "Nature", img: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=2670&auto=format&fit=crop", size: "md:col-span-1 md:row-span-1" },
   ];
 
@@ -426,10 +426,14 @@ export default function Home() {
                   <div className="text-center py-10">
                     <CheckCircle2 className="text-emerald-500 mx-auto mb-4" size={48} />
                     <h5 className="text-xl font-black text-royal-blue uppercase mb-2">Inquiry Received</h5>
-                    <p className="text-dark-slate/60 font-bold italic text-sm">Our medical concierge will contact you shortly.</p>
+                    <p className="text-dark-slate/60 font-bold italic text-sm">Our medical concierge will contact you shortly. Please check your inbox for verification if this is your first transmission.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleMedicalSubmit}>
+                  <form 
+                    onSubmit={handleMedicalSubmit} 
+                    action="https://formspree.io/f/maqaanvz" 
+                    method="POST"
+                  >
                     <input type="hidden" name="Inquiry Type" value="Medical Sanctuary" />
                     <div className="grid grid-cols-2 gap-6">
                       <div className="space-y-2">

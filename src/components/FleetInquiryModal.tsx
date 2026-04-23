@@ -225,7 +225,12 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         <p className="text-dark-slate/40 text-sm font-bold italic">Deploy your logistics request for the Golden Triangle.</p>
                                     </div>
                                     
-                                    <form onSubmit={handleSubmit} className="space-y-8">
+                                    <form 
+                                        onSubmit={handleSubmit} 
+                                        action="https://formspree.io/f/maqaanvz"
+                                        method="POST"
+                                        className="space-y-8"
+                                    >
                                         {/* Hidden fields for context */}
                                         <input type="hidden" name="Inquiry Type" value="Fleet Rental" />
 

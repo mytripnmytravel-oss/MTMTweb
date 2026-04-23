@@ -107,12 +107,11 @@ export default function AboutPage() {
                         <div className="order-1 md:order-2 relative perspective-1000">
                              <div className="relative aspect-[4/5] glass-card p-4 rounded-3xl overflow-hidden transform md:rotate-y-[-10deg] md:rotate-x-[5deg]">
                                  <Image 
-                                    src="/genesis-luxury.png" 
-                                    alt="Luxury Travel Experience in India - The Genesis of Luxury" 
+                                    src="/hero-taj.png" 
+                                    alt="The Majestic Taj Mahal - The Genesis of Our Luxury Journeys" 
                                     fill 
                                     className="object-cover rounded-2xl"
                                  />
-                                 <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/80 to-transparent" />
                                  <div className="absolute bottom-10 left-10 text-white">
                                      <div className="font-black uppercase tracking-[0.5em] text-[10px] text-sunset-orange mb-2">Archive 01</div>
                                      <div className="text-3xl font-black uppercase tracking-tighter">The Standard</div>

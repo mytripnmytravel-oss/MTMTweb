@@ -118,7 +118,12 @@ export const TourInquiryModal = ({ tour, isOpen, onClose }: TourInquiryModalProp
                                         <p className="text-royal-blue/40 text-sm font-bold italic">Architect your specific requirements for this mission.</p>
                                     </div>
                                     
-                                    <form onSubmit={handleSubmit} className="space-y-8">
+                                    <form 
+                                        onSubmit={handleSubmit} 
+                                        action="https://formspree.io/f/maqaanvz"
+                                        method="POST"
+                                        className="space-y-8"
+                                    >
                                         {/* Hidden fields for context */}
                                         <input type="hidden" name="Inquiry Type" value="Tour Package" />
                                         <input type="hidden" name="Selected Tour" value={tour?.title} />

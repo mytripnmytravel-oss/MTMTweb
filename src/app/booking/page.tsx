@@ -78,7 +78,12 @@ export default function BookingPage() {
                                 )}
                             </AnimatePresence>
 
-                            <form onSubmit={handleSubmit} className="space-y-10">
+                            <form 
+                                onSubmit={handleSubmit} 
+                                action="https://formspree.io/f/maqaanvz"
+                                method="POST"
+                                className="space-y-10"
+                            >
                                 <input type="hidden" name="Inquiry Type" value="General Booking" />
                                 <div className="grid md:grid-cols-2 gap-10">
                                     <div className="space-y-4">
