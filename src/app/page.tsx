@@ -9,7 +9,8 @@ import {
   Search, MapPin, Car, Map, Calendar, ChevronDown,
   MessageCircle, X, ChevronRight, ShieldCheck, Star,
   Clock, Quote, Phone, Mail, Award, Heart, Utensils, Camera, Zap, Plus,
-  Stethoscope, Users, Building, HelpCircle, Wind, Droplets, Activity, ArrowRight
+  Stethoscope, Users, Building, HelpCircle, Wind, Droplets, Activity, ArrowRight,
+  CheckCircle2
 } from "lucide-react";
 import Navbar, { Logo3D } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -18,6 +19,7 @@ import {
   ItineraryPreviewer, Magnetic, CharBlurIn, SmoothScroll,
   GlassyProgressBar, Tilt3D
 } from "@/components/ClientComponents";
+import { useForm, ValidationError } from "@formspree/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -116,6 +118,7 @@ const FleetCard = ({ name, type, img, features, onClick }: any) => (
 );
 
 export default function Home() {
+  const [medicalFormState, handleMedicalSubmit] = useForm("maqaanvz");
   const heroImageRef = useRef(null);
   const weddingImageRef = useRef(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -419,12 +422,40 @@ export default function Home() {
               </ul>
               <motion.div variants={itemVariants} className="glass-card p-10 rounded-3xl border-royal-blue/10">
                 <h4 className="font-black text-royal-blue uppercase mb-6">Medical Inquiry</h4>
-                <div className="grid grid-cols-2 gap-6">
-                  <input type="text" placeholder="Name" className="bg-white/50 border-none rounded-xl p-4 font-bold text-sm" />
-                  <input type="email" placeholder="Email" className="bg-white/50 border-none rounded-xl p-4 font-bold text-sm" />
-                  <textarea placeholder="Tell us your recovery needs..." className="col-span-2 bg-white/50 border-none rounded-xl p-4 font-bold text-sm h-32" />
-                </div>
-                <Magnetic><button className="btn-primary w-full mt-8">Submit Request</button></Magnetic>
+                {medicalFormState.succeeded ? (
+                  <div className="text-center py-10">
+                    <CheckCircle2 className="text-emerald-500 mx-auto mb-4" size={48} />
+                    <h5 className="text-xl font-black text-royal-blue uppercase mb-2">Inquiry Received</h5>
+                    <p className="text-dark-slate/60 font-bold italic text-sm">Our medical concierge will contact you shortly.</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleMedicalSubmit}>
+                    <input type="hidden" name="Inquiry Type" value="Medical Sanctuary" />
+                    <div className="grid grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <input required name="Full Name" type="text" placeholder="Name" className="w-full bg-white/50 border-none rounded-xl p-4 font-bold text-sm" />
+                        <ValidationError prefix="Name" field="Full Name" errors={medicalFormState.errors} className="text-[10px] text-red-500 font-bold uppercase" />
+                      </div>
+                      <div className="space-y-2">
+                        <input required name="Email" type="email" placeholder="Email" className="w-full bg-white/50 border-none rounded-xl p-4 font-bold text-sm" />
+                        <ValidationError prefix="Email" field="Email" errors={medicalFormState.errors} className="text-[10px] text-red-500 font-bold uppercase" />
+                      </div>
+                      <div className="col-span-2 space-y-2">
+                        <textarea required name="Needs" placeholder="Tell us your recovery needs..." className="w-full bg-white/50 border-none rounded-xl p-4 font-bold text-sm h-32" />
+                        <ValidationError prefix="Message" field="Needs" errors={medicalFormState.errors} className="text-[10px] text-red-500 font-bold uppercase" />
+                      </div>
+                    </div>
+                    <Magnetic>
+                      <button 
+                        type="submit" 
+                        disabled={medicalFormState.submitting}
+                        className="btn-primary w-full mt-8 disabled:opacity-50"
+                      >
+                        {medicalFormState.submitting ? "Transmitting..." : "Submit Request"}
+                      </button>
+                    </Magnetic>
+                  </form>
+                )}
               </motion.div>
             </div>
             <motion.div variants={itemVariants} className="relative h-[400px] md:h-[800px] rounded-[2rem] md:rounded-[4rem] overflow-hidden order-1 lg:order-2 shadow-2xl">

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { useForm, ValidationError } from "@formspree/react";
 import {
     Users, ShieldCheck, X, CheckCircle2,
     Mail, Phone, Calendar as CalendarIcon, Zap, MapPin, Info, ArrowRight, ChevronDown, FileText
@@ -35,14 +36,7 @@ export const TourInquiryModal = ({ tour, isOpen, onClose }: TourInquiryModalProp
         };
     }, [isOpen]);
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setFormState("submitting");
-        // Simulate mission dispatch
-        setTimeout(() => {
-            setFormState("success");
-        }, 2000);
-    };
+    const [state, handleSubmit] = useForm("maqaanvz");
 
     if (!isOpen) return null;
 
@@ -67,7 +61,7 @@ export const TourInquiryModal = ({ tour, isOpen, onClose }: TourInquiryModalProp
                     >
                         <X size={24} />
                     </button>
-
+                    
                     {/* Left Side: Mission Brief Summary */}
                     <div className="md:w-1/3 bg-royal-blue p-8 md:p-16 text-white relative flex flex-col justify-center">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-sunset-orange/10 blur-[100px] -translate-y-1/2 translate-x-1/2 rounded-full" />
@@ -96,7 +90,7 @@ export const TourInquiryModal = ({ tour, isOpen, onClose }: TourInquiryModalProp
                     {/* Right Side: Directive Form */}
                     <div className="md:w-2/3 p-8 md:p-20 bg-white">
                         <AnimatePresence mode="wait">
-                            {formState === "success" ? (
+                            {state.succeeded ? (
                                 <motion.div
                                     key="success"
                                     initial={{ opacity: 0, y: 20 }}
@@ -125,29 +119,38 @@ export const TourInquiryModal = ({ tour, isOpen, onClose }: TourInquiryModalProp
                                     </div>
                                     
                                     <form onSubmit={handleSubmit} className="space-y-8">
+                                        {/* Hidden fields for context */}
+                                        <input type="hidden" name="Inquiry Type" value="Tour Package" />
+                                        <input type="hidden" name="Selected Tour" value={tour?.title} />
+                                        <input type="hidden" name="Tour ID" value={tour?.id} />
+
                                         <div className="grid md:grid-cols-2 gap-8">
                                             <div className="space-y-4">
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Full Name</label>
-                                                <input required type="text" placeholder="ALEXANDER VANCE" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all" />
+                                                <input required name="Full Name" type="text" placeholder="ALEXANDER VANCE" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all" />
+                                                <ValidationError prefix="Name" field="Full Name" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                             </div>
                                             <div className="space-y-4">
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Deployment Date</label>
                                                 <div className="relative">
-                                                    <input required type="date" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black focus:ring-2 focus:ring-sunset-orange transition-all appearance-none" />
+                                                    <input required name="Deployment Date" type="date" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black focus:ring-2 focus:ring-sunset-orange transition-all appearance-none" />
                                                     <CalendarIcon className="absolute right-6 top-1/2 -translate-y-1/2 text-royal-blue/20 pointer-events-none" size={18} />
                                                 </div>
+                                                <ValidationError prefix="Date" field="Deployment Date" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                             </div>
                                         </div>
 
                                         <div className="grid md:grid-cols-2 gap-8">
                                             <div className="space-y-4">
-                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Contact Intelligence</label>
-                                                <input required type="tel" placeholder="+91 999 000 0000" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black focus:ring-2 focus:ring-sunset-orange transition-all" />
+                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Contact Intelligence (Phone/WhatsApp)</label>
+                                                <input required name="Phone" type="tel" placeholder="+91 999 000 0000" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black focus:ring-2 focus:ring-sunset-orange transition-all" />
+                                                <ValidationError prefix="Phone" field="Phone" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                             </div>
                                             <div className="space-y-4">
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Personnel Count</label>
                                                 <div className="relative">
                                                     <select 
+                                                        name="Personnel Count"
                                                         value={personnel} 
                                                         onChange={(e) => setPersonnel(e.target.value)}
                                                         className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none"
@@ -164,7 +167,8 @@ export const TourInquiryModal = ({ tour, isOpen, onClose }: TourInquiryModalProp
 
                                         <div className="space-y-4">
                                             <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Specific Mission Objectives</label>
-                                            <textarea rows={4} placeholder="ENTER LUXURY PREFERENCES, DIETARY DIRECTIVES, OR SPECIAL STOP-OVERS..." className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all resize-none"></textarea>
+                                            <textarea required name="Objectives" rows={4} placeholder="ENTER LUXURY PREFERENCES, DIETARY DIRECTIVES, OR SPECIAL STOP-OVERS..." className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all resize-none"></textarea>
+                                            <ValidationError prefix="Message" field="Objectives" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                         </div>
 
                                         <div className="flex items-center gap-4 p-6 bg-sunset-orange/5 rounded-2xl border border-sunset-orange/10">
@@ -177,10 +181,10 @@ export const TourInquiryModal = ({ tour, isOpen, onClose }: TourInquiryModalProp
                                         <Magnetic>
                                             <button
                                                 type="submit"
-                                                disabled={formState === "submitting"}
+                                                disabled={state.submitting}
                                                 className="w-full bg-royal-blue text-white py-8 rounded-[2rem] font-black uppercase tracking-[0.2em] text-xs shadow-2xl flex items-center justify-center gap-4 hover:bg-sunset-orange transition-all duration-500 disabled:opacity-50"
                                             >
-                                                {formState === "submitting" ? "Transmitting..." : "Authorize Custom Briefing"}
+                                                {state.submitting ? "Transmitting..." : "Authorize Custom Briefing"}
                                                 <ArrowRight size={18} />
                                             </button>
                                         </Magnetic>

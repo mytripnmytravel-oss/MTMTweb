@@ -7,6 +7,7 @@ import {
     Users, Briefcase, ShieldCheck, X, CheckCircle2,
     Mail, Phone, Calendar as CalendarIcon, Clock, Zap, MapPin, Info, ArrowRight, ChevronDown, Car
 } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
 import { fleet, Vehicle } from "@/data/fleet";
 import { Magnetic } from "./ClientComponents";
 
@@ -18,6 +19,7 @@ interface FleetInquiryModalProps {
 
 interface CustomDropdownProps {
     label: string;
+    name: string;
     icon: any;
     value: any;
     options: any[];
@@ -27,11 +29,12 @@ interface CustomDropdownProps {
     setActiveDropdown: (id: string | null) => void;
 }
 
-const CustomDropdown = ({ label, icon: Icon, value, options, onSelect, id, activeDropdown, setActiveDropdown }: CustomDropdownProps) => {
+const CustomDropdown = ({ label, name, icon: Icon, value, options, onSelect, id, activeDropdown, setActiveDropdown }: CustomDropdownProps) => {
     const isActive = activeDropdown === id;
     
     return (
         <div className="space-y-4 relative">
+            <input type="hidden" name={name} value={typeof value === 'string' ? value : (value?.name || "")} />
             <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">{label}</label>
             <div className="relative">
                 <button
@@ -102,7 +105,6 @@ const CustomDropdown = ({ label, icon: Icon, value, options, onSelect, id, activ
 };
 
 export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: FleetInquiryModalProps) => {
-    const [formState, setFormState] = useState("idle"); // idle, submitting, success
     const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(initialVehicle);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
@@ -122,21 +124,14 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
         };
     }, [isOpen]);
 
+    const [state, handleSubmit] = useForm("maqaanvz");
+
     // Sync selected vehicle when initialVehicle changes (modal opens)
     React.useEffect(() => {
         if (initialVehicle) {
             setSelectedVehicle(initialVehicle);
         }
     }, [initialVehicle]);
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setFormState("submitting");
-        // Simulate email submission
-        setTimeout(() => {
-            setFormState("success");
-        }, 2000);
-    };
 
     if (!isOpen) return null;
 
@@ -197,7 +192,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                     {/* Right Side: Form */}
                     <div className="md:w-2/3 p-8 md:p-16 bg-white rounded-b-[3rem] md:rounded-b-none md:rounded-r-[3rem]">
                         <AnimatePresence mode="wait">
-                            {formState === "success" ? (
+                            {state.succeeded ? (
                                 <motion.div
                                     key="success"
                                     initial={{ opacity: 0, y: 20 }}
@@ -231,9 +226,13 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                     </div>
                                     
                                     <form onSubmit={handleSubmit} className="space-y-8">
+                                        {/* Hidden fields for context */}
+                                        <input type="hidden" name="Inquiry Type" value="Fleet Rental" />
+
                                         {/* Custom Fleet Dropdown */}
                                         <CustomDropdown 
                                             id="fleet"
+                                            name="Selected Vehicle"
                                             label="Selected Fleet Vehicle"
                                             icon={Car}
                                             value={currentVehicle}
@@ -248,16 +247,18 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                             <div className="space-y-4">
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Full Name</label>
                                                 <div className="relative">
-                                                    <input required type="text" placeholder="ALEXANDER VANCE" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
+                                                    <input required name="Full Name" type="text" placeholder="ALEXANDER VANCE" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
                                                     <Users className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20" size={18} />
                                                 </div>
+                                                <ValidationError prefix="Name" field="Full Name" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                             </div>
                                             <div className="space-y-4">
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Contact Intelligence (Phone)</label>
                                                 <div className="relative">
-                                                    <input required type="tel" placeholder="+91 999 000 0000" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
+                                                    <input required name="Phone" type="tel" placeholder="+91 999 000 0000" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
                                                     <Phone className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20" size={18} />
                                                 </div>
+                                                <ValidationError prefix="Phone" field="Phone" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                             </div>
                                         </div>
 
@@ -266,13 +267,15 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                             <div className="space-y-4">
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Email Terminal</label>
                                                 <div className="relative">
-                                                    <input required type="email" placeholder="VANCE@MISSION.COM" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
+                                                    <input required name="Email" type="email" placeholder="VANCE@MISSION.COM" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
                                                     <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20" size={18} />
                                                 </div>
+                                                <ValidationError prefix="Email" field="Email" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                             </div>
                                             
                                             <CustomDropdown 
                                                 id="passengers"
+                                                name="Personnel Count"
                                                 label="Passenger Manifest"
                                                 icon={Users}
                                                 value={passengers}
@@ -288,14 +291,14 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                             <div className="space-y-4 md:col-span-2">
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Deployment Vector (Pickup Location)</label>
                                                 <div className="relative">
-                                                    <input required type="text" placeholder="IGIA TERMINAL 3, NEW DELHI" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
+                                                    <input required name="Pickup Location" type="text" placeholder="IGIA TERMINAL 3, NEW DELHI" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
                                                     <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20" size={18} />
                                                 </div>
                                             </div>
                                             <div className="space-y-4">
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Pickup Time</label>
                                                 <div className="relative">
-                                                    <input required type="time" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black focus:ring-2 focus:ring-sunset-orange transition-all appearance-none pl-14" />
+                                                    <input required name="Pickup Time" type="time" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black focus:ring-2 focus:ring-sunset-orange transition-all appearance-none pl-14" />
                                                     <Clock className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20" size={18} />
                                                 </div>
                                             </div>
@@ -306,13 +309,14 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                             <div className="space-y-4">
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Commencement Date</label>
                                                 <div className="relative">
-                                                    <input required type="date" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none pl-14" />
+                                                    <input required name="Start Date" type="date" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none pl-14" />
                                                     <CalendarIcon className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20 pointer-events-none" size={18} />
                                                 </div>
                                             </div>
                                             
                                             <CustomDropdown 
                                                 id="duration"
+                                                name="Mission Duration"
                                                 label="Mission Duration"
                                                 icon={Zap}
                                                 value={duration}
@@ -326,9 +330,10 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         <div className="space-y-4">
                                             <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Specific Directives / Itinerary</label>
                                             <div className="relative">
-                                                <textarea rows={3} placeholder="ENTER EXTRA REQUIREMENTS OR MISSION DETAILS..." className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all resize-none pl-14"></textarea>
+                                                <textarea required name="Directives" rows={3} placeholder="ENTER EXTRA REQUIREMENTS OR MISSION DETAILS..." className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all resize-none pl-14"></textarea>
                                                 <Info className="absolute left-6 top-8 text-royal-blue/20" size={18} />
                                             </div>
+                                            <ValidationError prefix="Message" field="Directives" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                         </div>
 
                                         <div className="flex items-center gap-4 p-6 bg-sunset-orange/5 rounded-2xl border border-sunset-orange/10">
@@ -341,10 +346,10 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         <Magnetic>
                                             <button
                                                 type="submit"
-                                                disabled={formState === "submitting"}
+                                                disabled={state.submitting}
                                                 className="w-full md:w-auto bg-royal-blue text-white px-12 py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs shadow-2xl shadow-royal-blue/20 flex items-center justify-center gap-6 hover:bg-sunset-orange transition-all duration-500 disabled:opacity-50"
                                             >
-                                                {formState === "submitting" ? "TRANSMITTING TO HQ..." : "AUTHORIZE AVAILABILITY CHECK"}
+                                                {state.submitting ? "TRANSMITTING TO HQ..." : "AUTHORIZE AVAILABILITY CHECK"}
                                                 <ArrowRight />
                                             </button>
                                         </Magnetic>

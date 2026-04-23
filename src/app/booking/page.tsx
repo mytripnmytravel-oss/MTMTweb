@@ -6,18 +6,13 @@ import {
     Calendar, Users, MapPin, Phone, Mail, MessageCircle,
     ShieldCheck, Sparkles, Send, ArrowRight, Clock, Star
 } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SmoothScroll, Magnetic, CharBlurIn, Tilt3D } from "@/components/ClientComponents";
 
 export default function BookingPage() {
-    const [formState, setFormState] = useState("idle"); // idle, submitting, success
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setFormState("submitting");
-        setTimeout(() => setFormState("success"), 2000);
-    };
+    const [state, handleSubmit] = useForm("maqaanvz");
 
     return (
         <SmoothScroll>
@@ -62,7 +57,7 @@ export default function BookingPage() {
                         >
                             {/* Form Success Overlay */}
                             <AnimatePresence>
-                                {formState === "success" && (
+                                {state.succeeded && (
                                     <motion.div
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
@@ -74,7 +69,7 @@ export default function BookingPage() {
                                         <h3 className="text-4xl font-black text-white uppercase tracking-tighter mb-4">Protocol Initiated</h3>
                                         <p className="text-white/60 font-bold italic mb-10">Your directive has been received. A Lead Curator will contact you shortly.</p>
                                         <button
-                                            onClick={() => setFormState("idle")}
+                                            onClick={() => window.location.reload()}
                                             className="text-sunset-orange font-black uppercase tracking-widest text-xs underline decoration-2 underline-offset-8"
                                         >
                                             Return to Form
@@ -84,25 +79,29 @@ export default function BookingPage() {
                             </AnimatePresence>
 
                             <form onSubmit={handleSubmit} className="space-y-10">
+                                <input type="hidden" name="Inquiry Type" value="General Booking" />
                                 <div className="grid md:grid-cols-2 gap-10">
                                     <div className="space-y-4">
                                         <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Full Name</label>
-                                        <input required type="text" placeholder="ALEXANDER VANCE" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
+                                        <input required name="Full Name" type="text" placeholder="ALEXANDER VANCE" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
+                                        <ValidationError prefix="Name" field="Full Name" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                     </div>
                                     <div className="space-y-4">
                                         <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Email Address</label>
-                                        <input required type="email" placeholder="VANCE@MISSION.COM" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
+                                        <input required name="Email" type="email" placeholder="VANCE@MISSION.COM" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
+                                        <ValidationError prefix="Email" field="Email" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                     </div>
                                 </div>
 
                                 <div className="grid md:grid-cols-2 gap-10">
                                     <div className="space-y-4">
                                         <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Contact Number</label>
-                                        <input required type="tel" placeholder="+91 XXXXX XXXXX" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
+                                        <input required name="Phone" type="tel" placeholder="+91 XXXXX XXXXX" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
+                                        <ValidationError prefix="Phone" field="Phone" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                     </div>
                                     <div className="space-y-4">
                                         <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Service Required</label>
-                                        <select className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none cursor-pointer shadow-sm">
+                                        <select name="Service Required" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none cursor-pointer shadow-sm">
                                             <option>Tour Master Packages</option>
                                             <option>Elite Fleet Rental</option>
                                             <option>Medical Sanctuary</option>
@@ -113,7 +112,8 @@ export default function BookingPage() {
 
                                 <div className="space-y-4">
                                     <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Mission directives / Details</label>
-                                    <textarea rows={4} placeholder="DESCRIBE YOUR SPECIFIC REQUIREMENTS..." className="w-full bg-white border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all resize-none shadow-sm"></textarea>
+                                    <textarea required name="Directives" rows={4} placeholder="DESCRIBE YOUR SPECIFIC REQUIREMENTS..." className="w-full bg-white border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all resize-none shadow-sm"></textarea>
+                                    <ValidationError prefix="Message" field="Directives" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                 </div>
 
                                 <div className="flex items-center gap-4 p-6 bg-sunset-orange/5 rounded-2xl border border-sunset-orange/10">
@@ -126,10 +126,10 @@ export default function BookingPage() {
                                 <Magnetic>
                                     <button
                                         type="submit"
-                                        disabled={formState === "submitting"}
+                                        disabled={state.submitting}
                                         className="bg-royal-blue text-white px-16 py-8 rounded-2xl font-black uppercase tracking-[0.3em] text-sm shadow-2xl shadow-royal-blue/20 group flex items-center gap-6 hover:bg-sunset-orange transition-all duration-500 disabled:opacity-50"
                                     >
-                                        {formState === "submitting" ? "TRANSMITTING..." : "AUTHORIZE BOOKING"}
+                                        {state.submitting ? "TRANSMITTING..." : "AUTHORIZE BOOKING"}
                                         <ArrowRight className="group-hover:translate-x-3 transition-transform" />
                                     </button>
                                 </Magnetic>

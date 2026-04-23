@@ -107,10 +107,10 @@ export default function AboutPage() {
                         <div className="order-1 md:order-2 relative perspective-1000">
                              <div className="relative aspect-[4/5] glass-card p-4 rounded-3xl overflow-hidden transform md:rotate-y-[-10deg] md:rotate-x-[5deg]">
                                  <Image 
-                                    src="/about-story-inner.png" 
-                                    alt="The Eternal Heritage Protocol" 
+                                    src="/genesis-luxury.png" 
+                                    alt="Luxury Travel Experience in India - The Genesis of Luxury" 
                                     fill 
-                                    className="object-cover rounded-2xl filter contrast-125"
+                                    className="object-cover rounded-2xl"
                                  />
                                  <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/80 to-transparent" />
                                  <div className="absolute bottom-10 left-10 text-white">
