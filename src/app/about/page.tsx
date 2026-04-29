@@ -158,7 +158,9 @@ export default function AboutPage() {
                                 <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-1">Sarah Sahai</h3>
                                 <p className="text-sunset-orange text-[10px] font-black uppercase tracking-[0.4em] mb-3">Market Expansion & Partnerships</p>
                                 <p className="text-white/60 font-medium text-sm leading-relaxed">
-                                    Ms. Sarah Sahai is the Founder of MindWave, a wellness and mental health platform focused on emotional well-being and personal growth. With a strong background in client relations, branding, and international outreach, she brings a people-first approach to business development. She has travelled to over 25 countries, giving her a deep understanding of global cultures and traveler expectations. Currently based across the UK and UAE, she leads market expansion and partnerships with a focus on creating meaningful and high-quality experiences.
+                                    Ms. Sarah Sahai is associated with MyTripMyTravel, where she contributes to international market expansion, strategic partnerships, and global business development initiatives. With a strong foundation in client relations, branding, and cross-cultural engagement, she brings a refined, people-centric approach to building sustainable business relationships. Having travelled to over 25 countries, she possesses a nuanced understanding of global markets, cultural dynamics, and evolving traveler expectations. Operating across the UK and UAE, she plays a pivotal role in strengthening the company’s international presence and fostering high-value collaborations.
+                                    <br /><br />
+                                    She is also the Founder of MindWave, a wellness and mental health platform dedicated to emotional well-being and personal growth.
                                 </p>
                             </div>
                         </div>
