@@ -117,8 +117,13 @@ export function FaqAtomView({
             <section className="pt-60 pb-16 container mx-auto px-6">
                 <Crumbs trail={[{ label: "Home", href: "/" }, { label: "FAQ", href: "/faq" }, { label: topic.name, href: `/faq/${topic.slug}` }, { label: atom.q }]} />
                 <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">{topic.name}</h4>
-                <h1 className="text-3xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter leading-[0.95] mb-12">{atom.q}</h1>
-                <p className="text-2xl md:text-3xl font-black text-royal-blue leading-snug tracking-tight max-w-4xl mb-12">{atom.a}</p>
+                <h1 className="text-3xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter leading-[0.95] mb-10">{atom.q}</h1>
+                <p className="text-2xl md:text-3xl font-black text-royal-blue leading-snug tracking-tight max-w-4xl mb-8">{atom.a}</p>
+                <p className="text-base md:text-lg text-dark-slate/60 font-bold italic max-w-3xl mb-12 leading-relaxed">
+                    This answer is part of MyTripMyTravel&apos;s {topic.name} guidance — {topic.blurb} Every itinerary it
+                    references is private, chauffeured, escorted, and built bespoke; the answers below cover the rest of
+                    what travellers ask on this topic.
+                </p>
                 {atom.links && atom.links.length > 0 && (
                     <div className="flex flex-wrap gap-3">
                         {atom.links.map((l, i) => (
@@ -132,12 +137,16 @@ export function FaqAtomView({
 
             <section className="py-20 bg-royal-blue/5">
                 <div className="container mx-auto px-6">
-                    <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-8">More in {topic.name}</h4>
-                    <div className="grid sm:grid-cols-2 gap-4 max-w-5xl">
+                    <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-3">More in {topic.name}</h4>
+                    <p className="text-dark-slate/50 font-bold italic text-sm mb-10 max-w-2xl">The other answers in this topic, in full — so this page resolves the whole question, not just one.</p>
+                    <div className="grid md:grid-cols-2 gap-6 max-w-6xl">
                         {siblings.map((s) => (
-                            <Link key={s.slug} href={`/faq/${topic.slug}/${s.slug}`} className="glass-card rounded-3xl p-7 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all flex items-start gap-4">
-                                <HelpCircle className="text-sunset-orange shrink-0 mt-1" size={18} />
-                                <span className="font-black text-royal-blue uppercase tracking-tight text-base leading-tight group-hover:text-sunset-orange transition-colors">{s.q}</span>
+                            <Link key={s.slug} href={`/faq/${topic.slug}/${s.slug}`} className="block glass-card rounded-3xl p-8 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all">
+                                <div className="flex items-start gap-4 mb-4">
+                                    <HelpCircle className="text-sunset-orange shrink-0 mt-1" size={18} />
+                                    <h3 className="font-black text-royal-blue uppercase tracking-tight text-base leading-tight group-hover:text-sunset-orange transition-colors">{s.q}</h3>
+                                </div>
+                                <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed pl-9">{s.a}</p>
                             </Link>
                         ))}
                     </div>
