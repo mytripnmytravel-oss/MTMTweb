@@ -8,6 +8,11 @@ import { getAllVariantParams, variantHref } from "@/data/tourVariants";
 import { getAllWellnessPaths } from "@/data/wellness";
 import { getAllVehicleIds } from "@/data/fleet";
 import { getAllFleetCityParams } from "@/data/fleetCities";
+import { getAllFaqTopicParams, getAllFaqAtomParams } from "@/data/faq";
+import { SERVICE_LINES, getAllServiceCityParams } from "@/data/services";
+import { weddingCategories } from "@/data/weddings";
+import { corporateCategories } from "@/data/corporate";
+import { getAllGuideCityParams, getAllGuideParams } from "@/data/expertGuides";
 
 const now = new Date();
 
@@ -108,6 +113,47 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Fleet × city (local-SEO matrix)
     for (const { vehicle, city } of getAllFleetCityParams()) {
         urls.push(entry(`/fleet/${vehicle}/in/${city}`, 0.5, "monthly"));
+    }
+
+    // FAQ hub + topics + atoms (AIO-targeted)
+    urls.push(entry("/faq", 0.7, "monthly"));
+    for (const { topic } of getAllFaqTopicParams()) {
+        urls.push(entry(`/faq/${topic}`, 0.6, "monthly"));
+    }
+    for (const { topic, question } of getAllFaqAtomParams()) {
+        urls.push(entry(`/faq/${topic}/${question}`, 0.6, "monthly"));
+    }
+
+    // Services hub + line × city (local-SEO)
+    urls.push(entry("/services", 0.7, "monthly"));
+    for (const line of SERVICE_LINES) {
+        for (const { city } of getAllServiceCityParams()) {
+            urls.push(entry(`/services/${line.slug}/${city}`, 0.6, "monthly"));
+        }
+    }
+
+    // Weddings sub-cluster (category indexes + items)
+    for (const c of weddingCategories) {
+        urls.push(entry(`/weddings/${c.slug}`, 0.7, "monthly"));
+        for (const it of c.items) {
+            urls.push(entry(`/weddings/${c.slug}/${it.slug}`, 0.6, "monthly"));
+        }
+    }
+
+    // Corporate sub-cluster (category indexes + items)
+    for (const c of corporateCategories) {
+        urls.push(entry(`/corporate/${c.slug}`, 0.7, "monthly"));
+        for (const it of c.items) {
+            urls.push(entry(`/corporate/${c.slug}/${it.slug}`, 0.6, "monthly"));
+        }
+    }
+
+    // Expert Guides (city index + city × language)
+    for (const { city } of getAllGuideCityParams()) {
+        urls.push(entry(`/expert-guides/${city}`, 0.6, "monthly"));
+    }
+    for (const { city, language } of getAllGuideParams()) {
+        urls.push(entry(`/expert-guides/${city}/${language}`, 0.6, "monthly"));
     }
 
     return urls;

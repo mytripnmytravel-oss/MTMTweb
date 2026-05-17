@@ -98,9 +98,33 @@ export default function Navbar() {
                                 { label: "Ayurvedic Alchemy", href: "/wellness/ayurvedic" },
                                 { label: "Massage Therapy", href: "/wellness/massage" }
                             ]} />
-                            <NavItem title="Weddings" href="/weddings" />
+                            <NavItem title="Weddings" href="/weddings" items={[
+                                { label: "Venues", href: "/weddings/venues" },
+                                { label: "By Guest Count", href: "/weddings/by-guest-count" },
+                                { label: "Services", href: "/weddings/services" }
+                            ]} />
+                            <NavItem title="Corporate" href="/corporate" items={[
+                                { label: "By Team Size", href: "/corporate/by-team-size" },
+                                { label: "Event Types", href: "/corporate/events" }
+                            ]} />
+                            <NavItem title="Expert Guides" href="/expert-guides" items={[
+                                { label: "Delhi", href: "/expert-guides/delhi" },
+                                { label: "Agra", href: "/expert-guides/agra" },
+                                { label: "Jaipur", href: "/expert-guides/jaipur" },
+                                { label: "Udaipur", href: "/expert-guides/udaipur" }
+                            ]} />
                             <NavItem title="Blogs" href="/blog" />
-                            <NavItem title="Car Rental" href="/services/car-rental" />
+                            <NavItem title="Services" href="/services" items={[
+                                { label: "Chauffeured Car Rental", href: "/services/car-rental" },
+                                { label: "Airport Transfer", href: "/services" }
+                            ]} />
+                            <NavItem title="FAQ" href="/faq" items={[
+                                { label: "Golden Triangle", href: "/faq/golden-triangle" },
+                                { label: "Planning & Entry", href: "/faq/planning-and-visa" },
+                                { label: "Best Time", href: "/faq/best-time" },
+                                { label: "Safety & Health", href: "/faq/safety-and-health" },
+                                { label: "Booking & Payments", href: "/faq/booking-and-payments" }
+                            ]} />
                         </nav>
 
                         <div className="flex items-center gap-3 md:gap-6">
@@ -142,7 +166,10 @@ export default function Navbar() {
                         <Link onClick={() => setIsMobileMenuOpen(false)} href="/fleet" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">ELITE FLEET</Link>
                         <Link onClick={() => setIsMobileMenuOpen(false)} href="/wellness" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">MEDICAL SANCTUARY</Link>
                         <Link onClick={() => setIsMobileMenuOpen(false)} href="/blog" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">BLOGS</Link>
-                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/services/car-rental" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">CAR RENTAL</Link>
+                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/services" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">SERVICES</Link>
+                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/corporate" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">CORPORATE</Link>
+                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/expert-guides" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">EXPERT GUIDES</Link>
+                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/faq" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">FAQ</Link>
                         <div className="text-4xl font-black text-white hover:text-sunset-orange">WEDDINGS</div>
                         <Link href="/booking" onClick={() => setIsMobileMenuOpen(false)}>
                             <button className="bg-sunset-orange text-white px-12 py-5 font-black text-xl rounded-full mt-12">GET A QUOTE</button>

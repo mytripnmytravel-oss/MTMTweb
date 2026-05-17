@@ -69,7 +69,8 @@ export const Footer = () => {
                                 { label: 'Our Story & Team', href: '/about' },
                                 { label: 'The Methodology', href: '/methodology' },
                                 { label: 'Careers', href: '#' },
-                                { label: 'Blogs', href: '/blog' }
+                                { label: 'Blogs', href: '/blog' },
+                                { label: 'FAQ', href: '/faq' }
                             ].map((item) => (
                                 <li key={item.label}>
                                     <Link href={item.href} className="text-white/40 hover:text-sunset-orange font-black uppercase text-[10px] tracking-widest transition-all flex items-center gap-4 group/item">
@@ -106,6 +107,7 @@ export const Footer = () => {
                         <h4 className="font-black text-white/20 uppercase tracking-[0.5em] text-[10px] mb-10">The Ecosystem</h4>
                         <ul className="space-y-6">
                             {[
+                                { label: 'Ground Services', href: '/services' },
                                 { label: 'Elite Car Rental', href: '/services/car-rental' },
                                 { label: 'Tour Master Packages', href: '/tours/golden-triangle-all' },
                                 { label: 'Medical Sanctuary', href: '/wellness' },
