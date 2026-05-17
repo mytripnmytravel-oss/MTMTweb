@@ -85,12 +85,12 @@ export const Footer = () => {
                         <h4 className="font-black text-white/20 uppercase tracking-[0.5em] text-[10px] mb-10">Destinations</h4>
                         <ul className="space-y-6">
                             {[
-                                { label: 'Golden Triangle', href: '/tours/golden-triangle-all' },
-                                { label: 'Rajasthan Escapes', href: '/destinations/rajasthan' },
-                                { label: 'Kerala Backwaters', href: '/destinations/kerala' },
-                                { label: 'Himalayan Peaks', href: '/destinations/himalayas' },
-                                { label: 'Sikkim Silk Route', href: '/destinations/sikkim' },
-                                { label: 'Andaman Islands', href: '/destinations/andaman' }
+                                { label: 'Golden Triangle', href: '/destinations/region/golden-triangle' },
+                                { label: 'Rajasthan Escapes', href: '/destinations/region/rajasthan' },
+                                { label: 'Kerala Backwaters', href: '/destinations/region/kerala' },
+                                { label: 'Himalayan Peaks', href: '/destinations/region/himalayas' },
+                                { label: 'Sikkim Silk Route', href: '/destinations/region/sikkim' },
+                                { label: 'Andaman Islands', href: '/destinations/region/andaman' }
                             ].map((item) => (
                                 <li key={item.label}>
                                     <Link href={item.href} className="text-white/40 hover:text-sunset-orange font-black uppercase text-[10px] tracking-widest transition-all flex items-center gap-4 group/item">

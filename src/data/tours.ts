@@ -8,6 +8,8 @@ export interface Package {
     img: string;
     location: string;
     itinerary: { day: number; plan: string }[];
+    /** Optional explicit slug; if absent, derived from the title. */
+    slug?: string;
 }
 
 export const packages: Package[] = [
@@ -636,3 +638,49 @@ export const packages: Package[] = [
         ]
     }
 ];
+
+// ---- Slug layer + accessors ----
+
+export function slugify(input: string): string {
+    return input
+        .toLowerCase()
+        .replace(/\+/g, " plus ")
+        .replace(/&/g, " and ")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+}
+
+/** Canonical slug for a package (explicit slug wins, else derived from title). */
+export function packageSlug(pkg: Package): string {
+    return pkg.slug ?? slugify(pkg.title);
+}
+
+export function getAllPackageSlugs(): string[] {
+    return packages.map(packageSlug);
+}
+
+export function getPackageBySlug(slug: string): Package | undefined {
+    return packages.find((p) => packageSlug(p) === slug);
+}
+
+/** Resolve by canonical slug first, then fall back to legacy numeric id. */
+export function getPackageByIdOrSlug(param: string): Package | undefined {
+    const bySlug = getPackageBySlug(param);
+    if (bySlug) return bySlug;
+    const n = Number.parseInt(param, 10);
+    if (!Number.isNaN(n)) return packages.find((p) => p.id === n);
+    return undefined;
+}
+
+export function getRelatedPackages(pkg: Package, limit = 3): Package[] {
+    const sameLocation = packages.filter(
+        (p) => p.id !== pkg.id && p.location === pkg.location
+    );
+    const sameTheme = packages.filter(
+        (p) =>
+            p.id !== pkg.id &&
+            p.theme === pkg.theme &&
+            p.location !== pkg.location
+    );
+    return [...sameLocation, ...sameTheme].slice(0, limit);
+}

@@ -83,11 +83,12 @@ export default function Navbar() {
 
                         <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
                             <NavItem title="Destinations" href="/destinations" items={[
-                                { label: "Rajasthan", href: "/destinations/rajasthan" },
-                                { label: "Kerala", href: "/destinations/kerala" },
-                                { label: "Himalayas", href: "/destinations/himalayas" },
-                                { label: "Sikkim", href: "/destinations/sikkim" },
-                                { label: "Andaman", href: "/destinations/andaman" }
+                                { label: "Golden Triangle", href: "/destinations/region/golden-triangle" },
+                                { label: "Rajasthan", href: "/destinations/region/rajasthan" },
+                                { label: "Kerala", href: "/destinations/region/kerala" },
+                                { label: "Himalayas", href: "/destinations/region/himalayas" },
+                                { label: "Sikkim", href: "/destinations/region/sikkim" },
+                                { label: "Andaman", href: "/destinations/region/andaman" }
                             ]} />
                             <NavItem title="Tour Master Packages" href="/tours/golden-triangle-all" />
                             <NavItem title="Elite Fleet" href="/fleet" />

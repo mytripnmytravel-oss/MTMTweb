@@ -253,3 +253,45 @@ export const fleet: Vehicle[] = [
         priceRange: "₹₹₹"
     }
 ];
+
+// ---- Accessors + content helper ----
+
+export function getAllVehicleIds(): string[] {
+    return fleet.map((v) => v.id);
+}
+
+export function getVehicle(id: string): Vehicle | undefined {
+    return fleet.find((v) => v.id === id);
+}
+
+export function getRelatedVehicles(v: Vehicle, limit = 3): Vehicle[] {
+    const sameCategory = fleet.filter(
+        (x) => x.id !== v.id && x.category === v.category
+    );
+    const sameType = fleet.filter(
+        (x) => x.id !== v.id && x.type === v.type && x.category !== v.category
+    );
+    return [...sameCategory, ...sameType].slice(0, limit);
+}
+
+export interface VehicleContent {
+    answer: string;
+    intro: string[];
+    faqs: { q: string; a: string }[];
+}
+
+export function getVehicleContent(v: Vehicle): VehicleContent {
+    const answer = `The ${v.name} is a ${v.category.toLowerCase()}-tier ${v.type.toLowerCase()} in the MyTripMyTravel Elite Fleet, seating up to ${v.passengers} with space for ${v.luggage}. ${v.description} It is chauffeured, GPS-tracked, and available across the Golden Triangle and wider India circuits, with pricing in the ${v.priceRange} band.`;
+    const intro = [
+        `The ${v.name} sits in our ${v.category} tier — ${v.description}`,
+        `Every ${v.name} mission includes a vetted performance-chauffeur, live GPS telemetry, and pre-calculated fuel, tolls, and permits with zero surprise pricing. Configuration: ${v.features.join(", ")}.`,
+        `It pairs naturally with the Golden Triangle and Rajasthan circuits, and is the standard vehicle class for ${v.category === "Elite" ? "VIP, wedding-convoy, and executive missions" : v.category === "Premium" ? "family tours and the core Delhi–Agra–Jaipur arc" : "value-conscious and group logistics"}.`,
+    ];
+    const faqs = [
+        { q: `How many passengers does the ${v.name} seat?`, a: `The ${v.name} comfortably seats up to ${v.passengers} passengers with capacity for ${v.luggage}, plus the chauffeur.` },
+        { q: `Is the ${v.name} chauffeur-driven?`, a: `Yes — every ${v.name} is operated by a vetted performance-chauffeur with live GPS telemetry; self-drive is not offered.` },
+        { q: `What is included in the ${v.name} pricing?`, a: `Fuel, tolls, permits, and the chauffeur are pre-calculated into transparent ${v.priceRange}-band pricing — no hidden gate fees.` },
+        { q: `Can the ${v.name} be used for the full Golden Triangle?`, a: `Yes — it runs the complete Delhi–Agra–Jaipur arc and can be extended into Rajasthan, the Himalayas, or beyond.` },
+    ];
+    return { answer, intro, faqs };
+}
