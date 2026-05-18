@@ -68,6 +68,9 @@ export const Footer = () => {
                             {[
                                 { label: 'Our Story & Team', href: '/about' },
                                 { label: 'The Methodology', href: '/methodology' },
+                                { label: 'Protocol — Curation', href: '/methodology/intelligent-curation' },
+                                { label: 'Protocol — Activation', href: '/methodology/kinetic-activation' },
+                                { label: 'Protocol — Archiving', href: '/methodology/memory-archiving' },
                                 { label: 'Careers', href: '/careers' },
                                 { label: 'Blogs', href: '/blog' },
                                 { label: 'FAQ', href: '/faq' }

@@ -13,6 +13,7 @@ import { SERVICE_LINES, getAllServiceCityParams } from "@/data/services";
 import { weddingCategories } from "@/data/weddings";
 import { corporateCategories } from "@/data/corporate";
 import { diningCategories } from "@/data/heritageDining";
+import { getAllMethodologyParams } from "@/data/methodology";
 import { getAllGuideCityParams, getAllGuideParams } from "@/data/expertGuides";
 
 const now = new Date();
@@ -156,6 +157,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
     for (const { city, language } of getAllGuideParams()) {
         urls.push(entry(`/expert-guides/${city}/${language}`, 0.6, "monthly"));
+    }
+
+    // Methodology stages
+    for (const { stage } of getAllMethodologyParams()) {
+        urls.push(entry(`/methodology/${stage}`, 0.6, "monthly"));
     }
 
     // Heritage Dining sub-cluster (category indexes + items)
