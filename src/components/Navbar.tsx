@@ -81,7 +81,7 @@ export default function Navbar() {
 
                         <Logo3D isScrolled={isScrolled} />
 
-                        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
+                        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
                             <NavItem title="Destinations" href="/destinations" items={[
                                 { label: "Golden Triangle", href: "/destinations/region/golden-triangle" },
                                 { label: "Rajasthan", href: "/destinations/region/rajasthan" },
@@ -90,44 +90,28 @@ export default function Navbar() {
                                 { label: "Sikkim", href: "/destinations/region/sikkim" },
                                 { label: "Andaman", href: "/destinations/region/andaman" }
                             ]} />
-                            <NavItem title="Tour Master Packages" href="/tours/golden-triangle-all" />
-                            <NavItem title="Elite Fleet" href="/fleet" />
-                            <NavItem title="Medical Sanctuary" href="/wellness" items={[
-                                { label: "Yoga & Soul", href: "/wellness/yoga-soul" },
-                                { label: "Orthopedic Restoration", href: "/wellness/orthopedic" },
-                                { label: "Ayurvedic Alchemy", href: "/wellness/ayurvedic" },
-                                { label: "Massage Therapy", href: "/wellness/massage" }
+                            <NavItem title="Tours" href="/tours" items={[
+                                { label: "Tour Master Packages", href: "/tours/golden-triangle-all" },
+                                { label: "Golden Triangle Hub", href: "/tours/golden-triangle" },
+                                { label: "All Tours Archive", href: "/tours" }
                             ]} />
-                            <NavItem title="Weddings" href="/weddings" items={[
-                                { label: "Venues", href: "/weddings/venues" },
-                                { label: "By Guest Count", href: "/weddings/by-guest-count" },
-                                { label: "Services", href: "/weddings/services" }
+                            <NavItem title="Experiences" href="/wellness" items={[
+                                { label: "Medical Sanctuary", href: "/wellness" },
+                                { label: "Heritage Dining", href: "/heritage-dining" },
+                                { label: "Expert Guides", href: "/expert-guides" }
                             ]} />
-                            <NavItem title="Corporate" href="/corporate" items={[
-                                { label: "By Team Size", href: "/corporate/by-team-size" },
-                                { label: "Event Types", href: "/corporate/events" }
+                            <NavItem title="Occasions" href="/weddings" items={[
+                                { label: "Royal Weddings", href: "/weddings" },
+                                { label: "Corporate Missions", href: "/corporate" }
                             ]} />
-                            <NavItem title="Expert Guides" href="/expert-guides" items={[
-                                { label: "Delhi", href: "/expert-guides/delhi" },
-                                { label: "Agra", href: "/expert-guides/agra" },
-                                { label: "Jaipur", href: "/expert-guides/jaipur" },
-                                { label: "Udaipur", href: "/expert-guides/udaipur" }
+                            <NavItem title="Fleet & Services" href="/fleet" items={[
+                                { label: "Elite Fleet", href: "/fleet" },
+                                { label: "Ground Services", href: "/services" },
+                                { label: "Chauffeured Car Rental", href: "/services/car-rental" }
                             ]} />
-                            <NavItem title="Heritage Dining" href="/heritage-dining" items={[
-                                { label: "Experiences", href: "/heritage-dining/experiences" },
-                                { label: "Regional Cuisines", href: "/heritage-dining/cuisines" }
-                            ]} />
-                            <NavItem title="Blogs" href="/blog" />
-                            <NavItem title="Services" href="/services" items={[
-                                { label: "Chauffeured Car Rental", href: "/services/car-rental" },
-                                { label: "Airport Transfer", href: "/services" }
-                            ]} />
-                            <NavItem title="FAQ" href="/faq" items={[
-                                { label: "Golden Triangle", href: "/faq/golden-triangle" },
-                                { label: "Planning & Entry", href: "/faq/planning-and-visa" },
-                                { label: "Best Time", href: "/faq/best-time" },
-                                { label: "Safety & Health", href: "/faq/safety-and-health" },
-                                { label: "Booking & Payments", href: "/faq/booking-and-payments" }
+                            <NavItem title="Journal" href="/blog" items={[
+                                { label: "Blog", href: "/blog" },
+                                { label: "FAQ", href: "/faq" }
                             ]} />
                         </nav>
 
@@ -157,28 +141,41 @@ export default function Navbar() {
                         initial={{ opacity: 0, x: "100%" }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: "100%" }}
-                        className="fixed inset-0 z-[200] bg-royal-blue p-12 flex flex-col items-center justify-center text-center gap-8"
+                        className="fixed inset-0 z-[200] bg-royal-blue flex flex-col"
                     >
                         <button
-                            className="absolute top-8 right-8 text-white"
+                            className="absolute top-8 right-8 text-white z-10"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
-                            <X size={40} />
+                            <X size={36} />
                         </button>
-                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/destinations" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">DESTINATIONS</Link>
-                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/tours/golden-triangle-all" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">TOUR MASTER PACKAGES</Link>
-                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/fleet" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">ELITE FLEET</Link>
-                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/wellness" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">MEDICAL SANCTUARY</Link>
-                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/blog" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">BLOGS</Link>
-                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/services" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">SERVICES</Link>
-                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/corporate" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">CORPORATE</Link>
-                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/expert-guides" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">EXPERT GUIDES</Link>
-                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/heritage-dining" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">HERITAGE DINING</Link>
-                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/faq" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">FAQ</Link>
-                        <div className="text-4xl font-black text-white hover:text-sunset-orange">WEDDINGS</div>
-                        <Link href="/booking" onClick={() => setIsMobileMenuOpen(false)}>
-                            <button className="bg-sunset-orange text-white px-12 py-5 font-black text-xl rounded-full mt-12">GET A QUOTE</button>
-                        </Link>
+                        <div className="flex-1 overflow-y-auto overscroll-contain px-10 pt-24 pb-16 flex flex-col items-center text-center gap-6">
+                            {[
+                                { label: "DESTINATIONS", href: "/destinations" },
+                                { label: "TOURS", href: "/tours" },
+                                { label: "MEDICAL SANCTUARY", href: "/wellness" },
+                                { label: "HERITAGE DINING", href: "/heritage-dining" },
+                                { label: "EXPERT GUIDES", href: "/expert-guides" },
+                                { label: "WEDDINGS", href: "/weddings" },
+                                { label: "CORPORATE", href: "/corporate" },
+                                { label: "ELITE FLEET", href: "/fleet" },
+                                { label: "SERVICES", href: "/services" },
+                                { label: "BLOG", href: "/blog" },
+                                { label: "FAQ", href: "/faq" },
+                            ].map((m) => (
+                                <Link
+                                    key={m.href}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    href={m.href}
+                                    className="text-3xl sm:text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap"
+                                >
+                                    {m.label}
+                                </Link>
+                            ))}
+                            <Link href="/booking" onClick={() => setIsMobileMenuOpen(false)}>
+                                <button className="bg-sunset-orange text-white px-12 py-5 font-black text-xl rounded-full mt-8">GET A QUOTE</button>
+                            </Link>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

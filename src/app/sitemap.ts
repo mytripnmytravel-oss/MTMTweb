@@ -45,6 +45,7 @@ const STATIC_ROUTES: { path: string; priority: number }[] = [
     { path: "/services/car-rental", priority: 0.7 },
     { path: "/methodology", priority: 0.6 },
     { path: "/about", priority: 0.6 },
+    { path: "/careers", priority: 0.4 },
     { path: "/blog", priority: 0.6 },
     { path: "/booking", priority: 0.6 },
     { path: "/telemetry", priority: 0.4 },

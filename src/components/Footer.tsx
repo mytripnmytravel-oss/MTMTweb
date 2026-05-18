@@ -68,7 +68,7 @@ export const Footer = () => {
                             {[
                                 { label: 'Our Story & Team', href: '/about' },
                                 { label: 'The Methodology', href: '/methodology' },
-                                { label: 'Careers', href: '#' },
+                                { label: 'Careers', href: '/careers' },
                                 { label: 'Blogs', href: '/blog' },
                                 { label: 'FAQ', href: '/faq' }
                             ].map((item) => (
