@@ -113,6 +113,10 @@ export default function Navbar() {
                                 { label: "Jaipur", href: "/expert-guides/jaipur" },
                                 { label: "Udaipur", href: "/expert-guides/udaipur" }
                             ]} />
+                            <NavItem title="Heritage Dining" href="/heritage-dining" items={[
+                                { label: "Experiences", href: "/heritage-dining/experiences" },
+                                { label: "Regional Cuisines", href: "/heritage-dining/cuisines" }
+                            ]} />
                             <NavItem title="Blogs" href="/blog" />
                             <NavItem title="Services" href="/services" items={[
                                 { label: "Chauffeured Car Rental", href: "/services/car-rental" },
@@ -169,6 +173,7 @@ export default function Navbar() {
                         <Link onClick={() => setIsMobileMenuOpen(false)} href="/services" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">SERVICES</Link>
                         <Link onClick={() => setIsMobileMenuOpen(false)} href="/corporate" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">CORPORATE</Link>
                         <Link onClick={() => setIsMobileMenuOpen(false)} href="/expert-guides" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">EXPERT GUIDES</Link>
+                        <Link onClick={() => setIsMobileMenuOpen(false)} href="/heritage-dining" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">HERITAGE DINING</Link>
                         <Link onClick={() => setIsMobileMenuOpen(false)} href="/faq" className="text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap">FAQ</Link>
                         <div className="text-4xl font-black text-white hover:text-sunset-orange">WEDDINGS</div>
                         <Link href="/booking" onClick={() => setIsMobileMenuOpen(false)}>
