@@ -14,6 +14,7 @@ import { weddingCategories } from "@/data/weddings";
 import { corporateCategories } from "@/data/corporate";
 import { diningCategories } from "@/data/heritageDining";
 import { getAllMethodologyParams } from "@/data/methodology";
+import { getAllBlogSlugs } from "@/data/blog";
 import { getAllGuideCityParams, getAllGuideParams } from "@/data/expertGuides";
 
 const now = new Date();
@@ -162,6 +163,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Methodology stages
     for (const { stage } of getAllMethodologyParams()) {
         urls.push(entry(`/methodology/${stage}`, 0.6, "monthly"));
+    }
+
+    // Blog pillar posts
+    for (const slug of getAllBlogSlugs()) {
+        urls.push(entry(`/blog/${slug}`, 0.7, "monthly"));
     }
 
     // Heritage Dining sub-cluster (category indexes + items)
