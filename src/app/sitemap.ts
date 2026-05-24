@@ -100,6 +100,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         urls.push(entry(`/tours/${slug}`, 0.8, "weekly"));
     }
 
+    // Regional tour hubs (B2)
+    for (const r of ["rajasthan", "kerala", "himalayas", "sikkim", "andaman"]) {
+        urls.push(entry(`/tours/${r}`, 0.8, "weekly"));
+    }
+
     // Golden Triangle variant hub + slices
     urls.push(entry("/tours/golden-triangle", 0.8, "weekly"));
     for (const { dimension, value } of getAllVariantParams()) {

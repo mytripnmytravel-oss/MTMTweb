@@ -91,9 +91,14 @@ export default function Navbar() {
                                 { label: "Andaman", href: "/destinations/region/andaman" }
                             ]} />
                             <NavItem title="Tours" href="/tours" items={[
+                                { label: "All Tours Archive", href: "/tours" },
                                 { label: "Tour Master Packages", href: "/tours/golden-triangle-all" },
-                                { label: "Golden Triangle Hub", href: "/tours/golden-triangle" },
-                                { label: "All Tours Archive", href: "/tours" }
+                                { label: "Golden Triangle", href: "/tours/golden-triangle" },
+                                { label: "Rajasthan", href: "/tours/rajasthan" },
+                                { label: "Kerala", href: "/tours/kerala" },
+                                { label: "Himalayas", href: "/tours/himalayas" },
+                                { label: "Sikkim", href: "/tours/sikkim" },
+                                { label: "Andaman", href: "/tours/andaman" }
                             ]} />
                             <NavItem title="Experiences" href="/wellness" items={[
                                 { label: "Medical Sanctuary", href: "/wellness" },
