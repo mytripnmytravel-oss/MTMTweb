@@ -107,7 +107,8 @@ export default function Navbar() {
                             <NavItem title="Fleet & Services" href="/fleet" items={[
                                 { label: "Elite Fleet", href: "/fleet" },
                                 { label: "Ground Services", href: "/services" },
-                                { label: "Chauffeured Car Rental", href: "/services/car-rental" }
+                                { label: "Chauffeured Car Rental", href: "/services/car-rental" },
+                                { label: "Inter-City Transfers", href: "/services/inter-city" }
                             ]} />
                             <NavItem title="Journal" href="/blog" items={[
                                 { label: "Blog", href: "/blog" },

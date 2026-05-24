@@ -16,6 +16,7 @@ import { diningCategories } from "@/data/heritageDining";
 import { getAllMethodologyParams } from "@/data/methodology";
 import { getAllBlogSlugs } from "@/data/blog";
 import { getAllItineraryParams, getCityItineraryIndexParams } from "@/data/destinationItineraries";
+import { getAllRouteParams } from "@/data/transferRoutes";
 import { getAllGuideCityParams, getAllGuideParams } from "@/data/expertGuides";
 
 const now = new Date();
@@ -169,6 +170,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Blog pillar posts
     for (const slug of getAllBlogSlugs()) {
         urls.push(entry(`/blog/${slug}`, 0.7, "monthly"));
+    }
+
+    // Inter-city chauffeur transfers
+    urls.push(entry("/services/inter-city", 0.7, "monthly"));
+    for (const { route } of getAllRouteParams()) {
+        urls.push(entry(`/services/inter-city/${route}`, 0.7, "monthly"));
     }
 
     // Destination itineraries (city × duration)
