@@ -6,6 +6,7 @@ import { getAllMonumentParams, citiesWithMonuments } from "@/data/monuments";
 import { getAllPackageSlugs } from "@/data/tours";
 import { getAllVariantParams, variantHref } from "@/data/tourVariants";
 import { getAllWellnessPaths } from "@/data/wellness";
+import { WELLNESS_DURATIONS, PROGRAMME_LOCATIONS } from "@/data/wellnessFacets";
 import { getAllVehicleIds } from "@/data/fleet";
 import { getAllFleetCityParams } from "@/data/fleetCities";
 import { getAllFaqTopicParams, getAllFaqAtomParams } from "@/data/faq";
@@ -114,6 +115,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Wellness sub-variants
     for (const { programme, variant } of getAllWellnessPaths()) {
         urls.push(entry(`/wellness/${programme}/${variant}`, 0.7, "monthly"));
+    }
+
+    // Wellness duration + location facets (D3 + D4)
+    for (const prog of Object.keys(PROGRAMME_LOCATIONS)) {
+        for (const n of WELLNESS_DURATIONS) {
+            urls.push(entry(`/wellness/${prog}/duration/${n}-day`, 0.6, "monthly"));
+        }
+        for (const loc of PROGRAMME_LOCATIONS[prog]) {
+            urls.push(entry(`/wellness/${prog}/in/${loc}`, 0.6, "monthly"));
+        }
     }
 
     // Fleet vehicles
