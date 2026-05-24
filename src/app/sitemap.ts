@@ -11,6 +11,7 @@ import { getAllVehicleIds } from "@/data/fleet";
 import { getAllFleetCityParams } from "@/data/fleetCities";
 import { getAllFaqTopicParams, getAllFaqAtomParams } from "@/data/faq";
 import { SERVICE_LINES, getAllServiceCityParams } from "@/data/services";
+import { getAllServiceItemSlugs } from "@/data/serviceItems";
 import { weddingCategories } from "@/data/weddings";
 import { corporateCategories } from "@/data/corporate";
 import { diningCategories } from "@/data/heritageDining";
@@ -186,6 +187,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Blog pillar posts
     for (const slug of getAllBlogSlugs()) {
         urls.push(entry(`/blog/${slug}`, 0.7, "monthly"));
+    }
+
+    // Operational service items (E8)
+    for (const slug of getAllServiceItemSlugs()) {
+        urls.push(entry(`/services/${slug}`, 0.6, "monthly"));
     }
 
     // Inter-city chauffeur transfers
