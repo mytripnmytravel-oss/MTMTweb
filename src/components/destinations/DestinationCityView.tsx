@@ -272,6 +272,18 @@ export default function DestinationCityView({
                                 <ArrowRight size={18} className="text-sunset-orange shrink-0" />
                             </Link>
                         ))}
+                        <Link
+                            href={`/destinations/${dest.slug}/itinerary`}
+                            className="glass-card rounded-3xl p-8 border-sunset-orange/30 bg-sunset-orange/10 group hover:bg-sunset-orange/20 transition-all duration-500 flex items-center justify-between"
+                        >
+                            <div>
+                                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-2">{dest.name}</div>
+                                <span className="text-xl font-black uppercase tracking-tighter text-royal-blue group-hover:text-sunset-orange transition-colors">
+                                    Itineraries (3 / 5 / 7 / 10 / 14-day)
+                                </span>
+                            </div>
+                            <ArrowRight size={18} className="text-sunset-orange shrink-0" />
+                        </Link>
                     </div>
                 </section>
 
