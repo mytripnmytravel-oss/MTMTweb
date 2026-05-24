@@ -9,7 +9,9 @@ export type FacetSlug =
     | "things-to-do"
     | "how-to-reach"
     | "where-to-stay"
-    | "where-to-eat";
+    | "where-to-eat"
+    | "with-kids"
+    | "for-couples";
 
 export const FACET_SLUGS: FacetSlug[] = [
     "best-time-to-visit",
@@ -17,6 +19,8 @@ export const FACET_SLUGS: FacetSlug[] = [
     "how-to-reach",
     "where-to-stay",
     "where-to-eat",
+    "with-kids",
+    "for-couples",
 ];
 
 export const FACET_LABELS: Record<FacetSlug, string> = {
@@ -25,6 +29,8 @@ export const FACET_LABELS: Record<FacetSlug, string> = {
     "how-to-reach": "How to Reach",
     "where-to-stay": "Where to Stay",
     "where-to-eat": "Where to Eat",
+    "with-kids": "With Kids",
+    "for-couples": "For Couples",
 };
 
 export interface FacetBlock {
@@ -163,6 +169,76 @@ export function getFacetContent(
                     standardBlock,
                 ],
                 faqs: pickFaqs(dest.faqs, ["stay", "hotel", "palace", "camp", "resort", "night"], facet, dest),
+            };
+        }
+
+        case "with-kids": {
+            // Family-friendly things to do: exclude pure-adventure items
+            // that may have age/altitude restrictions.
+            const familyItems = dest.thingsToDo.filter((t) => t.category !== "Adventure");
+            const items = familyItems.length ? familyItems : dest.thingsToDo;
+            return {
+                facet,
+                label,
+                h1: `${dest.name} With Kids`,
+                answer: `${dest.name}, ${dest.state} can be done well with kids when the itinerary is paced for them rather than against them. The family-suited highlights are ${items.slice(0, 4).map((t) => t.name).join(", ")}, sequenced into shorter monument blocks, midday rest, and dining vetted for dietary and pace. The ${dest.bestTime.window} window is optimal for family pacing in ${dest.name}. MyTripMyTravel runs a family ${dest.name} mission with kid-appropriate timing, ground-floor accessible stays where useful, and escorted access that removes queue stress.`,
+                intro: `Travelling ${dest.name} with kids is a pacing problem more than a content problem. The monuments are real, the heat or altitude can be a real challenge, and the difference between a brilliant family day and a meltdown is timing — early starts, midday rest, vetted dining, and one big experience per day rather than three rushed ones. We design for that, not against it.`,
+                blocks: [
+                    {
+                        heading: "Family-suited highlights",
+                        body: items.map((t) => `${t.name}: ${t.blurb}`).join(" "),
+                    },
+                    {
+                        heading: "Pacing the day for kids",
+                        body: `In ${dest.name} we typically run one major sightseeing block in the cool morning hours, a midday rest at the stay (lunch + downtime + pool / read), and a softer afternoon stop or escorted walk before an early dinner. The ${dest.bestTime.window} window keeps temperatures workable; outside it the pacing tightens further. We do not run families on adult-circuit schedules.`,
+                    },
+                    {
+                        heading: "Stays, dining, and logistics",
+                        body: `Accommodation is chosen for connecting / family rooms, pool or garden, and ground-floor access where useful. Dining is vetted for hygiene and dietary needs (vegetarian, Jain, allergy) and planned in advance — no chance roadside stops. The chauffeured Elite Fleet seats parties comfortably, the chauffeur shadows movements, and the 24/7 desk is reachable for the inevitable small things.`,
+                    },
+                    {
+                        heading: "Safety, health, and what we plan around",
+                        body: `${dest.name} is safe with a vetted private operator handling navigation, vehicle staging, and crowd management. Bottled water, climate control, sunscreen, and basic first-aid are standard in the vehicle. For long-haul arrivals, the first day is treated as a recovery buffer rather than a sightseeing day.`,
+                    },
+                    standardBlock,
+                ],
+                faqs: pickFaqs(dest.faqs, ["kid", "famil", "child", "safe", "stay", "eat"], facet, dest),
+            };
+        }
+
+        case "for-couples": {
+            // Romantic / atmospheric register: lean on Heritage, Nature,
+            // Culture, Cuisine, Wellness over pure Adventure.
+            const romanticItems = dest.thingsToDo.filter((t) =>
+                ["Heritage", "Nature", "Culture", "Cuisine", "Wellness"].includes(t.category)
+            );
+            const items = romanticItems.length ? romanticItems : dest.thingsToDo;
+            return {
+                facet,
+                label,
+                h1: `${dest.name} For Couples`,
+                answer: `${dest.name}, ${dest.state} is a strong couples destination when the itinerary leans into the romantic register the city actually has — ${dest.tagline.toLowerCase()}. The signature couples moments are ${items.slice(0, 4).map((t) => t.name).join(", ")}, paired with intimate heritage dining and a slower pace than a family or sightseeing-heavy trip. The ${dest.bestTime.window} window is optimal. MyTripMyTravel curates ${dest.name} for couples with private vantages, sunset timing, and quiet luxury stays.`,
+                intro: `Travelling ${dest.name} as a couple is about what to skip as much as what to see. The signature moments — a dawn monument, a sunset rooftop, a private dinner — are what land; a third fort in a single day rarely does. We slow the itinerary deliberately, place you somewhere intimate rather than just expensive, and time the day around two or three real moments.`,
+                blocks: [
+                    {
+                        heading: "Signature couples moments",
+                        body: items.map((t) => `${t.name}: ${t.blurb}`).join(" "),
+                    },
+                    {
+                        heading: "Intimate stays",
+                        body: dest.whereToStay.map((s) => `${s.tier}: ${s.detail}`).join(" "),
+                    },
+                    {
+                        heading: "Private dining & the evening",
+                        body: `Dining for two in ${dest.name} is curated through our heritage-dining wing — private rooftop tables, courtyard settings, or palace-hotel rooms with the city framed against the evening. ${dest.whereToEat[0]?.detail ?? "Region-specific menus matched to the city's tradition."} The night is treated as the centrepiece, not a logistics afterthought.`,
+                    },
+                    {
+                        heading: "Pace and timing",
+                        body: `Couples trips reward slowness. We pace ${dest.name} with one major heritage block in the morning, a long lunch and downtime at the stay, and a curated evening — a sunset vantage and a private table. The ${dest.bestTime.window} window gives the cleanest light. ${factOf(dest, "Ideal stay") ?? "An unhurried multi-night stay"} sits more comfortably than a single-night sprint.`,
+                    },
+                    standardBlock,
+                ],
+                faqs: pickFaqs(dest.faqs, ["couple", "romantic", "honeymoon", "evening", "sunset", "stay", "private"], facet, dest),
             };
         }
 
