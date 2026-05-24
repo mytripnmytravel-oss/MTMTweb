@@ -14,6 +14,7 @@ import { SERVICE_LINES, getAllServiceCityParams } from "@/data/services";
 import { getAllServiceItemSlugs } from "@/data/serviceItems";
 import { weddingCategories } from "@/data/weddings";
 import { corporateCategories } from "@/data/corporate";
+import { getAllCorporateRouteParams } from "@/data/corporateRoutes";
 import { diningCategories } from "@/data/heritageDining";
 import { getAllMethodologyParams } from "@/data/methodology";
 import { getAllBlogSlugs } from "@/data/blog";
@@ -169,6 +170,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         for (const it of c.items) {
             urls.push(entry(`/corporate/${c.slug}/${it.slug}`, 0.6, "monthly"));
         }
+    }
+
+    // Corporate city-to-destination routes (F4)
+    for (const { route } of getAllCorporateRouteParams()) {
+        urls.push(entry(`/corporate/${route}`, 0.6, "monthly"));
     }
 
     // Expert Guides (city index + city × language)
