@@ -27,6 +27,7 @@ import { getAllBlogSlugs } from "@/data/blog";
 import { getAllItineraryParams, getCityItineraryIndexParams } from "@/data/destinationItineraries";
 import { getAllCityMonthParams } from "@/data/destinationMonths";
 import { getAllCityOriginParams } from "@/data/destinationOrigins";
+import { getAllMonumentOriginParams } from "@/data/monumentOrigins";
 import { getAllRouteParams } from "@/data/transferRoutes";
 import { getAllGuideCityParams, getAllGuideParams } from "@/data/expertGuides";
 
@@ -241,6 +242,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Destination × origin (C13) — 37 cities × 18 origins
     for (const { slug, origin } of getAllCityOriginParams()) {
         urls.push(entry(`/destinations/${slug}/from/${origin}`, 0.5, "monthly"));
+    }
+
+    // Monument × origin (C16) — 19 monuments × 18 origins
+    for (const { slug, monument, origin } of getAllMonumentOriginParams()) {
+        urls.push(entry(`/destinations/${slug}/monuments/${monument}/from/${origin}`, 0.5, "monthly"));
     }
 
     // Heritage Dining sub-cluster (category indexes + items)
