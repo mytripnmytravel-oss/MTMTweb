@@ -11,7 +11,14 @@ import {
     PROGRAMME_LOCATIONS,
     WELLNESS_DURATIONS,
 } from "@/data/wellnessFacets";
+import {
+    getMonthContent,
+    parseMonthSlug,
+    WELLNESS_MONTHS,
+} from "@/data/wellnessMonths";
 import WellnessFacetView from "@/components/wellness/WellnessFacetView";
+
+const titleCase = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
 // ---------- Duration ----------
 
@@ -184,6 +191,92 @@ export function WellnessLocationRoute({
                 content={content}
                 breadcrumbSegment={`in ${dest.name}`}
                 siblingsTitle="Other locations"
+                siblings={siblings}
+            />
+        </>
+    );
+}
+
+// ---------- Month ----------
+
+export async function wellnessMonthMetadata(
+    programmeSlug: string,
+    monthSlug: string
+): Promise<Metadata> {
+    const programme = getProgramme(programmeSlug);
+    const month = parseMonthSlug(monthSlug);
+    if (!programme || !month) return { title: "Not Found | MyTripMyTravel" };
+    const content = getMonthContent(programme, month);
+    const title = `${content.h1} | MyTripMyTravel`;
+    const description = content.answer.slice(0, 300);
+    const url = `${SITE_URL}/wellness/${programmeSlug}/month/${monthSlug}`;
+    return {
+        title,
+        description,
+        alternates: { canonical: url },
+        openGraph: { title, description, url, type: "article", images: [{ url: programme.heroImg }] },
+    };
+}
+
+export function WellnessMonthRoute({
+    programmeSlug,
+    monthSlug,
+}: {
+    programmeSlug: string;
+    monthSlug: string;
+}) {
+    const programme = getProgramme(programmeSlug);
+    const month = parseMonthSlug(monthSlug);
+    if (!programme || !month) notFound();
+
+    const content = getMonthContent(programme, month);
+    const url = `${SITE_URL}/wellness/${programmeSlug}/month/${monthSlug}`;
+    const monthLabel = titleCase(month);
+
+    const siblings = WELLNESS_MONTHS.filter((m) => m !== month).map((m) => ({
+        label: titleCase(m),
+        href: `/wellness/${programmeSlug}/month/${m}`,
+    }));
+
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                serviceType: `${programme.name} — ${monthLabel}`,
+                name: content.h1,
+                description: content.answer,
+                url,
+                provider: { "@type": "TravelAgency", name: "MyTripMyTravel", url: SITE_URL },
+            },
+            {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+                    { "@type": "ListItem", position: 2, name: "Wellness", item: `${SITE_URL}/wellness` },
+                    { "@type": "ListItem", position: 3, name: programme.name, item: `${SITE_URL}/wellness/${programmeSlug}` },
+                    { "@type": "ListItem", position: 4, name: monthLabel, item: url },
+                ],
+            },
+            {
+                "@type": "FAQPage",
+                mainEntity: content.faqs.map((f) => ({
+                    "@type": "Question",
+                    name: f.q,
+                    acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+            },
+        ],
+    };
+
+    return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <WellnessFacetView
+                programme={programme}
+                content={content}
+                breadcrumbSegment={monthLabel}
+                siblingsTitle="Other months"
                 siblings={siblings}
             />
         </>
