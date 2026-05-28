@@ -5,9 +5,16 @@
 
 import { packages, packageSlug, slugify, type Package } from "./tours";
 import { REGIONAL_HUBS } from "./tourHubs";
-import { ORIGINS, parseComboValue, comboValue, parseThemeFromValue, themeFromValue, type Origin } from "./tourVariants";
+import {
+    ORIGINS,
+    parseComboValue, comboValue,
+    parseThemeFromValue, themeFromValue,
+    parseDurationFromValue, durationFromValue,
+    parseMonthFromValue, monthFromValue,
+    type Origin,
+} from "./tourVariants";
 
-export type RegionVariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo" | "theme-from";
+export type RegionVariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo" | "theme-from" | "duration-from" | "month-from";
 
 export interface RegionVariantContent {
     regionSlug: string;
@@ -230,6 +237,21 @@ export function getRegionVariantParams(
             }
         }
     }
+    // Duration × from-origin — only where the duration has packages in the region.
+    for (const d of durations) {
+        const days = Number.parseInt(d, 10);
+        if (all.some((p) => dayCount(p) === days)) {
+            for (const o of ORIGINS) {
+                params.push({ dimension: "duration-from", value: durationFromValue(days, o.slug) });
+            }
+        }
+    }
+    // Month × from-origin — all months × all origins (regions operate year-round).
+    for (const m of MONTHS) {
+        for (const o of ORIGINS) {
+            params.push({ dimension: "month-from", value: monthFromValue(m, o.slug) });
+        }
+    }
     return params;
 }
 
@@ -333,6 +355,60 @@ export function resolveRegionVariant(
                 { q: `Is ${days} days enough for a ${theme} ${regionName} tour?`, a: days <= 5 ? `Compressed but workable — the headline ${theme.toLowerCase()} moments land. More days allow a less compressed pace.` : `Yes — a ${days}-day length covers the ${regionName} core comfortably with the ${theme.toLowerCase()} signature moments unhurried.` },
                 { q: `Can the ${days}-day ${theme} tour be customised?`, a: `Yes — every architecture is a starting frame, customisable while holding both the ${days}-day rhythm and the ${theme.toLowerCase()} character.` },
                 { q: `Is it private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access.` },
+            ],
+        };
+    }
+
+    if (dimension === "duration-from") {
+        const parsed = parseDurationFromValue(value);
+        if (!parsed) return null;
+        const { days, origin } = parsed;
+        const list = all.filter((p) => dayCount(p) === days);
+        if (!list.length) return null;
+        const gw = regionGateway(regionSlug, origin);
+        const shortHop = isShortHop(origin.flightBand);
+        return {
+            regionSlug,
+            regionName,
+            dimension: "duration-from",
+            value,
+            label: `${days}-Day from ${origin.city}`,
+            h1: `${days}-Day ${regionName} Tours from ${origin.city}`,
+            answer: `A ${days}-day ${regionName} tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured, escorted circuit run over ${days} days, beginning at ${gw.gateway}. Flight context: ${origin.flightBand}. ${origin.note} ${list.length} ${days}-day architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, each jet-lag-paced and fully customisable.`,
+            intro: `Travelling ${regionName} for ${days} days from ${origin.city} is the intersection of two decisions — the trip's length on the ground and how the ${origin.city} crossing is absorbed. ${gw.routingNote} The first day is sequenced around the ${shortHop ? "short crossing, with the circuit beginning almost immediately" : "long crossing, with a deliberate recovery buffer before the first major site"}. ${hub.blurb}`,
+            packages: list,
+            faqs: [
+                { q: `How long is the flight from ${origin.city} to ${regionName}?`, a: `${origin.flightBand}. The circuit begins at ${gw.gateway}; ${origin.note}` },
+                { q: `Is ${days} days enough for ${regionName} from ${origin.city}?`, a: days <= 5 ? `Compressed but workable. Factoring the ${origin.flightBand} crossing both ways, a longer arc is usually more comfortable.` : `Yes — ${days} days covers the ${regionName} core comfortably with the ${origin.flightBand} crossing factored in.` },
+                { q: `Do I need a visa from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
+                { q: `Is the tour private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access.` },
+            ],
+        };
+    }
+
+    if (dimension === "month-from") {
+        const parsed = parseMonthFromValue(value, MONTHS);
+        if (!parsed) return null;
+        const { month, origin } = parsed;
+        const n = monthNarrative(regionSlug, month);
+        const m = titleCase(month);
+        const gw = regionGateway(regionSlug, origin);
+        const shortHop = isShortHop(origin.flightBand);
+        return {
+            regionSlug,
+            regionName,
+            dimension: "month-from",
+            value,
+            label: `${m} from ${origin.city}`,
+            h1: `${regionName} Tours in ${m} from ${origin.city}`,
+            answer: `Travelling ${regionName} in ${m} from ${origin.city}, ${origin.country} combines the regional season's character with the ${origin.city} arrival window. ${n.answer} Flight context: ${origin.flightBand}. ${origin.note}`,
+            intro: `${n.intro} For ${origin.city} departures, ${origin.note} ${gw.routingNote} The first day is sequenced around the ${shortHop ? "short crossing — the circuit can begin almost immediately" : "long crossing — with a deliberate recovery buffer at the gateway stay"}.`,
+            packages: all,
+            faqs: [
+                { q: `Is ${m} a good time for ${regionName} from ${origin.city}?`, a: n.answer },
+                { q: `How long is the flight from ${origin.city}?`, a: `${origin.flightBand}. ${origin.note}` },
+                { q: `Do I need a visa from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
+                { q: `Is the tour private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access.` },
             ],
         };
     }
@@ -459,6 +535,36 @@ export function regionThemeFromLinks(regionSlug: string): { label: string; href:
             out.push({
                 label: `${t} · ${o.city}`,
                 href: regionVariantHref(regionSlug, "theme-from", themeFromValue(t, o.slug)),
+            });
+        }
+    }
+    return out;
+}
+
+export function regionDurationFromLinks(regionSlug: string): { label: string; href: string }[] {
+    const durations = regionDurations(regionSlug);
+    const all = regionPackages(regionSlug);
+    const out: { label: string; href: string }[] = [];
+    for (const d of durations) {
+        const days = Number.parseInt(d, 10);
+        if (!all.some((p) => dayCount(p) === days)) continue;
+        for (const o of ORIGINS) {
+            out.push({
+                label: `${days}-Day · ${o.city}`,
+                href: regionVariantHref(regionSlug, "duration-from", durationFromValue(days, o.slug)),
+            });
+        }
+    }
+    return out;
+}
+
+export function regionMonthFromLinks(regionSlug: string): { label: string; href: string }[] {
+    const out: { label: string; href: string }[] = [];
+    for (const m of MONTHS) {
+        for (const o of ORIGINS) {
+            out.push({
+                label: `${titleCase(m)} · ${o.city}`,
+                href: regionVariantHref(regionSlug, "month-from", monthFromValue(m, o.slug)),
             });
         }
     }

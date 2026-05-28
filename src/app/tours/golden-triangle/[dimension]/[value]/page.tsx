@@ -7,6 +7,8 @@ import {
     variantHref,
     comboValue,
     themeFromValue,
+    durationFromValue,
+    monthFromValue,
     gtPackages,
     GT_THEMES,
     GT_DURATIONS,
@@ -75,6 +77,29 @@ function siblingsFor(dimension: string): { label: string; href: string }[] {
                 for (const o of ORIGINS) {
                     out.push({ label: `${t} from ${o.city}`, href: variantHref("theme-from", themeFromValue(t, o.slug)) });
                 }
+            }
+        }
+        return out;
+    }
+    if (dimension === "duration-from") {
+        const gt = gtPackages();
+        const dayCount = (s: string) => Number.parseInt(s, 10) || 0;
+        const out: { label: string; href: string }[] = [];
+        for (const d of GT_DURATIONS) {
+            const days = Number.parseInt(d, 10);
+            if (gt.some((p) => dayCount(p.duration) === days)) {
+                for (const o of ORIGINS) {
+                    out.push({ label: `${days}-Day · ${o.city}`, href: variantHref("duration-from", durationFromValue(days, o.slug)) });
+                }
+            }
+        }
+        return out;
+    }
+    if (dimension === "month-from") {
+        const out: { label: string; href: string }[] = [];
+        for (const m of MONTHS) {
+            for (const o of ORIGINS) {
+                out.push({ label: `${titleCase(m)} · ${o.city}`, href: variantHref("month-from", monthFromValue(m, o.slug)) });
             }
         }
         return out;

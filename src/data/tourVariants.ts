@@ -4,7 +4,7 @@
 
 import { packages, packageSlug, slugify, type Package } from "./tours";
 
-export type VariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo" | "theme-from";
+export type VariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo" | "theme-from" | "duration-from" | "month-from";
 
 /**
  * Parse a combo value like "7-day-luxury" → { days: 7, theme: "Luxury" }.
@@ -44,6 +44,42 @@ export function parseThemeFromValue(value: string, themes: string[]): { theme: s
 
 export function themeFromValue(theme: string, originSlug: string): string {
     return `${slugify(theme)}-from-${originSlug}`;
+}
+
+/**
+ * Parse a duration-from value like "7-day-from-london" → { days: 7, origin: <Origin> }.
+ * Returns null on malformed input or unknown origin.
+ */
+export function parseDurationFromValue(value: string): { days: number; origin: Origin } | null {
+    const m = value.match(/^(\d+)-day-from-(.+)$/);
+    if (!m) return null;
+    const days = Number.parseInt(m[1], 10);
+    if (!days) return null;
+    const origin = ORIGINS.find((o) => o.slug === m[2]);
+    if (!origin) return null;
+    return { days, origin };
+}
+
+export function durationFromValue(days: number, originSlug: string): string {
+    return `${days}-day-from-${originSlug}`;
+}
+
+/**
+ * Parse a month-from value like "january-from-london" → { month, origin: <Origin> }.
+ */
+export function parseMonthFromValue(value: string, months: readonly string[]): { month: string; origin: Origin } | null {
+    const idx = value.indexOf("-from-");
+    if (idx < 0) return null;
+    const month = value.slice(0, idx);
+    if (!months.includes(month)) return null;
+    const originSlug = value.slice(idx + "-from-".length);
+    const origin = ORIGINS.find((o) => o.slug === originSlug);
+    if (!origin) return null;
+    return { month, origin };
+}
+
+export function monthFromValue(month: string, originSlug: string): string {
+    return `${month}-from-${originSlug}`;
 }
 
 export interface VariantContent {
@@ -257,6 +293,55 @@ export function resolveVariant(
         };
     }
 
+    if (dimension === "duration-from") {
+        const parsed = parseDurationFromValue(value);
+        if (!parsed) return null;
+        const { days, origin } = parsed;
+        const list = gt.filter((p) => dayCount(p) === days);
+        if (!list.length) return null;
+        const shortHop = /\b(3\.5|4 hrs|5\.5|6 hrs)\b/.test(origin.flightBand);
+        return {
+            dimension: "duration-from",
+            value,
+            label: `${days}-Day from ${origin.city}`,
+            h1: `${days}-Day Golden Triangle Tours from ${origin.city}`,
+            answer: `A ${days}-day Golden Triangle tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured Delhi–Agra–Jaipur circuit run over ${days} days, beginning at Delhi (DEL). Flight context: ${origin.flightBand}. ${origin.note} ${list.length} ${days}-day architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, each escorted, jet-lag-paced, and fully customisable.`,
+            intro: `Travelling the ${days}-day Golden Triangle from ${origin.city} is the intersection of two decisions — how long the trip lasts on the ground, and how the crossing from ${origin.city} is absorbed into it. ${origin.note} The first day is sequenced around the ${shortHop ? "short crossing, with the circuit beginning almost immediately" : "long crossing, with a deliberate recovery buffer before the first monument"}. The Delhi–Agra–Jaipur core is paced for the ${days}-day rhythm — ${days <= 3 ? "compressed to the headline experiences" : days <= 5 ? "the balanced canonical arc with slower days built in" : "the unhurried deeper reading with optional extension"}. Each architecture below is a starting frame, customisable to your party.`,
+            packages: list,
+            faqs: [
+                { q: `How long is the flight from ${origin.city} to the Golden Triangle?`, a: `${origin.flightBand}. The circuit begins at Delhi (DEL); ${origin.note}` },
+                { q: `Is ${days} days enough coming from ${origin.city}?`, a: days <= 3 ? `Three days is compressed but workable — the headline experiences land. Factoring the ${origin.flightBand} crossing in both directions, a longer arc is usually more comfortable.` : `Yes — ${days} days covers the Golden Triangle core comfortably with the ${origin.flightBand} crossing factored in.` },
+                { q: `Do I need a visa to travel from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; requirements vary by passport. Our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
+                { q: `Can the ${days}-day tour be customised?`, a: `Yes — every architecture is a starting frame. Hotels, inclusions, and the exact day split are tuned to your party while the ${days}-day rhythm is held.` },
+                { q: `Is the tour private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted monument access.` },
+            ],
+        };
+    }
+
+    if (dimension === "month-from") {
+        const parsed = parseMonthFromValue(value, MONTHS);
+        if (!parsed) return null;
+        const { month, origin } = parsed;
+        const n = monthNarrative(month);
+        const m = titleCase(month);
+        const shortHop = /\b(3\.5|4 hrs|5\.5|6 hrs)\b/.test(origin.flightBand);
+        return {
+            dimension: "month-from",
+            value,
+            label: `${m} from ${origin.city}`,
+            h1: `Golden Triangle Tours in ${m} from ${origin.city}`,
+            answer: `Travelling the Golden Triangle in ${m} from ${origin.city}, ${origin.country} combines the regional season's character with the ${origin.city} arrival window. ${n.answer} Flight context: ${origin.flightBand}. ${origin.note}`,
+            intro: `${n.intro} For ${origin.city} departures, ${origin.note} The first day is sequenced around the ${shortHop ? "short crossing — Delhi (DEL) → Old Delhi orientation possible on arrival day" : "long crossing — a deliberate recovery buffer at a Delhi (DEL) heritage stay"} before the Taj sunrise window opens on day two.`,
+            packages: gt,
+            faqs: [
+                { q: `Is ${m} a good time for the Golden Triangle from ${origin.city}?`, a: n.answer },
+                { q: `How long is the flight from ${origin.city}?`, a: `${origin.flightBand}. ${origin.note}` },
+                { q: `Do I need a visa from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
+                { q: `Is the ${m} Golden Triangle from ${origin.city} private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted monument access.` },
+            ],
+        };
+    }
+
     if (dimension === "theme-from") {
         const parsed = parseThemeFromValue(value, GT_THEMES);
         if (!parsed) return null;
@@ -327,6 +412,21 @@ export function getAllVariantParams(): { dimension: string; value: string }[] {
             for (const o of ORIGINS) {
                 params.push({ dimension: "theme-from", value: themeFromValue(t, o.slug) });
             }
+        }
+    }
+    // Duration × from-origin — only where the duration has packages in GT.
+    for (const d of GT_DURATIONS) {
+        const days = Number.parseInt(d, 10);
+        if (gt.some((p) => dayCount(p) === days)) {
+            for (const o of ORIGINS) {
+                params.push({ dimension: "duration-from", value: durationFromValue(days, o.slug) });
+            }
+        }
+    }
+    // Month × from-origin — every month combinator (GT runs year-round).
+    for (const m of MONTHS) {
+        for (const o of ORIGINS) {
+            params.push({ dimension: "month-from", value: monthFromValue(m, o.slug) });
         }
     }
     return params;
