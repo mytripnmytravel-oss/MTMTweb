@@ -13,6 +13,7 @@ import {
 import { getAllWellnessPaths } from "@/data/wellness";
 import { WELLNESS_DURATIONS, PROGRAMME_LOCATIONS } from "@/data/wellnessFacets";
 import { WELLNESS_MONTHS } from "@/data/wellnessMonths";
+import { getAllWellnessOriginParams } from "@/data/wellnessOrigins";
 import { getAllVehicleIds } from "@/data/fleet";
 import { getAllFleetCityParams } from "@/data/fleetCities";
 import { getAllFaqTopicParams, getAllFaqAtomParams } from "@/data/faq";
@@ -143,10 +144,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         for (const loc of PROGRAMME_LOCATIONS[prog]) {
             urls.push(entry(`/wellness/${prog}/in/${loc}`, 0.6, "monthly"));
         }
-        // Wellness × month (D5)
+        // Wellness × month (D5 by-month)
         for (const m of WELLNESS_MONTHS) {
             urls.push(entry(`/wellness/${prog}/month/${m}`, 0.6, "monthly"));
         }
+    }
+    // Wellness × from-origin (D5 grid spec)
+    for (const { programme, origin } of getAllWellnessOriginParams()) {
+        urls.push(entry(`/wellness/${programme}/from/${origin}`, 0.5, "monthly"));
     }
 
     // Fleet vehicles
