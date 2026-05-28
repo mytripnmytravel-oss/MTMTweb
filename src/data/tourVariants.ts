@@ -4,7 +4,10 @@
 
 import { packages, packageSlug, slugify, type Package } from "./tours";
 
-export type VariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo" | "theme-from" | "duration-from" | "month-from";
+export type VariantDimension =
+    | "by-theme" | "by-duration" | "in-month" | "from-origin"
+    | "combo" | "theme-from" | "duration-from" | "month-from"
+    | "theme-month" | "duration-month";
 
 /**
  * Parse a combo value like "7-day-luxury" → { days: 7, theme: "Luxury" }.
@@ -80,6 +83,34 @@ export function parseMonthFromValue(value: string, months: readonly string[]): {
 
 export function monthFromValue(month: string, originSlug: string): string {
     return `${month}-from-${originSlug}`;
+}
+
+/** Parse a theme-month value like "luxury-in-november" → { theme, month }. */
+export function parseThemeMonthValue(value: string, themes: string[], months: readonly string[]): { theme: string; month: string } | null {
+    const idx = value.indexOf("-in-");
+    if (idx < 0) return null;
+    const themeSlug = value.slice(0, idx);
+    const month = value.slice(idx + "-in-".length);
+    const theme = themes.find((t) => slugify(t) === themeSlug);
+    if (!theme || !months.includes(month)) return null;
+    return { theme, month };
+}
+
+export function themeMonthValue(theme: string, month: string): string {
+    return `${slugify(theme)}-in-${month}`;
+}
+
+/** Parse a duration-month value like "7-day-in-november" → { days, month }. */
+export function parseDurationMonthValue(value: string, months: readonly string[]): { days: number; month: string } | null {
+    const m = value.match(/^(\d+)-day-in-(.+)$/);
+    if (!m) return null;
+    const days = Number.parseInt(m[1], 10);
+    if (!days || !months.includes(m[2])) return null;
+    return { days, month: m[2] };
+}
+
+export function durationMonthValue(days: number, month: string): string {
+    return `${days}-day-in-${month}`;
 }
 
 export interface VariantContent {
@@ -293,6 +324,56 @@ export function resolveVariant(
         };
     }
 
+    if (dimension === "theme-month") {
+        const parsed = parseThemeMonthValue(value, GT_THEMES, MONTHS);
+        if (!parsed) return null;
+        const { theme, month } = parsed;
+        const list = gt.filter((p) => p.theme === theme);
+        if (!list.length) return null;
+        const n = monthNarrative(month);
+        const m = titleCase(month);
+        return {
+            dimension: "theme-month",
+            value,
+            label: `${theme} in ${m}`,
+            h1: `${theme} Golden Triangle Tours in ${m}`,
+            answer: `A ${theme.toLowerCase()} Golden Triangle tour in ${m} combines a specific experiential register with the regional season's character. ${n.answer.split(".").slice(0, 2).join(".")}. ${list.length} ${theme.toLowerCase()} architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, each operated on the GPS-tracked Elite Fleet protocol.`,
+            intro: `${n.intro} For the ${theme.toLowerCase()} reading specifically, the pacing, stays, dining, and access slots are reweighted to a ${theme.toLowerCase()} register. The Delhi–Agra–Jaipur core is preserved; what changes is the priority on each leg, refined to your party during planning.`,
+            packages: list,
+            faqs: [
+                { q: `Is ${m} a good time for a ${theme} Golden Triangle?`, a: n.answer },
+                { q: `What makes a ${theme} Golden Triangle different in ${m}?`, a: `The ${theme.toLowerCase()} register holds; ${m}'s climate and crowd profile shape the day-pacing, the stays, and the access strategy. Together: a coherent ${m} ${theme.toLowerCase()} reading rather than two separate variables.` },
+                { q: `Can the ${theme} ${m} tour be customised?`, a: `Yes — every architecture is a starting frame, customisable while holding both the ${theme.toLowerCase()} character and the ${m} pacing requirements.` },
+                { q: `Is it private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access.` },
+            ],
+        };
+    }
+
+    if (dimension === "duration-month") {
+        const parsed = parseDurationMonthValue(value, MONTHS);
+        if (!parsed) return null;
+        const { days, month } = parsed;
+        const list = gt.filter((p) => dayCount(p) === days);
+        if (!list.length) return null;
+        const n = monthNarrative(month);
+        const m = titleCase(month);
+        return {
+            dimension: "duration-month",
+            value,
+            label: `${days}-Day in ${m}`,
+            h1: `${days}-Day Golden Triangle Tours in ${m}`,
+            answer: `A ${days}-day Golden Triangle tour in ${m} pairs a specific length with the regional season's character. ${n.answer.split(".").slice(0, 2).join(".")}. ${list.length} ${days}-day architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, paced for the ${m} conditions rather than against them.`,
+            intro: `${n.intro} A ${days}-day window is ${days <= 3 ? "compressed — the headline experiences sequenced for prime hours within ${m}'s constraints" : days <= 5 ? "the balanced canonical arc, paced for ${m}" : "an unhurried reading with the slow days the ${m} pacing rewards"}. Every architecture below is a foundation, refined to your party.`,
+            packages: list,
+            faqs: [
+                { q: `Is ${days} days enough for the Golden Triangle in ${m}?`, a: days <= 3 ? `Three days is compressed but workable in ${m}; longer is more comfortable.` : `Yes — ${days} days covers the Golden Triangle core comfortably in ${m}'s conditions.` },
+                { q: `What's the weather in ${m} for a ${days}-day tour?`, a: n.answer },
+                { q: `Can the ${days}-day ${m} tour be extended?`, a: `Yes — the architecture is modular. Extension into Rajasthan or the Himalayas is straightforward.` },
+                { q: `Is it private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet.` },
+            ],
+        };
+    }
+
     if (dimension === "duration-from") {
         const parsed = parseDurationFromValue(value);
         if (!parsed) return null;
@@ -427,6 +508,23 @@ export function getAllVariantParams(): { dimension: string; value: string }[] {
     for (const m of MONTHS) {
         for (const o of ORIGINS) {
             params.push({ dimension: "month-from", value: monthFromValue(m, o.slug) });
+        }
+    }
+    // Theme × month — only where the theme has GT packages.
+    for (const t of GT_THEMES) {
+        if (gt.some((p) => p.theme === t)) {
+            for (const m of MONTHS) {
+                params.push({ dimension: "theme-month", value: themeMonthValue(t, m) });
+            }
+        }
+    }
+    // Duration × month — only where the duration has GT packages.
+    for (const d of GT_DURATIONS) {
+        const days = Number.parseInt(d, 10);
+        if (gt.some((p) => dayCount(p) === days)) {
+            for (const m of MONTHS) {
+                params.push({ dimension: "duration-month", value: durationMonthValue(days, m) });
+            }
         }
     }
     return params;

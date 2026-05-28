@@ -11,10 +11,15 @@ import {
     parseThemeFromValue, themeFromValue,
     parseDurationFromValue, durationFromValue,
     parseMonthFromValue, monthFromValue,
+    parseThemeMonthValue, themeMonthValue,
+    parseDurationMonthValue, durationMonthValue,
     type Origin,
 } from "./tourVariants";
 
-export type RegionVariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo" | "theme-from" | "duration-from" | "month-from";
+export type RegionVariantDimension =
+    | "by-theme" | "by-duration" | "in-month" | "from-origin"
+    | "combo" | "theme-from" | "duration-from" | "month-from"
+    | "theme-month" | "duration-month";
 
 export interface RegionVariantContent {
     regionSlug: string;
@@ -252,6 +257,21 @@ export function getRegionVariantParams(
             params.push({ dimension: "month-from", value: monthFromValue(m, o.slug) });
         }
     }
+    // Theme × month
+    for (const t of themes) {
+        if (!all.some((p) => p.theme === t)) continue;
+        for (const m of MONTHS) {
+            params.push({ dimension: "theme-month", value: themeMonthValue(t, m) });
+        }
+    }
+    // Duration × month
+    for (const d of durations) {
+        const days = Number.parseInt(d, 10);
+        if (!all.some((p) => dayCount(p) === days)) continue;
+        for (const m of MONTHS) {
+            params.push({ dimension: "duration-month", value: durationMonthValue(days, m) });
+        }
+    }
     return params;
 }
 
@@ -355,6 +375,60 @@ export function resolveRegionVariant(
                 { q: `Is ${days} days enough for a ${theme} ${regionName} tour?`, a: days <= 5 ? `Compressed but workable — the headline ${theme.toLowerCase()} moments land. More days allow a less compressed pace.` : `Yes — a ${days}-day length covers the ${regionName} core comfortably with the ${theme.toLowerCase()} signature moments unhurried.` },
                 { q: `Can the ${days}-day ${theme} tour be customised?`, a: `Yes — every architecture is a starting frame, customisable while holding both the ${days}-day rhythm and the ${theme.toLowerCase()} character.` },
                 { q: `Is it private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access.` },
+            ],
+        };
+    }
+
+    if (dimension === "theme-month") {
+        const themes = regionThemes(regionSlug);
+        const parsed = parseThemeMonthValue(value, themes, MONTHS);
+        if (!parsed) return null;
+        const { theme, month } = parsed;
+        const list = all.filter((p) => p.theme === theme);
+        if (!list.length) return null;
+        const n = monthNarrative(regionSlug, month);
+        const m = titleCase(month);
+        return {
+            regionSlug,
+            regionName,
+            dimension: "theme-month",
+            value,
+            label: `${theme} in ${m}`,
+            h1: `${theme} ${regionName} Tours in ${m}`,
+            answer: `A ${theme.toLowerCase()} ${regionName} tour in ${m} combines a specific experiential register with the regional season's character. ${n.answer.split(".").slice(0, 2).join(".")}. ${list.length} ${theme.toLowerCase()} architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, customisable while holding the ${theme.toLowerCase()} character through ${m}'s pacing.`,
+            intro: `${n.intro} The ${theme.toLowerCase()} register holds; ${m}'s climate and crowd profile shape the day-pacing, the stays, and the access strategy. ${hub.blurb}`,
+            packages: list,
+            faqs: [
+                { q: `Is ${m} a good time for a ${theme} ${regionName} tour?`, a: n.answer },
+                { q: `What makes a ${theme} ${regionName} different in ${m}?`, a: `The ${theme.toLowerCase()} register holds; ${m}'s climate shapes the day-pacing, stays, and access strategy.` },
+                { q: `Can the ${theme} ${m} tour be customised?`, a: `Yes — every architecture is a starting frame.` },
+                { q: `Is it private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet.` },
+            ],
+        };
+    }
+
+    if (dimension === "duration-month") {
+        const parsed = parseDurationMonthValue(value, MONTHS);
+        if (!parsed) return null;
+        const { days, month } = parsed;
+        const list = all.filter((p) => dayCount(p) === days);
+        if (!list.length) return null;
+        const n = monthNarrative(regionSlug, month);
+        const m = titleCase(month);
+        return {
+            regionSlug,
+            regionName,
+            dimension: "duration-month",
+            value,
+            label: `${days}-Day in ${m}`,
+            h1: `${days}-Day ${regionName} Tours in ${m}`,
+            answer: `A ${days}-day ${regionName} tour in ${m} pairs a specific length with the regional season's character. ${n.answer.split(".").slice(0, 2).join(".")}. ${list.length} ${days}-day architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, paced for ${m}'s conditions.`,
+            intro: `${n.intro} A ${days}-day window in ${m} is ${days <= 5 ? "compressed — headline experiences sequenced for the conditions" : "the balanced reading paced for the season"}. ${hub.blurb}`,
+            packages: list,
+            faqs: [
+                { q: `Is ${days} days enough for ${regionName} in ${m}?`, a: days <= 5 ? `Compressed but workable in ${m}; longer is more comfortable.` : `Yes — ${days} days covers ${regionName} comfortably in ${m}.` },
+                { q: `What's ${m} like for a ${days}-day ${regionName} tour?`, a: n.answer },
+                { q: `Is it private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet.` },
             ],
         };
     }
