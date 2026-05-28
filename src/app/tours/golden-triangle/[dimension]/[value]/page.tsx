@@ -5,6 +5,8 @@ import {
     resolveVariant,
     getAllVariantParams,
     variantHref,
+    comboValue,
+    gtPackages,
     GT_THEMES,
     GT_DURATIONS,
     MONTHS,
@@ -49,6 +51,20 @@ function siblingsFor(dimension: string): { label: string; href: string }[] {
     }
     if (dimension === "from-origin") {
         return ORIGINS.map((o) => ({ label: o.city, href: variantHref("from-origin", o.slug) }));
+    }
+    if (dimension === "combo") {
+        const gt = gtPackages();
+        const dayCount = (s: string) => Number.parseInt(s, 10) || 0;
+        const combos: { label: string; href: string }[] = [];
+        for (const t of GT_THEMES) {
+            for (const d of GT_DURATIONS) {
+                const days = Number.parseInt(d, 10);
+                if (gt.some((p) => dayCount(p.duration) === days && p.theme === t)) {
+                    combos.push({ label: `${days}-Day ${t}`, href: variantHref("combo", comboValue(days, t)) });
+                }
+            }
+        }
+        return combos;
     }
     return MONTHS.map((m) => ({ label: titleCase(m), href: variantHref("in-month", m) }));
 }

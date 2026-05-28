@@ -6,6 +6,8 @@ import {
     MONTHS,
     ORIGINS,
     variantHref,
+    comboValue,
+    gtPackages,
 } from "@/data/tourVariants";
 import { slugify } from "@/data/tours";
 import GoldenTriangleHubView from "@/components/tours/GoldenTriangleHubView";
@@ -42,6 +44,20 @@ export default function GoldenTriangleHubPage() {
         label: o.city,
         href: variantHref("from-origin", o.slug),
     }));
+    const gt = gtPackages();
+    const dayCount = (s: string) => Number.parseInt(s, 10) || 0;
+    const byCombo: { label: string; href: string }[] = [];
+    for (const t of GT_THEMES) {
+        for (const d of GT_DURATIONS) {
+            const days = Number.parseInt(d, 10);
+            if (gt.some((p) => dayCount(p.duration) === days && p.theme === t)) {
+                byCombo.push({
+                    label: `${days}-Day ${t}`,
+                    href: variantHref("combo", comboValue(days, t)),
+                });
+            }
+        }
+    }
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -61,7 +77,7 @@ export default function GoldenTriangleHubPage() {
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <GoldenTriangleHubView byTheme={byTheme} byDuration={byDuration} byMonth={byMonth} byOrigin={byOrigin} />
+            <GoldenTriangleHubView byTheme={byTheme} byDuration={byDuration} byMonth={byMonth} byOrigin={byOrigin} byCombo={byCombo} />
         </>
     );
 }

@@ -5,9 +5,9 @@
 
 import { packages, packageSlug, slugify, type Package } from "./tours";
 import { REGIONAL_HUBS } from "./tourHubs";
-import { ORIGINS, type Origin } from "./tourVariants";
+import { ORIGINS, parseComboValue, comboValue, type Origin } from "./tourVariants";
 
-export type RegionVariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin";
+export type RegionVariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo";
 
 export interface RegionVariantContent {
     regionSlug: string;
@@ -206,10 +206,22 @@ export function getRegionVariantParams(
     regionSlug: string
 ): { dimension: string; value: string }[] {
     const params: { dimension: string; value: string }[] = [];
-    for (const t of regionThemes(regionSlug)) params.push({ dimension: "by-theme", value: slugify(t) });
-    for (const d of regionDurations(regionSlug)) params.push({ dimension: "by-duration", value: d });
+    const themes = regionThemes(regionSlug);
+    const durations = regionDurations(regionSlug);
+    const all = regionPackages(regionSlug);
+    for (const t of themes) params.push({ dimension: "by-theme", value: slugify(t) });
+    for (const d of durations) params.push({ dimension: "by-duration", value: d });
     for (const m of MONTHS) params.push({ dimension: "in-month", value: m });
     for (const o of ORIGINS) params.push({ dimension: "from-origin", value: o.slug });
+    // Combo intersections — only where a real package exists.
+    for (const t of themes) {
+        for (const d of durations) {
+            const days = Number.parseInt(d, 10);
+            if (all.some((p) => dayCount(p) === days && p.theme === t)) {
+                params.push({ dimension: "combo", value: comboValue(days, t) });
+            }
+        }
+    }
     return params;
 }
 
@@ -291,6 +303,32 @@ export function resolveRegionVariant(
         };
     }
 
+    if (dimension === "combo") {
+        const themes = regionThemes(regionSlug);
+        const parsed = parseComboValue(value, themes);
+        if (!parsed) return null;
+        const { days, theme } = parsed;
+        const list = all.filter((p) => dayCount(p) === days && p.theme === theme);
+        if (!list.length) return null;
+        return {
+            regionSlug,
+            regionName,
+            dimension: "combo",
+            value,
+            label: `${days}-Day ${theme}`,
+            h1: `${days}-Day ${theme} ${regionName} Tours`,
+            answer: `A ${days}-day ${theme.toLowerCase()} ${regionName} tour by MyTripMyTravel is a private, chauffeured, escorted circuit operated over ${days} days with the pacing, stays, and inclusions tuned to a ${theme.toLowerCase()} register. ${list.length} architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, each fully customisable. The combination — a specific length sequenced for a specific character — is the starting frame, not a fixed product.`,
+            intro: `The ${days}-day ${theme.toLowerCase()} ${regionName} is the intersection of two decisions: how long the trip lasts and what it is about. ${days <= 5 ? `Compressed but workable — the ${theme.toLowerCase()} signature moments land if sequenced carefully.` : days <= 7 ? `Balanced — full regional coverage with deliberate slower days, the ${theme.toLowerCase()} character intact.` : `Deep — unhurried, extension-ready, the slower texture the ${theme.toLowerCase()} register actually rewards.`} The ${theme.toLowerCase()} reading of ${regionName} is not a different circuit; it is a different set of priorities laid over the same regional core. ${hub.blurb}`,
+            packages: list,
+            faqs: [
+                { q: `What does a ${days}-day ${theme} ${regionName} look like?`, a: `${regionName} sequenced over ${days} days with pacing, stays, and inclusions tuned to a ${theme.toLowerCase()} register — different priorities, same regional core.` },
+                { q: `Is ${days} days enough for a ${theme} ${regionName} tour?`, a: days <= 5 ? `Compressed but workable — the headline ${theme.toLowerCase()} moments land. More days allow a less compressed pace.` : `Yes — a ${days}-day length covers the ${regionName} core comfortably with the ${theme.toLowerCase()} signature moments unhurried.` },
+                { q: `Can the ${days}-day ${theme} tour be customised?`, a: `Yes — every architecture is a starting frame, customisable while holding both the ${days}-day rhythm and the ${theme.toLowerCase()} character.` },
+                { q: `Is it private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access.` },
+            ],
+        };
+    }
+
     if (dimension === "from-origin") {
         const origin = ORIGINS.find((o) => o.slug === value);
         if (!origin) return null;
@@ -353,6 +391,25 @@ export function regionOriginLinks(regionSlug: string): { label: string; href: st
         label: o.city,
         href: regionVariantHref(regionSlug, "from-origin", o.slug),
     }));
+}
+
+export function regionComboLinks(regionSlug: string): { label: string; href: string }[] {
+    const themes = regionThemes(regionSlug);
+    const durations = regionDurations(regionSlug);
+    const all = regionPackages(regionSlug);
+    const out: { label: string; href: string }[] = [];
+    for (const t of themes) {
+        for (const d of durations) {
+            const days = Number.parseInt(d, 10);
+            if (all.some((p) => dayCount(p) === days && p.theme === t)) {
+                out.push({
+                    label: `${days}-Day ${t}`,
+                    href: regionVariantHref(regionSlug, "combo", comboValue(days, t)),
+                });
+            }
+        }
+    }
+    return out;
 }
 
 export { packageSlug, ORIGINS };

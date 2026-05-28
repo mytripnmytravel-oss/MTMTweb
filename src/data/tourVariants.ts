@@ -4,7 +4,26 @@
 
 import { packages, packageSlug, slugify, type Package } from "./tours";
 
-export type VariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin";
+export type VariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo";
+
+/**
+ * Parse a combo value like "7-day-luxury" → { days: 7, theme: "Luxury" }.
+ * Returns null on malformed input or unknown theme.
+ */
+export function parseComboValue(value: string, themes: string[]): { days: number; theme: string } | null {
+    const m = value.match(/^(\d+)-day-(.+)$/);
+    if (!m) return null;
+    const days = Number.parseInt(m[1], 10);
+    if (!days) return null;
+    const themeSlug = m[2];
+    const theme = themes.find((t) => slugify(t) === themeSlug);
+    if (!theme) return null;
+    return { days, theme };
+}
+
+export function comboValue(days: number, theme: string): string {
+    return `${days}-day-${slugify(theme)}`;
+}
 
 export interface VariantContent {
     dimension: VariantDimension;
@@ -193,6 +212,30 @@ export function resolveVariant(
         };
     }
 
+    if (dimension === "combo") {
+        const parsed = parseComboValue(value, GT_THEMES);
+        if (!parsed) return null;
+        const { days, theme } = parsed;
+        const list = gt.filter((p) => dayCount(p) === days && p.theme === theme);
+        if (!list.length) return null;
+        return {
+            dimension: "combo",
+            value,
+            label: `${days}-Day ${theme}`,
+            h1: `${days}-Day ${theme} Golden Triangle Tours`,
+            answer: `A ${days}-day ${theme.toLowerCase()} Golden Triangle tour by MyTripMyTravel is a private, chauffeured Delhi–Agra–Jaipur circuit operated over ${days} days with the pacing, stays, and inclusions tuned to a ${theme.toLowerCase()} register. ${list.length} architecture${list.length > 1 ? "s are" : " is"} available, from ${list[0].price}, each escorted and fully customisable. The combination — a specific length sequenced for a specific character — is what the planning desk uses as a starting frame rather than a generic tour brief.`,
+            intro: `The ${days}-day ${theme.toLowerCase()} Golden Triangle is the intersection of two decisions: how long you want the trip to last and what you want it to be about. ${days <= 3 ? "Three days run tight by design — the ${theme.toLowerCase()} signature moments are sequenced for prime hours; everything else is deliberately left off." : days <= 5 ? "Five days carries the canonical Delhi–Agra–Jaipur arc with enough ${theme.toLowerCase()} depth to feel real, not garnished." : days <= 7 ? "A seven-day window is the balanced ${theme.toLowerCase()} reading — full coverage, the ${theme.toLowerCase()} signature moments unhurried, with slower days built in." : "Longer than seven days opens the ${theme.toLowerCase()} circuit to second visits in better light, an extension into Rajasthan or the Himalayas, and the slow texture the ${theme.toLowerCase()} register actually rewards."} The ${theme.toLowerCase()} reading of the Triangle is not a different route; it is a different set of priorities laid over Delhi–Agra–Jaipur. Each architecture below is a foundation, customisable while holding both the ${days}-day rhythm and the ${theme.toLowerCase()} character. Operated on the GPS-tracked Elite Fleet protocol with escorted monument access.`,
+            packages: list,
+            faqs: [
+                { q: `What does a ${days}-day ${theme} Golden Triangle look like?`, a: `Delhi–Agra–Jaipur sequenced over ${days} days with the pacing, stays, and inclusions tuned to a ${theme.toLowerCase()} register — different priorities laid over the same three cities.` },
+                { q: `Is ${days} days enough for a ${theme} Golden Triangle?`, a: days <= 3 ? `Compressed but workable — the headline ${theme.toLowerCase()} moments land. More days allow a less compressed reading and the slower texture this register rewards.` : `Yes — a ${days}-day length covers the regional core comfortably with the ${theme.toLowerCase()} signature moments unhurried.` },
+                { q: `Can the ${days}-day ${theme} tour be customised?`, a: `Yes — every architecture is a starting frame, not a fixed product. Hotels, inclusions, and the exact day split are tuned to your party while the ${days}-day rhythm and the ${theme.toLowerCase()} character are held.` },
+                { q: `Can it be extended?`, a: `Yes — the architecture is modular. We routinely extend ${theme.toLowerCase()} Golden Triangle missions into Rajasthan, the Himalayas, or Kerala while holding the same ${theme.toLowerCase()} weighting through the onward leg.` },
+                { q: `Is the ${days}-day ${theme} tour private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted monument access. Never a shared group departure.` },
+            ],
+        };
+    }
+
     if (dimension === "from-origin") {
         const origin = ORIGINS.find((o) => o.slug === value);
         if (!origin) return null;
@@ -222,6 +265,16 @@ export function getAllVariantParams(): { dimension: string; value: string }[] {
     for (const d of GT_DURATIONS) params.push({ dimension: "by-duration", value: d });
     for (const m of MONTHS) params.push({ dimension: "in-month", value: m });
     for (const o of ORIGINS) params.push({ dimension: "from-origin", value: o.slug });
+    // Combo intersections — only where a real package exists.
+    const gt = gtPackages();
+    for (const t of GT_THEMES) {
+        for (const d of GT_DURATIONS) {
+            const days = Number.parseInt(d, 10);
+            if (gt.some((p) => dayCount(p) === days && p.theme === t)) {
+                params.push({ dimension: "combo", value: comboValue(days, t) });
+            }
+        }
+    }
     return params;
 }
 

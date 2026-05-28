@@ -15,6 +15,7 @@ import {
     regionDurationLinks,
     regionMonthLinks,
     regionOriginLinks,
+    regionComboLinks,
     regionHasVariants,
 } from "@/data/regionVariants";
 
@@ -29,6 +30,7 @@ export default function RegionalTourHubView({
     const durationLinks = hasVariants ? regionDurationLinks(hub.slug) : [];
     const monthLinks = hasVariants ? regionMonthLinks(hub.slug) : [];
     const originLinks = hasVariants ? regionOriginLinks(hub.slug) : [];
+    const comboLinks = hasVariants ? regionComboLinks(hub.slug) : [];
     return (
         <SmoothScroll>
             <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
@@ -142,11 +144,21 @@ export default function RegionalTourHubView({
                             </div>
                         )}
                         {originLinks.length > 0 && (
-                            <div>
+                            <div className="mb-10">
                                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-royal-blue/40 mb-4">From Your Origin City</p>
                                 <div className="flex flex-wrap gap-3">
                                     {originLinks.map((l) => (
                                         <Link key={l.href} href={l.href} className="px-5 py-3 glass-card rounded-2xl border-royal-blue/10 font-black uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">{l.label}</Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                        {comboLinks.length > 0 && (
+                            <div>
+                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-royal-blue/40 mb-4">By Duration × Theme</p>
+                                <div className="flex flex-wrap gap-3">
+                                    {comboLinks.map((l) => (
+                                        <Link key={l.href} href={l.href} className="px-5 py-3 glass-card rounded-2xl border-sunset-orange/40 bg-sunset-orange/5 font-black uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">{l.label}</Link>
                                     ))}
                                 </div>
                             </div>

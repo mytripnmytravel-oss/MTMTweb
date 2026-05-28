@@ -12,11 +12,13 @@ export default function GoldenTriangleHubView({
     byDuration,
     byMonth,
     byOrigin,
+    byCombo,
 }: {
     byTheme: { label: string; href: string }[];
     byDuration: { label: string; href: string }[];
     byMonth: { label: string; href: string }[];
     byOrigin: { label: string; href: string }[];
+    byCombo?: { label: string; href: string }[];
 }) {
     const Block = ({
         title,
@@ -74,6 +76,7 @@ export default function GoldenTriangleHubView({
                     <Block title="By Duration" items={byDuration} />
                     <Block title="By Month of Travel" items={byMonth} />
                     <Block title="By Departure City" items={byOrigin} />
+                    {byCombo && byCombo.length > 0 && <Block title="By Duration × Theme" items={byCombo} />}
                 </section>
 
                 <Footer />
