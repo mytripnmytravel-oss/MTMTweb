@@ -284,6 +284,18 @@ export default function DestinationCityView({
                             </div>
                             <ArrowRight size={18} className="text-sunset-orange shrink-0" />
                         </Link>
+                        <Link
+                            href={`/destinations/${dest.slug}/in/january`}
+                            className="glass-card rounded-3xl p-8 border-royal-blue/30 bg-royal-blue/5 group hover:bg-royal-blue/10 transition-all duration-500 flex items-center justify-between"
+                        >
+                            <div>
+                                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-2">{dest.name}</div>
+                                <span className="text-xl font-black uppercase tracking-tighter text-royal-blue group-hover:text-sunset-orange transition-colors">
+                                    Month-by-month guide (Jan → Dec)
+                                </span>
+                            </div>
+                            <ArrowRight size={18} className="text-sunset-orange shrink-0" />
+                        </Link>
                     </div>
                 </section>
 

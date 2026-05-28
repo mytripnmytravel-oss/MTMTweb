@@ -25,6 +25,7 @@ import { diningCategories } from "@/data/heritageDining";
 import { getAllMethodologyParams } from "@/data/methodology";
 import { getAllBlogSlugs } from "@/data/blog";
 import { getAllItineraryParams, getCityItineraryIndexParams } from "@/data/destinationItineraries";
+import { getAllCityMonthParams } from "@/data/destinationMonths";
 import { getAllRouteParams } from "@/data/transferRoutes";
 import { getAllGuideCityParams, getAllGuideParams } from "@/data/expertGuides";
 
@@ -229,6 +230,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
     for (const { slug, duration } of getAllItineraryParams()) {
         urls.push(entry(`/destinations/${slug}/itinerary/${duration}`, 0.6, "monthly"));
+    }
+
+    // Destination × month (C12) — 43 cities × 12 months
+    for (const { slug, month } of getAllCityMonthParams()) {
+        urls.push(entry(`/destinations/${slug}/in/${month}`, 0.6, "monthly"));
     }
 
     // Heritage Dining sub-cluster (category indexes + items)
