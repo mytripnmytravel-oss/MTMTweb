@@ -8,6 +8,7 @@ import {
     regionThemeLinks,
     regionDurationLinks,
     regionMonthLinks,
+    regionOriginLinks,
     packageSlug,
 } from "@/data/regionVariants";
 import RegionVariantView from "@/components/tours/RegionVariantView";
@@ -37,6 +38,7 @@ export async function regionVariantMetadata(
 function siblingsFor(regionSlug: string, dimension: string): { label: string; href: string }[] {
     if (dimension === "by-theme") return regionThemeLinks(regionSlug);
     if (dimension === "by-duration") return regionDurationLinks(regionSlug);
+    if (dimension === "from-origin") return regionOriginLinks(regionSlug);
     return regionMonthLinks(regionSlug);
 }
 

@@ -5,8 +5,9 @@
 
 import { packages, packageSlug, slugify, type Package } from "./tours";
 import { REGIONAL_HUBS } from "./tourHubs";
+import { ORIGINS, type Origin } from "./tourVariants";
 
-export type RegionVariantDimension = "by-theme" | "by-duration" | "in-month";
+export type RegionVariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin";
 
 export interface RegionVariantContent {
     regionSlug: string;
@@ -152,6 +153,47 @@ function monthNarrative(regionSlug: string, month: string): { answer: string; in
 // route folder at /tours/<region>/[dimension]/[value]).
 const VARIANT_REGIONS = new Set(["rajasthan", "kerala", "himalayas"]);
 
+// Per-region arrival gateway logic. Honest about routing reality:
+// Rajasthan and Himalayas both come through Delhi (DEL); Kerala has
+// direct Gulf and Singapore connections to Kochi (COK), with European
+// and North American origins via Delhi or Mumbai.
+function regionGateway(regionSlug: string, origin: Origin): { code: string; gateway: string; routingNote: string } {
+    if (regionSlug === "kerala") {
+        const directKochiOrigins = new Set([
+            "dubai", "abu-dhabi", "doha", "singapore",
+        ]);
+        if (directKochiOrigins.has(origin.slug)) {
+            return {
+                code: "COK",
+                gateway: "Kochi (COK)",
+                routingNote: `${origin.city} has direct non-stop service into Kochi (COK), Kerala's primary international gateway — the Kerala circuit can begin almost immediately.`,
+            };
+        }
+        return {
+            code: "COK",
+            gateway: "Kochi (COK)",
+            routingNote: `From ${origin.city}, travellers typically route via Delhi (DEL) or Mumbai (BOM) onwards to Kochi (COK) by a short domestic flight, or arrive into Bangalore (BLR) with an onward road or air leg. We pre-arrange the connection so it is one continuous controlled operation.`,
+        };
+    }
+    if (regionSlug === "himalayas") {
+        return {
+            code: "DEL",
+            gateway: "Delhi (DEL)",
+            routingNote: `Delhi (DEL) is the gateway for the Himalayan circuit. Onward to Leh (IXL) by domestic flight, or by escorted road to Shimla / Manali / Dharamshala. Altitude pacing is built into the first 24 hours from arrival.`,
+        };
+    }
+    // Rajasthan default
+    return {
+        code: "DEL",
+        gateway: "Delhi (DEL)",
+        routingNote: `Delhi (DEL) is the primary gateway into Rajasthan, with a short chauffeured leg or domestic flight onward into Jaipur — the natural northern entry into the Rajasthan circuit. Travellers can also arrive into Mumbai (BOM) for an Udaipur-first routing.`,
+    };
+}
+
+function isShortHop(flightBand: string): boolean {
+    return /\b(3\.5|4 hrs|5\.5|6 hrs)\b/.test(flightBand);
+}
+
 export function regionHasVariants(regionSlug: string): boolean {
     return VARIANT_REGIONS.has(regionSlug);
 }
@@ -167,6 +209,7 @@ export function getRegionVariantParams(
     for (const t of regionThemes(regionSlug)) params.push({ dimension: "by-theme", value: slugify(t) });
     for (const d of regionDurations(regionSlug)) params.push({ dimension: "by-duration", value: d });
     for (const m of MONTHS) params.push({ dimension: "in-month", value: m });
+    for (const o of ORIGINS) params.push({ dimension: "from-origin", value: o.slug });
     return params;
 }
 
@@ -248,6 +291,30 @@ export function resolveRegionVariant(
         };
     }
 
+    if (dimension === "from-origin") {
+        const origin = ORIGINS.find((o) => o.slug === value);
+        if (!origin) return null;
+        const gw = regionGateway(regionSlug, origin);
+        const shortHop = isShortHop(origin.flightBand);
+        return {
+            regionSlug,
+            regionName,
+            dimension: "from-origin",
+            value,
+            label: `From ${origin.city}`,
+            h1: `${regionName} Tours from ${origin.city}`,
+            answer: `A ${regionName} tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured, escorted circuit beginning at ${gw.gateway}. Flight context: ${origin.flightBand}. ${origin.note} ${all.length > 0 ? `${all.length} mission architectures are available, each jet-lag-paced, fully customisable, and operated on the GPS-tracked Elite Fleet protocol.` : `The ${regionName} circuit is run bespoke through the planning desk — there is no fixed package shelf for this region.`}`,
+            intro: `Travelling from ${origin.city} to ${regionName} is a logistics question we solve end to end. ${gw.routingNote} We sequence the first day around the ${shortHop ? "short crossing — the circuit can begin almost immediately with a fresh arrival" : "long crossing — with a deliberate recovery buffer before the first major site"}. Every itinerary below is a foundation, ready for bespoke modification.`,
+            packages: all,
+            faqs: [
+                { q: `How long is the flight from ${origin.city} to ${regionName}?`, a: `${origin.flightBand}. The circuit begins at ${gw.gateway}; ${origin.note}` },
+                { q: `Do I need a visa to travel from ${origin.country} to India?`, a: `India offers an e-Visa to travellers of many nationalities; requirements vary by passport. Our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
+                { q: `How many days should I plan from ${origin.city}?`, a: `Factor the ${origin.flightBand} crossing into the trip length. For ${regionName} specifically, ${regionSlug === "himalayas" ? "we add a 24-hour low-altitude acclimatisation buffer before any high-altitude leg." : regionSlug === "kerala" ? "the recommended length is 7–10 days for the core Kochi–Munnar–Alleppey arc; longer for an integrated Ayurveda stay." : "the recommended length is 7–10 days for the core Jaipur–Udaipur–Jodhpur arc; longer to include Jaisalmer or Ranthambore."}` },
+                { q: `Is the ${regionName} tour from ${origin.city} private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access. Never a shared group departure.` },
+            ],
+        };
+    }
+
     return null;
 }
 
@@ -281,4 +348,11 @@ export function regionMonthLinks(regionSlug: string): { label: string; href: str
     }));
 }
 
-export { packageSlug };
+export function regionOriginLinks(regionSlug: string): { label: string; href: string }[] {
+    return ORIGINS.map((o) => ({
+        label: o.city,
+        href: regionVariantHref(regionSlug, "from-origin", o.slug),
+    }));
+}
+
+export { packageSlug, ORIGINS };
