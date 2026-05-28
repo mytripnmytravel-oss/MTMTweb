@@ -10,6 +10,12 @@ import { Footer } from "@/components/Footer";
 import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
 import { packageSlug } from "@/data/tours";
 import type { RegionalTourHubContent } from "@/data/tourHubs";
+import {
+    regionThemeLinks,
+    regionDurationLinks,
+    regionMonthLinks,
+    regionHasVariants,
+} from "@/data/regionVariants";
 
 export default function RegionalTourHubView({
     content,
@@ -17,6 +23,10 @@ export default function RegionalTourHubView({
     content: RegionalTourHubContent;
 }) {
     const { hub, packages, h1, answer, faqs } = content;
+    const hasVariants = regionHasVariants(hub.slug);
+    const themeLinks = hasVariants ? regionThemeLinks(hub.slug) : [];
+    const durationLinks = hasVariants ? regionDurationLinks(hub.slug) : [];
+    const monthLinks = hasVariants ? regionMonthLinks(hub.slug) : [];
     return (
         <SmoothScroll>
             <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
@@ -95,6 +105,42 @@ export default function RegionalTourHubView({
                         )}
                     </div>
                 </section>
+
+                {hasVariants && (
+                    <section className="py-20 container mx-auto px-6">
+                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-10">Slice the {hub.name} circuit</h4>
+                        {themeLinks.length > 0 && (
+                            <div className="mb-10">
+                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-royal-blue/40 mb-4">By Theme</p>
+                                <div className="flex flex-wrap gap-3">
+                                    {themeLinks.map((l) => (
+                                        <Link key={l.href} href={l.href} className="px-5 py-3 glass-card rounded-2xl border-royal-blue/10 font-black uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">{l.label}</Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                        {durationLinks.length > 0 && (
+                            <div className="mb-10">
+                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-royal-blue/40 mb-4">By Duration</p>
+                                <div className="flex flex-wrap gap-3">
+                                    {durationLinks.map((l) => (
+                                        <Link key={l.href} href={l.href} className="px-5 py-3 glass-card rounded-2xl border-royal-blue/10 font-black uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">{l.label}</Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                        {monthLinks.length > 0 && (
+                            <div>
+                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-royal-blue/40 mb-4">By Month</p>
+                                <div className="flex flex-wrap gap-3">
+                                    {monthLinks.map((l) => (
+                                        <Link key={l.href} href={l.href} className="px-5 py-3 glass-card rounded-2xl border-royal-blue/10 font-black uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">{l.label}</Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </section>
+                )}
 
                 <section className="py-24 container mx-auto px-6">
                     <div className="text-center mb-14">

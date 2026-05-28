@@ -5,6 +5,11 @@ import { getAllFacetParams } from "@/data/destinationFacets";
 import { getAllMonumentParams, citiesWithMonuments } from "@/data/monuments";
 import { getAllPackageSlugs } from "@/data/tours";
 import { getAllVariantParams, variantHref } from "@/data/tourVariants";
+import {
+    getAllVariantRegions,
+    getRegionVariantParams,
+    regionVariantHref,
+} from "@/data/regionVariants";
 import { getAllWellnessPaths } from "@/data/wellness";
 import { WELLNESS_DURATIONS, PROGRAMME_LOCATIONS } from "@/data/wellnessFacets";
 import { getAllVehicleIds } from "@/data/fleet";
@@ -112,6 +117,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     urls.push(entry("/tours/golden-triangle", 0.8, "weekly"));
     for (const { dimension, value } of getAllVariantParams()) {
         urls.push(entry(variantHref(dimension, value), 0.6, "monthly"));
+    }
+
+    // Regional variant slices (B12 — Rajasthan / Kerala / Himalayas)
+    for (const region of getAllVariantRegions()) {
+        for (const { dimension, value } of getRegionVariantParams(region)) {
+            urls.push(entry(regionVariantHref(region, dimension, value), 0.6, "monthly"));
+        }
     }
 
     // Wellness sub-variants
