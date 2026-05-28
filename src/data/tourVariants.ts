@@ -4,7 +4,7 @@
 
 import { packages, packageSlug, slugify, type Package } from "./tours";
 
-export type VariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo";
+export type VariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo" | "theme-from";
 
 /**
  * Parse a combo value like "7-day-luxury" → { days: 7, theme: "Luxury" }.
@@ -23,6 +23,27 @@ export function parseComboValue(value: string, themes: string[]): { days: number
 
 export function comboValue(days: number, theme: string): string {
     return `${days}-day-${slugify(theme)}`;
+}
+
+/**
+ * Parse a theme-from value like "luxury-from-london" → { theme: "Luxury", origin: <Origin> }.
+ * Themes and origins can both contain hyphens (e.g., "short-tours", "new-york"), so we
+ * split on the literal substring `-from-` which appears in neither.
+ */
+export function parseThemeFromValue(value: string, themes: string[]): { theme: string; origin: Origin } | null {
+    const idx = value.indexOf("-from-");
+    if (idx < 0) return null;
+    const themeSlug = value.slice(0, idx);
+    const originSlug = value.slice(idx + "-from-".length);
+    const theme = themes.find((t) => slugify(t) === themeSlug);
+    if (!theme) return null;
+    const origin = ORIGINS.find((o) => o.slug === originSlug);
+    if (!origin) return null;
+    return { theme, origin };
+}
+
+export function themeFromValue(theme: string, originSlug: string): string {
+    return `${slugify(theme)}-from-${originSlug}`;
 }
 
 export interface VariantContent {
@@ -236,6 +257,31 @@ export function resolveVariant(
         };
     }
 
+    if (dimension === "theme-from") {
+        const parsed = parseThemeFromValue(value, GT_THEMES);
+        if (!parsed) return null;
+        const { theme, origin } = parsed;
+        const list = gt.filter((p) => p.theme === theme);
+        if (!list.length) return null;
+        const shortHop = /\b(3\.5|4 hrs|5\.5|6 hrs)\b/.test(origin.flightBand);
+        return {
+            dimension: "theme-from",
+            value,
+            label: `${theme} from ${origin.city}`,
+            h1: `${theme} Golden Triangle Tours from ${origin.city}`,
+            answer: `A ${theme.toLowerCase()} Golden Triangle tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured Delhi–Agra–Jaipur circuit reweighted to a ${theme.toLowerCase()} register, beginning at Delhi (DEL). Flight context: ${origin.flightBand}. ${origin.note} ${list.length} ${theme.toLowerCase()} architecture${list.length > 1 ? "s are" : " is"} available, from ${list[0].price}, each escorted, jet-lag-paced, and fully customisable.`,
+            intro: `The intersection of a ${theme.toLowerCase()} reading of the Golden Triangle with a ${origin.city} departure is both a routing and an experience decision. ${origin.note} The first day is sequenced around the ${shortHop ? "short crossing — the circuit can begin almost immediately with a fresh arrival" : "long crossing — a deliberate recovery buffer before the first monument"}, with the ${theme.toLowerCase()} register held from the welcome onward. The Delhi–Agra–Jaipur core is preserved; what changes is the weighting — the pace, the stays, the dining, and the access slots tuned to a ${theme.toLowerCase()} emphasis. Every architecture below is a starting frame, customisable while holding the ${theme.toLowerCase()} character and adjusted to your arrival window from ${origin.city}.`,
+            packages: list,
+            faqs: [
+                { q: `How long is the flight from ${origin.city} to the Golden Triangle?`, a: `${origin.flightBand}. The circuit begins at Delhi (DEL); ${origin.note}` },
+                { q: `What makes a ${theme} Golden Triangle from ${origin.city} different?`, a: `The route core stays Delhi–Agra–Jaipur, but the pacing, stays, dining, and inclusions are reweighted toward a ${theme.toLowerCase()} experience. The ${origin.city} arrival window — ${origin.flightBand} — drives the first-day sequencing.` },
+                { q: `Do I need a visa to travel from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; requirements vary by passport. Our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
+                { q: `Can a ${theme} Golden Triangle tour be customised?`, a: `Yes — every architecture is a starting frame, not a fixed product. Hotels, inclusions, and the exact day split are tuned to your party while the ${theme.toLowerCase()} character is held.` },
+                { q: `Is the tour private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access at the headlines.` },
+            ],
+        };
+    }
+
     if (dimension === "from-origin") {
         const origin = ORIGINS.find((o) => o.slug === value);
         if (!origin) return null;
@@ -272,6 +318,14 @@ export function getAllVariantParams(): { dimension: string; value: string }[] {
             const days = Number.parseInt(d, 10);
             if (gt.some((p) => dayCount(p) === days && p.theme === t)) {
                 params.push({ dimension: "combo", value: comboValue(days, t) });
+            }
+        }
+    }
+    // Theme × from-origin — only where the theme has packages in GT.
+    for (const t of GT_THEMES) {
+        if (gt.some((p) => p.theme === t)) {
+            for (const o of ORIGINS) {
+                params.push({ dimension: "theme-from", value: themeFromValue(t, o.slug) });
             }
         }
     }

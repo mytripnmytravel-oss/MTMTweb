@@ -6,6 +6,7 @@ import {
     getAllVariantParams,
     variantHref,
     comboValue,
+    themeFromValue,
     gtPackages,
     GT_THEMES,
     GT_DURATIONS,
@@ -65,6 +66,18 @@ function siblingsFor(dimension: string): { label: string; href: string }[] {
             }
         }
         return combos;
+    }
+    if (dimension === "theme-from") {
+        const gt = gtPackages();
+        const out: { label: string; href: string }[] = [];
+        for (const t of GT_THEMES) {
+            if (gt.some((p) => p.theme === t)) {
+                for (const o of ORIGINS) {
+                    out.push({ label: `${t} from ${o.city}`, href: variantHref("theme-from", themeFromValue(t, o.slug)) });
+                }
+            }
+        }
+        return out;
     }
     return MONTHS.map((m) => ({ label: titleCase(m), href: variantHref("in-month", m) }));
 }

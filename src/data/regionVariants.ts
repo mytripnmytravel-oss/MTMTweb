@@ -5,9 +5,9 @@
 
 import { packages, packageSlug, slugify, type Package } from "./tours";
 import { REGIONAL_HUBS } from "./tourHubs";
-import { ORIGINS, parseComboValue, comboValue, type Origin } from "./tourVariants";
+import { ORIGINS, parseComboValue, comboValue, parseThemeFromValue, themeFromValue, type Origin } from "./tourVariants";
 
-export type RegionVariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo";
+export type RegionVariantDimension = "by-theme" | "by-duration" | "in-month" | "from-origin" | "combo" | "theme-from";
 
 export interface RegionVariantContent {
     regionSlug: string;
@@ -222,6 +222,14 @@ export function getRegionVariantParams(
             }
         }
     }
+    // Theme × from-origin — only where the theme has packages in the region.
+    for (const t of themes) {
+        if (all.some((p) => p.theme === t)) {
+            for (const o of ORIGINS) {
+                params.push({ dimension: "theme-from", value: themeFromValue(t, o.slug) });
+            }
+        }
+    }
     return params;
 }
 
@@ -329,6 +337,35 @@ export function resolveRegionVariant(
         };
     }
 
+    if (dimension === "theme-from") {
+        const themes = regionThemes(regionSlug);
+        const parsed = parseThemeFromValue(value, themes);
+        if (!parsed) return null;
+        const { theme, origin } = parsed;
+        const list = all.filter((p) => p.theme === theme);
+        if (!list.length) return null;
+        const gw = regionGateway(regionSlug, origin);
+        const shortHop = isShortHop(origin.flightBand);
+        return {
+            regionSlug,
+            regionName,
+            dimension: "theme-from",
+            value,
+            label: `${theme} from ${origin.city}`,
+            h1: `${theme} ${regionName} Tours from ${origin.city}`,
+            answer: `A ${theme.toLowerCase()} ${regionName} tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured, escorted circuit reweighted to a ${theme.toLowerCase()} register, beginning at ${gw.gateway}. Flight context: ${origin.flightBand}. ${origin.note} ${list.length} ${theme.toLowerCase()} architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, each jet-lag-paced, customisable, and operated on the GPS-tracked Elite Fleet protocol.`,
+            intro: `The intersection of a ${theme.toLowerCase()} reading of ${regionName} with a ${origin.city} departure is both a routing and an experience decision. ${gw.routingNote} The first day is sequenced around the ${shortHop ? "short crossing — the circuit can begin almost immediately" : "long crossing — with a deliberate recovery buffer before the first major site"}, with the ${theme.toLowerCase()} register held from the welcome onward. ${hub.blurb} The ${theme.toLowerCase()} character is preserved through the regional core, then optionally extended into adjacent circuits — Golden Triangle, Rajasthan, Kerala, Himalayas — without losing the weighting.`,
+            packages: list,
+            faqs: [
+                { q: `How long is the flight from ${origin.city} to ${regionName}?`, a: `${origin.flightBand}. The circuit begins at ${gw.gateway}; ${origin.note}` },
+                { q: `What makes a ${theme} ${regionName} from ${origin.city} different?`, a: `The regional core stays the same; pacing, stays, dining, and access are reweighted toward a ${theme.toLowerCase()} experience. The ${origin.city} arrival window drives the first-day sequencing.` },
+                { q: `Do I need a visa to travel from ${origin.country} to India?`, a: `India offers an e-Visa to travellers of many nationalities; requirements vary by passport. Our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
+                { q: `Can the ${theme} ${regionName} tour be customised?`, a: `Yes — every architecture is a starting frame, customisable while holding the ${theme.toLowerCase()} character and adjusted to your arrival window from ${origin.city}.` },
+                { q: `Is the tour private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access. Never a shared group departure.` },
+            ],
+        };
+    }
+
     if (dimension === "from-origin") {
         const origin = ORIGINS.find((o) => o.slug === value);
         if (!origin) return null;
@@ -407,6 +444,22 @@ export function regionComboLinks(regionSlug: string): { label: string; href: str
                     href: regionVariantHref(regionSlug, "combo", comboValue(days, t)),
                 });
             }
+        }
+    }
+    return out;
+}
+
+export function regionThemeFromLinks(regionSlug: string): { label: string; href: string }[] {
+    const themes = regionThemes(regionSlug);
+    const all = regionPackages(regionSlug);
+    const out: { label: string; href: string }[] = [];
+    for (const t of themes) {
+        if (!all.some((p) => p.theme === t)) continue;
+        for (const o of ORIGINS) {
+            out.push({
+                label: `${t} · ${o.city}`,
+                href: regionVariantHref(regionSlug, "theme-from", themeFromValue(t, o.slug)),
+            });
         }
     }
     return out;

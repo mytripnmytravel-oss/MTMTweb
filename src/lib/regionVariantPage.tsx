@@ -10,6 +10,7 @@ import {
     regionMonthLinks,
     regionOriginLinks,
     regionComboLinks,
+    regionThemeFromLinks,
     packageSlug,
 } from "@/data/regionVariants";
 import RegionVariantView from "@/components/tours/RegionVariantView";
@@ -41,6 +42,7 @@ function siblingsFor(regionSlug: string, dimension: string): { label: string; hr
     if (dimension === "by-duration") return regionDurationLinks(regionSlug);
     if (dimension === "from-origin") return regionOriginLinks(regionSlug);
     if (dimension === "combo") return regionComboLinks(regionSlug);
+    if (dimension === "theme-from") return regionThemeFromLinks(regionSlug);
     return regionMonthLinks(regionSlug);
 }
 
