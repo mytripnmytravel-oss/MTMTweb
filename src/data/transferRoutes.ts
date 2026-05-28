@@ -67,6 +67,68 @@ export const ROUTES: TransferRoute[] = [
     { slug: "gangtok-to-lachen", originSlug: "gangtok", destinationSlug: "lachen", distanceKm: 130, driveHrs: 6.5 },
     { slug: "gangtok-to-ravangla", originSlug: "gangtok", destinationSlug: "ravangla", distanceKm: 65, driveHrs: 3 },
     { slug: "pelling-to-ravangla", originSlug: "pelling", destinationSlug: "ravangla", distanceKm: 50, driveHrs: 2.5 },
+
+    // ---- Reverse legs (return chauffeured journeys for symmetry) ----
+    // Himalayas reverse
+    { slug: "rishikesh-to-delhi", originSlug: "rishikesh", destinationSlug: "delhi", distanceKm: 240, driveHrs: 5.5 },
+    { slug: "mussoorie-to-delhi", originSlug: "mussoorie", destinationSlug: "delhi", distanceKm: 285, driveHrs: 6.5, approximate: true },
+    { slug: "nainital-to-delhi", originSlug: "nainital", destinationSlug: "delhi", distanceKm: 300, driveHrs: 7 },
+    { slug: "shimla-to-delhi", originSlug: "shimla", destinationSlug: "delhi", distanceKm: 340, driveHrs: 7.5, approximate: true, via: "Chandigarh" },
+    { slug: "manali-to-delhi", originSlug: "manali", destinationSlug: "delhi", distanceKm: 540, driveHrs: 12, approximate: true, via: "Chandigarh" },
+    { slug: "manali-to-shimla", originSlug: "manali", destinationSlug: "shimla", distanceKm: 250, driveHrs: 7 },
+    { slug: "mussoorie-to-rishikesh", originSlug: "mussoorie", destinationSlug: "rishikesh", distanceKm: 75, driveHrs: 2.5, via: "Dehradun" },
+    { slug: "dharamshala-to-delhi", originSlug: "dharamshala", destinationSlug: "delhi", distanceKm: 475, driveHrs: 10, approximate: true },
+    { slug: "delhi-to-dharamshala", originSlug: "delhi", destinationSlug: "dharamshala", distanceKm: 475, driveHrs: 10, approximate: true },
+    { slug: "delhi-to-amritsar", originSlug: "delhi", destinationSlug: "amritsar", distanceKm: 450, driveHrs: 8, approximate: true },
+    { slug: "amritsar-to-delhi", originSlug: "amritsar", destinationSlug: "delhi", distanceKm: 450, driveHrs: 8, approximate: true },
+
+    // Rajasthan reverse + new pairs
+    { slug: "pushkar-to-jaipur", originSlug: "pushkar", destinationSlug: "jaipur", distanceKm: 145, driveHrs: 3 },
+    { slug: "ranthambore-to-jaipur", originSlug: "ranthambore", destinationSlug: "jaipur", distanceKm: 180, driveHrs: 3.5 },
+    { slug: "udaipur-to-jaipur", originSlug: "udaipur", destinationSlug: "jaipur", distanceKm: 390, driveHrs: 6.5 },
+    { slug: "jodhpur-to-jaipur", originSlug: "jodhpur", destinationSlug: "jaipur", distanceKm: 335, driveHrs: 5.5, approximate: true },
+    { slug: "jodhpur-to-pushkar", originSlug: "jodhpur", destinationSlug: "pushkar", distanceKm: 185, driveHrs: 3.5, approximate: true },
+    { slug: "udaipur-to-ranthambore", originSlug: "udaipur", destinationSlug: "ranthambore", distanceKm: 390, driveHrs: 7, approximate: true },
+    { slug: "jodhpur-to-udaipur", originSlug: "jodhpur", destinationSlug: "udaipur", distanceKm: 250, driveHrs: 4.5 },
+    { slug: "mount-abu-to-udaipur", originSlug: "mount-abu", destinationSlug: "udaipur", distanceKm: 165, driveHrs: 3.5 },
+    { slug: "chittorgarh-to-udaipur", originSlug: "chittorgarh", destinationSlug: "udaipur", distanceKm: 115, driveHrs: 2.5 },
+    { slug: "bundi-to-udaipur", originSlug: "bundi", destinationSlug: "udaipur", distanceKm: 270, driveHrs: 5 },
+    { slug: "bundi-to-chittorgarh", originSlug: "bundi", destinationSlug: "chittorgarh", distanceKm: 160, driveHrs: 3, approximate: true },
+    { slug: "jaisalmer-to-jodhpur", originSlug: "jaisalmer", destinationSlug: "jodhpur", distanceKm: 290, driveHrs: 5 },
+    { slug: "bikaner-to-jodhpur", originSlug: "bikaner", destinationSlug: "jodhpur", distanceKm: 250, driveHrs: 4.5 },
+    { slug: "jaisalmer-to-bikaner", originSlug: "jaisalmer", destinationSlug: "bikaner", distanceKm: 330, driveHrs: 6, approximate: true },
+    { slug: "bikaner-to-jaisalmer", originSlug: "bikaner", destinationSlug: "jaisalmer", distanceKm: 330, driveHrs: 6, approximate: true },
+
+    // GT extensions
+    { slug: "agra-to-ranthambore", originSlug: "agra", destinationSlug: "ranthambore", distanceKm: 290, driveHrs: 5.5, approximate: true },
+    { slug: "ranthambore-to-agra", originSlug: "ranthambore", destinationSlug: "agra", distanceKm: 290, driveHrs: 5.5, approximate: true },
+    { slug: "agra-to-rishikesh", originSlug: "agra", destinationSlug: "rishikesh", distanceKm: 410, driveHrs: 8, approximate: true, via: "Delhi" },
+    { slug: "delhi-to-pushkar", originSlug: "delhi", destinationSlug: "pushkar", distanceKm: 405, driveHrs: 7, approximate: true },
+    { slug: "delhi-to-udaipur", originSlug: "delhi", destinationSlug: "udaipur", distanceKm: 660, driveHrs: 11, approximate: true, note: "We typically fly this leg; the chauffeured option is for travellers wanting a slower, scenic crossing." },
+
+    // Kerala reverse
+    { slug: "munnar-to-kochi", originSlug: "munnar", destinationSlug: "kochi", distanceKm: 130, driveHrs: 4 },
+    { slug: "alleppey-to-kochi", originSlug: "alleppey", destinationSlug: "kochi", distanceKm: 55, driveHrs: 1.5 },
+    { slug: "kumarakom-to-kochi", originSlug: "kumarakom", destinationSlug: "kochi", distanceKm: 70, driveHrs: 2, approximate: true },
+    { slug: "wayanad-to-kochi", originSlug: "wayanad", destinationSlug: "kochi", distanceKm: 290, driveHrs: 6 },
+    { slug: "alleppey-to-munnar", originSlug: "alleppey", destinationSlug: "munnar", distanceKm: 165, driveHrs: 4.5, approximate: true },
+    { slug: "thekkady-to-munnar", originSlug: "thekkady", destinationSlug: "munnar", distanceKm: 90, driveHrs: 3, approximate: true },
+    { slug: "thekkady-to-alleppey", originSlug: "thekkady", destinationSlug: "alleppey", distanceKm: 140, driveHrs: 4, approximate: true },
+    { slug: "kovalam-to-alleppey", originSlug: "kovalam", destinationSlug: "alleppey", distanceKm: 160, driveHrs: 3.5, approximate: true },
+    { slug: "varkala-to-kovalam", originSlug: "varkala", destinationSlug: "kovalam", distanceKm: 55, driveHrs: 1.5 },
+    { slug: "kochi-to-varkala", originSlug: "kochi", destinationSlug: "varkala", distanceKm: 200, driveHrs: 4, approximate: true },
+    { slug: "varkala-to-kochi", originSlug: "varkala", destinationSlug: "kochi", distanceKm: 200, driveHrs: 4, approximate: true },
+    { slug: "kochi-to-bekal", originSlug: "kochi", destinationSlug: "bekal", distanceKm: 360, driveHrs: 7, approximate: true },
+    { slug: "bekal-to-kochi", originSlug: "bekal", destinationSlug: "kochi", distanceKm: 360, driveHrs: 7, approximate: true },
+    { slug: "kochi-to-thekkady", originSlug: "kochi", destinationSlug: "thekkady", distanceKm: 190, driveHrs: 4.5, approximate: true },
+    { slug: "kochi-to-kovalam", originSlug: "kochi", destinationSlug: "kovalam", distanceKm: 220, driveHrs: 4.5, approximate: true },
+
+    // Sikkim reverse
+    { slug: "pelling-to-gangtok", originSlug: "pelling", destinationSlug: "gangtok", distanceKm: 110, driveHrs: 4.5 },
+    { slug: "lachung-to-gangtok", originSlug: "lachung", destinationSlug: "gangtok", distanceKm: 120, driveHrs: 6 },
+    { slug: "lachen-to-gangtok", originSlug: "lachen", destinationSlug: "gangtok", distanceKm: 130, driveHrs: 6.5 },
+    { slug: "ravangla-to-gangtok", originSlug: "ravangla", destinationSlug: "gangtok", distanceKm: 65, driveHrs: 3 },
+    { slug: "ravangla-to-pelling", originSlug: "ravangla", destinationSlug: "pelling", distanceKm: 50, driveHrs: 2.5 },
 ];
 
 export interface RouteContent {
