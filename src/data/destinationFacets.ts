@@ -11,7 +11,10 @@ export type FacetSlug =
     | "where-to-stay"
     | "where-to-eat"
     | "with-kids"
-    | "for-couples";
+    | "for-couples"
+    | "solo"
+    | "for-elderly"
+    | "vegetarian";
 
 export const FACET_SLUGS: FacetSlug[] = [
     "best-time-to-visit",
@@ -21,6 +24,9 @@ export const FACET_SLUGS: FacetSlug[] = [
     "where-to-eat",
     "with-kids",
     "for-couples",
+    "solo",
+    "for-elderly",
+    "vegetarian",
 ];
 
 export const FACET_LABELS: Record<FacetSlug, string> = {
@@ -31,6 +37,9 @@ export const FACET_LABELS: Record<FacetSlug, string> = {
     "where-to-eat": "Where to Eat",
     "with-kids": "With Kids",
     "for-couples": "For Couples",
+    solo: "For Solo Travellers",
+    "for-elderly": "For Senior Travellers",
+    vegetarian: "Vegetarian Guide",
 };
 
 export interface FacetBlock {
@@ -239,6 +248,128 @@ export function getFacetContent(
                     standardBlock,
                 ],
                 faqs: pickFaqs(dest.faqs, ["couple", "romantic", "honeymoon", "evening", "sunset", "stay", "private"], facet, dest),
+            };
+        }
+
+        case "solo": {
+            // Solo-traveller register: emphasise navigation, safety, social
+            // anchors, and the kinds of experiences that hold up alone.
+            const soloFriendly = dest.thingsToDo.filter((t) =>
+                ["Heritage", "Culture", "Nature", "Wellness"].includes(t.category)
+            );
+            const items = soloFriendly.length ? soloFriendly : dest.thingsToDo;
+            const wellnessOption = items.find((t) => t.category === "Wellness");
+            const idealStay = factOf(dest, "Ideal stay") ?? "an unhurried multi-night stay";
+            return {
+                facet,
+                label,
+                h1: `${dest.name} For Solo Travellers`,
+                answer: `${cityState} is a strong solo-travel destination when the trip is planned with the right operator. The signature solo-friendly experiences are ${items.slice(0, 4).map((t) => t.name).join(", ")}. ${dest.bestTime.window} is optimal. MyTripMyTravel handles ${dest.name} for solo travellers with a dedicated chauffeur and private escort — solo does not mean unaccompanied — pre-booked monument access, vetted stays, and a 24/7 desk line so the trip is rich and never anxious.`,
+                intro: `Solo travel in ${dest.name} works best when the friction is removed. The mistakes that hit solo travellers — getting overcharged on the ground, navigating crowds without a fixer, eating somewhere unsafe, or losing time to logistics — are the ones we engineer away. You experience the city; we hold the operations.`,
+                blocks: [
+                    {
+                        heading: "Solo-friendly experiences",
+                        body: items.map((t) => `${t.name}: ${t.blurb}`).join(" "),
+                    },
+                    {
+                        heading: "Safety, navigation, and a private escort",
+                        body: `Every MyTripMyTravel solo mission in ${dest.name} runs with a dedicated chauffeur for the duration and an escorted guide at each monument or major site. There is no walking through unfamiliar lanes alone unless you choose to. The 24/7 desk line is reachable from anywhere in the city. Bottled water, sunscreen, basic first-aid and climate control are standard in the vehicle. ${dest.tagline}.`,
+                    },
+                    {
+                        heading: "Where to stay alone",
+                        body: dest.whereToStay.map((s) => `${s.tier}: ${s.detail}`).join(" "),
+                    },
+                    {
+                        heading: "Dining and the evening as one person",
+                        body: `Solo dining is curated through our heritage-dining wing — courtyard tables, hotel-restaurant tables that hold up for one, and private chef-led meals where appropriate. ${dest.whereToEat[0]?.detail ?? "Regional kitchens timed into the evening rather than rushed."} You are not herded into a group setting unless you want one.`,
+                    },
+                    {
+                        heading: "Wellness, books, and unhurried time",
+                        body: `${wellnessOption ? `${wellnessOption.name}: ${wellnessOption.blurb} ` : ""}${dest.name} for solo travellers rewards an unhurried pace — ${idealStay} reads better than a sprint. We deliberately leave space in the day for reading, reflection, and unscheduled time at the stay; the architecture is a frame, not a checklist.`,
+                    },
+                    standardBlock,
+                ],
+                faqs: pickFaqs(dest.faqs, ["solo", "alone", "safe", "single", "guide", "escort"], facet, dest),
+            };
+        }
+
+        case "for-elderly": {
+            // Senior-traveller register: emphasise pacing, accessibility,
+            // medical-awareness, and stays with elevators / step-free access.
+            const restful = dest.thingsToDo.filter((t) =>
+                ["Heritage", "Culture", "Nature", "Cuisine", "Wellness"].includes(t.category)
+            );
+            const items = restful.length ? restful : dest.thingsToDo;
+            const idealStay = factOf(dest, "Ideal stay") ?? "an unhurried multi-night stay";
+            return {
+                facet,
+                label,
+                h1: `${dest.name} For Senior Travellers`,
+                answer: `${cityState} is a comfortable senior-travel destination when the architecture is built around pacing, accessibility, and medical-awareness. The signature senior-suitable experiences are ${items.slice(0, 4).map((t) => t.name).join(", ")}. ${dest.bestTime.window} is optimal. MyTripMyTravel runs ${dest.name} for senior travellers on a slower day-plan, accessible stays where available, climate-controlled fleet, and pre-arranged medical contacts — designed so the trip is rich without being exhausting.`,
+                intro: `Senior travel in ${dest.name} works on a different curve to a sightseeing-sprint trip — shorter active windows, longer rest blocks, the right stays, and the right medical backstop in place from day one. We build the day around energy rather than coverage; the trip is the experience, not a tick-list.`,
+                blocks: [
+                    {
+                        heading: "Senior-suitable experiences",
+                        body: items.map((t) => `${t.name}: ${t.blurb}`).join(" "),
+                    },
+                    {
+                        heading: "Pacing and energy",
+                        body: `${dest.name} for senior travellers runs on a deliberately slower curve — typically one major heritage or experience block per day, a long lunch and rest, and a curated evening. The first day after a long-haul arrival is treated as a recovery buffer rather than a sightseeing day. ${idealStay} sits more comfortably than a single-night sprint. The ${dest.bestTime.window} window minimises weather strain.`,
+                    },
+                    {
+                        heading: "Accessibility — stays and vehicles",
+                        body: `${dest.whereToStay.map((s) => `${s.tier}: ${s.detail}`).join(" ")} Where step-free or elevator-equipped properties are needed, we screen and pre-confirm at booking — not on arrival. The Elite Fleet runs SUVs and sedans with comfortable ingress; assistive equipment (wheelchairs, walkers, oxygen on request) can be arranged in advance.`,
+                    },
+                    {
+                        heading: "Medical-awareness and a 24/7 desk",
+                        body: `Pre-existing conditions are recorded at planning, not on the road. We map the nearest reputable hospital and a recommended specialist to each leg before departure. The chauffeur is briefed on any constraints; medication schedule is built into the day. A 24/7 desk line covers any medical or logistical question — you are not navigating it alone.`,
+                    },
+                    {
+                        heading: "Dining and dietary",
+                        body: `${dest.whereToEat[0]?.detail ?? "Regional kitchens with quiet seating."} Dietary needs (low-spice, low-salt, soft food, diabetic, allergies) are planned with the kitchen in advance. The pace at the table is slow and unrushed.`,
+                    },
+                    standardBlock,
+                ],
+                faqs: pickFaqs(dest.faqs, ["senior", "elder", "old", "accessib", "wheelchair", "medical", "slow"], facet, dest),
+            };
+        }
+
+        case "vegetarian": {
+            // Vegetarian / dietary register: India is the world's largest
+            // vegetarian-friendly market. Surface that honestly without
+            // claiming it's a vegan paradise or sanitising regional reality.
+            const cuisineItems = dest.thingsToDo.filter((t) => t.category === "Cuisine");
+            const stateLower = dest.state.toLowerCase();
+            // Regional flag — north Indian vs south Indian context.
+            const isSouth = /kerala|tamil|karnataka|andhra|telangana|puducherry|pondicherry/i.test(dest.state);
+            const isJain = /rajasthan|gujarat|madhya pradesh/i.test(dest.state);
+            const idealStay = factOf(dest, "Ideal stay") ?? "the curated duration";
+            return {
+                facet,
+                label,
+                h1: `${dest.name} Vegetarian Guide`,
+                answer: `${cityState} is straightforward for vegetarian travellers — India operates one of the world's largest vegetarian food cultures, and ${dest.name} reflects that. ${isSouth ? "South Indian cuisine here is largely vegetarian by default — dosa, idli, sambar, vegetable thalis, and coconut-based curries dominate the local table." : isJain ? "The local kitchen here has a deep Jain and Marwari vegetarian tradition — pure-vegetarian thalis (often without onion or garlic on request) are widely available and culturally central." : "The local kitchen carries a deep vegetarian tradition — full thalis, regional sabzis, breads, and dal-based preparations are standard, not adapted."} MyTripMyTravel curates ${dest.name} dining for vegetarian and vegan travellers in advance with the kitchens directly.`,
+                intro: `India is the most vegetarian-friendly major travel market on earth, but the experience is still better when the operator has briefed the kitchen in advance. Buffets, religious-vegetarian needs (Jain, no onion/garlic), strict vegan requirements (no ghee, no paneer, no dairy at all), and allergy management all land more reliably when planned, not navigated on the road. We do that.`,
+                blocks: [
+                    {
+                        heading: `The vegetarian scene in ${dest.name}`,
+                        body: `${dest.whereToEat.map((e) => `${e.name}: ${e.detail}`).join(" ")} ${isSouth ? "Tiffin-style breakfasts (idli, dosa, vada, uttapam) and vegetable-thali lunches are the everyday format. Non-vegetarian options exist but are not the default." : isJain ? "Marwari and Jain thalis are widely available; many heritage hotels run pure-vegetarian dining rooms. The pure-vegetarian tradition here is centuries old, not an adaptation." : "Vegetarian thalis, dal-based preparations, and tandoor-bread combinations are standard. Most hotel restaurants and good local kitchens default to a comfortably vegetarian menu."}`,
+                    },
+                    {
+                        heading: "Strict diets — Jain, vegan, allergy",
+                        body: `Strict-diet travellers (Jain — no root vegetables; vegan — no dairy of any kind; severe allergies) are handled by briefing the kitchen in advance through our heritage-dining wing. Cross-contamination prevention, specific oils, ghee substitution, and ingredient transparency are arranged at booking, not requested at the table. Travellers with diagnosed allergies should declare them at planning.`,
+                    },
+                    {
+                        heading: "How we plan the table",
+                        body: `Every meal across the ${dest.name} leg is plotted to the day — breakfast at the stay, lunch sequenced near the sightseeing arc, evening at a private or curated table. The kitchens know your dietary frame before you arrive. ${dest.tagline}. The ${idealStay} length allows the kitchens to design across visits rather than repeat menus.`,
+                    },
+                    ...(cuisineItems.length ? [{
+                        heading: "Culinary experiences worth building in",
+                        body: cuisineItems.map((c) => `${c.name}: ${c.blurb}`).join(" "),
+                    }] : []),
+                    standardBlock,
+                ],
+                faqs: pickFaqs(dest.faqs, ["vegetar", "vegan", "jain", "diet", "food", "eat", "thali", "no onion"], facet, dest),
             };
         }
 
