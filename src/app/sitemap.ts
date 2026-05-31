@@ -15,6 +15,7 @@ import { WELLNESS_DURATIONS, PROGRAMME_LOCATIONS } from "@/data/wellnessFacets";
 import { WELLNESS_MONTHS } from "@/data/wellnessMonths";
 import { getAllWellnessOriginParams } from "@/data/wellnessOrigins";
 import { getAllSubVariantLocationParams } from "@/data/wellnessSubVariantLocations";
+import { getAllSubVariantOriginParams } from "@/data/wellnessSubVariantOrigins";
 import { getAllVehicleIds } from "@/data/fleet";
 import { getAllFleetCityParams } from "@/data/fleetCities";
 import { getAllFaqTopicParams, getAllFaqAtomParams } from "@/data/faq";
@@ -159,6 +160,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const prog of Object.keys(PROGRAMME_LOCATIONS)) {
         for (const { variant, location } of getAllSubVariantLocationParams(prog)) {
             urls.push(entry(`/wellness/${prog}/${variant}/in/${location}`, 0.5, "monthly"));
+        }
+    }
+    // Wellness sub-variant × from-origin
+    for (const prog of Object.keys(PROGRAMME_LOCATIONS)) {
+        for (const { variant, origin } of getAllSubVariantOriginParams(prog)) {
+            urls.push(entry(`/wellness/${prog}/${variant}/from/${origin}`, 0.5, "monthly"));
         }
     }
 
