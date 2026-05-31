@@ -31,6 +31,7 @@ import { getAllItineraryParams, getCityItineraryIndexParams } from "@/data/desti
 import { getAllCityMonthParams } from "@/data/destinationMonths";
 import { getAllCityOriginParams } from "@/data/destinationOrigins";
 import { getAllMonumentOriginParams } from "@/data/monumentOrigins";
+import { getAllMonumentMonthParams } from "@/data/monumentMonths";
 import { getAllRouteParams } from "@/data/transferRoutes";
 import { getAllGuideCityParams, getAllGuideParams } from "@/data/expertGuides";
 
@@ -264,9 +265,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         urls.push(entry(`/destinations/${slug}/from/${origin}`, 0.5, "monthly"));
     }
 
-    // Monument × origin (C16) — 19 monuments × 18 origins
+    // Monument × origin (C16) — monuments × origins
     for (const { slug, monument, origin } of getAllMonumentOriginParams()) {
         urls.push(entry(`/destinations/${slug}/monuments/${monument}/from/${origin}`, 0.5, "monthly"));
+    }
+    // Monument × month — monuments × 12 months
+    for (const { slug, monument, month } of getAllMonumentMonthParams()) {
+        urls.push(entry(`/destinations/${slug}/monuments/${monument}/in/${month}`, 0.5, "monthly"));
     }
 
     // Heritage Dining sub-cluster (category indexes + items)
