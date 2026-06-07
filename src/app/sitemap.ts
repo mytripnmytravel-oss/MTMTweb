@@ -16,6 +16,7 @@ import { WELLNESS_MONTHS } from "@/data/wellnessMonths";
 import { getAllWellnessOriginParams } from "@/data/wellnessOrigins";
 import { getAllSubVariantLocationParams } from "@/data/wellnessSubVariantLocations";
 import { getAllSubVariantOriginParams } from "@/data/wellnessSubVariantOrigins";
+import { getAllSubVariantMonthParams } from "@/data/wellnessSubVariantMonths";
 import { getAllVehicleIds } from "@/data/fleet";
 import { getAllFleetCityParams } from "@/data/fleetCities";
 import { getAllFaqTopicParams, getAllFaqAtomParams } from "@/data/faq";
@@ -167,6 +168,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const prog of Object.keys(PROGRAMME_LOCATIONS)) {
         for (const { variant, origin } of getAllSubVariantOriginParams(prog)) {
             urls.push(entry(`/wellness/${prog}/${variant}/from/${origin}`, 0.5, "monthly"));
+        }
+    }
+    // Wellness sub-variant × month
+    for (const prog of Object.keys(PROGRAMME_LOCATIONS)) {
+        for (const { variant, month } of getAllSubVariantMonthParams(prog)) {
+            urls.push(entry(`/wellness/${prog}/${variant}/month/${month}`, 0.5, "monthly"));
         }
     }
 
