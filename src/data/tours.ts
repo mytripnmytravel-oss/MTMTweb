@@ -636,6 +636,89 @@ export const packages: Package[] = [
             { day: 6, plan: "Badami Cave Temples and Agastya Lake." },
             { day: 7, plan: "Badami to Hubli Departure." }
         ]
+    },
+    {
+        id: 32,
+        title: "Sikkim Silk Route Premium",
+        duration: "8 Days",
+        price: "₹68,500",
+        theme: "Adventure",
+        highlight: "Gangtok → North Sikkim → Pelling — Kanchenjunga views, Buddhist monasteries, Yumthang rhododendron.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Yumthang_Valley.jpg",
+        location: "North East",
+        itinerary: [
+            { day: 1, plan: "Bagdogra arrival. Chauffeured 4-hr ascent to Gangtok via the Teesta Valley." },
+            { day: 2, plan: "Gangtok — Rumtek Monastery, Enchey Monastery, Hanuman Tok viewpoint." },
+            { day: 3, plan: "Drive to Lachung (130 km, 7 hrs) via Mangan and Chungthang — north Sikkim entry." },
+            { day: 4, plan: "Yumthang Valley day-trip — rhododendron bloom (Apr-May) or post-monsoon clarity. Optional Zero Point." },
+            { day: 5, plan: "Return to Gangtok. Afternoon at Tsongmo Lake / Baba Mandir (weather permitting)." },
+            { day: 6, plan: "Drive to Pelling (110 km, 4.5 hrs). Sunset at Singshore Bridge." },
+            { day: 7, plan: "Pelling — Pemayangtse Monastery, Sky Walk, Kanchenjunga falls." },
+            { day: 8, plan: "Pelling to Bagdogra departure." }
+        ]
+    },
+    {
+        id: 33,
+        title: "Andaman Island Luxury",
+        duration: "7 Days",
+        price: "₹95,400",
+        theme: "Luxury",
+        highlight: "Port Blair → Havelock → Neil — Cellular Jail heritage, diving / snorkelling, beach luxury.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/7/71/Radhanagar_Beach%2C_Havelock_Island%2C_Andaman%2C_India.jpg",
+        location: "Islands",
+        itinerary: [
+            { day: 1, plan: "Port Blair arrival. Afternoon at Cellular Jail heritage circuit. Evening sound-and-light show." },
+            { day: 2, plan: "Ross Island and North Bay snorkelling. Anthropological Museum." },
+            { day: 3, plan: "Ferry to Havelock (Swaraj Dweep) — 1.5 hrs. Afternoon at Radhanagar Beach (Asia's 7th best beach)." },
+            { day: 4, plan: "Havelock — diving / snorkelling at Elephant Beach. Sunset on Radhanagar." },
+            { day: 5, plan: "Optional second dive day or beach rest. Evening Havelock luxury dining." },
+            { day: 6, plan: "Ferry to Neil (Shaheed Dweep) — 1 hr. Bharatpur Beach, Natural Bridge, Laxmanpur Beach sunset." },
+            { day: 7, plan: "Ferry to Port Blair. Departure." }
+        ]
+    },
+    {
+        id: 34,
+        title: "Himalayan Ladakh Expedition",
+        duration: "10 Days",
+        price: "₹89,200",
+        theme: "Adventure",
+        highlight: "Delhi → Leh fly-in → Nubra Valley → Pangong Lake — Trans-Himalayan high-altitude expedition.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Pangong_Lake.jpg",
+        location: "Himalayas",
+        itinerary: [
+            { day: 1, plan: "Delhi arrival. Afternoon at Qutub Minar and Humayun's Tomb." },
+            { day: 2, plan: "Delhi-Leh flight (1 hr). Mandatory 24-hr acclimatisation at 3,500 m." },
+            { day: 3, plan: "Leh — Shanti Stupa, Leh Palace, Sankar Monastery. Continued acclimatisation." },
+            { day: 4, plan: "Leh to Nubra Valley via Khardung La (18,380 ft). Diskit Monastery, Bactrian camel ride at Hunder dunes." },
+            { day: 5, plan: "Nubra Valley — Turtuk village near Pakistan border, Panamik hot springs." },
+            { day: 6, plan: "Drive back to Leh via Khardung La. Rest day." },
+            { day: 7, plan: "Leh to Pangong Tso (4,350 m) via Chang La. Stay lakeside." },
+            { day: 8, plan: "Pangong sunrise. Drive back to Leh via Chang La." },
+            { day: 9, plan: "Leh — Hemis Monastery (largest in Ladakh), Thiksey Monastery, Shey Palace." },
+            { day: 10, plan: "Leh-Delhi flight. Onward departure." }
+        ]
+    },
+    {
+        id: 35,
+        title: "Kerala Backwater Ayurveda",
+        duration: "10 Days",
+        price: "₹74,300",
+        theme: "Medical",
+        highlight: "Kochi → Munnar → Alleppey houseboat → Marari beach — Kerala arc with embedded 7-day Ayurveda.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/c/c5/The_Backwaters_of_Alleppey.jpg",
+        location: "South India",
+        itinerary: [
+            { day: 1, plan: "Kochi arrival. Fort Kochi heritage walk — Chinese fishing nets, Mattancherry Palace, Jew Town." },
+            { day: 2, plan: "Drive to Munnar (130 km, 4 hrs). Afternoon at the tea estates." },
+            { day: 3, plan: "Munnar — Eravikulam National Park (Nilgiri tahr), Mattupetty Dam, tea museum." },
+            { day: 4, plan: "Munnar to Thekkady (110 km). Periyar National Park boat ride." },
+            { day: 5, plan: "Thekkady to Kumarakom (130 km). Begin 5-day embedded Ayurveda programme at vetted centre." },
+            { day: 6, plan: "Ayurveda Day 2 — full Abhyanga, Shirodhara, dietary supervision." },
+            { day: 7, plan: "Ayurveda Day 3 — sustained programme." },
+            { day: 8, plan: "Ayurveda Day 4 — programme continues. Optional evening backwater cruise." },
+            { day: 9, plan: "Transfer to Marari Beach (35 km). Final Ayurveda day; beach rest." },
+            { day: 10, plan: "Marari to Kochi airport (75 km). Departure." }
+        ]
     }
 ];
 
