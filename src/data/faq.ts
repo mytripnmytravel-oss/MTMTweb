@@ -247,6 +247,144 @@ export const faqTopics: FaqTopic[] = [
             },
         ],
     },
+    {
+        slug: "cuisine-and-dietary",
+        name: "Cuisine & Dietary",
+        blurb: "Regional cuisine, vegetarian, dietary restrictions, water and food safety.",
+        questions: [
+            {
+                slug: "is-indian-food-vegetarian",
+                q: "Is Indian food mostly vegetarian?",
+                a: "India operates one of the world's largest vegetarian food cultures. Many regional kitchens — particularly Rajasthani, Gujarati, South Indian — default to vegetarian. Non-vegetarian options exist but are not assumed. Dietary preferences (Jain — no root vegetables; vegan — no dairy; strict allergies) are briefed to the kitchen in advance through our heritage-dining wing.",
+                links: [
+                    { label: "Vegetarian guide", href: "/destinations/agra/vegetarian" },
+                    { label: "Heritage dining", href: "/heritage-dining" },
+                ],
+            },
+            {
+                slug: "is-the-water-safe",
+                q: "Is the water safe to drink in India?",
+                a: "We do not drink tap water in India. Bottled or filtered water (sealed brand) is standard, included throughout the trip in the vehicle, at the stays, and at vetted dining tables. We brief the kitchens on water-source standards for cooking and ice as part of dietary planning.",
+            },
+            {
+                slug: "can-i-eat-street-food",
+                q: "Can I eat street food?",
+                a: "Yes — with an escort. We curate a vetted street-food trail in each city (Old Delhi chaat, Jaipur kachori, Jodhpur mirchi-vada, Lucknow kebabs) at stalls we've used over years. Random street stalls are not recommended — vetted ones are an essential part of the experience.",
+                links: [{ label: "Heritage dining", href: "/heritage-dining" }],
+            },
+            {
+                slug: "can-you-handle-strict-allergies",
+                q: "Can you handle strict food allergies?",
+                a: "Yes — declared allergies (severe nut, shellfish, gluten, dairy) are briefed to every kitchen we use in advance. Cross-contamination prevention is handled upstream. Travellers with diagnosed serious allergies should declare them at planning, not on arrival.",
+            },
+            {
+                slug: "is-jain-food-available",
+                q: "Is Jain food available everywhere?",
+                a: "Pure Jain food (no onion, no garlic, no root vegetables) is widely available across Rajasthan and Gujarat where Jain communities are concentrated. Outside those regions it requires advance arrangement; we brief the kitchen at booking.",
+            },
+        ],
+    },
+    {
+        slug: "photography-and-heritage",
+        name: "Photography & Heritage",
+        blurb: "Photo permissions, best light, dress codes, and respect at heritage sites.",
+        questions: [
+            {
+                slug: "can-i-photograph-monuments",
+                q: "Can I photograph monuments and temples in India?",
+                a: "Most ASI heritage sites permit photography (cameras and phones); large tripods often require a permit. Some inner sanctums and museum sections restrict photography. Temples generally don't allow inner-sanctum photography. Our escort briefs each site's protocol on arrival.",
+            },
+            {
+                slug: "best-light-for-taj-mahal",
+                q: "What is the best light for photographing the Taj Mahal?",
+                a: "The first 30-45 minutes after sunrise — when the marble shifts from rose to gold to white — is the canonical Taj photography window. The crowd is also smallest then. The Mehtab Bagh across the river gives the rear elevation at sunset (golden hour).",
+                links: [{ label: "Taj Mahal guide", href: "/destinations/agra/monuments/taj-mahal" }],
+            },
+            {
+                slug: "dress-code-temples-mosques",
+                q: "Is there a dress code for temples and mosques?",
+                a: "Yes — modest dress (shoulders, knees covered). Shoes removed at entry. Heads covered at gurdwaras and mosques; we provide scarves. Some inner sanctums restrict non-Hindu entry; the escort briefs at each site.",
+            },
+            {
+                slug: "drone-photography-india",
+                q: "Can I use a drone for photography in India?",
+                a: "Drone photography is restricted in most of India — heritage sites, urban centres, near airports, and military areas are largely prohibited. Most heritage-trip drone use is not feasible without prior permits which are difficult to obtain and slow. We discourage drones for standard travel itineraries.",
+            },
+            {
+                slug: "best-time-for-photography-trip",
+                q: "Best season for a photography-focused India trip?",
+                a: "November to February — the cleanest light, comfortable temperatures, post-monsoon visibility. October and March are strong shoulder months. The monsoon (July-September) offers dramatic skies but limits site access. We sequence photography itineraries around the prime hours and light at each location.",
+            },
+        ],
+    },
+    {
+        slug: "family-and-children",
+        name: "Family & Children",
+        blurb: "Travelling India with kids — what to consider, what's appropriate, what to plan around.",
+        questions: [
+            {
+                slug: "is-india-good-for-family-trips",
+                q: "Is India a good destination for family travel with kids?",
+                a: "Yes — when the trip is planned for the family rather than dragging children through a standard heritage sprint. Hands-on experiences (camel rides, cooking classes, elephant interactions at ethical sanctuaries, school visits) add weight no monument can. We design family trips around energy and engagement.",
+                links: [{ label: "With Kids facets", href: "/destinations/agra/with-kids" }],
+            },
+            {
+                slug: "best-india-destination-for-kids",
+                q: "What are the best India destinations for children?",
+                a: "Rajasthan (forts and palaces feel like stories), the Golden Triangle (the Taj is genuinely awe-striking even at 8), Kerala (backwater houseboats, beaches, gentle pace), the Andamans (snorkelling and islands), and Ranthambore (tiger safari). Wellness-heavy itineraries are less suited to children." ,
+            },
+            {
+                slug: "are-baby-seats-available",
+                q: "Are child car seats available?",
+                a: "Yes — we arrange forward-facing and rear-facing car seats in the Elite Fleet at booking. Specify the child's age and weight; we install before pickup.",
+            },
+            {
+                slug: "can-you-handle-toddlers-and-infants",
+                q: "Can MyTripMyTravel handle toddlers and infants?",
+                a: "Yes. Toddler-aware pacing, family suites at the stays, baby cribs in rooms, child-friendly menus in advance, and shorter sightseeing blocks per day. We tighten the day around naps and meal timing rather than the standard adult schedule.",
+            },
+            {
+                slug: "is-india-safe-for-children",
+                q: "Is India safe for children?",
+                a: "With a vetted private operator handling navigation, water, food, and the day's pacing, yes. The risks travellers worry about (food, water, traffic, crowds) are exactly what we handle. Standard vaccinations and a pre-trip pediatrician consultation are recommended.",
+            },
+        ],
+    },
+    {
+        slug: "group-size-and-travellers",
+        name: "Group Size & Travellers",
+        blurb: "Solo, couples, groups, MICE, multi-generational — who travels with us.",
+        questions: [
+            {
+                slug: "can-i-travel-solo-with-you",
+                q: "Can I travel solo with MyTripMyTravel?",
+                a: "Yes. Solo travellers get a dedicated chauffeur, an escorted guide at heritage sites, and the 24/7 desk — solo with us does not mean unaccompanied. The operational frame is the same; the experiential intimacy is different. Many of our solo travellers choose us specifically because the friction is removed.",
+                links: [{ label: "Solo travel facets", href: "/destinations/jaipur/solo" }],
+            },
+            {
+                slug: "are-honeymoons-private",
+                q: "Are honeymoon itineraries fully private?",
+                a: "Always — every MyTripMyTravel trip is single-party. Honeymoons receive specific curation: private dinners, sunset moments, intimate stays, and pacing that prioritises the experience over coverage. We do not run shared departures.",
+                links: [{ label: "For Couples facets", href: "/destinations/udaipur/for-couples" }],
+            },
+            {
+                slug: "what-is-your-maximum-group-size",
+                q: "What's your maximum group size?",
+                a: "We have run private operations for groups up to 200+ on the MICE / corporate offsite track. For standard leisure travel, our private mission frame works comfortably up to 30 guests. Beyond that, we shift to the scaled MICE protocol.",
+                links: [{ label: "Corporate hub", href: "/corporate" }],
+            },
+            {
+                slug: "can-you-handle-multigenerational-family",
+                q: "Can you handle multi-generational family trips?",
+                a: "Yes — and they are a frequent assignment. Multi-generational travel needs differentiated pacing within a shared itinerary (one party doing the fort climb while another rests, then converging at dinner). The chauffeured Elite Fleet, multiple guides, and a 24/7 desk allow split-day operations without splitting the trip.",
+            },
+            {
+                slug: "do-you-handle-friends-groups",
+                q: "Do you handle friend-group trips (8-15 people)?",
+                a: "Yes — small private groups are among our most common formats. We handle the logistics, the bookings, the room-block, the dietary differences, the dining, and the pacing. The group experiences the trip; we handle everything else.",
+            },
+        ],
+    },
 ];
 
 // ---- Accessors ----
