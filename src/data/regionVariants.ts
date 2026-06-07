@@ -82,6 +82,34 @@ const SEASON_BY_REGION: Record<string, Record<string, { season: string; verdict:
         august: { season: "Ladakh peak; monsoon further south", verdict: "ladakh-peak" },
         september: { season: "post-monsoon clarity returning", verdict: "ideal" },
     },
+    sikkim: {
+        october: { season: "post-monsoon Kanchenjunga clarity — peak views", verdict: "ideal" },
+        november: { season: "clear cold; sharpest mountain photography", verdict: "ideal" },
+        december: { season: "early winter; quiet, atmospheric", verdict: "winter" },
+        january: { season: "deep winter; north Sikkim largely closed", verdict: "winter" },
+        february: { season: "late winter; clearing weather", verdict: "winter" },
+        march: { season: "spring opening; rhododendron buds appearing", verdict: "good" },
+        april: { season: "peak rhododendron bloom in Yumthang", verdict: "ideal" },
+        june: { season: "monsoon arrives; landslide risk on Sikkim roads", verdict: "quiet" },
+        may: { season: "late spring; clear pre-monsoon mountain views", verdict: "ideal" },
+        july: { season: "peak monsoon; south Sikkim only", verdict: "quiet" },
+        august: { season: "monsoon tail; Gangtok / Pelling operable", verdict: "quiet" },
+        september: { season: "post-monsoon season returning", verdict: "good" },
+    },
+    andaman: {
+        october: { season: "season opening; ferries return after monsoon", verdict: "good" },
+        november: { season: "excellent — high season sets in", verdict: "ideal" },
+        december: { season: "peak; Christmas / NYE on Havelock", verdict: "ideal" },
+        january: { season: "peak island season; calm seas, dry", verdict: "ideal" },
+        february: { season: "prime diving + sailing window", verdict: "ideal" },
+        march: { season: "late peak; warmer seas, long beach days", verdict: "ideal" },
+        april: { season: "pre-summer; quieter, excellent diving", verdict: "good" },
+        may: { season: "pre-monsoon; calm before the rains", verdict: "good" },
+        june: { season: "monsoon begins; limited ferry operations", verdict: "quiet" },
+        july: { season: "peak monsoon; limited inter-island travel", verdict: "quiet" },
+        august: { season: "monsoon; interior stays only", verdict: "quiet" },
+        september: { season: "monsoon tail; ferry resumption from late month", verdict: "quiet" },
+    },
 };
 
 function titleCase(s: string): string {
@@ -163,7 +191,7 @@ function monthNarrative(regionSlug: string, month: string): { answer: string; in
 // Regions with full variant routes built. Update this set when adding
 // new region engines (each must have a SEASON_BY_REGION entry and a
 // route folder at /tours/<region>/[dimension]/[value]).
-const VARIANT_REGIONS = new Set(["rajasthan", "kerala", "himalayas"]);
+const VARIANT_REGIONS = new Set(["rajasthan", "kerala", "himalayas", "sikkim", "andaman"]);
 
 // Per-region arrival gateway logic. Honest about routing reality:
 // Rajasthan and Himalayas both come through Delhi (DEL); Kerala has
