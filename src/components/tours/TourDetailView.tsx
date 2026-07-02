@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import {
     Clock, MapPin, ShieldCheck, ChevronRight,
     Calendar, User, Sparkles, ArrowRight, FileText, Plus,
+    Check, Minus, Car, Moon, Utensils, HelpCircle,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -84,15 +85,35 @@ export default function TourDetailView({
                         <div className="grid lg:grid-cols-3 gap-20">
                             <div className="lg:col-span-2">
                                 <div className="mb-20">
-                                    <h4 className="text-sunset-orange font-black uppercase tracking-[0.4em] text-xs mb-4">Strategic Overview</h4>
-                                    <h2 className="text-4xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-10">The Architecture of Your Mission</h2>
+                                    <h4 className="text-sunset-orange font-black uppercase tracking-[0.4em] text-xs mb-4">Overview</h4>
+                                    <h2 className="text-4xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-10">{tour.title}</h2>
                                     <p className="text-xl md:text-2xl font-bold italic text-royal-blue/60 leading-relaxed max-w-3xl">
                                         {tour.highlight}
                                     </p>
+                                    {tour.answer && (
+                                        <p className="mt-8 text-base md:text-lg font-semibold text-royal-blue/80 leading-relaxed max-w-3xl not-italic">
+                                            {tour.answer}
+                                        </p>
+                                    )}
                                 </div>
 
+                                {/* Quick Facts */}
+                                {tour.quickFacts && tour.quickFacts.length > 0 && (
+                                    <div className="mb-20">
+                                        <h3 className="text-sunset-orange font-black uppercase tracking-[0.4em] text-xs mb-6">Quick Facts</h3>
+                                        <dl className="grid sm:grid-cols-2 gap-x-10 gap-y-5 rounded-[2rem] border border-royal-blue/10 p-8 md:p-10 bg-royal-blue/[0.02]">
+                                            {tour.quickFacts.map((f, i) => (
+                                                <div key={i} className="flex justify-between gap-6 border-b border-royal-blue/5 pb-4 last:border-0">
+                                                    <dt className="font-black uppercase tracking-widest text-[10px] text-royal-blue/40 pt-1">{f.label}</dt>
+                                                    <dd className="font-bold text-royal-blue text-right text-sm md:text-base">{f.value}</dd>
+                                                </div>
+                                            ))}
+                                        </dl>
+                                    </div>
+                                )}
+
                                 <div className="space-y-12">
-                                    <h3 className="text-2xl font-black uppercase tracking-[0.3em] text-royal-blue/20">Operational Itinerary</h3>
+                                    <h3 className="text-2xl font-black uppercase tracking-[0.3em] text-royal-blue/20">Day-by-Day Itinerary</h3>
                                     {tour.itinerary.map((day, idx) => (
                                         <motion.div
                                             key={idx}
@@ -104,13 +125,80 @@ export default function TourDetailView({
                                             <div className="absolute left-0 top-0 -translate-x-1/2 w-10 h-10 rounded-full bg-royal-blue text-white flex items-center justify-center font-black text-xs shadow-lg">
                                                 {day.day}
                                             </div>
-                                            <h4 className="font-black text-sunset-orange uppercase tracking-widest text-[10px] mb-4">Tactical Phase {day.day}</h4>
-                                            <p className="text-lg md:text-xl font-bold italic text-royal-blue/70 leading-relaxed">
-                                                {day.plan}
-                                            </p>
+                                            <h4 className="font-black text-royal-blue uppercase tracking-tight text-lg md:text-2xl mb-4 leading-tight">
+                                                Day {day.day}{day.title ? ` — ${day.title}` : ""}
+                                            </h4>
+                                            {day.detail && day.detail.length > 0 ? (
+                                                <div className="space-y-4 max-w-3xl">
+                                                    {day.detail.map((p, i) => (
+                                                        <p key={i} className="text-base md:text-lg font-semibold text-royal-blue/75 leading-relaxed">{p}</p>
+                                                    ))}
+                                                </div>
+                                            ) : (
+                                                <p className="text-lg md:text-xl font-bold italic text-royal-blue/70 leading-relaxed max-w-3xl">
+                                                    {day.plan}
+                                                </p>
+                                            )}
+                                            {(day.drive || day.overnight || day.meals) && (
+                                                <div className="flex flex-wrap gap-x-8 gap-y-2 mt-6 text-[11px] font-black uppercase tracking-widest text-royal-blue/50">
+                                                    {day.drive && <span className="flex items-center gap-2"><Car size={14} className="text-sunset-orange" />{day.drive}</span>}
+                                                    {day.overnight && <span className="flex items-center gap-2"><Moon size={14} className="text-sunset-orange" />Overnight · {day.overnight}</span>}
+                                                    {day.meals && <span className="flex items-center gap-2"><Utensils size={14} className="text-sunset-orange" />{day.meals}</span>}
+                                                </div>
+                                            )}
                                         </motion.div>
                                     ))}
                                 </div>
+
+                                {/* Inclusions / Exclusions */}
+                                {(tour.inclusions?.length || tour.exclusions?.length) ? (
+                                    <div className="mt-20 grid md:grid-cols-2 gap-8">
+                                        {tour.inclusions && tour.inclusions.length > 0 && (
+                                            <div className="rounded-[2rem] border border-emerald-500/20 bg-emerald-500/[0.03] p-8">
+                                                <h3 className="font-black uppercase tracking-widest text-xs text-emerald-600 mb-6">What's Included</h3>
+                                                <ul className="space-y-4">
+                                                    {tour.inclusions.map((item, i) => (
+                                                        <li key={i} className="flex gap-3 text-sm md:text-base font-semibold text-royal-blue/80 leading-snug">
+                                                            <Check size={18} className="text-emerald-500 shrink-0 mt-0.5" />{item}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+                                        {tour.exclusions && tour.exclusions.length > 0 && (
+                                            <div className="rounded-[2rem] border border-royal-blue/10 bg-royal-blue/[0.02] p-8">
+                                                <h3 className="font-black uppercase tracking-widest text-xs text-royal-blue/50 mb-6">Not Included</h3>
+                                                <ul className="space-y-4">
+                                                    {tour.exclusions.map((item, i) => (
+                                                        <li key={i} className="flex gap-3 text-sm md:text-base font-semibold text-royal-blue/60 leading-snug">
+                                                            <Minus size={18} className="text-royal-blue/30 shrink-0 mt-0.5" />{item}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+                                    </div>
+                                ) : null}
+
+                                {/* FAQ */}
+                                {tour.faqs && tour.faqs.length > 0 && (
+                                    <div className="mt-20">
+                                        <h3 className="flex items-center gap-3 text-2xl md:text-3xl font-black text-royal-blue uppercase tracking-tighter mb-10">
+                                            <HelpCircle className="text-sunset-orange" size={24} />Frequently Asked
+                                        </h3>
+                                        <div className="space-y-5">
+                                            {tour.faqs.map((f, i) => (
+                                                <details key={i} className="group rounded-[1.5rem] border border-royal-blue/10 bg-white p-6 md:p-8 [&_summary::-webkit-details-marker]:hidden">
+                                                    <summary className="flex cursor-pointer items-center justify-between gap-4 font-black text-royal-blue text-base md:text-lg leading-snug">
+                                                        {f.q}
+                                                        <Plus size={18} className="text-sunset-orange shrink-0 transition-transform group-open:rotate-45" />
+                                                    </summary>
+                                                    <p className="mt-4 text-sm md:text-base font-semibold text-royal-blue/70 leading-relaxed">{f.a}</p>
+                                                </details>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
                             </div>
 
                             <div>

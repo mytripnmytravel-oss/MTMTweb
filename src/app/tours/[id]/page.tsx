@@ -24,8 +24,8 @@ export async function generateMetadata({
     const tour = getPackageByIdOrSlug(id);
     if (!tour) return { title: "Tour Not Found | MyTripMyTravel" };
     const slug = packageSlug(tour);
-    const title = `${tour.title} — ${tour.duration} ${tour.theme} Tour | MyTripMyTravel`;
-    const description = `${tour.highlight} ${tour.duration}, ${tour.location}. From ${tour.price}. Private, chauffeured, escorted by MyTripMyTravel.`;
+    const title = tour.metaTitle ?? `${tour.title} — ${tour.duration} ${tour.theme} Tour | MyTripMyTravel`;
+    const description = tour.metaDescription ?? `${tour.highlight} ${tour.duration}, ${tour.location}. From ${tour.price}. Private, chauffeured, escorted by MyTripMyTravel.`;
     // Canonical always points at the slug URL, even when reached by legacy numeric id.
     const url = `${SITE_URL}/tours/${slug}`;
     return {
@@ -56,7 +56,7 @@ export default async function TourPage({
             {
                 "@type": "TouristTrip",
                 name: tour.title,
-                description: tour.highlight,
+                description: tour.answer || tour.highlight,
                 url,
                 image: tour.img,
                 touristType: tour.theme,
@@ -66,8 +66,8 @@ export default async function TourPage({
                     itemListElement: tour.itinerary.map((d) => ({
                         "@type": "ListItem",
                         position: d.day,
-                        name: `Day ${d.day}`,
-                        description: d.plan,
+                        name: d.title ? `Day ${d.day}: ${d.title}` : `Day ${d.day}`,
+                        description: d.detail?.join(" ") || d.plan,
                     })),
                 },
                 offers: {
@@ -91,6 +91,16 @@ export default async function TourPage({
                     { "@type": "ListItem", position: 3, name: tour.title, item: url },
                 ],
             },
+            ...(tour.faqs && tour.faqs.length > 0
+                ? [{
+                    "@type": "FAQPage",
+                    mainEntity: tour.faqs.map((f) => ({
+                        "@type": "Question",
+                        name: f.q,
+                        acceptedAnswer: { "@type": "Answer", text: f.a },
+                    })),
+                }]
+                : []),
         ],
     };
 

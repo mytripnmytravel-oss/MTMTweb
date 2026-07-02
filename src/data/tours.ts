@@ -1,3 +1,31 @@
+import { tourEnrichments } from "./tourEnrichments";
+
+export interface ItineraryDay {
+    day: number;
+    /** One-line summary — kept for schema + back-compat. */
+    plan: string;
+    /** SEO-clean, human heading, e.g. "Delhi — Arrival & Old Delhi". */
+    title?: string;
+    /** Rich body: morning / afternoon / evening beats, monuments in context. */
+    detail?: string[];
+    /** City the traveller sleeps in that night. */
+    overnight?: string;
+    /** Meals provided, e.g. "Breakfast, Dinner". */
+    meals?: string;
+    /** Transfer note, e.g. "Delhi → Agra · ~3.5 hrs / 230 km". */
+    drive?: string;
+}
+
+export interface TourQuickFact {
+    label: string;
+    value: string;
+}
+
+export interface TourFAQ {
+    q: string;
+    a: string;
+}
+
 export interface Package {
     id: number;
     title: string;
@@ -7,9 +35,27 @@ export interface Package {
     highlight: string;
     img: string;
     location: string;
-    itinerary: { day: number; plan: string }[];
+    itinerary: ItineraryDay[];
     /** Optional explicit slug; if absent, derived from the title. */
     slug?: string;
+
+    // ── Optional depth fields (itinerary-led completion). Rendered only when present. ──
+    /** Answer-first, citation-ready summary shown at the top of the page. */
+    answer?: string;
+    /** At-a-glance table: best time, start/end city, pace, hotels, group size. */
+    quickFacts?: TourQuickFact[];
+    /** What the price includes. */
+    inclusions?: string[];
+    /** What it does not — kills the #1 buyer objection honestly. */
+    exclusions?: string[];
+    /** Buyer questions → FAQPage schema + on-page block. */
+    faqs?: TourFAQ[];
+    /** Ideal months narrative, e.g. "October–March; Taj at sunrise year-round". */
+    bestTime?: string;
+    /** Hand-crafted <title> override (keyword front-loaded). Falls back to derived. */
+    metaTitle?: string;
+    /** Hand-crafted meta description override (150–160 chars). Falls back to derived. */
+    metaDescription?: string;
 }
 
 export const packages: Package[] = [
@@ -22,11 +68,82 @@ export const packages: Package[] = [
         highlight: "For busy pulse-takers. Delhi, Agra, and Jaipur in a high-speed VIP sprint.",
         img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2670&auto=format&fit=crop",
         location: "Golden Triangle",
+        metaTitle: "3-Day Golden Triangle Tour — Delhi, Agra & Jaipur | MyTripMyTravel",
+        metaDescription: "Private 3-day Golden Triangle tour of Delhi, Agra & Jaipur with a sunrise Taj Mahal visit. Chauffeured, escorted, hotels — from ₹24,800pp. Enquire for dates.",
+        bestTime: "October–March for clear skies and mild days; the Taj Mahal rewards a sunrise visit year-round.",
+        answer: "The 3-Day Express Triangle is a private, chauffeured tour of Delhi, Agra and Jaipur — India's Golden Triangle — paced for travellers who are short on time but want the headline monuments done properly. Across three days you see the Taj Mahal at sunrise, Amber Fort, and Old & New Delhi, travelling by private air-conditioned car with a dedicated driver and licensed local guides at each city. It runs best October–March and starts from ₹24,800 per person.",
+        quickFacts: [
+            { label: "Duration", value: "3 days / 2 nights" },
+            { label: "Route", value: "Delhi → Agra → Jaipur → Delhi" },
+            { label: "Best time", value: "October–March" },
+            { label: "Pace", value: "Fast — built for limited time" },
+            { label: "Hotels", value: "4★ / 5★ options" },
+            { label: "Group", value: "Private (1–9+)" },
+            { label: "From", value: "₹24,800 per person" },
+        ],
         itinerary: [
-            { day: 1, plan: "Arrive in Delhi. Afternoon tour of Qutub Minar & Lotus Temple. Late night drive to Agra." },
-            { day: 2, plan: "Sunrise at Taj Mahal. Breakfast & drive to Jaipur via Fatehpur Sikri. Evening at Chokhi Dhani." },
-            { day: 3, plan: "Amber Fort elephant ride. Quick stop at Hawa Mahal and Jantar Mantar. Afternoon departure to Delhi." }
-        ]
+            {
+                day: 1,
+                plan: "Arrive in Delhi. Afternoon tour of Qutub Minar & Lotus Temple. Late night drive to Agra.",
+                title: "Delhi — Arrival, Qutub Minar & Drive to Agra",
+                detail: [
+                    "Your chauffeur meets you at Delhi (DEL) arrivals and the tour begins the same afternoon. First stop is the Qutub Minar, the 73-metre 12th-century victory tower, followed by the serene lotus-shaped Bahá'í House of Worship — an open-air, low-energy start that beats jet lag without throwing you into crowds.",
+                    "By late afternoon you transfer to Agra on the Yamuna Expressway, arriving in the evening. The night drive is deliberate: it puts you at the Taj Mahal gate for next morning's sunrise, when the marble is softest and the queues shortest.",
+                ],
+                overnight: "Agra",
+                meals: "None (arrival day)",
+                drive: "Delhi → Agra · ~3.5 hrs / 230 km",
+            },
+            {
+                day: 2,
+                plan: "Sunrise at Taj Mahal. Breakfast & drive to Jaipur via Fatehpur Sikri. Evening at Chokhi Dhani.",
+                title: "Agra — Taj Mahal Sunrise, Fatehpur Sikri & Jaipur",
+                detail: [
+                    "You enter the Taj Mahal at first light with your guide, as the mausoleum shifts from pink to pearl-white — the single best hour to see and photograph it. Allow two unhurried hours inside the complex.",
+                    "After breakfast you drive to Jaipur, pausing at the UNESCO ghost-city of Fatehpur Sikri — Akbar's abandoned red-sandstone capital — about an hour along the route.",
+                    "You reach the Pink City by evening, in time for a Rajasthani thali dinner and folk performance at Chokhi Dhani if you wish.",
+                ],
+                overnight: "Jaipur",
+                meals: "Breakfast",
+                drive: "Agra → Jaipur (via Fatehpur Sikri) · ~4.5 hrs / 240 km",
+            },
+            {
+                day: 3,
+                plan: "Amber Fort elephant ride. Quick stop at Hawa Mahal and Jantar Mantar. Afternoon departure to Delhi.",
+                title: "Jaipur — Amber Fort, Pink City & Return",
+                detail: [
+                    "The morning belongs to the honey-coloured Amber Fort above Maota Lake; inside, the Sheesh Mahal mirror hall is the highlight (jeep ascent included; elephant rides optional and seasonal).",
+                    "Back in the old city you photograph the five-storey Hawa Mahal facade and visit Jantar Mantar, the 18th-century royal observatory, with time for a block-print or gemstone stop.",
+                    "By early afternoon you begin the drive back to Delhi for your onward flight — your chauffeur delivers you to the airport or hotel.",
+                ],
+                overnight: "—",
+                meals: "Breakfast",
+                drive: "Jaipur → Delhi · ~5 hrs / 280 km",
+            },
+        ],
+        inclusions: [
+            "Private air-conditioned vehicle with professional chauffeur for the full circuit",
+            "2 nights' hotel accommodation with daily breakfast",
+            "Licensed local guides at Agra and Jaipur monuments",
+            "All fuel, tolls, parking, driver allowance and inter-city transfers",
+            "Airport pick-up and drop-off",
+            "Bottled water and 24/7 on-trip support",
+        ],
+        exclusions: [
+            "International and domestic flights",
+            "Monument entrance fees (payable directly, or pre-arranged on request)",
+            "Lunches and dinners",
+            "Personal expenses, tips and camera fees",
+            "Visa, travel insurance and anything not listed under inclusions",
+        ],
+        faqs: [
+            { q: "Is 3 days enough for the Golden Triangle?", a: "Three days is enough to see the headline monuments — the Taj Mahal, Amber Fort and Old Delhi — at a brisk but comfortable pace. If you want slower mornings, shopping time or a heritage-hotel stay, the 4-Day Classic Circle or 5-Day Heritage Loop add breathing room on the same route." },
+            { q: "Will I see the Taj Mahal at sunrise?", a: "Yes — the itinerary is built around a sunrise entry on Day 2, the least crowded and most photogenic hour. The Taj Mahal is closed on Fridays; if your dates include a Friday we re-sequence the days so you never miss it." },
+            { q: "Is this a private tour or a group departure?", a: "Entirely private. The vehicle, chauffeur and guides are yours alone, so timings flex around you — there are no other travellers and no fixed group schedule." },
+            { q: "How much walking is involved?", a: "Moderate — each monument means 1–2 hours on foot over uneven historic ground. Your chauffeur drops and collects you at every gate, and the pace can be softened for older travellers or families on request." },
+            { q: "What is the best time of year for this tour?", a: "October to March gives the clearest skies and mildest temperatures across all three cities. April–June is hot but quieter and cheaper; the monsoon (July–September) is green and dramatic with occasional afternoon showers." },
+            { q: "Can you customise the itinerary or add cities?", a: "Yes — this is a template, not a cage. We routinely add Udaipur, Ranthambore or Varanasi, upgrade hotels, or slow the pace. Send your dates and preferences and we'll return a tailored plan and quote." },
+        ],
     },
     {
         id: 2,
@@ -37,12 +154,95 @@ export const packages: Package[] = [
         highlight: "The perfect introduction. Dedicated time for the 'Big Three' monuments.",
         img: "/tour_agra_fort.png",
         location: "Golden Triangle",
+        metaTitle: "4-Day Golden Triangle Tour — Delhi, Agra & Jaipur | MyTripMyTravel",
+        metaDescription: "Classic 4-day Golden Triangle tour: Old Delhi, the Taj Mahal at sunset, Agra Fort & Jaipur's forts. Private car, guides, hotels — from ₹33,100pp. Enquire now.",
+        bestTime: "October–March for the clearest skies; a full day per city keeps the pace comfortable year-round.",
+        answer: "The 4-Day Classic Circle is the definitive first-timer's Golden Triangle — a private, chauffeured loop through Delhi, Agra and Jaipur with a full, unhurried day in each. You'll walk Old Delhi, see the Taj Mahal at sunset and Agra Fort, cross to Jaipur via Fatehpur Sikri, and explore the Amber Fort and Pink City bazaars. Travel is by private air-conditioned car with licensed local guides; the tour runs best October–March and starts from ₹33,100 per person.",
+        quickFacts: [
+            { label: "Duration", value: "4 days / 3 nights" },
+            { label: "Route", value: "Delhi → Agra → Jaipur → Delhi" },
+            { label: "Best time", value: "October–March" },
+            { label: "Pace", value: "Relaxed — a full day per city" },
+            { label: "Hotels", value: "4★ / 5★ & heritage options" },
+            { label: "Group", value: "Private (1–9+)" },
+            { label: "From", value: "₹33,100 per person" },
+        ],
         itinerary: [
-            { day: 1, plan: "Delhi Arrival & Heritage Walk in Old Delhi (Chandni Chowk, Red Fort)." },
-            { day: 2, plan: "Morning drive to Agra. Sunset visit to the Taj Mahal. Overnight in Agra." },
-            { day: 3, plan: "Agra Fort. Morning drive to Jaipur via Fatehpur Sikri. Afternoon at City Palace." },
-            { day: 4, plan: "Amer Fort & Hawa Mahal. Shopping in Pink City markets. Evening departure." }
-        ]
+            {
+                day: 1,
+                plan: "Delhi Arrival & Heritage Walk in Old Delhi (Chandni Chowk, Red Fort).",
+                title: "Delhi — Old & New Delhi Heritage Day",
+                detail: [
+                    "After your airport welcome and check-in, you explore Old Delhi on foot: the Mughal-era Red Fort, the vast Jama Masjid, and a cycle-rickshaw ride through the spice-scented lanes of Chandni Chowk.",
+                    "New Delhi's ceremonial axis follows — India Gate and the Rajpath, a drive past the colonial government buildings, and Humayun's Tomb, the architectural rehearsal for the Taj Mahal, if time allows.",
+                ],
+                overnight: "Delhi",
+                meals: "None (arrival day)",
+                drive: "Within Delhi",
+            },
+            {
+                day: 2,
+                plan: "Morning drive to Agra. Sunset visit to the Taj Mahal. Overnight in Agra.",
+                title: "Agra — Drive to Agra & Taj Mahal at Sunset",
+                detail: [
+                    "A morning run down the Yamuna Expressway brings you to Agra by lunchtime and your hotel check-in.",
+                    "In the late afternoon you visit the Taj Mahal at sunset, when the marble warms to amber and gold — a quieter, softer alternative to the sunrise crush, with your guide unpacking the love story and the flawless Mughal symmetry.",
+                    "Optional evening: a rooftop dinner with a floodlit Taj view, or the 'Mohabbat the Taj' heritage show.",
+                ],
+                overnight: "Agra",
+                meals: "Breakfast",
+                drive: "Delhi → Agra · ~3.5 hrs / 230 km",
+            },
+            {
+                day: 3,
+                plan: "Agra Fort. Morning drive to Jaipur via Fatehpur Sikri. Afternoon at City Palace.",
+                title: "Agra Fort, Fatehpur Sikri & Jaipur City Palace",
+                detail: [
+                    "The morning starts at the red-sandstone Agra Fort, the Mughal seat of power where Shah Jahan spent his final years gazing at the Taj across the Yamuna.",
+                    "You then drive to Jaipur via UNESCO-listed Fatehpur Sikri, Akbar's perfectly preserved abandoned capital of red sandstone.",
+                    "Reaching Jaipur by late afternoon, you visit the City Palace and its museums — still the residence of the erstwhile royal family.",
+                ],
+                overnight: "Jaipur",
+                meals: "Breakfast",
+                drive: "Agra → Jaipur (via Fatehpur Sikri) · ~4.5 hrs / 240 km",
+            },
+            {
+                day: 4,
+                plan: "Amer Fort & Hawa Mahal. Shopping in Pink City markets. Evening departure.",
+                title: "Jaipur — Amber Fort, Hawa Mahal & Departure",
+                detail: [
+                    "Your final morning is the Amber Fort, with its Sheesh Mahal mirror hall and ramparts above Maota Lake (jeep ascent included).",
+                    "Back in the Pink City you photograph the Hawa Mahal and browse the bazaars for block-print textiles, blue pottery and gemstones.",
+                    "By afternoon your chauffeur drives you back to Delhi in time for your onward flight.",
+                ],
+                overnight: "—",
+                meals: "Breakfast",
+                drive: "Jaipur → Delhi · ~5 hrs / 280 km",
+            },
+        ],
+        inclusions: [
+            "Private air-conditioned vehicle with professional chauffeur for the full circuit",
+            "3 nights' hotel accommodation with daily breakfast",
+            "Licensed local guides in Delhi, Agra and Jaipur",
+            "All fuel, tolls, parking, driver allowance and inter-city transfers",
+            "Airport pick-up and drop-off",
+            "Bottled water and 24/7 on-trip support",
+        ],
+        exclusions: [
+            "International and domestic flights",
+            "Monument entrance fees (payable directly, or pre-arranged on request)",
+            "Lunches and dinners",
+            "Personal expenses, tips and camera fees",
+            "Visa, travel insurance and anything not listed under inclusions",
+        ],
+        faqs: [
+            { q: "What's the difference between the 3-day and 4-day Golden Triangle?", a: "The 4-Day Classic gives each city a full, unhurried day — including a proper Old Delhi walk on Day 1 that the 3-day sprint skips, plus more time in Agra and Jaipur. If you can spare the extra day, it's the more comfortable and complete first trip." },
+            { q: "Do we see the Taj Mahal at sunrise or sunset?", a: "This itinerary visits at sunset on Day 2, when the marble glows amber and the crowds thin. Prefer sunrise? We simply flip the Agra timings at no extra cost — just ask. The Taj is closed on Fridays, and we re-sequence the days around it." },
+            { q: "Is it suitable for families with children?", a: "Yes — a day per city keeps the pace manageable for kids, and the private car allows flexible rest stops, snack breaks and no early group departures. We can add jeep rides and lighter museum time on request." },
+            { q: "What kind of hotels are included?", a: "The base price uses hand-picked 4-star hotels with breakfast; 5-star and heritage-palace upgrades — a converted haveli in Jaipur, for example — are available. Ask for options with your quote." },
+            { q: "Are guides and entrance fees included?", a: "Licensed local guides are included in all three cities. Monument entrance fees are payable directly or can be pre-arranged and added to your quote, so everything is prepaid before you arrive." },
+            { q: "Can we extend the trip to Udaipur, Ranthambore or Varanasi?", a: "Absolutely — the Classic Circle is the spine our longer tours build on. Popular add-ons are a tiger safari at Ranthambore, the lakes of Udaipur, or the ghats of Varanasi. Share your dates and we'll design the extension and quote." },
+        ],
     },
     {
         id: 11,
@@ -53,13 +253,104 @@ export const packages: Package[] = [
         highlight: "A deeper dive into the Mughal history with evening sound & light shows.",
         img: "https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=2673&auto=format&fit=crop",
         location: "Golden Triangle",
+        metaTitle: "5-Day Golden Triangle Tour — Delhi, Agra & Jaipur | MyTripMyTravel",
+        metaDescription: "In-depth 5-day Golden Triangle tour: sunrise Taj Mahal, Agra's Baby Taj & Jaipur's three forts. Private car, guides, hotels — from ₹41,400pp. Enquire now.",
+        bestTime: "October–March for clear light on the forts; two nights in Jaipur keep the pace unhurried.",
+        answer: "The 5-Day Heritage Loop is a deeper Golden Triangle — a private, chauffeured circuit through Delhi, Agra and Jaipur with time to go beyond the headline monuments. You'll see the Taj Mahal at sunrise and from Mehtab Bagh, Agra's marble 'Baby Taj' and Agra Fort, and give Jaipur two full days across the Amber, Jaigarh and Nahargarh forts. Travel is by private air-conditioned car with licensed local guides; the tour runs best October–March and starts from ₹41,400 per person.",
+        quickFacts: [
+            { label: "Duration", value: "5 days / 4 nights" },
+            { label: "Route", value: "Delhi → Agra → Jaipur → Delhi" },
+            { label: "Best time", value: "October–March" },
+            { label: "Pace", value: "Unhurried — 2 nights in Jaipur" },
+            { label: "Hotels", value: "4★ / 5★ & heritage options" },
+            { label: "Group", value: "Private (1–9+)" },
+            { label: "From", value: "₹41,400 per person" },
+        ],
         itinerary: [
-            { day: 1, plan: "Delhi Sightseeing: Humayun's Tomb, India Gate, Parliament Street." },
-            { day: 2, plan: "Drive to Agra. Itimad-ud-Daulah (Baby Taj). Sunset Agra Fort." },
-            { day: 3, plan: "Sunrise Taj Mahal. Mehtab Bagh. Drive to Jaipur. Overnight in Jaipur." },
-            { day: 4, plan: "Full day Jaipur: Amer Fort, Jaigarh Fort, Nahargarh Fort sunset view." },
-            { day: 5, plan: "Jantar Mantar & Hawa Mahal. Lunch at a Heritage Haveli. Drive back to Delhi." }
-        ]
+            {
+                day: 1,
+                plan: "Delhi Sightseeing: Humayun's Tomb, India Gate, Parliament Street.",
+                title: "Delhi — Imperial Delhi & Mughal Foundations",
+                detail: [
+                    "You open in New Delhi at Humayun's Tomb, the garden mausoleum that set the template the Taj Mahal would perfect a century later, then take in India Gate and the ceremonial vistas of the Lutyens core.",
+                    "Old Delhi follows at your pace — the Jama Masjid and a cycle-rickshaw run through Chandni Chowk — with a first briefing from your guide on the Mughal thread that ties the whole loop together.",
+                ],
+                overnight: "Delhi",
+                meals: "None (arrival day)",
+                drive: "Within Delhi",
+            },
+            {
+                day: 2,
+                plan: "Drive to Agra. Itimad-ud-Daulah (Baby Taj). Sunset Agra Fort.",
+                title: "Agra — Drive to Agra, Baby Taj & Agra Fort at Sunset",
+                detail: [
+                    "A morning transfer brings you to Agra. In the afternoon you visit Itimad-ud-Daulah — the exquisite 'Baby Taj', the first Mughal tomb built entirely in marble and the design bridge to the Taj itself.",
+                    "As the day cools you climb the red-sandstone Agra Fort, ending near the octagonal tower where Shah Jahan spent his final years with a distant view of the Taj — the perfect prelude to tomorrow's sunrise.",
+                ],
+                overnight: "Agra",
+                meals: "Breakfast",
+                drive: "Delhi → Agra · ~3.5 hrs / 230 km",
+            },
+            {
+                day: 3,
+                plan: "Sunrise Taj Mahal. Mehtab Bagh. Drive to Jaipur. Overnight in Jaipur.",
+                title: "Agra — Taj Mahal Sunrise, Mehtab Bagh & Jaipur",
+                detail: [
+                    "You enter the Taj Mahal at first light, then cross the river to Mehtab Bagh, the moonlight garden that frames the mausoleum in reflection — the photographer's angle most day-trippers never reach.",
+                    "After breakfast you drive to Jaipur via UNESCO-listed Fatehpur Sikri, arriving in the Pink City by evening.",
+                ],
+                overnight: "Jaipur",
+                meals: "Breakfast",
+                drive: "Agra → Jaipur (via Fatehpur Sikri) · ~4.5 hrs / 240 km",
+            },
+            {
+                day: 4,
+                plan: "Full day Jaipur: Amer Fort, Jaigarh Fort, Nahargarh Fort sunset view.",
+                title: "Jaipur — Amber, Jaigarh & Nahargarh Forts",
+                detail: [
+                    "A full day in the Rajput capital: the hilltop Amber Fort and its Sheesh Mahal mirror hall, then Jaigarh Fort above it — home to Jaivana, once the world's largest wheeled cannon.",
+                    "You end at Nahargarh Fort for sunset over the city, with the City Palace and Jantar Mantar woven in if you wish.",
+                ],
+                overnight: "Jaipur",
+                meals: "Breakfast",
+                drive: "Within Jaipur",
+            },
+            {
+                day: 5,
+                plan: "Jantar Mantar & Hawa Mahal. Lunch at a Heritage Haveli. Drive back to Delhi.",
+                title: "Jaipur — Pink City, Heritage Lunch & Return to Delhi",
+                detail: [
+                    "Your last morning takes in Jantar Mantar and the Hawa Mahal, with time in the bazaars for block-print textiles, blue pottery and gemstones.",
+                    "After lunch at a heritage haveli, your chauffeur drives you back to Delhi in time for your onward flight.",
+                ],
+                overnight: "—",
+                meals: "Breakfast, Lunch",
+                drive: "Jaipur → Delhi · ~5 hrs / 280 km",
+            },
+        ],
+        inclusions: [
+            "Private air-conditioned vehicle with professional chauffeur for the full circuit",
+            "4 nights' hotel accommodation with daily breakfast",
+            "Licensed local guides in Delhi, Agra and Jaipur",
+            "All fuel, tolls, parking, driver allowance and inter-city transfers",
+            "Airport pick-up and drop-off",
+            "Bottled water and 24/7 on-trip support",
+        ],
+        exclusions: [
+            "International and domestic flights",
+            "Monument entrance fees (payable directly, or pre-arranged on request)",
+            "Lunches and dinners except where noted",
+            "Personal expenses, tips and camera fees",
+            "Visa, travel insurance and anything not listed under inclusions",
+        ],
+        faqs: [
+            { q: "How is the 5-day tour different from the shorter Golden Triangle trips?", a: "The extra days go into depth, not just more monuments: Agra's Baby Taj and the Mehtab Bagh reflection view, and two full nights in Jaipur so you can add Jaigarh and Nahargarh forts rather than rushing the Amber Fort. It suits history lovers and photographers." },
+            { q: "Do we see the Taj Mahal at both sunrise and sunset?", a: "You see Agra Fort at sunset on Day 2 (with a distant Taj view) and the Taj Mahal itself at sunrise on Day 3, plus the reflection view from Mehtab Bagh — the fullest Taj experience among our short tours. The Taj closes on Fridays and we re-sequence around it." },
+            { q: "Is two nights in Jaipur worth it?", a: "Yes if you like forts, crafts or slower mornings. It lets you pair the Amber Fort with Jaigarh and Nahargarh, spend real time in the bazaars, and still catch a sunset — all of which the one-night versions compress." },
+            { q: "What hotels and upgrades are available?", a: "The base uses 4-star hotels with breakfast; 5-star and heritage-palace stays — a Jaipur haveli, or an Agra property with Taj views — are available on request and added to your quote." },
+            { q: "Are guides and entrance fees included?", a: "Licensed local guides are included across all three cities. Monument entrance fees are payable directly or pre-arranged and prepaid with your quote." },
+            { q: "Can we add Ranthambore, Udaipur or Varanasi?", a: "Yes — the Heritage Loop extends naturally into a tiger safari at Ranthambore, the lakes of Udaipur, or the ghats of Varanasi. Tell us your dates and interests and we'll tailor the plan and quote." },
+        ],
     },
     {
         id: 12,
@@ -721,6 +1012,14 @@ export const packages: Package[] = [
         ]
     }
 ];
+
+// Merge itinerary-led enrichment content (authored separately in
+// tourEnrichments.ts) into the base catalogue so every consumer — detail
+// pages, listings, related-tour blocks — sees the completed content.
+for (const p of packages) {
+    const enrichment = tourEnrichments[p.id];
+    if (enrichment) Object.assign(p, enrichment);
+}
 
 // ---- Slug layer + accessors ----
 
