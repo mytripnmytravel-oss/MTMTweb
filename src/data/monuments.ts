@@ -3,6 +3,7 @@
 
 import type { QuickFact, FAQ } from "./destinations";
 import { getDestination } from "./destinations";
+import { extraMonuments } from "./monumentsExtra";
 
 export interface Monument {
     slug: string;
@@ -22,7 +23,7 @@ export interface Monument {
     faqs: FAQ[];
 }
 
-export const monuments: Monument[] = [
+const coreMonuments: Monument[] = [
     // ---- Agra ----
     {
         slug: "taj-mahal",
@@ -1465,6 +1466,9 @@ export const monuments: Monument[] = [
         ],
     },
 ];
+
+/** Full monument catalogue = original set + wave expansions. */
+export const monuments: Monument[] = [...coreMonuments, ...extraMonuments];
 
 // ---- Accessors ----
 
