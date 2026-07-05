@@ -2,6 +2,8 @@
 // /destinations cluster. Hand-authored Premium-tier entries.
 // Each Destination is rendered server-side with metadata + JSON-LD.
 
+import { extraDestinations } from "./destinationsExtra";
+
 export interface QuickFact {
     label: string;
     value: string;
@@ -80,7 +82,7 @@ export const regions: Region[] = [
         tagline: "Delhi · Agra · Jaipur",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg",
         blurb: "The definitive first circuit of India — three capitals of empire, art, and architecture connected by a single chauffeured arc.",
-        citySlugs: ["delhi", "agra", "jaipur"],
+        citySlugs: ["delhi", "agra", "jaipur", "fatehpur-sikri", "mathura", "vrindavan", "neemrana", "alwar", "sariska"],
     },
     {
         slug: "rajasthan",
@@ -88,7 +90,7 @@ export const regions: Region[] = [
         tagline: "Udaipur · Jodhpur · Jaisalmer",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jodhpur-Mehrangarh_Fort-06-Blue_city-20131011.jpg",
         blurb: "Deep immersions into the royal heartland — lake palaces, blue cities, and the last great desert forts of the Thar.",
-        citySlugs: ["udaipur", "jodhpur", "jaisalmer", "pushkar", "ranthambore", "bikaner", "chittorgarh", "mount-abu", "bundi", "mandawa", "ajmer", "bharatpur"],
+        citySlugs: ["udaipur", "jodhpur", "jaisalmer", "pushkar", "ranthambore", "bikaner", "chittorgarh", "mount-abu", "bundi", "mandawa", "ajmer", "bharatpur", "ranakpur", "kumbhalgarh", "nawalgarh", "osian"],
     },
     {
         slug: "kerala",
@@ -122,9 +124,49 @@ export const regions: Region[] = [
         blurb: "Private island sanctuaries and ultra-luxury marine operations across the Bay of Bengal archipelago.",
         citySlugs: ["port-blair", "havelock", "neil", "diglipur"],
     },
+    {
+        slug: "north-india",
+        name: "North India",
+        tagline: "Varanasi · Amritsar · Lucknow",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Varanasi_panorama.jpg",
+        blurb: "The sacred Ganges, the Golden Temple, and the Nawabi cities of the northern plains.",
+        citySlugs: ["varanasi", "amritsar", "lucknow", "sarnath", "ayodhya", "prayagraj", "chandigarh"],
+    },
+    {
+        slug: "central-india",
+        name: "Central India",
+        tagline: "Khajuraho · Gwalior · Orchha",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/5/55/Kandariya_Mahadeva_Temple%2C_Khajuraho%2C_Madhya_Pradesh%2C_India_001.jpg",
+        blurb: "Temple sculpture, hill forts, ancient stupas, and the tiger forests of the Madhya Pradesh heartland.",
+        citySlugs: ["khajuraho", "gwalior", "orchha", "bhopal", "sanchi", "ujjain", "bandhavgarh", "pachmarhi"],
+    },
+    {
+        slug: "west-india",
+        name: "West India",
+        tagline: "Mumbai · Goa · Gujarat",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Gateway_of_India_in_the_evening%2C_Mumbai%2C_India.jpg",
+        blurb: "Portuguese coasts, rock-cut caves, the white Rann of Kutch, and the last Asiatic lions of the western states.",
+        citySlugs: ["goa", "mumbai", "ahmedabad", "rann-of-kutch", "gir", "aurangabad", "ellora", "mahabaleshwar", "dwarka"],
+    },
+    {
+        slug: "south-india",
+        name: "South India",
+        tagline: "Hampi · Mysore · Tamil temples",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Stone_Chariot_at_Hampi%2C_Karnataka.jpg",
+        blurb: "Dravidian temple cities, Western Ghats coffee hills, colonial hill stations, and the Franco-Tamil coast.",
+        citySlugs: ["hampi", "mysore", "bengaluru", "coorg", "chikmagalur", "ooty", "kodaikanal", "pondicherry", "mahabalipuram", "madurai", "thanjavur"],
+    },
+    {
+        slug: "east-india",
+        name: "East India",
+        tagline: "Kolkata · Darjeeling · Odisha",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/7/72/Victoria_Memorial_situated_in_Kolkata.jpg",
+        blurb: "Bengal's cultural capital, the Himalayan tea hills of Darjeeling, and the sacred temple coast of Odisha.",
+        citySlugs: ["kolkata", "darjeeling", "puri", "konark", "bodhgaya"],
+    },
 ];
 
-export const destinations: Destination[] = [
+const coreDestinations: Destination[] = [
     {
         slug: "agra",
         name: "Agra",
@@ -3581,6 +3623,9 @@ export const destinations: Destination[] = [
         ],
     },
 ];
+
+/** The full destination catalogue = original cities + wave expansions. */
+export const destinations: Destination[] = [...coreDestinations, ...extraDestinations];
 
 // ---- Accessors ----
 
