@@ -64,6 +64,26 @@ export default function RegionalTourHubView({
                                 <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-lg md:text-xl text-dark-slate/70 font-bold leading-relaxed">{p}</motion.p>
                             ))}
                         </div>
+
+                        {hub.quickFacts && hub.quickFacts.length > 0 && (
+                            <dl className="mt-14 grid sm:grid-cols-2 gap-x-10 gap-y-5 rounded-[2rem] border border-royal-blue/10 p-8 md:p-10 bg-royal-blue/[0.02] max-w-3xl">
+                                {hub.quickFacts.map((f, i) => (
+                                    <div key={i} className="flex justify-between gap-6 border-b border-royal-blue/5 pb-4 last:border-0 sm:[&:nth-last-child(2)]:border-0">
+                                        <dt className="font-black uppercase tracking-widest text-[10px] text-royal-blue/40 pt-1 shrink-0">{f.label}</dt>
+                                        <dd className="font-bold text-royal-blue text-right text-sm md:text-base">{f.value}</dd>
+                                    </div>
+                                ))}
+                            </dl>
+                        )}
+
+                        {hub.durationGuide && (
+                            <div className="mt-10 max-w-3xl rounded-[2rem] border border-sunset-orange/20 bg-sunset-orange/[0.04] p-8 md:p-10">
+                                <h3 className="flex items-center gap-3 font-black uppercase tracking-widest text-xs text-sunset-orange mb-4">
+                                    <Clock size={16} /> How many days do you need?
+                                </h3>
+                                <p className="text-base md:text-lg text-dark-slate/75 font-bold leading-relaxed">{hub.durationGuide}</p>
+                            </div>
+                        )}
                     </div>
                 </section>
 
