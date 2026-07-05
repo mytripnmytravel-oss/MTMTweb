@@ -510,6 +510,12 @@ export const programmes: WellnessProgramme[] = [
 
 // ---- Accessors ----
 
+/** The programme's on-page FAQ set (first 6 across its variants) — shared by
+ *  the client detail component and the server JSON-LD builder. */
+export function programmeFaqs(programme: WellnessProgramme): FAQ[] {
+    return programme.variants.flatMap((v) => v.faqs).slice(0, 6);
+}
+
 export function getProgramme(slug: string): WellnessProgramme | undefined {
     return programmes.find((p) => p.slug === slug);
 }
