@@ -39,11 +39,14 @@ export function WellnessVariantRoute({
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "MedicalTherapy",
+                // Honest framing: a wellness travel service, not a medical procedure.
+                // (Avoids over-claiming MedicalTherapy on yoga/massage/Ayurveda briefs.)
+                "@type": "Service",
                 name: variant.name,
+                serviceType: `Wellness — ${programme.name}`,
                 description: variant.answer,
                 url,
-                howPerformed: variant.protocol.map((p) => `${p.phase}: ${p.detail}`).join(" "),
+                areaServed: { "@type": "Country", name: "India" },
                 provider: { "@type": "TravelAgency", name: "MyTripMyTravel", url: SITE_URL },
             },
             {
