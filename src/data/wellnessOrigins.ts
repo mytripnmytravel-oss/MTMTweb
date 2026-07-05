@@ -5,7 +5,8 @@
 // anchor for massage) with each origin's flight context.
 
 import { getProgramme, type WellnessProgramme } from "./wellness";
-import { ORIGINS, type Origin } from "./tourVariants";
+// Domestic origins are GT-tour-only; wellness ×origin uses international origins.
+import { INTL_ORIGINS as ORIGINS, type Origin } from "./tourVariants";
 import { PROGRAMME_LOCATIONS } from "./wellnessFacets";
 import { getDestination } from "./destinations";
 

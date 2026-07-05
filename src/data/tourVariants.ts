@@ -215,6 +215,14 @@ export const ORIGINS: Origin[] = [
     { slug: "ahmedabad", city: "Ahmedabad", country: "India", domestic: true, flightBand: "~1 hr 30 min flight to Delhi (or an overnight train)", note: "One of the shortest hops — Ahmedabad to Delhi is quick, and the circuit starts the same day." },
 ];
 
+/**
+ * International origins only (excludes the domestic India departure cities).
+ * The domestic origins are scoped to the Golden Triangle tour engine; the
+ * destination / monument / wellness ×origin engines use this international
+ * set so they never render domestic-origin pages with international framing.
+ */
+export const INTL_ORIGINS: Origin[] = ORIGINS.filter((o) => !o.domestic);
+
 // ---- Origin-aware phrasing helpers (domestic vs international framing) ----
 function isShortHop(o: Origin): boolean {
     if (o.domestic) return true; // domestic = same-day, no recovery needed

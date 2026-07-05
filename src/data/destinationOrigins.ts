@@ -4,7 +4,8 @@
 // (region, signature, recommended sequencing) into one cohesive page.
 
 import { destinations, getDestination, type Destination } from "./destinations";
-import { ORIGINS, type Origin } from "./tourVariants";
+// Domestic origins are GT-tour-only; destination ×origin uses international origins.
+import { INTL_ORIGINS as ORIGINS, type Origin } from "./tourVariants";
 
 export { ORIGINS };
 

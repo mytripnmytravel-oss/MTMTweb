@@ -4,7 +4,8 @@
 
 import { getDestination, type Destination } from "./destinations";
 import { monuments, type Monument } from "./monuments";
-import { ORIGINS, type Origin } from "./tourVariants";
+// Domestic origins are GT-tour-only; monument ×origin uses international origins.
+import { INTL_ORIGINS as ORIGINS, type Origin } from "./tourVariants";
 import { getCityOriginContent } from "./destinationOrigins";
 
 export interface MonumentOriginContent {
