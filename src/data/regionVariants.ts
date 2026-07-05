@@ -231,7 +231,8 @@ function regionGateway(regionSlug: string, origin: Origin): { code: string; gate
 }
 
 function isShortHop(flightBand: string): boolean {
-    return /\b(3\.5|4 hrs|5\.5|6 hrs)\b/.test(flightBand);
+    const m = flightBand.match(/([\d.]+)/);
+    return m ? parseFloat(m[1]) <= 7 : false;
 }
 
 export function regionHasVariants(regionSlug: string): boolean {

@@ -205,6 +205,46 @@ export const ORIGINS: Origin[] = [
     { slug: "tokyo", city: "Tokyo", country: "Japan", flightBand: "~9–12 hrs to Delhi", note: "Non-stop and one-stop options; a strong Phase-2 market with a manageable shift." },
     { slug: "hong-kong", city: "Hong Kong", country: "Hong Kong", flightBand: "~6 hrs (non-stop) to Delhi", note: "A short, easy crossing into Delhi (DEL) for the Golden Triangle." },
 
+    // ── Wave 1 expansion — additional international departure markets ──
+    // North America
+    { slug: "boston", city: "Boston", country: "USA", flightBand: "~13.5–14.5 hrs (non-stop) to Delhi", note: "Non-stop service into Delhi (DEL); East Coast travellers usually take a recovery night before the circuit." },
+    { slug: "washington-dc", city: "Washington DC", country: "USA", flightBand: "~14–15 hrs (non-stop) to Delhi", note: "Non-stop into Delhi (DEL); we build a recovery buffer for the long crossing." },
+    { slug: "houston", city: "Houston", country: "USA", flightBand: "~16–17 hrs (one-stop) to Delhi", note: "Typically one-stop via a European or Gulf hub into Delhi (DEL), with a generous arrival buffer." },
+    { slug: "dallas", city: "Dallas", country: "USA", flightBand: "~16–17 hrs (one-stop) to Delhi", note: "Usually one-stop into Delhi (DEL); the first day absorbs the long crossing." },
+    { slug: "atlanta", city: "Atlanta", country: "USA", flightBand: "~16–18 hrs (one-stop) to Delhi", note: "One-stop via a European or Gulf hub into Delhi (DEL)." },
+    { slug: "seattle", city: "Seattle", country: "USA", flightBand: "~15–17 hrs (one-stop) to Delhi", note: "A West Coast arrival routes one-stop; a firm recovery buffer is built in." },
+    { slug: "vancouver", city: "Vancouver", country: "Canada", flightBand: "~15–17 hrs (one-stop) to Delhi", note: "One-stop via an Asian or European hub into Delhi (DEL)." },
+    { slug: "montreal", city: "Montreal", country: "Canada", flightBand: "~14–15 hrs (one-stop) to Delhi", note: "One-stop into Delhi (DEL); the circuit begins after an arrival night." },
+    // Europe
+    { slug: "rome", city: "Rome", country: "Italy", flightBand: "~8.5–9 hrs (non-stop) to Delhi", note: "Non-stop service into Delhi (DEL); a comfortable European origin." },
+    { slug: "madrid", city: "Madrid", country: "Spain", flightBand: "~9–10 hrs (non-stop/one-stop) to Delhi", note: "Direct and one-stop options into Delhi (DEL)." },
+    { slug: "milan", city: "Milan", country: "Italy", flightBand: "~8.5 hrs (non-stop) to Delhi", note: "Non-stop into Delhi (DEL) with a manageable time shift." },
+    { slug: "munich", city: "Munich", country: "Germany", flightBand: "~8 hrs (non-stop) to Delhi", note: "A major hub with strong non-stop frequency into Delhi (DEL)." },
+    { slug: "vienna", city: "Vienna", country: "Austria", flightBand: "~8 hrs (non-stop) to Delhi", note: "Non-stop into Delhi (DEL); a smooth Central-European origin." },
+    { slug: "brussels", city: "Brussels", country: "Belgium", flightBand: "~8.5 hrs (non-stop/one-stop) to Delhi", note: "Direct and one-stop options into Delhi (DEL)." },
+    { slug: "copenhagen", city: "Copenhagen", country: "Denmark", flightBand: "~8 hrs (non-stop) to Delhi", note: "Non-stop into Delhi (DEL) with a modest time shift." },
+    { slug: "dublin", city: "Dublin", country: "Ireland", flightBand: "~9–10 hrs (one-stop) to Delhi", note: "Usually one-stop into Delhi (DEL); an arrival night settles the shift." },
+    { slug: "istanbul", city: "Istanbul", country: "Turkey", flightBand: "~6.5 hrs (non-stop) to Delhi", note: "A short crossing into Delhi (DEL); the circuit can start with a fresh arrival." },
+    // Middle East
+    { slug: "riyadh", city: "Riyadh", country: "Saudi Arabia", flightBand: "~4.5 hrs (non-stop) to Delhi", note: "A short Gulf hop into Delhi (DEL); the circuit can begin the same day." },
+    { slug: "jeddah", city: "Jeddah", country: "Saudi Arabia", flightBand: "~5.5 hrs (non-stop) to Delhi", note: "A short crossing into Delhi (DEL) with strong frequency." },
+    { slug: "kuwait-city", city: "Kuwait City", country: "Kuwait", flightBand: "~4.5 hrs (non-stop) to Delhi", note: "A short Gulf hop into Delhi (DEL); ideal for a fresh same-day start." },
+    { slug: "muscat", city: "Muscat", country: "Oman", flightBand: "~2.5–3 hrs (non-stop) to Delhi", note: "A very short hop into Delhi (DEL); the circuit starts the same day." },
+    { slug: "bahrain", city: "Bahrain", country: "Bahrain", flightBand: "~4 hrs (non-stop) to Delhi", note: "A short Gulf crossing into Delhi (DEL)." },
+    { slug: "tel-aviv", city: "Tel Aviv", country: "Israel", flightBand: "~5.5–6 hrs (non-stop) to Delhi", note: "A short crossing into Delhi (DEL) with a manageable shift." },
+    // Asia-Pacific
+    { slug: "bangkok", city: "Bangkok", country: "Thailand", flightBand: "~4.5 hrs (non-stop) to Delhi", note: "A short Asia hop into Delhi (DEL); the circuit can start the same day." },
+    { slug: "kuala-lumpur", city: "Kuala Lumpur", country: "Malaysia", flightBand: "~5.5 hrs (non-stop) to Delhi", note: "A short, frequent crossing into Delhi (DEL)." },
+    { slug: "jakarta", city: "Jakarta", country: "Indonesia", flightBand: "~7–8 hrs (one-stop) to Delhi", note: "Usually one-stop via an Asian hub into Delhi (DEL)." },
+    { slug: "seoul", city: "Seoul", country: "South Korea", flightBand: "~8–9 hrs (non-stop) to Delhi", note: "Non-stop and one-stop options into Delhi (DEL)." },
+    { slug: "shanghai", city: "Shanghai", country: "China", flightBand: "~8 hrs (non-stop) to Delhi", note: "A direct crossing into Delhi (DEL) with a modest shift." },
+    { slug: "beijing", city: "Beijing", country: "China", flightBand: "~7.5–8 hrs (non-stop) to Delhi", note: "Non-stop service into Delhi (DEL)." },
+    { slug: "melbourne", city: "Melbourne", country: "Australia", flightBand: "~13–16 hrs (one-stop) to Delhi", note: "One-stop via a Gulf or Asian hub into Delhi (DEL); a firm recovery buffer is built in." },
+    // Africa
+    { slug: "johannesburg", city: "Johannesburg", country: "South Africa", flightBand: "~9–10 hrs (non-stop) to Delhi", note: "Non-stop service into Delhi (DEL)." },
+    { slug: "nairobi", city: "Nairobi", country: "Kenya", flightBand: "~7 hrs (non-stop) to Delhi", note: "A short crossing into Delhi (DEL)." },
+    { slug: "cairo", city: "Cairo", country: "Egypt", flightBand: "~6 hrs (non-stop) to Delhi", note: "A short crossing into Delhi (DEL)." },
+
     // ── India departure cities (domestic market) ──
     { slug: "mumbai", city: "Mumbai", country: "India", domestic: true, flightBand: "~2 hr 15 min flight to Delhi (or an overnight Rajdhani train)", note: "A quick domestic hop from Mumbai — no visa and no jet lag, so many travellers begin the circuit the same day they land." },
     { slug: "bengaluru", city: "Bengaluru", country: "India", domestic: true, flightBand: "~2 hr 45 min flight to Delhi", note: "An easy, frequent domestic flight from Bengaluru; the Golden Triangle starts fresh with no international formalities." },
@@ -226,7 +266,8 @@ export const INTL_ORIGINS: Origin[] = ORIGINS.filter((o) => !o.domestic);
 // ---- Origin-aware phrasing helpers (domestic vs international framing) ----
 function isShortHop(o: Origin): boolean {
     if (o.domestic) return true; // domestic = same-day, no recovery needed
-    return /\b(3\.5|4 hrs|5\.5|6 hrs)\b/.test(o.flightBand);
+    const m = o.flightBand.match(/([\d.]+)/); // leading hours figure
+    return m ? parseFloat(m[1]) <= 7 : false; // ≤7 hrs = same-day-start-capable
 }
 function travelContextLabel(o: Origin): string {
     return o.domestic ? "Getting there" : "Flight context";
