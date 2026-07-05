@@ -205,18 +205,18 @@ export default function TourDetailView({
                                 <div className="sticky top-48 bg-royal-blue backdrop-blur-3xl p-10 md:p-12 rounded-[3.5rem] border border-white/10 text-white shadow-4xl overflow-hidden">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-sunset-orange/20 blur-[60px] -translate-y-1/2 translate-x-1/2" />
                                     <div className="mb-12">
-                                        <h4 className="text-white font-black uppercase tracking-[0.4em] text-xs mb-4">Fiscal Transparency</h4>
+                                        <h4 className="text-white font-black uppercase tracking-[0.4em] text-xs mb-4">Price</h4>
                                         <div className="text-5xl font-black tracking-tighter mb-2">{tour.price}</div>
-                                        <p className="text-white font-bold italic text-base">Starting Investment / Per Person</p>
+                                        <p className="text-white font-bold italic text-base">Starting price / per person</p>
                                     </div>
                                     <div className="space-y-6 mb-12">
                                         <div className="flex items-center gap-4 py-4 border-b border-white/10">
                                             <ShieldCheck className="text-sunset-orange shrink-0" size={20} />
-                                            <span className="font-black uppercase text-xs tracking-widest">Elite Security Protocol</span>
+                                            <span className="font-black uppercase text-xs tracking-widest">Safe, private travel</span>
                                         </div>
                                         <div className="flex items-center gap-4 py-4 border-b border-white/10">
                                             <Calendar className="text-sunset-orange shrink-0" size={20} />
-                                            <span className="font-black uppercase text-xs tracking-widest">Flexible Deployment Dates</span>
+                                            <span className="font-black uppercase text-xs tracking-widest">Flexible travel dates</span>
                                         </div>
                                         <div className="flex items-center gap-4 py-4">
                                             <User className="text-sunset-orange shrink-0" size={20} />
@@ -228,17 +228,17 @@ export default function TourDetailView({
                                             onClick={() => window.print()}
                                             className="w-full h-[72px] bg-white text-royal-blue rounded-[2.5rem] font-black uppercase tracking-widest text-[11px] hover:bg-sunset-orange hover:text-white transition-all duration-500 shadow-xl flex items-center justify-center gap-4 border border-royal-blue/10"
                                         >
-                                            Download PDF Briefing <FileText size={18} />
+                                            Download PDF itinerary <FileText size={18} />
                                         </button>
                                         <button
                                             onClick={() => setIsInquiryModalOpen(true)}
                                             className="w-full h-[72px] bg-sunset-orange text-white rounded-[2.5rem] font-black uppercase tracking-widest text-[11px] hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-2xl flex items-center justify-center gap-4 hover:scale-[1.01]"
                                         >
-                                            Submit Mission Enquiry <Plus size={18} />
+                                            Enquire — get a free quote <Plus size={18} />
                                         </button>
                                         <button
                                             onClick={() => {
-                                                const msg = `MISSION PROTOCOL INQUIRY: I am ready to initiate the booking for ${tour.title}.`;
+                                                const msg = `Hi MyTripMyTravel, I'm interested in the ${tour.title}. Could you share details and a quote?`;
                                                 window.open(`https://wa.me/919997812237?text=${encodeURIComponent(msg)}`, "_blank");
                                             }}
                                             className="w-full text-white/40 hover:text-sunset-orange py-4 font-black uppercase tracking-[0.3em] text-[8px] transition-all flex items-center justify-center gap-2"
@@ -246,7 +246,7 @@ export default function TourDetailView({
                                             Inquire via WhatsApp <ChevronRight size={12} />
                                         </button>
                                     </div>
-                                    <p className="text-center mt-10 text-[10px] font-black uppercase tracking-widest text-white italic">Priority response guaranteed within 60 minutes.</p>
+                                    <p className="text-center mt-10 text-[10px] font-black uppercase tracking-widest text-white italic">Free quote · no obligation · we usually reply within a few hours.</p>
                                 </div>
                             </div>
                         </div>
