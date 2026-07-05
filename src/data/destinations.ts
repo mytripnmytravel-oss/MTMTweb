@@ -98,7 +98,7 @@ export const regions: Region[] = [
         tagline: "Alleppey · Munnar · Kochi",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/c/c5/The_Backwaters_of_Alleppey.jpg",
         blurb: "Lush, tropical ecosystems engineered for complete down-regulation — houseboats, tea estates, and spice-coast heritage.",
-        citySlugs: ["alleppey", "munnar", "kochi", "kovalam", "thekkady", "wayanad", "varkala", "kumarakom", "bekal", "marari"],
+        citySlugs: ["alleppey", "munnar", "kochi", "kovalam", "thekkady", "wayanad", "varkala", "kumarakom", "bekal", "marari", "trivandrum", "kozhikode", "kannur", "vagamon", "athirappilly", "guruvayur"],
     },
     {
         slug: "himalayas",
@@ -106,7 +106,7 @@ export const regions: Region[] = [
         tagline: "Shimla · Manali · Leh",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Sam_Sand_Dunes_Jaisalmer.jpg",
         blurb: "High-altitude missions for spiritual and physical clarity, staged through colonial hill stations and Trans-Himalayan passes.",
-        citySlugs: ["shimla", "manali", "leh", "rishikesh", "dharamshala", "nainital", "mussoorie", "auli", "haridwar", "khajjiar", "spiti", "mcleodganj", "tirthan-valley", "kasol"],
+        citySlugs: ["shimla", "manali", "leh", "rishikesh", "dharamshala", "nainital", "mussoorie", "auli", "haridwar", "khajjiar", "spiti", "mcleodganj", "tirthan-valley", "kasol", "nubra-valley", "pangong-lake"],
     },
     {
         slug: "sikkim",
@@ -130,7 +130,7 @@ export const regions: Region[] = [
         tagline: "Varanasi · Amritsar · Lucknow",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Varanasi_panorama.jpg",
         blurb: "The sacred Ganges, the Golden Temple, and the Nawabi cities of the northern plains.",
-        citySlugs: ["varanasi", "amritsar", "lucknow", "sarnath", "ayodhya", "prayagraj", "chandigarh"],
+        citySlugs: ["varanasi", "amritsar", "lucknow", "sarnath", "ayodhya", "prayagraj", "chandigarh", "srinagar", "gulmarg", "pahalgam", "sonamarg", "dalhousie", "kasauli", "jim-corbett", "almora", "ranikhet", "kausani", "binsar", "chopta", "valley-of-flowers", "mukteshwar", "kalpa", "chitkul", "bir-billing", "palampur", "narkanda", "patiala", "anandpur-sahib"],
     },
     {
         slug: "central-india",
@@ -138,7 +138,7 @@ export const regions: Region[] = [
         tagline: "Khajuraho · Gwalior · Orchha",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/5/55/Kandariya_Mahadeva_Temple%2C_Khajuraho%2C_Madhya_Pradesh%2C_India_001.jpg",
         blurb: "Temple sculpture, hill forts, ancient stupas, and the tiger forests of the Madhya Pradesh heartland.",
-        citySlugs: ["khajuraho", "gwalior", "orchha", "bhopal", "sanchi", "ujjain", "bandhavgarh", "pachmarhi"],
+        citySlugs: ["khajuraho", "gwalior", "orchha", "bhopal", "sanchi", "ujjain", "bandhavgarh", "pachmarhi", "jhansi", "indore", "mandu", "maheshwar", "omkareshwar", "jabalpur", "kanha", "pench", "chanderi"],
     },
     {
         slug: "west-india",
@@ -146,7 +146,7 @@ export const regions: Region[] = [
         tagline: "Mumbai · Goa · Gujarat",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Gateway_of_India_in_the_evening%2C_Mumbai%2C_India.jpg",
         blurb: "Portuguese coasts, rock-cut caves, the white Rann of Kutch, and the last Asiatic lions of the western states.",
-        citySlugs: ["goa", "mumbai", "ahmedabad", "rann-of-kutch", "gir", "aurangabad", "ellora", "mahabaleshwar", "dwarka"],
+        citySlugs: ["goa", "mumbai", "ahmedabad", "rann-of-kutch", "gir", "aurangabad", "ellora", "mahabaleshwar", "dwarka", "pune", "lonavala", "nashik", "shirdi", "matheran", "kolhapur", "tadoba", "alibaug", "somnath", "vadodara", "junagadh", "bhuj", "palitana", "modhera", "patan", "champaner"],
     },
     {
         slug: "south-india",
@@ -154,7 +154,7 @@ export const regions: Region[] = [
         tagline: "Hampi · Mysore · Tamil temples",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Stone_Chariot_at_Hampi%2C_Karnataka.jpg",
         blurb: "Dravidian temple cities, Western Ghats coffee hills, colonial hill stations, and the Franco-Tamil coast.",
-        citySlugs: ["hampi", "mysore", "bengaluru", "coorg", "chikmagalur", "ooty", "kodaikanal", "pondicherry", "mahabalipuram", "madurai", "thanjavur"],
+        citySlugs: ["hampi", "mysore", "bengaluru", "coorg", "chikmagalur", "ooty", "kodaikanal", "pondicherry", "mahabalipuram", "madurai", "thanjavur", "badami", "belur-halebidu", "gokarna", "udupi", "mangalore", "bandipur", "shravanabelagola", "jog-falls", "chennai", "kanchipuram", "rameshwaram", "kanyakumari", "chettinad", "trichy", "hyderabad", "tirupati", "visakhapatnam", "araku-valley"],
     },
     {
         slug: "east-india",
@@ -162,7 +162,7 @@ export const regions: Region[] = [
         tagline: "Kolkata · Darjeeling · Odisha",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/7/72/Victoria_Memorial_situated_in_Kolkata.jpg",
         blurb: "Bengal's cultural capital, the Himalayan tea hills of Darjeeling, and the sacred temple coast of Odisha.",
-        citySlugs: ["kolkata", "darjeeling", "puri", "konark", "bodhgaya"],
+        citySlugs: ["kolkata", "darjeeling", "puri", "konark", "bodhgaya", "bhubaneswar", "sundarbans", "shantiniketan", "nalanda", "rajgir", "guwahati", "kaziranga", "shillong"],
     },
 ];
 
