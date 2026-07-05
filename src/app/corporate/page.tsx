@@ -1,62 +1,92 @@
-"use client";
+import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
+import CorporateView from "./CorporateView";
 
-import React from "react";
-import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic } from "@/components/ClientComponents";
-import Link from "next/link";
-import { Briefcase, Plane, Building, Target } from "lucide-react";
+const TITLE = "Corporate & MICE Travel in India | MyTripMyTravel";
+const DESCRIPTION =
+    "Corporate and MICE travel in India — executive offsites, incentives and delegations, run on GPS-tracked convoys with a single accountable mission lead.";
+const URL = `${SITE_URL}/corporate`;
+
+export const metadata: Metadata = {
+    title: TITLE,
+    description: DESCRIPTION,
+    alternates: { canonical: URL },
+    openGraph: {
+        title: TITLE,
+        description: DESCRIPTION,
+        url: URL,
+        type: "website",
+        images: [{ url: `${SITE_URL}/logo.png` }],
+    },
+};
+
+const FAQS = [
+    {
+        q: "Do you handle small corporate groups?",
+        a: "Yes — under-15 teams are run as compact, fully-private missions with one or two premium vehicles, an accountable mission lead, and concierge-level attention rather than scaled convoy logistics.",
+    },
+    {
+        q: "Can you run a mid-size company offsite?",
+        a: "Yes — a 15–50 mission uses a small GPS-tracked convoy with coordinated room blocks and choreographed session-to-offsite-to-dining flow, run with a named on-ground coordinator and single-point accountability.",
+    },
+    {
+        q: "Can you run a large corporate trip of 150 people?",
+        a: "Yes — large missions (50–200) are full managed operations with a large GPS-tracked convoy, dedicated on-ground command, multi-property block management, and wave-sequenced movement.",
+    },
+    {
+        q: "Do you plan MICE events and conferences?",
+        a: "Yes — MyTripMyTravel coordinates meetings, incentives, conferences and offsite events in India, handling fleet, accommodation, dining and on-ground event flow under one accountable mission lead.",
+    },
+    {
+        q: "Is there a single point of accountability?",
+        a: "Yes — the company receives one accountable mission owner over the whole operation, not a set of vendors to coordinate.",
+    },
+];
+
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            name: "Corporate & MICE Travel in India",
+            serviceType: "Corporate & MICE Travel",
+            description:
+                "Corporate and MICE travel across India — executive offsites, incentives, conferences and delegations from small teams to 200, run on GPS-tracked convoys with coordinated accommodation, dining and on-ground command under one accountable mission lead.",
+            url: URL,
+            image: `${SITE_URL}/logo.png`,
+            areaServed: { "@type": "Country", name: "India" },
+            provider: {
+                "@type": "TravelAgency",
+                name: "MyTripMyTravel",
+                url: SITE_URL,
+            },
+        },
+        {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+                { "@type": "ListItem", position: 2, name: "Corporate", item: URL },
+            ],
+        },
+        {
+            "@type": "FAQPage",
+            mainEntity: FAQS.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+        },
+    ],
+};
 
 export default function CorporatePage() {
     return (
-        <SmoothScroll>
-            <main className="bg-white min-h-screen relative overflow-hidden">
-                <Navbar />
-
-                <section className="pt-60 pb-32 container mx-auto px-6 relative z-10 max-w-5xl">
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
-                        <div>
-                            <motion.h4
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="text-royal-blue font-black uppercase tracking-[0.8em] text-sm mb-6"
-                            >
-                                Executive Transit
-                            </motion.h4>
-                            <CharBlurIn
-                                text="CORPORATE MISSION"
-                                className="text-5xl md:text-[6.5rem] font-black text-royal-blue uppercase tracking-tighter leading-[0.85] mb-12"
-                            />
-                            <p className="text-dark-slate font-bold italic text-lg opacity-60 leading-relaxed mb-12">
-                                Absolute security and zero-friction logistics for C-suite operations across the subcontinent. We handle high-level delegations, private air-charter logistics, and secure boardroom environments.
-                            </p>
-                            <Magnetic>
-                                <Link href="/booking">
-                                    <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-sunset-orange transition-all duration-500">
-                                        Initialize Corporate Account
-                                    </button>
-                                </Link>
-                            </Magnetic>
-                        </div>
-                        <div className="grid grid-cols-2 gap-6">
-                            {[
-                                { title: "Secure Fleet", icon: Building },
-                                { title: "Private Aviation", icon: Plane },
-                                { title: "Delegation Logistics", icon: Briefcase },
-                                { title: "Executive Protection", icon: Target }
-                            ].map((pill, i) => (
-                                <div key={i} className="bg-royal-blue/5 p-8 rounded-[2rem] border border-royal-blue/10 flex flex-col items-center justify-center text-center aspect-square">
-                                    <pill.icon className="text-sunset-orange mb-4" size={32} />
-                                    <h5 className="text-royal-blue font-black uppercase tracking-tighter text-sm">{pill.title}</h5>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <Footer />
-            </main>
-        </SmoothScroll>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <CorporateView />
+        </>
     );
 }
