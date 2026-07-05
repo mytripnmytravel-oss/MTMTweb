@@ -1054,6 +1054,53 @@ export function getPackageByIdOrSlug(param: string): Package | undefined {
     return undefined;
 }
 
+/** Map a destination region slug to the package `location` values that serve it. */
+const REGION_TO_LOCATIONS: Record<string, string[]> = {
+    "golden-triangle": ["Golden Triangle"],
+    rajasthan: ["Rajasthan"],
+    kerala: ["South India"],
+    himalayas: ["Himalayas", "North India"],
+    sikkim: ["North East"],
+    andaman: ["Islands"],
+};
+
+/**
+ * Tour packages relevant to a destination city — used to surface real
+ * itineraries on each city page. Primary match: the city name appears in the
+ * package title or day-by-day itinerary. Fallback: packages whose location
+ * serves the city's region. Returns up to `limit`, most-relevant first.
+ */
+export function getPackagesForDestination(
+    dest: { name: string; region?: string; regionSlug?: string },
+    limit = 6
+): Package[] {
+    const needle = dest.name.toLowerCase().trim();
+    const byName = packages.filter((p) => {
+        const hay = (
+            p.title +
+            " " +
+            p.location +
+            " " +
+            p.itinerary
+                .map((d) => `${d.title ?? ""} ${d.plan} ${(d.detail ?? []).join(" ")}`)
+                .join(" ")
+        ).toLowerCase();
+        return hay.includes(needle);
+    });
+
+    const locations = dest.regionSlug ? REGION_TO_LOCATIONS[dest.regionSlug] ?? [] : [];
+    const byRegion = packages.filter(
+        (p) => locations.includes(p.location) && !byName.includes(p)
+    );
+
+    // Shorter itineraries first within each bucket — the "how many days" entry points.
+    const days = (p: Package) => parseInt(p.duration, 10) || 99;
+    byName.sort((a, b) => days(a) - days(b));
+    byRegion.sort((a, b) => days(a) - days(b));
+
+    return [...byName, ...byRegion].slice(0, limit);
+}
+
 export function getRelatedPackages(pkg: Package, limit = 3): Package[] {
     const sameLocation = packages.filter(
         (p) => p.id !== pkg.id && p.location === pkg.location

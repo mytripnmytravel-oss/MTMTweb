@@ -6,6 +6,7 @@ import {
     getRelatedCities,
 } from "@/data/destinations";
 import { getMonumentsByCity } from "@/data/monuments";
+import { getPackagesForDestination, packageSlug } from "@/data/tours";
 import DestinationCityView from "@/components/destinations/DestinationCityView";
 
 const SITE = "https://www.mytripmytravel.com";
@@ -60,6 +61,14 @@ export default async function DestinationCityPage({
 
     const related = getRelatedCities(slug);
     const cityMonuments = getMonumentsByCity(slug);
+    const cityTours = getPackagesForDestination(dest).map((p) => ({
+        slug: packageSlug(p),
+        title: p.title,
+        duration: p.duration,
+        price: p.price,
+        theme: p.theme,
+        img: p.img,
+    }));
     const url = `${SITE}/destinations/${dest.slug}`;
 
     const jsonLd = {
@@ -114,7 +123,7 @@ export default async function DestinationCityPage({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <DestinationCityView dest={dest} related={related} monuments={cityMonuments} />
+            <DestinationCityView dest={dest} related={related} monuments={cityMonuments} tours={cityTours} />
         </>
     );
 }

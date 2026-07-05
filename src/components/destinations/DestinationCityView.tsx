@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
     MapPin, Navigation2, BedDouble, Utensils,
-    ChevronRight, ArrowRight, HelpCircle, Compass, Calendar,
+    ChevronRight, ArrowRight, HelpCircle, Compass, Calendar, Clock,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -23,14 +23,25 @@ const SectionLabel = ({ children }: { children: React.ReactNode }) => (
     </h4>
 );
 
+export interface CityTour {
+    slug: string;
+    title: string;
+    duration: string;
+    price: string;
+    theme: string;
+    img: string;
+}
+
 export default function DestinationCityView({
     dest,
     related,
     monuments = [],
+    tours = [],
 }: {
     dest: Destination;
     related: Destination[];
     monuments?: Monument[];
+    tours?: CityTour[];
 }) {
     const waMsg = `EXPLORATION INQUIRY: I want to architect a mission through ${dest.name}, ${dest.state}.`;
     const waHref = `https://wa.me/919997812237?text=${encodeURIComponent(waMsg)}`;
@@ -298,6 +309,54 @@ export default function DestinationCityView({
                         </Link>
                     </div>
                 </section>
+
+                {/* Suggested itineraries — real bookable tours that visit this city */}
+                {tours.length > 0 && (
+                    <section className="py-28 bg-royal-blue/5">
+                        <div className="container mx-auto px-6">
+                            <SectionLabel>Ready-to-Book Itineraries</SectionLabel>
+                            <CharBlurIn
+                                text={`ITINERARIES FEATURING ${dest.name.toUpperCase()}`}
+                                className="text-3xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter block leading-none mb-6"
+                            />
+                            <p className="text-lg md:text-xl font-bold italic text-royal-blue/50 max-w-3xl mb-14 leading-relaxed">
+                                Private, chauffeured, day-by-day itineraries that feature {dest.name} or explore the wider {dest.region} — each fully customisable. Or ask the planning desk to build one around your dates.
+                            </p>
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {tours.map((t) => (
+                                    <Link
+                                        key={t.slug}
+                                        href={`/tours/${t.slug}`}
+                                        className="block glass-card rounded-[2.5rem] overflow-hidden group border-royal-blue/5 hover:border-sunset-orange/30 transition-all duration-700 bg-white"
+                                    >
+                                        <div className="relative h-48">
+                                            <Image src={t.img} alt={`${t.title} — itinerary including ${dest.name}`} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/70 to-transparent" />
+                                            <div className="absolute bottom-5 left-6 right-6 flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-white">
+                                                <Clock size={13} className="text-sunset-orange" />{t.duration}
+                                                <span className="text-sunset-orange">·</span>{t.theme}
+                                            </div>
+                                        </div>
+                                        <div className="p-7">
+                                            <h3 className="text-xl font-black text-royal-blue uppercase tracking-tighter leading-tight mb-4 group-hover:text-sunset-orange transition-colors">{t.title}</h3>
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-lg font-black text-royal-blue">from {t.price}</span>
+                                                <span className="font-black uppercase text-[10px] tracking-[0.3em] flex items-center gap-2 text-royal-blue group-hover:text-sunset-orange transition-colors">
+                                                    View itinerary <ArrowRight size={14} />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                            <div className="mt-12">
+                                <Link href="/tours" className="inline-flex items-center gap-3 px-8 py-4 glass-card rounded-2xl border-royal-blue/10 bg-white font-black uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">
+                                    All tour itineraries <ArrowRight size={14} />
+                                </Link>
+                            </div>
+                        </div>
+                    </section>
+                )}
 
                 {/* FAQ */}
                 <section className="py-32 container mx-auto px-6">
