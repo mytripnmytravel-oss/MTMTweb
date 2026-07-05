@@ -11,6 +11,7 @@ import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/compone
 import type { Destination } from "@/data/destinations";
 import type { ItineraryContent, ItineraryDuration } from "@/data/destinationItineraries";
 import { ITINERARY_DURATIONS } from "@/data/destinationItineraries";
+import type { CityTour } from "@/components/destinations/DestinationCityView";
 
 export function ItineraryIndexView({ dest }: { dest: Destination }) {
     return (
@@ -66,9 +67,11 @@ export function ItineraryIndexView({ dest }: { dest: Destination }) {
 export function ItineraryView({
     dest,
     content,
+    tours = [],
 }: {
     dest: Destination;
     content: ItineraryContent;
+    tours?: CityTour[];
 }) {
     const otherDurations = ITINERARY_DURATIONS.filter((d) => d !== content.duration);
     return (
@@ -181,6 +184,39 @@ export function ItineraryView({
                         </Link>
                     </div>
                 </section>
+
+                {/* Ready-to-book tours featuring this city */}
+                {tours.length > 0 && (
+                    <section className="py-24 bg-royal-blue/5">
+                        <div className="container mx-auto px-6">
+                            <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">Ready-to-Book</h4>
+                            <h2 className="text-3xl md:text-5xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-6">Itineraries featuring {dest.name}</h2>
+                            <p className="text-lg font-bold italic text-royal-blue/50 max-w-3xl mb-12 leading-relaxed">
+                                Prefer a fully planned, day-by-day tour? These private, chauffeured itineraries feature {dest.name} or the wider {dest.region} — each customisable to this {content.duration}-day plan.
+                            </p>
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {tours.slice(0, 3).map((t) => (
+                                    <Link key={t.slug} href={`/tours/${t.slug}`} className="block glass-card rounded-[2.5rem] overflow-hidden group border-royal-blue/5 hover:border-sunset-orange/30 transition-all duration-700 bg-white">
+                                        <div className="relative h-44">
+                                            <Image src={t.img} alt={`${t.title} — itinerary featuring ${dest.name}`} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/70 to-transparent" />
+                                            <div className="absolute bottom-5 left-6 right-6 flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-white">
+                                                <Clock size={13} className="text-sunset-orange" />{t.duration}<span className="text-sunset-orange">·</span>{t.theme}
+                                            </div>
+                                        </div>
+                                        <div className="p-7">
+                                            <h3 className="text-xl font-black text-royal-blue uppercase tracking-tighter leading-tight mb-4 group-hover:text-sunset-orange transition-colors">{t.title}</h3>
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-lg font-black text-royal-blue">from {t.price}</span>
+                                                <span className="font-black uppercase text-[10px] tracking-[0.3em] flex items-center gap-2 text-royal-blue group-hover:text-sunset-orange transition-colors">View itinerary <ArrowRight size={14} /></span>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
 
                 <section className="py-28 container mx-auto px-6">
                     <div className="glass-card p-12 md:p-20 rounded-[4rem] bg-royal-blue text-white text-center shadow-2xl relative overflow-hidden">

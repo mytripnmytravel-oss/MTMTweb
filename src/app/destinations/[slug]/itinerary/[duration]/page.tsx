@@ -8,6 +8,7 @@ import {
     itineraryExists,
     parseDurationSlug,
 } from "@/data/destinationItineraries";
+import { getPackagesForDestination, packageSlug } from "@/data/tours";
 import { ItineraryView } from "@/components/destinations/DestinationItineraryView";
 
 export function generateStaticParams() {
@@ -51,6 +52,14 @@ export default async function Page({
     if (!dest || !d || !itineraryExists(slug, d)) notFound();
 
     const content = getItineraryContent(dest, d);
+    const cityTours = getPackagesForDestination(dest).map((p) => ({
+        slug: packageSlug(p),
+        title: p.title,
+        duration: p.duration,
+        price: p.price,
+        theme: p.theme,
+        img: p.img,
+    }));
     const url = `${SITE_URL}/destinations/${dest.slug}/itinerary/${duration}`;
 
     const jsonLd = {
@@ -99,7 +108,7 @@ export default async function Page({
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <ItineraryView dest={dest} content={content} />
+            <ItineraryView dest={dest} content={content} tours={cityTours} />
         </>
     );
 }
