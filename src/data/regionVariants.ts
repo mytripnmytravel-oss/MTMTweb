@@ -252,7 +252,7 @@ export function getRegionVariantParams(
     for (const t of themes) params.push({ dimension: "by-theme", value: slugify(t) });
     for (const d of durations) params.push({ dimension: "by-duration", value: d });
     for (const m of MONTHS) params.push({ dimension: "in-month", value: m });
-    for (const o of ORIGINS) params.push({ dimension: "from-origin", value: o.slug });
+    for (const o of ORIGINS.filter((o) => !o.domestic)) params.push({ dimension: "from-origin", value: o.slug });
     // Combo intersections — only where a real package exists.
     for (const t of themes) {
         for (const d of durations) {
@@ -265,7 +265,7 @@ export function getRegionVariantParams(
     // Theme × from-origin — only where the theme has packages in the region.
     for (const t of themes) {
         if (all.some((p) => p.theme === t)) {
-            for (const o of ORIGINS) {
+            for (const o of ORIGINS.filter((o) => !o.domestic)) {
                 params.push({ dimension: "theme-from", value: themeFromValue(t, o.slug) });
             }
         }
@@ -274,14 +274,14 @@ export function getRegionVariantParams(
     for (const d of durations) {
         const days = Number.parseInt(d, 10);
         if (all.some((p) => dayCount(p) === days)) {
-            for (const o of ORIGINS) {
+            for (const o of ORIGINS.filter((o) => !o.domestic)) {
                 params.push({ dimension: "duration-from", value: durationFromValue(days, o.slug) });
             }
         }
     }
     // Month × from-origin — all months × all origins (regions operate year-round).
     for (const m of MONTHS) {
-        for (const o of ORIGINS) {
+        for (const o of ORIGINS.filter((o) => !o.domestic)) {
             params.push({ dimension: "month-from", value: monthFromValue(m, o.slug) });
         }
     }
@@ -465,6 +465,7 @@ export function resolveRegionVariant(
         const parsed = parseDurationFromValue(value);
         if (!parsed) return null;
         const { days, origin } = parsed;
+        if (origin.domestic) return null; // India origins are scoped to the Golden Triangle
         const list = all.filter((p) => dayCount(p) === days);
         if (!list.length) return null;
         const gw = regionGateway(regionSlug, origin);
@@ -492,6 +493,7 @@ export function resolveRegionVariant(
         const parsed = parseMonthFromValue(value, MONTHS);
         if (!parsed) return null;
         const { month, origin } = parsed;
+        if (origin.domestic) return null; // India origins are scoped to the Golden Triangle
         const n = monthNarrative(regionSlug, month);
         const m = titleCase(month);
         const gw = regionGateway(regionSlug, origin);
@@ -520,6 +522,7 @@ export function resolveRegionVariant(
         const parsed = parseThemeFromValue(value, themes);
         if (!parsed) return null;
         const { theme, origin } = parsed;
+        if (origin.domestic) return null; // India origins are scoped to the Golden Triangle
         const list = all.filter((p) => p.theme === theme);
         if (!list.length) return null;
         const gw = regionGateway(regionSlug, origin);
@@ -546,7 +549,7 @@ export function resolveRegionVariant(
 
     if (dimension === "from-origin") {
         const origin = ORIGINS.find((o) => o.slug === value);
-        if (!origin) return null;
+        if (!origin || origin.domestic) return null; // India origins are scoped to the Golden Triangle
         const gw = regionGateway(regionSlug, origin);
         const shortHop = isShortHop(origin.flightBand);
         return {

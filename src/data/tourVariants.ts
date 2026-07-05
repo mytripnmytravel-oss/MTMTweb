@@ -175,10 +175,14 @@ export interface Origin {
     slug: string;
     city: string;
     country: string;
-    /** Realistic approximate non-stop/one-stop band into Delhi (DEL). */
+    /** Realistic approximate non-stop/one-stop band into Delhi (DEL). For domestic
+     *  origins this reads as a domestic flight/train band instead. */
     flightBand: string;
     /** Honest, general advisory — no fabricated specifics. */
     note: string;
+    /** True for Indian departure cities — switches content to domestic framing
+     *  (no visa, no jet-lag, rail/short-flight, same-day start). */
+    domestic?: boolean;
 }
 
 export const ORIGINS: Origin[] = [
@@ -200,7 +204,61 @@ export const ORIGINS: Origin[] = [
     { slug: "sydney", city: "Sydney", country: "Australia", flightBand: "~13–16 hrs (one-stop) to Delhi", note: "Usually one-stop via a Gulf or Asian hub; we build in a firm recovery buffer." },
     { slug: "tokyo", city: "Tokyo", country: "Japan", flightBand: "~9–12 hrs to Delhi", note: "Non-stop and one-stop options; a strong Phase-2 market with a manageable shift." },
     { slug: "hong-kong", city: "Hong Kong", country: "Hong Kong", flightBand: "~6 hrs (non-stop) to Delhi", note: "A short, easy crossing into Delhi (DEL) for the Golden Triangle." },
+
+    // ── India departure cities (domestic market) ──
+    { slug: "mumbai", city: "Mumbai", country: "India", domestic: true, flightBand: "~2 hr 15 min flight to Delhi (or an overnight Rajdhani train)", note: "A quick domestic hop from Mumbai — no visa and no jet lag, so many travellers begin the circuit the same day they land." },
+    { slug: "bengaluru", city: "Bengaluru", country: "India", domestic: true, flightBand: "~2 hr 45 min flight to Delhi", note: "An easy, frequent domestic flight from Bengaluru; the Golden Triangle starts fresh with no international formalities." },
+    { slug: "hyderabad", city: "Hyderabad", country: "India", domestic: true, flightBand: "~2 hr flight to Delhi", note: "A short domestic hop from Hyderabad — same-day start, no visa or paperwork needed." },
+    { slug: "chennai", city: "Chennai", country: "India", domestic: true, flightBand: "~2 hr 45 min flight to Delhi", note: "A direct domestic flight from Chennai; the circuit can begin the same day you arrive." },
+    { slug: "kolkata", city: "Kolkata", country: "India", domestic: true, flightBand: "~2 hr flight to Delhi", note: "A quick, frequent domestic hop from Kolkata with no international formalities." },
+    { slug: "pune", city: "Pune", country: "India", domestic: true, flightBand: "~2 hr flight to Delhi", note: "An easy domestic flight from Pune; no visa or jet lag to factor into the plan." },
+    { slug: "ahmedabad", city: "Ahmedabad", country: "India", domestic: true, flightBand: "~1 hr 30 min flight to Delhi (or an overnight train)", note: "One of the shortest hops — Ahmedabad to Delhi is quick, and the circuit starts the same day." },
 ];
+
+// ---- Origin-aware phrasing helpers (domestic vs international framing) ----
+function isShortHop(o: Origin): boolean {
+    if (o.domestic) return true; // domestic = same-day, no recovery needed
+    return /\b(3\.5|4 hrs|5\.5|6 hrs)\b/.test(o.flightBand);
+}
+function travelContextLabel(o: Origin): string {
+    return o.domestic ? "Getting there" : "Flight context";
+}
+function pacingAdj(o: Origin): string {
+    return o.domestic ? "comfortably paced" : "jet-lag-paced";
+}
+/** The first-day sequencing clause, tuned to the arrival type. */
+function firstDayClause(o: Origin): string {
+    if (o.domestic) return "short domestic hop — the circuit can begin the same day with a fresh, rested start";
+    return isShortHop(o)
+        ? "short crossing, with the circuit beginning almost immediately"
+        : "long crossing, with a deliberate recovery buffer before the first monument";
+}
+/** "How do I get there / how long is the flight" FAQ, tuned to origin type. */
+function getThereFaq(o: Origin): { q: string; a: string } {
+    if (o.domestic) {
+        return {
+            q: `How do I get to the Golden Triangle from ${o.city}?`,
+            a: `${o.flightBand} The circuit begins in Delhi. ${o.note}`,
+        };
+    }
+    return {
+        q: `How long is the flight from ${o.city} to the Golden Triangle?`,
+        a: `${o.flightBand}. The circuit begins at Delhi (DEL); ${o.note}`,
+    };
+}
+/** Visa FAQ for international origins; a rail-vs-fly FAQ for domestic ones. */
+function visaOrTravelFaq(o: Origin): { q: string; a: string } {
+    if (o.domestic) {
+        return {
+            q: `Do I need to fly, or can I travel by train from ${o.city}?`,
+            a: `Both work — a short domestic flight is quickest, and comfortable overnight/express trains are an option too. There's no visa or international paperwork for domestic travellers; just choose your dates and we handle the rest.`,
+        };
+    }
+    return {
+        q: `Do I need a visa to travel from ${o.country}?`,
+        a: `India offers an e-Visa to travellers of many nationalities; requirements vary by passport. Our concierge advises on the current process for ${o.country} passport holders as part of planning.`,
+    };
+}
 
 function monthNarrative(month: string): { answer: string; intro: string } {
     const m = titleCase(month);
@@ -380,19 +438,18 @@ export function resolveVariant(
         const { days, origin } = parsed;
         const list = gt.filter((p) => dayCount(p) === days);
         if (!list.length) return null;
-        const shortHop = /\b(3\.5|4 hrs|5\.5|6 hrs)\b/.test(origin.flightBand);
         return {
             dimension: "duration-from",
             value,
             label: `${days}-Day from ${origin.city}`,
             h1: `${days}-Day Golden Triangle Tours from ${origin.city}`,
-            answer: `A ${days}-day Golden Triangle tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured Delhi–Agra–Jaipur circuit run over ${days} days, beginning at Delhi (DEL). Flight context: ${origin.flightBand}. ${origin.note} ${list.length} ${days}-day architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, each escorted, jet-lag-paced, and fully customisable.`,
-            intro: `Travelling the ${days}-day Golden Triangle from ${origin.city} is the intersection of two decisions — how long the trip lasts on the ground, and how the crossing from ${origin.city} is absorbed into it. ${origin.note} The first day is sequenced around the ${shortHop ? "short crossing, with the circuit beginning almost immediately" : "long crossing, with a deliberate recovery buffer before the first monument"}. The Delhi–Agra–Jaipur core is paced for the ${days}-day rhythm — ${days <= 3 ? "compressed to the headline experiences" : days <= 5 ? "the balanced canonical arc with slower days built in" : "the unhurried deeper reading with optional extension"}. Each architecture below is a starting frame, customisable to your party.`,
+            answer: `A ${days}-day Golden Triangle tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured Delhi–Agra–Jaipur circuit run over ${days} days, beginning at Delhi (DEL). ${travelContextLabel(origin)}: ${origin.flightBand}. ${origin.note} ${list.length} ${days}-day architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, each escorted, ${pacingAdj(origin)}, and fully customisable.`,
+            intro: `Travelling the ${days}-day Golden Triangle from ${origin.city} is the intersection of two decisions — how long the trip lasts on the ground, and how the journey from ${origin.city} is absorbed into it. ${origin.note} The first day is sequenced around the ${firstDayClause(origin)}. The Delhi–Agra–Jaipur core is paced for the ${days}-day rhythm — ${days <= 3 ? "compressed to the headline experiences" : days <= 5 ? "the balanced canonical arc with slower days built in" : "the unhurried deeper reading with optional extension"}. Each architecture below is a starting frame, customisable to your party.`,
             packages: list,
             faqs: [
-                { q: `How long is the flight from ${origin.city} to the Golden Triangle?`, a: `${origin.flightBand}. The circuit begins at Delhi (DEL); ${origin.note}` },
-                { q: `Is ${days} days enough coming from ${origin.city}?`, a: days <= 3 ? `Three days is compressed but workable — the headline experiences land. Factoring the ${origin.flightBand} crossing in both directions, a longer arc is usually more comfortable.` : `Yes — ${days} days covers the Golden Triangle core comfortably with the ${origin.flightBand} crossing factored in.` },
-                { q: `Do I need a visa to travel from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; requirements vary by passport. Our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
+                getThereFaq(origin),
+                { q: `Is ${days} days enough coming from ${origin.city}?`, a: days <= 3 ? `Three days is compressed but workable — the headline experiences land. Factoring the ${origin.flightBand} in both directions, a longer arc is usually more comfortable.` : `Yes — ${days} days covers the Golden Triangle core comfortably with the ${origin.flightBand} factored in.` },
+                visaOrTravelFaq(origin),
                 { q: `Can the ${days}-day tour be customised?`, a: `Yes — every architecture is a starting frame. Hotels, inclusions, and the exact day split are tuned to your party while the ${days}-day rhythm is held.` },
                 { q: `Is the tour private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted monument access.` },
             ],
@@ -405,19 +462,18 @@ export function resolveVariant(
         const { month, origin } = parsed;
         const n = monthNarrative(month);
         const m = titleCase(month);
-        const shortHop = /\b(3\.5|4 hrs|5\.5|6 hrs)\b/.test(origin.flightBand);
         return {
             dimension: "month-from",
             value,
             label: `${m} from ${origin.city}`,
             h1: `Golden Triangle Tours in ${m} from ${origin.city}`,
-            answer: `Travelling the Golden Triangle in ${m} from ${origin.city}, ${origin.country} combines the regional season's character with the ${origin.city} arrival window. ${n.answer} Flight context: ${origin.flightBand}. ${origin.note}`,
-            intro: `${n.intro} For ${origin.city} departures, ${origin.note} The first day is sequenced around the ${shortHop ? "short crossing — Delhi (DEL) → Old Delhi orientation possible on arrival day" : "long crossing — a deliberate recovery buffer at a Delhi (DEL) heritage stay"} before the Taj sunrise window opens on day two.`,
+            answer: `Travelling the Golden Triangle in ${m} from ${origin.city}, ${origin.country} combines the regional season's character with the ${origin.city} arrival window. ${n.answer} ${travelContextLabel(origin)}: ${origin.flightBand}. ${origin.note}`,
+            intro: `${n.intro} For ${origin.city} departures, ${origin.note} The first day is sequenced around the ${firstDayClause(origin)} before the Taj sunrise window opens on day two.`,
             packages: gt,
             faqs: [
                 { q: `Is ${m} a good time for the Golden Triangle from ${origin.city}?`, a: n.answer },
-                { q: `How long is the flight from ${origin.city}?`, a: `${origin.flightBand}. ${origin.note}` },
-                { q: `Do I need a visa from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
+                getThereFaq(origin),
+                visaOrTravelFaq(origin),
                 { q: `Is the ${m} Golden Triangle from ${origin.city} private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted monument access.` },
             ],
         };
@@ -429,19 +485,18 @@ export function resolveVariant(
         const { theme, origin } = parsed;
         const list = gt.filter((p) => p.theme === theme);
         if (!list.length) return null;
-        const shortHop = /\b(3\.5|4 hrs|5\.5|6 hrs)\b/.test(origin.flightBand);
         return {
             dimension: "theme-from",
             value,
             label: `${theme} from ${origin.city}`,
             h1: `${theme} Golden Triangle Tours from ${origin.city}`,
-            answer: `A ${theme.toLowerCase()} Golden Triangle tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured Delhi–Agra–Jaipur circuit reweighted to a ${theme.toLowerCase()} register, beginning at Delhi (DEL). Flight context: ${origin.flightBand}. ${origin.note} ${list.length} ${theme.toLowerCase()} architecture${list.length > 1 ? "s are" : " is"} available, from ${list[0].price}, each escorted, jet-lag-paced, and fully customisable.`,
-            intro: `The intersection of a ${theme.toLowerCase()} reading of the Golden Triangle with a ${origin.city} departure is both a routing and an experience decision. ${origin.note} The first day is sequenced around the ${shortHop ? "short crossing — the circuit can begin almost immediately with a fresh arrival" : "long crossing — a deliberate recovery buffer before the first monument"}, with the ${theme.toLowerCase()} register held from the welcome onward. The Delhi–Agra–Jaipur core is preserved; what changes is the weighting — the pace, the stays, the dining, and the access slots tuned to a ${theme.toLowerCase()} emphasis. Every architecture below is a starting frame, customisable while holding the ${theme.toLowerCase()} character and adjusted to your arrival window from ${origin.city}.`,
+            answer: `A ${theme.toLowerCase()} Golden Triangle tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured Delhi–Agra–Jaipur circuit reweighted to a ${theme.toLowerCase()} register, beginning at Delhi (DEL). ${travelContextLabel(origin)}: ${origin.flightBand}. ${origin.note} ${list.length} ${theme.toLowerCase()} architecture${list.length > 1 ? "s are" : " is"} available, from ${list[0].price}, each escorted, ${pacingAdj(origin)}, and fully customisable.`,
+            intro: `The intersection of a ${theme.toLowerCase()} reading of the Golden Triangle with a ${origin.city} departure is both a routing and an experience decision. ${origin.note} The first day is sequenced around the ${firstDayClause(origin)}, with the ${theme.toLowerCase()} register held from the welcome onward. The Delhi–Agra–Jaipur core is preserved; what changes is the weighting — the pace, the stays, the dining, and the access slots tuned to a ${theme.toLowerCase()} emphasis. Every architecture below is a starting frame, customisable while holding the ${theme.toLowerCase()} character and adjusted to your arrival window from ${origin.city}.`,
             packages: list,
             faqs: [
-                { q: `How long is the flight from ${origin.city} to the Golden Triangle?`, a: `${origin.flightBand}. The circuit begins at Delhi (DEL); ${origin.note}` },
+                getThereFaq(origin),
                 { q: `What makes a ${theme} Golden Triangle from ${origin.city} different?`, a: `The route core stays Delhi–Agra–Jaipur, but the pacing, stays, dining, and inclusions are reweighted toward a ${theme.toLowerCase()} experience. The ${origin.city} arrival window — ${origin.flightBand} — drives the first-day sequencing.` },
-                { q: `Do I need a visa to travel from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; requirements vary by passport. Our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
+                visaOrTravelFaq(origin),
                 { q: `Can a ${theme} Golden Triangle tour be customised?`, a: `Yes — every architecture is a starting frame, not a fixed product. Hotels, inclusions, and the exact day split are tuned to your party while the ${theme.toLowerCase()} character is held.` },
                 { q: `Is the tour private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access at the headlines.` },
             ],
@@ -457,13 +512,13 @@ export function resolveVariant(
             value,
             label: `From ${origin.city}`,
             h1: `Golden Triangle Tours from ${origin.city}`,
-            answer: `A Golden Triangle tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured Delhi–Agra–Jaipur circuit beginning at Delhi (DEL), the arrival gateway. Flight context: ${origin.flightBand}. ${origin.note} ${list.length} mission architectures are available, each escorted, jet-lag-paced, and fully customisable.`,
-            intro: `Travelling from ${origin.city} to the Golden Triangle is a logistics question we solve end to end. ${origin.note} We sequence the first day around the ${origin.flightBand.includes("3.5") || origin.flightBand.includes("4 hrs") || origin.flightBand.includes("5.5") || origin.flightBand.includes("6 hrs") ? "short crossing — the circuit can begin almost immediately" : "long crossing — with a deliberate recovery buffer before the first monument"}. Every itinerary below is a foundation, ready for bespoke modification.`,
+            answer: `A Golden Triangle tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured Delhi–Agra–Jaipur circuit beginning at Delhi (DEL), the arrival gateway. ${travelContextLabel(origin)}: ${origin.flightBand}. ${origin.note} ${list.length} mission architectures are available, each escorted, ${pacingAdj(origin)}, and fully customisable.`,
+            intro: `Travelling from ${origin.city} to the Golden Triangle is a logistics question we solve end to end. ${origin.note} We sequence the first day around the ${firstDayClause(origin)}. Every itinerary below is a foundation, ready for bespoke modification.`,
             packages: list,
             faqs: [
-                { q: `How long is the flight from ${origin.city} to the Golden Triangle?`, a: `${origin.flightBand}. The circuit begins at Delhi (DEL); ${origin.note}` },
-                { q: `Do I need a visa to travel from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; requirements vary by passport. Our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
-                { q: `How many days should I plan coming from ${origin.city}?`, a: `We recommend factoring the ${origin.flightBand} crossing into the trip length — typically a 5–7 day Golden Triangle with an arrival buffer, extendable into Rajasthan or the Himalayas.` },
+                getThereFaq(origin),
+                visaOrTravelFaq(origin),
+                { q: `How many days should I plan coming from ${origin.city}?`, a: `We recommend factoring the ${origin.flightBand} into the trip length — typically a 5–7 day Golden Triangle${origin.domestic ? "" : " with an arrival buffer"}, extendable into Rajasthan or the Himalayas.` },
             ],
         };
     }
