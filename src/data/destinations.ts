@@ -90,7 +90,7 @@ export const regions: Region[] = [
         tagline: "Udaipur · Jodhpur · Jaisalmer",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jodhpur-Mehrangarh_Fort-06-Blue_city-20131011.jpg",
         blurb: "Deep immersions into the royal heartland — lake palaces, blue cities, and the last great desert forts of the Thar.",
-        citySlugs: ["udaipur", "jodhpur", "jaisalmer", "pushkar", "ranthambore", "bikaner", "chittorgarh", "mount-abu", "bundi", "mandawa", "ajmer", "bharatpur", "ranakpur", "kumbhalgarh", "nawalgarh", "osian", "kota", "jawai", "abhaneri", "deogarh", "khimsar", "phalodi", "karauli", "barmer"],
+        citySlugs: ["udaipur", "jodhpur", "jaisalmer", "pushkar", "ranthambore", "bikaner", "chittorgarh", "mount-abu", "bundi", "mandawa", "ajmer", "bharatpur", "ranakpur", "kumbhalgarh", "nawalgarh", "osian", "kota", "jawai", "abhaneri", "deogarh", "khimsar", "phalodi", "karauli", "barmer", "nathdwara", "bhangarh"],
     },
     {
         slug: "kerala",
@@ -98,7 +98,7 @@ export const regions: Region[] = [
         tagline: "Alleppey · Munnar · Kochi",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/c/c5/The_Backwaters_of_Alleppey.jpg",
         blurb: "Lush, tropical ecosystems engineered for complete down-regulation — houseboats, tea estates, and spice-coast heritage.",
-        citySlugs: ["alleppey", "munnar", "kochi", "kovalam", "thekkady", "wayanad", "varkala", "kumarakom", "bekal", "marari", "trivandrum", "kozhikode", "kannur", "vagamon", "athirappilly", "guruvayur", "thrissur", "poovar", "gavi"],
+        citySlugs: ["alleppey", "munnar", "kochi", "kovalam", "thekkady", "wayanad", "varkala", "kumarakom", "bekal", "marari", "trivandrum", "kozhikode", "kannur", "vagamon", "athirappilly", "guruvayur", "thrissur", "poovar", "gavi", "kottayam", "palakkad"],
     },
     {
         slug: "himalayas",
@@ -146,7 +146,7 @@ export const regions: Region[] = [
         tagline: "Mumbai · Goa · Gujarat",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Gateway_of_India_in_the_evening%2C_Mumbai%2C_India.jpg",
         blurb: "Portuguese coasts, rock-cut caves, the white Rann of Kutch, and the last Asiatic lions of the western states.",
-        citySlugs: ["goa", "mumbai", "ahmedabad", "rann-of-kutch", "gir", "aurangabad", "ellora", "mahabaleshwar", "dwarka", "pune", "lonavala", "nashik", "shirdi", "matheran", "kolhapur", "tadoba", "alibaug", "somnath", "vadodara", "junagadh", "bhuj", "palitana", "modhera", "patan", "champaner", "nagpur", "panchgani", "tarkarli", "ganpatipule", "bhandardara", "pandharpur", "igatpuri", "ratnagiri", "saputara", "kevadia", "velavadar", "porbandar", "jamnagar", "diu", "little-rann-of-kutch", "surat"],
+        citySlugs: ["goa", "mumbai", "ahmedabad", "rann-of-kutch", "gir", "aurangabad", "ellora", "mahabaleshwar", "dwarka", "pune", "lonavala", "nashik", "shirdi", "matheran", "kolhapur", "tadoba", "alibaug", "somnath", "vadodara", "junagadh", "bhuj", "palitana", "modhera", "patan", "champaner", "nagpur", "panchgani", "tarkarli", "ganpatipule", "bhandardara", "pandharpur", "igatpuri", "ratnagiri", "saputara", "kevadia", "velavadar", "porbandar", "jamnagar", "diu", "little-rann-of-kutch", "surat", "ajanta", "daulatabad", "lonar", "trimbakeshwar", "bhimashankar", "murud-janjira", "nanded", "lothal"],
     },
     {
         slug: "south-india",
@@ -154,7 +154,7 @@ export const regions: Region[] = [
         tagline: "Hampi · Mysore · Tamil temples",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Stone_Chariot_at_Hampi%2C_Karnataka.jpg",
         blurb: "Dravidian temple cities, Western Ghats coffee hills, colonial hill stations, and the Franco-Tamil coast.",
-        citySlugs: ["hampi", "mysore", "bengaluru", "coorg", "chikmagalur", "ooty", "kodaikanal", "pondicherry", "mahabalipuram", "madurai", "thanjavur", "badami", "belur-halebidu", "gokarna", "udupi", "mangalore", "bandipur", "shravanabelagola", "jog-falls", "chennai", "kanchipuram", "rameshwaram", "kanyakumari", "chettinad", "trichy", "hyderabad", "tirupati", "visakhapatnam", "araku-valley", "bijapur", "bidar", "murudeshwar", "dandeli", "kabini", "gandikota", "lepakshi", "warangal", "kumbakonam", "yercaud", "valparai", "mudumalai", "gingee"],
+        citySlugs: ["hampi", "mysore", "bengaluru", "coorg", "chikmagalur", "ooty", "kodaikanal", "pondicherry", "mahabalipuram", "madurai", "thanjavur", "badami", "belur-halebidu", "gokarna", "udupi", "mangalore", "bandipur", "shravanabelagola", "jog-falls", "chennai", "kanchipuram", "rameshwaram", "kanyakumari", "chettinad", "trichy", "hyderabad", "tirupati", "visakhapatnam", "araku-valley", "bijapur", "bidar", "murudeshwar", "dandeli", "kabini", "gandikota", "lepakshi", "warangal", "kumbakonam", "yercaud", "valparai", "mudumalai", "gingee", "pattadakal", "aihole", "sringeri", "sakleshpur", "kollur", "horsley-hills", "belum-caves", "srirangam", "chidambaram", "tiruvannamalai", "vellore", "dhanushkodi", "velankanni", "tranquebar", "srikalahasti", "vijayawada", "srisailam", "puttaparthi"],
     },
     {
         slug: "east-india",
