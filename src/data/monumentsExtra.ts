@@ -7171,4 +7171,686 @@ export const extraMonuments: Monument[] = [
   visitorInfo:[{label:"Hours",value:"Daily; opens early, closed midday, reopens evening"},{label:"Entry",value:"Free"},{label:"Closed",value:"Open daily; midday break between darshan sessions"},{label:"Best time",value:"Early morning for cooler, calmer darshan"},{label:"Time needed",value:"1–1.5 hrs"},{label:"Photography",value:"Restricted; not allowed in the inner sanctum"}],
   tips:["Dress modestly; men may need to remove upper garments at the sanctum.","Leave shoes at the stands outside.","Visit early or in the evening, avoiding the midday closure.","Do not photograph the inner sanctum."],
   faqs:[{q:"Which god is worshipped here?",a:"The temple is dedicated to Shiva, worshipped as Kapaleeshwarar, alongside the goddess Karpagambal."},{q:"How old is the temple?",a:"The present structure dates to around the sixteenth century, the Vijayanagara era, though worship at Mylapore is older."},{q:"Is there an entry fee?",a:"No, entry is free, though special queues or services may carry a charge."},{q:"When is the big festival?",a:"The Panguni festival, in the Tamil month of Panguni, is the temple's most spectacular annual event."},{q:"Can I photograph inside?",a:"Photography is restricted and not allowed in the inner sanctum; follow the posted rules."}], },
+    { slug:"chennakeshava-temple-belur", citySlug:"belur", name:"Chennakeshava Temple", type:"Temple",
+  era:"Hoysala · begun 1117 CE",
+  tagline:"Soapstone Jewel of the Hoysalas on the Yagachi",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/2/2f/Belur_Temple_all%2C_Belur.jpg",
+  answer:"The Chennakeshava Temple at Belur is a Hoysala temple to Vishnu whose construction was begun in 1117 CE under King Vishnuvardhana. Worked in soft chloritic schist (soapstone), it is famous for its star-shaped platform, ornate pillars and the bracket figures known as madanikai. It stands with Halebidu and Somanathapura in the 'Sacred Ensembles of the Hoysalas', inscribed by UNESCO as a World Heritage Site in 2023. It remains an active place of worship, so daily rituals continue. MyTripMyTravel pairs Belur with Halebidu on an unhurried private day of Hoysala art.",
+  intro:[
+    "Belur was a capital of the Hoysala dynasty, and its Chennakeshava Temple was the centrepiece of that ambition. Tradition holds that Vishnuvardhana raised it to mark a military victory, with construction beginning in 1117 CE. What survives is a single main shrine (ekakuta) set on a raised, many-angled platform that invites you to walk around and read its carvings.",
+    "The building material, soapstone, is soft when freshly quarried and hardens with exposure, which let Hoysala sculptors carve extraordinary detail. Look for the deep-cut pillars inside the hall, no two treated alike, and the celestial madanikai brackets beneath the eaves. Every surface, from friezes of elephants and horsemen to scenes from the epics, rewards slow attention.",
+    "Because worship never stopped here, Belur is a living temple rather than a museum piece. Priests conduct daily pujas, and pilgrims come alongside visitors drawn by the art. Modest dress and shoe removal at the shrine are expected."
+  ],
+  quickFacts:[
+    {label:"City",value:"Belur"},
+    {label:"Built",value:"Begun 1117 CE"},
+    {label:"Dynasty",value:"Hoysala"},
+    {label:"Dedicated to",value:"Vishnu (Chennakeshava)"},
+    {label:"Material",value:"Soapstone"},
+    {label:"UNESCO",value:"Hoysala ensembles, 2023"},
+    {label:"Status",value:"Active temple"},
+    {label:"Time on site",value:"1.5–2 hrs"}
+  ],
+  highlights:[
+    {name:"Madanikai brackets",detail:"Celestial female figures carved as roof brackets, among the most admired Hoysala sculptures."},
+    {name:"Star platform",detail:"The raised, many-angled jagati around the shrine that frames the temple and its friezes."},
+    {name:"Ornate pillars",detail:"Lathe-turned and hand-carved hall pillars, each treated differently, including the famed Narasimha pillar."},
+    {name:"Wall friezes",detail:"Continuous bands of elephants, lions, horsemen and epic scenes running around the base."},
+    {name:"Gravity pillar",detail:"A free-standing pillar in the courtyard, part of the wider temple complex and gateway."}
+  ],
+  visitorInfo:[
+    {label:"Hours",value:"Roughly 7am–7pm, with a midday puja break; confirm locally"},
+    {label:"Entry",value:"Temple entry free; verify any camera or guide charges on site"},
+    {label:"Closed",value:"Open daily as a living temple"},
+    {label:"Best time",value:"Early morning for soft light and cooler stone"},
+    {label:"Time needed",value:"1.5–2 hrs"},
+    {label:"Photography",value:"Generally allowed in the courtyard; sanctum restricted"}
+  ],
+  tips:[
+    "Combine Belur with Halebidu, about 16 km away, in one day.",
+    "Remove shoes and dress modestly before entering the shrine.",
+    "Hire a licensed guide to decode the friezes and madanikai.",
+    "Arrive early to beat tour groups and the midday heat."
+  ],
+  faqs:[
+    {q:"Is it still an active temple?",a:"Yes. Daily worship continues, so respect ritual timings and remove your shoes at the shrine."},
+    {q:"When was it built?",a:"Construction began in 1117 CE under the Hoysala king Vishnuvardhana; the wider complex grew over later decades."},
+    {q:"Is it a UNESCO site?",a:"Yes, as part of the 'Sacred Ensembles of the Hoysalas', inscribed in 2023 alongside Halebidu and Somanathapura."},
+    {q:"What is it made of?",a:"Soapstone (chloritic schist), which allowed the very fine, deep carving Hoysala temples are known for."},
+    {q:"How much time do I need?",a:"About 1.5–2 hours to walk the platform, study the carvings and see the interior."}
+  ], },
+    { slug:"hoysaleswara-temple-halebidu", citySlug:"halebidu", name:"Hoysaleswara Temple", type:"Temple",
+  era:"Hoysala · 12th century",
+  tagline:"The Twin-Shrined Shiva Temple of Old Dwarasamudra",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/5/5a/Hoysaleswara_Temple_at_Halebidu.jpg",
+  answer:"The Hoysaleswara Temple at Halebidu is a 12th-century Hoysala temple to Shiva, built in the dynasty's capital, then called Dwarasamudra. It is a twin-shrined (dvikuta) temple whose soapstone walls carry some of the densest carving in India, with long friezes of elephants, lions, horsemen and scenes from the epics, plus two Nandi pavilions facing the shrines. It forms part of the 'Sacred Ensembles of the Hoysalas', inscribed by UNESCO in 2023. Left unfinished after invasions in the 14th century, it still overwhelms with detail. MyTripMyTravel guides you through its friezes with time to look closely.",
+  intro:[
+    "Halebidu, once the Hoysala capital Dwarasamudra, gave its later name (meaning 'old capital') after the city was sacked. Its great surviving monument is the Hoysaleswara Temple, dedicated to Shiva and built in the 12th century during the reign of Vishnuvardhana. Two linked shrines sit side by side, each fronted by a hall, making this a dvikuta or twin temple.",
+    "The carving here is astonishing even by Hoysala standards. Horizontal bands wrap the base, layering elephants for strength, lions for courage, horsemen, foliage and narrative scenes from the Ramayana, Mahabharata and Puranas. Two detached pavilions shelter large monolithic Nandi bulls facing the shrines. Much of the intended sculpture was never finished, a reminder of the invasions that halted work.",
+    "Halebidu pairs naturally with Belur, a short drive away; together they anchor the UNESCO Hoysala ensemble. The setting is calmer than Belur, and the sheer quantity of detail rewards a slow, guided walk around the outer walls."
+  ],
+  quickFacts:[
+    {label:"City",value:"Halebidu"},
+    {label:"Built",value:"12th century"},
+    {label:"Dynasty",value:"Hoysala"},
+    {label:"Dedicated to",value:"Shiva"},
+    {label:"Plan",value:"Twin shrine (dvikuta)"},
+    {label:"Material",value:"Soapstone"},
+    {label:"UNESCO",value:"Hoysala ensembles, 2023"},
+    {label:"Time on site",value:"1.5–2 hrs"}
+  ],
+  highlights:[
+    {name:"Wall friezes",detail:"Continuous carved bands of elephants, lions, horsemen and epic scenes, among the densest carving in India."},
+    {name:"Twin shrines",detail:"Two linked sanctums, Hoysaleswara and Shantaleswara, giving the temple its dvikuta plan."},
+    {name:"Nandi pavilions",detail:"Two detached mandapas each housing a large monolithic Nandi bull facing the shrines."},
+    {name:"Lathe-turned pillars",detail:"Polished soapstone pillars in the halls, a Hoysala hallmark."},
+    {name:"Unfinished panels",detail:"Areas left incomplete after 14th-century invasions, revealing the sculptors' working method."}
+  ],
+  visitorInfo:[
+    {label:"Hours",value:"Roughly sunrise to sunset; confirm locally"},
+    {label:"Entry",value:"Nominal or free; verify current charges on site"},
+    {label:"Closed",value:"Open daily; confirm any weekly closure locally"},
+    {label:"Best time",value:"Morning light rakes across the carvings"},
+    {label:"Time needed",value:"1.5–2 hrs"},
+    {label:"Photography",value:"Generally permitted around the exterior"}
+  ],
+  tips:[
+    "Walk the full outer wall clockwise to follow the friezes.",
+    "Bring a guide to identify the epic scenes and deities.",
+    "Combine with Belur and, if time allows, Somanathapura.",
+    "Wear comfortable shoes; the platform involves some steps."
+  ],
+  faqs:[
+    {q:"Why 'Halebidu'?",a:"The name means 'old capital'. It was the Hoysala capital Dwarasamudra before being sacked in the 14th century."},
+    {q:"Who is it dedicated to?",a:"Shiva. The twin shrines are named Hoysaleswara and Shantaleswara."},
+    {q:"Is it a UNESCO site?",a:"Yes, as part of the 'Sacred Ensembles of the Hoysalas', inscribed in 2023."},
+    {q:"Why does it look unfinished?",a:"Work was halted by invasions in the early 14th century, leaving some carving incomplete."},
+    {q:"Should I visit Belur too?",a:"Yes. Belur is nearby and the two are usually seen together in one day."}
+  ], },
+    { slug:"chitradurga-fort", citySlug:"chitradurga", name:"Chitradurga Fort", type:"Fort",
+  era:"Nayaka strongholds · 15th–18th century",
+  tagline:"Elusuttina Kote, the Fort of Seven Circles",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/b/b5/Chitradurga_Fort_or_Chitradoorg_from_the_Ancient_times.jpg",
+  answer:"Chitradurga Fort, locally called Elusuttina Kote or the 'fort of seven circles', is a boulder-hill stronghold in central Karnataka developed chiefly by the Nayaka chiefs between the 15th and 18th centuries. Its walls thread between giant granite outcrops and enclose gateways, temples and rock-cut water tanks that helped it withstand sieges. It is tied to the legend of Onake Obavva, who is said to have defended a narrow gap with a wooden pestle. The climb is steep and rocky. MyTripMyTravel arranges a well-paced guided ascent with the history and the viewpoints explained.",
+  intro:[
+    "Chitradurga sits amid a dramatic landscape of enormous granite boulders, and its fort uses that terrain as armour. Concentric lines of wall, which give rise to the name 'fort of seven circles', wind between the rocks, so that an attacker breaching one ring still faced the next. The Nayakas of Chitradurga were the principal builders, though the site was fortified and expanded over many hands.",
+    "Inside are gateways, granaries, oil pits, small temples and ingenious rock-cut tanks and channels that stored monsoon water, a key to surviving long sieges. The fort is bound up with the story of Onake Obavva, remembered for defending a narrow passage, Obavvana Kindi, single-handed. The fort eventually fell to Hyder Ali in the late 18th century.",
+    "Exploring means real walking and climbing over uneven stone, often in strong sun. The reward is a sequence of ramparts and viewpoints over the boulder-strewn plain, and a sense of how thoroughly the defenders turned geology into fortification."
+  ],
+  quickFacts:[
+    {label:"City",value:"Chitradurga"},
+    {label:"Builders",value:"Nayaka chiefs"},
+    {label:"Period",value:"15th–18th century"},
+    {label:"Nickname",value:"Elusuttina Kote"},
+    {label:"Setting",value:"Granite boulder hills"},
+    {label:"Protected by",value:"ASI"},
+    {label:"Time on site",value:"2–3 hrs"}
+  ],
+  highlights:[
+    {name:"Seven walls",detail:"Concentric fortification lines woven between granite boulders that give the fort its name."},
+    {name:"Obavvana Kindi",detail:"The narrow rock gap tied to the legend of Onake Obavva defending the fort with a pestle."},
+    {name:"Rock-cut tanks",detail:"Water tanks and channels cut into stone that stored monsoon rain for long sieges."},
+    {name:"Gateways",detail:"Angled, staggered gates designed to slow and expose attackers."},
+    {name:"Hill viewpoints",detail:"Ramparts and summits with sweeping views over the boulder landscape."}
+  ],
+  visitorInfo:[
+    {label:"Hours",value:"Roughly 8am–6pm; confirm locally"},
+    {label:"Entry",value:"Ticketed ASI monument; verify current fee on site"},
+    {label:"Closed",value:"Generally open daily; confirm locally"},
+    {label:"Best time",value:"Early morning or late afternoon to avoid heat"},
+    {label:"Time needed",value:"2–3 hrs"},
+    {label:"Photography",value:"Allowed; camera charges may apply"}
+  ],
+  tips:[
+    "Wear sturdy shoes and carry water; the climb is steep.",
+    "Start early to avoid the harsh midday sun on bare rock.",
+    "Take a guide to find Obavvana Kindi and the tanks.",
+    "Allow extra time if you want to reach the upper ramparts."
+  ],
+  faqs:[
+    {q:"Why 'seven circles'?",a:"The fort has concentric rings of wall between the boulders, giving the local name Elusuttina Kote."},
+    {q:"Who built it?",a:"It was developed mainly by the Nayaka chiefs of Chitradurga between roughly the 15th and 18th centuries."},
+    {q:"Who was Onake Obavva?",a:"A local woman remembered for defending a narrow gap in the fort, Obavvana Kindi, with a wooden pestle."},
+    {q:"Is the climb hard?",a:"It involves steep, uneven stone and sun exposure. Good shoes, water and an early start help."},
+    {q:"How long should I allow?",a:"About 2–3 hours to explore the gates, tanks and upper ramparts at a reasonable pace."}
+  ], },
+    { slug:"daria-daulat-bagh", citySlug:"srirangapatna", name:"Daria Daulat Bagh", type:"Palace",
+  era:"Tipu Sultan · c. 1784",
+  tagline:"Tipu Sultan's Muralled Summer Palace in the Garden",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/9/9d/Daria_Daulat_Bagh%2CSrirangapattana.jpg",
+  answer:"Daria Daulat Bagh is Tipu Sultan's summer palace at Srirangapatna, built around 1784 largely of teak in an ornate Indo-Islamic style. Set within formal gardens, its glory is the painted decoration covering the walls, including a celebrated mural of the Battle of Pollilur. The building today serves as a museum of Tipu-era paintings, prints and relics, and is protected by the Archaeological Survey of India. It sits close to the fort and Gumbaz on Srirangapatna island. MyTripMyTravel includes it on a private Srirangapatna circuit tracing Tipu Sultan's story.",
+  intro:[
+    "Srirangapatna, an island in the Cauvery, was the seat of Tipu Sultan, and Daria Daulat Bagh, 'garden of the wealth of the sea', was his summer retreat. Built around 1784, the palace is largely of teak, with deep verandahs and arcaded facades in an ornamental Indo-Islamic idiom that favoured colour over stone grandeur.",
+    "The interiors and outer walls are the reason to come. Painted panels cover almost every surface, most famously a long mural depicting the Battle of Pollilur, in which forces led by Hyder Ali and Tipu defeated a British force. Other panels show processions, courts and portraits, offering a vivid picture of the period.",
+    "The palace now functions as an ASI museum, displaying paintings, prints, coins and objects connected with Tipu. The surrounding char-bagh gardens make an easy, shaded stroll, and the site combines naturally with the nearby Gumbaz and the ruined fort."
+  ],
+  quickFacts:[
+    {label:"City",value:"Srirangapatna"},
+    {label:"Built",value:"c. 1784"},
+    {label:"Built by",value:"Tipu Sultan"},
+    {label:"Style",value:"Indo-Islamic, teak"},
+    {label:"Known for",value:"Wall murals & museum"},
+    {label:"Protected by",value:"ASI"},
+    {label:"Time on site",value:"45–60 min"}
+  ],
+  highlights:[
+    {name:"Pollilur mural",detail:"A celebrated painted panel depicting the 1780 Battle of Pollilur against the British."},
+    {name:"Painted walls",detail:"Processions, courts and portraits covering the interior and outer surfaces."},
+    {name:"Teak architecture",detail:"Arcaded, ornamented timber facades and deep verandahs of the summer palace."},
+    {name:"Tipu museum",detail:"Displays of paintings, prints, coins and relics of the Tipu era."},
+    {name:"Formal gardens",detail:"The char-bagh setting that gave the palace its name."}
+  ],
+  visitorInfo:[
+    {label:"Hours",value:"Roughly 9am–5pm; confirm locally"},
+    {label:"Entry",value:"Ticketed ASI site; verify current fee on site"},
+    {label:"Closed",value:"ASI museums often close one day weekly; confirm locally"},
+    {label:"Best time",value:"Morning, cooler and quieter"},
+    {label:"Best time",value:"Morning, cooler and quieter"},
+    {label:"Photography",value:"Interior murals are usually off-limits to cameras"}
+  ],
+  tips:[
+    "Combine with the Gumbaz and the fort on one Srirangapatna loop.",
+    "Ask about the Pollilur mural, the star exhibit.",
+    "Expect no interior photography to protect the paintings.",
+    "Visit in the morning before the day heats up."
+  ],
+  faqs:[
+    {q:"Whose palace was it?",a:"Tipu Sultan's summer palace, built around 1784 at Srirangapatna."},
+    {q:"What are the murals about?",a:"Battles, processions and court scenes, most famously the Battle of Pollilur against the British."},
+    {q:"Is it a museum now?",a:"Yes. The ASI maintains it as a museum of Tipu-era paintings, prints and relics."},
+    {q:"Can I photograph the murals?",a:"Interior photography is generally not allowed, to protect the fragile paintings. Confirm on site."},
+    {q:"What else is nearby?",a:"The Gumbaz mausoleum and the ruined Srirangapatna fort are both close by."}
+  ], },
+    { slug:"gumbaz-srirangapatna", citySlug:"srirangapatna", name:"Gumbaz", type:"Mausoleum",
+  era:"Late 18th century",
+  tagline:"The Domed Resting Place of Tipu Sultan and Hyder Ali",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/6/69/Gumbaj_containing_tomb_of_Tipu_Sultan%2C_Srirangapatna.jpg",
+  answer:"The Gumbaz at Srirangapatna is the domed mausoleum holding the tombs of Tipu Sultan, his father Hyder Ali and his mother Fakhr-un-Nisa. Built in the late 18th century, it stands on a raised platform within a quiet cypress garden, its grey dome and slender corner minarets a landmark on the island. Tipu was interred here after his death in 1799. The site is protected by the Archaeological Survey of India and lies near the fort and Daria Daulat Bagh. MyTripMyTravel visits it as part of a considered Srirangapatna itinerary.",
+  intro:[
+    "The Gumbaz is the family mausoleum of the rulers of Mysore's Tipu era. Set at the edge of Srirangapatna, it holds the graves of Hyder Ali and his wife Fakhr-un-Nisa, with Tipu Sultan buried alongside after he fell defending the city in 1799.",
+    "Architecturally it is a restrained, dignified building: a square chamber raised on a platform, crowned by a broad dome and marked at the corners by minarets. A colonnade wraps the tomb chamber, and the whole sits within a formal garden planted with cypresses that reinforce the funerary calm. The interior doors and decoration reflect the craftsmanship of the period.",
+    "The Gumbaz remains a place of quiet respect as well as a monument. Visitors remove their shoes to enter the tomb chamber, and modest, unhurried behaviour is expected. It pairs easily with the nearby Daria Daulat Bagh and the fort."
+  ],
+  quickFacts:[
+    {label:"City",value:"Srirangapatna"},
+    {label:"Built",value:"Late 18th century"},
+    {label:"Type",value:"Domed mausoleum"},
+    {label:"Interred",value:"Tipu Sultan, Hyder Ali, Fakhr-un-Nisa"},
+    {label:"Setting",value:"Cypress garden"},
+    {label:"Protected by",value:"ASI"},
+    {label:"Time on site",value:"30–45 min"}
+  ],
+  highlights:[
+    {name:"Central dome",detail:"The broad dome that gives the monument its name, 'gumbaz'."},
+    {name:"Tomb chamber",detail:"The graves of Tipu Sultan, Hyder Ali and Fakhr-un-Nisa within the shaded interior."},
+    {name:"Corner minarets",detail:"Slender towers marking the corners of the raised platform."},
+    {name:"Ornate doors",detail:"Finely worked doorways reflecting late 18th-century craftsmanship."},
+    {name:"Cypress garden",detail:"The formal garden setting that frames the mausoleum in quiet."}
+  ],
+  visitorInfo:[
+    {label:"Hours",value:"Roughly 8am–6pm; confirm locally"},
+    {label:"Entry",value:"Generally free; verify on site"},
+    {label:"Closed",value:"Open daily; confirm locally"},
+    {label:"Best time",value:"Morning for soft light on the dome"},
+    {label:"Time needed",value:"30–45 min"},
+    {label:"Photography",value:"Grounds allowed; be respectful inside the tomb"}
+  ],
+  tips:[
+    "Remove your shoes before entering the tomb chamber.",
+    "Dress modestly and keep noise low; it is a burial place.",
+    "Pair it with Daria Daulat Bagh and the fort nearby.",
+    "Visit in the morning for the best light and calm."
+  ],
+  faqs:[
+    {q:"Who is buried here?",a:"Tipu Sultan, his father Hyder Ali and his mother Fakhr-un-Nisa."},
+    {q:"When was it built?",a:"In the late 18th century, as the family mausoleum; Tipu was interred here after his death in 1799."},
+    {q:"Do I need to cover up or remove shoes?",a:"Shoes come off to enter the tomb chamber, and modest, quiet conduct is expected."},
+    {q:"Is there an entry fee?",a:"Entry is generally free, but confirm current arrangements on site."},
+    {q:"What is nearby?",a:"Daria Daulat Bagh and the Srirangapatna fort are both a short distance away."}
+  ], },
+    { slug:"gulbarga-fort", citySlug:"gulbarga", name:"Gulbarga Fort", type:"Fort",
+  era:"Bahmani era · 14th century",
+  tagline:"The Moated Bahmani Fort of Kalaburagi",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/7/75/Fort_of_Gulbarga.JPG",
+  answer:"Gulbarga Fort, at Kalaburagi in northern Karnataka, is a moated stronghold associated with the Bahmani Sultanate, which made Gulbarga its early capital in the 14th century. Ringed by a moat and thick walls with bastions, it encloses ruins and, most notably, the Jama Masjid, a mosque unusual in India for its fully domed prayer hall with no open courtyard. The fort is protected by the Archaeological Survey of India. It anchors a Deccan-history route around Kalaburagi. MyTripMyTravel arranges a guided visit that sets the fort within Bahmani history.",
+  intro:[
+    "When the Bahmani Sultanate rose in the Deccan in the mid-14th century, it chose Gulbarga, today's Kalaburagi, as its first capital. The fort reflects that status: a broad moat, stout curtain walls and rounded bastions enclosing what was once a royal citadel. Much inside is ruined, but the scale of the defences still reads clearly.",
+    "The great survivor within the walls is the Jama Masjid. Unlike most Indian mosques, it has no open courtyard; instead the entire prayer hall is roofed with a canopy of domes carried on wide arches, an arrangement often linked to Persian and Spanish precedents. Walking beneath its shaded arcades is the highlight of any visit.",
+    "The fort rewards visitors interested in Deccan history rather than polished restoration. Ruined halls, gateways and the mosque together sketch the ambitions of the early Bahmani rulers, and the site pairs well with Kalaburagi's other Bahmani-era monuments."
+  ],
+  quickFacts:[
+    {label:"City",value:"Gulbarga (Kalaburagi)"},
+    {label:"Era",value:"Bahmani, 14th century"},
+    {label:"Feature",value:"Moated walls & bastions"},
+    {label:"Inside",value:"Domed Jama Masjid"},
+    {label:"Capital of",value:"Early Bahmani Sultanate"},
+    {label:"Protected by",value:"ASI"},
+    {label:"Time on site",value:"1–1.5 hrs"}
+  ],
+  highlights:[
+    {name:"Jama Masjid",detail:"A rare Indian mosque with a fully domed prayer hall and no open courtyard."},
+    {name:"The moat",detail:"The wide defensive moat that once encircled the citadel."},
+    {name:"Bastions & walls",detail:"Thick curtain walls with rounded towers from the fort's military prime."},
+    {name:"Gateways",detail:"Fortified entrances that controlled access to the inner fort."},
+    {name:"Ruined halls",detail:"Remains of palace and administrative structures within the walls."}
+  ],
+  visitorInfo:[
+    {label:"Hours",value:"Roughly daylight hours; confirm locally"},
+    {label:"Entry",value:"Generally nominal or free; verify on site"},
+    {label:"Closed",value:"Open daily; confirm locally"},
+    {label:"Best time",value:"Morning, before the Deccan heat builds"},
+    {label:"Time needed",value:"1–1.5 hrs"},
+    {label:"Photography",value:"Allowed; be respectful at the mosque"}
+  ],
+  tips:[
+    "Cover your head and dress modestly at the Jama Masjid.",
+    "Wear comfortable shoes for uneven, ruined ground.",
+    "Visit in the morning to avoid the strong afternoon sun.",
+    "Combine with the Khwaja Bande Nawaz dargah in town."
+  ],
+  faqs:[
+    {q:"Why is the Jama Masjid special?",a:"It is roofed entirely with domes and has no open courtyard, which is very unusual for a mosque in India."},
+    {q:"Who built the fort?",a:"It is associated with the Bahmani Sultanate, which made Gulbarga its early capital in the 14th century."},
+    {q:"Is much of it intact?",a:"The walls, moat and mosque survive well, but many inner buildings are ruined."},
+    {q:"Can I enter the mosque?",a:"Yes, with modest dress and head covered. Follow any instructions on site."},
+    {q:"What else is in town?",a:"The Khwaja Bande Nawaz dargah is a major nearby pilgrimage site."}
+  ], },
+    { slug:"khwaja-bande-nawaz-dargah", citySlug:"gulbarga", name:"Khwaja Bande Nawaz Dargah", type:"Monument",
+  era:"Sufi shrine · saint d. 1422",
+  tagline:"The Chishti Sufi Shrine of Gesudaraz at Kalaburagi",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/a/a2/Main_Shrine%2C_Hazrath_Khwaja_Bande_Nawaz%2C_Gulbarga.jpg",
+  answer:"The Khwaja Bande Nawaz Dargah at Gulbarga (Kalaburagi) is the shrine of the Chishti Sufi saint Syed Muhammad Hussaini Gesudaraz, known as Bande Nawaz, who settled here under the Bahmanis and died in 1422. His tomb is the heart of a large complex that draws pilgrims of many faiths, especially during the annual urs commemorating the saint. Visitors cover their heads and dress modestly. It is one of the Deccan's most revered Sufi centres. MyTripMyTravel arranges a respectful visit with the shrine's etiquette explained in advance.",
+  intro:[
+    "Gesudaraz, honoured as Khwaja Bande Nawaz ('one who is gracious to his devotees'), was a Chishti Sufi who came to Gulbarga in his later years during Bahmani rule and died there in 1422. His dargah grew around his tomb into one of the most important Sufi shrines of the Deccan.",
+    "The complex has expanded over the centuries and includes the domed tomb chamber, prayer spaces, a library associated with the saint's tradition and courtyards that fill with pilgrims. People of many faiths come to seek blessings, tie threads and offer chadars, and the atmosphere is devotional rather than touristic.",
+    "The shrine is busiest during the annual urs, the commemoration of the saint's death anniversary, when large crowds gather. At any time, visitors are expected to cover their heads, dress modestly, remove their shoes near the tomb and follow the guidance of shrine attendants."
+  ],
+  quickFacts:[
+    {label:"City",value:"Gulbarga (Kalaburagi)"},
+    {label:"Saint",value:"Syed Muhammad Gesudaraz"},
+    {label:"Died",value:"1422"},
+    {label:"Order",value:"Chishti Sufi"},
+    {label:"Draw",value:"All-faith pilgrimage"},
+    {label:"Key event",value:"Annual urs"},
+    {label:"Time on site",value:"45–60 min"}
+  ],
+  highlights:[
+    {name:"Saint's tomb",detail:"The domed chamber over the grave of Gesudaraz, the focus of devotion."},
+    {name:"Shrine complex",detail:"Courtyards, prayer halls and later structures that grew around the tomb."},
+    {name:"Annual urs",detail:"The death-anniversary festival that draws large crowds of pilgrims."},
+    {name:"Library tradition",detail:"A collection associated with the saint's scholarly Chishti lineage."},
+    {name:"All-faith devotion",detail:"Pilgrims of many communities offering chadars and threads at the shrine."}
+  ],
+  visitorInfo:[
+    {label:"Hours",value:"Open daily, long hours; busiest around prayer times"},
+    {label:"Entry",value:"Free; donations are customary"},
+    {label:"Closed",value:"No fixed closed day; very crowded during urs"},
+    {label:"Best time",value:"Morning, outside peak prayer and festival crowds"},
+    {label:"Time needed",value:"45–60 min"},
+    {label:"Photography",value:"Restricted near the tomb; ask before shooting"}
+  ],
+  tips:[
+    "Cover your head and dress modestly, women and men alike.",
+    "Remove your shoes before approaching the tomb.",
+    "Expect dense crowds during the annual urs.",
+    "Ask permission before photographing near the shrine."
+  ],
+  faqs:[
+    {q:"Who was Bande Nawaz?",a:"Syed Muhammad Hussaini Gesudaraz, a Chishti Sufi saint who settled in Gulbarga and died in 1422."},
+    {q:"Can non-Muslims visit?",a:"Yes. The dargah is an all-faith pilgrimage site, provided visitors follow its etiquette."},
+    {q:"What should I wear?",a:"Modest clothing with the head covered; shoes are removed near the tomb."},
+    {q:"What is the urs?",a:"The annual festival marking the saint's death anniversary, when huge crowds gather."},
+    {q:"Is there an entry fee?",a:"No fee. Donations are customary but not required."}
+  ], },
+    { slug:"cheluvanarayana-temple", citySlug:"melukote", name:"Cheluvanarayana Swamy Temple", type:"Temple",
+  era:"Sri Vaishnava · linked to Ramanuja",
+  tagline:"Hilltop Vishnu Shrine of Melukote and the Vairamudi",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/9/96/Sri_Chaluvanarayana_Swamy_Temple%2C_Melukote%2C_Karnataka_01.jpg",
+  answer:"The Cheluvanarayana Swamy Temple at Melukote is a major Sri Vaishnava temple to Vishnu, closely tied to the philosopher Ramanuja, who spent years at this hill town. It remains a busy active temple, best known for the annual Vairamudi festival, when the deity is adorned with a diamond crown. Below the temple lies the Kalyani, a large stepped tank, and the hill is crowned by a Narasimha shrine. Melukote sits on a rocky ridge in the Mandya district. MyTripMyTravel plans a Melukote visit around the temple, tank and hilltop views.",
+  intro:[
+    "Melukote is one of the great centres of Sri Vaishnavism in the south, its fame bound to Ramanuja, the 11th–12th century philosopher who is traditionally said to have lived and taught here for years. The Cheluvanarayana Swamy Temple, dedicated to a form of Vishnu, stands at the heart of the town and remains a living, actively worshipped shrine.",
+    "The temple is celebrated above all for its festival calendar. During the annual Vairamudi Brahmotsava, the presiding deity is crowned with the Vairamudi, a jewelled diamond crown brought out under guard, drawing enormous crowds. Even on ordinary days the temple sees a steady flow of pilgrims performing darshan.",
+    "The wider site is as memorable as the shrine. Below the town lies the Kalyani, a large stepped temple tank framed by pavilions, while a Yoga Narasimha temple crowns the rocky hilltop above, reached by a climb with wide views over the plains. Modest dress and shoe removal are expected at the temples."
+  ],
+  quickFacts:[
+    {label:"City",value:"Melukote"},
+    {label:"Dedicated to",value:"Vishnu (Cheluvanarayana)"},
+    {label:"Tradition",value:"Sri Vaishnava"},
+    {label:"Linked to",value:"Ramanuja"},
+    {label:"Famous for",value:"Vairamudi festival"},
+    {label:"Status",value:"Active temple"},
+    {label:"Time on site",value:"1.5–2 hrs"}
+  ],
+  highlights:[
+    {name:"Main sanctum",detail:"The shrine of Cheluvanarayana Swamy, the actively worshipped form of Vishnu."},
+    {name:"Vairamudi festival",detail:"Annual event when the deity is adorned with a guarded diamond crown, drawing huge crowds."},
+    {name:"The Kalyani",detail:"A large stepped temple tank below the town, framed by pavilions."},
+    {name:"Ramanuja links",detail:"Melukote's deep association with the Sri Vaishnava philosopher Ramanuja."},
+    {name:"Hilltop Narasimha",detail:"The Yoga Narasimha temple crowning the rocky hill, with sweeping views."}
+  ],
+  visitorInfo:[
+    {label:"Hours",value:"Morning and evening darshan with a midday break; confirm locally"},
+    {label:"Entry",value:"Free; special-darshan or camera charges may apply"},
+    {label:"Closed",value:"Open daily; extremely crowded during Vairamudi"},
+    {label:"Best time",value:"Early morning; avoid festival crush unless intended"},
+    {label:"Time needed",value:"1.5–2 hrs"},
+    {label:"Photography",value:"Restricted inside the sanctum; ask before shooting"}
+  ],
+  tips:[
+    "Remove shoes and dress modestly at the temples.",
+    "Come early to see the Kalyani tank in good light.",
+    "Add the hilltop Narasimha temple if you can manage the climb.",
+    "Check festival dates before visiting during Vairamudi crowds."
+  ],
+  faqs:[
+    {q:"Why is Melukote important?",a:"It is a leading Sri Vaishnava centre, strongly associated with the philosopher Ramanuja."},
+    {q:"What is the Vairamudi festival?",a:"An annual festival when the deity is crowned with the Vairamudi, a jewelled diamond crown, under guard."},
+    {q:"What is the Kalyani?",a:"A large stepped temple tank below the town, a scenic and sacred spot in its own right."},
+    {q:"Is it an active temple?",a:"Yes. Daily worship continues, so observe darshan timings, shoe removal and modest dress."},
+    {q:"Is there more to see on the hill?",a:"Yes, the Yoga Narasimha temple crowns the ridge above, reached by a stepped climb with fine views."}
+  ], },
+    { slug:"andal-temple-srivilliputhur", citySlug:"srivilliputhur", name:"Andal Temple (Vatapatrasayee)", type:"Temple",
+  era:"Hindu · Divya Desam Vishnu temple",
+  tagline:"The Saint's Birthplace Beneath a Tower on the State Emblem",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/f/f3/Srivilliputhur_Andal_temple_%2820%29.jpg",
+  answer:"The Andal Temple at Srivilliputhur is a Divya Desam, one of 108 Vishnu shrines hymned by the Tamil Alvar saints, and is honoured as the birthplace of Andal, the only woman among the twelve Alvars. Its towering white gopuram is so emblematic that it appears on the emblem of Tamil Nadu. The complex pairs Andal's shrine with the reclining Vishnu, Vatapatrasayee. As a living temple, inner areas follow Srivaishnava custom and dress. MyTripMyTravel arranges an unhurried, guided visit with context on Andal's Tamil devotional poetry.",
+  intro:[
+    "Srivilliputhur, in southern Tamil Nadu, is inseparable from Andal, the girl-saint born here who, in Tamil Vaishnava tradition, composed the Tiruppavai and Nachiar Tirumoli and is revered as the only female among the twelve Alvar poet-saints. The temple honours both her and Vishnu.",
+    "The site is counted among the 108 Divya Desams, the sacred Vishnu abodes praised in the Alvars' hymns. Its tall, tiered gopuram rises over the town and is the model for the tower shown on the Tamil Nadu state emblem, making it one of the state's most recognisable silhouettes.",
+    "It remains an active place of worship. Rituals, dress expectations and sanctum access follow Srivaishnava custom, and non-Hindus should confirm which areas are open. The annual Aadi Pooram festival marks Andal's appearance and draws large crowds."
+  ],
+  quickFacts:[{label:"City",value:"Srivilliputhur"},{label:"Tradition",value:"Sri Vaishnava (Vishnu)"},{label:"Status",value:"Divya Desam"},{label:"Known for",value:"Birthplace of Andal"},{label:"Gopuram",value:"On the Tamil Nadu emblem"},{label:"Deities",value:"Andal & Vatapatrasayee"},{label:"Time on site",value:"1-1.5 hrs"}],
+  highlights:[
+    {name:"Rajagopuram",detail:"The towering tiered gateway whose silhouette is echoed on the Tamil Nadu state emblem."},
+    {name:"Andal shrine",detail:"Dedicated to the poet-saint born here, revered as the only female Alvar."},
+    {name:"Vatapatrasayee",detail:"The reclining form of Vishnu enshrined in the paired temple."},
+    {name:"Andal's poetry",detail:"The Tiruppavai is recited devotionally, especially in the Tamil month of Margazhi."},
+    {name:"Aadi Pooram",detail:"The festival marking Andal's appearance, drawing large crowds."}
+  ],
+  visitorInfo:[{label:"Hours",value:"Mornings and evenings with a midday break; confirm locally"},{label:"Entry",value:"Free; special darshan arrangements may apply"},{label:"Closed",value:"Open daily; sanctum shuts midday"},{label:"Best time",value:"Early morning"},{label:"Time needed",value:"1-1.5 hrs"},{label:"Photography",value:"Restricted inside; confirm locally"}],
+  tips:["Cover shoulders and knees for an active temple.","Visit in the cool early morning.","Remove footwear before entering.","Ask which areas are open to non-Hindus."],
+  faqs:[
+    {q:"Who was Andal?",a:"A revered poet-saint born in Srivilliputhur, the only woman among the twelve Alvars, credited with the Tiruppavai and Nachiar Tirumoli."},
+    {q:"Why is it on the state emblem?",a:"The temple's tiered gopuram is the tower depicted on the emblem of Tamil Nadu."},
+    {q:"Is it a Divya Desam?",a:"Yes, it is one of the 108 sacred Vishnu abodes praised in the Alvars' hymns."},
+    {q:"Can non-Hindus enter?",a:"Outer areas are generally open; inner-sanctum access follows Srivaishnava custom, so confirm locally."},
+    {q:"When is the best time to visit?",a:"Early morning; the Tamil month of Margazhi and the Aadi Pooram festival are especially significant."}
+  ], },
+    { slug:"virupaksha-temple-pattadakal", citySlug:"pattadakal", name:"Virupaksha Temple", type:"Temple",
+  era:"Chalukya · Dravida temple, c. 740 CE",
+  tagline:"A Chalukyan Victory Temple in Living Stone",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/d/db/Virupaksha_Temple-Pattadakal-Karnataka-01.jpg",
+  answer:"The Virupaksha Temple is the largest and most complete monument at Pattadakal, built around 740 CE in the southern Dravida style. Chalukya queen Lokamahadevi is credited with raising it to commemorate her husband Vikramaditya II's victory over the Pallavas of Kanchi, and its design draws on the Pallava Kailasanatha temple there. Pattadakal's group of monuments was inscribed as a UNESCO World Heritage Site in 1987. Unlike most temples at the site, Virupaksha still holds an active sanctum with a Shiva linga and a Nandi pavilion. MyTripMyTravel pairs it with nearby Aihole and Badami on a guided Chalukyan route.",
+  intro:[
+    "Pattadakal, on the Malaprabha river in northern Karnataka, was a ceremonial and coronation centre of the Badami Chalukyas. Its cluster of 7th-8th-century temples shows early Indian architects experimenting side by side with northern Nagara and southern Dravida styles.",
+    "The Virupaksha Temple is the grandest of them. Inscriptions credit its construction to Queen Lokamahadevi around 740 CE, marking the Chalukya triumph over the Pallavas of Kanchipuram; the builders looked to the Pallavas' own Kailasanatha temple for inspiration. A large Nandi bull faces the sanctum from a detached pavilion.",
+    "The whole group of monuments at Pattadakal was recognised by UNESCO as a World Heritage Site in 1987. Virupaksha remains in worship, so visitors combine appreciation of its carved pillars and narrative panels with respect for an active shrine."
+  ],
+  quickFacts:[{label:"City",value:"Pattadakal"},{label:"Built",value:"c. 740 CE"},{label:"Dynasty",value:"Badami Chalukya"},{label:"Style",value:"Dravida (southern)"},{label:"Patron",value:"Queen Lokamahadevi"},{label:"UNESCO",value:"Inscribed 1987"},{label:"Status",value:"Living Shiva sanctum"},{label:"Time on site",value:"1-1.5 hrs"}],
+  highlights:[
+    {name:"Main vimana",detail:"The largest temple at Pattadakal, crowned by a tiered Dravida tower."},
+    {name:"Nandi pavilion",detail:"A detached mandapa housing a large Nandi facing the sanctum."},
+    {name:"Narrative carvings",detail:"Pillars carved with scenes from the Ramayana and Mahabharata."},
+    {name:"Victory context",detail:"Raised to mark the Chalukya win over the Pallavas of Kanchi."},
+    {name:"Kailasanatha link",detail:"Its design draws on the Pallava Kailasanatha temple at Kanchipuram."}
+  ],
+  visitorInfo:[{label:"Hours",value:"Sunrise to sunset (ASI site)"},{label:"Entry",value:"Ticketed ASI monument; confirm current fee locally"},{label:"Closed",value:"Open daily; confirm any ASI closed day locally"},{label:"Best time",value:"Morning, Oct-Mar"},{label:"Time needed",value:"1-1.5 hrs (2-3 hrs for the full group)"},{label:"Photography",value:"Allowed; still cameras generally free"}],
+  tips:["Combine it with Aihole and Badami nearby.","Carry water and sun protection at this open site.","Hire a guide to read the narrative panels.","Be respectful; the sanctum is still in worship."],
+  faqs:[
+    {q:"Who built it?",a:"It is attributed to the Chalukya queen Lokamahadevi, around 740 CE."},
+    {q:"Why was it built?",a:"To commemorate Vikramaditya II's victory over the Pallavas of Kanchi."},
+    {q:"Is Pattadakal UNESCO-listed?",a:"Yes, the group of monuments at Pattadakal was inscribed in 1987."},
+    {q:"Is it still a working temple?",a:"Yes, it retains an active Shiva sanctum, unlike some other monuments at the site."},
+    {q:"What architectural style is it?",a:"The southern Dravida style."}
+  ], },
+    { slug:"durga-temple-aihole", citySlug:"aihole", name:"Durga Temple", type:"Temple",
+  era:"Chalukya · 7th-8th century CE",
+  tagline:"The Apsidal Temple That Isn't About the Goddess",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/3/3a/Durga_Temple_-_Aihole_with_cloud.jpg",
+  answer:"The Durga Temple at Aihole is one of India's most distinctive early temples, built by the Badami Chalukyas around the 7th-8th century. Its plan is unusual, an apsidal, horseshoe-shaped sanctuary wrapped by a colonnaded verandah, echoing the layout of ancient rock-cut prayer halls. Despite the name, 'Durga' here derives from durga meaning fort, as the temple stands near an old fortification, not from the goddess Durga. It is now an ASI-protected monument rather than a place of worship. MyTripMyTravel includes it on a guided Aihole-Pattadakal-Badami circuit tracing the roots of temple architecture.",
+  intro:[
+    "Aihole, a village in Karnataka's Bagalkot district, is often called a cradle of Indian temple architecture, where Chalukyan builders tried out plans and forms that later spread across the south.",
+    "The Durga Temple is its best-known monument. Instead of the usual square sanctum, it has a rounded apsidal end and an open pillared verandah running all the way around, a shape borrowed from early chaitya prayer halls. Sculpted panels of deities line the outer walls.",
+    "The name misleads many visitors: it comes from durga, meaning fort, because the temple sits beside an old fortification, not from the goddess Durga. Today it is cared for by the Archaeological Survey of India and is visited as a monument, with a small site museum nearby."
+  ],
+  quickFacts:[{label:"City",value:"Aihole"},{label:"Built",value:"c. 7th-8th century"},{label:"Dynasty",value:"Badami Chalukya"},{label:"Plan",value:"Apsidal (horseshoe)"},{label:"Name means",value:"'Fort' temple, not the goddess"},{label:"Managed by",value:"ASI"},{label:"Time on site",value:"45 min-1 hr"}],
+  highlights:[
+    {name:"Apsidal sanctum",detail:"A rare rounded plan drawn from the chaitya-hall tradition."},
+    {name:"Peristyle verandah",detail:"A colonnaded walkway encircling the entire temple."},
+    {name:"Wall sculptures",detail:"Carved niches of deities set into the outer gallery."},
+    {name:"Raised plinth",detail:"A moulded base and stairway lifting the structure."},
+    {name:"Site museum",detail:"An ASI museum nearby displaying finds from Aihole."}
+  ],
+  visitorInfo:[{label:"Hours",value:"Sunrise to sunset"},{label:"Entry",value:"Ticketed ASI monument; confirm current fee locally"},{label:"Closed",value:"Open daily; confirm locally"},{label:"Best time",value:"Morning, Oct-Mar"},{label:"Time needed",value:"45 min-1 hr"},{label:"Photography",value:"Allowed; still cameras generally free"}],
+  tips:["Combine it with the wider Aihole temple cluster.","Visit the ASI museum for context.","Go early to avoid midday heat.","A guide helps decode the wall sculptures."],
+  faqs:[
+    {q:"Is it dedicated to the goddess Durga?",a:"No; the name comes from durga, meaning fort, and the original deity is debated by scholars."},
+    {q:"Why is its shape unusual?",a:"It has an apsidal, horseshoe plan derived from early chaitya prayer halls."},
+    {q:"Who built it?",a:"The Badami Chalukyas, around the 7th-8th century."},
+    {q:"Is it a working temple?",a:"No, it is an ASI-protected monument and is not in active worship."},
+    {q:"Can I combine it with other sites?",a:"Yes, easily with Pattadakal and Badami nearby."}
+  ], },
+    { slug:"vidyashankara-temple", citySlug:"sringeri", name:"Vidyashankara Temple", type:"Temple",
+  era:"Vijayanagara-era · 14th century CE",
+  tagline:"The Zodiac-Pillared Temple by the Tunga",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/4/4c/Sringeri_Vidyashankara_temple.jpg",
+  answer:"The Vidyashankara Temple stands within the Sringeri Sharada Peetham, a revered monastic centre on the banks of the Tunga river in Karnataka's Western Ghats. Built in the 14th century, it commemorates the guru Vidyashankara and is associated with the sage Vidyaranya of the Vijayanagara era. Its architecture blends Hoysala ornament with the emerging Vijayanagara idiom, and its hall is famed for twelve pillars carved with the zodiac signs, aligned to the sun's movement. MyTripMyTravel arranges a calm, guided visit alongside the riverside Sharada shrine and the surrounding hills.",
+  intro:[
+    "Sringeri is one of the most important centres of the Advaita Vedanta tradition, home to the Sringeri Sharada Peetham, a matha linked to the lineage of Adi Shankaracharya. It sits in lush hill country on the Tunga river.",
+    "Within the complex, the Vidyashankara Temple honours the teacher Vidyashankara and is tied to Vidyaranya, the sage associated with the founding of the Vijayanagara empire. Built in the 14th century, it marries the intricate carving of Hoysala temples with the newer Vijayanagara style.",
+    "Its most talked-about feature is the main hall's set of twelve pillars, each bearing a zodiac sign, arranged so that sunlight is said to fall on them in the order of the solar months, a display of the builders' astronomical care."
+  ],
+  quickFacts:[{label:"City",value:"Sringeri"},{label:"Built",value:"14th century"},{label:"Setting",value:"Sringeri Sharada Peetham, Tunga river"},{label:"Style",value:"Hoysala-Vijayanagara blend"},{label:"Named for",value:"Guru Vidyashankara"},{label:"Known for",value:"Twelve zodiac pillars"},{label:"Time on site",value:"1-1.5 hrs"}],
+  highlights:[
+    {name:"Zodiac pillars",detail:"Twelve rashi pillars keyed to the sun's path through the solar months."},
+    {name:"Hoysala carving",detail:"Detailed sculpture across the outer walls."},
+    {name:"Riverside setting",detail:"Positioned on the Tunga within the matha grounds."},
+    {name:"Sharada temple",detail:"The nearby goddess shrine of the Sringeri peetham."},
+    {name:"Living heritage",detail:"Part of an active Advaita monastic centre."}
+  ],
+  visitorInfo:[{label:"Hours",value:"Morning to evening (matha timings; confirm locally)"},{label:"Entry",value:"Free"},{label:"Closed",value:"Open daily"},{label:"Best time",value:"Oct-Feb, mornings"},{label:"Time needed",value:"1-1.5 hrs"},{label:"Photography",value:"Restricted inside; confirm locally"}],
+  tips:["Dress modestly for an active religious site.","Combine it with the Sharada temple in the same complex.","Mornings are cooler and quieter.","Remove footwear as directed."],
+  faqs:[
+    {q:"What is special about the pillars?",a:"Twelve pillars are carved with the zodiac signs and aligned to the sun's movement."},
+    {q:"When was it built?",a:"In the 14th century."},
+    {q:"Whom does it honour?",a:"The guru Vidyashankara, with links to the sage Vidyaranya."},
+    {q:"What style is it?",a:"A blend of Hoysala and Vijayanagara architecture."},
+    {q:"Is it still active?",a:"Yes, it stands within the working Sringeri matha."}
+  ], },
+    { slug:"mookambika-temple", citySlug:"kollur", name:"Mookambika Temple", type:"Temple",
+  era:"Hindu · Shakti temple",
+  tagline:"The Goddess Shrine Below Kodachadri Hill",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/f/f7/Kollur_Mookambika_temple_east_entrance_gate.jpg",
+  answer:"The Mookambika Temple at Kollur, in coastal Karnataka, is a celebrated Shakti shrine dedicated to the goddess Mookambika, set below the forested Kodachadri hill beside the Souparnika river. Tradition connects its consecration to Adi Shankaracharya, and the deity is worshipped in a form combining Shiva and Shakti. Many pilgrims bathe in the Souparnika before darshan, and the temple is especially popular for Vidyarambham, a child's initiation into learning. As a living temple, dress and sanctum customs apply. MyTripMyTravel arranges a respectful guided visit within its hill and river setting.",
+  intro:[
+    "Kollur lies in the Western Ghats of Udupi district, Karnataka, where the Souparnika river runs below Kodachadri hill. The Mookambika Temple here is one of the most visited goddess shrines of the west coast, drawing pilgrims from Karnataka and Kerala alike.",
+    "The goddess Mookambika is worshipped in a form that unites Shiva and Shakti, and popular tradition links the temple's consecration to the philosopher-saint Adi Shankaracharya. The deity is also revered as a patron of learning and the arts.",
+    "Customs shape a visit here. Many devotees take a bath in the Souparnika before darshan, and families bring young children for Vidyarambham, the ceremony marking the start of formal education. As an active temple, it has dress codes and sanctum practices to observe."
+  ],
+  quickFacts:[{label:"City",value:"Kollur"},{label:"Tradition",value:"Shakti (goddess Mookambika)"},{label:"Setting",value:"Below Kodachadri, on the Souparnika"},{label:"Linked to",value:"Adi Shankaracharya (tradition)"},{label:"Popular for",value:"Vidyarambham initiation"},{label:"State",value:"Karnataka"},{label:"Time on site",value:"1-1.5 hrs"}],
+  highlights:[
+    {name:"Mookambika sanctum",detail:"The goddess worshipped as a union of Shiva and Shakti."},
+    {name:"Souparnika river",detail:"The site of a customary pre-darshan bath."},
+    {name:"Kodachadri hill",detail:"The forested peak above, part of the sacred landscape."},
+    {name:"Vidyarambham",detail:"The children's initiation into learning performed here."},
+    {name:"Pilgrim draw",detail:"Revered by devotees across Karnataka and Kerala."}
+  ],
+  visitorInfo:[{label:"Hours",value:"Early morning to night with a midday break; confirm locally"},{label:"Entry",value:"Free; special sevas ticketed"},{label:"Closed",value:"Open daily; sanctum shuts midday"},{label:"Best time",value:"Oct-Feb, early morning"},{label:"Time needed",value:"1-1.5 hrs"},{label:"Photography",value:"Restricted inside; confirm locally"}],
+  tips:["Dress modestly per temple custom.","Consider the traditional Souparnika bath before darshan.","Arrive early to avoid queues.","Remove footwear before entering."],
+  faqs:[
+    {q:"Who is the deity?",a:"The goddess Mookambika, worshipped as a combined form of Shiva and Shakti."},
+    {q:"Is it linked to Adi Shankaracharya?",a:"Yes, by tradition its consecration is associated with him."},
+    {q:"What is Vidyarambham?",a:"A ceremony initiating a child into learning, especially popular at this temple."},
+    {q:"Where is it?",a:"Kollur, in Udupi district, Karnataka, below Kodachadri hill on the Souparnika river."},
+    {q:"Is there a pre-visit custom?",a:"Many devotees bathe in the Souparnika river before darshan."}
+  ], },
+    { slug:"thillai-nataraja-temple", citySlug:"chidambaram", name:"Thillai Nataraja Temple", type:"Temple",
+  era:"Chola-era & later · Shiva Nataraja",
+  tagline:"Shiva's Cosmic Dance and the Secret of Space",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/c/ca/Golden_Roof%2C_Nataraja_Temple_in_Chidambaram.jpg",
+  answer:"The Thillai Nataraja Temple at Chidambaram enshrines Shiva as Nataraja, the cosmic dancer, and represents Akasha, space or ether, among the five Pancha Bhoota Sthalams. Its most famous feature is the Chidambaram Rahasyam: a veiled, empty space in the sanctum symbolising the formless divine. The inner Chit Sabha hall is crowned by a gilded roof, and worship is conducted by the hereditary Dikshitar priests. Unusually, the temple also houses a shrine to Vishnu as Govindaraja. MyTripMyTravel arranges an escorted visit with context on the temple's dance iconography and philosophy.",
+  intro:[
+    "Chidambaram, in Tamil Nadu, is one of the holiest Shaiva sites in South India. Its great temple is dedicated to Shiva in his form as Nataraja, performing the Ananda Tandava, the dance of bliss that Chola bronzes made famous worldwide.",
+    "Among the Pancha Bhoota Sthalams, the five temples linked to the elements, Chidambaram stands for Akasha, space or ether. This is expressed through the Chidambaram Rahasyam, the 'secret': behind a curtain in the sanctum lies an empty space, representing the divine as formless and all-pervading.",
+    "The central Chit Sabha and Kanaka Sabha halls, roofed in gold, are the ritual heart of the temple, served by the Dikshitars, a hereditary community of priests. The temple is also unusual in enshrining Vishnu as Govindaraja alongside Shiva."
+  ],
+  quickFacts:[{label:"City",value:"Chidambaram"},{label:"Deity",value:"Shiva as Nataraja"},{label:"Element",value:"Akasha (space/ether)"},{label:"Group",value:"Pancha Bhoota Sthalam"},{label:"Priests",value:"Dikshitars (hereditary)"},{label:"Feature",value:"Chidambaram Rahasyam"},{label:"Time on site",value:"1.5-2 hrs"}],
+  highlights:[
+    {name:"Chidambaram Rahasyam",detail:"A veiled empty space in the sanctum symbolising the formless divine."},
+    {name:"Chit Sabha",detail:"The gilded-roof hall that forms the temple's ritual centre."},
+    {name:"Nataraja",detail:"Shiva enshrined in his cosmic dance form."},
+    {name:"Govindaraja shrine",detail:"A rare Vishnu shrine within a great Shiva temple."},
+    {name:"Gopurams",detail:"Tall towers whose carvings include classical dance poses."}
+  ],
+  visitorInfo:[{label:"Hours",value:"Morning and evening with a midday closure; confirm locally"},{label:"Entry",value:"Free; special darshan may be ticketed"},{label:"Closed",value:"Open daily; sanctum shuts midday"},{label:"Best time",value:"Early morning or evening puja"},{label:"Time needed",value:"1.5-2 hrs"},{label:"Photography",value:"Restricted inside; confirm locally"}],
+  tips:["Time your visit with a puja to see the aarti.","Dress modestly; sanctum access follows custom.","Look for the carved dance poses on the gopurams.","Remove footwear before entering."],
+  faqs:[
+    {q:"Which element does it represent?",a:"Akasha, space or ether, among the Pancha Bhoota Sthalams."},
+    {q:"What is the Chidambaram Rahasyam?",a:"A veiled empty space in the sanctum symbolising the formless divine."},
+    {q:"Who performs the worship?",a:"The hereditary Dikshitar priests."},
+    {q:"Is Vishnu worshipped here too?",a:"Yes, unusually, as Govindaraja alongside Shiva."},
+    {q:"When is the best time to visit?",a:"For a puja, arrive in the early morning or evening."}
+  ], },
+    { slug:"arunachaleswarar-temple", citySlug:"tiruvannamalai", name:"Arunachaleswarar Temple", type:"Temple",
+  era:"Chola-era & later · Shiva as fire",
+  tagline:"The Fire Temple Beneath the Sacred Hill",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/0/09/Thiruvannamalai_Arunachaleswarar_Temple_Rajagopuram.jpg",
+  answer:"The Arunachaleswarar Temple at Tiruvannamalai is one of the largest temple complexes in India and represents Agni, fire, among the five Pancha Bhoota Sthalams. It sits at the foot of Arunachala hill, which devotees revere as a manifestation of Shiva himself. Each year the Karthigai Deepam festival lights a great beacon atop the hill, and on full-moon nights pilgrims perform Girivalam, walking the roughly 14-kilometre path around the mountain. Its towering gopurams dominate the town. MyTripMyTravel arranges a guided visit timed to the temple's ritual and hill traditions.",
+  intro:[
+    "Tiruvannamalai, in northern Tamil Nadu, grew around the Arunachaleswarar Temple and the hill it faces, Arunachala. Spread over a vast walled area with soaring gateway towers, it ranks among the biggest temple complexes in the country.",
+    "In the Pancha Bhoota Sthalam tradition, this temple embodies Agni, fire. Arunachala hill itself is worshipped as a form of Shiva, and the temple town is also linked with the modern sage Ramana Maharshi, who lived at its foot.",
+    "Two traditions define its calendar. During Karthigai Deepam, in November or December, an enormous lamp is lit on the hilltop, visible for miles. And on full-moon nights, throngs undertake Girivalam, the barefoot circumambulation of the hill along a path of about 14 kilometres."
+  ],
+  quickFacts:[{label:"City",value:"Tiruvannamalai"},{label:"Deity",value:"Shiva (Arunachaleswarar)"},{label:"Element",value:"Agni (fire)"},{label:"Group",value:"Pancha Bhoota Sthalam"},{label:"Landmark",value:"Arunachala hill"},{label:"Festival",value:"Karthigai Deepam"},{label:"Time on site",value:"1.5-2 hrs"}],
+  highlights:[
+    {name:"Rajagopuram",detail:"A massive eastern gateway tower, among the tallest temple gopurams in India."},
+    {name:"Arunachala hill",detail:"Worshipped as a manifestation of Shiva in his own right."},
+    {name:"Karthigai Deepam",detail:"A festival lighting a giant beacon on the hilltop."},
+    {name:"Girivalam",detail:"The roughly 14 km circumambulation of the hill on full-moon nights."},
+    {name:"Vast prakarams",detail:"Expansive courtyards and a pillared hall within the walled complex."}
+  ],
+  visitorInfo:[{label:"Hours",value:"Morning and evening with a midday break; confirm locally"},{label:"Entry",value:"Free; special darshan may be ticketed"},{label:"Closed",value:"Open daily; sanctum shuts midday"},{label:"Best time",value:"Full-moon (Girivalam) or Karthigai Deepam; mornings otherwise"},{label:"Time needed",value:"1.5-2 hrs"},{label:"Photography",value:"Restricted inside; confirm locally"}],
+  tips:["For Girivalam, join the full-moon night walk of about 14 km.","Karthigai Deepam is spectacular but very crowded.","Dress modestly and remove footwear before entering.","Start early to explore the large complex."],
+  faqs:[
+    {q:"Which element does it represent?",a:"Agni, fire, among the Pancha Bhoota Sthalams."},
+    {q:"What is Girivalam?",a:"Circumambulating Arunachala hill, about 14 km, traditionally on full-moon nights."},
+    {q:"What is Karthigai Deepam?",a:"A festival in which a great beacon is lit atop the hill."},
+    {q:"How big is the temple?",a:"It is among the largest temple complexes in India, with tall gopurams."},
+    {q:"When is the best time to visit?",a:"Full-moon nights or Karthigai Deepam; mornings at other times."}
+  ], },
+    { slug:"srikalahasteeswara-temple", citySlug:"srikalahasti", name:"Srikalahasteeswara Temple", type:"Temple",
+  era:"Hindu · Shiva as wind",
+  tagline:"The Wind Temple and the Serpent Doshas",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/5/56/Srikalahasti_temple_and_Hill.jpg",
+  answer:"The Srikalahasteeswara Temple at Srikalahasti, in Andhra Pradesh, represents Vayu, wind or air, among the five Pancha Bhoota Sthalams, and sits on the Swarnamukhi river below a hill. Its name is traced to a legend in which a spider (Sri), a serpent (Kala) and an elephant (Hasti) worshipped Shiva here. The temple is especially renowned for Rahu-Ketu and Sarpa Dosha pujas, which pilgrims travel far to perform. A lamp near the sanctum is said to flicker though sheltered, evoking the wind element. MyTripMyTravel arranges a guided visit with ritual context.",
+  intro:[
+    "Srikalahasti, near Tirupati in Andhra Pradesh, is built around a Shiva temple pressed against a rocky hill on the banks of the Swarnamukhi river. It is one of the most important Shaiva pilgrimage centres of the south.",
+    "In the Pancha Bhoota Sthalam tradition, the temple stands for Vayu, the element of wind or air, worshipped as a Vayu linga. Its name comes from a well-known legend of three humble devotees, Sri the spider, Kala the serpent and Hasti the elephant, who each worshipped Shiva here and attained grace.",
+    "Today the temple is best known for its Rahu-Ketu and Sarpa Dosha pujas, ritual remedies connected with astrology, for which pilgrims travel long distances. It is an active temple with the dress and sanctum customs of a living shrine."
+  ],
+  quickFacts:[{label:"City",value:"Srikalahasti"},{label:"Deity",value:"Shiva (Srikalahasteeswara)"},{label:"Element",value:"Vayu (wind/air)"},{label:"Group",value:"Pancha Bhoota Sthalam"},{label:"River",value:"Swarnamukhi"},{label:"Known for",value:"Rahu-Ketu / Sarpa Dosha pujas"},{label:"Time on site",value:"1.5-2 hrs"}],
+  highlights:[
+    {name:"Vayu linga",detail:"The sanctum linga associated with the wind element."},
+    {name:"Legend of three",detail:"A spider, serpent and elephant give the temple its name."},
+    {name:"Rahu-Ketu puja",detail:"The renowned astrological ritual remedy performed here."},
+    {name:"Flickering lamp",detail:"A sheltered flame said to move, evoking the wind element."},
+    {name:"Riverside setting",detail:"Positioned on the Swarnamukhi river below the hill."}
+  ],
+  visitorInfo:[{label:"Hours",value:"Morning to night; timings vary by puja, confirm locally"},{label:"Entry",value:"Free; Rahu-Ketu and other sevas ticketed"},{label:"Closed",value:"Open daily"},{label:"Best time",value:"Early morning; Maha Shivaratri is major"},{label:"Time needed",value:"1.5-2 hrs"},{label:"Photography",value:"Restricted inside; confirm locally"}],
+  tips:["Book Rahu-Ketu or Sarpa Dosha puja slots in advance.","Combine it with nearby Tirupati.","Dress modestly and remove footwear before entering.","Go early, as ritual queues build through the day."],
+  faqs:[
+    {q:"Which element does it represent?",a:"Vayu, wind or air, among the Pancha Bhoota Sthalams."},
+    {q:"Where does the name come from?",a:"From Sri the spider, Kala the serpent and Hasti the elephant, devotees in its founding legend."},
+    {q:"What is it famous for?",a:"Its Rahu-Ketu and Sarpa Dosha pujas."},
+    {q:"Where is it?",a:"Srikalahasti, near Tirupati in Andhra Pradesh, on the Swarnamukhi river."},
+    {q:"When is the best time to visit?",a:"Early morning; Maha Shivaratri is a major occasion."}
+  ], },
+    { slug:"vellore-fort", citySlug:"vellore", name:"Vellore Fort", type:"Fort",
+  era:"Vijayanagara era · 16th century",
+  tagline:"The Granite Bastion on the Palar Plain",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/e/ea/Vellorefort.jpg",
+  answer:"Vellore Fort is a large granite fortress in Vellore, Tamil Nadu, built in the 16th century during the Vijayanagara period and later held by the Bijapur Sultanate, the Marathas, the Mughals and the British. Its broad water-filled moat, massive ramparts and double gateways enclose the Jalakandeswarar Temple, a church and a mosque. It is best known as the scene of the 1806 Vellore sepoy mutiny against the East India Company. The fort is protected by the Archaeological Survey of India. MyTripMyTravel arranges an unhurried guided walk of the ramparts, moat and temple within.",
+  intro:["Vellore Fort sits in the heart of Vellore, a temple and garrison town on the road between Chennai and Bengaluru. Raised in the 16th century under Vijayanagara chieftains, its walls are cut from local grey granite and wrapped by one of the widest surviving moats in southern India.","Over the centuries the fort passed through the hands of Bijapur, the Marathas, the Mughals and finally the British, each leaving a mark on its bastions and inner buildings. Today the enclosure holds the ornate Jalakandeswarar Temple alongside a colonial-era church and a mosque, a quiet study in layered history.","The fort is remembered above all for the mutiny of 1806, when Indian sepoys rose against the East India Company here, years before the wider revolt of 1857. Now under the Archaeological Survey of India, it also shelters museums and government offices within its walls."],
+  quickFacts:[{label:"City",value:"Vellore"},{label:"Built",value:"16th century"},{label:"Era",value:"Vijayanagara period"},{label:"Material",value:"Granite"},{label:"Custodian",value:"ASI"},{label:"Known for",value:"1806 mutiny"},{label:"Inside",value:"Temple, church, mosque"},{label:"Time on site",value:"1.5–2 hrs"}],
+  highlights:[{name:"Moat & ramparts",detail:"A broad water-filled moat rings the granite walls, once a formidable defensive barrier."},{name:"Jalakandeswarar Temple",detail:"An ornate Vijayanagara-era Shiva temple standing within the fort walls."},{name:"Main gateways",detail:"Double gates and angled approaches designed to slow any attacking force."},{name:"1806 mutiny site",detail:"The parade ground where sepoys revolted against the East India Company."},{name:"Museum & church",detail:"A colonial-era church and museums that trace the fort's many rulers."}],
+  visitorInfo:[{label:"Hours",value:"Roughly morning to evening; confirm locally"},{label:"Entry",value:"Fort grounds generally free; museums may charge"},{label:"Closed",value:"Museums may close weekly; confirm locally"},{label:"Best time",value:"Early morning or late afternoon"},{label:"Time needed",value:"1.5–2 hrs"},{label:"Photography",value:"Allowed in the grounds; ask inside museums"}],
+  tips:["Start early to walk the ramparts before the heat.","Pair the fort with the Jalakandeswarar Temple in one visit.","Carry water and wear comfortable shoes for the walls.","Confirm museum hours and closed days locally."],
+  faqs:[{q:"Who built Vellore Fort?",a:"It was raised in the 16th century during the Vijayanagara period and later held by several powers including Bijapur, the Marathas and the British."},{q:"What is it famous for?",a:"The 1806 Vellore mutiny, one of the earliest sepoy uprisings against East India Company rule."},{q:"What is inside the walls?",a:"A Hindu temple, a colonial-era church, a mosque, museums and government buildings."},{q:"Is there an entry fee?",a:"The grounds are generally free to enter; museums inside may charge a small fee. Confirm locally."},{q:"How long should I plan?",a:"About one and a half to two hours to see the moat, ramparts and temple."}], },
+    { slug:"jalakandeswarar-temple", citySlug:"vellore", name:"Jalakandeswarar Temple", type:"Temple",
+  era:"Vijayanagara era · 16th century",
+  tagline:"The Carved Shiva Shrine Within the Fort",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/b/bb/Jalakandeswarar_temple_%2838%29.jpg",
+  answer:"Jalakandeswarar Temple is a richly carved Shiva temple standing inside Vellore Fort in Tamil Nadu, built in the 16th century in the Vijayanagara style. It is celebrated for its intricately sculpted mandapa, with detailed pillars and figures typical of the period. The temple was disused for a long stretch of its history and was later re-consecrated, and it is once again an active place of worship. Its name is linked to the deity within a body of water. MyTripMyTravel pairs it with the surrounding fort for a single, well-paced morning visit.",
+  intro:["Jalakandeswarar Temple lies within the granite walls of Vellore Fort, a compact but exquisitely detailed example of Vijayanagara temple building from the 16th century. Its ornamental mandapa is the highlight, dense with carved pillars and sculpted figures.","For a long period the temple fell out of ritual use, and the fort around it changed hands many times. It was later cleaned and re-consecrated, restoring daily worship to the shrine after years of dormancy.","Today it is an active Shiva temple, drawing both pilgrims and visitors who come for the fort. Because it is a living shrine, ordinary temple etiquette applies, and photography of the inner sanctum is usually restricted."],
+  quickFacts:[{label:"City",value:"Vellore"},{label:"Location",value:"Inside Vellore Fort"},{label:"Deity",value:"Shiva"},{label:"Built",value:"16th century"},{label:"Style",value:"Vijayanagara"},{label:"Status",value:"Active temple"},{label:"Time on site",value:"45 min–1 hr"}],
+  highlights:[{name:"Carved mandapa",detail:"An ornate pillared hall with detailed Vijayanagara-era sculpture."},{name:"Sculpted pillars",detail:"Columns worked with mythological figures and fine ornamental detail."},{name:"Sanctum",detail:"The inner shrine to Shiva, the ritual heart of the temple."},{name:"Fort setting",detail:"The temple sits within the moated granite walls of Vellore Fort."},{name:"Living worship",detail:"Re-consecrated after a period of disuse, it hosts daily rituals again."}],
+  visitorInfo:[{label:"Hours",value:"Typical temple hours with a midday break; confirm locally"},{label:"Entry",value:"Free"},{label:"Closed",value:"Open daily; confirm timings locally"},{label:"Best time",value:"Morning"},{label:"Time needed",value:"45 min–1 hr"},{label:"Photography",value:"Restricted; not allowed in the sanctum"}],
+  tips:["Remove shoes before entering the temple.","Dress modestly as it is an active shrine.","Visit in the morning and combine with the fort.","Ask before photographing anywhere inside."],
+  faqs:[{q:"Where is the temple?",a:"It stands inside the walls of Vellore Fort in Vellore, Tamil Nadu."},{q:"Is it still an active temple?",a:"Yes. After a period of disuse it was re-consecrated and hosts regular worship."},{q:"What should I see?",a:"The carved mandapa and sculpted pillars are the main draw, alongside the sanctum."},{q:"Can I take photos?",a:"Photography is restricted and generally not permitted in the sanctum; ask locally."},{q:"How long does a visit take?",a:"About forty-five minutes to an hour, or longer if combined with the fort."}], },
+    { slug:"daulatabad-fort", citySlug:"daulatabad", name:"Daulatabad Fort", type:"Fort",
+  era:"Yadava era · from the 12th century",
+  tagline:"The Hill Citadel of Devagiri",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/3/33/Daulatabad_Fort_a_view.JPG",
+  answer:"Daulatabad Fort, historically Devagiri, is a hilltop fortress near Aurangabad in Maharashtra, famed for its formidable defences. A conical hill scarped into sheer rock, a surrounding moat and a dark spiral passage made it one of medieval India's most secure strongholds. The tall Chand Minar tower rises within. In the 14th century the Delhi Sultan Muhammad bin Tughlaq briefly moved his capital here from Delhi. The climb to the summit is long and steep. MyTripMyTravel arranges a guided ascent at a comfortable pace with time to rest along the way.",
+  intro:["Daulatabad Fort crowns a striking conical hill near Aurangabad in Maharashtra. Known in earlier centuries as Devagiri, it was the seat of the Yadava dynasty before passing to a succession of Deccan and northern powers.","The fort is celebrated for its layered defences: the lower slopes were cut away into smooth vertical rock, a moat guards the approach, and a dark, twisting passage was designed to disorient and trap attackers. The soaring Chand Minar tower stands as one of its landmarks.","In the 14th century Sultan Muhammad bin Tughlaq briefly shifted his capital from Delhi to Daulatabad, an ambitious move that proved short-lived. Reaching the summit today means a steep, rewarding climb past gateways, bastions and the spiral passage."],
+  quickFacts:[{label:"City",value:"Daulatabad, near Aurangabad"},{label:"Former name",value:"Devagiri"},{label:"Origin",value:"Yadava dynasty"},{label:"Feature",value:"Scarped conical hill"},{label:"Landmark",value:"Chand Minar"},{label:"History",value:"Tughlaq's brief 14th-c capital"},{label:"Terrain",value:"Steep climb"},{label:"Time on site",value:"2–3 hrs"}],
+  highlights:[{name:"Scarped hill",detail:"The cone of rock was cut into sheer cliffs to make the summit near-impregnable."},{name:"Chand Minar",detail:"A tall victory tower rising within the fort complex."},{name:"Spiral passage",detail:"A dark, twisting tunnel built as a defensive trap for attackers."},{name:"Moat",detail:"A rock-cut moat guarding the approach to the inner citadel."},{name:"Summit views",detail:"Wide views over the Deccan plain from the highest point."}],
+  visitorInfo:[{label:"Hours",value:"Roughly morning to evening; confirm locally"},{label:"Entry",value:"Ticketed ASI monument"},{label:"Closed",value:"Confirm any weekly closure locally"},{label:"Best time",value:"Cooler months, early morning"},{label:"Time needed",value:"2–3 hrs"},{label:"Photography",value:"Allowed; carry a light for the dark passage"}],
+  tips:["Wear sturdy shoes for the steep, uneven climb.","Carry water; there is little shade on the ascent.","Bring a torch for the dark spiral passage.","Start early to avoid midday heat on the hill."],
+  faqs:[{q:"What was Daulatabad's earlier name?",a:"It was known as Devagiri and served as the capital of the Yadava dynasty."},{q:"Why is it famous?",a:"For its exceptional hill defences and as the capital Muhammad bin Tughlaq briefly moved to from Delhi in the 14th century."},{q:"Is the climb difficult?",a:"Yes, it is long and steep with many steps, so allow time and go at an easy pace."},{q:"What is the dark passage?",a:"A twisting, unlit tunnel built as a defensive trap; a torch is helpful."},{q:"How long should I plan?",a:"About two to three hours to reach the summit and return."}], },
+    { slug:"jama-masjid-champaner", citySlug:"champaner", name:"Jama Masjid, Champaner", type:"Monument",
+  era:"Gujarat Sultanate · early 16th century",
+  tagline:"A Sultanate Masterwork in the UNESCO Park",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/1/12/Jami_Masjid_-_Champaner-Pavagadh_Archaeological_Park_-_Gujarat_-_DSC027.jpg",
+  answer:"The Jama Masjid at Champaner is an early-16th-century congregational mosque of the Gujarat Sultanate, widely regarded as one of the finest mosques of its period in western India. It blends refined Islamic architecture with local craftsmanship in carved stone, with tall minarets, a large prayer hall and a symmetrical courtyard. It forms part of the Champaner-Pavagadh Archaeological Park, inscribed by UNESCO as a World Heritage Site in 2004. MyTripMyTravel arranges an unhurried visit combined with the wider Champaner ruins.",
+  intro:["The Jama Masjid stands among the ruins of Champaner, once a Sultanate capital in eastern Gujarat. Completed in the early 16th century, it is admired for the balance and detail of its architecture, which fuses Islamic forms with the region's long stone-carving tradition.","Twin minarets frame the entrance, and inside a spacious pillared prayer hall opens onto a formal courtyard. The stonework, from carved screens to ornamental brackets, marks it as a high point of Gujarat Sultanate building.","The mosque is one of several remarkable monuments within the Champaner-Pavagadh Archaeological Park, added to the UNESCO World Heritage list in 2004. Note that Gujarat is a dry state, so alcohol is not available in the area."],
+  quickFacts:[{label:"City",value:"Champaner"},{label:"Built",value:"Early 16th century"},{label:"Era",value:"Gujarat Sultanate"},{label:"Type",value:"Congregational mosque"},{label:"UNESCO",value:"Champaner-Pavagadh, 2004"},{label:"Material",value:"Carved stone"},{label:"Note",value:"Gujarat is a dry state"},{label:"Time on site",value:"1–1.5 hrs"}],
+  highlights:[{name:"Twin minarets",detail:"Tall carved minarets rising over the main entrance to the mosque."},{name:"Prayer hall",detail:"A large pillared hall celebrated for its proportion and stone detail."},{name:"Central courtyard",detail:"A symmetrical open court fronting the prayer hall."},{name:"Carved stonework",detail:"Screens, brackets and ornament that blend Islamic and local craft."},{name:"Heritage setting",detail:"Part of the wider Champaner-Pavagadh ruins on the UNESCO list."}],
+  visitorInfo:[{label:"Hours",value:"Roughly sunrise to sunset; confirm locally"},{label:"Entry",value:"Ticketed as part of the archaeological park"},{label:"Closed",value:"Confirm any weekly closure locally"},{label:"Best time",value:"Cooler months, morning"},{label:"Time needed",value:"1–1.5 hrs"},{label:"Photography",value:"Allowed; dress and behave respectfully"}],
+  tips:["Combine the mosque with the wider Champaner ruins.","Dress modestly and remove shoes where required.","Carry water; Gujarat is a dry state, so no alcohol is sold.","Visit in the cooler months and start in the morning."],
+  faqs:[{q:"How old is the Jama Masjid?",a:"It was built in the early 16th century under the Gujarat Sultanate."},{q:"Why is it significant?",a:"It is regarded as one of the finest mosques of its period in western India and part of a UNESCO World Heritage site."},{q:"When did it become a UNESCO site?",a:"The Champaner-Pavagadh Archaeological Park, which includes the mosque, was inscribed in 2004."},{q:"Can I buy alcohol nearby?",a:"No. Gujarat is a dry state, so alcohol is not sold in the area."},{q:"How long should I plan?",a:"About an hour to an hour and a half for the mosque itself."}], },
+    { slug:"kalika-mata-pavagadh", citySlug:"champaner", name:"Kalika Mata Temple, Pavagadh", type:"Temple",
+  era:"Hilltop Shakti shrine · Pavagadh",
+  tagline:"The Living Pilgrimage on Pavagadh Hill",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/3/32/Kalika_Mata_Temple%2C_Pavagarh.jpg",
+  answer:"Kalika Mata Temple crowns Pavagadh Hill in Gujarat, one of western India's most visited Shakti shrines dedicated to the goddess Kali. A major living pilgrimage, it draws large numbers of devotees, especially during festivals. The summit is reached by a combination of road, ropeway and steps, and the temple has recently been renovated with a new shikhara. It lies within the Champaner-Pavagadh Archaeological Park, a UNESCO World Heritage Site inscribed in 2004. MyTripMyTravel arranges a guided pilgrimage timed to avoid the heaviest crowds.",
+  intro:["Kalika Mata Temple sits at the top of Pavagadh Hill, rising above the ruins of Champaner in eastern Gujarat. As one of the region's foremost Shakti shrines, it is a place of continuous, living devotion rather than a museum monument.","The summit is reached in stages: a winding road, then a ropeway, and finally a flight of steps to the temple itself. Pilgrims arrive throughout the year, and festival days bring especially dense crowds to the hill.","The shrine was recently renovated, gaining a new shikhara that once again crowns the temple. It stands within the Champaner-Pavagadh Archaeological Park, a UNESCO World Heritage Site from 2004. As across Gujarat, alcohol is not available, and respectful worship etiquette applies throughout."],
+  quickFacts:[{label:"Location",value:"Pavagadh Hill, near Champaner"},{label:"Deity",value:"Kali (Kalika Mata)"},{label:"Type",value:"Shakti pilgrimage shrine"},{label:"Access",value:"Road, ropeway & steps"},{label:"Recent work",value:"New shikhara"},{label:"UNESCO",value:"Champaner-Pavagadh, 2004"},{label:"Note",value:"Gujarat is a dry state"},{label:"Time on site",value:"Half day with travel"}],
+  highlights:[{name:"Hilltop sanctum",detail:"The shrine to Kalika Mata at the very summit of Pavagadh."},{name:"Ropeway",detail:"A cable car that carries pilgrims up much of the steep hill."},{name:"New shikhara",detail:"A recently added tower that once more crowns the renovated temple."},{name:"Pilgrim crowds",detail:"A living shrine thronged with devotees, especially on festival days."},{name:"Summit views",detail:"Sweeping views over the Champaner plain from the top of the hill."}],
+  visitorInfo:[{label:"Hours",value:"Daily temple hours; confirm locally"},{label:"Entry",value:"Free; ropeway is separately ticketed"},{label:"Closed",value:"Open daily; expect heavy festival crowds"},{label:"Best time",value:"Early morning on a weekday"},{label:"Time needed",value:"Half day including travel"},{label:"Photography",value:"Restricted near the sanctum; ask locally"}],
+  tips:["Go early on a weekday to avoid the heaviest crowds.","Use the ropeway to save the steepest part of the climb.","Dress modestly and observe worship etiquette.","No alcohol is sold; Gujarat is a dry state."],
+  faqs:[{q:"Which goddess is worshipped here?",a:"The temple is dedicated to Kali, known here as Kalika Mata."},{q:"How do I reach the temple?",a:"By a combination of road, a ropeway up the hill, and a final climb of steps."},{q:"Is it a UNESCO site?",a:"It lies within the Champaner-Pavagadh Archaeological Park, inscribed by UNESCO in 2004."},{q:"Was the temple renovated?",a:"Yes, it was recently renovated and given a new shikhara."},{q:"How much time should I allow?",a:"Roughly half a day, including travel up and down the hill."}], },
+    { slug:"thirumalai-nayakkar-mahal", citySlug:"madurai", name:"Thirumalai Nayakkar Mahal", type:"Palace",
+  era:"Nayak dynasty · 17th century",
+  tagline:"The Pillared Court of the Madurai Nayaks",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/8/87/Madurai_Nayak_Palace_Collage.jpg",
+  answer:"Thirumalai Nayakkar Mahal is a 17th-century palace in Madurai, Tamil Nadu, built by the Nayak king Thirumalai Nayak. Its surviving portion is celebrated for a vast pillared courtyard and pavilion, the Swarga Vilasam, ringed by tall columns and lofty arches in an Indo-Saracenic style. An evening sound-and-light show recounts the region's history within the courtyard. The palace is protected by the Archaeological Survey of India. MyTripMyTravel arranges a guided daytime visit, and the evening show for those who wish to stay on.",
+  intro:["Thirumalai Nayakkar Mahal stands near the great Meenakshi temple in Madurai, a grand palace raised in the 17th century by the Nayak ruler Thirumalai Nayak. What survives today is only a part of the original complex, yet it remains deeply impressive.","The centrepiece is the Swarga Vilasam, an enormous pillared courtyard and pavilion enclosed by towering columns and sweeping arches. The style mingles indigenous and Islamic influences into a distinctive Indo-Saracenic character.","In the evening the courtyard hosts a sound-and-light show that narrates episodes from the region's past. Now cared for by the Archaeological Survey of India, the palace is one of Madurai's principal secular monuments."],
+  quickFacts:[{label:"City",value:"Madurai"},{label:"Built",value:"17th century"},{label:"Builder",value:"Thirumalai Nayak"},{label:"Style",value:"Indo-Saracenic"},{label:"Highlight",value:"Swarga Vilasam courtyard"},{label:"Custodian",value:"ASI"},{label:"Evening",value:"Sound-and-light show"},{label:"Time on site",value:"1–1.5 hrs"}],
+  highlights:[{name:"Swarga Vilasam",detail:"The vast pillared courtyard and pavilion at the heart of the palace."},{name:"Tall columns",detail:"Rows of lofty pillars and arches in Indo-Saracenic style."},{name:"Domed pavilion",detail:"Grand ceilings and arcades over the central open court."},{name:"Sound-and-light show",detail:"An evening presentation of the region's history in the courtyard."},{name:"Nayak heritage",detail:"A rare surviving palace of the Madurai Nayak rulers."}],
+  visitorInfo:[{label:"Hours",value:"Daytime hours plus evening show; confirm locally"},{label:"Entry",value:"Ticketed ASI monument"},{label:"Closed",value:"Confirm any weekly closure locally"},{label:"Best time",value:"Morning for the palace; evening for the show"},{label:"Time needed",value:"1–1.5 hrs"},{label:"Photography",value:"Allowed in the courtyard"}],
+  tips:["Combine the palace with the nearby Meenakshi temple.","Return in the evening for the sound-and-light show.","Confirm show timings and language locally in advance.","Visit the courtyard early to enjoy the morning light."],
+  faqs:[{q:"Who built the palace?",a:"The Nayak king Thirumalai Nayak, in the 17th century, in Madurai."},{q:"What is the Swarga Vilasam?",a:"The palace's grand pillared courtyard and pavilion, its main surviving feature."},{q:"Is there an evening show?",a:"Yes, a sound-and-light show narrating the region's history is held in the courtyard."},{q:"Who maintains the palace?",a:"It is a monument protected by the Archaeological Survey of India."},{q:"How long should I plan?",a:"About an hour to an hour and a half for the daytime visit."}], },
+    { slug:"airavatesvara-temple", citySlug:"kumbakonam", name:"Airavatesvara Temple", type:"Temple",
+  era:"Chola dynasty · 12th century",
+  tagline:"A Great Living Chola Temple at Darasuram",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/9/99/A_different_view_of_Airavatesvara_Temple.jpg",
+  answer:"The Airavatesvara Temple stands at Darasuram near Kumbakonam in Tamil Nadu, a 12th-century Shiva temple built by the Chola king Rajaraja II. Smaller than the great Chola temples at Thanjavur and Gangaikonda Cholapuram but exceptionally refined, it is one of the three Great Living Chola Temples inscribed by UNESCO in 2004. It is famous for its chariot-form mandapa and finely carved stone steps said to produce musical tones. MyTripMyTravel arranges an unhurried guided visit to its sculpture and pavilions.",
+  intro:["The Airavatesvara Temple lies at Darasuram, a short distance from Kumbakonam in the temple heartland of Tamil Nadu. Built in the 12th century under the Chola king Rajaraja II, it is a jewel of late Chola art, prized for the delicacy of its carving.","Its front mandapa is shaped like a great stone chariot drawn by horses, and a set of finely worked steps is renowned for the musical tones they are said to produce. Every surface carries detailed sculpture of deities, dancers and mythic scenes.","Along with the temples at Thanjavur and Gangaikonda Cholapuram, it is one of the Great Living Chola Temples inscribed as a UNESCO World Heritage Site in 2004. As a living shrine, respectful worship etiquette applies within the sanctum."],
+  quickFacts:[{label:"Location",value:"Darasuram, near Kumbakonam"},{label:"Deity",value:"Shiva"},{label:"Built",value:"12th century"},{label:"Builder",value:"Rajaraja II"},{label:"Dynasty",value:"Chola"},{label:"UNESCO",value:"Great Living Chola Temples, 2004"},{label:"Known for",value:"Chariot mandapa, musical steps"},{label:"Time on site",value:"1–1.5 hrs"}],
+  highlights:[{name:"Chariot mandapa",detail:"A front hall carved in the form of a stone chariot drawn by horses."},{name:"Musical steps",detail:"Finely worked stone steps said to sound musical tones when struck."},{name:"Detailed sculpture",detail:"Dense carving of deities, dancers and mythological scenes."},{name:"Vimana tower",detail:"The elegant tower over the sanctum in refined late Chola style."},{name:"UNESCO status",detail:"One of the three Great Living Chola Temples honoured by UNESCO."}],
+  visitorInfo:[{label:"Hours",value:"Daily temple hours with a midday break; confirm locally"},{label:"Entry",value:"Free"},{label:"Closed",value:"Open daily; confirm timings locally"},{label:"Best time",value:"Morning for soft light"},{label:"Time needed",value:"1–1.5 hrs"},{label:"Photography",value:"Allowed in outer areas; restricted in the sanctum"}],
+  tips:["Combine with other Chola temples around Kumbakonam.","Visit in the morning for the best light on the carvings.","Remove shoes and dress modestly at this living shrine.","A guide helps decode the dense sculptural detail."],
+  faqs:[{q:"Where is the temple?",a:"At Darasuram, a short distance from Kumbakonam in Tamil Nadu."},{q:"Who built it?",a:"The Chola king Rajaraja II, in the 12th century."},{q:"Why is it a UNESCO site?",a:"It is one of the three Great Living Chola Temples inscribed by UNESCO in 2004."},{q:"What are the musical steps?",a:"A set of finely carved stone steps said to produce musical tones when struck."},{q:"How long should I plan?",a:"About an hour to an hour and a half to see the temple properly."}], },
+    { slug:"sun-temple-modhera", citySlug:"modhera", name:"Sun Temple, Modhera", type:"Temple",
+  era:"Chalukya (Solanki) era · 11th century",
+  tagline:"The Solanki Shrine to the Sun",
+  heroImg:"https://upload.wikimedia.org/wikipedia/commons/1/1b/Sun_Temple%2C_Modhera_08.jpg",
+  answer:"The Sun Temple at Modhera in Gujarat is an 11th-century temple to the sun god Surya, built in the Chalukya or Solanki period. It is admired for its stepped tank, the Surya Kund, lined with small shrines, and for its ornately carved assembly hall, the Sabha Mandapa. The temple is aligned to the sun. It is now an Archaeological Survey of India monument rather than a living temple, and it hosts an annual dance festival. MyTripMyTravel arranges a guided visit to its tank, halls and sculpture.",
+  intro:["The Sun Temple at Modhera stands in northern Gujarat, an 11th-century masterpiece of the Solanki dynasty dedicated to Surya, the sun god. It is one of the finest surviving sun temples in India, celebrated for the harmony of its plan and the richness of its carving.","In front of the temple lies the Surya Kund, a grand stepped tank whose terraces are lined with rows of miniature shrines. Beyond it rises the Sabha Mandapa, an ornately pillared assembly hall, leading to the main shrine, the whole complex oriented to the sun.","Worship no longer takes place here; the temple is preserved as an Archaeological Survey of India monument. Each year it becomes the setting for a dance festival. As across Gujarat, a dry state, alcohol is not available in the area."],
+  quickFacts:[{label:"City",value:"Modhera"},{label:"Deity",value:"Surya (sun god)"},{label:"Built",value:"11th century"},{label:"Era",value:"Chalukya / Solanki"},{label:"Highlight",value:"Surya Kund stepped tank"},{label:"Status",value:"ASI monument, not a living temple"},{label:"Note",value:"Gujarat is a dry state"},{label:"Time on site",value:"1.5–2 hrs"}],
+  highlights:[{name:"Surya Kund",detail:"A large stepped tank lined with rows of small carved shrines."},{name:"Sabha Mandapa",detail:"An ornately pillared assembly hall covered in fine sculpture."},{name:"Main shrine",detail:"The sanctum dedicated to Surya, once holding the sun deity."},{name:"Sun alignment",detail:"The temple is oriented so as to relate to the movement of the sun."},{name:"Dance festival",detail:"An annual festival of classical dance is staged at the temple."}],
+  visitorInfo:[{label:"Hours",value:"Roughly sunrise to sunset; confirm locally"},{label:"Entry",value:"Ticketed ASI monument"},{label:"Closed",value:"Confirm any weekly closure locally"},{label:"Best time",value:"Early morning or late afternoon"},{label:"Time needed",value:"1.5–2 hrs"},{label:"Photography",value:"Allowed across the grounds"}],
+  tips:["Come early or late for soft light on the carvings.","Walk down into the Surya Kund to see its shrines.","No alcohol is sold; Gujarat is a dry state.","Ask locally if your visit coincides with the dance festival."],
+  faqs:[{q:"Which deity is the temple dedicated to?",a:"Surya, the sun god, in a temple of the 11th-century Solanki period."},{q:"What is the Surya Kund?",a:"A large stepped tank in front of the temple, lined with rows of small shrines."},{q:"Is it still a working temple?",a:"No. It is preserved as an Archaeological Survey of India monument, not a living temple."},{q:"Is there a festival here?",a:"Yes, an annual dance festival is held at the temple each year."},{q:"How long should I plan?",a:"About one and a half to two hours to see the tank, halls and shrine."}], },
 ];
