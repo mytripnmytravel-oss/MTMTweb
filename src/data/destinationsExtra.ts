@@ -15627,4 +15627,674 @@ export const extraDestinations: Destination[] = [
   faqs:[{q:"Is Bhangarh really haunted?",a:"Bhangarh's reputation as 'India's most haunted' place is folklore, not established fact. What is real is a beautifully preserved seventeenth-century Rajput fort-town well worth seeing by day."},{q:"Can I visit Bhangarh at night?",a:"No. The Archaeological Survey of India, which protects the site, prohibits entry between sunset and sunrise, so visits must be during daylight."},{q:"What is there actually to see?",a:"A planned ruined town with a fort-palace, several stone temples, a bazaar street and gateways set in a scenic Aravalli valley near Sariska."},{q:"How do I combine Bhangarh with other places?",a:"It pairs naturally with Alwar's monuments and a Sariska tiger safari, all within a short drive, on a Delhi-Jaipur circuit."},{q:"How much time should I allow?",a:"Two to three hours of daylight is enough to walk the main ruins comfortably."}],
   relatedCities:["alwar","sariska","jaipur"],
   relatedTours:[{label:"Curated India tours",href:"/tours"},{label:"Elite chauffeured fleet",href:"/fleet"},{label:"Rajasthan region",href:"/destinations/region/rajasthan"}], },
+    {
+  "slug": "srirangapatna",
+  "name": "Srirangapatna",
+  "region": "South India",
+  "regionSlug": "south-india",
+  "state": "Karnataka",
+  "tagline": "Tipu Sultan's island capital on the sacred Cauvery",
+  "heroImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Ranganathaswamy_Temple%2C_Srirangapatna_-_Wide_Shot.jpg/1280px-Ranganathaswamy_Temple%2C_Srirangapatna_-_Wide_Shot.jpg",
+  "coordinates": { "lat": 12.4181, "lng": 76.6947 },
+  "answer": "Srirangapatna is a river-island town on the Cauvery near Mysore that served as the capital of Tipu Sultan and, before him, Hyder Ali. Ringed by fort walls, it holds the Ranganathaswamy Temple, one of the great Ranganatha shrines of the south; Daria Daulat Bagh, Tipu's summer palace; and the Gumbaz, the mausoleum of Tipu and Hyder Ali. Tipu died here defending the fort against the British in 1799. MTMT arranges unhurried, chauffeur-led island itineraries that pair Srirangapatna's Indo-Islamic and temple heritage with nearby Mysore.",
+  "intro": [
+    "Cradled by two arms of the Cauvery, Srirangapatna sits about 15 kilometres north of Mysore and takes its name from the presiding deity of its Ranganathaswamy Temple, Sri Ranganatha. The temple is counted among the Sri Ranga shrines devoted to the reclining form of Vishnu, and the town has been a place of pilgrimage far longer than it has been a fortress.",
+    "Its fame in the wider world comes from the late eighteenth century, when Hyder Ali and his son Tipu Sultan made the island the seat of the Kingdom of Mysore. Behind its ramparts they built palaces, gardens and armouries, and here Tipu fell in the storming of the fort by British and allied forces in 1799, a moment that reshaped the map of southern India.",
+    "Today the island rewards slow exploration: shaded temple courtyards, the frescoed walls of a summer palace, a domed mausoleum among cypress trees, and the broad, birdlife-rich river that made the town both sacred and defensible."
+  ],
+  "quickFacts": [
+    { "label": "State", "value": "Karnataka" },
+    { "label": "District", "value": "Mandya" },
+    { "label": "Setting", "value": "River island on the Cauvery" },
+    { "label": "Distance from Mysore", "value": "About 15 km" },
+    { "label": "Known for", "value": "Tipu Sultan-era fort, temple and palaces" },
+    { "label": "Key temple", "value": "Ranganathaswamy Temple" },
+    { "label": "Historic date", "value": "Fall of the fort, 1799" },
+    { "label": "Languages", "value": "Kannada; English widely understood" }
+  ],
+  "bestTime": {
+    "window": "October to March",
+    "narrative": "The cooler, drier months from October to March are the most comfortable for walking the fort walls and open palace gardens, with pleasant mornings and mild evenings. The monsoon swells the Cauvery and can bring humid, showery spells, while April and May are hot. Visiting temples early in the day avoids both the heat and the midday crowds."
+  },
+  "thingsToDo": [
+    { "name": "Ranganathaswamy Temple", "blurb": "A large, much-revered shrine to the reclining Vishnu, with pillared halls and gopurams; modest dress is expected and inner-sanctum access follows the temple's own customs.", "category": "Heritage" },
+    { "name": "Daria Daulat Bagh", "blurb": "Tipu Sultan's summer palace, a teak structure set in formal gardens, celebrated for the painted murals and floral motifs covering its walls.", "category": "Heritage" },
+    { "name": "Gumbaz mausoleum", "blurb": "The domed tomb where Tipu Sultan and Hyder Ali are buried, framed by cypress trees and a quiet garden a short drive from the fort.", "category": "Heritage" },
+    { "name": "Srirangapatna Fort", "blurb": "Ramparts, gateways and the ruined water gate area where Tipu is said to have fallen in 1799; parts are weathered, so wear sturdy shoes and mind uneven ground.", "category": "Heritage" },
+    { "name": "Ranganathittu Bird Sanctuary", "blurb": "River islets nearby that draw storks, herons, cormorants and other waterbirds; small boats offer close, unhurried viewing best at dawn.", "category": "Nature" },
+    { "name": "Cauvery riverbank walks", "blurb": "Gentle strolls along the sacred river, with bathing ghats and views that explain why the island was chosen as both shrine and stronghold.", "category": "Culture" }
+  ],
+  "howToReach": [
+    { "mode": "Air", "detail": "Mysore Airport offers limited connections; Bengaluru's Kempegowda International Airport, about 150 km away, is the main long-haul gateway." },
+    { "mode": "Rail", "detail": "Srirangapatna has its own railway station on the Bengaluru-Mysore line, with frequent trains passing through." },
+    { "mode": "Road", "detail": "Roughly 15 km from Mysore and about 3 to 4 hours from Bengaluru by expressway and highway." },
+    { "mode": "Private Fleet", "detail": "MTMT's chauffeured cars make the island an easy add-on to Mysore, with door-to-door transfers between sites." }
+  ],
+  "whereToStay": [
+    { "tier": "Heritage and luxury", "detail": "The finest hotels are in nearby Mysore, including palace-style and heritage properties, an easy drive from the island." },
+    { "tier": "Riverside and boutique", "detail": "A handful of smaller riverside resorts and boutique stays sit close to Srirangapatna and Ranganathittu for a quieter base." },
+    { "tier": "Comfortable mid-range", "detail": "Dependable mid-range hotels in Mandya and along the Mysore road suit travellers combining several regional sights." }
+  ],
+  "whereToEat": [
+    { "name": "Mysore's classic eateries", "detail": "The nearby city is the reliable choice for celebrated South Indian tiffin, filter coffee and the sweet known as Mysore pak." },
+    { "name": "Riverside resort dining", "detail": "Resorts near the Cauvery and Ranganathittu serve unhurried multi-cuisine meals in garden settings." },
+    { "name": "Local vegetarian messes", "detail": "Simple Kannada-style vegetarian thalis and snacks are found in the town, best sampled at midday." }
+  ],
+  "faqs": [
+    { "q": "Why is Srirangapatna historically important?", "a": "It was the capital of the Kingdom of Mysore under Hyder Ali and Tipu Sultan, and the site where Tipu died defending the fort against the British in 1799. It is also a long-standing temple town on the Cauvery." },
+    { "q": "How far is Srirangapatna from Mysore?", "a": "It lies about 15 kilometres north of Mysore, making it a natural half-day or full-day excursion when you are based in the city." },
+    { "q": "Are there dress rules at the Ranganathaswamy Temple?", "a": "Modest dress covering shoulders and knees is expected, footwear is removed before entry, and access to the innermost shrine follows the temple's own customs, which visitors should respect." },
+    { "q": "What can I see in half a day?", "a": "A focused visit can cover the Ranganathaswamy Temple, Daria Daulat Bagh summer palace and the Gumbaz mausoleum, with a fort walk if time allows." },
+    { "q": "Can Srirangapatna be combined with Ranganathittu Bird Sanctuary?", "a": "Yes. The bird sanctuary is very close, and an early-morning boat visit pairs well with the town's heritage sites later in the day." }
+  ],
+  "relatedCities": ["mysore", "bengaluru", "coorg"],
+  "relatedTours": [
+    { "label": "Curated South India journeys", "href": "/tours" },
+    { "label": "Chauffeured private fleet", "href": "/fleet" },
+    { "label": "Explore South India", "href": "/destinations/region/south-india" }
+  ]
+},
+    {
+  "slug": "belur",
+  "name": "Belur",
+  "region": "South India",
+  "regionSlug": "south-india",
+  "state": "Karnataka",
+  "tagline": "Hoysala soapstone artistry on the Yagachi river",
+  "heroImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Belur_Temple_all%2C_Belur.jpg/1280px-Belur_Temple_all%2C_Belur.jpg",
+  "coordinates": { "lat": 13.1663, "lng": 75.8648 },
+  "answer": "Belur is a temple town in Karnataka's Hassan district, on the Yagachi river, celebrated for the Chennakeshava Temple, a Hoysala masterpiece begun in 1117 CE under King Vishnuvardhana. Its soapstone walls carry some of the finest sculpture in South India, from bracket figures to friezes of dancers and deities. The temple is part of the Sacred Ensembles of the Hoysalas, inscribed by UNESCO as a World Heritage Site in 2023, and is usually visited together with nearby Halebidu. MTMT designs slow, guide-led Hoysala itineraries that let this carving be read rather than rushed.",
+  "intro": [
+    "Belur lies in the green, hilly country of Hassan district, a short drive from Halebidu, with which it forms the classic Hoysala pairing. At its heart stands the Chennakeshava Temple, dedicated to a form of Vishnu, whose construction began in 1117 CE during the reign of the Hoysala king Vishnuvardhana and continued over many decades.",
+    "What makes Belur extraordinary is the material and the mastery. Carvers worked in soft chloritic schist, or soapstone, which allowed astonishing detail: jewelled bracket figures, musicians and dancers, epic narratives, and friezes of elephants and horses that run around the base. Unlike many ruined sites, the Chennakeshava Temple remains a living place of worship.",
+    "In 2023, UNESCO inscribed the Sacred Ensembles of the Hoysalas, which include Belur alongside Halebidu and Somanathapura, recognising this school of temple art. For travellers, Belur is less a monument to tick off than a gallery to be walked slowly with an informed eye."
+  ],
+  "quickFacts": [
+    { "label": "State", "value": "Karnataka" },
+    { "label": "District", "value": "Hassan" },
+    { "label": "River", "value": "Yagachi" },
+    { "label": "Key monument", "value": "Chennakeshava Temple" },
+    { "label": "Construction begun", "value": "1117 CE, Hoysala era" },
+    { "label": "UNESCO status", "value": "Sacred Ensembles of the Hoysalas, 2023" },
+    { "label": "Usually paired with", "value": "Halebidu" },
+    { "label": "Languages", "value": "Kannada; English widely understood" }
+  ],
+  "bestTime": {
+    "window": "October to March",
+    "narrative": "The post-monsoon and winter months from October to March bring pleasant temperatures and clear light, ideal for studying carved detail and photographing the temple. The monsoon leaves the surrounding countryside lush but can be wet, while April and May turn hot. Early morning visits reward you with softer light and fewer crowds in the courtyard."
+  },
+  "thingsToDo": [
+    { "name": "Chennakeshava Temple", "blurb": "The star of Belur: a Hoysala temple whose soapstone walls carry bracket figures, dancers and epic friezes in remarkable detail; it remains an active shrine, so modest dress and inner-sanctum customs apply.", "category": "Heritage" },
+    { "name": "Bracket-figure sculptures", "blurb": "The celebrated madanikai bracket figures beneath the eaves reward close, guided looking for their poise, jewellery and expression.", "category": "Culture" },
+    { "name": "Temple friezes and narratives", "blurb": "Bands of elephants, horses and scenes from the epics ring the base; a knowledgeable guide brings the storytelling to life.", "category": "Culture" },
+    { "name": "Gravity pillar and mandapa", "blurb": "The pillared hall holds intricately turned columns and ceilings that show the range of the Hoysala workshops.", "category": "Heritage" },
+    { "name": "Halebidu day pairing", "blurb": "The nearby Hoysaleswara Temple at Halebidu completes the picture of this artistic school and is easily combined in one outing.", "category": "Heritage" },
+    { "name": "Yagachi countryside", "blurb": "The river and surrounding Hassan landscape offer gentle drives and rural scenery between the temple towns.", "category": "Nature" }
+  ],
+  "howToReach": [
+    { "mode": "Air", "detail": "Mangaluru and Bengaluru airports are the practical gateways; Bengaluru offers the widest international connections." },
+    { "mode": "Rail", "detail": "Hassan is the nearest major railhead, roughly 35 to 40 km away, with onward road transfer to Belur." },
+    { "mode": "Road", "detail": "About 35 km from Hassan and around 220 km from Bengaluru; Belur and Halebidu are close enough to combine in a day." },
+    { "mode": "Private Fleet", "detail": "MTMT's chauffeured cars link Belur, Halebidu and the wider Hoysala circuit at an unhurried pace." }
+  ],
+  "whereToStay": [
+    { "tier": "Comfortable base at Hassan", "detail": "Hassan town, a short drive away, has the widest choice of dependable hotels for exploring the Hoysala temples." },
+    { "tier": "Resort and coffee-country stays", "detail": "Toward Chikmagalur and the surrounding hills there are pleasant resorts and estate stays for a scenic base." },
+    { "tier": "Simple local lodging", "detail": "Belur itself offers modest, functional accommodation for travellers wanting to stay close to the temple." }
+  ],
+  "whereToEat": [
+    { "name": "Local vegetarian eateries", "detail": "Belur and Hassan serve honest South Indian vegetarian meals, dosas and filter coffee, best at breakfast or midday." },
+    { "name": "Hassan town restaurants", "detail": "The larger town nearby has a broader range of multi-cuisine and thali options." },
+    { "name": "Estate and resort dining", "detail": "Resorts toward Chikmagalur offer unhurried meals often featuring local coffee." }
+  ],
+  "faqs": [
+    { "q": "Why is Belur famous?", "a": "For the Chennakeshava Temple, a Hoysala-era shrine begun in 1117 CE whose soapstone carving is among the finest in South India. It is part of the UNESCO-inscribed Sacred Ensembles of the Hoysalas." },
+    { "q": "Is the Belur temple a UNESCO World Heritage Site?", "a": "Yes. It is one of the components of the Sacred Ensembles of the Hoysalas, inscribed by UNESCO as a World Heritage Site in 2023." },
+    { "q": "Should I visit Belur and Halebidu together?", "a": "Most travellers do. The two towns are close and represent the same Hoysala artistic tradition, so they are naturally combined in a single day." },
+    { "q": "Is the Chennakeshava Temple still used for worship?", "a": "Yes, it remains an active temple. Visitors should dress modestly, remove footwear before entry and respect the customs governing the inner sanctum." },
+    { "q": "How much time does Belur deserve?", "a": "Allow a couple of unhurried hours with a guide to appreciate the bracket figures and friezes properly, rather than a quick walkthrough." }
+  ],
+  "relatedCities": ["halebidu", "chikmagalur", "sringeri"],
+  "relatedTours": [
+    { "label": "Curated South India journeys", "href": "/tours" },
+    { "label": "Heritage temple circuits", "href": "/heritage-dining" },
+    { "label": "Explore South India", "href": "/destinations/region/south-india" }
+  ]
+},
+    {
+  "slug": "halebidu",
+  "name": "Halebidu",
+  "region": "South India",
+  "regionSlug": "south-india",
+  "state": "Karnataka",
+  "tagline": "The old Hoysala capital and its sculpted temple",
+  "heroImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hoysaleswara_Temple_at_Halebidu.jpg/1280px-Hoysaleswara_Temple_at_Halebidu.jpg",
+  "coordinates": { "lat": 13.2126, "lng": 75.9954 },
+  "answer": "Halebidu, once the Hoysala capital known as Dwarasamudra, lies in Karnataka's Hassan district and is famous for the twin-shrined Hoysaleswara Temple, a Shaivite monument covered in some of the most lavish stone carving in India. Like Belur, it belongs to the Sacred Ensembles of the Hoysalas, inscribed by UNESCO in 2023, and the two towns are typically visited together. Jain basadis stand nearby, adding another layer to the site. MTMT builds slow, guide-led Hoysala itineraries so the density of Halebidu's sculpture can be understood, not merely glanced at.",
+  "intro": [
+    "Halebidu, whose name means 'old capital,' was once Dwarasamudra, the seat of the Hoysala kings before their power waned. In its heyday it was a great city; today it is a quiet town in Hassan district whose fame rests on the Hoysaleswara Temple and the artistry gathered around it.",
+    "The Hoysaleswara Temple is a twin shrine dedicated to Shiva, its outer walls almost overwhelmed by carving: rows of elephants, lions and horsemen, friezes from the epics, and countless deities and dancers worked into soapstone. The sheer density of ornament is what visitors remember, a surface where scarcely a hand's breadth is left plain.",
+    "Halebidu is inseparable from nearby Belur, and together they anchor the UNESCO-inscribed Sacred Ensembles of the Hoysalas. Jain basadis a short distance away round out the picture of a capital where different traditions once flourished side by side."
+  ],
+  "quickFacts": [
+    { "label": "State", "value": "Karnataka" },
+    { "label": "District", "value": "Hassan" },
+    { "label": "Historic name", "value": "Dwarasamudra, former Hoysala capital" },
+    { "label": "Key monument", "value": "Hoysaleswara Temple" },
+    { "label": "Dedication", "value": "Shiva, twin-shrined temple" },
+    { "label": "UNESCO status", "value": "Sacred Ensembles of the Hoysalas, 2023" },
+    { "label": "Usually paired with", "value": "Belur" },
+    { "label": "Languages", "value": "Kannada; English widely understood" }
+  ],
+  "bestTime": {
+    "window": "October to March",
+    "narrative": "The dry, cooler window from October to March suits long, careful walks around the heavily carved exterior, with comfortable temperatures and good light. The monsoon greens the surrounding countryside but can bring showers, while April and May are hot. Aim for morning visits to enjoy softer light on the sculpture and a calmer atmosphere."
+  },
+  "thingsToDo": [
+    { "name": "Hoysaleswara Temple", "blurb": "The twin-shrined Shaivite temple whose walls carry an astonishing density of carving; it stands as a monument today, with sculpted friezes best explored slowly with a guide.", "category": "Heritage" },
+    { "name": "Exterior carving friezes", "blurb": "Bands of elephants, lions, horsemen and epic scenes ring the base; reading them is the highlight of any visit.", "category": "Culture" },
+    { "name": "Nandi pavilions", "blurb": "Large seated Nandi figures face the twin shrines, carved with the same care as the temple itself.", "category": "Heritage" },
+    { "name": "Nearby Jain basadis", "blurb": "A short distance away, Jain temples recall Halebidu's role as a capital where several faiths coexisted.", "category": "Heritage" },
+    { "name": "Archaeological museum", "blurb": "A small on-site collection gathers sculptures and fragments that help place the temple in its Hoysala context.", "category": "Culture" },
+    { "name": "Belur pairing", "blurb": "The Chennakeshava Temple at Belur completes the Hoysala story and is easily combined in the same outing.", "category": "Heritage" }
+  ],
+  "howToReach": [
+    { "mode": "Air", "detail": "Mangaluru and Bengaluru airports serve the region, with Bengaluru offering the widest connections." },
+    { "mode": "Rail", "detail": "Hassan, around 30 km away, is the nearest convenient railhead for onward road transfer." },
+    { "mode": "Road", "detail": "About 30 km from Hassan and roughly 210 km from Bengaluru; Halebidu and Belur are close enough to see in one day." },
+    { "mode": "Private Fleet", "detail": "MTMT's chauffeured cars connect Halebidu, Belur and the wider Hoysala circuit without hurry." }
+  ],
+  "whereToStay": [
+    { "tier": "Comfortable base at Hassan", "detail": "Hassan town, a short drive away, offers the most reliable choice of hotels for the Hoysala temples." },
+    { "tier": "Resort and coffee-country stays", "detail": "Toward Chikmagalur, hill and estate resorts provide a scenic and relaxed base within easy reach." },
+    { "tier": "Simple local lodging", "detail": "Halebidu itself has modest accommodation for travellers who want to stay beside the temple." }
+  ],
+  "whereToEat": [
+    { "name": "Local vegetarian eateries", "detail": "Simple South Indian meals, dosas and filter coffee are the mainstay in and around Halebidu." },
+    { "name": "Hassan town restaurants", "detail": "The nearby town widens the choice with multi-cuisine and thali options." },
+    { "name": "Estate and resort dining", "detail": "Resorts toward Chikmagalur serve relaxed meals often accompanied by locally grown coffee." }
+  ],
+  "faqs": [
+    { "q": "What was Halebidu in Hoysala times?", "a": "It was Dwarasamudra, the capital of the Hoysala kingdom. The name Halebidu, meaning 'old capital,' reflects that former status." },
+    { "q": "Why is the Hoysaleswara Temple special?", "a": "It is a twin-shrined temple dedicated to Shiva whose exterior is covered in exceptionally dense, detailed soapstone carving, among the most lavish in Indian temple architecture." },
+    { "q": "Is Halebidu a UNESCO World Heritage Site?", "a": "Yes. It is part of the Sacred Ensembles of the Hoysalas, inscribed by UNESCO as a World Heritage Site in 2023, alongside Belur and Somanathapura." },
+    { "q": "Can I see Halebidu and Belur in one day?", "a": "Yes. The two towns are close and represent the same Hoysala tradition, so a single unhurried day comfortably covers both." },
+    { "q": "Are there other monuments at Halebidu?", "a": "Yes, Jain basadis stand a short distance from the main temple, and a small archaeological museum helps set the sculpture in context." }
+  ],
+  "relatedCities": ["belur", "chikmagalur", "sringeri"],
+  "relatedTours": [
+    { "label": "Curated South India journeys", "href": "/tours" },
+    { "label": "Heritage temple circuits", "href": "/heritage-dining" },
+    { "label": "Explore South India", "href": "/destinations/region/south-india" }
+  ]
+},
+    {
+  "slug": "chitradurga",
+  "name": "Chitradurga",
+  "region": "South India",
+  "regionSlug": "south-india",
+  "state": "Karnataka",
+  "tagline": "The fort of seven circles amid granite boulders",
+  "heroImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Chitradurga_Fort_or_Chitradoorg_from_the_Ancient_times.jpg/1280px-Chitradurga_Fort_or_Chitradoorg_from_the_Ancient_times.jpg",
+  "coordinates": { "lat": 14.2251, "lng": 76.398 },
+  "answer": "Chitradurga is a town in central Karnataka set among dramatic granite boulders and famous for its hill fort, known in Kannada as Elusuttina Kote, the fort of seven circles of walls. Developed notably under the Nayaka chieftains, its ramparts, gateways and water tanks climb over rocky hills, and it is tied to the celebrated legend of Onake Obavva. The rugged landscape has also drawn filmmakers. MTMT arranges chauffeur-led halts here on journeys across Karnataka's interior, with guides who read the fort's layered history.",
+  "intro": [
+    "Chitradurga stands on the highway between Bengaluru and the north of Karnataka, in a landscape of giant, wind-smoothed granite boulders that seem stacked by some ancient hand. Rising through this terrain is its great hill fort, whose concentric walls give it the Kannada name Elusuttina Kote, the fort of seven circles.",
+    "The stronghold was expanded by the Nayaka rulers of Chitradurga, who fortified the natural rock with gateways, bastions, granaries and ingeniously engineered water tanks. Its most famous story is that of Onake Obavva, a woman remembered in local tradition for defending a narrow rock cleft, the Obavvana Kindi, against intruders.",
+    "For travellers, Chitradurga is a place to climb and explore: steep paths between boulders, hidden cisterns, temples within the walls, and long views over the plains. It is a rewarding break on the road across the state's dry interior, best enjoyed with sturdy shoes and an early start."
+  ],
+  "quickFacts": [
+    { "label": "State", "value": "Karnataka" },
+    { "label": "District", "value": "Chitradurga" },
+    { "label": "Landmark", "value": "Chitradurga Fort (Elusuttina Kote)" },
+    { "label": "Meaning", "value": "'Fort of seven circles' in Kannada" },
+    { "label": "Associated rulers", "value": "Nayakas of Chitradurga" },
+    { "label": "Landscape", "value": "Granite boulder hills" },
+    { "label": "Local legend", "value": "Onake Obavva and the Obavvana Kindi" },
+    { "label": "Languages", "value": "Kannada; English understood in tourist areas" }
+  ],
+  "bestTime": {
+    "window": "October to February",
+    "narrative": "The cooler months from October to February are best for climbing the fort, when temperatures on the exposed rock are bearable and skies are clear. This is a dry, warm region, so summer visits can be punishing on the open ramparts. Whatever the season, start early to beat both the heat and the midday sun, and carry water for the climb."
+  },
+  "thingsToDo": [
+    { "name": "Chitradurga Fort", "blurb": "The vast hill fort with its layered walls, gateways and bastions climbing the boulders; the terrain is steep and uneven, so wear sturdy shoes and allow time.", "category": "Heritage" },
+    { "name": "Obavvana Kindi", "blurb": "The narrow rock cleft linked to the legend of Onake Obavva, a memorable stop for its story and its dramatic setting within the walls.", "category": "Heritage" },
+    { "name": "Fort water tanks and granaries", "blurb": "Rock-cut cisterns and storage structures reveal the clever engineering that let the fort withstand siege.", "category": "Culture" },
+    { "name": "Temples within the fort", "blurb": "Several shrines stand inside the ramparts, adding a devotional layer to the military architecture.", "category": "Heritage" },
+    { "name": "Boulder landscape and viewpoints", "blurb": "The surreal granite scenery and long views over the plains are a highlight, especially in soft morning or evening light.", "category": "Nature" },
+    { "name": "Chandravalli caves nearby", "blurb": "Ancient rock-cut caves and an archaeological area near the town offer an added excursion for the curious.", "category": "Heritage" }
+  ],
+  "howToReach": [
+    { "mode": "Air", "detail": "Bengaluru's Kempegowda International Airport, about 200 km away, is the main gateway; Hubballi airport is another option to the north." },
+    { "mode": "Rail", "detail": "Chitradurga has a railway station, and the town is a stop on routes crossing central Karnataka." },
+    { "mode": "Road", "detail": "Roughly 200 km from Bengaluru on the national highway toward Hubballi, making it a natural road halt." },
+    { "mode": "Private Fleet", "detail": "MTMT's chauffeured cars fold Chitradurga into cross-Karnataka journeys with a guided fort visit." }
+  ],
+  "whereToStay": [
+    { "tier": "Comfortable town hotels", "detail": "Chitradurga town has a range of dependable mid-range hotels suited to an overnight or road break." },
+    { "tier": "Highway resorts", "detail": "Along the Bengaluru-Hubballi highway there are resort-style stops convenient for drivers." },
+    { "tier": "Onward luxury bases", "detail": "For higher-end stays, travellers often base in Bengaluru or Hampi and visit Chitradurga en route." }
+  ],
+  "whereToEat": [
+    { "name": "Local Kannada eateries", "detail": "The town serves hearty North Karnataka fare, including jolada rotti with spicy accompaniments, alongside South Indian tiffin." },
+    { "name": "Highway restaurants", "detail": "Dependable multi-cuisine stops on the main road suit travellers passing through." },
+    { "name": "Hotel dining rooms", "detail": "Town hotels offer straightforward vegetarian and mixed menus for an easy meal after the fort climb." }
+  ],
+  "faqs": [
+    { "q": "Why is Chitradurga Fort called the fort of seven circles?", "a": "Its Kannada name, Elusuttina Kote, refers to the concentric rings of fortification walls that wrap the hill, built to make the stronghold hard to breach." },
+    { "q": "Who built Chitradurga Fort?", "a": "The fort as seen today owes much to the Nayaka chieftains of Chitradurga, who expanded and fortified the natural rock hill over generations." },
+    { "q": "What is the Obavvana Kindi legend?", "a": "It recalls Onake Obavva, a woman remembered in local tradition for defending a narrow rock passage within the fort, a story closely tied to Chitradurga's identity." },
+    { "q": "Is the fort a hard climb?", "a": "It involves steep, uneven paths over and between boulders. It is manageable for reasonably fit visitors in good shoes, but best attempted early in the day with water in hand." },
+    { "q": "Is Chitradurga worth a stop on the road?", "a": "Yes. Its dramatic boulder landscape and layered fort make it a rewarding break on journeys across central Karnataka toward Hampi or Hubballi." }
+  ],
+  "relatedCities": ["hampi", "hospet", "bengaluru"],
+  "relatedTours": [
+    { "label": "Curated South India journeys", "href": "/tours" },
+    { "label": "Chauffeured private fleet", "href": "/fleet" },
+    { "label": "Explore South India", "href": "/destinations/region/south-india" }
+  ]
+},
+    {
+  "slug": "melukote",
+  "name": "Melukote",
+  "region": "South India",
+  "regionSlug": "south-india",
+  "state": "Karnataka",
+  "tagline": "A Sri Vaishnava hill town of Ramanuja's legacy",
+  "heroImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sri_Chaluvanarayana_Swamy_Temple%2C_Melukote%2C_Karnataka_01.jpg/1280px-Sri_Chaluvanarayana_Swamy_Temple%2C_Melukote%2C_Karnataka_01.jpg",
+  "coordinates": { "lat": 12.6614, "lng": 76.6486 },
+  "answer": "Melukote is a hilltop temple town in Karnataka's Mandya district and a major centre of Sri Vaishnava tradition, closely associated with the philosopher Ramanuja. Its principal shrine is the Cheluvanarayana Swamy Temple in the town, while the Yoga Narasimha Temple crowns the hill above. Melukote is known for the Vairamudi festival and for its Sanskrit scholarship, home to the Academy of Sanskrit Research. MTMT arranges quiet, guide-led visits here as a contemplative counterpoint to Mysore, with respect for the town's living devotional life.",
+  "intro": [
+    "Melukote sits on rocky hills in Mandya district, north of Mysore, a town whose stepped tanks, temple towers and granite outcrops give it a timeless air. It is one of the most important centres of the Sri Vaishnava tradition in the south, and its history is bound up with the great eleventh- and twelfth-century philosopher Ramanuja, who is said to have spent years here.",
+    "Two temples define the town. In its heart is the Cheluvanarayana Swamy Temple, dedicated to a form of Vishnu, a focus of devotion and of the famous Vairamudi festival, when the deity is adorned with a diamond crown. High above, reached by a climb of steps, stands the Yoga Narasimha Temple, from which the surrounding country falls away in every direction.",
+    "Melukote is also a seat of learning, home to the Academy of Sanskrit Research, and a stronghold of Iyengar culture and cuisine. It rewards travellers who come quietly, ready to climb a little and to move respectfully through a place where worship is very much alive."
+  ],
+  "quickFacts": [
+    { "label": "State", "value": "Karnataka" },
+    { "label": "District", "value": "Mandya" },
+    { "label": "Setting", "value": "Hilltop temple town" },
+    { "label": "Key temples", "value": "Cheluvanarayana Swamy and Yoga Narasimha" },
+    { "label": "Tradition", "value": "Sri Vaishnava, linked to Ramanuja" },
+    { "label": "Festival", "value": "Vairamudi" },
+    { "label": "Scholarship", "value": "Academy of Sanskrit Research" },
+    { "label": "Languages", "value": "Kannada; English understood in tourist areas" }
+  ],
+  "bestTime": {
+    "window": "October to March",
+    "narrative": "The cooler, drier months from October to March make the hilltop climb to the Yoga Narasimha Temple far more comfortable and offer clear views over the surrounding country. Summers are hot on the exposed rock, and the monsoon can be slippery underfoot. Festival times such as Vairamudi are atmospheric but very crowded, so plan accordingly if you visit then."
+  },
+  "thingsToDo": [
+    { "name": "Cheluvanarayana Swamy Temple", "blurb": "The town's principal Vishnu shrine and focus of the Vairamudi festival; it is an active temple where modest dress and inner-sanctum customs are observed.", "category": "Heritage" },
+    { "name": "Yoga Narasimha Temple", "blurb": "A hilltop shrine reached by a flight of steps, rewarding the climb with sweeping views; wear sturdy footwear and start early in cooler hours.", "category": "Heritage" },
+    { "name": "Kalyani stepped tank", "blurb": "The Kalyani, a large stone temple tank, is one of Melukote's most photogenic and atmospheric spots.", "category": "Culture" },
+    { "name": "Academy of Sanskrit Research", "blurb": "An institution reflecting the town's deep scholarly tradition in Sanskrit and Sri Vaishnava learning.", "category": "Culture" },
+    { "name": "Iyengar cuisine and culture", "blurb": "Melukote is known for its distinctive Iyengar vegetarian food, notably the local puliyogare, worth seeking out.", "category": "Cuisine" },
+    { "name": "Vairamudi festival", "blurb": "During this celebrated festival the deity is adorned with a diamond crown, drawing large crowds; an extraordinary but very busy time to visit.", "category": "Culture" }
+  ],
+  "howToReach": [
+    { "mode": "Air", "detail": "Mysore Airport is nearest with limited flights; Bengaluru's Kempegowda International Airport is the main long-haul gateway." },
+    { "mode": "Rail", "detail": "Mandya and Mysore are the nearest useful railheads, with onward road transfer up to Melukote." },
+    { "mode": "Road", "detail": "Roughly 50 km from Mysore and around 130 to 150 km from Bengaluru, on hill roads up to the town." },
+    { "mode": "Private Fleet", "detail": "MTMT's chauffeured cars make Melukote an easy contemplative add-on to a Mysore-based itinerary." }
+  ],
+  "whereToStay": [
+    { "tier": "Heritage and luxury nearby", "detail": "Mysore, within easy reach, offers the finest heritage and luxury hotels as a comfortable base." },
+    { "tier": "Comfortable mid-range", "detail": "Mandya and the Mysore road provide dependable mid-range hotels for travellers touring the region." },
+    { "tier": "Simple pilgrim lodging", "detail": "Melukote itself has basic, functional accommodation oriented to pilgrims rather than luxury travellers." }
+  ],
+  "whereToEat": [
+    { "name": "Local Iyengar eateries", "detail": "Melukote is celebrated for its Iyengar vegetarian fare, above all the tangy puliyogare, best sampled fresh in town." },
+    { "name": "Temple-town tiffin stalls", "detail": "Simple stalls serve dosas, vadas and filter coffee to pilgrims and visitors through the day." },
+    { "name": "Mysore restaurants", "detail": "For a wider choice, the nearby city offers everything from classic tiffin houses to refined dining." }
+  ],
+  "faqs": [
+    { "q": "Why is Melukote important to Sri Vaishnavas?", "a": "It is a major centre of the Sri Vaishnava tradition, closely associated with the philosopher Ramanuja, and home to the revered Cheluvanarayana Swamy Temple." },
+    { "q": "What are the main temples at Melukote?", "a": "The Cheluvanarayana Swamy Temple in the town and the hilltop Yoga Narasimha Temple, reached by a climb of steps with panoramic views." },
+    { "q": "What is the Vairamudi festival?", "a": "It is Melukote's most famous festival, during which the presiding deity is adorned with a diamond crown. It is spectacular but draws very large crowds." },
+    { "q": "Are there temple dress and access rules?", "a": "Yes. As active temples, modest dress is expected, footwear is removed before entry, and access to the inner sanctum follows each temple's own customs, which visitors should respect." },
+    { "q": "What food is Melukote known for?", "a": "It is known for Iyengar vegetarian cuisine, particularly its distinctive puliyogare, a tamarind-flavoured rice dish." }
+  ],
+  "relatedCities": ["mysore", "srirangapatna", "bengaluru"],
+  "relatedTours": [
+    { "label": "Curated South India journeys", "href": "/tours" },
+    { "label": "Heritage dining experiences", "href": "/heritage-dining" },
+    { "label": "Explore South India", "href": "/destinations/region/south-india" }
+  ]
+},
+    {
+  "slug": "shivanasamudra",
+  "name": "Shivanasamudra",
+  "region": "South India",
+  "regionSlug": "south-india",
+  "state": "Karnataka",
+  "tagline": "The Cauvery's twin cascades on a river island",
+  "heroImg": "https://upload.wikimedia.org/wikipedia/commons/2/20/Shivanasamudra_Falls_on_Kaveri.jpg",
+  "coordinates": {"lat": 12.2996, "lng": 77.1716},
+  "answer": "Shivanasamudra is a river island in Karnataka's Mandya district where the Cauvery divides into two arms and drops in the segmented Gaganachukki and Bharachukki waterfalls. It is also the site of one of Asia's earliest hydroelectric power stations, commissioned in 1902 to supply the Kolar Gold Fields. The falls are monsoon-fed, so their volume is strongly seasonal and thin before the rains. MTMT arranges a chauffeured day from Mysuru or Bengaluru with viewpoint stops and a heritage lunch on the way.",
+  "intro": [
+    "Shivanasamudra (also spelt Sivasamudram) sits on an island in the Cauvery river between Mandya and Chamarajanagar districts, a couple of hours from Mysuru. Here the river splits around the island and tumbles over rocky ledges in two separate falls: Gaganachukki to the west and Bharachukki to the east, each reached by a different approach road.",
+    "The gorge below the falls holds a piece of engineering history. The Shivanasamudra hydroelectric station, commissioned in 1902, was among the first in Asia and famously transmitted power over a long distance to the gold mines at Kolar. The plant still operates within a restricted zone, so visitors experience the falls from designated viewpoints rather than the powerhouse itself.",
+    "Because the cascades depend entirely on the Cauvery's flow, timing matters. After a good southwest monsoon the falls are broad and thunderous; in the dry pre-monsoon months they narrow considerably, which is worth planning around."
+  ],
+  "quickFacts": [
+    {"label": "State", "value": "Karnataka"},
+    {"label": "District", "value": "Mandya (near Malavalli)"},
+    {"label": "River", "value": "Cauvery (Kaveri)"},
+    {"label": "The two falls", "value": "Gaganachukki & Bharachukki"},
+    {"label": "Historic power station", "value": "Commissioned 1902"},
+    {"label": "Best viewed", "value": "Post-monsoon, high flow"},
+    {"label": "Nearest city", "value": "Mysuru (approx 80 km)"},
+    {"label": "Ideal visit", "value": "Half to full day"}
+  ],
+  "bestTime": {
+    "window": "August to January",
+    "narrative": "The falls are at their most dramatic once the southwest monsoon has filled the Cauvery, roughly from August into the post-monsoon months. Flow can stay strong into December and January depending on the season's rainfall and upstream releases. The pre-monsoon stretch from March to May tends to be hot and the cascades much thinner, so we generally steer visits toward the high-water window."
+  },
+  "thingsToDo": [
+    {"name": "Gaganachukki viewpoint", "blurb": "Take in the western horseshoe of falls from the watchtower viewpoint, with the historic power-station gorge below.", "category": "Nature"},
+    {"name": "Bharachukki falls", "blurb": "Cross to the eastern arm, where broad terraced cascades spread across the rock; steps lead down for closer views when conditions allow.", "category": "Nature"},
+    {"name": "Somanathapura Keshava Temple", "blurb": "Pair the falls with this exquisite 13th-century Hoysala temple, a short drive away and part of a UNESCO-listed group.", "category": "Heritage"},
+    {"name": "Hydro-history stop", "blurb": "Learn the story of the 1902 station that carried electricity to the Kolar Gold Fields, viewed from a respectful distance outside the restricted plant.", "category": "Culture"},
+    {"name": "Riverside birdwatching", "blurb": "The Cauvery's islands and banks draw kingfishers, egrets and other waterbirds, especially in the calmer stretches.", "category": "Nature"},
+    {"name": "Coracle experience", "blurb": "Where local operators run them safely and seasonally, a traditional round coracle offers a gentle river perspective.", "category": "Adventure"}
+  ],
+  "howToReach": [
+    {"mode": "Air", "detail": "Mysuru airport has limited flights; Bengaluru's Kempegowda International is the main gateway, roughly a 3 to 3.5 hour drive."},
+    {"mode": "Rail", "detail": "Mysuru and Maddur are the nearest well-connected railheads; the falls are reached by road from either."},
+    {"mode": "Road", "detail": "About 80 km from Mysuru via Malavalli; Gaganachukki and Bharachukki have separate access roads on either side of the island."},
+    {"mode": "Private Fleet", "detail": "MTMT runs chauffeured day trips from Mysuru or Bengaluru, combining the falls with Somanathapura and a heritage lunch."}
+  ],
+  "whereToStay": [
+    {"tier": "Heritage & palace hotels", "detail": "Mysuru, about 80 km away, offers the region's finest heritage and palace-style stays as a comfortable base."},
+    {"tier": "Riverside & resort", "detail": "A handful of resorts near the Cauvery and Bheemeshwari cater to nature-focused travellers, though standards are simpler than city hotels."},
+    {"tier": "Day trip from Bengaluru", "detail": "Many guests prefer to stay in Bengaluru or Mysuru and visit on a well-planned chauffeured day trip."}
+  ],
+  "whereToEat": [
+    {"name": "Mysuru fine dining", "detail": "The city's palace hotels and established restaurants serve refined South Indian and multi-cuisine menus, our usual lunch base."},
+    {"name": "Local Kannada meals", "detail": "Simple eateries near Malavalli and the falls serve honest vegetarian thalis and filter coffee; standards are basic but authentic."},
+    {"name": "Curated picnic", "detail": "MTMT can arrange a packed gourmet lunch for guests who want to linger at the viewpoints without leaving the site."}
+  ],
+  "faqs": [
+    {"q": "Are Gaganachukki and Bharachukki the same waterfall?", "a": "No. They are two separate segments of the Cauvery around the same island, reached by different roads. Gaganachukki lies to the west and Bharachukki to the east, and seeing both means a short drive between them."},
+    {"q": "When is the best time to see the falls flowing fully?", "a": "After the southwest monsoon, roughly August through January, when the Cauvery is high. In the dry pre-monsoon months the falls narrow substantially, so we plan visits around the water level."},
+    {"q": "Can I visit the historic power station?", "a": "The 1902 hydroelectric plant is an operational, restricted facility, so you cannot tour the powerhouse itself. You can appreciate its setting and history from the public viewpoints above the gorge."},
+    {"q": "Is it possible to go down to the water?", "a": "At Bharachukki, steps lead toward the base and coracle rides sometimes operate, but this depends on the season and safety conditions. During high flow, access below the falls is often closed for safety."},
+    {"q": "How far is it from Mysuru or Bengaluru?", "a": "The falls are about 80 km from Mysuru and roughly 130 km from Bengaluru. Most guests visit as a day trip, and MTMT arranges the drive with a chauffeur and viewpoint stops."}
+  ],
+  "relatedCities": ["hampi", "hospet"],
+  "relatedTours": [
+    {"label": "South India journeys", "href": "/destinations/region/south-india"},
+    {"label": "Curated tour collection", "href": "/tours"},
+    {"label": "Chauffeured private fleet", "href": "/fleet"}
+  ]
+},
+    {
+  "slug": "srivilliputhur",
+  "name": "Srivilliputhur",
+  "region": "South India",
+  "regionSlug": "south-india",
+  "state": "Tamil Nadu",
+  "tagline": "The temple town whose tower crowns Tamil Nadu's emblem",
+  "heroImg": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Srivilliputhur_Andal_temple_%2832%29.jpg",
+  "coordinates": {"lat": 9.5127, "lng": 77.6336},
+  "answer": "Srivilliputhur is a Tamil Nadu temple town famed for the Andal and Vatapatrasayee Temple, one of the 108 Divya Desams sacred to Vaishnavites. Its soaring gopuram is the tower depicted on the emblem of the Government of Tamil Nadu. The town is revered as the birthplace of Andal, the only female among the twelve Alvar saint-poets, and is also known for its rich palkova milk sweet. It lies within easy reach of Madurai. MTMT pairs a guided temple visit here with the wider Madurai and Chettinad circuit.",
+  "intro": [
+    "Srivilliputhur, in Tamil Nadu's Virudhunagar district near the Western Ghats, is one of the most storied temple towns of the far south. Its heart is the temple dedicated to Andal and to Vishnu as Vatapatrasayee, a Divya Desam celebrated in the hymns of the Alvar saints.",
+    "The town holds a special place in Tamil devotion as the birthplace of Andal, the only woman among the twelve Alvars, whose Tamil verses are recited to this day. The temple's towering gopuram is so emblematic of the region that it appears on the official emblem of the Government of Tamil Nadu.",
+    "Beyond pilgrimage, Srivilliputhur is a household name for its palkova, a dense, caramelised milk sweet sold across the town. Its proximity to Madurai makes it a natural addition to a southern temple itinerary."
+  ],
+  "quickFacts": [
+    {"label": "State", "value": "Tamil Nadu"},
+    {"label": "District", "value": "Virudhunagar"},
+    {"label": "Main temple", "value": "Andal & Vatapatrasayee Temple"},
+    {"label": "Status", "value": "One of 108 Divya Desams"},
+    {"label": "Famous for", "value": "Birthplace of saint Andal"},
+    {"label": "State emblem", "value": "Its gopuram features on Tamil Nadu's emblem"},
+    {"label": "Local sweet", "value": "Palkova"},
+    {"label": "Nearest city", "value": "Madurai (approx 75 km)"}
+  ],
+  "bestTime": {
+    "window": "October to March",
+    "narrative": "The cooler, drier months from October to March are the most comfortable for exploring the temple and town on foot. This period also brackets the Tamil month of Margazhi and the Andal-linked festivities, when devotion runs especially high. Summer from April to June is hot in this plains region, so we favour morning temple visits and lighter afternoons during warmer months."
+  },
+  "thingsToDo": [
+    {"name": "Andal & Vatapatrasayee Temple", "blurb": "Visit the Divya Desam at the town's heart, dedicated to Andal and to the reclining form of Vishnu, and admire its landmark gopuram.", "category": "Heritage"},
+    {"name": "The great gopuram", "blurb": "Stand beneath the towering temple gateway that inspired the tower on Tamil Nadu's state emblem, one of the tallest in the region.", "category": "Heritage"},
+    {"name": "Andal heritage", "blurb": "Learn the story of the poet-saint Andal, the only female Alvar, whose life and verses are woven through the town's identity.", "category": "Culture"},
+    {"name": "Palkova tasting", "blurb": "Sample Srivilliputhur's celebrated palkova, a rich milk fudge, from the town's long-established sweet shops.", "category": "Cuisine"},
+    {"name": "Srivilliputhur-Megamalai landscapes", "blurb": "The nearby Western Ghats and the Srivilliputhur Megamalai tiger reserve frame the town with green hills for scenic drives.", "category": "Nature"},
+    {"name": "Margazhi devotional season", "blurb": "If visiting in the Tamil month of Margazhi, experience early-morning hymns and heightened temple ritual tied to Andal.", "category": "Culture"}
+  ],
+  "howToReach": [
+    {"mode": "Air", "detail": "Madurai airport, roughly 75 to 80 km away, is the nearest, with domestic connections to major Indian cities."},
+    {"mode": "Rail", "detail": "Srivilliputhur has its own station on the line toward Sengottai; Madurai and Virudhunagar are larger nearby junctions."},
+    {"mode": "Road", "detail": "Well connected by road to Madurai, Virudhunagar and Sivakasi, about a 1.5 to 2 hour drive from Madurai."},
+    {"mode": "Private Fleet", "detail": "MTMT arranges a chauffeured visit from Madurai, easily combined with the wider temple and Chettinad circuit."}
+  ],
+  "whereToStay": [
+    {"tier": "Madurai heritage & upscale", "detail": "Madurai, under two hours away, offers the region's best heritage and business-class hotels as a base for day visits."},
+    {"tier": "Chettinad mansion stays", "detail": "Restored Chettiar mansions around Karaikudi provide a characterful heritage base within driving distance."},
+    {"tier": "Local town lodging", "detail": "Srivilliputhur itself has only simple lodges and pilgrim accommodation, best for brief stopovers rather than luxury stays."}
+  ],
+  "whereToEat": [
+    {"name": "Palkova shops", "detail": "The town's famous milk-sweet vendors are the essential tasting stop; several long-standing shops cluster near the temple."},
+    {"name": "Madurai fine dining", "detail": "For a fuller meal, Madurai's hotels and renowned eateries serve everything from classic South Indian to the city's famous non-veg specialities."},
+    {"name": "Traditional vegetarian meals", "detail": "Simple local restaurants around the temple serve satvik banana-leaf meals suited to pilgrims; standards are modest but authentic."}
+  ],
+  "faqs": [
+    {"q": "Why does the Srivilliputhur temple appear on Tamil Nadu's emblem?", "a": "The town's towering gopuram is one of the most iconic temple gateways in Tamil Nadu, and it is depicted on the official emblem of the state government as a symbol of Tamil heritage."},
+    {"q": "Who was Andal?", "a": "Andal is revered as the only woman among the twelve Alvar saint-poets of Tamil Vaishnavism. Srivilliputhur is honoured as her birthplace, and her Tamil hymns are still recited in temples today."},
+    {"q": "Is there a dress code for the temple?", "a": "Yes. As an active Hindu temple, modest dress is expected and footwear must be removed before entry. Some inner areas may have restrictions, and access to the innermost sanctum can be limited to devotees at certain times."},
+    {"q": "What sweet is Srivilliputhur known for?", "a": "The town is famous across Tamil Nadu for palkova, a thick caramelised milk sweet. It is sold at numerous shops near the temple and makes a popular gift to carry home."},
+    {"q": "How do I combine Srivilliputhur with other places?", "a": "It sits about 75 km from Madurai and works well as a half-day addition to a Madurai visit, or as part of a longer route taking in Chettinad. MTMT arranges the drive with a chauffeur and local guide."}
+  ],
+  "relatedCities": ["madurai", "chettinad"],
+  "relatedTours": [
+    {"label": "South India journeys", "href": "/destinations/region/south-india"},
+    {"label": "Curated tour collection", "href": "/tours"},
+    {"label": "Heritage dining experiences", "href": "/heritage-dining"}
+  ]
+},
+    {
+  "slug": "karaikudi",
+  "name": "Karaikudi",
+  "region": "South India",
+  "regionSlug": "south-india",
+  "state": "Tamil Nadu",
+  "tagline": "Chettinad's town of merchant mansions and bold cuisine",
+  "heroImg": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Chettinad_Mansion_Kanadukathan.jpg",
+  "coordinates": {"lat": 10.0729, "lng": 78.7784},
+  "answer": "Karaikudi is the principal town of the Chettinad region in Tamil Nadu, once home to the prosperous Nattukottai Chettiar trading community. It is celebrated for grand mansions built with Athangudi floor tiles, Burma teak, and imported marble and glass, and for its bold Chettinad cuisine, which is largely non-vegetarian and heavily spiced. The area is also a hunting ground for antiques. Its mansions and lanes make it one of South India's most atmospheric heritage towns. MTMT curates guided mansion visits, artisan trails and heritage-dining experiences across Chettinad from Karaikudi.",
+  "intro": [
+    "Karaikudi, in Tamil Nadu's Sivaganga district, is the commercial heart of Chettinad, a cluster of villages that was home to the Nattukottai Chettiars. This community grew wealthy through trade and banking across Southeast Asia, and poured its fortunes into extraordinary family mansions from the late 19th and early 20th centuries.",
+    "The mansions are the town's signature: vast courtyards, pillared halls, hand-made Athangudi tiles underfoot, Burma teak columns and imported marble, glass and ceramics. Many stand quietly behind ornate facades, and a number have been sensitively restored as heritage hotels or opened for visits.",
+    "Chettinad is equally famous for its food. The region's cuisine is bold and aromatic, built on freshly ground spice blends, and it is traditionally and famously non-vegetarian, with celebrated chicken, mutton and seafood dishes, though vegetarian preparations exist too. Karaikudi is also known for its antiques and craft trades."
+  ],
+  "quickFacts": [
+    {"label": "State", "value": "Tamil Nadu"},
+    {"label": "District", "value": "Sivaganga"},
+    {"label": "Region", "value": "Heart of Chettinad"},
+    {"label": "Community heritage", "value": "Nattukottai Chettiars"},
+    {"label": "Famous for", "value": "Mansions & Chettinad cuisine"},
+    {"label": "Signature craft", "value": "Athangudi handmade tiles"},
+    {"label": "Also known for", "value": "Antiques & artisan trades"},
+    {"label": "Nearest city", "value": "Madurai (approx 90 km)"}
+  ],
+  "bestTime": {
+    "window": "November to February",
+    "narrative": "The cool, dry winter months of November to February are by far the most pleasant for wandering Chettinad's mansions and villages, which can be very hot in the April to June summer. The region is inland and dry, so mornings and evenings in winter are ideal for photography and slow exploring. We generally build Chettinad stays around this comfortable window."
+  },
+  "thingsToDo": [
+    {"name": "Chettinad mansion tours", "blurb": "Step inside restored and lived-in mansions to see courtyards, Burma teak, imported tiles and the craftsmanship of Chettiar prosperity.", "category": "Heritage"},
+    {"name": "Athangudi tile workshop", "blurb": "Watch artisans in nearby Athangudi hand-cast the coloured cement tiles that pave the region's grand homes.", "category": "Culture"},
+    {"name": "Chettinad cuisine experience", "blurb": "Taste the region's celebrated spice-forward cooking; it is famously non-vegetarian, though vegetarian dishes are available for those who prefer them.", "category": "Cuisine"},
+    {"name": "Antiques and market lanes", "blurb": "Browse Karaikudi's known antique shops and bustling markets for teak, brassware, old ceramics and colonial-era curios.", "category": "Culture"},
+    {"name": "Kanadukathan village", "blurb": "Explore this village of especially photogenic mansions and quiet lanes at the core of the Chettinad heritage zone.", "category": "Heritage"},
+    {"name": "Athangudi Palace & temples", "blurb": "Visit ornate local temples and the palatial homes that reveal the region's blend of Tamil tradition and global trade tastes.", "category": "Heritage"}
+  ],
+  "howToReach": [
+    {"mode": "Air", "detail": "Madurai airport, about 90 km away, is the nearest with regular domestic flights; Tiruchirappalli is another option."},
+    {"mode": "Rail", "detail": "Karaikudi Junction is well connected by train to Madurai, Tiruchirappalli, Chennai and beyond."},
+    {"mode": "Road", "detail": "Good roads link Karaikudi to Madurai (around 90 km), Trichy and Thanjavur, making a Chettinad circuit easy by car."},
+    {"mode": "Private Fleet", "detail": "MTMT arranges chauffeured touring across the scattered Chettinad villages, the most comfortable way to see the mansions."}
+  ],
+  "whereToStay": [
+    {"tier": "Heritage mansion hotels", "detail": "Several Chettiar mansions around Karaikudi and Kanadukathan have been restored into atmospheric heritage hotels, the signature way to stay."},
+    {"tier": "Boutique courtyard stays", "detail": "Smaller boutique properties offer intimate courtyard living with regional cuisine and craft-focused hospitality."},
+    {"tier": "Comfortable town hotels", "detail": "Karaikudi town has practical mid-range hotels for travellers who prefer a central, straightforward base."}
+  ],
+  "whereToEat": [
+    {"name": "Heritage mansion dining", "detail": "The restored Chettinad hotels serve authentic regional thalis and specialities in period settings, our recommended culinary experience."},
+    {"name": "Classic Chettinad eateries", "detail": "Karaikudi's renowned restaurants are the place for the region's famous non-vegetarian curries; vegetarian options are also available."},
+    {"name": "Traditional vegetarian meals", "detail": "Local vegetarian mess-style eateries serve banana-leaf meals and tiffin for those who prefer satvik food."}
+  ],
+  "faqs": [
+    {"q": "What makes Chettinad mansions special?", "a": "They were built by the wealthy Nattukottai Chettiar trading families using materials sourced across the world: Burma teak, Italian marble, Belgian glass and locally hand-made Athangudi tiles. Their scale, courtyards and craftsmanship make them among India's finest merchant homes."},
+    {"q": "Is Chettinad food only non-vegetarian?", "a": "Chettinad cuisine is famous above all for its non-vegetarian dishes, with celebrated chicken, mutton and seafood preparations. However, vegetarian dishes do exist in the tradition, and most restaurants and heritage hotels can cater to vegetarian guests."},
+    {"q": "Can I go inside the mansions?", "a": "Yes, several mansions welcome visitors, and some operate as heritage hotels where you can stay. Others remain private family homes, so access is arranged case by case. A local guide helps open the right doors."},
+    {"q": "How many days should I spend in Chettinad?", "a": "Two nights let you enjoy the mansions, an Athangudi tile workshop, the food and nearby villages without rushing. The heritage sites are spread across several villages, so having a car makes a real difference."},
+    {"q": "Is Karaikudi good for buying antiques?", "a": "Karaikudi is well known for antique and curio dealers selling teak furniture, brassware, old tiles and colonial-era pieces. Quality and authenticity vary, so buy from established shops and factor in shipping for large items."}
+  ],
+  "relatedCities": ["madurai", "thanjavur", "trichy"],
+  "relatedTours": [
+    {"label": "Heritage dining experiences", "href": "/heritage-dining"},
+    {"label": "South India journeys", "href": "/destinations/region/south-india"},
+    {"label": "Curated tour collection", "href": "/tours"}
+  ]
+},
+    {
+  "slug": "gulbarga",
+  "name": "Gulbarga",
+  "region": "South India",
+  "regionSlug": "south-india",
+  "state": "Karnataka",
+  "tagline": "The Bahmani Deccan's first capital and Sufi shrine city",
+  "heroImg": "https://upload.wikimedia.org/wikipedia/commons/4/46/Gulbarga_Fort_%26_Mosque.JPG",
+  "coordinates": {"lat": 17.3297, "lng": 76.8343},
+  "answer": "Gulbarga, officially Kalaburagi, is a historic city in northern Karnataka's Deccan. It served as the first capital of the Bahmani Sultanate in the 14th century before the seat of power moved to Bidar. Its landmarks include the Gulbarga Fort with its distinctive Jama Masjid, and the revered dargah of the Sufi saint Khwaja Bande Nawaz, a major pilgrimage centre. The city offers a window onto Deccan Indo-Islamic history away from the tourist crowds. MTMT includes Gulbarga on chauffeured Deccan heritage routes linking Bidar and Bijapur.",
+  "intro": [
+    "Gulbarga, renamed Kalaburagi, is one of the principal cities of northern Karnataka's Deccan plateau. In the 14th century it rose to prominence as the first capital of the Bahmani Sultanate, a powerful Deccan kingdom, before the capital was later shifted to Bidar.",
+    "The city's history is written into its monuments. The Gulbarga Fort encloses the Jama Masjid, noted for its unusual fully covered prayer hall, and the region is dotted with tombs and mosques from the Bahmani era. This layered Indo-Islamic heritage makes Gulbarga a rewarding stop for those exploring the Deccan.",
+    "Gulbarga is also a major centre of Sufi pilgrimage. The dargah of Khwaja Bande Nawaz, a revered 14th to 15th century saint, draws devotees of many faiths, particularly during the annual urs. As at any living shrine, visitors are asked to observe local etiquette and dress modestly."
+  ],
+  "quickFacts": [
+    {"label": "State", "value": "Karnataka"},
+    {"label": "Official name", "value": "Kalaburagi"},
+    {"label": "Region", "value": "Northern Karnataka Deccan"},
+    {"label": "Historic role", "value": "First capital of the Bahmani Sultanate"},
+    {"label": "Key monuments", "value": "Gulbarga Fort & Jama Masjid"},
+    {"label": "Major shrine", "value": "Khwaja Bande Nawaz dargah"},
+    {"label": "Nearby heritage", "value": "Bidar & Bijapur"},
+    {"label": "Access", "value": "Rail & road; airport at Kalaburagi"}
+  ],
+  "bestTime": {
+    "window": "October to February",
+    "narrative": "The Deccan interior is hot for much of the year, so the winter months from October to February are the most comfortable for touring Gulbarga's fort, mosques and shrine. Summers from March to June can be intense on this dry plateau. Pilgrim numbers swell during the annual urs of Khwaja Bande Nawaz, which is atmospheric but busy, so we plan accordingly."
+  },
+  "thingsToDo": [
+    {"name": "Gulbarga Fort", "blurb": "Explore the moated Bahmani-era fort with its bastions, ruined halls and the historic mosque within its walls.", "category": "Heritage"},
+    {"name": "Jama Masjid", "blurb": "See the fort's remarkable Friday mosque, distinctive for its fully covered, domed prayer hall unlike most open-courtyard mosques.", "category": "Heritage"},
+    {"name": "Khwaja Bande Nawaz Dargah", "blurb": "Visit the revered Sufi shrine that draws pilgrims of many faiths; dress modestly and follow the customary etiquette of the dargah.", "category": "Culture"},
+    {"name": "Haft Gumbaz tombs", "blurb": "Walk among the cluster of Bahmani royal tombs, showcasing early Deccan Indo-Islamic funerary architecture.", "category": "Heritage"},
+    {"name": "Sharana Basaveshwara Temple", "blurb": "Visit this important local temple and its tank, a major centre of devotion within the city.", "category": "Culture"},
+    {"name": "Deccan heritage circuit", "blurb": "Use Gulbarga as a springboard to the wider Bahmani world at Bidar and the great monuments of Bijapur.", "category": "Heritage"}
+  ],
+  "howToReach": [
+    {"mode": "Air", "detail": "Kalaburagi airport offers limited domestic flights; Hyderabad, roughly 3 to 3.5 hours away, is a larger gateway."},
+    {"mode": "Rail", "detail": "Gulbarga (Kalaburagi) is a major station on the Mumbai-Hyderabad-Bengaluru lines, with good long-distance connections."},
+    {"mode": "Road", "detail": "Well linked by highway to Hyderabad, Bidar, Bijapur and Solapur, making a Deccan heritage road trip straightforward."},
+    {"mode": "Private Fleet", "detail": "MTMT arranges chauffeured Deccan routes connecting Gulbarga with Bidar and Bijapur in comfort."}
+  ],
+  "whereToStay": [
+    {"tier": "Best available city hotels", "detail": "Gulbarga has comfortable business-class hotels rather than luxury resorts; these serve well as a clean, central base."},
+    {"tier": "Hyderabad luxury base", "detail": "For a higher tier of hospitality, some guests base in Hyderabad and visit the northern Deccan on longer drives."},
+    {"tier": "Deccan circuit stays", "detail": "On a heritage road trip, nights can be split between Gulbarga, Bidar and Bijapur using each town's best hotels."}
+  ],
+  "whereToEat": [
+    {"name": "North Karnataka meals", "detail": "Local restaurants serve robust North Karnataka fare, including jowar rotis and spicy vegetarian and non-vegetarian dishes."},
+    {"name": "Hyderabadi-influenced cuisine", "detail": "Given its Deccan location, the city's eateries also offer biryani and Hyderabadi-style dishes reflecting the region's blended culture."},
+    {"name": "Hotel dining", "detail": "The better city hotels provide reliable multi-cuisine restaurants, our usual recommendation for visiting guests."}
+  ],
+  "faqs": [
+    {"q": "Is Gulbarga the same as Kalaburagi?", "a": "Yes. Gulbarga was officially renamed Kalaburagi, though the older name remains widely used. Both refer to the same historic city in northern Karnataka."},
+    {"q": "Why is Gulbarga historically important?", "a": "It was the first capital of the Bahmani Sultanate in the 14th century, a major Deccan power, before the capital moved to Bidar. Its fort, mosques and tombs reflect this early Indo-Islamic heritage."},
+    {"q": "Can non-Muslims visit the Khwaja Bande Nawaz dargah?", "a": "Yes, the dargah welcomes visitors of all faiths and draws a diverse mix of pilgrims. Visitors should dress modestly, cover the head where expected, remove footwear and follow the customary etiquette of the shrine."},
+    {"q": "What is special about the Jama Masjid in the fort?", "a": "The Jama Masjid inside Gulbarga Fort is unusual for having a fully covered, domed prayer hall rather than the open courtyard typical of most large mosques, a notable feature of early Bahmani architecture."},
+    {"q": "How does Gulbarga fit into a Deccan itinerary?", "a": "It pairs naturally with Bidar, the later Bahmani capital, and with the monumental heritage of Bijapur. MTMT can string these together into a chauffeured northern Karnataka and Deccan route."}
+  ],
+  "relatedCities": ["bidar", "bijapur", "hyderabad"],
+  "relatedTours": [
+    {"label": "South India journeys", "href": "/destinations/region/south-india"},
+    {"label": "Curated tour collection", "href": "/tours"},
+    {"label": "Chauffeured private fleet", "href": "/fleet"}
+  ]
+},
+    {
+  "slug": "nagarjunakonda",
+  "name": "Nagarjunakonda",
+  "region": "South India",
+  "regionSlug": "south-india",
+  "state": "Andhra Pradesh",
+  "tagline": "An ancient Buddhist city preserved on a reservoir island",
+  "heroImg": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Panaromic_view_of_the_buddha_statue_and_other_monuments.jpg",
+  "coordinates": {"lat": 16.5225, "lng": 79.2419},
+  "answer": "Nagarjunakonda is one of India's most important Buddhist archaeological sites, in Andhra Pradesh's Nagarjuna Sagar area. It occupies the site of the ancient city of Vijayapuri and today sits as an island museum in the Nagarjuna Sagar reservoir. When the dam was built, excavated stupas and monuments were relocated and reassembled on the hilltop that became the island, now reached by ferry. The site pairs deep antiquity with a striking reservoir setting. MTMT arranges guided visits combining the island museum, the dam and the Deccan Buddhist trail.",
+  "intro": [
+    "Nagarjunakonda, in the Palnadu region of Andhra Pradesh, preserves the remains of Vijayapuri, a flourishing ancient city and Buddhist centre associated with the Ikshvaku dynasty. It takes its modern name from Nagarjuna, a celebrated Buddhist scholar, and 'konda' meaning hill.",
+    "The site's story is unusual. When the great Nagarjuna Sagar dam was constructed across the Krishna river in the mid-20th century, the valley holding these ruins was to be submerged. Archaeologists excavated the site and relocated key stupas, monastery remains and sculptures onto the highest ground, which became an island in the new reservoir.",
+    "Today that island holds a museum displaying the reconstructed monuments and artefacts, reached by a government ferry across the water. Because access depends on boat schedules and reservoir conditions, visits need a little planning, but the reward is a remarkable blend of ancient Buddhism and a dramatic lakeside setting."
+  ],
+  "quickFacts": [
+    {"label": "State", "value": "Andhra Pradesh"},
+    {"label": "Ancient name", "value": "Vijayapuri"},
+    {"label": "Significance", "value": "Major Buddhist archaeological site"},
+    {"label": "Setting", "value": "Island in Nagarjuna Sagar reservoir"},
+    {"label": "Access", "value": "By government ferry / boat"},
+    {"label": "On the island", "value": "Relocated stupas & museum"},
+    {"label": "Nearby", "value": "Nagarjuna Sagar Dam"},
+    {"label": "Gateway cities", "value": "Hyderabad & Vijayawada"}
+  ],
+  "bestTime": {
+    "window": "November to February",
+    "narrative": "The winter months of November to February bring the coolest, most comfortable conditions for the boat crossing and open-air ruins, which can be very hot from March to June. Reservoir levels and ferry operations vary with the season, so we confirm boat timings before travel. Overcast or post-monsoon days can also make the lakeside island especially atmospheric."
+  },
+  "thingsToDo": [
+    {"name": "Island archaeological museum", "blurb": "Cross by ferry to see the reconstructed stupas, monastery remains and sculptures rescued from the submerged valley.", "category": "Heritage"},
+    {"name": "Reassembled Buddhist monuments", "blurb": "Walk among relocated stupas and the outlines of ancient Vijayapuri, one of South India's key early Buddhist centres.", "category": "Heritage"},
+    {"name": "Ferry across the reservoir", "blurb": "The boat journey across Nagarjuna Sagar's expanse is part of the experience; sailings run to a fixed schedule.", "category": "Nature"},
+    {"name": "Nagarjuna Sagar Dam", "blurb": "View the immense masonry dam on the Krishna river, one of India's largest, whose creation reshaped the whole site.", "category": "Culture"},
+    {"name": "Ethipothala Falls", "blurb": "Combine a visit with this nearby cascade and viewpoint, a scenic addition to the reservoir landscape.", "category": "Nature"},
+    {"name": "Buddhist heritage context", "blurb": "Learn how the Ikshvaku-era city and its scholar-monks fit into the wider Deccan Buddhist story with a knowledgeable guide.", "category": "Culture"}
+  ],
+  "howToReach": [
+    {"mode": "Air", "detail": "Hyderabad is the main airport, roughly 3.5 to 4 hours by road; Vijayawada is another gateway to the region."},
+    {"mode": "Rail", "detail": "The nearest useful railheads are toward Macherla and the wider Guntur area, from where the site is reached by road."},
+    {"mode": "Road", "detail": "Reached by road to the Nagarjuna Sagar dam area; the island itself is then accessed by ferry across the reservoir."},
+    {"mode": "Private Fleet", "detail": "MTMT arranges a chauffeured trip from Hyderabad or Vijayawada, coordinating the drive with the boat timings."}
+  ],
+  "whereToStay": [
+    {"tier": "Lakeside & local hotels", "detail": "Simple hotels near Nagarjuna Sagar dam offer basic lakeside stays convenient for early ferry departures."},
+    {"tier": "Hyderabad luxury base", "detail": "For refined hospitality, many guests base in Hyderabad and visit on a long day trip or overnight excursion."},
+    {"tier": "Vijayawada city hotels", "detail": "Vijayawada provides comfortable city hotels as an alternative gateway from the eastern side."}
+  ],
+  "whereToEat": [
+    {"name": "Andhra meals", "detail": "Local eateries near the dam serve classic Andhra rice meals, known for being flavourful and generously spiced."},
+    {"name": "Hotel restaurants", "detail": "The better hotels at Nagarjuna Sagar and in the gateway cities provide the most reliable dining for visitors."},
+    {"name": "Packed lunch for the island", "detail": "Since options on the island are minimal, MTMT can arrange a packed meal to carry across for the museum visit."}
+  ],
+  "faqs": [
+    {"q": "Why is Nagarjunakonda on an island?", "a": "When the Nagarjuna Sagar dam was built, the valley containing these ancient ruins was set to be flooded. Archaeologists excavated and relocated the key monuments to high ground, which became an island in the resulting reservoir."},
+    {"q": "How do I reach the site?", "a": "The island museum is reached by a government ferry across the Nagarjuna Sagar reservoir from the dam area. Boats run on a set schedule, so it is important to confirm timings, as missing a sailing can affect the whole visit."},
+    {"q": "What can I see on the island today?", "a": "The island holds an archaeological museum and the reconstructed remains of stupas, monasteries and sculptures from the ancient Buddhist city of Vijayapuri, relocated here before the valley was submerged."},
+    {"q": "Is the site connected to the scholar Nagarjuna?", "a": "The place is named in association with Nagarjuna, a revered Buddhist scholar, and 'konda' means hill. The area was an important centre of Buddhist learning and monastic life in ancient times."},
+    {"q": "How much time does a visit take?", "a": "Allow most of a day, since the ferry crossing, museum and monuments take time, and the site is a few hours' drive from Hyderabad or Vijayawada. MTMT coordinates the drive and boat schedule to make it seamless."}
+  ],
+  "relatedCities": ["hyderabad", "vijayawada"],
+  "relatedTours": [
+    {"label": "South India journeys", "href": "/destinations/region/south-india"},
+    {"label": "Curated tour collection", "href": "/tours"},
+    {"label": "Chauffeured private fleet", "href": "/fleet"}
+  ]
+},
 ];
