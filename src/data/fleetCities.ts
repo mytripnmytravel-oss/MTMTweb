@@ -9,17 +9,34 @@ import { getDestination, type Destination } from "./destinations";
 // Major arrival / operating hubs where "chauffeur hire in X" has real
 // local intent. Every slug must exist in destinations.ts.
 export const FLEET_CITY_SLUGS = [
-    "delhi",
-    "agra",
-    "jaipur",
-    "udaipur",
-    "jodhpur",
-    "jaisalmer",
-    "rishikesh",
-    "kochi",
-    "shimla",
-    "gangtok",
+    "delhi", "agra", "jaipur", "udaipur", "jodhpur", "jaisalmer", "bikaner",
+    "pushkar", "mount-abu", "ranthambore", "chittorgarh", "bundi", "jhansi",
+    "gwalior", "orchha", "khajuraho", "varanasi", "lucknow", "ayodhya",
+    "prayagraj", "mathura", "amritsar", "chandigarh", "haridwar", "rishikesh",
+    "dehradun", "mussoorie", "nainital", "shimla", "manali", "dharamshala",
+    "dalhousie", "srinagar", "leh", "katra", "gangtok", "darjeeling",
+    "kalimpong", "kolkata", "bhubaneswar", "puri", "konark", "guwahati",
+    "shillong", "kaziranga", "mumbai", "pune", "nashik", "aurangabad",
+    "shirdi", "lonavala", "mahabaleshwar", "goa", "ahmedabad", "vadodara",
+    "bhuj", "surat", "nagpur", "bhopal", "indore", "ujjain", "jabalpur",
+    "pachmarhi", "bandhavgarh", "kanha", "bengaluru", "mysore", "hampi",
+    "badami", "coorg", "chikmagalur", "mangalore", "udupi", "gokarna",
+    "chennai", "pondicherry", "mahabalipuram", "kanchipuram", "madurai",
+    "rameshwaram", "thanjavur", "trichy", "kumbakonam", "ooty", "kodaikanal",
+    "kochi", "munnar", "alleppey", "thekkady", "kovalam", "kumarakom",
+    "wayanad", "trivandrum", "kozhikode", "thrissur", "hyderabad", "warangal",
+    "tirupati", "vijayawada", "visakhapatnam", "araku-valley", "gulbarga",
+    "bidar", "bijapur",
 ];
+
+// Real, per-city role phrase derived from the destination's own tagline
+// (unique per city — no thin/duplicated fallback text). Reads mid-sentence
+// as "<City> is <role>."
+function deriveFleetRole(dest: Destination): string {
+    const t = dest.tagline?.trim();
+    if (t) return t.charAt(0).toLowerCase() + t.slice(1);
+    return `a key base in the ${dest.region} circuit`;
+}
 
 const CITY_ROLE: Record<string, string> = {
     delhi: "the primary international gateway and northern launch point of the Golden Triangle",
@@ -45,7 +62,7 @@ export function getFleetCityContent(
     v: Vehicle,
     dest: Destination
 ): FleetCityContent {
-    const role = CITY_ROLE[dest.slug] ?? `a key MyTripMyTravel operating base`;
+    const role = CITY_ROLE[dest.slug] ?? deriveFleetRole(dest);
     const answer = `Chauffeured ${v.name} hire in ${dest.name}, ${dest.state} is available from MyTripMyTravel as part of a private, GPS-tracked Elite Fleet service. ${dest.name} is ${role}. The ${v.name} — a ${v.category.toLowerCase()}-tier ${v.type.toLowerCase()} seating up to ${v.passengers} with ${v.luggage} — is deployed here with a vetted performance-chauffeur, pre-calculated fuel, tolls and permits, and transparent ${v.priceRange}-band pricing.`;
     const intro = [
         `Hiring the ${v.name} in ${dest.name} is not a car-rental transaction — it is a chauffeured mission. ${v.description}`,

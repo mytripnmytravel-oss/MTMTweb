@@ -62,7 +62,9 @@ export function getServiceCityContent(
     line: ServiceLine,
     dest: Destination
 ): ServiceCityContent {
-    const airport = CITY_AIRPORT[dest.slug] ?? "the nearest airport";
+    const airportFact = dest.quickFacts?.find((f) => /airport/i.test(f.label));
+    const airport =
+        CITY_AIRPORT[dest.slug] ?? (airportFact ? airportFact.value : "the nearest airport");
     const classes = topVehicles()
         .map((v) => `${v.name} (${v.category})`)
         .join(", ");
