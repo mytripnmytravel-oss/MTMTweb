@@ -6,63 +6,59 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 
 export default function ServicesHubView({
-    lines,
-    cities,
+    lines, cities,
 }: {
     lines: { slug: string; name: string; blurb: string }[];
     cities: { slug: string; name: string }[];
 }) {
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
-                <GlassyProgressBar />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                <section className="pt-60 pb-20 container mx-auto px-6">
-                    <nav aria-label="Breadcrumb" className="flex items-center gap-3 mb-8 text-royal-blue/50 font-semibold uppercase text-[10px] tracking-[0.3em]">
-                        <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
+            <section className="border-b border-line pb-14 pt-36 sm:pt-40">
+                <div className="container-x">
+                    <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-[12px] text-muted">
+                        <Link href="/" className="hover:text-clay">Home</Link>
                         <ChevronRight size={12} />
-                        <span className="text-sunset-orange">Services</span>
+                        <span className="text-clay">Services</span>
                     </nav>
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6">Operational Protocols</h4>
-                    <CharBlurIn text="GROUND SERVICES" className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] block mb-8" />
-                    <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed max-w-2xl">
-                        Chauffeured ground operations across our hub cities &mdash; private, GPS-tracked,
-                        pre-priced, and continuous into any itinerary.
+                    <p className="eyebrow eyebrow-accent">Ground services</p>
+                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Chauffeured ground operations</h1>
+                    <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
+                        Private, GPS-tracked, pre-priced transport across our hub cities — and continuous into any itinerary.
                     </p>
-                </section>
+                </div>
+            </section>
 
-                <section className="pb-12 container mx-auto px-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {lines.map((l, idx) => (
-                            <motion.div key={l.slug} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.06 }} className="glass-card rounded-2xl p-10 border-royal-blue/5">
-                                <h3 className="text-3xl font-semibold text-royal-blue uppercase tracking-tight mb-4">{l.name}</h3>
-                                <p className="text-dark-slate/60 font-bold italic text-base mb-8 leading-relaxed">{l.blurb}</p>
-                                <div className="flex flex-wrap gap-3">
-                                    {cities.map((c) => (
-                                        <Link key={c.slug} href={`/services/${l.slug}/${c.slug}`} className="px-5 py-3 bg-royal-blue/5 rounded-2xl font-semibold uppercase text-[10px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">
-                                            {c.name}
-                                        </Link>
-                                    ))}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </section>
+            <section className="section">
+                <div className="container-x grid gap-6 md:grid-cols-2">
+                    {lines.map((l, idx) => (
+                        <motion.div key={l.slug} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.05 }} className="card p-8">
+                            <h3 className="text-2xl font-medium text-ink">{l.name}</h3>
+                            <p className="mt-3 text-[15px] leading-relaxed text-muted">{l.blurb}</p>
+                            <div className="mt-6 flex flex-wrap gap-2">
+                                {cities.map((c) => (
+                                    <Link key={c.slug} href={`/services/${l.slug}/${c.slug}`} className="rounded-full border border-line bg-paper-dim px-4 py-2 text-[12px] font-medium text-muted transition hover:border-ink hover:text-ink">
+                                        {c.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
 
-                <section className="py-24 container mx-auto px-6">
-                    <div className="flex flex-wrap gap-4">
-                        <Link href="/fleet" className="px-7 py-4 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-3">The Elite Fleet <ArrowRight size={14} /></Link>
-                        <Link href="/tours" className="px-7 py-4 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-3">Tour Master Packages <ArrowRight size={14} /></Link>
-                        <Link href="/destinations" className="px-7 py-4 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-3">Destination Archive <ArrowRight size={14} /></Link>
-                    </div>
-                </section>
+            <section className="section pt-0">
+                <div className="container-x flex flex-wrap gap-3">
+                    <Link href="/fleet" className="btn-outline btn-sm">The elite fleet <ArrowRight size={14} /></Link>
+                    <Link href="/tours" className="btn-outline btn-sm">Tour packages <ArrowRight size={14} /></Link>
+                    <Link href="/destinations" className="btn-outline btn-sm">Destinations <ArrowRight size={14} /></Link>
+                </div>
+            </section>
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <Footer />
+        </main>
     );
 }

@@ -1,62 +1,48 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic } from "@/components/ClientComponents";
 import Link from "next/link";
-import { Briefcase, Plane, Building, Target } from "lucide-react";
+import { Briefcase, Plane, Building, Target, ArrowRight } from "lucide-react";
+
+const PILLARS = [
+    { title: "GPS-tracked fleet", icon: Building },
+    { title: "Private aviation", icon: Plane },
+    { title: "Delegation logistics", icon: Briefcase },
+    { title: "MICE & events", icon: Target },
+];
 
 export default function CorporateView() {
     return (
-        <SmoothScroll>
-            <main className="bg-white min-h-screen relative overflow-hidden">
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                <section className="pt-60 pb-32 container mx-auto px-6 relative z-10 max-w-5xl">
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
-                        <div>
-                            <motion.h4
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="text-royal-blue font-semibold uppercase tracking-[0.8em] text-sm mb-6"
-                            >
-                                Executive Transit
-                            </motion.h4>
-                            <CharBlurIn
-                                text="CORPORATE MISSION"
-                                className="text-5xl md:text-[6.5rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
-                            />
-                            <p className="text-dark-slate font-bold italic text-lg opacity-60 leading-relaxed mb-12">
-                                Zero-friction logistics for executive teams and delegations across India. We coordinate GPS-tracked ground fleets, private aviation arrangements, accommodation, and MICE events under a single accountable mission lead.
-                            </p>
-                            <Magnetic>
-                                <Link href="/booking">
-                                    <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-semibold uppercase tracking-widest text-xs hover:bg-sunset-orange transition-all duration-500">
-                                        Brief the Corporate Desk
-                                    </button>
-                                </Link>
-                            </Magnetic>
-                        </div>
-                        <div className="grid grid-cols-2 gap-6">
-                            {[
-                                { title: "GPS-Tracked Fleet", icon: Building },
-                                { title: "Private Aviation", icon: Plane },
-                                { title: "Delegation Logistics", icon: Briefcase },
-                                { title: "MICE & Events", icon: Target }
-                            ].map((pill, i) => (
-                                <div key={i} className="bg-royal-blue/5 p-8 rounded-2xl border border-royal-blue/10 flex flex-col items-center justify-center text-center aspect-square">
-                                    <pill.icon className="text-sunset-orange mb-4" size={32} />
-                                    <h5 className="text-royal-blue font-semibold uppercase tracking-tight text-sm">{pill.title}</h5>
-                                </div>
-                            ))}
-                        </div>
+            <section className="section pt-36 sm:pt-40">
+                <div className="container-x grid items-center gap-14 lg:grid-cols-2">
+                    <div>
+                        <p className="eyebrow eyebrow-accent">Corporate travel</p>
+                        <h1 className="display-1 mt-4 font-medium text-ink">Executive journeys, seamlessly run.</h1>
+                        <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+                            Zero-friction logistics for executive teams and delegations across India — GPS-tracked ground fleets, private aviation, accommodation and MICE events, all under a single accountable lead.
+                        </p>
+                        <Link href="/booking" className="btn-primary mt-8">Brief the corporate desk <ArrowRight size={16} /></Link>
                     </div>
-                </section>
+                    <div className="grid grid-cols-2 gap-5">
+                        {PILLARS.map((p) => {
+                            const Icon = p.icon;
+                            return (
+                                <div key={p.title} className="card flex aspect-square flex-col items-center justify-center p-8 text-center">
+                                    <Icon className="text-clay" size={30} />
+                                    <h5 className="mt-4 text-[15px] font-medium text-ink">{p.title}</h5>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <Footer />
+        </main>
     );
 }

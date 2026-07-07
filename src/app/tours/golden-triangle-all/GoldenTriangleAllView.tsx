@@ -2,42 +2,33 @@
 
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-    Filter, Search, Clock, MapPin, Star, ShieldCheck,
-    ChevronRight, Calendar, Zap, MessageCircle, HelpCircle,
-    Camera, Heart, Stethoscope, Compass, CheckCircle2,
-    ArrowRight, Shield, Award, Sparkles, Map, Users, X
+    Filter, Clock, Star, ShieldCheck, Calendar, MessageCircle,
+    Map, Sparkles, ArrowRight, ArrowLeft, CheckCircle2, X, Compass,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import {
-    SmoothScroll, Magnetic, CharBlurIn,
-    GlassyProgressBar, Tilt3D
-} from "@/components/ClientComponents";
-import { packages, type Package } from "@/data/tours";
+import { packages, packageSlug, type Package } from "@/data/tours";
 
-const FilterButton = ({ active, label, onClick }: any) => (
+const Pill = ({ active, label, onClick }: { active: boolean; label: string; onClick: () => void }) => (
     <button
         onClick={onClick}
-        className={`px-3 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-widest transition-all duration-300 border ${
-            active
-            ? "bg-sunset-orange border-sunset-orange text-white shadow-md scale-105"
-            : "bg-white border-royal-blue/10 text-royal-blue/70 hover:border-sunset-orange hover:text-sunset-orange"
+        className={`rounded-full px-3.5 py-1.5 text-[12px] font-medium transition-all duration-300 ${
+            active ? "bg-ink text-paper" : "border border-line bg-white text-muted hover:border-ink hover:text-ink"
         }`}
     >
         {label}
     </button>
 );
 
-const FeatureItem = ({ icon: Icon, title, desc }: any) => (
-    <div className="flex gap-3 items-start">
-        <div className="w-8 h-8 bg-royal-blue/5 rounded-xl flex items-center justify-center shrink-0">
-            <Icon size={15} className="text-sunset-orange" />
-        </div>
+const Feature = ({ icon: Icon, title, desc }: { icon: any; title: string; desc: string }) => (
+    <div className="flex items-start gap-3">
+        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-paper-dim text-clay"><Icon size={15} /></span>
         <div>
-            <h5 className="font-semibold text-royal-blue uppercase text-[10px] tracking-widest mb-1">{title}</h5>
-            <p className="text-dark-slate/50 text-[10px] font-bold italic leading-relaxed">{desc}</p>
+            <h5 className="text-[13px] font-medium text-ink">{title}</h5>
+            <p className="mt-0.5 text-[12px] leading-relaxed text-muted">{desc}</p>
         </div>
     </div>
 );
@@ -47,16 +38,15 @@ export default function GoldenTriangleAllView() {
     const [activeDuration, setActiveDuration] = useState("All");
     const [activeLocation, setActiveLocation] = useState("All");
     const [currentPage, setCurrentPage] = useState(1);
-    const [selectedPackage, setSelectedPackage] = useState<Package | null>(null);
-
+    const [selected, setSelected] = useState<Package | null>(null);
     const itemsPerPage = 10;
 
     const themes = ["All", "Luxury", "Short Tours", "Spiritual", "Wildlife", "Medical", "Adventure", "Nature"];
     const locations = ["All", "Golden Triangle", "Rajasthan", "South India", "Himalayas", "North East", "Goa", "Islands", "West India", "North India", "Central India"];
     const durations = ["All", "3-5 Days", "6-9 Days", "10+ Days"];
 
-    const filteredPackages = useMemo(() => {
-        const filtered = packages.filter(pkg => {
+    const filtered = useMemo(() => {
+        const f = packages.filter((pkg) => {
             const themeMatch = activeTheme === "All" || pkg.theme === activeTheme;
             const locationMatch = activeLocation === "All" || pkg.location === activeLocation;
             const days = parseInt(pkg.duration);
@@ -66,174 +56,79 @@ export default function GoldenTriangleAllView() {
             else if (activeDuration === "10+ Days") durationMatch = days >= 10;
             return themeMatch && locationMatch && durationMatch;
         });
-        setCurrentPage(1); // Reset page on filter change
-        return filtered;
+        setCurrentPage(1);
+        return f;
     }, [activeTheme, activeLocation, activeDuration]);
 
-    const totalPages = Math.ceil(filteredPackages.length / itemsPerPage);
-    const paginatedPackages = filteredPackages.slice(
-        (currentPage - 1) * itemsPerPage,
-        currentPage * itemsPerPage
-    );
+    const totalPages = Math.ceil(filtered.length / itemsPerPage);
+    const paginated = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+    const goPage = (p: number) => { setCurrentPage(p); window.scrollTo({ top: 600, behavior: "smooth" }); };
 
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white relative overflow-clip">
-                <GlassyProgressBar />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                {/* Liquid Background */}
-                <div className="liquid-bg opacity-30">
-                    <div className="liquid-blob-1" />
-                    <div className="liquid-blob-2" />
-                </div>
-
-                {/* --- Hero Section --- */}
-                <section className="pt-80 pb-32 container mx-auto px-6 relative z-10">
-                    <div className="max-w-4xl">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6">Master Variations 2026</h4>
-                        <CharBlurIn text="GOLDEN TRIANGLE" className="text-5xl md:text-9xl font-semibold text-royal-blue uppercase tracking-tight block leading-[0.85]" />
-                        <div className="h-4" /> {/* Spacer */}
-                        <CharBlurIn text="ULTIMATE ARCHIVE" className="text-5xl md:text-9xl font-semibold text-royal-blue uppercase tracking-tight block leading-[0.85] opacity-20" />
-                        <p className="mt-12 text-xl font-bold text-royal-blue/60 max-w-2xl italic leading-relaxed">
-                            Explore all 30+ precise variations of India&apos;s most iconic routes and regional escapes. Every itinerary here is a foundation—ready for your bespoke modification.
-                        </p>
-
-                        <div className="mt-16 flex items-center gap-12 grayscale opacity-40">
-                            <div className="flex items-center gap-3 font-semibold uppercase text-[10px] tracking-widest"><Shield size={14} /> Verified Luxury</div>
-                            <div className="flex items-center gap-3 font-semibold uppercase text-[10px] tracking-widest"><Award size={14} /> Bespoke Itineraries</div>
-                            <div className="flex items-center gap-3 font-semibold uppercase text-[10px] tracking-widest"><Users size={14} /> Human Concierge</div>
-                        </div>
+            {/* Hero */}
+            <section className="border-b border-line pb-14 pt-36 sm:pt-40">
+                <div className="container-x max-w-4xl">
+                    <p className="eyebrow eyebrow-accent">The full collection</p>
+                    <h1 className="display-1 mt-4 font-medium text-ink">Golden Triangle & beyond</h1>
+                    <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
+                        Every variation of India's most iconic routes and regional escapes. Each itinerary is a starting point — ready to shape around how you actually want to travel.
+                    </p>
+                    <div className="mt-8 flex flex-wrap items-center gap-6 text-[12px] font-medium text-stone">
+                        <span className="flex items-center gap-2"><ShieldCheck size={14} className="text-clay" /> Transparent pricing</span>
+                        <span className="flex items-center gap-2"><Sparkles size={14} className="text-clay" /> Bespoke itineraries</span>
+                        <span className="flex items-center gap-2"><MessageCircle size={14} className="text-clay" /> Human concierge</span>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* --- Main Content Grid --- */}
-                <section className="container mx-auto px-4 sm:px-6 pb-40 grid grid-cols-1 lg:grid-cols-[220px_1fr_260px] gap-6 xl:gap-10 relative z-[500] mt-8">
-
-                    {/* --- Left Sidebar: Filters --- */}
-                    <aside className="self-start">
-                        {/* Mobile Horizontal Filters (Hidden on Desktop) */}
-                        <div className="lg:hidden flex flex-col gap-6 mb-12 bg-white p-6 rounded-3xl shadow-sm border border-royal-blue/5">
-                            <div className="flex flex-col gap-3">
-                                <span className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Map size={14} /> Region:</span>
-                                <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar fade-edges w-full">
-                                    {locations.map(loc => (
-                                        <FilterButton key={loc} label={loc} active={activeLocation === loc} onClick={() => setActiveLocation(loc)} />
-                                    ))}
-                                </div>
+            {/* Content */}
+            <section className="section">
+                <div className="container-x grid grid-cols-1 gap-8 lg:grid-cols-[220px_1fr_260px]">
+                    {/* Filters */}
+                    <aside className="lg:sticky lg:top-24 lg:self-start">
+                        <div className="space-y-7 rounded-2xl border border-line bg-white p-6 lg:border-0 lg:bg-transparent lg:p-0">
+                            <div>
+                                <h4 className="mb-4 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-stone"><Map size={13} className="text-clay" /> Region</h4>
+                                <div className="flex flex-wrap gap-2">{locations.map((l) => <Pill key={l} label={l} active={activeLocation === l} onClick={() => setActiveLocation(l)} />)}</div>
                             </div>
-                            <div className="flex flex-col gap-3 border-t border-royal-blue/5 pt-6">
-                                <span className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Filter size={14} /> Theme:</span>
-                                <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar fade-edges w-full">
-                                    {themes.map(t => (
-                                        <FilterButton key={t} label={t} active={activeTheme === t} onClick={() => setActiveTheme(t)} />
-                                    ))}
-                                </div>
+                            <div className="lg:border-t lg:border-line lg:pt-6">
+                                <h4 className="mb-4 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-stone"><Filter size={13} className="text-clay" /> Theme</h4>
+                                <div className="flex flex-wrap gap-2">{themes.map((t) => <Pill key={t} label={t} active={activeTheme === t} onClick={() => setActiveTheme(t)} />)}</div>
                             </div>
-                            <div className="flex flex-col gap-3 border-t border-royal-blue/5 pt-6">
-                                <span className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Clock size={14} /> Duration:</span>
-                                <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar fade-edges w-full">
-                                    {durations.map(d => (
-                                        <FilterButton key={d} label={d} active={activeDuration === d} onClick={() => setActiveDuration(d)} />
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Desktop Vertical Sticky Filters (Hidden on Mobile) */}
-                        <div className="hidden lg:block sticky top-32 h-[calc(100vh-140px)] border-r border-royal-blue/10 pr-2">
-                            <div className="h-full overflow-y-auto overscroll-contain no-scrollbar pr-4 pb-10">
-                                <div className="space-y-8 pt-1">
-                                    <div>
-                                        <h4 className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Map size={14} className="text-sunset-orange" /> Region</h4>
-                                        <div className="flex flex-wrap gap-3">
-                                            {locations.map(loc => (
-                                                <FilterButton key={loc} label={loc} active={activeLocation === loc} onClick={() => setActiveLocation(loc)} />
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <h4 className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Filter size={14} className="text-sunset-orange" /> Theme</h4>
-                                        <div className="flex flex-wrap gap-3">
-                                            {themes.map(t => (
-                                                <FilterButton key={t} label={t} active={activeTheme === t} onClick={() => setActiveTheme(t)} />
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <h4 className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Clock size={14} className="text-sunset-orange" /> Duration</h4>
-                                        <div className="flex flex-wrap gap-3">
-                                            {durations.map(d => (
-                                                <FilterButton key={d} label={d} active={activeDuration === d} onClick={() => setActiveDuration(d)} />
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
+                            <div className="lg:border-t lg:border-line lg:pt-6">
+                                <h4 className="mb-4 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-stone"><Clock size={13} className="text-clay" /> Duration</h4>
+                                <div className="flex flex-wrap gap-2">{durations.map((d) => <Pill key={d} label={d} active={activeDuration === d} onClick={() => setActiveDuration(d)} />)}</div>
                             </div>
                         </div>
                     </aside>
 
-                    {/* --- Main Cards --- */}
+                    {/* Cards */}
                     <div className="min-w-0">
                         <AnimatePresence mode="popLayout">
-                            <motion.div
-                                layout
-                                className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-                            >
-                                {paginatedPackages.map((pkg) => (
-                                    <motion.div
-                                        key={pkg.id}
-                                        layout
-                                        initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                                        exit={{ opacity: 0, scale: 0.9, y: 30 }}
-                                        transition={{ type: "spring", stiffness: 100, damping: 15 }}
-                                        className="glass-card rounded-2xl overflow-hidden group border-royal-blue/5 hover:border-sunset-orange/20 transition-all duration-700"
-                                    >
-                                        <div className="relative h-72">
-                                            <Image src={pkg.img} alt={`${pkg.title} — ${pkg.duration} ${pkg.location} tour`} fill className="object-cover transition-transform duration-1000" />
-                                            <div className="absolute top-6 left-6 flex gap-2">
-                                                <div className="bg-white/90 backdrop-blur-md px-5 py-2 rounded-full shadow-xl">
-                                                    <span className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest">{pkg.duration}</span>
-                                                </div>
-                                                {pkg.theme === "Luxury" && (
-                                                    <div className="bg-sunset-orange px-5 py-2 rounded-full shadow-xl flex items-center gap-2">
-                                                        <Sparkles size={12} className="text-white" />
-                                                        <span className="text-[10px] font-semibold uppercase text-white tracking-widest">Elite</span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                            <div className="absolute top-6 right-6">
-                                                <div className="bg-royal-blue/80 backdrop-blur-md px-5 py-2 rounded-full shadow-xl border border-white/10">
-                                                    <span className="text-[10px] font-semibold uppercase text-white tracking-widest">{pkg.location}</span>
-                                                </div>
-                                            </div>
+                            <motion.div layout className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                {paginated.map((pkg) => (
+                                    <motion.div key={pkg.id} layout initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.35 }}
+                                        className="card card-hover group overflow-hidden">
+                                        <div className="relative aspect-[16/10] overflow-hidden">
+                                            <Image src={pkg.img} alt={`${pkg.title} — ${pkg.duration} ${pkg.location} tour`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                                            <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink">{pkg.duration}</span>
+                                            <span className="absolute right-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-[11px] font-medium text-paper backdrop-blur-sm">{pkg.location}</span>
                                         </div>
-                                        <div className="p-6 sm:p-8">
-                                            <h4 className="text-[10px] font-semibold text-sunset-orange uppercase tracking-[0.4em] mb-3">{pkg.theme}</h4>
-                                            <h3 className="text-xl sm:text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-3 leading-tight group-hover:text-sunset-orange transition-all duration-300">{pkg.title}</h3>
-                                            <p className="text-dark-slate/60 font-bold italic text-sm mb-6 leading-relaxed line-clamp-2">{pkg.highlight}</p>
-                                            <div className="flex flex-col gap-4 pt-5 border-t border-royal-blue/5">
+                                        <div className="p-6">
+                                            <div className="eyebrow">{pkg.theme}</div>
+                                            <h3 className="mt-2 text-lg font-medium text-ink group-hover:text-clay">{pkg.title}</h3>
+                                            <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{pkg.highlight}</p>
+                                            <div className="mt-5 flex items-end justify-between border-t border-line pt-5">
                                                 <div>
-                                                    <span className="text-[10px] uppercase font-semibold text-royal-blue/40 block mb-1">Starting At</span>
-                                                    <span className="text-2xl font-semibold text-royal-blue">{pkg.price}</span>
+                                                    <span className="block text-[11px] uppercase tracking-[0.14em] text-stone">from</span>
+                                                    <span className="text-xl font-medium text-ink">{pkg.price}</span>
                                                 </div>
-                                                <div className="flex gap-3 flex-wrap">
-                                                    <Magnetic>
-                                                        <button
-                                                            onClick={() => setSelectedPackage(pkg)}
-                                                            className="bg-royal-blue text-white px-5 py-3 rounded-xl font-semibold uppercase text-[10px] tracking-widest hover:bg-sunset-orange transition-colors shadow-md"
-                                                        >
-                                                            View Itinerary
-                                                        </button>
-                                                    </Magnetic>
-                                                    <Magnetic>
-                                                        <button className="bg-sunset-orange text-white px-5 py-3 rounded-xl font-semibold uppercase text-[10px] tracking-widest hover:bg-royal-blue transition-colors shadow-md">
-                                                            Reserve
-                                                        </button>
-                                                    </Magnetic>
+                                                <div className="flex gap-2">
+                                                    <button onClick={() => setSelected(pkg)} className="btn-outline btn-sm">Preview</button>
+                                                    <Link href={`/tours/${packageSlug(pkg)}`} className="btn-primary btn-sm">View</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -242,305 +137,161 @@ export default function GoldenTriangleAllView() {
                             </motion.div>
                         </AnimatePresence>
 
-                        {/* --- Pagination --- */}
                         {totalPages > 1 && (
-                            <div className="mt-20 flex justify-center items-center gap-6">
-                                <button
-                                    disabled={currentPage === 1}
-                                    onClick={() => {
-                                        setCurrentPage(prev => prev - 1);
-                                        window.scrollTo({ top: 800, behavior: 'smooth' });
-                                    }}
-                                    className="w-14 h-14 glass-card rounded-2xl flex items-center justify-center text-royal-blue disabled:opacity-20 disabled:cursor-not-allowed hover:bg-royal-blue hover:text-white transition-all duration-500"
-                                >
-                                    <ArrowRight size={24} className="rotate-180" />
-                                </button>
-
-                                <div className="flex gap-3">
+                            <div className="mt-14 flex items-center justify-center gap-3">
+                                <button disabled={currentPage === 1} onClick={() => goPage(currentPage - 1)} className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition hover:border-ink disabled:opacity-30"><ArrowLeft size={18} /></button>
+                                <div className="flex gap-2">
                                     {[...Array(totalPages)].map((_, i) => (
-                                        <button
-                                            key={i}
-                                            onClick={() => {
-                                                setCurrentPage(i + 1);
-                                                window.scrollTo({ top: 800, behavior: 'smooth' });
-                                            }}
-                                            className={`w-14 h-14 rounded-2xl font-semibold text-xs transition-all duration-500 ${currentPage === i + 1
-                                                ? "bg-sunset-orange text-white shadow-xl scale-110"
-                                                : "glass-card text-royal-blue hover:bg-royal-blue/5"
-                                                }`}
-                                        >
-                                            {i + 1}
-                                        </button>
+                                        <button key={i} onClick={() => goPage(i + 1)} className={`h-11 w-11 rounded-full text-sm font-medium transition ${currentPage === i + 1 ? "bg-ink text-paper" : "border border-line text-ink hover:border-ink"}`}>{i + 1}</button>
                                     ))}
                                 </div>
-
-                                <button
-                                    disabled={currentPage === totalPages}
-                                    onClick={() => {
-                                        setCurrentPage(prev => prev + 1);
-                                        window.scrollTo({ top: 800, behavior: 'smooth' });
-                                    }}
-                                    className="w-14 h-14 glass-card rounded-2xl flex items-center justify-center text-royal-blue disabled:opacity-20 disabled:cursor-not-allowed hover:bg-royal-blue hover:text-white transition-all duration-500"
-                                >
-                                    <ArrowRight size={24} />
-                                </button>
+                                <button disabled={currentPage === totalPages} onClick={() => goPage(currentPage + 1)} className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition hover:border-ink disabled:opacity-30"><ArrowRight size={18} /></button>
                             </div>
                         )}
 
-                        {filteredPackages.length === 0 && (
-                            <div className="text-center py-40 glass-card rounded-2xl">
-                                <Compass className="mx-auto text-sunset-orange mb-8 opacity-20" size={80} />
-                                <h3 className="text-4xl font-semibold text-royal-blue uppercase tracking-tight">No exact matches found</h3>
-                                <p className="text-dark-slate/60 font-bold italic mt-4">Try adjusting your filters or let our team build a custom path for you.</p>
-                                <button onClick={() => { setActiveTheme("All"); setActiveDuration("All"); setActiveLocation("All"); }} className="mt-10 btn-primary px-10">Reset Filters</button>
+                        {filtered.length === 0 && (
+                            <div className="card py-20 text-center">
+                                <Compass className="mx-auto text-stone" size={48} />
+                                <h3 className="display-3 mt-6 text-ink">No exact matches</h3>
+                                <p className="mt-3 text-muted">Adjust your filters, or let our team build a custom route.</p>
+                                <button onClick={() => { setActiveTheme("All"); setActiveDuration("All"); setActiveLocation("All"); }} className="btn-primary mt-6">Reset filters</button>
                             </div>
                         )}
                     </div>
 
-                    {/* --- Sidebar Lead Gen & Features --- */}
+                    {/* Sidebar */}
                     <aside className="hidden lg:block">
-                        <div className="sticky top-32 space-y-6">
-                            {/* The Hook Card */}
-                            <div className="p-7 rounded-3xl bg-royal-blue border border-white/10 text-white relative overflow-hidden shadow-md">
-                                <div className="absolute top-0 right-0 p-4 z-10">
-                                    <div className="absolute top-0 right-0 w-20 h-20 bg-sunset-orange/20 blur-[40px] -translate-y-1/2 translate-x-1/2 rounded-full" />
-                                    <Zap className="text-sunset-orange animate-pulse relative z-10" size={24} fill="currentColor" />
-                                </div>
-                                <h3 className="text-xl font-semibold uppercase tracking-tight mb-4 leading-tight text-white">Architect Your Own Path.</h3>
-                                <p className="text-white/70 font-bold italic text-sm mb-6">Don&apos;t settle for a template. Our team can merge any of these variations into one bespoke route.</p>
-
-                                <div className="space-y-3 mb-6">
-                                    {["Custom Stop-Overs", "Specific Hotel Vibe", "Dietary Ready", "24/7 Human Backup"].map((f, i) => (
-                                        <div key={i} className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-widest text-white/80">
-                                            <CheckCircle2 size={13} className="text-sunset-orange shrink-0" /> {f}
-                                        </div>
+                        <div className="sticky top-24 space-y-5">
+                            <div className="rounded-2xl bg-ink p-6 text-paper">
+                                <h3 className="text-lg font-medium text-paper">Design your own route</h3>
+                                <p className="mt-2 text-[13px] leading-relaxed text-paper/70">Don't settle for a template — our team can merge any of these into one bespoke journey.</p>
+                                <div className="my-5 space-y-2.5">
+                                    {["Custom stop-overs", "Your kind of hotels", "Dietary-ready", "24/7 human backup"].map((f) => (
+                                        <div key={f} className="flex items-center gap-2.5 text-[13px] text-paper/80"><CheckCircle2 size={14} className="shrink-0 text-clay-soft" /> {f}</div>
                                     ))}
                                 </div>
-
-                                <button className="w-full bg-sunset-orange text-white py-3 rounded-xl font-semibold uppercase tracking-widest hover:bg-white hover:text-sunset-orange transition-all duration-500 shadow-lg text-[10px]">
-                                    Build Custom Itinerary
-                                </button>
+                                <Link href="/booking" className="btn w-full rounded-full bg-paper px-5 py-3 text-ink hover:bg-clay hover:text-paper">Build a custom itinerary</Link>
                             </div>
-
-                            {/* Authority Points */}
-                            <div className="bg-white border border-royal-blue/10 p-6 rounded-3xl space-y-6 shadow-md">
-                                <h4 className="text-[10px] font-semibold uppercase tracking-[0.4em] text-royal-blue">The MyTripMyTravel Standard</h4>
-                                <FeatureItem
-                                    icon={Map}
-                                    title="Tracked Chauffeurs"
-                                    desc="Every car is GPS tracked so you always know where your driver is."
-                                />
-                                <FeatureItem
-                                    icon={ShieldCheck}
-                                    title="Zero-Surprise Pricing"
-                                    desc="Fuel, permits, and tolls pre-calculated. No hidden gate-fees."
-                                />
-                                <FeatureItem
-                                    icon={Calendar}
-                                    title="Flexible Days"
-                                    desc="Need a slow day in Jaipur? We adjust your itinerary on the fly."
-                                />
-                            </div>
-
-                            {/* Support Card */}
-                            <div className="bg-white border border-royal-blue/10 p-5 rounded-2xl flex items-center gap-4 group hover:border-sunset-orange/30 transition-all cursor-pointer shadow-sm">
-                                <div className="w-11 h-11 bg-royal-blue/5 rounded-full flex items-center justify-center shrink-0 group-hover:bg-sunset-orange transition-all">
-                                    <HelpCircle className="text-royal-blue group-hover:text-white" size={20} />
-                                </div>
-                                <div>
-                                    <h5 className="font-semibold text-royal-blue uppercase text-[10px] tracking-widest mb-0.5">Human Desk</h5>
-                                    <p className="text-[10px] font-bold text-dark-slate/40 uppercase tracking-widest">Chat with an Architect</p>
-                                </div>
+                            <div className="card space-y-5 p-6">
+                                <h4 className="text-[11px] font-medium uppercase tracking-[0.16em] text-stone">The MyTripMyTravel standard</h4>
+                                <Feature icon={Map} title="Tracked chauffeurs" desc="Every car is GPS-tracked so you always know where your driver is." />
+                                <Feature icon={ShieldCheck} title="Transparent pricing" desc="Fuel, permits and tolls pre-calculated. No hidden gate fees." />
+                                <Feature icon={Calendar} title="Flexible days" desc="Want a slow day in Jaipur? We adjust the pace on the fly." />
                             </div>
                         </div>
                     </aside>
-                </section>
+                </div>
+            </section>
 
-                {/* --- Trust & Authority Section --- */}
-                <section className="py-40 bg-royal-blue/5 relative z-10 overflow-hidden">
-                    <div className="container mx-auto px-6">
-                        <div className="grid lg:grid-cols-2 gap-24 items-center">
-                            <div>
-                                <h2 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-8">Why Travellers Trust Us</h2>
-                                <CharBlurIn text="THE AUTHORITY" className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight block leading-none mb-12" />
-                                <div className="space-y-10">
-                                    {[
-                                        { t: "Professional Chauffeurs", d: "Our chauffeurs are trained in defensive driving and attentive hospitality." },
-                                        { t: "Heritage Access", d: "Guided visits to the Taj Mahal, Amer Fort, and Jantar Mantar with local expertise." },
-                                        { t: "Comfort-First Vehicles", d: "Every vehicle is chosen for comfort on long-haul routes and easy recovery days." }
-                                    ].map((item, i) => (
-                                        <div key={i} className="flex gap-8 group">
-                                            <div className="text-sunset-orange font-semibold text-5xl opacity-10 group-hover:opacity-100 transition-all">0{i + 1}</div>
-                                            <div>
-                                                <h4 className="font-semibold text-royal-blue uppercase text-xl mb-4 italic">{item.t}</h4>
-                                                <p className="text-dark-slate/60 font-bold italic leading-relaxed">{item.d}</p>
-                                            </div>
-                                        </div>
-                                    ))}
+            {/* Trust */}
+            <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x grid items-center gap-14 lg:grid-cols-2">
+                    <div>
+                        <p className="eyebrow eyebrow-accent">Why travellers trust us</p>
+                        <h2 className="display-2 mt-3 text-ink">Considered, every mile.</h2>
+                        <div className="mt-10 space-y-8">
+                            {[
+                                { t: "Professional chauffeurs", d: "Trained in defensive driving and attentive, unobtrusive hospitality." },
+                                { t: "Heritage access", d: "Guided visits to the Taj Mahal, Amber Fort and Jantar Mantar with local expertise." },
+                                { t: "Comfort-first vehicles", d: "Chosen for comfort on long routes and easy recovery days." },
+                            ].map((item, i) => (
+                                <div key={i} className="flex gap-6">
+                                    <div className="font-display text-4xl font-semibold text-line-strong">0{i + 1}</div>
+                                    <div>
+                                        <h4 className="text-xl font-medium text-ink">{item.t}</h4>
+                                        <p className="mt-2 leading-relaxed text-muted">{item.d}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="relative h-[700px] rounded-3xl overflow-hidden shadow-3xl">
-                                <Image src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg" alt="Taj Mahal at sunrise, Agra" fill className="object-cover" />
-                                <div className="absolute inset-0 bg-royal-blue/20 backdrop-blur-[2px]" />
-                                <div className="absolute bottom-12 left-12 glass-card p-10 rounded-3xl w-full max-w-sm">
-                                    <Star className="text-sunset-orange mb-6" fill="currentColor" />
-                                    <p className="text-white font-semibold italic text-xl mb-6">"Every Golden Triangle route here is a starting point — we tailor the pace, hotels and stops to how you actually want to travel."</p>
-                                    <span className="text-sunset-orange font-semibold uppercase text-xs tracking-widest">— The MyTripMyTravel Team</span>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
-                </section>
-
-                <section className="py-40 container mx-auto px-6 z-10 relative">
-                    <div className="text-center mb-32">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6">Execution Protocol</h4>
-                        <CharBlurIn text="BOOKING FLOW" className="text-5xl md:text-[8rem] font-semibold text-royal-blue uppercase tracking-tight" />
-                        <p className="mt-8 text-xl font-bold text-royal-blue/40 italic">From archetype selection to VIP mission execution.</p>
+                    <div className="relative overflow-hidden rounded-3xl">
+                        <div className="relative aspect-[4/5]">
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg" alt="Taj Mahal at sunrise, Agra" fill className="object-cover" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
+                        </div>
+                        <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/10 bg-ink/70 p-7 backdrop-blur-sm">
+                            <Star className="text-clay-soft" fill="currentColor" size={20} />
+                            <p className="mt-4 text-lg leading-relaxed text-paper">"Every route here is a starting point — we tailor the pace, hotels and stops to how you want to travel."</p>
+                            <span className="mt-4 block text-[12px] font-medium uppercase tracking-[0.16em] text-clay-soft">— The MyTripMyTravel team</span>
+                        </div>
                     </div>
-                    <div className="grid md:grid-cols-4 gap-8">
+                </div>
+            </section>
+
+            {/* FAQ */}
+            <section className="section">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">Good to know</p>
+                    <h2 className="display-2 mt-3 text-ink">Questions about the collection</h2>
+                    <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {[
-                            { i: Map, t: "Variation Scout", d: "Browse our 30+ precise master itineraries and choose your foundation." },
-                            { i: Zap, t: "Bespoke Architect", d: "Inject your personal vibe—hotel tiers, dietary needs, and pace." },
-                            { i: Award, t: "Protocol Lock", d: "Receive your bespoke itinerary and chauffeur details." },
-                            { i: Sparkles, t: "VIP Launch", d: "Your car is ready at the gate. Experience the path." }
-                        ].map((step, idx) => (
-                            <div key={idx} className="glass-card p-12 rounded-2xl text-center group hover:bg-royal-blue hover:!bg-royal-blue transition-all duration-700 cursor-pointer border-royal-blue/5">
-                                <div className="w-24 h-24 mx-auto rounded-3xl bg-royal-blue/5 flex items-center justify-center mb-10 group-hover:bg-sunset-orange transition-all duration-500 group-hover:rotate-12">
-                                    <step.i className="text-royal-blue group-hover:!text-white transition-colors" size={32} />
-                                </div>
-                                <h4 className="text-xl font-semibold text-royal-blue group-hover:!text-white uppercase mb-4 tracking-tight italic">Phase 0{idx + 1}</h4>
-                                <h5 className="font-semibold text-royal-blue group-hover:!text-white uppercase text-xs tracking-widest mb-6 underline decoration-sunset-orange underline-offset-8 group-hover:decoration-white transition-all">{step.t}</h5>
-                                <p className="text-dark-slate/60 group-hover:!text-white font-bold text-xs italic leading-relaxed">{step.d}</p>
+                            { q: "Can I swap Agra for Varanasi?", a: "Absolutely. These are variations, not rigid rules — almost any city in India is on the menu, and we can build a loop starting anywhere." },
+                            { q: "What defines a 'medical' tour?", a: "These pair calmer stays with comfortable vehicles and run at an easier pace, suited to post-op rest and physical therapy." },
+                            { q: "Are drivers experienced with large groups?", a: "Yes — our chauffeurs have run multi-car convoys for palace weddings in Jaipur and coordinate closely across the group." },
+                            { q: "How is golden-hour photography handled?", a: "We plan visits around the best light, arriving early where possible to enjoy monuments before the busiest crowds." },
+                        ].map((f, i) => (
+                            <div key={i} className="card p-7">
+                                <h4 className="text-[17px] font-medium text-ink">{f.q}</h4>
+                                <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}
                     </div>
-                </section>
-
-                {/* --- FAQ Section --- */}
-                <section className="py-40 bg-royal-blue container mx-auto px-6 z-10 relative rounded-[5rem] mb-40 overflow-hidden">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-sunset-orange/10 blur-[150px] -translate-y-1/2 translate-x-1/2" />
-                    <div className="text-center mb-24">
-                        <h2 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-4">Intelligence</h2>
-                        <CharBlurIn text="TOUR ARCHIVE FAQ" className="text-5xl md:text-8xl font-semibold text-white uppercase tracking-tight block" />
-                    </div>
-                    <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                        <div className="glass-card p-10 rounded-3xl border-white/5 bg-white/5">
-                            <h4 className="font-semibold text-white uppercase mb-4 tracking-tight">Can I swap Agra for Varanasi?</h4>
-                            <p className="text-white/60 font-bold italic text-sm leading-relaxed">Absolutely. These are variations, not rigid rules. Almost any city in India is on our menu—we can architect a loop starting anywhere.</p>
-                        </div>
-                        <div className="glass-card p-10 rounded-3xl border-white/5 bg-white/5">
-                            <h4 className="font-semibold text-white uppercase mb-4 tracking-tight">What defines a 'Medical Tour'?</h4>
-                            <p className="text-white/60 font-bold italic text-sm leading-relaxed">These tours pair calmer stays with vehicles chosen for comfortable seating. They run at an easier pace for post-op rest and physical therapy.</p>
-                        </div>
-                        <div className="glass-card p-10 rounded-3xl border-white/5 bg-white/5">
-                            <h4 className="font-semibold text-white uppercase mb-4 tracking-tight">Are drivers experienced with large groups?</h4>
-                            <p className="text-white/60 font-bold italic text-sm leading-relaxed">Our chauffeurs have handled multi-car convoys for palace weddings in Jaipur and coordinate logistics closely across the group.</p>
-                        </div>
-                        <div className="glass-card p-10 rounded-3xl border-white/5 bg-white/5">
-                            <h4 className="font-semibold text-white uppercase mb-4 tracking-tight">How is 'Golden Hour' photography handled?</h4>
-                            <p className="text-white/60 font-bold italic text-sm leading-relaxed">We plan visits around the best light, arriving early where possible to enjoy the monuments before the busiest crowds.</p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* --- Footer CTA --- */}
-                <footer className="bg-royal-blue pb-20 relative overflow-hidden z-20">
-                    <div className="container mx-auto px-6 relative z-10 text-center">
-                        <CharBlurIn text="READY TO" className="text-white/20 text-4xl font-semibold uppercase tracking-widest" />
-                        <CharBlurIn text="START THE ENGINE?" className="text-white text-5xl md:text-[8rem] font-semibold uppercase tracking-tight block mt-4 mb-20" />
-                        <Magnetic>
-                            <button className="bg-sunset-orange text-white px-24 py-10 rounded-full font-semibold uppercase tracking-widest hover:scale-110 hover:shadow-[0_0_80px_rgba(249,115,22,0.6)] transition-all shadow-md">
-                                Consult an Architect
-                            </button>
-                        </Magnetic>
-                        <div className="mt-40 pt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-                            <span className="text-2xl font-semibold text-white uppercase tracking-tight italic">MYTRIP<span className="text-sunset-orange">MYTRAVEL</span></span>
-                            <span className="text-[10px] font-semibold uppercase tracking-[0.5em] text-white/20">© 2026 MyTripMyTravel. Golden Triangle Archive.</span>
-                        </div>
-                    </div>
-                </footer>
-
-                {/* Floating WhatsApp */}
-                <div className="fixed bottom-12 right-12 z-[500]">
-                    <Magnetic>
-                        <button className="w-24 h-24 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(37,211,102,0.4)] group overflow-hidden">
-                            <MessageCircle size={40} fill="white" className="relative z-10 group-hover:rotate-12 transition-transform" />
-                            <div className="absolute inset-0 bg-white scale-0 group-hover:scale-100 transition-transform opacity-10" />
-                        </button>
-                    </Magnetic>
                 </div>
-                {/* --- Itinerary Modal --- */}
-                <AnimatePresence>
-                    {selectedPackage && (
-                        <div className="fixed inset-0 z-[3000] flex items-center justify-center p-6 md:p-12">
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                onClick={() => setSelectedPackage(null)}
-                                className="absolute inset-0 bg-royal-blue/60 backdrop-blur-2xl"
-                            />
+            </section>
 
-                            <motion.div
-                                initial={{ scale: 0.9, y: 50, opacity: 0 }}
-                                animate={{ scale: 1, y: 0, opacity: 1 }}
-                                exit={{ scale: 0.9, y: 50, opacity: 0 }}
-                                className="bg-white rounded-3xl w-full max-w-5xl max-h-[85vh] overflow-hidden relative shadow-4xl flex flex-col md:flex-row"
-                            >
-                                <button
-                                    onClick={() => setSelectedPackage(null)}
-                                    className="absolute top-8 right-8 z-50 w-12 h-12 bg-royal-blue text-white rounded-full flex items-center justify-center hover:bg-sunset-orange transition-colors"
-                                >
-                                    <X size={24} />
-                                </button>
+            {/* CTA */}
+            <section className="section pt-0">
+                <div className="container-x">
+                    <div className="flex flex-col items-start justify-between gap-8 rounded-3xl bg-ink px-8 py-14 sm:flex-row sm:items-center sm:px-16">
+                        <h2 className="display-3 max-w-md text-paper">Ready to start planning?</h2>
+                        <Link href="/booking" className="btn rounded-full bg-paper px-7 py-3.5 text-ink hover:bg-clay hover:text-paper">Consult a planner <ArrowRight size={16} /></Link>
+                    </div>
+                </div>
+            </section>
 
-                                <div className="md:w-2/5 relative h-64 md:h-auto">
-                                    <Image src={selectedPackage.img} alt={`${selectedPackage.title} — ${selectedPackage.duration} itinerary`} fill className="object-cover" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-royal-blue to-transparent md:bg-gradient-to-r" />
-                                    <div className="absolute bottom-12 left-12 right-12 text-white">
-                                        <h4 className="text-xs font-semibold uppercase text-sunset-orange tracking-[0.4em] mb-4">{selectedPackage.theme}</h4>
-                                        <h3 className="text-4xl font-semibold uppercase tracking-tight leading-none mb-6">{selectedPackage.title}</h3>
-                                        <div className="flex items-center gap-6">
-                                            <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest"><Clock size={14} className="text-sunset-orange" /> {selectedPackage.duration}</div>
-                                            <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-sunset-orange"><Sparkles size={14} /> Master Class</div>
-                                        </div>
-                                    </div>
+            <Footer />
+
+            {/* Preview modal */}
+            <AnimatePresence>
+                {selected && (
+                    <div className="fixed inset-0 z-[3000] flex items-center justify-center p-4 sm:p-8">
+                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelected(null)} className="absolute inset-0 bg-ink/50 backdrop-blur-sm" />
+                        <motion.div initial={{ scale: 0.96, y: 20, opacity: 0 }} animate={{ scale: 1, y: 0, opacity: 1 }} exit={{ scale: 0.96, y: 20, opacity: 0 }}
+                            className="relative flex max-h-[85vh] w-full max-w-4xl flex-col overflow-hidden rounded-3xl bg-white sm:flex-row">
+                            <button onClick={() => setSelected(null)} className="absolute right-5 top-5 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-ink text-paper transition hover:bg-clay"><X size={20} /></button>
+                            <div className="relative h-56 sm:h-auto sm:w-2/5">
+                                <Image src={selected.img} alt={`${selected.title} — ${selected.duration} itinerary`} fill className="object-cover" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent sm:bg-gradient-to-r" />
+                                <div className="absolute bottom-8 left-8 right-8 text-paper">
+                                    <div className="eyebrow text-clay-soft">{selected.theme}</div>
+                                    <h3 className="mt-2 text-2xl font-medium text-paper">{selected.title}</h3>
+                                    <div className="mt-3 flex items-center gap-2 text-[12px] font-medium text-paper/80"><Clock size={14} className="text-clay-soft" /> {selected.duration}</div>
                                 </div>
-
-                                <div className="flex-1 p-12 md:p-20 overflow-y-auto no-scrollbar" data-lenis-prevent>
-                                    <h5 className="text-[10px] font-semibold uppercase tracking-[0.6em] text-royal-blue/20 mb-12">Target Itinerary Playback</h5>
-
-                                    <div className="space-y-16 relative">
-                                        <div className="absolute left-[1.35rem] top-4 bottom-4 w-[2px] bg-royal-blue/5" />
-
-                                        {selectedPackage.itinerary.map((step) => (
-                                            <div key={step.day} className="relative pl-16">
-                                                <div className="absolute left-0 top-1 w-12 h-12 rounded-2xl bg-white border-2 border-royal-blue/10 flex items-center justify-center font-semibold text-royal-blue group-hover:border-sunset-orange transition-colors">
-                                                    {step.day}
-                                                </div>
-                                                <h6 className="text-lg font-semibold text-royal-blue uppercase tracking-tight mb-3">Day {step.day} Protocol</h6>
-                                                <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed">{step.plan}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    <div className="mt-20 pt-12 border-t border-royal-blue/5 flex flex-col md:flex-row items-center justify-between gap-12">
-                                        <div>
-                                            <span className="text-[10px] uppercase font-semibold text-royal-blue/40 block mb-1">Architecture Base Price</span>
-                                            <span className="text-4xl font-semibold text-royal-blue">{selectedPackage.price}</span>
+                            </div>
+                            <div className="flex-1 overflow-y-auto p-8 sm:p-10" data-lenis-prevent>
+                                <p className="eyebrow eyebrow-accent">Day by day</p>
+                                <div className="relative mt-6 space-y-8">
+                                    {selected.itinerary.map((step) => (
+                                        <div key={step.day} className="relative border-l border-line pl-8 last:border-0">
+                                            <div className="absolute left-0 top-0 flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full bg-ink text-[12px] font-medium text-paper">{step.day}</div>
+                                            <h6 className="text-[15px] font-medium text-ink">Day {step.day}</h6>
+                                            <p className="mt-1 text-sm leading-relaxed text-muted">{step.plan}</p>
                                         </div>
-                                        <button className="btn-primary w-full md:w-auto px-16 py-6 text-xs">
-                                            Lock This Variation
-                                        </button>
-                                    </div>
+                                    ))}
                                 </div>
-                            </motion.div>
-                        </div>
-                    )}
-                </AnimatePresence>
-                <Footer />
-            </main>
-        </SmoothScroll>
+                                <div className="mt-10 flex flex-col items-start justify-between gap-5 border-t border-line pt-8 sm:flex-row sm:items-center">
+                                    <div>
+                                        <span className="block text-[11px] uppercase tracking-[0.14em] text-stone">from</span>
+                                        <span className="text-3xl font-medium text-ink">{selected.price}</span>
+                                    </div>
+                                    <Link href={`/tours/${packageSlug(selected)}`} className="btn-primary w-full sm:w-auto">View full itinerary <ArrowRight size={16} /></Link>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
+        </main>
     );
 }
