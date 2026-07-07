@@ -4,229 +4,179 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, ArrowRight, HelpCircle, Landmark, Compass, Lightbulb } from "lucide-react";
+import { ChevronRight, ArrowRight, Landmark, Lightbulb } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Destination } from "@/data/destinations";
 import type { Monument } from "@/data/monuments";
 
-const SectionLabel = ({ children }: { children: React.ReactNode }) => (
-    <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">
-        {children}
-    </h4>
+const fade = {
+    hidden: { opacity: 0, y: 16 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+} as const;
+
+const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+    <p className="eyebrow eyebrow-accent">{children}</p>
 );
 
 export default function MonumentView({
-    dest,
-    monument,
-    siblings,
+    dest, monument, siblings,
 }: {
-    dest: Destination;
-    monument: Monument;
-    siblings: Monument[];
+    dest: Destination; monument: Monument; siblings: Monument[];
 }) {
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
-                <GlassyProgressBar />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                {/* Hero */}
-                <section className="relative h-[68vh] flex items-end overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <Image src={monument.heroImg} alt={`${monument.name}, ${dest.name}`} fill priority className="object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/35 to-royal-blue/10" />
-                    </div>
-                    <div className="container mx-auto px-6 relative z-10 pb-16">
-                        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-3 mb-8 text-white/70 font-black uppercase text-[10px] tracking-[0.3em]">
-                            <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
-                            <ChevronRight size={12} />
-                            <Link href="/destinations" className="hover:text-sunset-orange transition-colors">Destinations</Link>
-                            <ChevronRight size={12} />
-                            <Link href={`/destinations/region/${dest.regionSlug}`} className="hover:text-sunset-orange transition-colors">{dest.region}</Link>
-                            <ChevronRight size={12} />
-                            <Link href={`/destinations/${dest.slug}`} className="hover:text-sunset-orange transition-colors">{dest.name}</Link>
-                            <ChevronRight size={12} />
-                            <Link href={`/destinations/${dest.slug}/monuments`} className="hover:text-sunset-orange transition-colors">Monuments</Link>
-                            <ChevronRight size={12} />
-                            <span className="text-sunset-orange">{monument.name}</span>
-                        </nav>
-                        <motion.h4 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">
-                            {monument.type} &middot; {monument.era}
-                        </motion.h4>
-                        <CharBlurIn text={monument.name.toUpperCase()} className="text-4xl md:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] block mb-5" />
-                        <p className="text-white/70 font-bold italic text-lg md:text-2xl max-w-2xl">{monument.tagline}</p>
-                    </div>
-                </section>
+            {/* Hero */}
+            <section className="relative flex h-[66vh] min-h-[500px] items-end overflow-hidden">
+                <Image src={monument.heroImg} alt={`${monument.name}, ${dest.name}`} fill priority className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/10" />
+                <div className="container-x relative z-10 pb-14 pt-32">
+                    <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-[12px] text-paper/70">
+                        <Link href="/" className="hover:text-clay-soft">Home</Link>
+                        <ChevronRight size={12} />
+                        <Link href={`/destinations/region/${dest.regionSlug}`} className="hover:text-clay-soft">{dest.region}</Link>
+                        <ChevronRight size={12} />
+                        <Link href={`/destinations/${dest.slug}`} className="hover:text-clay-soft">{dest.name}</Link>
+                        <ChevronRight size={12} />
+                        <Link href={`/destinations/${dest.slug}/monuments`} className="hover:text-clay-soft">Monuments</Link>
+                        <ChevronRight size={12} />
+                        <span className="text-clay-soft">{monument.name}</span>
+                    </nav>
+                    <motion.div initial="hidden" animate="visible" variants={fade}>
+                        <span className="eyebrow text-paper/70">{monument.type} · {monument.era}</span>
+                        <h1 className="display-1 mt-4 font-medium text-paper">{monument.name}</h1>
+                        <p className="mt-4 max-w-2xl text-lg text-paper/80">{monument.tagline}</p>
+                    </motion.div>
+                </div>
+            </section>
 
-                {/* Answer + intro */}
-                <section className="py-24 md:py-32 container mx-auto px-6">
-                    <div className="max-w-5xl">
-                        <SectionLabel>The Brief</SectionLabel>
-                        <p className="text-2xl md:text-4xl font-black text-royal-blue leading-snug tracking-tight mb-14">
-                            {monument.answer}
-                        </p>
-                        <div className="space-y-7 max-w-3xl">
-                            {monument.intro.map((para, i) => (
-                                <motion.p
-                                    key={i}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    className="text-lg md:text-xl text-dark-slate/70 font-bold leading-relaxed"
-                                >
-                                    {para}
-                                </motion.p>
-                            ))}
-                        </div>
+            {/* Answer + intro */}
+            <section className="section">
+                <div className="container-x max-w-4xl">
+                    <Eyebrow>Overview</Eyebrow>
+                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{monument.answer}</p>
+                    <div className="mt-10 space-y-5">
+                        {monument.intro.map((para, i) => (
+                            <p key={i} className="text-[17px] leading-relaxed text-muted">{para}</p>
+                        ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* Quick facts */}
-                <section className="py-20 bg-royal-blue/5">
-                    <div className="container mx-auto px-6">
-                        <SectionLabel>Quick Facts</SectionLabel>
-                        <h2 className="text-3xl md:text-5xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-12">
-                            {monument.name} at a glance
-                        </h2>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                            {monument.quickFacts.map((f, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.04 }}
-                                    className="glass-card rounded-3xl p-7 border-royal-blue/5"
-                                >
-                                    <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-3">{f.label}</div>
-                                    <div className="text-lg font-black text-royal-blue leading-tight">{f.value}</div>
-                                </motion.div>
-                            ))}
-                        </div>
+            {/* Quick facts */}
+            <section className="border-y border-line bg-paper-dim/60 py-16 sm:py-20">
+                <div className="container-x">
+                    <Eyebrow>At a glance</Eyebrow>
+                    <h2 className="display-3 mt-3 text-ink">{monument.name} in brief</h2>
+                    <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        {monument.quickFacts.map((f, i) => (
+                            <div key={i} className="card p-6">
+                                <div className="eyebrow">{f.label}</div>
+                                <div className="mt-2 text-lg font-medium text-ink">{f.value}</div>
+                            </div>
+                        ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* Highlights */}
-                <section className="py-28 bg-royal-blue text-white relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-sunset-orange/10 blur-[150px] -translate-y-1/2 translate-x-1/2" />
-                    <div className="container mx-auto px-6 relative z-10">
-                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">What to See</h4>
-                        <CharBlurIn text="THE HIGHLIGHTS" className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter block leading-none mb-16" />
-                        <div className="grid md:grid-cols-2 gap-6">
-                            {monument.highlights.map((h, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.05 }}
-                                    className="glass-card rounded-[2.5rem] p-9 border-white/5 bg-white/5"
-                                >
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <Landmark className="text-sunset-orange" size={20} />
-                                        <h3 className="text-2xl font-black text-white uppercase tracking-tighter leading-tight">{h.name}</h3>
-                                    </div>
-                                    <p className="text-white/60 font-bold italic text-sm leading-relaxed">{h.detail}</p>
-                                </motion.div>
-                            ))}
-                        </div>
+            {/* Highlights */}
+            <section className="bg-ink py-20 sm:py-28">
+                <div className="container-x">
+                    <p className="eyebrow text-clay-soft">What to see</p>
+                    <h2 className="display-2 mt-3 text-paper">Highlights</h2>
+                    <div className="mt-12 grid gap-5 md:grid-cols-2">
+                        {monument.highlights.map((h, i) => (
+                            <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}
+                                className="rounded-2xl border border-white/10 bg-white/[0.04] p-7">
+                                <div className="flex items-center gap-3">
+                                    <Landmark className="text-clay-soft" size={18} />
+                                    <h3 className="text-xl font-medium text-paper">{h.name}</h3>
+                                </div>
+                                <p className="mt-3 text-sm leading-relaxed text-paper/60">{h.detail}</p>
+                            </motion.div>
+                        ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* Visitor info + tips */}
-                <section className="py-28 container mx-auto px-6 grid lg:grid-cols-2 gap-16">
+            {/* Visitor info + tips */}
+            <section className="section">
+                <div className="container-x grid gap-14 lg:grid-cols-2">
                     <div>
-                        <SectionLabel>Visitor Protocol</SectionLabel>
-                        <div className="space-y-px">
+                        <Eyebrow>Visitor information</Eyebrow>
+                        <div className="mt-8 divide-y divide-line">
                             {monument.visitorInfo.map((v, i) => (
-                                <div key={i} className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 py-6 border-b border-royal-blue/10">
-                                    <span className="sm:w-40 shrink-0 text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange">{v.label}</span>
-                                    <span className="text-base md:text-lg text-dark-slate/70 font-bold italic leading-relaxed">{v.value}</span>
+                                <div key={i} className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-8">
+                                    <span className="shrink-0 text-[11px] font-medium uppercase tracking-[0.18em] text-stone sm:w-40">{v.label}</span>
+                                    <span className="text-[16px] leading-relaxed text-ink-soft">{v.value}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
                     <div>
-                        <SectionLabel>How We Run It</SectionLabel>
-                        <div className="space-y-5">
+                        <Eyebrow>Our tips</Eyebrow>
+                        <div className="mt-8 space-y-4">
                             {monument.tips.map((t, i) => (
-                                <div key={i} className="glass-card rounded-3xl p-7 border-royal-blue/5 flex gap-4">
-                                    <Lightbulb className="text-sunset-orange shrink-0 mt-1" size={20} />
-                                    <p className="text-base md:text-lg text-dark-slate/70 font-bold italic leading-relaxed">{t}</p>
+                                <div key={i} className="card flex gap-4 p-6">
+                                    <Lightbulb className="mt-0.5 shrink-0 text-clay" size={19} />
+                                    <p className="text-[15px] leading-relaxed text-muted">{t}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ */}
+            {monument.faqs.length > 0 && (
+                <section className="border-y border-line bg-paper-dim/60 py-20 sm:py-24">
+                    <div className="container-x">
+                        <Eyebrow>Good to know</Eyebrow>
+                        <h2 className="display-3 mt-3 text-ink">{monument.name} — your questions</h2>
+                        <div className="mt-10 grid gap-6 md:grid-cols-2">
+                            {monument.faqs.map((f, i) => (
+                                <div key={i} className="card p-7">
+                                    <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                    <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </section>
+            )}
 
-                {/* FAQ */}
-                {monument.faqs.length > 0 && (
-                    <section className="py-28 bg-royal-blue/5">
-                        <div className="container mx-auto px-6">
-                            <div className="text-center mb-16">
-                                <SectionLabel>Intelligence</SectionLabel>
-                                <CharBlurIn text={`${monument.name.toUpperCase()} FAQ`} className="text-3xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter block leading-none" />
-                            </div>
-                            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                                {monument.faqs.map((f, i) => (
-                                    <div key={i} className="glass-card p-10 rounded-3xl border-royal-blue/5">
-                                        <div className="flex items-start gap-4 mb-4">
-                                            <HelpCircle className="text-sunset-orange shrink-0 mt-1" size={20} />
-                                            <h3 className="font-black text-royal-blue uppercase tracking-tight text-lg leading-tight">{f.q}</h3>
-                                        </div>
-                                        <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed pl-9">{f.a}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* Sibling monuments + CTA */}
-                <section className="py-28 container mx-auto px-6">
+            {/* Siblings + CTA */}
+            <section className="section">
+                <div className="container-x">
                     {siblings.length > 0 && (
-                        <div className="mb-20">
-                            <SectionLabel>More in {dest.name}</SectionLabel>
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                                <Link
-                                    href={`/destinations/${dest.slug}`}
-                                    className="glass-card rounded-3xl p-7 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all flex items-center justify-between"
-                                >
-                                    <span className="font-black uppercase text-sm tracking-tight text-royal-blue group-hover:text-sunset-orange transition-colors">{dest.name} — Full Brief</span>
-                                    <ArrowRight size={16} className="text-sunset-orange" />
+                        <div className="mb-16">
+                            <Eyebrow>More in {dest.name}</Eyebrow>
+                            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                <Link href={`/destinations/${dest.slug}`} className="card card-hover group flex items-center justify-between p-6">
+                                    <span className="text-[15px] font-medium text-ink group-hover:text-clay">{dest.name} — full guide</span>
+                                    <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                                 </Link>
                                 {siblings.map((s) => (
-                                    <Link
-                                        key={s.slug}
-                                        href={`/destinations/${dest.slug}/monuments/${s.slug}`}
-                                        className="glass-card rounded-3xl p-7 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all flex items-center justify-between"
-                                    >
-                                        <span className="font-black uppercase text-sm tracking-tight text-royal-blue group-hover:text-sunset-orange transition-colors">{s.name}</span>
-                                        <ArrowRight size={16} className="text-sunset-orange shrink-0" />
+                                    <Link key={s.slug} href={`/destinations/${dest.slug}/monuments/${s.slug}`} className="card card-hover group flex items-center justify-between p-6">
+                                        <span className="text-[15px] font-medium text-ink group-hover:text-clay">{s.name}</span>
+                                        <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                                     </Link>
                                 ))}
                             </div>
                         </div>
                     )}
 
-                    <div className="glass-card p-12 md:p-20 rounded-[4rem] bg-sunset-orange text-white text-center shadow-2xl relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <Compass className="mx-auto mb-8 opacity-30" size={56} />
-                        <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-10 relative z-10">
-                            See <span className="text-royal-blue">{monument.name}</span> properly
-                        </h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-royal-blue text-white py-6 px-12 rounded-[2rem] font-black uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">
-                                Consult a Master Planner
-                            </Link>
-                        </Magnetic>
+                    <div className="relative overflow-hidden rounded-3xl bg-ink px-8 py-14 text-center sm:px-16 sm:py-20">
+                        <h2 className="display-2 mx-auto max-w-2xl text-paper">See {monument.name}, properly.</h2>
+                        <p className="mx-auto mt-4 max-w-xl text-paper/70">A private, chauffeured visit with an expert guide — timed for the light and the crowds.</p>
+                        <Link href="/booking" className="btn mt-8 rounded-full bg-paper px-7 py-3.5 text-ink hover:bg-clay hover:text-paper">Consult a planner</Link>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <Footer />
+        </main>
     );
 }

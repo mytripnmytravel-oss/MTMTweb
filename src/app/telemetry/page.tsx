@@ -18,13 +18,13 @@ export default function TelemetryPage() {
                     <motion.h4
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-royal-blue font-black uppercase tracking-[0.8em] text-sm mb-6"
+                        className="text-royal-blue font-semibold uppercase tracking-[0.8em] text-sm mb-6"
                     >
                         Active Command Center
                     </motion.h4>
                     <CharBlurIn
                         text="FLEET TELEMETRY"
-                        className="text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter leading-[0.85] mb-12"
+                        className="text-5xl md:text-[8rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
                     />
                     <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed max-w-3xl mx-auto">
                         Real-time intelligence on our entire surface fleet. All vehicles in the elite Car Rental division are continually tracked for safety, routing efficiency, and driver biometrics to guarantee zero-fail missions.
@@ -34,14 +34,14 @@ export default function TelemetryPage() {
                         <div className="flex items-center gap-4 border border-royal-blue/10 p-6 rounded-2xl">
                             <Satellite className="text-sunset-orange" size={30} />
                             <div>
-                                <h6 className="font-black text-royal-blue uppercase text-sm">GPS Uplink</h6>
+                                <h6 className="font-semibold text-royal-blue uppercase text-sm">GPS Uplink</h6>
                                 <p className="text-xs font-bold italic text-dark-slate/50">Active on all assets</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-4 border border-royal-blue/10 p-6 rounded-2xl">
                             <Car className="text-sunset-orange" size={30} />
                             <div>
-                                <h6 className="font-black text-royal-blue uppercase text-sm">Chauffeur Status</h6>
+                                <h6 className="font-semibold text-royal-blue uppercase text-sm">Chauffeur Status</h6>
                                 <p className="text-xs font-bold italic text-dark-slate/50">Vetted & Monitored</p>
                             </div>
                         </div>

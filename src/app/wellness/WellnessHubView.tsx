@@ -72,13 +72,13 @@ export default function WellnessHubView() {
                         <motion.h4
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-6"
+                            className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6"
                         >
                             Wellness & Recovery
                         </motion.h4>
                         <CharBlurIn
                             text="MEDICAL SANCTUARY"
-                            className="text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter leading-[0.85] mb-12"
+                            className="text-5xl md:text-[8rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
                         />
                         <div className="flex flex-col md:flex-row gap-12 items-start">
                             <motion.p
@@ -91,7 +91,7 @@ export default function WellnessHubView() {
                             </motion.p>
                             <Magnetic>
                                 <Link href="/booking">
-                                    <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-sunset-orange transition-all duration-500">
+                                    <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-semibold uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-sunset-orange transition-all duration-500">
                                         Consult the Wellness Desk <ArrowRight size={16} />
                                     </button>
                                 </Link>
@@ -109,7 +109,7 @@ export default function WellnessHubView() {
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.1 }}
-                                className={`group relative h-[600px] rounded-[3rem] overflow-hidden bg-gradient-to-br ${service.theme} border border-royal-blue/5`}
+                                className={`group relative h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br ${service.theme} border border-royal-blue/5`}
                             >
                                 <div className="absolute inset-0 opacity-20 group-hover:opacity-100 transition-opacity duration-1000">
                                     <Image
@@ -123,14 +123,14 @@ export default function WellnessHubView() {
                                     <div className={`w-16 h-16 rounded-2xl bg-white shadow-xl flex items-center justify-center mb-8 ${service.accent}`}>
                                         <service.icon size={32} />
                                     </div>
-                                    <h3 className="text-4xl font-black text-royal-blue uppercase tracking-tighter mb-4">{service.title}</h3>
+                                    <h3 className="text-4xl font-semibold text-royal-blue uppercase tracking-tight mb-4">{service.title}</h3>
                                     <p className="text-dark-slate/60 font-bold italic text-lg mb-8 max-w-sm">{service.desc}</p>
                                     <div className="flex flex-wrap gap-2 mb-8">
                                         {service.tags.map(tag => (
-                                            <span key={tag} className="px-4 py-2 rounded-full bg-royal-blue/5 text-royal-blue font-black uppercase text-[10px] tracking-widest">{tag}</span>
+                                            <span key={tag} className="px-4 py-2 rounded-full bg-royal-blue/5 text-royal-blue font-semibold uppercase text-[10px] tracking-widest">{tag}</span>
                                         ))}
                                     </div>
-                                    <Link href={service.href} className={`font-black uppercase text-xs tracking-[0.3em] flex items-center gap-4 ${service.accent} group/link`}>
+                                    <Link href={service.href} className={`font-semibold uppercase text-xs tracking-[0.3em] flex items-center gap-4 ${service.accent} group/link`}>
                                         Explore programme <ArrowRight size={16} className="group-hover/link:translate-x-3 transition-transform" />
                                     </Link>
                                 </div>
@@ -146,8 +146,8 @@ export default function WellnessHubView() {
                     <div className="container mx-auto px-6 relative z-10">
                         <div className="grid lg:grid-cols-2 gap-24 items-center">
                             <div>
-                                <h4 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-8">Wellness Concierge</h4>
-                                <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-12">
+                                <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-8">Wellness Concierge</h4>
+                                <h2 className="text-5xl md:text-7xl font-semibold text-white uppercase tracking-tight leading-none mb-12">
                                     Zero Surprise <br /> <span className="text-white/30 text-4xl">Wellness Logistics.</span>
                                 </h2>
                                 <div className="space-y-8 mb-16">
@@ -167,7 +167,7 @@ export default function WellnessHubView() {
                                 </div>
                                 <Magnetic>
                                     <Link href="/booking">
-                                        <button className="bg-white text-royal-blue px-12 py-6 rounded-full font-black uppercase tracking-widest text-xs hover:bg-sunset-orange hover:text-white transition-all duration-500">
+                                        <button className="bg-white text-royal-blue px-12 py-6 rounded-full font-semibold uppercase tracking-widest text-xs hover:bg-sunset-orange hover:text-white transition-all duration-500">
                                             Plan a Wellness Programme
                                         </button>
                                     </Link>
@@ -176,37 +176,37 @@ export default function WellnessHubView() {
 
                             <div className="grid grid-cols-2 gap-6">
                                 <Tilt3D>
-                                    <div className="glass-card p-10 rounded-[3rem] aspect-square flex flex-col justify-between border-white/10">
+                                    <div className="glass-card p-10 rounded-2xl aspect-square flex flex-col justify-between border-white/10">
                                         <Shield className="text-sunset-orange" size={40} />
                                         <div>
-                                            <h5 className="text-white font-black uppercase tracking-widest text-sm mb-4">Discreet & Confidential</h5>
+                                            <h5 className="text-white font-semibold uppercase tracking-widest text-sm mb-4">Discreet & Confidential</h5>
                                             <p className="text-white/40 text-[11px] font-bold italic">Your details and health notes handled privately.</p>
                                         </div>
                                     </div>
                                 </Tilt3D>
                                 <Tilt3D>
-                                    <div className="glass-card p-10 rounded-[3rem] aspect-square flex flex-col justify-between border-white/10 mt-12">
+                                    <div className="glass-card p-10 rounded-2xl aspect-square flex flex-col justify-between border-white/10 mt-12">
                                         <Star className="text-sunset-orange" size={40} />
                                         <div>
-                                            <h5 className="text-white font-black uppercase tracking-widest text-sm mb-4">Vetted Partners</h5>
+                                            <h5 className="text-white font-semibold uppercase tracking-widest text-sm mb-4">Vetted Partners</h5>
                                             <p className="text-white/40 text-[11px] font-bold italic">AYUSH-certified centres and accredited facilities.</p>
                                         </div>
                                     </div>
                                 </Tilt3D>
                                 <Tilt3D>
-                                    <div className="glass-card p-10 rounded-[3rem] aspect-square flex flex-col justify-between border-white/10">
+                                    <div className="glass-card p-10 rounded-2xl aspect-square flex flex-col justify-between border-white/10">
                                         <Clock className="text-sunset-orange" size={40} />
                                         <div>
-                                            <h5 className="text-white font-black uppercase tracking-widest text-sm mb-4">Priority Response</h5>
+                                            <h5 className="text-white font-semibold uppercase tracking-widest text-sm mb-4">Priority Response</h5>
                                             <p className="text-white/40 text-[11px] font-bold italic">A fast reply from the wellness desk on enquiry.</p>
                                         </div>
                                     </div>
                                 </Tilt3D>
                                 <Tilt3D>
-                                    <div className="glass-card p-10 rounded-[3rem] aspect-square flex flex-col justify-between border-white/10 mt-12">
+                                    <div className="glass-card p-10 rounded-2xl aspect-square flex flex-col justify-between border-white/10 mt-12">
                                         <Heart className="text-sunset-orange" size={40} />
                                         <div>
-                                            <h5 className="text-white font-black uppercase tracking-widest text-sm mb-4">Honest Care</h5>
+                                            <h5 className="text-white font-semibold uppercase tracking-widest text-sm mb-4">Honest Care</h5>
                                             <p className="text-white/40 text-[11px] font-bold italic">Genuine therapy, never an overstated cure.</p>
                                         </div>
                                     </div>
@@ -219,11 +219,11 @@ export default function WellnessHubView() {
                 {/* --- Physical Locations: Silent Havelis --- */}
                 <section className="py-40 container mx-auto px-6 relative z-10">
                     <div className="text-center mb-24">
-                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-6">Restorative Geography</h4>
-                        <h2 className="text-5xl md:text-8xl font-black text-royal-blue uppercase tracking-tighter leading-none">SILENT HAVELIS</h2>
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6">Restorative Geography</h4>
+                        <h2 className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight leading-none">SILENT HAVELIS</h2>
                     </div>
 
-                    <div className="relative h-[800px] rounded-[4rem] overflow-hidden group">
+                    <div className="relative h-[800px] rounded-3xl overflow-hidden group">
                         <Image
                             src="https://upload.wikimedia.org/wikipedia/commons/d/de/Rawla_Narlai_Fort_Entrance.jpg"
                             alt="A restored heritage fort-haveli retreat in the Aravalli hills of Rajasthan"
@@ -235,9 +235,9 @@ export default function WellnessHubView() {
                                 <div className="max-w-xl">
                                     <div className="flex items-center gap-4 mb-8">
                                         <MapPin className="text-sunset-orange" size={24} />
-                                        <span className="text-white font-black uppercase tracking-widest text-xs">Aravalli Ranges, Rajasthan</span>
+                                        <span className="text-white font-semibold uppercase tracking-widest text-xs">Aravalli Ranges, Rajasthan</span>
                                     </div>
-                                    <h3 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-tight mb-8">
+                                    <h3 className="text-4xl md:text-6xl font-semibold text-white uppercase tracking-tight leading-tight mb-8">
                                         A Retreat of <br /> <span className="text-sunset-orange">Real Quiet.</span>
                                     </h3>
                                     <p className="text-white/60 font-bold italic text-xl leading-relaxed">
@@ -245,27 +245,27 @@ export default function WellnessHubView() {
                                     </p>
                                 </div>
                                 <div className="flex flex-col gap-8">
-                                    <div className="glass-card p-12 rounded-[3rem] border-white/10">
+                                    <div className="glass-card p-12 rounded-2xl border-white/10">
                                         <div className="flex justify-between items-center mb-8">
-                                            <span className="text-white/40 font-black uppercase text-[10px] tracking-widest">The Setting</span>
+                                            <span className="text-white/40 font-semibold uppercase text-[10px] tracking-widest">The Setting</span>
                                             <div className="flex gap-2">
                                                 {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-sunset-orange" />)}
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-2 gap-12">
                                             <div>
-                                                <h6 className="text-white font-black text-2xl uppercase mb-1">Quiet</h6>
-                                                <p className="text-white/30 text-[9px] font-black uppercase tracking-widest">Low ambient noise</p>
+                                                <h6 className="text-white font-semibold text-2xl uppercase mb-1">Quiet</h6>
+                                                <p className="text-white/30 text-[9px] font-semibold uppercase tracking-widest">Low ambient noise</p>
                                             </div>
                                             <div>
-                                                <h6 className="text-white font-black text-2xl uppercase mb-1">Off-grid</h6>
-                                                <p className="text-white/30 text-[9px] font-black uppercase tracking-widest">Digital-light calm</p>
+                                                <h6 className="text-white font-semibold text-2xl uppercase mb-1">Off-grid</h6>
+                                                <p className="text-white/30 text-[9px] font-semibold uppercase tracking-widest">Digital-light calm</p>
                                             </div>
                                         </div>
                                     </div>
                                     <Magnetic>
                                         <Link href="/booking">
-                                            <button className="bg-sunset-orange text-white w-full py-8 rounded-[2rem] font-black uppercase tracking-widest text-xs shadow-2xl hover:bg-white hover:text-sunset-orange transition-all duration-500">
+                                            <button className="bg-sunset-orange text-white w-full py-8 rounded-2xl font-semibold uppercase tracking-widest text-xs shadow-md hover:bg-white hover:text-sunset-orange transition-all duration-500">
                                                 Enquire About a Retreat
                                             </button>
                                         </Link>

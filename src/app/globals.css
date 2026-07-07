@@ -1,103 +1,154 @@
 @import "tailwindcss";
 
+/*
+  MyTripMyTravel — Modern Premium Minimal design system, on the MTMT brand
+  palette (royal-blue + sunset-orange on soft-white, slate for text).
+  Semantic tokens (ink / paper / line / muted / stone / clay) are mapped onto
+  the brand colours, and the legacy names (royal-blue / sunset-orange /
+  soft-white / dark-slate) keep their MTMT values, so every utility class
+  across the templates renders in the minimal language using brand colours.
+*/
+
 @theme {
-  --color-royal-blue: #1E40AF;
-  --color-sunset-orange: #F97316;
-  --color-dark-slate: #0F172A;
-  --color-soft-white: #F8FAFC;
-  
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  /* MTMT brand palette — royal-blue + sunset-orange on light, slate for text.
+     Semantic tokens (ink / paper / clay / …) are mapped ONTO the brand
+     colours so the minimal design language uses only the MTMT combinations. */
+  --color-ink: #1e40af;          /* royal-blue — primary / brand-dark surfaces */
+  --color-ink-soft: #334155;     /* slate-700 — body copy */
+  --color-paper: #f8fafc;        /* soft-white canvas */
+  --color-paper-dim: #f1f5f9;    /* slate-100 — faint section fill */
+  --color-line: #e2e8f0;         /* slate-200 — hairline borders */
+  --color-line-strong: #cbd5e1;  /* slate-300 */
+  --color-muted: #475569;        /* slate-600 — secondary text */
+  --color-stone: #94a3b8;        /* slate-400 — tertiary / captions */
+  --color-clay: #f97316;         /* sunset-orange — the accent */
+  --color-clay-soft: #fb923c;    /* orange-400 — accent on dark surfaces */
+
+  /* Original brand tokens (restored to MTMT values; widely referenced) */
+  --color-royal-blue: #1e40af;
+  --color-sunset-orange: #f97316;
+  --color-soft-white: #f8fafc;
+  --color-dark-slate: #0f172a;
+
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-outfit), var(--font-sans), sans-serif;
   --font-outfit: var(--font-outfit), sans-serif;
 }
 
 @layer base {
+  html { scroll-behavior: smooth; }
+
   body {
-    @apply bg-soft-white font-sans text-dark-slate overflow-x-hidden;
+    @apply bg-paper text-ink-soft font-sans antialiased overflow-x-hidden;
+    letter-spacing: -0.006em;
+    line-height: 1.65;
   }
-  h1, h2, h3, h4, h5, h6, p, span {
-    @apply font-outfit font-black;
-    word-break: keep-all;
-    overflow-wrap: break-word; /* break-word allows wrapping between words but not within them in most cases */
-    hyphens: none;
+
+  /* Headings: quiet display type — medium weight, tight tracking, normal case.
+     Replaces the old global font-black + uppercase rule. */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-ink;
+    font-weight: 550;
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    text-wrap: balance;
   }
+
+  p { text-wrap: pretty; }
+  a { @apply transition-colors duration-300; color: inherit; }
+
+  ::selection { background-color: var(--color-clay); color: #fff; }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--color-paper); }
+  ::-webkit-scrollbar-thumb { background: var(--color-line-strong); border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-stone); }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-white/40 backdrop-blur-3xl border border-white/20 shadow-2xl;
+  .container-x { @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12; }
+  .container-narrow { @apply mx-auto w-full max-w-[820px] px-5 sm:px-8; }
+
+  /* Small tracked label — the minimal-design eyebrow */
+  .eyebrow { @apply inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-stone; }
+  .eyebrow-accent { @apply text-clay; }
+
+  .rule { @apply h-px w-full bg-line; }
+
+  /* Card — thin border, whisper shadow, modest radius */
+  .card { @apply bg-white border border-line rounded-2xl transition-all duration-300; }
+  .card-hover { @apply hover:border-line-strong hover:shadow-[0_18px_50px_-30px_rgba(26,23,18,0.35)] hover:-translate-y-0.5; }
+
+  /* Legacy .glass-card re-skinned to minimal (used across templates) */
+  .glass-card { @apply bg-white/85 backdrop-blur-sm border border-line rounded-2xl shadow-[0_10px_40px_-32px_rgba(26,23,18,0.4)]; }
+
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium tracking-tight transition-all duration-300 whitespace-nowrap; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium tracking-tight transition-all duration-300 whitespace-nowrap bg-ink text-paper px-6 py-3 hover:bg-clay; }
+  .btn-outline { @apply inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium tracking-tight transition-all duration-300 whitespace-nowrap border border-ink/25 text-ink px-6 py-3 hover:border-ink hover:bg-ink hover:text-paper; }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium tracking-tight transition-all duration-300 whitespace-nowrap text-ink px-3 py-2 hover:text-clay; }
+  .btn-sm { @apply px-4 py-2 text-[13px]; }
+
+  .link-line { @apply inline-flex items-center gap-1.5 text-ink underline decoration-line-strong decoration-1 underline-offset-[5px] hover:decoration-clay hover:text-clay; }
+
+  .pill { @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-paper-dim px-3 py-1 text-[12px] font-medium text-muted; }
+
+  .section { @apply py-20 sm:py-28; }
+
+  .field { @apply w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-stone outline-none transition focus:border-ink; }
+}
+
+@layer utilities {
+  /* Fluid display sizes */
+  .display-1 { font-size: clamp(2.6rem, 6vw, 5rem); }
+  .display-2 { font-size: clamp(1.9rem, 4vw, 3.25rem); }
+  .display-3 { font-size: clamp(1.4rem, 2.4vw, 2rem); }
+
+  .text-balance { text-wrap: balance; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-rise { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .animate-float { animation: floaty 7s ease-in-out infinite; }
+
+  /* Legacy marquee (preserved) */
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .animate-marquee { animation: marquee 45s linear infinite; }
+
+  .vertical-text { writing-mode: vertical-rl; text-orientation: mixed; }
+
+  /* Calm canvas + legacy blob (softened) */
+  .liquid-bg {
+    @apply fixed inset-0 z-[-1] overflow-hidden;
+    background:
+      radial-gradient(1200px 600px at 82% -12%, rgba(30, 64, 175, 0.05), transparent 60%),
+      var(--color-paper);
+  }
+  .liquid-blob-1 {
+    @apply absolute -top-[10%] -right-[10%] w-[55vw] h-[55vw] rounded-full blur-[90px];
+    background: rgba(30, 64, 175, 0.04);
   }
 
-  .btn-primary {
-    @apply bg-royal-blue text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-sunset-orange transition-all duration-500 shadow-xl;
+  @media (prefers-reduced-motion: reduce) {
+    .animate-rise, .animate-float, .animate-marquee, .liquid-blob-1 { animation: none; }
+    html { scroll-behavior: auto; }
   }
 }
 
-/* Custom Animations */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Liquid BG */
-.liquid-bg {
-  @apply fixed inset-0 z-[-1] overflow-hidden;
-  background: radial-gradient(circle at 50% 50%, #f1f5f9 0%, #e2e8f0 100%);
-}
-
-.liquid-blob-1 {
-  @apply absolute -top-[10%] -right-[10%] w-[60vw] h-[60vw] bg-royal-blue/5 rounded-full blur-[80px];
-  animation: blob-float 20s infinite alternate;
-}
-
-@keyframes blob-float {
-  from { transform: translate(0, 0) rotate(0deg); }
-  to { transform: translate(-10%, 10%) rotate(20deg); }
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-marquee {
-  animation: marquee 40s linear infinite;
-}
-
-.vertical-text {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-}
-
-/* 🏁 MISSION BRIEF PRINT PROTOCOL */
+/* Print protocol (preserved) */
 @media print {
-  body * {
-    visibility: hidden !important;
-  }
-  
-  #printable-brief, #printable-brief * {
-    visibility: visible !important;
-  }
-
+  body * { visibility: hidden !important; }
+  #printable-brief, #printable-brief * { visibility: visible !important; }
   #printable-brief {
-    visibility: visible !important;
-    display: block !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    width: 100% !important;
-    padding: 20px !important;
-    margin: 0 !important;
-    background: white !important;
-    color: #1E40AF !important;
+    visibility: visible !important; display: block !important; position: absolute !important;
+    left: 0 !important; top: 0 !important; width: 100% !important; padding: 20px !important;
+    margin: 0 !important; background: white !important; color: #1e40af !important;
   }
-
-  .text-royal-blue { color: #1E40AF !important; }
-  .text-sunset-orange { color: #F97316 !important; }
-  .bg-royal-blue { background-color: #1E40AF !important; }
+  .text-royal-blue { color: #1e40af !important; }
+  .text-sunset-orange { color: #f97316 !important; }
+  .bg-royal-blue { background-color: #1e40af !important; }
   .text-white { color: #ffffff !important; }
 }

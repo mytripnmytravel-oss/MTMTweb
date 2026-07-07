@@ -20,20 +20,20 @@ export default function HeritageDiningView() {
                             <motion.h4
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-6"
+                                className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6"
                             >
                                 Culinary Archive
                             </motion.h4>
                             <CharBlurIn
                                 text="HERITAGE DINING"
-                                className="text-5xl md:text-[6.5rem] font-black text-royal-blue uppercase tracking-tighter leading-[0.85] mb-12"
+                                className="text-5xl md:text-[6.5rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
                             />
                             <p className="text-dark-slate font-bold italic text-lg opacity-60 leading-relaxed mb-12">
                                 We favour heritage settings over commercial restaurants — authentic, architecturally significant dining featuring colourful, balanced Indian thalis served in historic palace courtyards.
                             </p>
                             <Magnetic>
                                 <Link href="/booking">
-                                    <button className="bg-sunset-orange text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-royal-blue transition-all duration-500 flex items-center gap-4 shadow-xl shadow-sunset-orange/20">
+                                    <button className="bg-sunset-orange text-white px-10 py-5 rounded-full font-semibold uppercase tracking-widest text-xs hover:bg-royal-blue transition-all duration-500 flex items-center gap-4 shadow-xl shadow-sunset-orange/20">
                                         Reserve a Table <ArrowRight size={16} />
                                     </button>
                                 </Link>
@@ -41,19 +41,19 @@ export default function HeritageDiningView() {
                         </div>
                         <div className="grid grid-cols-2 gap-6 relative">
                             <Tilt3D>
-                                <div className="glass-card p-8 rounded-[3rem] aspect-square flex flex-col justify-between border-royal-blue/10 bg-royal-blue/5">
+                                <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-royal-blue/10 bg-royal-blue/5">
                                     <Crown className="text-royal-blue" size={40} />
                                     <div>
-                                        <h5 className="text-royal-blue font-black uppercase tracking-widest text-xs mb-2">Palatial Settings</h5>
+                                        <h5 className="text-royal-blue font-semibold uppercase tracking-widest text-xs mb-2">Palatial Settings</h5>
                                         <p className="text-dark-slate/60 text-[10px] font-bold italic">Curated access to heritage dining rooms and courtyards.</p>
                                     </div>
                                 </div>
                             </Tilt3D>
                             <Tilt3D>
-                                <div className="glass-card p-8 rounded-[3rem] aspect-square flex flex-col justify-between border-royal-blue/10 mt-12 bg-sunset-orange/5 border-sunset-orange/20 shadow-xl">
+                                <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-royal-blue/10 mt-12 bg-sunset-orange/5 border-sunset-orange/20 shadow-xl">
                                     <ChefHat className="text-sunset-orange" size={40} />
                                     <div>
-                                        <h5 className="text-royal-blue font-black uppercase tracking-widest text-xs mb-2">Heritage Kitchens</h5>
+                                        <h5 className="text-royal-blue font-semibold uppercase tracking-widest text-xs mb-2">Heritage Kitchens</h5>
                                         <p className="text-dark-slate/60 text-[10px] font-bold italic">Regional royal-kitchen recipes cooked by vetted heritage kitchens.</p>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@ export default function HeritageDiningView() {
                     <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-sunset-orange/5 blur-[150px] -translate-y-1/2 translate-x-1/2 rounded-full" />
                     <div className="container mx-auto px-6 relative z-10 text-center">
                         <Utensils className="text-sunset-orange mx-auto mb-10" size={60} />
-                        <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-12">
+                        <h2 className="text-4xl md:text-7xl font-semibold text-white uppercase tracking-tight leading-[0.9] mb-12">
                             THE THALI <br /> <span className="text-sunset-orange">PROTOCOL.</span>
                         </h2>
                         <p className="text-white/60 font-bold italic text-xl mb-16 max-w-2xl mx-auto">

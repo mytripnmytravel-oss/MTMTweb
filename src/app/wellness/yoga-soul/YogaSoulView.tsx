@@ -24,13 +24,13 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
                             <motion.h4
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-emerald-600 font-black uppercase tracking-[0.8em] text-sm mb-6"
+                                className="text-emerald-600 font-semibold uppercase tracking-[0.8em] text-sm mb-6"
                             >
                                 Yoga & Meditation
                             </motion.h4>
                             <CharBlurIn
                                 text="YOGA AT THE SOURCE"
-                                className="text-5xl md:text-8xl font-black text-royal-blue uppercase tracking-tighter leading-[0.85] mb-12"
+                                className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
                             />
                             <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed mb-12">
                                 A master-led practice of movement, breath and meditation — grounded in the Indian places where these traditions took shape. Suited to every level, from first-timers finding their footing to seasoned practitioners deepening their discipline.
@@ -38,7 +38,7 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
                             <div className="flex flex-wrap gap-6">
                                 <Magnetic>
                                     <Link href="/booking">
-                                        <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-sunset-orange transition-all duration-500">
+                                        <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-semibold uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-sunset-orange transition-all duration-500">
                                             Plan Your Retreat <ArrowRight size={16} />
                                         </button>
                                     </Link>
@@ -47,13 +47,13 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
                                     <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center">
                                         <UserCheck className="text-emerald-600" size={20} />
                                     </div>
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-royal-blue/40">Master Led</span>
+                                    <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/40">Master Led</span>
                                 </div>
                             </div>
                         </div>
                         <div className="relative">
                             <Tilt3D>
-                                <div className="relative h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl">
+                                <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-md">
                                     <Image
                                         src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Yoga_Meditation%2C_Rishikesh.jpg"
                                         alt="Yoga and meditation session by the Ganges in Rishikesh, India"
@@ -71,8 +71,8 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
                 <section className="py-40 bg-slate-50 relative overflow-hidden">
                     <div className="container mx-auto px-6">
                         <div className="text-center mb-24">
-                            <h2 className="text-5xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter mb-8">THE DISCIPLINE</h2>
-                            <p className="text-dark-slate/40 font-black uppercase tracking-widest text-xs">Four Pillars of a Complete Practice</p>
+                            <h2 className="text-5xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight mb-8">THE DISCIPLINE</h2>
+                            <p className="text-dark-slate/40 font-semibold uppercase tracking-widest text-xs">Four Pillars of a Complete Practice</p>
                         </div>
 
                         <div className="grid md:grid-cols-4 gap-8">
@@ -87,10 +87,10 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="bg-white p-12 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all group"
+                                    className="bg-white p-12 rounded-2xl shadow-xl hover:shadow-md transition-all group"
                                 >
                                     <pillar.icon className={`text-${pillar.color} mb-8 mb-8 transition-transform group-hover:scale-125 duration-500`} size={40} />
-                                    <h4 className="text-2xl font-black text-royal-blue uppercase tracking-tighter mb-4">{pillar.title}</h4>
+                                    <h4 className="text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-4">{pillar.title}</h4>
                                     <p className="text-dark-slate/60 font-bold italic text-sm">{pillar.desc}</p>
                                 </motion.div>
                             ))}
@@ -102,8 +102,8 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
                 <section className="py-40 container mx-auto px-6">
                     <div className="grid lg:grid-cols-12 gap-12 items-center">
                         <div className="lg:col-span-4">
-                            <h4 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-xs mb-8">Vetted Geography</h4>
-                            <h3 className="text-4xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-12">
+                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-xs mb-8">Vetted Geography</h4>
+                            <h3 className="text-4xl md:text-6xl font-semibold text-royal-blue uppercase tracking-tight leading-none mb-12">
                                 WHERE THE <br /> <span className="text-white bg-royal-blue px-4">SOUL MEETS.</span>
                             </h3>
                             <div className="space-y-6">
@@ -113,23 +113,23 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
                                     { place: "JAIPUR", tag: "Palace Courtyard Practice" }
                                 ].map((loc, i) => (
                                     <div key={i} className="flex justify-between items-center py-6 border-b border-royal-blue/10">
-                                        <span className="text-xl font-black text-royal-blue tracking-tighter uppercase">{loc.place}</span>
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-sunset-orange opacity-60">{loc.tag}</span>
+                                        <span className="text-xl font-semibold text-royal-blue tracking-tight uppercase">{loc.place}</span>
+                                        <span className="text-[10px] font-semibold uppercase tracking-widest text-sunset-orange opacity-60">{loc.tag}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
                         <div className="lg:col-span-8 grid grid-cols-2 gap-8">
-                            <div className="h-[400px] rounded-[3rem] overflow-hidden relative group">
+                            <div className="h-[400px] rounded-2xl overflow-hidden relative group">
                                 <Image src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Rishikesh_Ganga_View.jpg" alt="View of the Ganges river at Rishikesh in the Himalayan foothills" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
                                 <div className="absolute inset-0 bg-stone-900/40 flex items-end p-10">
-                                    <p className="text-white font-black uppercase tracking-widest text-xs">Himalayan Foothills Retreat</p>
+                                    <p className="text-white font-semibold uppercase tracking-widest text-xs">Himalayan Foothills Retreat</p>
                                 </div>
                             </div>
-                            <div className="h-[400px] rounded-[3rem] overflow-hidden relative group mt-12">
+                            <div className="h-[400px] rounded-2xl overflow-hidden relative group mt-12">
                                 <Image src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Rambagh_Palace_hotel_Jaipur_lobby_courtyard.jpg" alt="Courtyard of Rambagh Palace in Jaipur, Rajasthan" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
                                 <div className="absolute inset-0 bg-stone-900/40 flex items-end p-10">
-                                    <p className="text-white font-black uppercase tracking-widest text-xs">Royal Courtyard Yoga</p>
+                                    <p className="text-white font-semibold uppercase tracking-widest text-xs">Royal Courtyard Yoga</p>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +141,7 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
                     <div className="container mx-auto px-6 text-center">
                         <div className="max-w-4xl mx-auto">
                             <Shield className="text-sunset-orange mx-auto mb-12" size={60} />
-                            <h2 className="text-4xl md:text-8xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-16">
+                            <h2 className="text-4xl md:text-8xl font-semibold text-white uppercase tracking-tight leading-[0.9] mb-16">
                                 AUTHENTIC <br /> <span className="text-sunset-orange">PRACTICE.</span>
                             </h2>
                             <p className="text-white/60 font-bold italic text-2xl mb-16 px-12">
@@ -149,7 +149,7 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
                             </p>
                             <Magnetic>
                                 <Link href="/booking">
-                                    <button className="bg-white text-royal-blue px-20 py-8 rounded-full font-black uppercase tracking-[0.3em] text-sm hover:bg-sunset-orange hover:text-white transition-all duration-500">
+                                    <button className="bg-white text-royal-blue px-20 py-8 rounded-full font-semibold uppercase tracking-[0.3em] text-sm hover:bg-sunset-orange hover:text-white transition-all duration-500">
                                         Plan Your Retreat
                                     </button>
                                 </Link>

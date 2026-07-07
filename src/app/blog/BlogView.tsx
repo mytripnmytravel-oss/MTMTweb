@@ -64,13 +64,13 @@ export default function BlogView() {
                         <motion.h4
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-6"
+                            className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6"
                         >
                             Field Intelligence
                         </motion.h4>
                         <CharBlurIn
                             text="BLOGS"
-                            className="text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter leading-[0.85] mb-8"
+                            className="text-5xl md:text-[8rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-8"
                         />
                         <p className="text-dark-slate font-bold italic text-xl md:text-2xl opacity-60 leading-relaxed max-w-3xl">
                             Planning guides, destination deep-dives, and honest field notes from our travel architects. Welcome to the planning hub of MyTripMyTravel.
@@ -87,7 +87,7 @@ export default function BlogView() {
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="group relative rounded-[3rem] overflow-hidden bg-slate-50 border border-royal-blue/5 flex flex-col h-full"
+                                className="group relative rounded-2xl overflow-hidden bg-slate-50 border border-royal-blue/5 flex flex-col h-full"
                             >
                                 <div className="relative h-[450px] w-full overflow-hidden">
                                     <Image
@@ -101,7 +101,7 @@ export default function BlogView() {
 
                                 <div className="p-12 flex flex-col flex-1 justify-between bg-white relative z-10 -mt-10 rounded-t-[3rem] border-t border-royal-blue/5 shadow-[-10px_-10px_30px_rgba(0,0,0,0.02)]">
                                     <div>
-                                        <div className="flex flex-wrap items-center gap-6 mb-8 text-xs font-black uppercase tracking-widest text-dark-slate/40">
+                                        <div className="flex flex-wrap items-center gap-6 mb-8 text-xs font-semibold uppercase tracking-widest text-dark-slate/40">
                                             <div className="flex items-center gap-2 text-sunset-orange">
                                                 <Tag size={16} /> {post.category}
                                             </div>
@@ -110,7 +110,7 @@ export default function BlogView() {
                                             </div>
                                         </div>
 
-                                        <h2 className="text-3xl font-black text-royal-blue uppercase tracking-tighter mb-6 group-hover:text-sunset-orange transition-colors">
+                                        <h2 className="text-3xl font-semibold text-royal-blue uppercase tracking-tight mb-6 group-hover:text-sunset-orange transition-colors">
                                             <Link href={"/blog/" + post.slug} className="before:absolute before:inset-0">
                                                 {post.title}
                                             </Link>
@@ -122,7 +122,7 @@ export default function BlogView() {
                                     </div>
 
                                     <Magnetic>
-                                        <div className="mt-auto inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-royal-blue hover:text-white transition-colors bg-royal-blue/5 group-hover:bg-sunset-orange px-6 py-4 rounded-full w-max z-20 relative cursor-pointer">
+                                        <div className="mt-auto inline-flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.3em] text-royal-blue hover:text-white transition-colors bg-royal-blue/5 group-hover:bg-sunset-orange px-6 py-4 rounded-full w-max z-20 relative cursor-pointer">
                                             Read Dispatch <ArrowRight size={14} />
                                         </div>
                                     </Magnetic>

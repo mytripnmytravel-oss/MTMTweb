@@ -43,16 +43,16 @@ export default function AboutView() {
                             transition={{ duration: 1.2 }}
                             className="inline-block px-6 py-2 rounded-full border border-sunset-orange/30 bg-sunset-orange/5 backdrop-blur-md mb-8"
                         >
-                            <span className="text-sunset-orange font-black uppercase tracking-[0.6em] text-[10px]">The Archive 001</span>
+                            <span className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-[10px]">The Archive 001</span>
                         </motion.div>
 
                         <CharBlurIn
                             text="BEYOND"
-                            className="text-7xl md:text-[8rem] font-black text-white leading-none tracking-tighter uppercase mb-4 drop-shadow-2xl"
+                            className="text-7xl md:text-[8rem] font-semibold text-white leading-none tracking-tight uppercase mb-4 drop-shadow-md"
                         />
                         <CharBlurIn
                             text="CONVENTIONAL"
-                            className="text-7xl md:text-[8rem] font-black text-white leading-none tracking-tighter uppercase filter drop-shadow-[0_10px_30px_rgba(249,115,22,0.4)]"
+                            className="text-7xl md:text-[8rem] font-semibold text-white leading-none tracking-tight uppercase filter drop-shadow-[0_10px_30px_rgba(249,115,22,0.4)]"
                         />
 
                         <motion.div
@@ -63,7 +63,7 @@ export default function AboutView() {
                         >
                             <div className="flex -space-x-4 mb-4 md:mb-0">
                                 {[1, 2, 3].map((i) => (
-                                    <div key={i} className="w-16 h-16 rounded-full border-4 border-royal-blue overflow-hidden relative shadow-2xl skew-x-12 hover:skew-x-0 transition-transform">
+                                    <div key={i} className="w-16 h-16 rounded-full border-4 border-royal-blue overflow-hidden relative shadow-md skew-x-12 hover:skew-x-0 transition-transform">
                                         <Image src={`/about-hero-${i}.png`} alt="MyTripMyTravel curated journey moment" fill className="object-cover" />
                                     </div>
                                 ))}
@@ -78,7 +78,7 @@ export default function AboutView() {
                 {/* Vertical Scroll Indicator Protocol */}
                 <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
                     <div className="w-[1px] h-20 bg-gradient-to-b from-sunset-orange to-transparent animate-pulse" />
-                    <span className="text-[8px] font-black text-sunset-orange uppercase tracking-[0.5em] vertical-text">Scroll to Briefing</span>
+                    <span className="text-[8px] font-semibold text-sunset-orange uppercase tracking-[0.5em] vertical-text">Scroll to Briefing</span>
                 </div>
             </section>
 
@@ -88,7 +88,7 @@ export default function AboutView() {
                 <div className="container mx-auto px-6">
                     <div className="grid md:grid-cols-2 gap-20 items-center">
                         <div className="order-2 md:order-1">
-                            <h2 className="text-4xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-8">
+                            <h2 className="text-4xl md:text-6xl font-semibold text-royal-blue uppercase tracking-tight leading-none mb-8">
                                 The Genesis <br /> of Luxury.
                             </h2>
                             <div className="space-y-6 text-dark-slate font-medium text-lg leading-relaxed opacity-80">
@@ -98,7 +98,7 @@ export default function AboutView() {
                                 <p>
                                     We didn’t just want to provide cars. We wanted to build a fleet. We didn’t want to hand you an itinerary; we wanted to provide a master-crafted protocol.
                                 </p>
-                                <p className="font-black italic text-royal-blue opacity-100">
+                                <p className="font-semibold italic text-royal-blue opacity-100">
                                     Every component of our Golden Triangle operations, our elite fleet rentals, and our wellness sanctuary expeditions is engineered to ensure one thing: absolute peace of mind.
                                 </p>
                             </div>
@@ -113,8 +113,8 @@ export default function AboutView() {
                                     className="object-cover rounded-2xl"
                                  />
                                  <div className="absolute bottom-10 left-10 text-white">
-                                     <div className="font-black uppercase tracking-[0.5em] text-[10px] text-sunset-orange mb-2">Archive 01</div>
-                                     <div className="text-3xl font-black uppercase tracking-tighter">The Standard</div>
+                                     <div className="font-semibold uppercase tracking-[0.5em] text-[10px] text-sunset-orange mb-2">Archive 01</div>
+                                     <div className="text-3xl font-semibold uppercase tracking-tight">The Standard</div>
                                  </div>
                              </div>
                         </div>
@@ -127,21 +127,21 @@ export default function AboutView() {
                 <div className="absolute inset-0 bg-grid-white/[0.03] bg-[size:3vw_3vw]" />
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="text-center mb-24">
-                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-4">The Council</h4>
-                        <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none">The Architects</h2>
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-4">The Council</h4>
+                        <h2 className="text-5xl md:text-7xl font-semibold text-white uppercase tracking-tight leading-none">The Architects</h2>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
 
                         {/* Team Member 1 */}
                         <div className="group">
-                            <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-6 bg-white/5 border border-white/10">
+                            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-white/5 border border-white/10">
                                 <Image src="/team-1.jpg" alt="Nitesh Jain, Founder of MyTripMyTravel" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-transparent to-transparent opacity-80" />
                             </div>
                             <div className="pl-4 border-l-2 border-sunset-orange">
-                                <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-1">Nitesh Jain</h3>
-                                <p className="text-sunset-orange text-[10px] font-black uppercase tracking-[0.4em] mb-3">Founder</p>
+                                <h3 className="text-2xl font-semibold text-white uppercase tracking-tight mb-1">Nitesh Jain</h3>
+                                <p className="text-sunset-orange text-[10px] font-semibold uppercase tracking-[0.4em] mb-3">Founder</p>
                                 <p className="text-white/60 font-medium text-sm leading-relaxed">
                                     I started MyTripMyTravel with a simple belief, travel should be meaningful, seamless, and built on trust. After completing my MBA, I explored different paths, from recruitment consulting to eventually finding my passion in travel. That journey shaped how I see the world today. Travel has been my greatest teacher. It opened my eyes to cultures, people, and experiences that go far beyond destinations. With MyTripMyTravel, I wanted to create more than just packages, I wanted to create journeys that people remember for a lifetime. We are a close-knit team working across multiple countries, ensuring every trip is handled with care and precision. I personally oversee operations to make sure every experience meets our standards. We don’t believe in selling the cheapest options. We believe in delivering the right experience, with honesty, quality, and attention to detail. My vision is simple: to build one of India’s most trusted travel companies, where people choose us not just for where we take them, but for how we make them feel along the way.
                                 </p>
@@ -150,13 +150,13 @@ export default function AboutView() {
 
                         {/* Team Member 2 */}
                         <div className="group md:mt-16">
-                            <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-6 bg-white/5 border border-white/10">
+                            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-white/5 border border-white/10">
                                 <Image src="/team-2.jpg" alt="Sarah Sahai, Market Expansion & Partnerships at MyTripMyTravel" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-transparent to-transparent opacity-80" />
                             </div>
                             <div className="pl-4 border-l-2 border-sunset-orange">
-                                <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-1">Sarah Sahai</h3>
-                                <p className="text-sunset-orange text-[10px] font-black uppercase tracking-[0.4em] mb-3">Market Expansion & Partnerships</p>
+                                <h3 className="text-2xl font-semibold text-white uppercase tracking-tight mb-1">Sarah Sahai</h3>
+                                <p className="text-sunset-orange text-[10px] font-semibold uppercase tracking-[0.4em] mb-3">Market Expansion & Partnerships</p>
                                 <p className="text-white/60 font-medium text-sm leading-relaxed">
                                     Sarah Sahai supports MyTripMyTravel across international market expansion, strategic partnerships, and business development. With a background in client relations, branding, and cross-cultural engagement, she brings a people-centric approach to building lasting relationships. Having travelled widely, she has a nuanced feel for global markets, cultural dynamics, and evolving traveller expectations, and she helps strengthen the company’s presence beyond India.
                                 </p>
@@ -165,13 +165,13 @@ export default function AboutView() {
 
                         {/* Team Member 3 */}
                         <div className="group md:-mt-8">
-                            <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-6 bg-white/5 border border-white/10">
+                            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-white/5 border border-white/10">
                                 <Image src="/team-3.jpg" alt="Ajsal Abbas, Technology Lead at MyTripMyTravel" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-transparent to-transparent opacity-80" />
                             </div>
                             <div className="pl-4 border-l-2 border-sunset-orange">
-                                <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-1">Ajsal Abbas</h3>
-                                <p className="text-sunset-orange text-[10px] font-black uppercase tracking-[0.4em] mb-3">Technology Lead</p>
+                                <h3 className="text-2xl font-semibold text-white uppercase tracking-tight mb-1">Ajsal Abbas</h3>
+                                <p className="text-sunset-orange text-[10px] font-semibold uppercase tracking-[0.4em] mb-3">Technology Lead</p>
                                 <p className="text-white/60 font-medium text-sm leading-relaxed">
                                     Ajsal looks after the website and the digital enquiry experience, keeping the online side of MyTripMyTravel clear, fast, and easy to use.
                                 </p>
@@ -187,8 +187,8 @@ export default function AboutView() {
                 <div className="container mx-auto px-6">
                     <div className="grid lg:grid-cols-2 gap-20 items-center">
                         <div>
-                            <h4 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-8">Directives</h4>
-                            <h2 className="text-5xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-12">
+                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-8">Directives</h4>
+                            <h2 className="text-5xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight leading-none mb-12">
                                 Our Sacred <br /> <span className="text-sunset-orange">Standards.</span>
                             </h2>
                             <div className="grid sm:grid-cols-2 gap-8">
@@ -196,35 +196,35 @@ export default function AboutView() {
                                     <div className="w-12 h-12 bg-royal-blue/10 rounded-xl flex items-center justify-center text-royal-blue mb-6">
                                         <ShieldCheck size={24} />
                                     </div>
-                                    <h3 className="text-xl font-black text-royal-blue uppercase tracking-tighter mb-4">Integrity</h3>
+                                    <h3 className="text-xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Integrity</h3>
                                     <p className="text-dark-slate/60 text-sm font-medium">Absolute transparency in every transaction, route, and palatial accommodation.</p>
                                 </div>
                                 <div className="glass-card p-8 border-royal-blue/5">
                                     <div className="w-12 h-12 bg-royal-blue/10 rounded-xl flex items-center justify-center text-royal-blue mb-6">
                                         <Compass size={24} />
                                     </div>
-                                    <h3 className="text-xl font-black text-royal-blue uppercase tracking-tighter mb-4">Precision</h3>
+                                    <h3 className="text-xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Precision</h3>
                                     <p className="text-dark-slate/60 text-sm font-medium">Engineering itineraries down to the second for a frictionless travel experience.</p>
                                 </div>
                                 <div className="glass-card p-8 border-royal-blue/5">
                                     <div className="w-12 h-12 bg-royal-blue/10 rounded-xl flex items-center justify-center text-royal-blue mb-6">
                                         <Heart size={24} />
                                     </div>
-                                    <h3 className="text-xl font-black text-royal-blue uppercase tracking-tighter mb-4">Humanity</h3>
+                                    <h3 className="text-xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Humanity</h3>
                                     <p className="text-dark-slate/60 text-sm font-medium">Bespoke hospitality that treats every guest as a priority protocol.</p>
                                 </div>
                                 <div className="glass-card p-8 border-royal-blue/5">
                                     <div className="w-12 h-12 bg-royal-blue/10 rounded-xl flex items-center justify-center text-royal-blue mb-6">
                                         <Compass size={24} />
                                     </div>
-                                    <h3 className="text-xl font-black text-royal-blue uppercase tracking-tighter mb-4">Heritage</h3>
+                                    <h3 className="text-xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Heritage</h3>
                                     <p className="text-dark-slate/60 text-sm font-medium">Preserving the soul of India while providing 5-star modern sanctuaries.</p>
                                 </div>
                             </div>
                         </div>
                         <div className="relative group perspective-1000 hidden lg:block">
-                            <div className="relative aspect-square glass-card p-4 rounded-[3rem] overflow-hidden transform transition-all duration-700 group-hover:rotate-y-12">
-                                <Image src="/about-standards.png" alt="Curated luxury stay in India" fill className="object-cover rounded-[2.5rem] grayscale group-hover:grayscale-0 transition-all duration-1000" />
+                            <div className="relative aspect-square glass-card p-4 rounded-2xl overflow-hidden transform transition-all duration-700 group-hover:rotate-y-12">
+                                <Image src="/about-standards.png" alt="Curated luxury stay in India" fill className="object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-1000" />
                                 <div className="absolute inset-0 bg-gradient-to-tr from-sunset-orange/40 to-royal-blue/40 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                             </div>
                         </div>
@@ -236,8 +236,8 @@ export default function AboutView() {
             <section className="py-20 md:py-40 bg-white relative z-20 border-t border-royal-blue/5">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto text-center mb-24">
-                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-8">The Execution</h4>
-                        <h2 className="text-5xl md:text-[8rem] font-black text-royal-blue leading-none tracking-tighter uppercase mb-12">How we <br /> Architecture.</h2>
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-8">The Execution</h4>
+                        <h2 className="text-5xl md:text-[8rem] font-semibold text-royal-blue leading-none tracking-tight uppercase mb-12">How we <br /> Architecture.</h2>
                         <p className="text-dark-slate font-medium text-lg leading-relaxed opacity-60">
                             Our operational cycle is a high-velocity feedback loop of logistics, tech, and hospitality. Every mission briefing includes:
                         </p>
@@ -251,8 +251,8 @@ export default function AboutView() {
                             { step: "04", title: "Debrief", desc: "Ensuring the memory remains a zero-friction masterpiece." }
                         ].map((item, idx) => (
                             <div key={idx} className="relative p-8 border-l border-royal-blue/10 group hover:border-sunset-orange transition-colors">
-                                <div className="text-4xl font-black text-royal-blue/5 mb-6 transition-colors group-hover:text-sunset-orange/10">{item.step}</div>
-                                <h3 className="text-2xl font-black text-royal-blue uppercase tracking-tighter mb-4">{item.title}</h3>
+                                <div className="text-4xl font-semibold text-royal-blue/5 mb-6 transition-colors group-hover:text-sunset-orange/10">{item.step}</div>
+                                <h3 className="text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-4">{item.title}</h3>
                                 <p className="text-dark-slate/60 text-sm leading-relaxed">{item.desc}</p>
                             </div>
                         ))}
@@ -263,11 +263,11 @@ export default function AboutView() {
             {/* Final CTA Strip */}
             <section className="py-20 bg-sunset-orange relative z-20 overflow-hidden">
                 <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
-                    <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none">
+                    <h2 className="text-3xl md:text-5xl font-semibold text-white uppercase tracking-tight leading-none">
                         Ready to Begin <br /> Your Protocol?
                     </h2>
                     <Magnetic>
-                        <Link href="/contact" className="px-12 py-6 bg-royal-blue text-white rounded-full font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-2xl">
+                        <Link href="/contact" className="px-12 py-6 bg-royal-blue text-white rounded-full font-semibold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-md">
                             Initiate Contact
                         </Link>
                     </Magnetic>

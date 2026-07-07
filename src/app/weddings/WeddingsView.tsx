@@ -54,13 +54,13 @@ export default function WeddingsView() {
                         <motion.h4
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-6"
+                            className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6"
                         >
                             Matrimonial Logistics
                         </motion.h4>
                         <CharBlurIn
                             text="ROYAL WEDDING PROTOCOL"
-                            className="text-5xl md:text-[7.5rem] font-black text-royal-blue uppercase tracking-tighter leading-[0.85] mb-12"
+                            className="text-5xl md:text-[7.5rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
                         />
                         <div className="flex flex-col md:flex-row gap-12 items-start">
                             <motion.p
@@ -73,7 +73,7 @@ export default function WeddingsView() {
                             </motion.p>
                             <Magnetic>
                                 <Link href="/booking">
-                                    <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-sunset-orange transition-all duration-500 shadow-xl">
+                                    <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-semibold uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-sunset-orange transition-all duration-500 shadow-xl">
                                         Initiate Protocol <ArrowRight size={16} />
                                     </button>
                                 </Link>
@@ -85,8 +85,8 @@ export default function WeddingsView() {
                 {/* --- Strategic Venues --- */}
                 <section className="py-20 container mx-auto px-6 relative z-10">
                     <div className="text-center mb-24">
-                        <h2 className="text-4xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter mb-8">THE VENUE ARCHETYPES</h2>
-                        <p className="text-sunset-orange font-black uppercase tracking-widest text-xs">Heritage Architectural Sanctuaries</p>
+                        <h2 className="text-4xl md:text-6xl font-semibold text-royal-blue uppercase tracking-tight mb-8">THE VENUE ARCHETYPES</h2>
+                        <p className="text-sunset-orange font-semibold uppercase tracking-widest text-xs">Heritage Architectural Sanctuaries</p>
                     </div>
 
                     <div className="grid lg:grid-cols-3 gap-8">
@@ -96,7 +96,7 @@ export default function WeddingsView() {
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.1 }}
-                                className={`group relative h-[650px] rounded-[3rem] overflow-hidden bg-gradient-to-br ${venue.theme} border border-royal-blue/5`}
+                                className={`group relative h-[650px] rounded-2xl overflow-hidden bg-gradient-to-br ${venue.theme} border border-royal-blue/5`}
                             >
                                 <div className="absolute inset-0 opacity-20 group-hover:opacity-100 transition-opacity duration-1000">
                                     <Image
@@ -110,14 +110,14 @@ export default function WeddingsView() {
                                     <div className={`w-16 h-16 rounded-2xl bg-white shadow-xl flex items-center justify-center mb-8 ${venue.accent}`}>
                                         <venue.icon size={32} />
                                     </div>
-                                    <h3 className="text-3xl font-black text-royal-blue uppercase tracking-tighter mb-4">{venue.title}</h3>
+                                    <h3 className="text-3xl font-semibold text-royal-blue uppercase tracking-tight mb-4">{venue.title}</h3>
                                     <p className="text-dark-slate/60 font-bold italic text-sm mb-8">{venue.desc}</p>
                                     <div className="flex flex-wrap gap-2 mb-8">
                                         {venue.features.map(feature => (
-                                            <span key={feature} className="px-3 py-1.5 rounded-full bg-white border border-royal-blue/10 text-royal-blue font-black uppercase text-[9px] tracking-widest">{feature}</span>
+                                            <span key={feature} className="px-3 py-1.5 rounded-full bg-white border border-royal-blue/10 text-royal-blue font-semibold uppercase text-[9px] tracking-widest">{feature}</span>
                                         ))}
                                     </div>
-                                    <Link href="/booking" className={`font-black uppercase text-[10px] tracking-[0.3em] flex items-center gap-4 ${venue.accent} hover:text-royal-blue transition-colors`}>
+                                    <Link href="/booking" className={`font-semibold uppercase text-[10px] tracking-[0.3em] flex items-center gap-4 ${venue.accent} hover:text-royal-blue transition-colors`}>
                                         Enquire About Venue <ArrowRight size={14} />
                                     </Link>
                                 </div>
@@ -133,8 +133,8 @@ export default function WeddingsView() {
                     <div className="container mx-auto px-6 relative z-10">
                         <div className="grid lg:grid-cols-2 gap-24 items-center">
                             <div>
-                                <h4 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-8">Tactical Execution</h4>
-                                <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-12">
+                                <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-8">Tactical Execution</h4>
+                                <h2 className="text-5xl md:text-7xl font-semibold text-white uppercase tracking-tight leading-none mb-12">
                                     FLAWLESS <br /> <span className="text-white/30 text-4xl">LOGISTICS.</span>
                                 </h2>
                                 <p className="text-white/60 font-bold italic text-xl mb-12">
@@ -152,7 +152,7 @@ export default function WeddingsView() {
                                                 <step.icon size={20} className="text-white" />
                                             </div>
                                             <div>
-                                                <h5 className="text-white font-black uppercase tracking-widest text-sm mb-2">{step.title}</h5>
+                                                <h5 className="text-white font-semibold uppercase tracking-widest text-sm mb-2">{step.title}</h5>
                                                 <p className="text-white/40 font-bold italic text-xs">{step.desc}</p>
                                             </div>
                                         </div>
@@ -162,37 +162,37 @@ export default function WeddingsView() {
 
                             <div className="grid grid-cols-2 gap-6 relative">
                                 <Tilt3D>
-                                    <div className="glass-card p-8 rounded-[3rem] aspect-square flex flex-col justify-between border-white/10">
+                                    <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-white/10">
                                         <Music className="text-sunset-orange" size={40} />
                                         <div>
-                                            <h5 className="text-white font-black uppercase tracking-widest text-xs mb-2">Sonic Architecture</h5>
+                                            <h5 className="text-white font-semibold uppercase tracking-widest text-xs mb-2">Sonic Architecture</h5>
                                             <p className="text-white/40 text-[10px] font-bold italic">Artist procurement and professional-grade acoustics.</p>
                                         </div>
                                     </div>
                                 </Tilt3D>
                                 <Tilt3D>
-                                    <div className="glass-card p-8 rounded-[3rem] aspect-square flex flex-col justify-between border-white/10 mt-12 bg-sunset-orange/20 border-sunset-orange/30">
+                                    <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-white/10 mt-12 bg-sunset-orange/20 border-sunset-orange/30">
                                         <Camera className="text-white" size={40} />
                                         <div>
-                                            <h5 className="text-white font-black uppercase tracking-widest text-xs mb-2">Cinematic Capture</h5>
+                                            <h5 className="text-white font-semibold uppercase tracking-widest text-xs mb-2">Cinematic Capture</h5>
                                             <p className="text-white/80 text-[10px] font-bold italic">Professional documentary film crews for the wedding archive.</p>
                                         </div>
                                     </div>
                                 </Tilt3D>
                                 <Tilt3D>
-                                    <div className="glass-card p-8 rounded-[3rem] aspect-square flex flex-col justify-between border-white/10">
+                                    <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-white/10">
                                         <HeartHandshake className="text-sunset-orange" size={40} />
                                         <div>
-                                            <h5 className="text-white font-black uppercase tracking-widest text-xs mb-2">Vendor Command</h5>
+                                            <h5 className="text-white font-semibold uppercase tracking-widest text-xs mb-2">Vendor Command</h5>
                                             <p className="text-white/40 text-[10px] font-bold italic">A single point of contact coordinating every vendor and contractor.</p>
                                         </div>
                                     </div>
                                 </Tilt3D>
                                 <Tilt3D>
-                                    <div className="glass-card p-8 rounded-[3rem] aspect-square flex flex-col justify-between border-white/10 mt-12">
+                                    <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-white/10 mt-12">
                                         <Crown className="text-sunset-orange" size={40} />
                                         <div>
-                                            <h5 className="text-white font-black uppercase tracking-widest text-xs mb-2">The Royal Mandate</h5>
+                                            <h5 className="text-white font-semibold uppercase tracking-widest text-xs mb-2">The Royal Mandate</h5>
                                             <p className="text-white/40 text-[10px] font-bold italic">Considered execution across multi-day ceremonial productions.</p>
                                         </div>
                                     </div>
@@ -209,7 +209,7 @@ export default function WeddingsView() {
                             <div className="w-24 h-24 rounded-full bg-royal-blue/5 flex items-center justify-center mb-12">
                                 <Gem className="text-royal-blue" size={40} />
                             </div>
-                            <h2 className="text-4xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter leading-[0.9] mb-12">
+                            <h2 className="text-4xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.9] mb-12">
                                 AUTHORIZE <br /> <span className="text-sunset-orange">THE PROTOCOL.</span>
                             </h2>
                             <p className="text-dark-slate/60 font-bold italic text-xl mb-16 px-12">
@@ -217,7 +217,7 @@ export default function WeddingsView() {
                             </p>
                             <Magnetic>
                                 <Link href="/booking">
-                                    <button className="bg-royal-blue text-white px-16 py-8 rounded-full font-black uppercase tracking-[0.3em] text-sm hover:bg-sunset-orange hover:text-white transition-all duration-500 shadow-2xl">
+                                    <button className="bg-royal-blue text-white px-16 py-8 rounded-full font-semibold uppercase tracking-[0.3em] text-sm hover:bg-sunset-orange hover:text-white transition-all duration-500 shadow-md">
                                         Schedule Confidential Briefing
                                     </button>
                                 </Link>

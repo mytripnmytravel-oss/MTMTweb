@@ -20,7 +20,7 @@ import { packages, type Package } from "@/data/tours";
 const FilterButton = ({ active, label, onClick }: any) => (
     <button
         onClick={onClick}
-        className={`px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 border ${
+        className={`px-3 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-widest transition-all duration-300 border ${
             active
             ? "bg-sunset-orange border-sunset-orange text-white shadow-md scale-105"
             : "bg-white border-royal-blue/10 text-royal-blue/70 hover:border-sunset-orange hover:text-sunset-orange"
@@ -36,7 +36,7 @@ const FeatureItem = ({ icon: Icon, title, desc }: any) => (
             <Icon size={15} className="text-sunset-orange" />
         </div>
         <div>
-            <h5 className="font-black text-royal-blue uppercase text-[10px] tracking-widest mb-1">{title}</h5>
+            <h5 className="font-semibold text-royal-blue uppercase text-[10px] tracking-widest mb-1">{title}</h5>
             <p className="text-dark-slate/50 text-[10px] font-bold italic leading-relaxed">{desc}</p>
         </div>
     </div>
@@ -91,18 +91,18 @@ export default function GoldenTriangleAllView() {
                 {/* --- Hero Section --- */}
                 <section className="pt-80 pb-32 container mx-auto px-6 relative z-10">
                     <div className="max-w-4xl">
-                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-6">Master Variations 2026</h4>
-                        <CharBlurIn text="GOLDEN TRIANGLE" className="text-5xl md:text-9xl font-black text-royal-blue uppercase tracking-tighter block leading-[0.85]" />
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6">Master Variations 2026</h4>
+                        <CharBlurIn text="GOLDEN TRIANGLE" className="text-5xl md:text-9xl font-semibold text-royal-blue uppercase tracking-tight block leading-[0.85]" />
                         <div className="h-4" /> {/* Spacer */}
-                        <CharBlurIn text="ULTIMATE ARCHIVE" className="text-5xl md:text-9xl font-black text-royal-blue uppercase tracking-tighter block leading-[0.85] opacity-20" />
+                        <CharBlurIn text="ULTIMATE ARCHIVE" className="text-5xl md:text-9xl font-semibold text-royal-blue uppercase tracking-tight block leading-[0.85] opacity-20" />
                         <p className="mt-12 text-xl font-bold text-royal-blue/60 max-w-2xl italic leading-relaxed">
                             Explore all 30+ precise variations of India&apos;s most iconic routes and regional escapes. Every itinerary here is a foundation—ready for your bespoke modification.
                         </p>
 
                         <div className="mt-16 flex items-center gap-12 grayscale opacity-40">
-                            <div className="flex items-center gap-3 font-black uppercase text-[10px] tracking-widest"><Shield size={14} /> Verified Luxury</div>
-                            <div className="flex items-center gap-3 font-black uppercase text-[10px] tracking-widest"><Award size={14} /> Bespoke Itineraries</div>
-                            <div className="flex items-center gap-3 font-black uppercase text-[10px] tracking-widest"><Users size={14} /> Human Concierge</div>
+                            <div className="flex items-center gap-3 font-semibold uppercase text-[10px] tracking-widest"><Shield size={14} /> Verified Luxury</div>
+                            <div className="flex items-center gap-3 font-semibold uppercase text-[10px] tracking-widest"><Award size={14} /> Bespoke Itineraries</div>
+                            <div className="flex items-center gap-3 font-semibold uppercase text-[10px] tracking-widest"><Users size={14} /> Human Concierge</div>
                         </div>
                     </div>
                 </section>
@@ -115,7 +115,7 @@ export default function GoldenTriangleAllView() {
                         {/* Mobile Horizontal Filters (Hidden on Desktop) */}
                         <div className="lg:hidden flex flex-col gap-6 mb-12 bg-white p-6 rounded-3xl shadow-sm border border-royal-blue/5">
                             <div className="flex flex-col gap-3">
-                                <span className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Map size={14} /> Region:</span>
+                                <span className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Map size={14} /> Region:</span>
                                 <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar fade-edges w-full">
                                     {locations.map(loc => (
                                         <FilterButton key={loc} label={loc} active={activeLocation === loc} onClick={() => setActiveLocation(loc)} />
@@ -123,7 +123,7 @@ export default function GoldenTriangleAllView() {
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 border-t border-royal-blue/5 pt-6">
-                                <span className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Filter size={14} /> Theme:</span>
+                                <span className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Filter size={14} /> Theme:</span>
                                 <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar fade-edges w-full">
                                     {themes.map(t => (
                                         <FilterButton key={t} label={t} active={activeTheme === t} onClick={() => setActiveTheme(t)} />
@@ -131,7 +131,7 @@ export default function GoldenTriangleAllView() {
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 border-t border-royal-blue/5 pt-6">
-                                <span className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Clock size={14} /> Duration:</span>
+                                <span className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 shrink-0"><Clock size={14} /> Duration:</span>
                                 <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar fade-edges w-full">
                                     {durations.map(d => (
                                         <FilterButton key={d} label={d} active={activeDuration === d} onClick={() => setActiveDuration(d)} />
@@ -145,7 +145,7 @@ export default function GoldenTriangleAllView() {
                             <div className="h-full overflow-y-auto overscroll-contain no-scrollbar pr-4 pb-10">
                                 <div className="space-y-8 pt-1">
                                     <div>
-                                        <h4 className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Map size={14} className="text-sunset-orange" /> Region</h4>
+                                        <h4 className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Map size={14} className="text-sunset-orange" /> Region</h4>
                                         <div className="flex flex-wrap gap-3">
                                             {locations.map(loc => (
                                                 <FilterButton key={loc} label={loc} active={activeLocation === loc} onClick={() => setActiveLocation(loc)} />
@@ -154,7 +154,7 @@ export default function GoldenTriangleAllView() {
                                     </div>
 
                                     <div>
-                                        <h4 className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Filter size={14} className="text-sunset-orange" /> Theme</h4>
+                                        <h4 className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Filter size={14} className="text-sunset-orange" /> Theme</h4>
                                         <div className="flex flex-wrap gap-3">
                                             {themes.map(t => (
                                                 <FilterButton key={t} label={t} active={activeTheme === t} onClick={() => setActiveTheme(t)} />
@@ -163,7 +163,7 @@ export default function GoldenTriangleAllView() {
                                     </div>
 
                                     <div>
-                                        <h4 className="text-[10px] font-black uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Clock size={14} className="text-sunset-orange" /> Duration</h4>
+                                        <h4 className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest flex items-center gap-2 mb-5"><Clock size={14} className="text-sunset-orange" /> Duration</h4>
                                         <div className="flex flex-wrap gap-3">
                                             {durations.map(d => (
                                                 <FilterButton key={d} label={d} active={activeDuration === d} onClick={() => setActiveDuration(d)} />
@@ -190,47 +190,47 @@ export default function GoldenTriangleAllView() {
                                         animate={{ opacity: 1, scale: 1, y: 0 }}
                                         exit={{ opacity: 0, scale: 0.9, y: 30 }}
                                         transition={{ type: "spring", stiffness: 100, damping: 15 }}
-                                        className="glass-card rounded-[3rem] overflow-hidden group border-royal-blue/5 hover:border-sunset-orange/20 transition-all duration-700"
+                                        className="glass-card rounded-2xl overflow-hidden group border-royal-blue/5 hover:border-sunset-orange/20 transition-all duration-700"
                                     >
                                         <div className="relative h-72">
                                             <Image src={pkg.img} alt={`${pkg.title} — ${pkg.duration} ${pkg.location} tour`} fill className="object-cover transition-transform duration-1000" />
                                             <div className="absolute top-6 left-6 flex gap-2">
                                                 <div className="bg-white/90 backdrop-blur-md px-5 py-2 rounded-full shadow-xl">
-                                                    <span className="text-[10px] font-black uppercase text-royal-blue tracking-widest">{pkg.duration}</span>
+                                                    <span className="text-[10px] font-semibold uppercase text-royal-blue tracking-widest">{pkg.duration}</span>
                                                 </div>
                                                 {pkg.theme === "Luxury" && (
                                                     <div className="bg-sunset-orange px-5 py-2 rounded-full shadow-xl flex items-center gap-2">
                                                         <Sparkles size={12} className="text-white" />
-                                                        <span className="text-[10px] font-black uppercase text-white tracking-widest">Elite</span>
+                                                        <span className="text-[10px] font-semibold uppercase text-white tracking-widest">Elite</span>
                                                     </div>
                                                 )}
                                             </div>
                                             <div className="absolute top-6 right-6">
                                                 <div className="bg-royal-blue/80 backdrop-blur-md px-5 py-2 rounded-full shadow-xl border border-white/10">
-                                                    <span className="text-[10px] font-black uppercase text-white tracking-widest">{pkg.location}</span>
+                                                    <span className="text-[10px] font-semibold uppercase text-white tracking-widest">{pkg.location}</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="p-6 sm:p-8">
-                                            <h4 className="text-[10px] font-black text-sunset-orange uppercase tracking-[0.4em] mb-3">{pkg.theme}</h4>
-                                            <h3 className="text-xl sm:text-2xl font-black text-royal-blue uppercase tracking-tighter mb-3 leading-tight group-hover:text-sunset-orange transition-all duration-300">{pkg.title}</h3>
+                                            <h4 className="text-[10px] font-semibold text-sunset-orange uppercase tracking-[0.4em] mb-3">{pkg.theme}</h4>
+                                            <h3 className="text-xl sm:text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-3 leading-tight group-hover:text-sunset-orange transition-all duration-300">{pkg.title}</h3>
                                             <p className="text-dark-slate/60 font-bold italic text-sm mb-6 leading-relaxed line-clamp-2">{pkg.highlight}</p>
                                             <div className="flex flex-col gap-4 pt-5 border-t border-royal-blue/5">
                                                 <div>
-                                                    <span className="text-[10px] uppercase font-black text-royal-blue/40 block mb-1">Starting At</span>
-                                                    <span className="text-2xl font-black text-royal-blue">{pkg.price}</span>
+                                                    <span className="text-[10px] uppercase font-semibold text-royal-blue/40 block mb-1">Starting At</span>
+                                                    <span className="text-2xl font-semibold text-royal-blue">{pkg.price}</span>
                                                 </div>
                                                 <div className="flex gap-3 flex-wrap">
                                                     <Magnetic>
                                                         <button
                                                             onClick={() => setSelectedPackage(pkg)}
-                                                            className="bg-royal-blue text-white px-5 py-3 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-sunset-orange transition-colors shadow-md"
+                                                            className="bg-royal-blue text-white px-5 py-3 rounded-xl font-semibold uppercase text-[10px] tracking-widest hover:bg-sunset-orange transition-colors shadow-md"
                                                         >
                                                             View Itinerary
                                                         </button>
                                                     </Magnetic>
                                                     <Magnetic>
-                                                        <button className="bg-sunset-orange text-white px-5 py-3 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-royal-blue transition-colors shadow-md">
+                                                        <button className="bg-sunset-orange text-white px-5 py-3 rounded-xl font-semibold uppercase text-[10px] tracking-widest hover:bg-royal-blue transition-colors shadow-md">
                                                             Reserve
                                                         </button>
                                                     </Magnetic>
@@ -264,7 +264,7 @@ export default function GoldenTriangleAllView() {
                                                 setCurrentPage(i + 1);
                                                 window.scrollTo({ top: 800, behavior: 'smooth' });
                                             }}
-                                            className={`w-14 h-14 rounded-2xl font-black text-xs transition-all duration-500 ${currentPage === i + 1
+                                            className={`w-14 h-14 rounded-2xl font-semibold text-xs transition-all duration-500 ${currentPage === i + 1
                                                 ? "bg-sunset-orange text-white shadow-xl scale-110"
                                                 : "glass-card text-royal-blue hover:bg-royal-blue/5"
                                                 }`}
@@ -288,9 +288,9 @@ export default function GoldenTriangleAllView() {
                         )}
 
                         {filteredPackages.length === 0 && (
-                            <div className="text-center py-40 glass-card rounded-[3rem]">
+                            <div className="text-center py-40 glass-card rounded-2xl">
                                 <Compass className="mx-auto text-sunset-orange mb-8 opacity-20" size={80} />
-                                <h3 className="text-4xl font-black text-royal-blue uppercase tracking-tighter">No exact matches found</h3>
+                                <h3 className="text-4xl font-semibold text-royal-blue uppercase tracking-tight">No exact matches found</h3>
                                 <p className="text-dark-slate/60 font-bold italic mt-4">Try adjusting your filters or let our team build a custom path for you.</p>
                                 <button onClick={() => { setActiveTheme("All"); setActiveDuration("All"); setActiveLocation("All"); }} className="mt-10 btn-primary px-10">Reset Filters</button>
                             </div>
@@ -301,30 +301,30 @@ export default function GoldenTriangleAllView() {
                     <aside className="hidden lg:block">
                         <div className="sticky top-32 space-y-6">
                             {/* The Hook Card */}
-                            <div className="p-7 rounded-3xl bg-royal-blue border border-white/10 text-white relative overflow-hidden shadow-2xl">
+                            <div className="p-7 rounded-3xl bg-royal-blue border border-white/10 text-white relative overflow-hidden shadow-md">
                                 <div className="absolute top-0 right-0 p-4 z-10">
                                     <div className="absolute top-0 right-0 w-20 h-20 bg-sunset-orange/20 blur-[40px] -translate-y-1/2 translate-x-1/2 rounded-full" />
                                     <Zap className="text-sunset-orange animate-pulse relative z-10" size={24} fill="currentColor" />
                                 </div>
-                                <h3 className="text-xl font-black uppercase tracking-tight mb-4 leading-tight text-white">Architect Your Own Path.</h3>
+                                <h3 className="text-xl font-semibold uppercase tracking-tight mb-4 leading-tight text-white">Architect Your Own Path.</h3>
                                 <p className="text-white/70 font-bold italic text-sm mb-6">Don&apos;t settle for a template. Our team can merge any of these variations into one bespoke route.</p>
 
                                 <div className="space-y-3 mb-6">
                                     {["Custom Stop-Overs", "Specific Hotel Vibe", "Dietary Ready", "24/7 Human Backup"].map((f, i) => (
-                                        <div key={i} className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-white/80">
+                                        <div key={i} className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-widest text-white/80">
                                             <CheckCircle2 size={13} className="text-sunset-orange shrink-0" /> {f}
                                         </div>
                                     ))}
                                 </div>
 
-                                <button className="w-full bg-sunset-orange text-white py-3 rounded-xl font-black uppercase tracking-widest hover:bg-white hover:text-sunset-orange transition-all duration-500 shadow-lg text-[10px]">
+                                <button className="w-full bg-sunset-orange text-white py-3 rounded-xl font-semibold uppercase tracking-widest hover:bg-white hover:text-sunset-orange transition-all duration-500 shadow-lg text-[10px]">
                                     Build Custom Itinerary
                                 </button>
                             </div>
 
                             {/* Authority Points */}
                             <div className="bg-white border border-royal-blue/10 p-6 rounded-3xl space-y-6 shadow-md">
-                                <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-royal-blue">The MyTripMyTravel Standard</h4>
+                                <h4 className="text-[10px] font-semibold uppercase tracking-[0.4em] text-royal-blue">The MyTripMyTravel Standard</h4>
                                 <FeatureItem
                                     icon={Map}
                                     title="Tracked Chauffeurs"
@@ -348,7 +348,7 @@ export default function GoldenTriangleAllView() {
                                     <HelpCircle className="text-royal-blue group-hover:text-white" size={20} />
                                 </div>
                                 <div>
-                                    <h5 className="font-black text-royal-blue uppercase text-[10px] tracking-widest mb-0.5">Human Desk</h5>
+                                    <h5 className="font-semibold text-royal-blue uppercase text-[10px] tracking-widest mb-0.5">Human Desk</h5>
                                     <p className="text-[10px] font-bold text-dark-slate/40 uppercase tracking-widest">Chat with an Architect</p>
                                 </div>
                             </div>
@@ -361,8 +361,8 @@ export default function GoldenTriangleAllView() {
                     <div className="container mx-auto px-6">
                         <div className="grid lg:grid-cols-2 gap-24 items-center">
                             <div>
-                                <h2 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-8">Why Travellers Trust Us</h2>
-                                <CharBlurIn text="THE AUTHORITY" className="text-5xl md:text-8xl font-black text-royal-blue uppercase tracking-tighter block leading-none mb-12" />
+                                <h2 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-8">Why Travellers Trust Us</h2>
+                                <CharBlurIn text="THE AUTHORITY" className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight block leading-none mb-12" />
                                 <div className="space-y-10">
                                     {[
                                         { t: "Professional Chauffeurs", d: "Our chauffeurs are trained in defensive driving and attentive hospitality." },
@@ -370,22 +370,22 @@ export default function GoldenTriangleAllView() {
                                         { t: "Comfort-First Vehicles", d: "Every vehicle is chosen for comfort on long-haul routes and easy recovery days." }
                                     ].map((item, i) => (
                                         <div key={i} className="flex gap-8 group">
-                                            <div className="text-sunset-orange font-black text-5xl opacity-10 group-hover:opacity-100 transition-all">0{i + 1}</div>
+                                            <div className="text-sunset-orange font-semibold text-5xl opacity-10 group-hover:opacity-100 transition-all">0{i + 1}</div>
                                             <div>
-                                                <h4 className="font-black text-royal-blue uppercase text-xl mb-4 italic">{item.t}</h4>
+                                                <h4 className="font-semibold text-royal-blue uppercase text-xl mb-4 italic">{item.t}</h4>
                                                 <p className="text-dark-slate/60 font-bold italic leading-relaxed">{item.d}</p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
-                            <div className="relative h-[700px] rounded-[4rem] overflow-hidden shadow-3xl">
+                            <div className="relative h-[700px] rounded-3xl overflow-hidden shadow-3xl">
                                 <Image src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg" alt="Taj Mahal at sunrise, Agra" fill className="object-cover" />
                                 <div className="absolute inset-0 bg-royal-blue/20 backdrop-blur-[2px]" />
                                 <div className="absolute bottom-12 left-12 glass-card p-10 rounded-3xl w-full max-w-sm">
                                     <Star className="text-sunset-orange mb-6" fill="currentColor" />
-                                    <p className="text-white font-black italic text-xl mb-6">"Every Golden Triangle route here is a starting point — we tailor the pace, hotels and stops to how you actually want to travel."</p>
-                                    <span className="text-sunset-orange font-black uppercase text-xs tracking-widest">— The MyTripMyTravel Team</span>
+                                    <p className="text-white font-semibold italic text-xl mb-6">"Every Golden Triangle route here is a starting point — we tailor the pace, hotels and stops to how you actually want to travel."</p>
+                                    <span className="text-sunset-orange font-semibold uppercase text-xs tracking-widest">— The MyTripMyTravel Team</span>
                                 </div>
                             </div>
                         </div>
@@ -394,8 +394,8 @@ export default function GoldenTriangleAllView() {
 
                 <section className="py-40 container mx-auto px-6 z-10 relative">
                     <div className="text-center mb-32">
-                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-6">Execution Protocol</h4>
-                        <CharBlurIn text="BOOKING FLOW" className="text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter" />
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6">Execution Protocol</h4>
+                        <CharBlurIn text="BOOKING FLOW" className="text-5xl md:text-[8rem] font-semibold text-royal-blue uppercase tracking-tight" />
                         <p className="mt-8 text-xl font-bold text-royal-blue/40 italic">From archetype selection to VIP mission execution.</p>
                     </div>
                     <div className="grid md:grid-cols-4 gap-8">
@@ -405,12 +405,12 @@ export default function GoldenTriangleAllView() {
                             { i: Award, t: "Protocol Lock", d: "Receive your bespoke itinerary and chauffeur details." },
                             { i: Sparkles, t: "VIP Launch", d: "Your car is ready at the gate. Experience the path." }
                         ].map((step, idx) => (
-                            <div key={idx} className="glass-card p-12 rounded-[3rem] text-center group hover:bg-royal-blue hover:!bg-royal-blue transition-all duration-700 cursor-pointer border-royal-blue/5">
+                            <div key={idx} className="glass-card p-12 rounded-2xl text-center group hover:bg-royal-blue hover:!bg-royal-blue transition-all duration-700 cursor-pointer border-royal-blue/5">
                                 <div className="w-24 h-24 mx-auto rounded-3xl bg-royal-blue/5 flex items-center justify-center mb-10 group-hover:bg-sunset-orange transition-all duration-500 group-hover:rotate-12">
                                     <step.i className="text-royal-blue group-hover:!text-white transition-colors" size={32} />
                                 </div>
-                                <h4 className="text-xl font-black text-royal-blue group-hover:!text-white uppercase mb-4 tracking-tighter italic">Phase 0{idx + 1}</h4>
-                                <h5 className="font-black text-royal-blue group-hover:!text-white uppercase text-xs tracking-widest mb-6 underline decoration-sunset-orange underline-offset-8 group-hover:decoration-white transition-all">{step.t}</h5>
+                                <h4 className="text-xl font-semibold text-royal-blue group-hover:!text-white uppercase mb-4 tracking-tight italic">Phase 0{idx + 1}</h4>
+                                <h5 className="font-semibold text-royal-blue group-hover:!text-white uppercase text-xs tracking-widest mb-6 underline decoration-sunset-orange underline-offset-8 group-hover:decoration-white transition-all">{step.t}</h5>
                                 <p className="text-dark-slate/60 group-hover:!text-white font-bold text-xs italic leading-relaxed">{step.d}</p>
                             </div>
                         ))}
@@ -421,24 +421,24 @@ export default function GoldenTriangleAllView() {
                 <section className="py-40 bg-royal-blue container mx-auto px-6 z-10 relative rounded-[5rem] mb-40 overflow-hidden">
                     <div className="absolute top-0 right-0 w-96 h-96 bg-sunset-orange/10 blur-[150px] -translate-y-1/2 translate-x-1/2" />
                     <div className="text-center mb-24">
-                        <h2 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-4">Intelligence</h2>
-                        <CharBlurIn text="TOUR ARCHIVE FAQ" className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter block" />
+                        <h2 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-4">Intelligence</h2>
+                        <CharBlurIn text="TOUR ARCHIVE FAQ" className="text-5xl md:text-8xl font-semibold text-white uppercase tracking-tight block" />
                     </div>
                     <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                         <div className="glass-card p-10 rounded-3xl border-white/5 bg-white/5">
-                            <h4 className="font-black text-white uppercase mb-4 tracking-tight">Can I swap Agra for Varanasi?</h4>
+                            <h4 className="font-semibold text-white uppercase mb-4 tracking-tight">Can I swap Agra for Varanasi?</h4>
                             <p className="text-white/60 font-bold italic text-sm leading-relaxed">Absolutely. These are variations, not rigid rules. Almost any city in India is on our menu—we can architect a loop starting anywhere.</p>
                         </div>
                         <div className="glass-card p-10 rounded-3xl border-white/5 bg-white/5">
-                            <h4 className="font-black text-white uppercase mb-4 tracking-tight">What defines a 'Medical Tour'?</h4>
+                            <h4 className="font-semibold text-white uppercase mb-4 tracking-tight">What defines a 'Medical Tour'?</h4>
                             <p className="text-white/60 font-bold italic text-sm leading-relaxed">These tours pair calmer stays with vehicles chosen for comfortable seating. They run at an easier pace for post-op rest and physical therapy.</p>
                         </div>
                         <div className="glass-card p-10 rounded-3xl border-white/5 bg-white/5">
-                            <h4 className="font-black text-white uppercase mb-4 tracking-tight">Are drivers experienced with large groups?</h4>
+                            <h4 className="font-semibold text-white uppercase mb-4 tracking-tight">Are drivers experienced with large groups?</h4>
                             <p className="text-white/60 font-bold italic text-sm leading-relaxed">Our chauffeurs have handled multi-car convoys for palace weddings in Jaipur and coordinate logistics closely across the group.</p>
                         </div>
                         <div className="glass-card p-10 rounded-3xl border-white/5 bg-white/5">
-                            <h4 className="font-black text-white uppercase mb-4 tracking-tight">How is 'Golden Hour' photography handled?</h4>
+                            <h4 className="font-semibold text-white uppercase mb-4 tracking-tight">How is 'Golden Hour' photography handled?</h4>
                             <p className="text-white/60 font-bold italic text-sm leading-relaxed">We plan visits around the best light, arriving early where possible to enjoy the monuments before the busiest crowds.</p>
                         </div>
                     </div>
@@ -447,16 +447,16 @@ export default function GoldenTriangleAllView() {
                 {/* --- Footer CTA --- */}
                 <footer className="bg-royal-blue pb-20 relative overflow-hidden z-20">
                     <div className="container mx-auto px-6 relative z-10 text-center">
-                        <CharBlurIn text="READY TO" className="text-white/20 text-4xl font-black uppercase tracking-widest" />
-                        <CharBlurIn text="START THE ENGINE?" className="text-white text-5xl md:text-[8rem] font-black uppercase tracking-tighter block mt-4 mb-20" />
+                        <CharBlurIn text="READY TO" className="text-white/20 text-4xl font-semibold uppercase tracking-widest" />
+                        <CharBlurIn text="START THE ENGINE?" className="text-white text-5xl md:text-[8rem] font-semibold uppercase tracking-tight block mt-4 mb-20" />
                         <Magnetic>
-                            <button className="bg-sunset-orange text-white px-24 py-10 rounded-full font-black uppercase tracking-widest hover:scale-110 hover:shadow-[0_0_80px_rgba(249,115,22,0.6)] transition-all shadow-2xl">
+                            <button className="bg-sunset-orange text-white px-24 py-10 rounded-full font-semibold uppercase tracking-widest hover:scale-110 hover:shadow-[0_0_80px_rgba(249,115,22,0.6)] transition-all shadow-md">
                                 Consult an Architect
                             </button>
                         </Magnetic>
                         <div className="mt-40 pt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-                            <span className="text-2xl font-black text-white uppercase tracking-tighter italic">MYTRIP<span className="text-sunset-orange">MYTRAVEL</span></span>
-                            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/20">© 2026 MyTripMyTravel. Golden Triangle Archive.</span>
+                            <span className="text-2xl font-semibold text-white uppercase tracking-tight italic">MYTRIP<span className="text-sunset-orange">MYTRAVEL</span></span>
+                            <span className="text-[10px] font-semibold uppercase tracking-[0.5em] text-white/20">© 2026 MyTripMyTravel. Golden Triangle Archive.</span>
                         </div>
                     </div>
                 </footer>
@@ -486,7 +486,7 @@ export default function GoldenTriangleAllView() {
                                 initial={{ scale: 0.9, y: 50, opacity: 0 }}
                                 animate={{ scale: 1, y: 0, opacity: 1 }}
                                 exit={{ scale: 0.9, y: 50, opacity: 0 }}
-                                className="bg-white rounded-[4rem] w-full max-w-5xl max-h-[85vh] overflow-hidden relative shadow-4xl flex flex-col md:flex-row"
+                                className="bg-white rounded-3xl w-full max-w-5xl max-h-[85vh] overflow-hidden relative shadow-4xl flex flex-col md:flex-row"
                             >
                                 <button
                                     onClick={() => setSelectedPackage(null)}
@@ -499,27 +499,27 @@ export default function GoldenTriangleAllView() {
                                     <Image src={selectedPackage.img} alt={`${selectedPackage.title} — ${selectedPackage.duration} itinerary`} fill className="object-cover" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-royal-blue to-transparent md:bg-gradient-to-r" />
                                     <div className="absolute bottom-12 left-12 right-12 text-white">
-                                        <h4 className="text-xs font-black uppercase text-sunset-orange tracking-[0.4em] mb-4">{selectedPackage.theme}</h4>
-                                        <h3 className="text-4xl font-black uppercase tracking-tighter leading-none mb-6">{selectedPackage.title}</h3>
+                                        <h4 className="text-xs font-semibold uppercase text-sunset-orange tracking-[0.4em] mb-4">{selectedPackage.theme}</h4>
+                                        <h3 className="text-4xl font-semibold uppercase tracking-tight leading-none mb-6">{selectedPackage.title}</h3>
                                         <div className="flex items-center gap-6">
-                                            <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest"><Clock size={14} className="text-sunset-orange" /> {selectedPackage.duration}</div>
-                                            <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-sunset-orange"><Sparkles size={14} /> Master Class</div>
+                                            <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest"><Clock size={14} className="text-sunset-orange" /> {selectedPackage.duration}</div>
+                                            <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-sunset-orange"><Sparkles size={14} /> Master Class</div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="flex-1 p-12 md:p-20 overflow-y-auto no-scrollbar" data-lenis-prevent>
-                                    <h5 className="text-[10px] font-black uppercase tracking-[0.6em] text-royal-blue/20 mb-12">Target Itinerary Playback</h5>
+                                    <h5 className="text-[10px] font-semibold uppercase tracking-[0.6em] text-royal-blue/20 mb-12">Target Itinerary Playback</h5>
 
                                     <div className="space-y-16 relative">
                                         <div className="absolute left-[1.35rem] top-4 bottom-4 w-[2px] bg-royal-blue/5" />
 
                                         {selectedPackage.itinerary.map((step) => (
                                             <div key={step.day} className="relative pl-16">
-                                                <div className="absolute left-0 top-1 w-12 h-12 rounded-2xl bg-white border-2 border-royal-blue/10 flex items-center justify-center font-black text-royal-blue group-hover:border-sunset-orange transition-colors">
+                                                <div className="absolute left-0 top-1 w-12 h-12 rounded-2xl bg-white border-2 border-royal-blue/10 flex items-center justify-center font-semibold text-royal-blue group-hover:border-sunset-orange transition-colors">
                                                     {step.day}
                                                 </div>
-                                                <h6 className="text-lg font-black text-royal-blue uppercase tracking-tight mb-3">Day {step.day} Protocol</h6>
+                                                <h6 className="text-lg font-semibold text-royal-blue uppercase tracking-tight mb-3">Day {step.day} Protocol</h6>
                                                 <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed">{step.plan}</p>
                                             </div>
                                         ))}
@@ -527,8 +527,8 @@ export default function GoldenTriangleAllView() {
 
                                     <div className="mt-20 pt-12 border-t border-royal-blue/5 flex flex-col md:flex-row items-center justify-between gap-12">
                                         <div>
-                                            <span className="text-[10px] uppercase font-black text-royal-blue/40 block mb-1">Architecture Base Price</span>
-                                            <span className="text-4xl font-black text-royal-blue">{selectedPackage.price}</span>
+                                            <span className="text-[10px] uppercase font-semibold text-royal-blue/40 block mb-1">Architecture Base Price</span>
+                                            <span className="text-4xl font-semibold text-royal-blue">{selectedPackage.price}</span>
                                         </div>
                                         <button className="btn-primary w-full md:w-auto px-16 py-6 text-xs">
                                             Lock This Variation

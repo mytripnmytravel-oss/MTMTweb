@@ -4,25 +4,25 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
-import { Magnetic } from "@/components/ClientComponents";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NavItem = ({ title, items, href }: { title: string; items?: { label: string; href: string }[]; href?: string }) => (
-    <div className="relative group px-2 xl:px-3 py-2 cursor-pointer transition-colors hover:text-sunset-orange">
-        {href ? (
-            <Link href={href} className="flex items-center gap-1 font-bold text-[10px] xl:text-xs tracking-wide uppercase whitespace-nowrap">
-                {title} {items && <ChevronDown size={14} className="group-hover:rotate-180 transition-transform" />}
-            </Link>
-        ) : (
-            <div className="flex items-center gap-1 font-bold text-[10px] xl:text-xs tracking-wide uppercase whitespace-nowrap">
-                {title} {items && <ChevronDown size={14} className="group-hover:rotate-180 transition-transform" />}
-            </div>
-        )}
+    <div className="relative group px-1">
+        <Link
+            href={href ?? "#"}
+            className="flex items-center gap-1 rounded-full px-3 py-2 text-[13px] font-medium text-ink/80 transition-colors hover:text-clay whitespace-nowrap"
+        >
+            {title}
+            {items && <ChevronDown size={13} className="text-stone transition-transform duration-300 group-hover:rotate-180" />}
+        </Link>
         {items && (
-            <div className="absolute top-full left-1/2 -translate-x-1/2 w-72 bg-white rounded-2xl py-6 border border-royal-blue/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[3000] mt-4">
-                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t border-l border-royal-blue/10 rotate-45" />
+            <div className="invisible absolute left-1/2 top-full z-[3000] mt-2 w-64 -translate-x-1/2 rounded-2xl border border-line bg-white p-2 opacity-0 shadow-[0_24px_60px_-30px_rgba(26,23,18,0.35)] transition-all duration-300 group-hover:visible group-hover:opacity-100">
                 {items.map((item, idx) => (
-                    <Link key={idx} href={item.href} className="block px-6 py-3 hover:bg-royal-blue/5 hover:text-sunset-orange text-royal-blue text-[10px] font-black transition-colors uppercase tracking-[0.2em] whitespace-nowrap">
+                    <Link
+                        key={idx}
+                        href={item.href}
+                        className="block rounded-xl px-4 py-2.5 text-[13px] font-medium text-ink-soft transition-colors hover:bg-paper-dim hover:text-clay whitespace-nowrap"
+                    >
                         {item.label}
                     </Link>
                 ))}
@@ -31,155 +31,149 @@ const NavItem = ({ title, items, href }: { title: string; items?: { label: strin
     </div>
 );
 
-export const Logo3D = ({ isScrolled }: { isScrolled: boolean }) => {
-    return (
-        <Link href="/" className="flex items-center gap-4 group">
-            <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shrink-0">
-                <Image
-                    src="/logo.png"
-                    alt="MyTripMyTravel Logo"
-                    width={56}
-                    height={56}
-                    className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.1)]"
-                />
-            </div>
+export const Logo3D = ({ light = false }: { light?: boolean; isScrolled?: boolean }) => (
+    <Link href="/" className="flex items-center gap-3 group">
+        <div className="relative h-10 w-10 shrink-0">
+            <Image src="/logo.png" alt="MyTripMyTravel" width={44} height={44} className="h-full w-full object-contain" />
+        </div>
+        <div className="flex flex-col leading-none">
+            <span className={`font-display text-[17px] font-semibold tracking-tight whitespace-nowrap ${light ? "text-paper" : "text-ink"}`}>
+                MyTrip<span className="text-clay">MyTravel</span>
+            </span>
+            <span className="mt-1 text-[9px] font-medium uppercase tracking-[0.24em] text-stone whitespace-nowrap">
+                Journeys, curated
+            </span>
+        </div>
+    </Link>
+);
 
-            <div className="flex flex-col">
-                <span className={`text-xl sm:text-2xl font-black tracking-tighter uppercase leading-none transition-colors duration-500 whitespace-nowrap ${isScrolled ? "text-white" : "text-royal-blue"}`}>
-                    MYTRIP<span className="text-sunset-orange">MYTRAVEL</span>
-                </span>
-                <div className="flex items-center gap-2 mt-1">
-                    <div className="h-[1px] w-4 bg-sunset-orange" />
-                    <span className="text-[7px] font-black tracking-[0.3em] text-sunset-orange uppercase whitespace-nowrap">Journeys That Inspire</span>
-                    <div className="h-[1px] w-4 bg-sunset-orange" />
-                </div>
-            </div>
-        </Link>
-    );
-};
+const NAV = [
+    { title: "Destinations", href: "/destinations", items: [
+        { label: "Golden Triangle", href: "/destinations/region/golden-triangle" },
+        { label: "Rajasthan", href: "/destinations/region/rajasthan" },
+        { label: "Kerala", href: "/destinations/region/kerala" },
+        { label: "Himalayas", href: "/destinations/region/himalayas" },
+        { label: "Sikkim", href: "/destinations/region/sikkim" },
+        { label: "Andaman", href: "/destinations/region/andaman" },
+    ]},
+    { title: "Tours", href: "/tours", items: [
+        { label: "All Tours", href: "/tours" },
+        { label: "Master Packages", href: "/tours/golden-triangle-all" },
+        { label: "Golden Triangle", href: "/tours/golden-triangle" },
+        { label: "Rajasthan", href: "/tours/rajasthan" },
+        { label: "Kerala", href: "/tours/kerala" },
+        { label: "Himalayas", href: "/tours/himalayas" },
+    ]},
+    { title: "Experiences", href: "/wellness", items: [
+        { label: "Wellness & Sanctuary", href: "/wellness" },
+        { label: "Heritage Dining", href: "/heritage-dining" },
+        { label: "Expert Guides", href: "/expert-guides" },
+    ]},
+    { title: "Occasions", href: "/weddings", items: [
+        { label: "Weddings", href: "/weddings" },
+        { label: "Corporate Offsites", href: "/corporate" },
+    ]},
+    { title: "Fleet & Services", href: "/fleet", items: [
+        { label: "Elite Fleet", href: "/fleet" },
+        { label: "Ground Services", href: "/services" },
+        { label: "Chauffeured Car Rental", href: "/services/car-rental" },
+        { label: "Inter-City Transfers", href: "/services/inter-city" },
+    ]},
+    { title: "Journal", href: "/blog", items: [
+        { label: "Blog", href: "/blog" },
+        { label: "FAQ", href: "/faq" },
+    ]},
+];
+
+const MOBILE = [
+    { label: "Destinations", href: "/destinations" },
+    { label: "Tours", href: "/tours" },
+    { label: "Wellness & Sanctuary", href: "/wellness" },
+    { label: "Heritage Dining", href: "/heritage-dining" },
+    { label: "Expert Guides", href: "/expert-guides" },
+    { label: "Weddings", href: "/weddings" },
+    { label: "Corporate", href: "/corporate" },
+    { label: "Elite Fleet", href: "/fleet" },
+    { label: "Services", href: "/services" },
+    { label: "Journal", href: "/blog" },
+    { label: "FAQ", href: "/faq" },
+];
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        const onScroll = () => setIsScrolled(window.scrollY > 24);
+        onScroll();
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
     return (
         <>
-            <header className={`fixed top-0 w-full z-[2000] transition-all duration-700 ${isScrolled ? "py-2 md:py-4" : "py-4 md:py-8"}`}>
-                <div className="container mx-auto px-4 transition-all duration-700 max-w-7xl">
-                    <div className={`flex items-center justify-between px-6 py-4 transition-all duration-700 ${isScrolled
-                        ? "glass-card border-royal-blue/10 rounded-full shadow-2xl !bg-royal-blue text-white"
-                        : "bg-white/95 backdrop-blur-xl border border-royal-blue/5 rounded-3xl text-royal-blue shadow-lg"
-                        }`}>
+            <header
+                className={`fixed top-0 z-[2000] w-full border-b transition-all duration-500 ${
+                    isScrolled
+                        ? "border-line bg-paper/90 backdrop-blur-md"
+                        : "border-transparent bg-paper/60 backdrop-blur-sm"
+                }`}
+            >
+                <div className="container-x flex items-center justify-between py-3">
+                    <Logo3D isScrolled={isScrolled} />
 
-                        <Logo3D isScrolled={isScrolled} />
+                    <nav className="hidden items-center lg:flex">
+                        {NAV.map((n) => (
+                            <NavItem key={n.title} {...n} />
+                        ))}
+                    </nav>
 
-                        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-                            <NavItem title="Destinations" href="/destinations" items={[
-                                { label: "Golden Triangle", href: "/destinations/region/golden-triangle" },
-                                { label: "Rajasthan", href: "/destinations/region/rajasthan" },
-                                { label: "Kerala", href: "/destinations/region/kerala" },
-                                { label: "Himalayas", href: "/destinations/region/himalayas" },
-                                { label: "Sikkim", href: "/destinations/region/sikkim" },
-                                { label: "Andaman", href: "/destinations/region/andaman" }
-                            ]} />
-                            <NavItem title="Tours" href="/tours" items={[
-                                { label: "All Tours Archive", href: "/tours" },
-                                { label: "Tour Master Packages", href: "/tours/golden-triangle-all" },
-                                { label: "Golden Triangle", href: "/tours/golden-triangle" },
-                                { label: "Rajasthan", href: "/tours/rajasthan" },
-                                { label: "Kerala", href: "/tours/kerala" },
-                                { label: "Himalayas", href: "/tours/himalayas" },
-                                { label: "Sikkim", href: "/tours/sikkim" },
-                                { label: "Andaman", href: "/tours/andaman" }
-                            ]} />
-                            <NavItem title="Experiences" href="/wellness" items={[
-                                { label: "Medical Sanctuary", href: "/wellness" },
-                                { label: "Heritage Dining", href: "/heritage-dining" },
-                                { label: "Expert Guides", href: "/expert-guides" }
-                            ]} />
-                            <NavItem title="Occasions" href="/weddings" items={[
-                                { label: "Royal Weddings", href: "/weddings" },
-                                { label: "Corporate Missions", href: "/corporate" }
-                            ]} />
-                            <NavItem title="Fleet & Services" href="/fleet" items={[
-                                { label: "Elite Fleet", href: "/fleet" },
-                                { label: "Ground Services", href: "/services" },
-                                { label: "Chauffeured Car Rental", href: "/services/car-rental" },
-                                { label: "Inter-City Transfers", href: "/services/inter-city" }
-                            ]} />
-                            <NavItem title="Journal" href="/blog" items={[
-                                { label: "Blog", href: "/blog" },
-                                { label: "FAQ", href: "/faq" }
-                            ]} />
-                        </nav>
-
-                        <div className="flex items-center gap-3 md:gap-6">
-                            <Magnetic>
-                                <Link href="/booking" className="hidden md:block">
-                                    <button className="bg-sunset-orange text-white px-8 py-3 font-black text-sm tracking-widest uppercase hover:bg-white hover:text-sunset-orange transition-all duration-500 rounded-full shadow-lg shadow-sunset-orange/20">
-                                        Book Now
-                                    </button>
-                                </Link>
-                            </Magnetic>
-                            <button
-                                className="lg:hidden text-inherit"
-                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            >
-                                {isMobileMenuOpen ? <X size={24} className="md:w-8 md:h-8" /> : <Menu size={24} className="md:w-8 md:h-8" />}
-                            </button>
-                        </div>
+                    <div className="flex items-center gap-3">
+                        <Link href="/booking" className="hidden md:inline-flex btn-primary btn-sm">
+                            Plan your trip
+                        </Link>
+                        <button
+                            aria-label="Open menu"
+                            className="text-ink lg:hidden"
+                            onClick={() => setIsMobileMenuOpen(true)}
+                        >
+                            <Menu size={24} />
+                        </button>
                     </div>
                 </div>
             </header>
 
-            {/* Mobile Menu */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, x: "100%" }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: "100%" }}
-                        className="fixed inset-0 z-[200] bg-royal-blue flex flex-col"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="fixed inset-0 z-[3000] flex flex-col bg-paper lg:hidden"
                     >
-                        <button
-                            className="absolute top-8 right-8 text-white z-10"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            <X size={36} />
-                        </button>
-                        <div className="flex-1 overflow-y-auto overscroll-contain px-10 pt-24 pb-16 flex flex-col items-center text-center gap-6">
-                            {[
-                                { label: "DESTINATIONS", href: "/destinations" },
-                                { label: "TOURS", href: "/tours" },
-                                { label: "MEDICAL SANCTUARY", href: "/wellness" },
-                                { label: "HERITAGE DINING", href: "/heritage-dining" },
-                                { label: "EXPERT GUIDES", href: "/expert-guides" },
-                                { label: "WEDDINGS", href: "/weddings" },
-                                { label: "CORPORATE", href: "/corporate" },
-                                { label: "ELITE FLEET", href: "/fleet" },
-                                { label: "SERVICES", href: "/services" },
-                                { label: "BLOG", href: "/blog" },
-                                { label: "FAQ", href: "/faq" },
-                            ].map((m) => (
-                                <Link
-                                    key={m.href}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    href={m.href}
-                                    className="text-3xl sm:text-4xl font-black text-white hover:text-sunset-orange whitespace-nowrap"
-                                >
-                                    {m.label}
-                                </Link>
-                            ))}
-                            <Link href="/booking" onClick={() => setIsMobileMenuOpen(false)}>
-                                <button className="bg-sunset-orange text-white px-12 py-5 font-black text-xl rounded-full mt-8">GET A QUOTE</button>
+                        <div className="container-x flex items-center justify-between py-3">
+                            <Logo3D />
+                            <button aria-label="Close menu" className="text-ink" onClick={() => setIsMobileMenuOpen(false)}>
+                                <X size={26} />
+                            </button>
+                        </div>
+                        <div className="flex-1 overflow-y-auto overscroll-contain px-6 pb-16 pt-6">
+                            <div className="flex flex-col divide-y divide-line">
+                                {MOBILE.map((m) => (
+                                    <Link
+                                        key={m.href}
+                                        href={m.href}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="flex items-center justify-between py-4 font-display text-2xl font-medium text-ink hover:text-clay"
+                                    >
+                                        {m.label}
+                                        <ChevronDown size={18} className="-rotate-90 text-stone" />
+                                    </Link>
+                                ))}
+                            </div>
+                            <Link href="/booking" onClick={() => setIsMobileMenuOpen(false)} className="btn-primary mt-8 w-full py-4">
+                                Plan your trip
                             </Link>
                         </div>
                     </motion.div>

@@ -35,12 +35,12 @@ const CustomDropdown = ({ label, name, icon: Icon, value, options, onSelect, id,
     return (
         <div className="space-y-4 relative">
             <input type="hidden" name={name} value={typeof value === 'string' ? value : (value?.name || "")} />
-            <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">{label}</label>
+            <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">{label}</label>
             <div className="relative">
                 <button
                     type="button"
                     onClick={() => setActiveDropdown(isActive ? null : id)}
-                    className={`w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-left text-royal-blue font-black uppercase transition-all flex items-center justify-between gap-4 group ${isActive ? "ring-2 ring-sunset-orange bg-white shadow-xl" : "hover:bg-royal-blue/[0.04]"}`}
+                    className={`w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-left text-royal-blue font-semibold uppercase transition-all flex items-center justify-between gap-4 group ${isActive ? "ring-2 ring-sunset-orange bg-white shadow-xl" : "hover:bg-royal-blue/[0.04]"}`}
                 >
                     <div className="flex items-center gap-4 min-w-0 flex-1">
                         <Icon className={`transition-colors shrink-0 ${isActive ? "text-sunset-orange" : "text-royal-blue/20"}`} size={18} />
@@ -78,7 +78,7 @@ const CustomDropdown = ({ label, name, icon: Icon, value, options, onSelect, id,
                                                     onSelect(opt);
                                                     setActiveDropdown(null);
                                                 }}
-                                                className={`w-full px-8 py-5 text-left text-[11px] font-black uppercase tracking-widest transition-all flex items-center justify-between gap-4 group ${
+                                                className={`w-full px-8 py-5 text-left text-[11px] font-semibold uppercase tracking-widest transition-all flex items-center justify-between gap-4 group ${
                                                     isSelected
                                                         ? "bg-royal-blue text-white"
                                                         : "text-royal-blue/60 hover:bg-royal-blue/5 hover:text-royal-blue"
@@ -151,7 +151,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                     animate={{ scale: 1, y: 0, opacity: 1 }}
                     exit={{ scale: 0.9, y: 20, opacity: 0 }}
                     data-lenis-prevent
-                    className="relative w-full max-w-5xl bg-white shadow-2xl flex flex-col md:flex-row shrink-0 rounded-[3rem]"
+                    className="relative w-full max-w-5xl bg-white shadow-md flex flex-col md:flex-row shrink-0 rounded-2xl"
                 >
                     {/* Close Button */}
                     <button
@@ -165,25 +165,25 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                     <div className="md:w-1/3 bg-royal-blue p-8 md:p-12 text-white relative flex flex-col justify-center shrink-0 rounded-t-[3rem] md:rounded-t-none md:rounded-l-[3rem]">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-sunset-orange/10 blur-3xl -translate-y-1/2 translate-x-1/2 rounded-full" />
                         <div className="relative z-10 text-center md:text-left">
-                            <h4 className="text-[8px] md:text-xs font-black uppercase tracking-[0.4em] text-sunset-orange mb-4 md:mb-6">Selected Asset</h4>
-                            <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 md:mb-8 shadow-2xl border border-white/10">
+                            <h4 className="text-[8px] md:text-xs font-semibold uppercase tracking-[0.4em] text-sunset-orange mb-4 md:mb-6">Selected Asset</h4>
+                            <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 md:mb-8 shadow-md border border-white/10">
                                 <Image src={currentVehicle.img} alt={currentVehicle.name} fill className="object-cover" />
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter leading-none mb-3 md:mb-4">{currentVehicle.name}</h3>
+                            <h3 className="text-2xl md:text-3xl font-semibold uppercase tracking-tight leading-none mb-3 md:mb-4">{currentVehicle.name}</h3>
                             <p className="text-white/60 text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-6 md:mb-8">{currentVehicle.type} • {currentVehicle.category} Class</p>
                             
                             <div className="space-y-4 pt-6 md:pt-8 border-t border-white/10 text-left">
                                 <div className="flex items-center gap-3">
                                     <Users size={14} className="text-sunset-orange shrink-0" />
-                                    <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest">{currentVehicle.passengers} Max Passengers</span>
+                                    <span className="text-[8px] md:text-[10px] font-semibold uppercase tracking-widest">{currentVehicle.passengers} Max Passengers</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Briefcase size={14} className="text-sunset-orange shrink-0" />
-                                    <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest">{currentVehicle.luggage} Luggage Space</span>
+                                    <span className="text-[8px] md:text-[10px] font-semibold uppercase tracking-widest">{currentVehicle.luggage} Luggage Space</span>
                                 </div>
                                 <div className="flex items-center gap-3 pt-2 md:pt-4">
                                     <ShieldCheck size={14} className="text-emerald-400 shrink-0" />
-                                    <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-emerald-400">Instant Verification Active</span>
+                                    <span className="text-[8px] md:text-[10px] font-semibold uppercase tracking-widest text-emerald-400">Instant Verification Active</span>
                                 </div>
                             </div>
                         </div>
@@ -199,21 +199,21 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                     animate={{ opacity: 1, y: 0 }}
                                     className="h-full flex flex-col items-center justify-center text-center py-20"
                                 >
-                                    <div className="w-24 h-24 bg-emerald-500 rounded-full flex items-center justify-center mb-8 shadow-2xl">
+                                    <div className="w-24 h-24 bg-emerald-500 rounded-full flex items-center justify-center mb-8 shadow-md">
                                         <CheckCircle2 className="text-white" size={40} />
                                     </div>
-                                    <h3 className="text-4xl font-black text-royal-blue uppercase tracking-tighter mb-4">Transmission Successful</h3>
+                                    <h3 className="text-4xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Transmission Successful</h3>
                                     <p className="text-dark-slate/60 font-bold italic mb-6">
                                         Your availability request for the {currentVehicle.name} has been logged. Our fleet manager will contact you within 15 minutes.
                                     </p>
                                     <div className="p-6 bg-royal-blue/5 rounded-2xl border border-royal-blue/10 mb-10 w-full">
-                                        <p className="text-[10px] font-black uppercase tracking-widest text-royal-blue/40 mb-2">Priority Support:</p>
-                                        <p className="text-sm font-black text-royal-blue">+91 99978 12237</p>
-                                        <p className="text-sm font-black text-royal-blue">info@mytripmytravel.com</p>
+                                        <p className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/40 mb-2">Priority Support:</p>
+                                        <p className="text-sm font-semibold text-royal-blue">+91 99978 12237</p>
+                                        <p className="text-sm font-semibold text-royal-blue">info@mytripmytravel.com</p>
                                     </div>
                                     <button
                                         onClick={onClose}
-                                        className="bg-royal-blue text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-sunset-orange transition-all shadow-xl"
+                                        className="bg-royal-blue text-white px-12 py-5 rounded-2xl font-semibold uppercase tracking-widest text-xs hover:bg-sunset-orange transition-all shadow-xl"
                                     >
                                         Return to Platform
                                     </button>
@@ -221,7 +221,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                             ) : (
                                 <motion.div key="form">
                                     <div className="mb-12">
-                                        <h3 className="text-4xl font-black text-royal-blue uppercase tracking-tighter mb-4">Availability Protocol</h3>
+                                        <h3 className="text-4xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Availability Protocol</h3>
                                         <p className="text-dark-slate/40 text-sm font-bold italic">Deploy your logistics request for the Golden Triangle.</p>
                                     </div>
                                     
@@ -250,17 +250,17 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         {/* Row 1: Contact Info */}
                                         <div className="grid md:grid-cols-2 gap-8">
                                             <div className="space-y-4">
-                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Full Name</label>
+                                                <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Full Name</label>
                                                 <div className="relative">
-                                                    <input required name="Full Name" type="text" placeholder="ALEXANDER VANCE" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
+                                                    <input required name="Full Name" type="text" placeholder="ALEXANDER VANCE" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
                                                     <Users className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20" size={18} />
                                                 </div>
                                                 <ValidationError prefix="Name" field="Full Name" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                             </div>
                                             <div className="space-y-4">
-                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Contact Intelligence (Phone)</label>
+                                                <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Contact Intelligence (Phone)</label>
                                                 <div className="relative">
-                                                    <input required name="Phone" type="tel" placeholder="+91 999 000 0000" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
+                                                    <input required name="Phone" type="tel" placeholder="+91 999 000 0000" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
                                                     <Phone className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20" size={18} />
                                                 </div>
                                                 <ValidationError prefix="Phone" field="Phone" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
@@ -270,9 +270,9 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         {/* Row 2: Email & Passengers */}
                                         <div className="grid md:grid-cols-2 gap-8">
                                             <div className="space-y-4">
-                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Email Terminal</label>
+                                                <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Email Terminal</label>
                                                 <div className="relative">
-                                                    <input required name="Email" type="email" placeholder="VANCE@MISSION.COM" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
+                                                    <input required name="Email" type="email" placeholder="VANCE@MISSION.COM" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
                                                     <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20" size={18} />
                                                 </div>
                                                 <ValidationError prefix="Email" field="Email" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
@@ -294,16 +294,16 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         {/* Row 3: Pickup Details */}
                                         <div className="grid md:grid-cols-3 gap-8">
                                             <div className="space-y-4 md:col-span-2">
-                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Deployment Vector (Pickup Location)</label>
+                                                <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Deployment Vector (Pickup Location)</label>
                                                 <div className="relative">
-                                                    <input required name="Pickup Location" type="text" placeholder="IGIA TERMINAL 3, NEW DELHI" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
+                                                    <input required name="Pickup Location" type="text" placeholder="IGIA TERMINAL 3, NEW DELHI" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase focus:ring-2 focus:ring-sunset-orange transition-all pl-14" />
                                                     <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20" size={18} />
                                                 </div>
                                             </div>
                                             <div className="space-y-4">
-                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Pickup Time</label>
+                                                <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Pickup Time</label>
                                                 <div className="relative">
-                                                    <input required name="Pickup Time" type="time" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black focus:ring-2 focus:ring-sunset-orange transition-all appearance-none pl-14" />
+                                                    <input required name="Pickup Time" type="time" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold focus:ring-2 focus:ring-sunset-orange transition-all appearance-none pl-14" />
                                                     <Clock className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20" size={18} />
                                                 </div>
                                             </div>
@@ -312,9 +312,9 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         {/* Row 4: Date & Duration */}
                                         <div className="grid md:grid-cols-2 gap-8">
                                             <div className="space-y-4">
-                                                <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Commencement Date</label>
+                                                <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Commencement Date</label>
                                                 <div className="relative">
-                                                    <input required name="Start Date" type="date" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none pl-14" />
+                                                    <input required name="Start Date" type="date" className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none pl-14" />
                                                     <CalendarIcon className="absolute left-6 top-1/2 -translate-y-1/2 text-royal-blue/20 pointer-events-none" size={18} />
                                                 </div>
                                             </div>
@@ -333,9 +333,9 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         </div>
 
                                         <div className="space-y-4">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Specific Directives / Itinerary</label>
+                                            <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Specific Directives / Itinerary</label>
                                             <div className="relative">
-                                                <textarea required name="Directives" rows={3} placeholder="ENTER EXTRA REQUIREMENTS OR MISSION DETAILS..." className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all resize-none pl-14"></textarea>
+                                                <textarea required name="Directives" rows={3} placeholder="ENTER EXTRA REQUIREMENTS OR MISSION DETAILS..." className="w-full bg-royal-blue/[0.02] border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-semibold uppercase focus:ring-2 focus:ring-sunset-orange transition-all resize-none pl-14"></textarea>
                                                 <Info className="absolute left-6 top-8 text-royal-blue/20" size={18} />
                                             </div>
                                             <ValidationError prefix="Message" field="Directives" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
@@ -352,7 +352,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                             <button
                                                 type="submit"
                                                 disabled={state.submitting}
-                                                className="w-full md:w-auto bg-royal-blue text-white px-12 py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs shadow-2xl shadow-royal-blue/20 flex items-center justify-center gap-6 hover:bg-sunset-orange transition-all duration-500 disabled:opacity-50"
+                                                className="w-full md:w-auto bg-royal-blue text-white px-12 py-6 rounded-2xl font-semibold uppercase tracking-[0.2em] text-xs shadow-md shadow-royal-blue/20 flex items-center justify-center gap-6 hover:bg-sunset-orange transition-all duration-500 disabled:opacity-50"
                                             >
                                                 {state.submitting ? "TRANSMITTING TO HQ..." : "AUTHORIZE AVAILABILITY CHECK"}
                                                 <ArrowRight />

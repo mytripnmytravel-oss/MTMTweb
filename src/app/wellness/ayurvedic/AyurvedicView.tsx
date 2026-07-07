@@ -24,13 +24,13 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                             <motion.h4
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-6"
+                                className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6"
                             >
                                 Ancient Science
                             </motion.h4>
                             <CharBlurIn
                                 text="AYURVEDIC RESTORATION"
-                                className="text-5xl md:text-[7rem] font-black text-royal-blue uppercase tracking-tighter leading-[0.85] mb-12"
+                                className="text-5xl md:text-[7rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
                             />
                             <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed mb-12">
                                 Practitioner-led classical Ayurveda in its Keralan home — authentic Panchakarma and herbal therapies delivered at AYUSH-certified centres, framed honestly as recuperative care rather than a medical cure.
@@ -38,7 +38,7 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                             <div className="flex flex-wrap gap-6">
                                 <Magnetic>
                                     <Link href="/booking">
-                                        <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-sunset-orange transition-all duration-500">
+                                        <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-semibold uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-sunset-orange transition-all duration-500">
                                             Plan a Programme <ArrowRight size={16} />
                                         </button>
                                     </Link>
@@ -47,13 +47,13 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                                     <div className="w-12 h-12 rounded-full bg-sunset-orange/10 flex items-center justify-center">
                                         <Leaf className="text-sunset-orange" size={20} />
                                     </div>
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-royal-blue/40">AYUSH-certified partners</span>
+                                    <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/40">AYUSH-certified partners</span>
                                 </div>
                             </div>
                         </div>
                         <div className="relative">
                             <Tilt3D>
-                                <div className="relative h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl bg-orange-50 border border-sunset-orange/10">
+                                <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-md bg-orange-50 border border-sunset-orange/10">
                                     <Image
                                         src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Ayurvedic_Oil_Massage.jpg"
                                         alt="Ayurvedic oil therapy at a certified Kerala centre"
@@ -71,8 +71,8 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                 <section className="py-40 bg-orange-50/50 relative overflow-hidden">
                     <div className="container mx-auto px-6">
                         <div className="text-center mb-24">
-                            <h2 className="text-5xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter mb-8">PANCHAKARMA</h2>
-                            <p className="text-sunset-orange font-black uppercase tracking-widest text-xs">The five classical cleansing therapies</p>
+                            <h2 className="text-5xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight mb-8">PANCHAKARMA</h2>
+                            <p className="text-sunset-orange font-semibold uppercase tracking-widest text-xs">The five classical cleansing therapies</p>
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-8">
@@ -88,10 +88,10 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="bg-white p-12 rounded-[2.5rem] shadow-lg border border-sunset-orange/5 hover:border-sunset-orange/30 transition-all group"
+                                    className="bg-white p-12 rounded-2xl shadow-lg border border-sunset-orange/5 hover:border-sunset-orange/30 transition-all group"
                                 >
                                     <pillar.icon className="text-sunset-orange mb-8 transition-transform group-hover:scale-125 duration-500" size={40} />
-                                    <h4 className="text-2xl font-black text-royal-blue uppercase tracking-tighter mb-4">{pillar.title}</h4>
+                                    <h4 className="text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-4">{pillar.title}</h4>
                                     <p className="text-dark-slate/60 font-bold italic text-sm">{pillar.desc}</p>
                                 </motion.div>
                             ))}
@@ -104,7 +104,7 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                     <div className="container mx-auto px-6 text-center">
                         <div className="max-w-4xl mx-auto">
                             <ShieldCheck className="text-sunset-orange mx-auto mb-12" size={60} />
-                            <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-16">
+                            <h2 className="text-4xl md:text-7xl font-semibold text-white uppercase tracking-tight leading-[0.9] mb-16">
                                 CERTIFIED <br /> <span className="text-sunset-orange">CARE.</span>
                             </h2>
                             <p className="text-white/60 font-bold italic text-2xl mb-16 px-12">

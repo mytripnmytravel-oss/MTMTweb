@@ -6,459 +6,342 @@ import Image from "next/image";
 import Link from "next/link";
 import {
     MapPin, Navigation2, BedDouble, Utensils,
-    ChevronRight, ArrowRight, HelpCircle, Compass, Calendar, Clock,
+    ChevronRight, ArrowRight, ArrowUpRight, Calendar, Clock, Plane, Train, Car,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import {
-    SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar,
-} from "@/components/ClientComponents";
 import type { Destination } from "@/data/destinations";
 import type { Monument } from "@/data/monuments";
 import { FACET_SLUGS, FACET_LABELS } from "@/data/destinationFacets";
 
-const SectionLabel = ({ children }: { children: React.ReactNode }) => (
-    <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">
-        {children}
-    </h4>
+const fade = {
+    hidden: { opacity: 0, y: 16 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+} as const;
+
+const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+    <p className="eyebrow eyebrow-accent">{children}</p>
 );
 
+const modeIcon = (mode: string) => {
+    const m = mode.toLowerCase();
+    if (m.includes("air")) return Plane;
+    if (m.includes("rail")) return Train;
+    return Car;
+};
+
 export interface CityTour {
-    slug: string;
-    title: string;
-    duration: string;
-    price: string;
-    theme: string;
-    img: string;
+    slug: string; title: string; duration: string; price: string; theme: string; img: string;
 }
 
 export default function DestinationCityView({
-    dest,
-    related,
-    monuments = [],
-    tours = [],
+    dest, related, monuments = [], tours = [],
 }: {
-    dest: Destination;
-    related: Destination[];
-    monuments?: Monument[];
-    tours?: CityTour[];
+    dest: Destination; related: Destination[]; monuments?: Monument[]; tours?: CityTour[];
 }) {
-    const waMsg = `EXPLORATION INQUIRY: I want to architect a mission through ${dest.name}, ${dest.state}.`;
-    const waHref = `https://wa.me/919997812237?text=${encodeURIComponent(waMsg)}`;
+    const waHref = `https://wa.me/919997812237?text=${encodeURIComponent(`I'd like to plan a journey through ${dest.name}, ${dest.state}.`)}`;
 
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
-                <GlassyProgressBar />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                {/* Hero */}
-                <section className="relative h-[72vh] flex items-end overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <Image src={dest.heroImg} alt={`${dest.name}, ${dest.state} — ${dest.tagline}`} fill priority className="object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/30 to-royal-blue/10" />
-                    </div>
-                    <div className="container mx-auto px-6 relative z-10 pb-20">
-                        {/* Breadcrumb */}
-                        <nav aria-label="Breadcrumb" className="flex items-center gap-3 mb-8 text-white/70 font-black uppercase text-[10px] tracking-[0.3em]">
-                            <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
-                            <ChevronRight size={12} />
-                            <Link href="/destinations" className="hover:text-sunset-orange transition-colors">Destinations</Link>
-                            <ChevronRight size={12} />
-                            <Link href={`/destinations/region/${dest.regionSlug}`} className="hover:text-sunset-orange transition-colors">{dest.region}</Link>
-                            <ChevronRight size={12} />
-                            <span className="text-sunset-orange">{dest.name}</span>
-                        </nav>
-                        <motion.h4 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">
-                            {dest.state} &middot; Strategic Zone
-                        </motion.h4>
-                        <CharBlurIn text={dest.name.toUpperCase()} className="text-5xl md:text-9xl font-black text-white uppercase tracking-tighter leading-[0.85] block mb-6" />
-                        <p className="text-white/70 font-bold italic text-xl md:text-2xl max-w-2xl">{dest.tagline}</p>
-                    </div>
-                </section>
+            {/* Hero */}
+            <section className="relative flex h-[70vh] min-h-[520px] items-end overflow-hidden">
+                <Image src={dest.heroImg} alt={`${dest.name}, ${dest.state} — ${dest.tagline}`} fill priority className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/10" />
+                <div className="container-x relative z-10 pb-14 pt-32">
+                    <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-[12px] text-paper/70">
+                        <Link href="/" className="hover:text-clay-soft">Home</Link>
+                        <ChevronRight size={12} />
+                        <Link href="/destinations" className="hover:text-clay-soft">Destinations</Link>
+                        <ChevronRight size={12} />
+                        <Link href={`/destinations/region/${dest.regionSlug}`} className="hover:text-clay-soft">{dest.region}</Link>
+                        <ChevronRight size={12} />
+                        <span className="text-clay-soft">{dest.name}</span>
+                    </nav>
+                    <motion.div initial="hidden" animate="visible" variants={fade}>
+                        <span className="eyebrow text-paper/70">{dest.state}</span>
+                        <h1 className="display-1 mt-4 font-medium text-paper">{dest.name}</h1>
+                        <p className="mt-4 max-w-2xl text-lg text-paper/80">{dest.tagline}</p>
+                    </motion.div>
+                </div>
+            </section>
 
-                {/* Answer Block — citation-ready, first screen */}
-                <section className="py-24 md:py-32 container mx-auto px-6">
-                    <div className="max-w-5xl">
-                        <SectionLabel>The Brief</SectionLabel>
-                        <p className="text-2xl md:text-4xl font-black text-royal-blue leading-snug tracking-tight mb-16">
-                            {dest.answer}
-                        </p>
-                        <div className="space-y-7 max-w-3xl">
-                            {dest.intro.map((para, i) => (
-                                <motion.p
-                                    key={i}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    className="text-lg md:text-xl text-dark-slate/70 font-bold leading-relaxed"
-                                >
-                                    {para}
-                                </motion.p>
-                            ))}
-                        </div>
+            {/* Answer + intro */}
+            <section className="section">
+                <div className="container-x max-w-4xl">
+                    <Eyebrow>Overview</Eyebrow>
+                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{dest.answer}</p>
+                    <div className="mt-10 space-y-5">
+                        {dest.intro.map((para, i) => (
+                            <p key={i} className="text-[17px] leading-relaxed text-muted">{para}</p>
+                        ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* Quick Facts */}
-                <section className="py-24 bg-royal-blue/5">
-                    <div className="container mx-auto px-6">
-                        <SectionLabel>Quick Facts</SectionLabel>
-                        <h2 className="text-3xl md:text-5xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-14">
-                            {dest.name} at a glance
-                        </h2>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                            {dest.quickFacts.map((f, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.04 }}
-                                    className="glass-card rounded-3xl p-7 border-royal-blue/5"
-                                >
-                                    <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-3">{f.label}</div>
-                                    <div className="text-lg font-black text-royal-blue leading-tight">{f.value}</div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Best time */}
-                <section className="py-28 container mx-auto px-6">
-                    <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
-                        <div>
-                            <SectionLabel>When to Deploy</SectionLabel>
-                            <div className="flex items-center gap-4 mb-6">
-                                <Calendar className="text-sunset-orange" size={32} />
-                                <h2 className="text-4xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter leading-none">
-                                    {dest.bestTime.window}
-                                </h2>
+            {/* Quick facts */}
+            <section className="border-y border-line bg-paper-dim/60 py-16 sm:py-20">
+                <div className="container-x">
+                    <Eyebrow>At a glance</Eyebrow>
+                    <h2 className="display-3 mt-3 text-ink">{dest.name} in brief</h2>
+                    <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        {dest.quickFacts.map((f, i) => (
+                            <div key={i} className="card p-6">
+                                <div className="eyebrow">{f.label}</div>
+                                <div className="mt-2 text-lg font-medium text-ink">{f.value}</div>
                             </div>
-                        </div>
-                        <p className="text-lg md:text-xl text-dark-slate/70 font-bold leading-relaxed lg:pt-16">
-                            {dest.bestTime.narrative}
-                        </p>
+                        ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* Things to do */}
-                <section className="py-28 bg-royal-blue text-white relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-sunset-orange/10 blur-[150px] -translate-y-1/2 translate-x-1/2" />
-                    <div className="container mx-auto px-6 relative z-10">
-                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">The Itinerary Atoms</h4>
-                        <CharBlurIn text="WHAT WE OPERATE HERE" className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter block leading-none mb-16" />
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {dest.thingsToDo.map((t, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.06 }}
-                                    className="glass-card rounded-[2.5rem] p-9 border-white/5 bg-white/5 group hover:bg-white/10 transition-all duration-500 h-full"
-                                >
-                                    <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-5">{t.category}</div>
-                                    <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-4 leading-tight">{t.name}</h3>
-                                    <p className="text-white/60 font-bold italic text-sm leading-relaxed">{t.blurb}</p>
-                                </motion.div>
-                            ))}
+            {/* Best time */}
+            <section className="section">
+                <div className="container-x grid items-start gap-10 lg:grid-cols-[1fr_1.6fr]">
+                    <div>
+                        <Eyebrow>When to visit</Eyebrow>
+                        <div className="mt-4 flex items-center gap-3">
+                            <Calendar className="text-clay" size={26} />
+                            <h2 className="display-3 text-ink">{dest.bestTime.window}</h2>
                         </div>
                     </div>
-                </section>
+                    <p className="text-[17px] leading-relaxed text-muted">{dest.bestTime.narrative}</p>
+                </div>
+            </section>
 
-                {/* How to reach */}
-                <section className="py-28 container mx-auto px-6">
-                    <SectionLabel>How to Reach</SectionLabel>
-                    <CharBlurIn text="ACCESS PROTOCOL" className="text-4xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter block leading-none mb-16" />
-                    <div className="space-y-px">
-                        {dest.howToReach.map((m, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.05 }}
-                                className="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 py-8 border-b border-royal-blue/10 group"
-                            >
-                                <div className="flex items-center gap-5 md:w-72 shrink-0">
-                                    <div className="w-12 h-12 rounded-2xl bg-royal-blue/5 flex items-center justify-center text-sunset-orange group-hover:bg-sunset-orange group-hover:text-white transition-all">
-                                        <Navigation2 size={20} />
-                                    </div>
-                                    <span className="text-xl font-black text-royal-blue uppercase tracking-tighter">{m.mode}</span>
-                                </div>
-                                <p className="text-base md:text-lg text-dark-slate/70 font-bold italic leading-relaxed">{m.detail}</p>
+            {/* Things to do */}
+            <section className="bg-ink py-20 sm:py-28">
+                <div className="container-x">
+                    <p className="eyebrow text-clay-soft">Things to do</p>
+                    <h2 className="display-2 mt-3 text-paper">Experiences in {dest.name}</h2>
+                    <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                        {dest.thingsToDo.map((t, i) => (
+                            <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}
+                                className="rounded-2xl border border-white/10 bg-white/[0.04] p-7 transition-colors hover:bg-white/[0.07]">
+                                <div className="eyebrow text-clay-soft">{t.category}</div>
+                                <h3 className="mt-3 text-xl font-medium text-paper">{t.name}</h3>
+                                <p className="mt-2 text-sm leading-relaxed text-paper/60">{t.blurb}</p>
                             </motion.div>
                         ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* Where to stay + eat */}
-                <section className="py-28 bg-royal-blue/5">
-                    <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16">
-                        <div>
-                            <div className="flex items-center gap-4 mb-10">
-                                <BedDouble className="text-sunset-orange" size={28} />
-                                <h2 className="text-3xl md:text-5xl font-black text-royal-blue uppercase tracking-tighter leading-none">Where to Stay</h2>
-                            </div>
-                            <div className="space-y-5">
-                                {dest.whereToStay.map((s, i) => (
-                                    <div key={i} className="glass-card rounded-3xl p-7 border-royal-blue/5">
-                                        <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-2">{s.tier}</div>
-                                        <p className="text-base text-dark-slate/70 font-bold italic leading-relaxed">{s.detail}</p>
+            {/* How to reach */}
+            <section className="section">
+                <div className="container-x">
+                    <Eyebrow>Getting there</Eyebrow>
+                    <h2 className="display-3 mt-3 text-ink">How to reach {dest.name}</h2>
+                    <div className="mt-10 divide-y divide-line">
+                        {dest.howToReach.map((m, i) => {
+                            const Icon = modeIcon(m.mode);
+                            return (
+                                <div key={i} className="flex flex-col gap-3 py-7 md:flex-row md:items-center md:gap-10">
+                                    <div className="flex shrink-0 items-center gap-4 md:w-60">
+                                        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-paper-dim text-clay"><Icon size={19} /></span>
+                                        <span className="text-lg font-medium text-ink">{m.mode}</span>
                                     </div>
-                                ))}
-                            </div>
+                                    <p className="text-[16px] leading-relaxed text-muted">{m.detail}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
+
+            {/* Stay + eat */}
+            <section className="border-y border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x grid gap-14 lg:grid-cols-2">
+                    <div>
+                        <div className="mb-8 flex items-center gap-3">
+                            <BedDouble className="text-clay" size={24} />
+                            <h2 className="display-3 text-ink">Where to stay</h2>
                         </div>
-                        <div>
-                            <div className="flex items-center gap-4 mb-10">
-                                <Utensils className="text-sunset-orange" size={28} />
-                                <h2 className="text-3xl md:text-5xl font-black text-royal-blue uppercase tracking-tighter leading-none">Where to Eat</h2>
-                            </div>
-                            <div className="space-y-5">
-                                {dest.whereToEat.map((e, i) => (
-                                    <div key={i} className="glass-card rounded-3xl p-7 border-royal-blue/5">
-                                        <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-2">{e.name}</div>
-                                        <p className="text-base text-dark-slate/70 font-bold italic leading-relaxed">{e.detail}</p>
+                        <div className="space-y-4">
+                            {dest.whereToStay.map((s, i) => (
+                                <div key={i} className="card p-6">
+                                    <div className="eyebrow">{s.tier}</div>
+                                    <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.detail}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div>
+                        <div className="mb-8 flex items-center gap-3">
+                            <Utensils className="text-clay" size={24} />
+                            <h2 className="display-3 text-ink">Where to eat</h2>
+                        </div>
+                        <div className="space-y-4">
+                            {dest.whereToEat.map((e, i) => (
+                                <div key={i} className="card p-6">
+                                    <div className="eyebrow">{e.name}</div>
+                                    <p className="mt-2 text-[15px] leading-relaxed text-muted">{e.detail}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Monuments */}
+            {monuments.length > 0 && (
+                <section className="section">
+                    <div className="container-x">
+                        <Eyebrow>Landmarks</Eyebrow>
+                        <h2 className="display-3 mt-3 text-ink">Monuments in {dest.name}</h2>
+                        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                            {monuments.map((m) => (
+                                <Link key={m.slug} href={`/destinations/${dest.slug}/monuments/${m.slug}`}
+                                    className="card card-hover group flex items-center justify-between p-6">
+                                    <div>
+                                        <div className="eyebrow">{m.type}</div>
+                                        <span className="mt-1 block text-lg font-medium text-ink group-hover:text-clay">{m.name}</span>
                                     </div>
-                                ))}
-                            </div>
+                                    <ArrowRight size={17} className="shrink-0 text-stone group-hover:text-clay" />
+                                </Link>
+                            ))}
+                            <Link href={`/destinations/${dest.slug}/monuments`}
+                                className="card card-hover group flex items-center justify-between border-clay/30 bg-clay/[0.06] p-6">
+                                <span className="text-lg font-medium text-ink">All {dest.name} monuments</span>
+                                <ArrowRight size={17} className="shrink-0 text-clay" />
+                            </Link>
                         </div>
                     </div>
                 </section>
+            )}
 
-                {/* Monuments — atom interlinking */}
-                {monuments.length > 0 && (
-                    <section className="py-28 bg-royal-blue text-white relative overflow-hidden">
-                        <div className="absolute bottom-0 left-0 w-96 h-96 bg-sunset-orange/10 blur-[150px] translate-y-1/2 -translate-x-1/2" />
-                        <div className="container mx-auto px-6 relative z-10">
-                            <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">Heritage Atoms</h4>
-                            <CharBlurIn text={`${dest.name.toUpperCase()} MONUMENTS`} className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter block leading-none mb-14" />
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                                {monuments.map((m) => (
-                                    <Link
-                                        key={m.slug}
-                                        href={`/destinations/${dest.slug}/monuments/${m.slug}`}
-                                        className="glass-card rounded-3xl p-8 border-white/5 bg-white/5 group hover:bg-white/10 transition-all duration-500 flex items-center justify-between"
-                                    >
-                                        <div>
-                                            <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-2">{m.type}</div>
-                                            <span className="text-xl font-black uppercase tracking-tighter text-white group-hover:text-sunset-orange transition-colors">
-                                                {m.name}
-                                            </span>
-                                        </div>
-                                        <ArrowRight size={18} className="text-sunset-orange shrink-0" />
-                                    </Link>
-                                ))}
-                                <Link
-                                    href={`/destinations/${dest.slug}/monuments`}
-                                    className="glass-card rounded-3xl p-8 border-sunset-orange/30 bg-sunset-orange/10 group hover:bg-sunset-orange/20 transition-all duration-500 flex items-center justify-between"
-                                >
-                                    <span className="text-xl font-black uppercase tracking-tighter text-white">All {dest.name} Monuments</span>
-                                    <ArrowRight size={18} className="text-sunset-orange shrink-0" />
-                                </Link>
-                            </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* Deep briefs — spoke interlinking */}
-                <section className="py-28 container mx-auto px-6">
-                    <SectionLabel>Go Deeper</SectionLabel>
-                    <CharBlurIn text={`${dest.name.toUpperCase()} DEEP BRIEFS`} className="text-3xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter block leading-none mb-14" />
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {/* Deep briefs */}
+            <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x">
+                    <Eyebrow>Go deeper</Eyebrow>
+                    <h2 className="display-3 mt-3 text-ink">More on {dest.name}</h2>
+                    <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         {FACET_SLUGS.map((f) => (
-                            <Link
-                                key={f}
-                                href={`/destinations/${dest.slug}/${f}`}
-                                className="glass-card rounded-3xl p-8 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all duration-500 flex items-center justify-between"
-                            >
-                                <div>
-                                    <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-2">{dest.name}</div>
-                                    <span className="text-xl font-black uppercase tracking-tighter text-royal-blue group-hover:text-sunset-orange transition-colors">
-                                        {FACET_LABELS[f]}
-                                    </span>
-                                </div>
-                                <ArrowRight size={18} className="text-sunset-orange shrink-0" />
+                            <Link key={f} href={`/destinations/${dest.slug}/${f}`} className="card card-hover group flex items-center justify-between p-6">
+                                <span className="text-[15px] font-medium text-ink group-hover:text-clay">{FACET_LABELS[f]}</span>
+                                <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                             </Link>
                         ))}
-                        <Link
-                            href={`/destinations/${dest.slug}/itinerary`}
-                            className="glass-card rounded-3xl p-8 border-sunset-orange/30 bg-sunset-orange/10 group hover:bg-sunset-orange/20 transition-all duration-500 flex items-center justify-between"
-                        >
-                            <div>
-                                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-2">{dest.name}</div>
-                                <span className="text-xl font-black uppercase tracking-tighter text-royal-blue group-hover:text-sunset-orange transition-colors">
-                                    Itineraries (3 / 5 / 7 / 10 / 14-day)
-                                </span>
-                            </div>
-                            <ArrowRight size={18} className="text-sunset-orange shrink-0" />
+                        <Link href={`/destinations/${dest.slug}/itinerary`} className="card card-hover group flex items-center justify-between p-6">
+                            <span className="text-[15px] font-medium text-ink group-hover:text-clay">Itineraries (3–14 days)</span>
+                            <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                         </Link>
-                        <Link
-                            href={`/destinations/${dest.slug}/in/january`}
-                            className="glass-card rounded-3xl p-8 border-royal-blue/30 bg-royal-blue/5 group hover:bg-royal-blue/10 transition-all duration-500 flex items-center justify-between"
-                        >
-                            <div>
-                                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-2">{dest.name}</div>
-                                <span className="text-xl font-black uppercase tracking-tighter text-royal-blue group-hover:text-sunset-orange transition-colors">
-                                    Month-by-month guide (Jan → Dec)
-                                </span>
-                            </div>
-                            <ArrowRight size={18} className="text-sunset-orange shrink-0" />
+                        <Link href={`/destinations/${dest.slug}/in/january`} className="card card-hover group flex items-center justify-between p-6">
+                            <span className="text-[15px] font-medium text-ink group-hover:text-clay">Month-by-month guide</span>
+                            <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                         </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Tours */}
+            {tours.length > 0 && (
+                <section className="section">
+                    <div className="container-x">
+                        <Eyebrow>Ready to book</Eyebrow>
+                        <h2 className="display-3 mt-3 text-ink">Itineraries featuring {dest.name}</h2>
+                        <p className="mt-4 max-w-3xl text-[16px] leading-relaxed text-muted">
+                            Private, chauffeured, day-by-day journeys that feature {dest.name} or explore the wider {dest.region} — each fully customisable, or built around your dates.
+                        </p>
+                        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                            {tours.map((t) => (
+                                <Link key={t.slug} href={`/tours/${t.slug}`} className="card card-hover group overflow-hidden">
+                                    <div className="relative aspect-[16/10] overflow-hidden">
+                                        <Image src={t.img} alt={`${t.title} — itinerary including ${dest.name}`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+                                        <div className="absolute bottom-4 left-5 flex items-center gap-2 text-[11px] font-medium text-paper">
+                                            <Clock size={12} className="text-clay-soft" />{t.duration} · {t.theme}
+                                        </div>
+                                    </div>
+                                    <div className="p-6">
+                                        <h3 className="text-lg font-medium text-ink group-hover:text-clay">{t.title}</h3>
+                                        <div className="mt-4 flex items-center justify-between">
+                                            <span className="text-base font-medium text-ink">from {t.price}</span>
+                                            <span className="inline-flex items-center gap-1 text-sm font-medium text-clay">View <ArrowRight size={14} /></span>
+                                        </div>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                        <Link href="/tours" className="link-line mt-10 text-sm">All tour itineraries <ArrowRight size={15} /></Link>
                     </div>
                 </section>
+            )}
 
-                {/* Suggested itineraries — real bookable tours that visit this city */}
-                {tours.length > 0 && (
-                    <section className="py-28 bg-royal-blue/5">
-                        <div className="container mx-auto px-6">
-                            <SectionLabel>Ready-to-Book Itineraries</SectionLabel>
-                            <CharBlurIn
-                                text={`ITINERARIES FEATURING ${dest.name.toUpperCase()}`}
-                                className="text-3xl md:text-6xl font-black text-royal-blue uppercase tracking-tighter block leading-none mb-6"
-                            />
-                            <p className="text-lg md:text-xl font-bold italic text-royal-blue/50 max-w-3xl mb-14 leading-relaxed">
-                                Private, chauffeured, day-by-day itineraries that feature {dest.name} or explore the wider {dest.region} — each fully customisable. Or ask the planning desk to build one around your dates.
-                            </p>
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {tours.map((t) => (
-                                    <Link
-                                        key={t.slug}
-                                        href={`/tours/${t.slug}`}
-                                        className="block glass-card rounded-[2.5rem] overflow-hidden group border-royal-blue/5 hover:border-sunset-orange/30 transition-all duration-700 bg-white"
-                                    >
-                                        <div className="relative h-48">
-                                            <Image src={t.img} alt={`${t.title} — itinerary including ${dest.name}`} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/70 to-transparent" />
-                                            <div className="absolute bottom-5 left-6 right-6 flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-white">
-                                                <Clock size={13} className="text-sunset-orange" />{t.duration}
-                                                <span className="text-sunset-orange">·</span>{t.theme}
-                                            </div>
-                                        </div>
-                                        <div className="p-7">
-                                            <h3 className="text-xl font-black text-royal-blue uppercase tracking-tighter leading-tight mb-4 group-hover:text-sunset-orange transition-colors">{t.title}</h3>
-                                            <div className="flex items-center justify-between">
-                                                <span className="text-lg font-black text-royal-blue">from {t.price}</span>
-                                                <span className="font-black uppercase text-[10px] tracking-[0.3em] flex items-center gap-2 text-royal-blue group-hover:text-sunset-orange transition-colors">
-                                                    View itinerary <ArrowRight size={14} />
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                            <div className="mt-12">
-                                <Link href="/tours" className="inline-flex items-center gap-3 px-8 py-4 glass-card rounded-2xl border-royal-blue/10 bg-white font-black uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">
-                                    All tour itineraries <ArrowRight size={14} />
-                                </Link>
-                            </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* FAQ */}
-                <section className="py-32 container mx-auto px-6">
-                    <div className="text-center mb-20">
-                        <SectionLabel>Intelligence</SectionLabel>
-                        <CharBlurIn text={`${dest.name.toUpperCase()} FAQ`} className="text-4xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter block leading-none" />
-                    </div>
-                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* FAQ */}
+            <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x">
+                    <Eyebrow>Good to know</Eyebrow>
+                    <h2 className="display-3 mt-3 text-ink">{dest.name} — your questions</h2>
+                    <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {dest.faqs.map((f, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.05 }}
-                                className="glass-card p-10 rounded-3xl border-royal-blue/5"
-                            >
-                                <div className="flex items-start gap-4 mb-4">
-                                    <HelpCircle className="text-sunset-orange shrink-0 mt-1" size={20} />
-                                    <h3 className="font-black text-royal-blue uppercase tracking-tight text-lg leading-tight">{f.q}</h3>
-                                </div>
-                                <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed pl-9">{f.a}</p>
-                            </motion.div>
+                            <div key={i} className="card p-7">
+                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
+                            </div>
                         ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* Interlinking — related cities */}
-                {related.length > 0 && (
-                    <section className="py-28 bg-royal-blue/5">
-                        <div className="container mx-auto px-6">
-                            <SectionLabel>Continue the Mission</SectionLabel>
-                            <h2 className="text-3xl md:text-5xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-14">
-                                Pairs with {dest.name}
-                            </h2>
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {related.map((c) => (
-                                    <Link
-                                        key={c.slug}
-                                        href={`/destinations/${c.slug}`}
-                                        className="block glass-card rounded-[2.5rem] overflow-hidden group border-royal-blue/5 hover:border-sunset-orange/30 transition-all duration-700"
-                                    >
-                                        <div className="relative h-56">
-                                            <Image src={c.heroImg} alt={`${c.name}, ${c.state}`} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/70 to-transparent" />
-                                            <div className="absolute bottom-6 left-7">
-                                                <div className="flex items-center gap-2 mb-1">
-                                                    <MapPin className="text-sunset-orange" size={16} />
-                                                    <h3 className="text-2xl font-black text-white uppercase tracking-tighter">{c.name}</h3>
-                                                </div>
-                                                <p className="text-white/60 font-bold italic text-xs">{c.tagline}</p>
+            {/* Related cities */}
+            {related.length > 0 && (
+                <section className="section">
+                    <div className="container-x">
+                        <Eyebrow>Continue exploring</Eyebrow>
+                        <h2 className="display-3 mt-3 text-ink">Pairs well with {dest.name}</h2>
+                        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                            {related.map((c) => (
+                                <Link key={c.slug} href={`/destinations/${c.slug}`} className="card card-hover group overflow-hidden">
+                                    <div className="relative aspect-[16/10] overflow-hidden">
+                                        <Image src={c.heroImg} alt={`${c.name}, ${c.state}`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
+                                        <div className="absolute bottom-5 left-5">
+                                            <div className="flex items-center gap-1.5">
+                                                <MapPin className="text-clay-soft" size={15} />
+                                                <h3 className="text-xl font-medium text-paper">{c.name}</h3>
                                             </div>
+                                            <p className="mt-0.5 text-xs text-paper/70">{c.tagline}</p>
                                         </div>
-                                        <div className="p-7 flex items-center justify-between">
-                                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-royal-blue/40">{c.region}</span>
-                                            <span className="font-black uppercase text-[10px] tracking-[0.3em] flex items-center gap-2 text-royal-blue group-hover:text-sunset-orange transition-colors">
-                                                Open Brief <ArrowRight size={14} />
-                                            </span>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* Cross-cluster links + CTA */}
-                <section className="py-32 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-24 rounded-[4rem] bg-royal-blue text-white relative overflow-hidden shadow-2xl">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <div className="relative z-10">
-                            <Compass className="mb-10 text-sunset-orange opacity-40" size={56} />
-                            <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-10">
-                                Architect a mission through <span className="text-sunset-orange">{dest.name}</span>
-                            </h2>
-                            <div className="flex flex-wrap gap-4 mb-12">
-                                {dest.relatedTours.map((r, i) => (
-                                    <Link
-                                        key={i}
-                                        href={r.href}
-                                        className="px-7 py-4 glass-card rounded-2xl border-white/10 bg-white/5 text-white font-black uppercase text-[11px] tracking-widest hover:bg-sunset-orange transition-all duration-500 flex items-center gap-3"
-                                    >
-                                        {r.label} <ArrowRight size={14} />
-                                    </Link>
-                                ))}
-                            </div>
-                            <div className="flex flex-col sm:flex-row gap-5">
-                                <Magnetic>
-                                    <Link href="/booking" className="inline-block bg-sunset-orange text-white py-6 px-12 rounded-[2rem] font-black uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">
-                                        Consult a Master Planner
-                                    </Link>
-                                </Magnetic>
-                                <a href={waHref} target="_blank" rel="noopener noreferrer" className="inline-block bg-white/10 text-white py-6 px-12 rounded-[2rem] font-black uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 border border-white/10">
-                                    WhatsApp the Desk
-                                </a>
-                            </div>
+                                    </div>
+                                    <div className="flex items-center justify-between p-5">
+                                        <span className="eyebrow">{c.region}</span>
+                                        <span className="inline-flex items-center gap-1 text-sm font-medium text-clay">Open <ArrowRight size={14} /></span>
+                                    </div>
+                                </Link>
+                            ))}
                         </div>
                     </div>
                 </section>
+            )}
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            {/* CTA */}
+            <section className="section">
+                <div className="container-x">
+                    <div className="relative overflow-hidden rounded-3xl bg-ink px-8 py-14 sm:px-16 sm:py-20">
+                        <div className="relative z-10 max-w-2xl">
+                            <p className="eyebrow text-clay-soft">Plan with us</p>
+                            <h2 className="display-2 mt-4 text-paper">Design a journey through {dest.name}.</h2>
+                            {dest.relatedTours.length > 0 && (
+                                <div className="mt-8 flex flex-wrap gap-3">
+                                    {dest.relatedTours.map((r, i) => (
+                                        <Link key={i} href={r.href} className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-paper transition hover:border-clay-soft hover:text-clay-soft">
+                                            {r.label} <ArrowUpRight size={14} />
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                                <Link href="/booking" className="btn rounded-full bg-paper px-7 py-3.5 text-ink hover:bg-clay hover:text-paper">Consult a planner</Link>
+                                <a href={waHref} target="_blank" rel="noopener noreferrer" className="btn rounded-full border border-white/25 px-7 py-3.5 text-paper hover:bg-paper hover:text-ink">WhatsApp the desk</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <Footer />
+        </main>
     );
 }

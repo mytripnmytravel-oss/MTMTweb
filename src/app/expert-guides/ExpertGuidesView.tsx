@@ -20,20 +20,20 @@ export default function ExpertGuidesView() {
                             <motion.h4
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-royal-blue font-black uppercase tracking-[0.8em] text-sm mb-6"
+                                className="text-royal-blue font-semibold uppercase tracking-[0.8em] text-sm mb-6"
                             >
                                 The Storytellers
                             </motion.h4>
                             <CharBlurIn
                                 text="EXPERT GUARDIANS"
-                                className="text-5xl md:text-[6.5rem] font-black text-royal-blue uppercase tracking-tighter leading-[0.85] mb-12"
+                                className="text-5xl md:text-[6.5rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
                             />
                             <p className="text-dark-slate font-bold italic text-lg opacity-60 leading-relaxed mb-12">
                                 We do not use generic tour guides. Our guides are vetted, licensed heritage specialists and multi-lingual storytellers who frame the true narrative of the subcontinent.
                             </p>
                             <Magnetic>
                                 <Link href="/booking">
-                                    <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-sunset-orange transition-all duration-500 flex items-center gap-4 shadow-xl">
+                                    <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-semibold uppercase tracking-widest text-xs hover:bg-sunset-orange transition-all duration-500 flex items-center gap-4 shadow-xl">
                                         Request an Attaché <ArrowRight size={16} />
                                     </button>
                                 </Link>
@@ -41,19 +41,19 @@ export default function ExpertGuidesView() {
                         </div>
                         <div className="grid grid-cols-2 gap-6 relative">
                             <Tilt3D>
-                                <div className="glass-card p-8 rounded-[3rem] aspect-square flex flex-col justify-between border-royal-blue/10 bg-royal-blue/5">
+                                <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-royal-blue/10 bg-royal-blue/5">
                                     <Award className="text-royal-blue" size={40} />
                                     <div>
-                                        <h5 className="text-royal-blue font-black uppercase tracking-widest text-xs mb-2">Vetted Guides</h5>
+                                        <h5 className="text-royal-blue font-semibold uppercase tracking-widest text-xs mb-2">Vetted Guides</h5>
                                         <p className="text-dark-slate/60 text-[10px] font-bold italic">Licensed heritage professionals, matched to your party.</p>
                                     </div>
                                 </div>
                             </Tilt3D>
                             <Tilt3D>
-                                <div className="glass-card p-8 rounded-[3rem] aspect-square flex flex-col justify-between border-royal-blue/10 mt-12 bg-sunset-orange/5 border-sunset-orange/20 shadow-xl">
+                                <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-royal-blue/10 mt-12 bg-sunset-orange/5 border-sunset-orange/20 shadow-xl">
                                     <Languages className="text-sunset-orange" size={40} />
                                     <div>
-                                        <h5 className="text-royal-blue font-black uppercase tracking-widest text-xs mb-2">Multi-Lingual</h5>
+                                        <h5 className="text-royal-blue font-semibold uppercase tracking-widest text-xs mb-2">Multi-Lingual</h5>
                                         <p className="text-dark-slate/60 text-[10px] font-bold italic">Guiding in your own language, not translated tours.</p>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@ export default function ExpertGuidesView() {
                 <section className="py-32 bg-slate-50 relative overflow-hidden">
                     <div className="container mx-auto px-6 relative z-10 text-center">
                         <Landmark className="text-royal-blue mx-auto mb-10" size={60} />
-                        <h2 className="text-4xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter leading-[0.9] mb-12">
+                        <h2 className="text-4xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.9] mb-12">
                             SKIP THE <br /> <span className="text-sunset-orange">NOISE.</span>
                         </h2>
                         <p className="text-dark-slate/60 font-bold italic text-xl mb-16 max-w-2xl mx-auto">

@@ -57,8 +57,8 @@ export default function Page() {
             <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
                 <Navbar />
                 <section className="pt-60 pb-20 container mx-auto px-6">
-                    <h4 className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-6">Inter-City Transfers</h4>
-                    <h1 className="text-5xl md:text-8xl font-black text-royal-blue uppercase tracking-tighter leading-[0.85] mb-8">CURATED ROUTES</h1>
+                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6">Inter-City Transfers</h4>
+                    <h1 className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-8">CURATED ROUTES</h1>
                     <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed max-w-2xl">
                         Private, GPS-tracked, pre-priced chauffeured transfers between the cities MyTripMyTravel operates &mdash; the same Elite Fleet protocol as the rest of every mission, no surprise fees on the road.
                     </p>
@@ -67,8 +67,8 @@ export default function Page() {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {items.map((r) => (
                             <Link key={r.slug} href={`/services/inter-city/${r.slug}`} className="block glass-card rounded-3xl p-7 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all">
-                                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-sunset-orange mb-3">~{r.distanceKm} km · ~{r.driveHrs} hrs{r.via ? ` · via ${r.via}` : ""}</div>
-                                <span className="text-xl font-black uppercase tracking-tighter text-royal-blue group-hover:text-sunset-orange transition-colors">{r.originName} → {r.destinationName}</span>
+                                <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-sunset-orange mb-3">~{r.distanceKm} km · ~{r.driveHrs} hrs{r.via ? ` · via ${r.via}` : ""}</div>
+                                <span className="text-xl font-semibold uppercase tracking-tight text-royal-blue group-hover:text-sunset-orange transition-colors">{r.originName} → {r.destinationName}</span>
                             </Link>
                         ))}
                     </div>

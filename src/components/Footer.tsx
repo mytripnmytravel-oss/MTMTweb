@@ -2,188 +2,135 @@
 
 import React from "react";
 import Link from "next/link";
-import { HelpCircle, Mail, Phone, MapPin, Instagram, Facebook, Sparkles, ShieldCheck, Award, Users } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook, ArrowUpRight } from "lucide-react";
 import { Logo3D } from "./Navbar";
-import { Magnetic } from "./ClientComponents";
+
+const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
+    {
+        title: "Company",
+        links: [
+            { label: "Our Story & Team", href: "/about" },
+            { label: "The Methodology", href: "/methodology" },
+            { label: "Careers", href: "/careers" },
+            { label: "Journal", href: "/blog" },
+            { label: "FAQ", href: "/faq" },
+        ],
+    },
+    {
+        title: "Destinations",
+        links: [
+            { label: "Golden Triangle", href: "/destinations/region/golden-triangle" },
+            { label: "Rajasthan", href: "/destinations/region/rajasthan" },
+            { label: "Kerala", href: "/destinations/region/kerala" },
+            { label: "Himalayas", href: "/destinations/region/himalayas" },
+            { label: "Sikkim", href: "/destinations/region/sikkim" },
+            { label: "Andaman", href: "/destinations/region/andaman" },
+        ],
+    },
+    {
+        title: "Experiences",
+        links: [
+            { label: "Ground Services", href: "/services" },
+            { label: "Chauffeured Car Rental", href: "/services/car-rental" },
+            { label: "Master Tour Packages", href: "/tours/golden-triangle-all" },
+            { label: "Wellness & Sanctuary", href: "/wellness" },
+            { label: "Weddings", href: "/weddings" },
+            { label: "Corporate Offsites", href: "/corporate" },
+        ],
+    },
+];
 
 export const Footer = () => {
     return (
-        <footer className="bg-royal-blue pt-20 md:pt-60 pb-20 relative overflow-hidden z-20">
-            {/* Animated Background Element */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-sunset-orange to-transparent opacity-30" />
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-sunset-orange/5 blur-[150px] -translate-y-1/2 translate-x-1/2 rounded-full" />
-
-            <div className="container mx-auto px-6 relative z-10">
-                {/* --- Footer Top: Newsletter Protocol --- */}
-                <div className="grid lg:grid-cols-2 gap-20 items-center pb-32 border-b border-white/10 mb-32">
+        <footer className="relative z-20 bg-ink text-paper">
+            <div className="container-x pb-12 pt-20 sm:pt-24">
+                {/* Newsletter */}
+                <div className="grid items-end gap-10 border-b border-white/10 pb-16 lg:grid-cols-2">
                     <div>
-                        <h3 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-8">
-                            Subscribe to <br /> <span className="text-sunset-orange">Priority Protocol.</span>
+                        <p className="eyebrow text-clay-soft">Stay in the know</p>
+                        <h3 className="display-3 mt-4 text-paper">
+                            Quiet notes on new journeys, seasons, and openings.
                         </h3>
-                        <p className="text-white/40 font-bold italic text-lg max-w-md">Get 24-hour advance access to new master variations and elite fleet expansions.</p>
                     </div>
-                    <div className="relative group">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-sunset-orange to-royal-blue rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                        <div className="relative flex flex-col md:flex-row gap-4 bg-royal-blue border border-white/10 p-4 rounded-2xl">
-                            <input
-                                type="email"
-                                placeholder="ENTER YOUR EMAIL FOR VIP ACCESS"
-                                className="flex-1 bg-transparent border-none focus:ring-0 text-white font-black uppercase tracking-widest text-xs p-4"
-                            />
-                            <Magnetic>
-                                <button className="bg-sunset-orange text-white px-10 py-4 rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-white hover:text-royal-blue transition-all duration-500 whitespace-nowrap">
-                                    Join Protocol
-                                </button>
-                            </Magnetic>
-                        </div>
-                    </div>
+                    <form className="flex w-full max-w-md gap-3 lg:justify-self-end">
+                        <input
+                            type="email"
+                            placeholder="Your email"
+                            className="flex-1 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-paper placeholder:text-paper/40 outline-none transition focus:border-clay-soft"
+                        />
+                        <button type="submit" className="btn rounded-full bg-paper px-6 py-3 text-ink hover:bg-clay hover:text-paper">
+                            Subscribe
+                        </button>
+                    </form>
                 </div>
 
-                {/* --- Footer Middle: Link Directory --- */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 md:gap-16 mb-20 md:mb-40">
-                    <div className="col-span-2">
-                        <div className="mb-12">
-                            <Logo3D isScrolled={true} />
-                        </div>
-                        <p className="text-white/60 text-lg font-bold max-w-sm italic leading-relaxed mb-12">
-                            The absolute standard for private tours, luxury transport, and medical facilitator services in India. Architecting journeys beyond conventional travel.
+                {/* Directory */}
+                <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-5">
+                    <div className="lg:col-span-2">
+                        <Logo3D light />
+                        <p className="mt-6 max-w-sm text-sm leading-relaxed text-paper/55">
+                            Private, chauffeured journeys across India — the Golden Triangle, Rajasthan,
+                            Kerala, the Himalayas and beyond — designed one traveller at a time.
                         </p>
-                        <div className="flex gap-6">
+                        <div className="mt-8 flex gap-3">
                             {[
                                 { Icon: Instagram, href: "https://www.instagram.com/mytripmytravel/" },
                                 { Icon: Facebook, href: "https://www.facebook.com/mytripmytravel.worldtouradvisor" },
                                 { Icon: MapPin, href: "https://www.tripadvisor.in/Attraction_Review-g297683-d6456397-Reviews-MyTripMyTravel_Same_Day_Tour_Taj_Mahal-Agra_Agra_District_Uttar_Pradesh.html" },
-                                { Icon: Sparkles, href: "https://www.google.com/search?q=mytripmytravel&rlz=1C5CHFA_enIN1099IN1099&oq=mytripmytravel+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIHCAIQABjvBTIKCAMQABiABBiiBDIKCAQQABiABBiiBDIHCAUQABjvBTIGCAYQRRg8MgYIBxBFGD3SAQgzNDYyajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x397476fc8f281e49:0x5df41654f6755e44,1,,,," }
                             ].map(({ Icon, href }, i) => (
-                                <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-sunset-orange hover:border-sunset-orange transition-all duration-500 group">
-                                    <Icon size={18} />
+                                <a
+                                    key={i}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-paper/70 transition-all hover:border-clay-soft hover:text-clay-soft"
+                                >
+                                    <Icon size={16} />
                                 </a>
                             ))}
                         </div>
                     </div>
 
-                    <div>
-                        <h4 className="font-black text-white/20 uppercase tracking-[0.5em] text-[10px] mb-10">Company</h4>
-                        <ul className="space-y-6">
-                            {[
-                                { label: 'Our Story & Team', href: '/about' },
-                                { label: 'The Methodology', href: '/methodology' },
-                                { label: 'Protocol — Curation', href: '/methodology/intelligent-curation' },
-                                { label: 'Protocol — Activation', href: '/methodology/kinetic-activation' },
-                                { label: 'Protocol — Archiving', href: '/methodology/memory-archiving' },
-                                { label: 'Careers', href: '/careers' },
-                                { label: 'Blogs', href: '/blog' },
-                                { label: 'FAQ', href: '/faq' }
-                            ].map((item) => (
-                                <li key={item.label}>
-                                    <Link href={item.href} className="text-white/40 hover:text-sunset-orange font-black uppercase text-[10px] tracking-widest transition-all flex items-center gap-4 group/item">
-                                        <div className="w-1.5 h-1.5 bg-sunset-orange/20 group-hover/item:bg-sunset-orange rounded-full transition-colors" /> 
-                                        <span>{item.label}</span>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    {COLUMNS.map((col) => (
+                        <div key={col.title}>
+                            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-paper/40">{col.title}</p>
+                            <ul className="mt-5 space-y-3">
+                                {col.links.map((l) => (
+                                    <li key={l.href}>
+                                        <Link href={l.href} className="text-sm text-paper/60 transition-colors hover:text-clay-soft">
+                                            {l.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
 
-                    <div>
-                        <h4 className="font-black text-white/20 uppercase tracking-[0.5em] text-[10px] mb-10">Destinations</h4>
-                        <ul className="space-y-6">
-                            {[
-                                { label: 'Golden Triangle', href: '/destinations/region/golden-triangle' },
-                                { label: 'Rajasthan Escapes', href: '/destinations/region/rajasthan' },
-                                { label: 'Kerala Backwaters', href: '/destinations/region/kerala' },
-                                { label: 'Himalayan Peaks', href: '/destinations/region/himalayas' },
-                                { label: 'Sikkim Silk Route', href: '/destinations/region/sikkim' },
-                                { label: 'Andaman Islands', href: '/destinations/region/andaman' }
-                            ].map((item) => (
-                                <li key={item.label}>
-                                    <Link href={item.href} className="text-white/40 hover:text-sunset-orange font-black uppercase text-[10px] tracking-widest transition-all flex items-center gap-4 group/item">
-                                        <div className="w-1.5 h-1.5 bg-sunset-orange/20 group-hover/item:bg-sunset-orange rounded-full transition-colors" /> 
-                                        <span>{item.label}</span>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="font-black text-white/20 uppercase tracking-[0.5em] text-[10px] mb-10">The Ecosystem</h4>
-                        <ul className="space-y-6">
-                            {[
-                                { label: 'Ground Services', href: '/services' },
-                                { label: 'Elite Car Rental', href: '/services/car-rental' },
-                                { label: 'Tour Master Packages', href: '/tours/golden-triangle-all' },
-                                { label: 'Medical Sanctuary', href: '/wellness' },
-                                { label: 'Royal Weddings', href: '/weddings' },
-                                { label: 'Corporate Mission', href: '/corporate' },
-                                { label: 'Fleet Telemetry', href: '/telemetry' }
-                            ].map((item) => (
-                                <li key={item.label}>
-                                    <Link href={item.href} className="text-white/40 hover:text-sunset-orange font-black uppercase text-[10px] tracking-widest transition-all flex items-center gap-4 group/item">
-                                        <div className="w-1.5 h-1.5 bg-sunset-orange/20 group-hover/item:bg-sunset-orange rounded-full transition-colors" /> 
-                                        <span>{item.label}</span>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="font-black text-white/20 uppercase tracking-[0.5em] text-[10px] mb-10">Contact HQ</h4>
-                        <ul className="space-y-6">
-                            <li className="flex gap-3 text-white/60">
-                                <MapPin size={16} className="text-sunset-orange shrink-0" />
-                                <span className="text-[10px] font-black uppercase tracking-widest leading-relaxed">
-                                    House Number 80, Ansal Town,<br />Block C, Agra, UP 283125
-                                </span>
-                            </li>
-                            <li className="flex gap-3 text-white/60">
-                                <Phone size={16} className="text-sunset-orange shrink-0" />
-                                <a href="tel:+919997812237" className="text-[10px] font-black uppercase tracking-widest hover:text-white transition-colors">+91 99978 12237</a>
-                            </li>
-                            <li className="flex gap-3 text-white/60">
-                                <Mail size={16} className="text-sunset-orange shrink-0" />
-                                <div className="flex flex-col gap-1">
-                                    <a href="mailto:info@mytripmytravel.com" className="text-[10px] font-black uppercase tracking-widest hover:text-white transition-colors">info@mytripmytravel.com</a>
-                                    <a href="mailto:mytripmytravel@gmail.com" className="text-[10px] font-black uppercase tracking-widest hover:text-white transition-colors">mytripmytravel@gmail.com</a>
-                                </div>
-                            </li>
-                        </ul>
+                {/* Contact strip */}
+                <div className="grid gap-6 border-t border-white/10 py-10 sm:grid-cols-3">
+                    <a href="tel:+919997812237" className="group flex items-center gap-3 text-sm text-paper/70 hover:text-paper">
+                        <Phone size={16} className="text-clay-soft" /> +91 99978 12237
+                    </a>
+                    <a href="mailto:info@mytripmytravel.com" className="group flex items-center gap-3 text-sm text-paper/70 hover:text-paper">
+                        <Mail size={16} className="text-clay-soft" /> info@mytripmytravel.com
+                    </a>
+                    <div className="flex items-start gap-3 text-sm text-paper/70">
+                        <MapPin size={16} className="mt-0.5 shrink-0 text-clay-soft" />
+                        <span>House No. 80, Ansal Town, Block C, Agra, UP 283125</span>
                     </div>
                 </div>
 
-                {/* --- Footer Bottom: Authority Bar --- */}
-                <div className="pt-20 border-t border-white/5 flex flex-col lg:flex-row items-center justify-between gap-12">
-                    <div className="flex flex-wrap items-center justify-center gap-10">
-                        <div className="flex items-center gap-3 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all cursor-crosshair">
-                            <ShieldCheck size={16} className="text-sunset-orange" />
-                            <span className="text-[9px] font-black uppercase tracking-widest text-white">Verified Luxury</span>
-                        </div>
-                        <div className="flex items-center gap-3 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all cursor-crosshair">
-                            <Award size={16} className="text-sunset-orange" />
-                            <span className="text-[9px] font-black uppercase tracking-widest text-white">Top Rated Gateway</span>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-wrap items-center justify-center gap-8">
-                        {[
-                            { label: 'Privacy Protocol', href: '/legal/privacy' },
-                            { label: 'Terms of Mission', href: '/legal/terms' },
-                            { label: 'Cookie Registry', href: '/legal/cookies' }
-                        ].map((link) => (
-                            <Link key={link.label} href={link.href} className="text-[9px] font-black uppercase tracking-widest text-white/20 hover:text-sunset-orange transition-colors">
-                                {link.label}
-                            </Link>
-                        ))}
-                    </div>
-
-                    <div className="flex flex-col items-center lg:items-end gap-2 text-right">
-                        <p className="text-[9px] font-black uppercase tracking-widest text-white/10">
-                            &copy; 2026 MYTRIPMYTRAVEL ARCHIVE. ALL RIGHTS RESERVED.
-                        </p>
-                        <p className="text-[9px] font-black uppercase tracking-widest text-white/10">
-                            Designed & Developed by <a href="https://www.frameleads.com" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-sunset-orange transition-colors">FrameLeads</a>
-                        </p>
+                {/* Bottom bar */}
+                <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+                    <p className="text-xs text-paper/40">&copy; 2026 MyTripMyTravel. All rights reserved.</p>
+                    <div className="flex flex-wrap items-center justify-center gap-6">
+                        <Link href="/legal/privacy" className="text-xs text-paper/40 hover:text-clay-soft">Privacy</Link>
+                        <Link href="/legal/terms" className="text-xs text-paper/40 hover:text-clay-soft">Terms</Link>
+                        <Link href="/legal/cookies" className="text-xs text-paper/40 hover:text-clay-soft">Cookies</Link>
+                        <a href="https://www.frameleads.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-paper/40 hover:text-clay-soft">
+                            FrameLeads <ArrowUpRight size={12} />
+                        </a>
                     </div>
                 </div>
             </div>

@@ -205,8 +205,8 @@ export const CountingStat = ({ value, label }: { value: number; label: string })
 
     return (
         <div ref={ref} className="text-center group">
-            <div className="text-4xl md:text-6xl font-black text-royal-blue mb-2 group-hover:text-sunset-orange transition-colors">{count}+</div>
-            <div className="text-[8px] md:text-xs font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-dark-slate opacity-60 px-2">{label}</div>
+            <div className="text-4xl md:text-6xl font-semibold text-royal-blue mb-2 group-hover:text-sunset-orange transition-colors">{count}+</div>
+            <div className="text-[8px] md:text-xs font-semibold uppercase tracking-[0.2em] md:tracking-[0.4em] text-dark-slate opacity-60 px-2">{label}</div>
         </div>
     );
 };
@@ -250,7 +250,7 @@ export const GoldenPathLoader = () => {
                             <motion.circle initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.6 }} cx="80" cy="70" r="3" fill="white" />
                         </svg>
                     </div>
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-white tracking-[0.6em] font-black uppercase text-xl">Mapping Your <span className="text-sunset-orange">Journey</span></motion.div>
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-white tracking-[0.6em] font-semibold uppercase text-xl">Mapping Your <span className="text-sunset-orange">Journey</span></motion.div>
                 </motion.div>
             )}
         </AnimatePresence>
@@ -277,7 +277,7 @@ export const RouteVisualizer = () => {
 
     const cities = [{ name: "Delhi", x: 50, y: 20, best: "Heritage & Street Food", dist: "Start" }, { name: "Agra", x: 80, y: 70, best: "The Eternal Taj", dist: "233 KM" }, { name: "Jaipur", x: 20, y: 70, best: "Royal Grandeur", dist: "240 KM" }];
     return (
-        <div ref={ref} className="relative w-full h-[500px] md:h-[650px] glass-card rounded-[2rem] md:rounded-[4rem] overflow-hidden border-royal-blue/5 bg-royal-blue/[0.02]">
+        <div ref={ref} className="relative w-full h-[500px] md:h-[650px] glass-card rounded-2xl md:rounded-3xl overflow-hidden border-royal-blue/5 bg-royal-blue/[0.02]">
             <div className="absolute inset-0 bg-gradient-to-br from-royal-blue/[0.05] to-sunset-orange/[0.05] backdrop-blur-3xl" />
             <motion.div style={{ rotateX: rotate, perspective: "1000px" }} className="absolute inset-0 w-full h-full">
                 <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -327,8 +327,8 @@ export const RouteVisualizer = () => {
                                 <div className="w-5 h-5 border-2 border-sunset-orange rounded-full z-0" />
                             </div>
                             <div className={`absolute left-1/2 -translate-x-1/2 glass-card p-4 md:p-6 rounded-2xl border-white/20 w-44 md:w-56 opacity-100 transition-all duration-500 scale-100 pointer-events-none ${city.name === "Delhi" ? "bottom-full mb-4 md:mb-6" : "top-full mt-4 md:mt-6"}`}>
-                                <div className="text-sunset-orange font-black text-[7px] md:text-[9px] uppercase tracking-[0.4em] mb-2">{city.dist}</div>
-                                <h4 className="font-black text-royal-blue uppercase tracking-tighter text-lg md:text-xl mb-1">{city.name}</h4>
+                                <div className="text-sunset-orange font-semibold text-[7px] md:text-[9px] uppercase tracking-[0.4em] mb-2">{city.dist}</div>
+                                <h4 className="font-semibold text-royal-blue uppercase tracking-tight text-lg md:text-xl mb-1">{city.name}</h4>
                                 <p className="text-[8px] md:text-[10px] font-bold text-dark-slate opacity-40 italic leading-tight">{city.best}</p>
                             </div>
                         </div>
@@ -336,8 +336,8 @@ export const RouteVisualizer = () => {
                 ))}
             </motion.div>
             <div className="absolute top-8 left-8 md:top-12 md:left-12 max-w-[240px] md:max-w-sm z-30 pointer-events-none">
-                <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6"><div className="w-8 md:w-12 h-[1px] bg-sunset-orange" /><span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.5em] text-sunset-orange">Live Refraction</span></div>
-                <h3 className="text-2xl md:text-4xl font-black text-royal-blue uppercase mb-3 md:mb-4 tracking-tighter leading-none">The Golden Prism</h3>
+                <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6"><div className="w-8 md:w-12 h-[1px] bg-sunset-orange" /><span className="text-[8px] md:text-[10px] font-semibold uppercase tracking-[0.5em] text-sunset-orange">Live Refraction</span></div>
+                <h3 className="text-2xl md:text-4xl font-semibold text-royal-blue uppercase mb-3 md:mb-4 tracking-tight leading-none">The Golden Prism</h3>
                 <p className="text-dark-slate font-bold opacity-50 leading-relaxed italic text-xs md:text-sm">Translating high-speed chauffeured intent into a 3D geometric sanctuary of travel.</p>
             </div>
         </div>
@@ -399,7 +399,7 @@ export const ItineraryPreviewer = () => {
     };
 
     return (
-        <div className="glass-card p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] border-royal-blue/5 overflow-hidden relative min-h-[500px] md:min-h-[600px] flex flex-col justify-center">
+        <div className="glass-card p-6 md:p-12 rounded-2xl md:rounded-2xl border-royal-blue/5 overflow-hidden relative min-h-[500px] md:min-h-[600px] flex flex-col justify-center">
             {/* Generative Background Overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-royal-blue/[0.02] to-sunset-orange/[0.02] pointer-events-none" />
 
@@ -421,16 +421,16 @@ export const ItineraryPreviewer = () => {
                             <div className="absolute inset-4 border-b-4 border-royal-blue/20 rounded-full animate-reverse-spin" />
                             <Zap className="absolute inset-0 m-auto text-sunset-orange" size={40} fill="currentColor" />
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-black text-royal-blue uppercase tracking-tighter mb-4">Architecting Your Mission</h3>
+                        <h3 className="text-2xl md:text-3xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Architecting Your Mission</h3>
                         <p className="text-xs md:text-sm font-bold italic opacity-50">Prism AI is calculating geometric routes and elite asset availability...</p>
                     </motion.div>
                 ) : step === 1 ? (
                     <motion.div key="step1" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}>
-                        <h4 className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em] md:tracking-[0.6em] text-sunset-orange mb-6 md:mb-8 text-center md:text-left">Target Environment</h4>
-                        <h3 className="text-2xl sm:text-4xl md:text-6xl font-black text-royal-blue uppercase mb-8 md:mb-16 tracking-tighter text-center md:text-left">SELECT YOUR DESTINATION</h3>
+                        <h4 className="text-[8px] md:text-[10px] font-semibold uppercase tracking-[0.4em] md:tracking-[0.6em] text-sunset-orange mb-6 md:mb-8 text-center md:text-left">Target Environment</h4>
+                        <h3 className="text-2xl sm:text-4xl md:text-6xl font-semibold text-royal-blue uppercase mb-8 md:mb-16 tracking-tight text-center md:text-left">SELECT YOUR DESTINATION</h3>
                         <div className="grid md:grid-cols-2 gap-6 mb-16">
                             {destinations.map((d) => (
-                                <button key={d} onClick={() => setConfig({ ...config, destination: d })} className={`p-4 md:p-8 rounded-2xl md:rounded-3xl text-left border-2 transition-all duration-500 font-black uppercase tracking-widest text-[10px] md:text-base ${config.destination === d ? "bg-royal-blue text-white border-royal-blue shadow-2xl scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
+                                <button key={d} onClick={() => setConfig({ ...config, destination: d })} className={`p-4 md:p-8 rounded-2xl md:rounded-3xl text-left border-2 transition-all duration-500 font-semibold uppercase tracking-widest text-[10px] md:text-base ${config.destination === d ? "bg-royal-blue text-white border-royal-blue shadow-md scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
                                     {d}
                                 </button>
                             ))}
@@ -443,17 +443,17 @@ export const ItineraryPreviewer = () => {
                     </motion.div>
                 ) : step === 2 ? (
                     <motion.div key="step2" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
-                        <h4 className="text-[10px] font-black uppercase tracking-[0.6em] text-sunset-orange mb-8 text-center md:text-left">Temporal Calibration</h4>
-                        <h3 className="text-4xl md:text-6xl font-black text-royal-blue uppercase mb-16 tracking-tighter text-center md:text-left">DURATION OF MISSION</h3>
+                        <h4 className="text-[10px] font-semibold uppercase tracking-[0.6em] text-sunset-orange mb-8 text-center md:text-left">Temporal Calibration</h4>
+                        <h3 className="text-4xl md:text-6xl font-semibold text-royal-blue uppercase mb-16 tracking-tight text-center md:text-left">DURATION OF MISSION</h3>
                         <div className="grid md:grid-cols-2 gap-6 mb-16">
                             {durations.map((d) => (
-                                <button key={d} onClick={() => setConfig({ ...config, duration: d })} className={`p-4 md:p-8 rounded-2xl md:rounded-3xl text-left border-2 transition-all duration-500 font-black uppercase tracking-widest text-[10px] md:text-base ${config.duration === d ? "bg-royal-blue text-white border-royal-blue shadow-2xl scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
+                                <button key={d} onClick={() => setConfig({ ...config, duration: d })} className={`p-4 md:p-8 rounded-2xl md:rounded-3xl text-left border-2 transition-all duration-500 font-semibold uppercase tracking-widest text-[10px] md:text-base ${config.duration === d ? "bg-royal-blue text-white border-royal-blue shadow-md scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
                                     {d}
                                 </button>
                             ))}
                         </div>
                         <div className="flex justify-between items-center">
-                            <button onClick={() => setStep(1)} className="text-royal-blue/40 font-black uppercase tracking-widest text-xs hover:text-royal-blue transition-colors">Go Back</button>
+                            <button onClick={() => setStep(1)} className="text-royal-blue/40 font-semibold uppercase tracking-widest text-xs hover:text-royal-blue transition-colors">Go Back</button>
                             <button onClick={nextStep} className="btn-primary group">
                                 Calibrate Vibe <ChevronRight className="inline-block ml-3 group-hover:translate-x-2 transition-transform" />
                             </button>
@@ -461,19 +461,19 @@ export const ItineraryPreviewer = () => {
                     </motion.div>
                 ) : step === 3 ? (
                     <motion.div key="step3" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
-                        <h4 className="text-[10px] font-black uppercase tracking-[0.6em] text-sunset-orange mb-8 text-center md:text-left">Soul Synchronization</h4>
-                        <h3 className="text-4xl md:text-6xl font-black text-royal-blue uppercase mb-16 tracking-tighter text-center md:text-left">WHAT IS YOUR VIBE?</h3>
+                        <h4 className="text-[10px] font-semibold uppercase tracking-[0.6em] text-sunset-orange mb-8 text-center md:text-left">Soul Synchronization</h4>
+                        <h3 className="text-4xl md:text-6xl font-semibold text-royal-blue uppercase mb-16 tracking-tight text-center md:text-left">WHAT IS YOUR VIBE?</h3>
                         <div className="grid md:grid-cols-2 gap-6 mb-16">
                             {vibes.map((v) => (
-                                <button key={v} onClick={() => setConfig({ ...config, vibe: v })} className={`p-4 md:p-8 rounded-2xl md:rounded-3xl text-left border-2 transition-all duration-500 font-black uppercase tracking-widest text-[10px] md:text-base ${config.vibe === v ? "bg-royal-blue text-white border-royal-blue shadow-2xl scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
+                                <button key={v} onClick={() => setConfig({ ...config, vibe: v })} className={`p-4 md:p-8 rounded-2xl md:rounded-3xl text-left border-2 transition-all duration-500 font-semibold uppercase tracking-widest text-[10px] md:text-base ${config.vibe === v ? "bg-royal-blue text-white border-royal-blue shadow-md scale-[1.02]" : "glass-card border-royal-blue/5 hover:bg-royal-blue/5 text-royal-blue/60"}`}>
                                     {v}
                                 </button>
                             ))}
                         </div>
                         <div className="flex justify-between items-center">
-                            <button onClick={() => setStep(2)} className="text-royal-blue/40 font-black uppercase tracking-widest text-xs hover:text-royal-blue transition-colors">Go Back</button>
+                            <button onClick={() => setStep(2)} className="text-royal-blue/40 font-semibold uppercase tracking-widest text-xs hover:text-royal-blue transition-colors">Go Back</button>
                             <Magnetic>
-                                <button onClick={nextStep} className="bg-sunset-orange text-white px-12 py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-sm shadow-xl shadow-sunset-orange/20 hover:scale-105 transition-all">
+                                <button onClick={nextStep} className="bg-sunset-orange text-white px-12 py-5 rounded-2xl font-semibold uppercase tracking-[0.2em] text-sm shadow-xl shadow-sunset-orange/20 hover:scale-105 transition-all">
                                     INITIATE GENERATION
                                 </button>
                             </Magnetic>
@@ -484,13 +484,13 @@ export const ItineraryPreviewer = () => {
                         <div>
                             <div className="flex items-center gap-4 mb-8">
                                 <div className="p-3 bg-sunset-orange rounded-xl text-white"><Sparkles size={24} /></div>
-                                <h4 className="text-xs font-black uppercase tracking-[0.4em] text-sunset-orange">Prism AI Generated Manifest</h4>
+                                <h4 className="text-xs font-semibold uppercase tracking-[0.4em] text-sunset-orange">Prism AI Generated Manifest</h4>
                             </div>
-                            <h3 className="text-3xl sm:text-5xl md:text-7xl font-black text-royal-blue uppercase mb-6 md:mb-10 tracking-tighter leading-none">{itineraryResults[config.vibe].title}</h3>
+                            <h3 className="text-3xl sm:text-5xl md:text-7xl font-semibold text-royal-blue uppercase mb-6 md:mb-10 tracking-tight leading-none">{itineraryResults[config.vibe].title}</h3>
                             <div className="flex flex-wrap gap-4 mb-12">
-                                <span className="px-5 py-2 glass-card rounded-full text-[10px] font-black uppercase text-royal-blue border-royal-blue/10">{config.destination}</span>
-                                <span className="px-5 py-2 glass-card rounded-full text-[10px] font-black uppercase text-royal-blue border-royal-blue/10">{config.duration}</span>
-                                <span className="px-5 py-2 glass-card rounded-full text-[10px] font-black uppercase text-sunset-orange border-sunset-orange/20 bg-sunset-orange/5">{config.vibe}</span>
+                                <span className="px-5 py-2 glass-card rounded-full text-[10px] font-semibold uppercase text-royal-blue border-royal-blue/10">{config.destination}</span>
+                                <span className="px-5 py-2 glass-card rounded-full text-[10px] font-semibold uppercase text-royal-blue border-royal-blue/10">{config.duration}</span>
+                                <span className="px-5 py-2 glass-card rounded-full text-[10px] font-semibold uppercase text-sunset-orange border-sunset-orange/20 bg-sunset-orange/5">{config.vibe}</span>
                             </div>
                             <ul className="space-y-6 mb-12">
                                 {itineraryResults[config.vibe].highlights.map((h, i) => (
@@ -506,8 +506,8 @@ export const ItineraryPreviewer = () => {
                         <div className="flex flex-col justify-center gap-8 md:gap-12 border-t md:border-t-0 md:border-l border-royal-blue/5 pt-8 md:pt-0 md:pl-12">
                             {itineraryResults[config.vibe].stats.map((s, i) => (
                                 <div key={i} className="group">
-                                    <div className="text-[10px] font-black uppercase tracking-widest text-royal-blue/20 mb-2">Metrics Layer {i + 1}</div>
-                                    <div className="text-2xl font-black text-royal-blue uppercase tracking-widest flex items-center gap-4">
+                                    <div className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/20 mb-2">Metrics Layer {i + 1}</div>
+                                    <div className="text-2xl font-semibold text-royal-blue uppercase tracking-widest flex items-center gap-4">
                                         <div className="w-1.5 h-1.5 rounded-full bg-sunset-orange transition-all duration-500 group-hover:h-8" />
                                         {s}
                                     </div>
@@ -517,7 +517,7 @@ export const ItineraryPreviewer = () => {
                                 <Link href="/booking" className="w-full">
                                     <button className="btn-primary w-full py-6">Secure This Mission</button>
                                 </Link>
-                                <button onClick={reset} className="text-[10px] font-black uppercase tracking-widest text-royal-blue/40 hover:text-royal-blue transition-colors">Start New Simulation</button>
+                                <button onClick={reset} className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/40 hover:text-royal-blue transition-colors">Start New Simulation</button>
                             </div>
                         </div>
                     </motion.div>

@@ -26,7 +26,7 @@ export function ItineraryIndexView({ dest }: { dest: Destination }) {
                         <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/40 to-royal-blue/10" />
                     </div>
                     <div className="container mx-auto px-6 relative z-10 pb-14">
-                        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-3 mb-8 text-white/70 font-black uppercase text-[10px] tracking-[0.3em]">
+                        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-3 mb-8 text-white/70 font-semibold uppercase text-[10px] tracking-[0.3em]">
                             <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
                             <ChevronRight size={12} />
                             <Link href="/destinations" className="hover:text-sunset-orange transition-colors">Destinations</Link>
@@ -35,8 +35,8 @@ export function ItineraryIndexView({ dest }: { dest: Destination }) {
                             <ChevronRight size={12} />
                             <span className="text-sunset-orange">Itineraries</span>
                         </nav>
-                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">{dest.name} &middot; Itinerary by length</h4>
-                        <CharBlurIn text={`${dest.name.toUpperCase()} ITINERARIES`} className="text-3xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] block" />
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">{dest.name} &middot; Itinerary by length</h4>
+                        <CharBlurIn text={`${dest.name.toUpperCase()} ITINERARIES`} className="text-3xl md:text-7xl font-semibold text-white uppercase tracking-tight leading-[0.9] block" />
                     </div>
                 </section>
 
@@ -50,7 +50,7 @@ export function ItineraryIndexView({ dest }: { dest: Destination }) {
                             <Link key={n} href={`/destinations/${dest.slug}/itinerary/${n}-day`} className="block glass-card rounded-3xl p-8 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all">
                                 <div className="flex items-center gap-3 mb-3">
                                     <Calendar className="text-sunset-orange" size={20} />
-                                    <span className="text-xl font-black uppercase tracking-tighter text-royal-blue group-hover:text-sunset-orange transition-colors">{n}-Day {dest.name}</span>
+                                    <span className="text-xl font-semibold uppercase tracking-tight text-royal-blue group-hover:text-sunset-orange transition-colors">{n}-Day {dest.name}</span>
                                 </div>
                                 <p className="text-dark-slate/60 font-bold italic text-sm">{n <= 3 ? "Headlines-only sprint" : n <= 5 ? "Balanced classic" : n <= 7 ? "Unhurried deep dive" : n <= 10 ? "Deep dive + regional extension" : "Comprehensive regional mission"}.</p>
                             </Link>
@@ -86,7 +86,7 @@ export function ItineraryView({
                         <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/40 to-royal-blue/10" />
                     </div>
                     <div className="container mx-auto px-6 relative z-10 pb-16">
-                        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-3 mb-8 text-white/70 font-black uppercase text-[10px] tracking-[0.3em]">
+                        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-3 mb-8 text-white/70 font-semibold uppercase text-[10px] tracking-[0.3em]">
                             <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
                             <ChevronRight size={12} />
                             <Link href="/destinations" className="hover:text-sunset-orange transition-colors">Destinations</Link>
@@ -97,15 +97,15 @@ export function ItineraryView({
                             <ChevronRight size={12} />
                             <span className="text-sunset-orange">{content.duration}-Day</span>
                         </nav>
-                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">{dest.name} &middot; {content.duration}-day plan</h4>
-                        <CharBlurIn text={content.h1.toUpperCase()} className="text-3xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] block" />
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">{dest.name} &middot; {content.duration}-day plan</h4>
+                        <CharBlurIn text={content.h1.toUpperCase()} className="text-3xl md:text-7xl font-semibold text-white uppercase tracking-tight leading-[0.9] block" />
                     </div>
                 </section>
 
                 <section className="py-24 md:py-28 container mx-auto px-6">
                     <div className="max-w-5xl">
-                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">The Brief</h4>
-                        <p className="text-2xl md:text-4xl font-black text-royal-blue leading-snug tracking-tight mb-12">{content.answer}</p>
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">The Brief</h4>
+                        <p className="text-2xl md:text-4xl font-semibold text-royal-blue leading-snug tracking-tight mb-12">{content.answer}</p>
                         <div className="space-y-7 max-w-3xl">
                             {content.intro.map((p, i) => (
                                 <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-lg md:text-xl text-dark-slate/70 font-bold leading-relaxed">{p}</motion.p>
@@ -116,13 +116,13 @@ export function ItineraryView({
 
                 <section className="py-20 bg-royal-blue/5">
                     <div className="container mx-auto px-6">
-                        <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-10">Day-by-day</h4>
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-10">Day-by-day</h4>
                         <div className="space-y-px max-w-5xl">
                             {content.days.map((d) => (
                                 <motion.div key={d.day} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="glass-card rounded-3xl p-8 border-royal-blue/5 mb-5">
                                     <div className="flex items-center gap-4 mb-4">
-                                        <div className="w-10 h-10 rounded-2xl bg-sunset-orange text-white flex items-center justify-center font-black shrink-0">{d.day}</div>
-                                        <h3 className="text-xl md:text-2xl font-black text-royal-blue uppercase tracking-tighter">{d.title}</h3>
+                                        <div className="w-10 h-10 rounded-2xl bg-sunset-orange text-white flex items-center justify-center font-semibold shrink-0">{d.day}</div>
+                                        <h3 className="text-xl md:text-2xl font-semibold text-royal-blue uppercase tracking-tight">{d.title}</h3>
                                     </div>
                                     <div className="space-y-4 pl-14">
                                         {d.paragraphs.map((p, i) => (
@@ -136,11 +136,11 @@ export function ItineraryView({
                 </section>
 
                 <section className="py-24 container mx-auto px-6">
-                    <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-10">Trip context</h4>
+                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-10">Trip context</h4>
                     <div className="grid md:grid-cols-3 gap-6 max-w-6xl">
                         {content.closing.map((c, i) => (
                             <div key={i} className="glass-card rounded-3xl p-8 border-royal-blue/5">
-                                <h3 className="text-xl font-black text-royal-blue uppercase tracking-tighter mb-4">{c.heading}</h3>
+                                <h3 className="text-xl font-semibold text-royal-blue uppercase tracking-tight mb-4">{c.heading}</h3>
                                 <div className="space-y-3">
                                     {c.paragraphs.map((p, j) => (
                                         <p key={j} className="text-base text-dark-slate/70 font-bold italic leading-relaxed">{p}</p>
@@ -154,15 +154,15 @@ export function ItineraryView({
                 <section className="py-24 bg-royal-blue/5">
                     <div className="container mx-auto px-6">
                         <div className="text-center mb-14">
-                            <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">Intelligence</h4>
-                            <CharBlurIn text={`${content.duration}-DAY ${dest.name.toUpperCase()} FAQ`} className="text-2xl md:text-5xl font-black text-royal-blue uppercase tracking-tighter block leading-none" />
+                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">Intelligence</h4>
+                            <CharBlurIn text={`${content.duration}-DAY ${dest.name.toUpperCase()} FAQ`} className="text-2xl md:text-5xl font-semibold text-royal-blue uppercase tracking-tight block leading-none" />
                         </div>
                         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                             {content.faqs.map((f, i) => (
                                 <div key={i} className="glass-card p-10 rounded-3xl border-royal-blue/5">
                                     <div className="flex items-start gap-4 mb-4">
                                         <HelpCircle className="text-sunset-orange shrink-0 mt-1" size={20} />
-                                        <h3 className="font-black text-royal-blue uppercase tracking-tight text-base leading-tight">{f.q}</h3>
+                                        <h3 className="font-semibold text-royal-blue uppercase tracking-tight text-base leading-tight">{f.q}</h3>
                                     </div>
                                     <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed pl-9">{f.a}</p>
                                 </div>
@@ -172,14 +172,14 @@ export function ItineraryView({
                 </section>
 
                 <section className="py-20 container mx-auto px-6">
-                    <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">Other lengths</h4>
+                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">Other lengths</h4>
                     <div className="flex flex-wrap gap-3">
                         {otherDurations.map((d) => (
-                            <Link key={d} href={`/destinations/${dest.slug}/itinerary/${d}-day`} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-black uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-2">
+                            <Link key={d} href={`/destinations/${dest.slug}/itinerary/${d}-day`} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-2">
                                 <Clock size={12} className="text-sunset-orange" /> {d}-Day {dest.name}
                             </Link>
                         ))}
-                        <Link href={`/destinations/${dest.slug}`} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-black uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-2">
+                        <Link href={`/destinations/${dest.slug}`} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-2">
                             {dest.name} full brief <ArrowRight size={12} />
                         </Link>
                     </div>
@@ -189,26 +189,26 @@ export function ItineraryView({
                 {tours.length > 0 && (
                     <section className="py-24 bg-royal-blue/5">
                         <div className="container mx-auto px-6">
-                            <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-5">Ready-to-Book</h4>
-                            <h2 className="text-3xl md:text-5xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-6">Itineraries featuring {dest.name}</h2>
+                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">Ready-to-Book</h4>
+                            <h2 className="text-3xl md:text-5xl font-semibold text-royal-blue uppercase tracking-tight leading-none mb-6">Itineraries featuring {dest.name}</h2>
                             <p className="text-lg font-bold italic text-royal-blue/50 max-w-3xl mb-12 leading-relaxed">
                                 Prefer a fully planned, day-by-day tour? These private, chauffeured itineraries feature {dest.name} or the wider {dest.region} — each customisable to this {content.duration}-day plan.
                             </p>
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {tours.slice(0, 3).map((t) => (
-                                    <Link key={t.slug} href={`/tours/${t.slug}`} className="block glass-card rounded-[2.5rem] overflow-hidden group border-royal-blue/5 hover:border-sunset-orange/30 transition-all duration-700 bg-white">
+                                    <Link key={t.slug} href={`/tours/${t.slug}`} className="block glass-card rounded-2xl overflow-hidden group border-royal-blue/5 hover:border-sunset-orange/30 transition-all duration-700 bg-white">
                                         <div className="relative h-44">
                                             <Image src={t.img} alt={`${t.title} — itinerary featuring ${dest.name}`} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
                                             <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/70 to-transparent" />
-                                            <div className="absolute bottom-5 left-6 right-6 flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-white">
+                                            <div className="absolute bottom-5 left-6 right-6 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white">
                                                 <Clock size={13} className="text-sunset-orange" />{t.duration}<span className="text-sunset-orange">·</span>{t.theme}
                                             </div>
                                         </div>
                                         <div className="p-7">
-                                            <h3 className="text-xl font-black text-royal-blue uppercase tracking-tighter leading-tight mb-4 group-hover:text-sunset-orange transition-colors">{t.title}</h3>
+                                            <h3 className="text-xl font-semibold text-royal-blue uppercase tracking-tight leading-tight mb-4 group-hover:text-sunset-orange transition-colors">{t.title}</h3>
                                             <div className="flex items-center justify-between">
-                                                <span className="text-lg font-black text-royal-blue">from {t.price}</span>
-                                                <span className="font-black uppercase text-[10px] tracking-[0.3em] flex items-center gap-2 text-royal-blue group-hover:text-sunset-orange transition-colors">View itinerary <ArrowRight size={14} /></span>
+                                                <span className="text-lg font-semibold text-royal-blue">from {t.price}</span>
+                                                <span className="font-semibold uppercase text-[10px] tracking-[0.3em] flex items-center gap-2 text-royal-blue group-hover:text-sunset-orange transition-colors">View itinerary <ArrowRight size={14} /></span>
                                             </div>
                                         </div>
                                     </Link>
@@ -219,11 +219,11 @@ export function ItineraryView({
                 )}
 
                 <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-[4rem] bg-royal-blue text-white text-center shadow-2xl relative overflow-hidden">
+                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-10 relative z-10">Architect this <span className="text-sunset-orange">{content.duration}-day {dest.name}</span> trip</h2>
+                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Architect this <span className="text-sunset-orange">{content.duration}-day {dest.name}</span> trip</h2>
                         <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-[2rem] font-black uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Begin a Mission Brief</Link>
+                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Begin a Mission Brief</Link>
                         </Magnetic>
                     </div>
                 </section>

@@ -24,13 +24,13 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                             <motion.h4
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-purple-600 font-black uppercase tracking-[0.8em] text-sm mb-6"
+                                className="text-purple-600 font-semibold uppercase tracking-[0.8em] text-sm mb-6"
                             >
                                 Deep Reset
                             </motion.h4>
                             <CharBlurIn
                                 text="KINETIC RECOVERY"
-                                className="text-5xl md:text-[7.5rem] font-black text-royal-blue uppercase tracking-tighter leading-[0.85] mb-12"
+                                className="text-5xl md:text-[7.5rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
                             />
                             <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed mb-12">
                                 Restorative bodywork drawing on classical Indian massage traditions (Abhyanga, Marma therapy). Skilled therapists work the muscles and soft tissue to ease tension and support physical recovery and relaxation.
@@ -38,7 +38,7 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                             <div className="flex flex-wrap gap-6">
                                 <Magnetic>
                                     <Link href="/booking">
-                                        <button className="bg-purple-600 text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-royal-blue transition-all duration-500">
+                                        <button className="bg-purple-600 text-white px-10 py-5 rounded-full font-semibold uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-royal-blue transition-all duration-500">
                                             Schedule Reset <ArrowRight size={16} />
                                         </button>
                                     </Link>
@@ -47,13 +47,13 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                                     <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
                                         <Activity className="text-purple-600" size={20} />
                                     </div>
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-royal-blue/40">Tension Release</span>
+                                    <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/40">Tension Release</span>
                                 </div>
                             </div>
                         </div>
                         <div className="relative">
                             <Tilt3D>
-                                <div className="relative h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl bg-purple-50">
+                                <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-md bg-purple-50">
                                     <Image
                                         src="https://upload.wikimedia.org/wikipedia/commons/4/48/Massage_in_India.jpg"
                                         alt="Traditional Indian therapeutic massage with warm herbal oil"
@@ -82,10 +82,10 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="bg-white p-12 rounded-[2.5rem] shadow-lg border border-purple-100 hover:border-purple-300 transition-all group"
+                                    className="bg-white p-12 rounded-2xl shadow-lg border border-purple-100 hover:border-purple-300 transition-all group"
                                 >
                                     <modality.icon className="text-purple-600 mb-8 transition-transform group-hover:scale-125 duration-500" size={40} />
-                                    <h4 className="text-2xl font-black text-royal-blue uppercase tracking-tighter mb-4">{modality.title}</h4>
+                                    <h4 className="text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-4">{modality.title}</h4>
                                     <p className="text-dark-slate/60 font-bold italic text-sm">{modality.desc}</p>
                                 </motion.div>
                             ))}
@@ -98,7 +98,7 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                     <div className="container mx-auto px-6 text-center">
                         <div className="max-w-4xl mx-auto">
                             <BedDouble className="text-sunset-orange mx-auto mb-12" size={60} />
-                            <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-16">
+                            <h2 className="text-4xl md:text-7xl font-semibold text-white uppercase tracking-tight leading-[0.9] mb-16">
                                 UNCOMPROMISING <br /> <span className="text-purple-400">RELAXATION.</span>
                             </h2>
                             <p className="text-white/60 font-bold italic text-2xl mb-16 px-12">
@@ -106,7 +106,7 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                             </p>
                             <Magnetic>
                                 <Link href="/booking">
-                                    <button className="bg-purple-600 text-white px-20 py-8 rounded-full font-black uppercase tracking-[0.3em] text-sm shadow-2xl hover:bg-white hover:text-purple-600 transition-all duration-500">
+                                    <button className="bg-purple-600 text-white px-20 py-8 rounded-full font-semibold uppercase tracking-[0.3em] text-sm shadow-md hover:bg-white hover:text-purple-600 transition-all duration-500">
                                         Book Sanctuary Therapy
                                     </button>
                                 </Link>

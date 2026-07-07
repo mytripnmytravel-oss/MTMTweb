@@ -26,13 +26,13 @@ export default function BookingView() {
                         <motion.h4
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-sunset-orange font-black uppercase tracking-[0.8em] text-sm mb-6"
+                            className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6"
                         >
                             Plan Your Journey
                         </motion.h4>
                         <CharBlurIn
                             text="SECURE YOUR JOURNEY"
-                            className="text-5xl md:text-[8rem] font-black text-royal-blue uppercase tracking-tighter leading-none mb-12"
+                            className="text-5xl md:text-[8rem] font-semibold text-royal-blue uppercase tracking-tight leading-none mb-12"
                         />
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -53,7 +53,7 @@ export default function BookingView() {
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
-                            className="lg:col-span-7 bg-white rounded-[3rem] p-12 md:p-16 shadow-2xl border border-royal-blue/5 relative overflow-hidden"
+                            className="lg:col-span-7 bg-white rounded-2xl p-12 md:p-16 shadow-md border border-royal-blue/5 relative overflow-hidden"
                         >
                             {/* Form Success Overlay */}
                             <AnimatePresence>
@@ -63,14 +63,14 @@ export default function BookingView() {
                                         animate={{ opacity: 1 }}
                                         className="absolute inset-0 bg-royal-blue z-50 flex flex-col items-center justify-center p-12 text-center"
                                     >
-                                        <div className="w-24 h-24 bg-sunset-orange rounded-full flex items-center justify-center mb-8 shadow-2xl">
+                                        <div className="w-24 h-24 bg-sunset-orange rounded-full flex items-center justify-center mb-8 shadow-md">
                                             <Send className="text-white" size={40} />
                                         </div>
-                                        <h3 className="text-4xl font-black text-white uppercase tracking-tighter mb-4">Enquiry Received</h3>
+                                        <h3 className="text-4xl font-semibold text-white uppercase tracking-tight mb-4">Enquiry Received</h3>
                                         <p className="text-white/60 font-bold italic mb-10">Your enquiry has been received. A Lead Curator will contact you shortly.</p>
                                         <button
                                             onClick={() => window.location.reload()}
-                                            className="text-sunset-orange font-black uppercase tracking-widest text-xs underline decoration-2 underline-offset-8"
+                                            className="text-sunset-orange font-semibold uppercase tracking-widest text-xs underline decoration-2 underline-offset-8"
                                         >
                                             Return to Form
                                         </button>
@@ -87,26 +87,26 @@ export default function BookingView() {
                                 <input type="hidden" name="Inquiry Type" value="General Booking" />
                                 <div className="grid md:grid-cols-2 gap-10">
                                     <div className="space-y-4">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Full Name</label>
-                                        <input required name="Full Name" type="text" placeholder="ALEXANDER VANCE" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
+                                        <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Full Name</label>
+                                        <input required name="Full Name" type="text" placeholder="ALEXANDER VANCE" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
                                         <ValidationError prefix="Name" field="Full Name" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                     </div>
                                     <div className="space-y-4">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Email Address</label>
-                                        <input required name="Email" type="email" placeholder="VANCE@MISSION.COM" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
+                                        <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Email Address</label>
+                                        <input required name="Email" type="email" placeholder="VANCE@MISSION.COM" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
                                         <ValidationError prefix="Email" field="Email" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                     </div>
                                 </div>
 
                                 <div className="grid md:grid-cols-2 gap-10">
                                     <div className="space-y-4">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Contact Number</label>
-                                        <input required name="Phone" type="tel" placeholder="+91 XXXXX XXXXX" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
+                                        <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Contact Number</label>
+                                        <input required name="Phone" type="tel" placeholder="+91 XXXXX XXXXX" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
                                         <ValidationError prefix="Phone" field="Phone" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                     </div>
                                     <div className="space-y-4">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Service Required</label>
-                                        <select name="Service Required" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-black uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none cursor-pointer shadow-sm">
+                                        <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Service Required</label>
+                                        <select name="Service Required" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none cursor-pointer shadow-sm">
                                             <option>Tour Master Packages</option>
                                             <option>Elite Fleet Rental</option>
                                             <option>Medical Sanctuary</option>
@@ -116,8 +116,8 @@ export default function BookingView() {
                                 </div>
 
                                 <div className="space-y-4">
-                                    <label className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60 ml-4">Mission directives / Details</label>
-                                    <textarea required name="Directives" rows={4} placeholder="DESCRIBE YOUR SPECIFIC REQUIREMENTS..." className="w-full bg-white border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-black uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all resize-none shadow-sm"></textarea>
+                                    <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Mission directives / Details</label>
+                                    <textarea required name="Directives" rows={4} placeholder="DESCRIBE YOUR SPECIFIC REQUIREMENTS..." className="w-full bg-white border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-semibold uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all resize-none shadow-sm"></textarea>
                                     <ValidationError prefix="Message" field="Directives" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
                                 </div>
 
@@ -132,7 +132,7 @@ export default function BookingView() {
                                     <button
                                         type="submit"
                                         disabled={state.submitting}
-                                        className="bg-royal-blue text-white px-16 py-8 rounded-2xl font-black uppercase tracking-[0.3em] text-sm shadow-2xl shadow-royal-blue/20 group flex items-center gap-6 hover:bg-sunset-orange transition-all duration-500 disabled:opacity-50"
+                                        className="bg-royal-blue text-white px-16 py-8 rounded-2xl font-semibold uppercase tracking-[0.3em] text-sm shadow-md shadow-royal-blue/20 group flex items-center gap-6 hover:bg-sunset-orange transition-all duration-500 disabled:opacity-50"
                                     >
                                         {state.submitting ? "TRANSMITTING..." : "SEND ENQUIRY"}
                                         <ArrowRight className="group-hover:translate-x-3 transition-transform" />
@@ -144,9 +144,9 @@ export default function BookingView() {
                         {/* Right Column: Authority & Proof */}
                         <div className="lg:col-span-5 space-y-12">
                             <Tilt3D>
-                                <div className="p-12 rounded-[3rem] bg-royal-blue shadow-2xl text-white relative overflow-hidden group">
+                                <div className="p-12 rounded-2xl bg-royal-blue shadow-md text-white relative overflow-hidden group">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-sunset-orange/10 blur-3xl -translate-y-1/2 translate-x-1/2 rounded-full" />
-                                    <h4 className="text-xs font-black uppercase tracking-[0.4em] text-sunset-orange mb-8 text-center sm:text-left">The Authority Standard</h4>
+                                    <h4 className="text-xs font-semibold uppercase tracking-[0.4em] text-sunset-orange mb-8 text-center sm:text-left">The Authority Standard</h4>
                                     <div className="space-y-10">
                                         {[
                                             { icon: Star, title: "Bespoke Experience", desc: "Years of crafting tailored India journeys." },
@@ -158,7 +158,7 @@ export default function BookingView() {
                                                     <item.icon size={20} className="text-white" />
                                                 </div>
                                                 <div>
-                                                    <h5 className="font-black uppercase tracking-widest text-sm mb-2">{item.title}</h5>
+                                                    <h5 className="font-semibold uppercase tracking-widest text-sm mb-2">{item.title}</h5>
                                                     <p className="text-[11px] font-bold text-white/70 italic leading-relaxed">{item.desc}</p>
                                                 </div>
                                             </div>
@@ -168,31 +168,31 @@ export default function BookingView() {
                             </Tilt3D>
 
                             <div className="space-y-8">
-                                <h4 className="text-[10px] font-black uppercase tracking-[0.6em] text-royal-blue/20 ml-6">Global Contact Grid</h4>
+                                <h4 className="text-[10px] font-semibold uppercase tracking-[0.6em] text-royal-blue/20 ml-6">Global Contact Grid</h4>
                                 <div className="grid sm:grid-cols-2 gap-6">
                                     <a href="tel:+919997812237" className="bg-white border border-royal-blue/10 p-8 rounded-3xl shadow-xl flex flex-col gap-4 hover:border-sunset-orange transition-all duration-500 group">
                                         <Phone className="text-sunset-orange" size={24} />
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60">Voice Command</span>
-                                        <span className="text-sm font-black text-royal-blue">+91 99978 12237</span>
+                                        <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60">Voice Command</span>
+                                        <span className="text-sm font-semibold text-royal-blue">+91 99978 12237</span>
                                     </a>
                                     <a href="mailto:info@mytripmytravel.com" className="bg-white border border-royal-blue/10 p-8 rounded-3xl shadow-xl flex flex-col gap-4 hover:border-sunset-orange transition-all duration-500 group whitespace-normal break-all">
                                         <Mail className="text-sunset-orange" size={24} />
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-royal-blue/60">Intel Dispatch</span>
+                                        <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60">Intel Dispatch</span>
                                         <div className="flex flex-col">
-                                            <span className="text-[11px] font-black text-royal-blue">info@mytripmytravel.com</span>
-                                            <span className="text-[11px] font-black text-royal-blue opacity-80">mytripmytravel@gmail.com</span>
+                                            <span className="text-[11px] font-semibold text-royal-blue">info@mytripmytravel.com</span>
+                                            <span className="text-[11px] font-semibold text-royal-blue opacity-80">mytripmytravel@gmail.com</span>
                                         </div>
                                     </a>
                                 </div>
                             </div>
 
-                            <div className="p-8 rounded-3xl bg-royal-blue text-white flex flex-col gap-6 shadow-2xl relative overflow-hidden">
+                            <div className="p-8 rounded-3xl bg-royal-blue text-white flex flex-col gap-6 shadow-md relative overflow-hidden">
                                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 blur-3xl translate-y-1/2 -translate-x-1/2 rounded-full" />
                                 <div className="flex items-center gap-4 relative z-10">
                                     <MapPin className="text-sunset-orange" size={24} />
-                                    <h4 className="text-[10px] font-black uppercase tracking-widest text-white/50 leading-none">Headquarters</h4>
+                                    <h4 className="text-[10px] font-semibold uppercase tracking-widest text-white/50 leading-none">Headquarters</h4>
                                 </div>
-                                <p className="text-xs font-black uppercase tracking-widest leading-relaxed relative z-10">
+                                <p className="text-xs font-semibold uppercase tracking-widest leading-relaxed relative z-10">
                                     House Number 80, Ansal Town,<br />Block C, Agra, Uttar Pradesh 283125
                                 </p>
                             </div>
@@ -200,9 +200,9 @@ export default function BookingView() {
                             <div className="p-8 rounded-3xl bg-royal-blue/[0.03] border-2 border-dashed border-royal-blue/10 flex items-center justify-between group">
                                 <div className="flex items-center gap-4">
                                     <div className="w-4 h-4 rounded-full bg-emerald-500 animate-pulse" />
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-royal-blue">Direct WhatsApp Access</span>
+                                    <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue">Direct WhatsApp Access</span>
                                 </div>
-                                <a href="https://wa.me/919997812237" target="_blank" rel="noopener noreferrer" className="bg-white border border-royal-blue/10 px-6 py-3 rounded-xl text-[10px] font-black text-emerald-600 hover:bg-emerald-50 hover:border-emerald-500/30 transition-all shadow-md">CONNECT NOW</a>
+                                <a href="https://wa.me/919997812237" target="_blank" rel="noopener noreferrer" className="bg-white border border-royal-blue/10 px-6 py-3 rounded-xl text-[10px] font-semibold text-emerald-600 hover:bg-emerald-50 hover:border-emerald-500/30 transition-all shadow-md">CONNECT NOW</a>
                             </div>
                         </div>
                     </div>

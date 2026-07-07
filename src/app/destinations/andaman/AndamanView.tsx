@@ -58,10 +58,10 @@ export default function AndamanView() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
                         >
-                            <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs md:text-sm mb-6">Island Sanctuary</h4>
+                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs md:text-sm mb-6">Island Sanctuary</h4>
                             <CharBlurIn
                                 text="ANDAMAN EXPEDITION"
-                                className="text-4xl md:text-8xl lg:text-[10rem] font-black text-white uppercase tracking-tighter leading-none mb-8"
+                                className="text-4xl md:text-8xl lg:text-[10rem] font-semibold text-white uppercase tracking-tight leading-none mb-8"
                             />
                             <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-12">
                                 {stats.map((stat, i) => (
@@ -74,8 +74,8 @@ export default function AndamanView() {
                                     >
                                         <div className="text-sunset-orange">{stat.icon}</div>
                                         <div className="text-left">
-                                            <div className="text-[10px] uppercase font-black tracking-widest opacity-40">{stat.detail}</div>
-                                            <div className="text-sm md:text-lg font-black uppercase tracking-tight">{stat.label}</div>
+                                            <div className="text-[10px] uppercase font-semibold tracking-widest opacity-40">{stat.detail}</div>
+                                            <div className="text-sm md:text-lg font-semibold uppercase tracking-tight">{stat.label}</div>
                                         </div>
                                     </motion.div>
                                 ))}
@@ -90,7 +90,7 @@ export default function AndamanView() {
                         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
                     >
                         <div className="w-px h-12 bg-gradient-to-b from-white/60 to-transparent" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-sunset-orange">Scroll to Explore</span>
+                        <span className="text-[10px] font-semibold uppercase tracking-[0.4em] text-sunset-orange">Scroll to Explore</span>
                     </motion.div>
                 </section>
 
@@ -99,28 +99,28 @@ export default function AndamanView() {
                     <div className="container mx-auto px-6">
                         <div className="grid lg:grid-cols-2 gap-20 items-start">
                             <div className="sticky top-32">
-                                <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-4">Strategic Deployment</h4>
-                                <h2 className="text-4xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-12">The Master Itinerary</h2>
+                                <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-4">Strategic Deployment</h4>
+                                <h2 className="text-4xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight leading-none mb-12">The Master Itinerary</h2>
                                 <p className="text-lg md:text-2xl font-bold text-royal-blue/60 mb-12 italic leading-relaxed">
                                     Our Andaman protocol is designed for those who demand pristine environments and zero-friction logistics in the heart of the Bay of Bengal.
                                 </p>
 
                                 <div className="space-y-8 mb-16">
-                                    <div className="flex items-center gap-6 p-8 rounded-[2.5rem] bg-royal-blue/5 border border-royal-blue/5">
+                                    <div className="flex items-center gap-6 p-8 rounded-2xl bg-royal-blue/5 border border-royal-blue/5">
                                         <div className="w-16 h-16 rounded-2xl bg-royal-blue text-white flex items-center justify-center shrink-0 shadow-lg">
                                             <ShieldCheck size={32} />
                                         </div>
                                         <div>
-                                            <h5 className="font-black uppercase tracking-tighter text-xl text-royal-blue">Elite Logistics</h5>
+                                            <h5 className="font-semibold uppercase tracking-tight text-xl text-royal-blue">Elite Logistics</h5>
                                             <p className="font-bold text-royal-blue/40 text-sm italic uppercase tracking-widest">Private Cruise & Island Shuttles</p>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-6 p-8 rounded-[2.5rem] bg-sunset-orange/5 border border-sunset-orange/5">
+                                    <div className="flex items-center gap-6 p-8 rounded-2xl bg-sunset-orange/5 border border-sunset-orange/5">
                                         <div className="w-16 h-16 rounded-2xl bg-sunset-orange text-white flex items-center justify-center shrink-0 shadow-lg">
                                             <Star size={32} />
                                         </div>
                                         <div>
-                                            <h5 className="font-black uppercase tracking-tighter text-xl text-royal-blue">Premium Stays</h5>
+                                            <h5 className="font-semibold uppercase tracking-tight text-xl text-royal-blue">Premium Stays</h5>
                                             <p className="font-bold text-royal-blue/40 text-sm italic uppercase tracking-widest">Luxury Eco-Retreats</p>
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@ export default function AndamanView() {
                                             const msg = "ANDAMAN EXPEDITION: I am inquiring about the 7-Day Island Adventure protocol.";
                                             window.open(`https://wa.me/919997812237?text=${encodeURIComponent(msg)}`, '_blank');
                                         }}
-                                        className="w-full bg-royal-blue text-white py-8 px-12 rounded-[2rem] font-black uppercase tracking-widest flex items-center justify-center gap-4 hover:bg-sunset-orange transition-all duration-500 shadow-2xl group"
+                                        className="w-full bg-royal-blue text-white py-8 px-12 rounded-2xl font-semibold uppercase tracking-widest flex items-center justify-center gap-4 hover:bg-sunset-orange transition-all duration-500 shadow-md group"
                                     >
                                         Initiate Mission Inquiry <Anchor className="group-hover:rotate-12 transition-transform" />
                                     </button>
@@ -148,11 +148,11 @@ export default function AndamanView() {
                                         viewport={{ once: true }}
                                         className="relative pl-12 md:pl-20 pb-12 border-l border-royal-blue/10 last:border-0"
                                     >
-                                        <div className="absolute left-0 top-0 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-2 border-royal-blue flex items-center justify-center z-10 text-[10px] font-black">
+                                        <div className="absolute left-0 top-0 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-2 border-royal-blue flex items-center justify-center z-10 text-[10px] font-semibold">
                                             {day.day}
                                         </div>
-                                        <h4 className="text-sunset-orange font-black uppercase tracking-widest text-[10px] mb-4">Operational Day {day.day}</h4>
-                                        <h3 className="text-2xl md:text-3xl font-black text-royal-blue uppercase tracking-tighter mb-4">
+                                        <h4 className="text-sunset-orange font-semibold uppercase tracking-widest text-[10px] mb-4">Operational Day {day.day}</h4>
+                                        <h3 className="text-2xl md:text-3xl font-semibold text-royal-blue uppercase tracking-tight mb-4">
                                             {idx === 0 ? "Strategic Arrival" :
                                              idx === 1 ? "Island Deployment" :
                                              idx === 2 ? "Marine Operations" :
@@ -175,8 +175,8 @@ export default function AndamanView() {
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sunset-orange/10 blur-[150px] rounded-full" />
                     <div className="container mx-auto px-6 relative z-10">
                         <div className="mb-20 text-center">
-                            <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-4">Tactical Sea Assets</h4>
-                            <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-8">Marine Fleet Selection</h2>
+                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-4">Tactical Sea Assets</h4>
+                            <h2 className="text-4xl md:text-7xl font-semibold uppercase tracking-tight leading-none mb-8">Marine Fleet Selection</h2>
                             <p className="text-white/40 font-bold italic text-lg max-w-2xl mx-auto italic">
                                 From private catamarans to high-speed luxury shuttles, our marine wing ensures your inter-island transition is as refined as our land-based deployments.
                             </p>
@@ -192,11 +192,11 @@ export default function AndamanView() {
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    className="group relative h-[500px] rounded-[3rem] overflow-hidden border border-white/10"
+                                    className="group relative h-[500px] rounded-2xl overflow-hidden border border-white/10"
                                 >
                                     <Image src={asset.img} alt={`${asset.title} — private inter-island transfer, Andaman`} fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/60 to-transparent p-12 flex flex-col justify-end">
-                                        <h3 className="text-3xl font-black uppercase tracking-tighter mb-4">{asset.title}</h3>
+                                        <h3 className="text-3xl font-semibold uppercase tracking-tight mb-4">{asset.title}</h3>
                                         <p className="text-white/60 font-bold italic text-sm">{asset.desc}</p>
                                     </div>
                                 </motion.div>
@@ -210,8 +210,8 @@ export default function AndamanView() {
                     <div className="container mx-auto px-6">
                         <div className="max-w-4xl mx-auto">
                             <div className="mb-20">
-                                <h4 className="text-sunset-orange font-black uppercase tracking-[0.6em] text-xs mb-4">Mission Intelligence</h4>
-                                <h2 className="text-4xl md:text-7xl font-black text-royal-blue uppercase tracking-tighter leading-none mb-8">Operational FAQs</h2>
+                                <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-4">Mission Intelligence</h4>
+                                <h2 className="text-4xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight leading-none mb-8">Operational FAQs</h2>
                             </div>
 
                             <div className="space-y-6">
@@ -220,8 +220,8 @@ export default function AndamanView() {
                                     { q: "What is the best timeline for an Andaman Expedition?", a: "The optimal window is between October and May, characterized by calmer Andaman Sea conditions and good visibility for diving and snorkelling." },
                                     { q: "Can we customize the inter-island transfer timing?", a: "Yes. We coordinate around your preferred rhythm, though certain marine transfers are subject to local harbour authority schedules." }
                                 ].map((faq, idx) => (
-                                    <div key={idx} className="p-8 md:p-12 rounded-[2.5rem] bg-royal-blue/5 border border-royal-blue/5 group hover:bg-royal-blue hover:text-white transition-all duration-500">
-                                        <h4 className="text-xl md:text-2xl font-black uppercase tracking-tighter mb-4">{faq.q}</h4>
+                                    <div key={idx} className="p-8 md:p-12 rounded-2xl bg-royal-blue/5 border border-royal-blue/5 group hover:bg-royal-blue hover:text-white transition-all duration-500">
+                                        <h4 className="text-xl md:text-2xl font-semibold uppercase tracking-tight mb-4">{faq.q}</h4>
                                         <p className="font-bold italic opacity-60 leading-relaxed">{faq.a}</p>
                                     </div>
                                 ))}
@@ -232,7 +232,7 @@ export default function AndamanView() {
 
                 {/* Final CTA Bridge */}
                 <section className="pb-40 container mx-auto px-6">
-                    <div className="relative rounded-[4rem] overflow-hidden bg-royal-blue p-12 md:p-32 text-center border-t border-white/10">
+                    <div className="relative rounded-3xl overflow-hidden bg-royal-blue p-12 md:p-32 text-center border-t border-white/10">
                         <div className="absolute inset-0 z-0">
                             <Image
                                 src="https://upload.wikimedia.org/wikipedia/commons/d/de/Elephant_Beach%2C_Havelock_Island.jpg"
@@ -244,7 +244,7 @@ export default function AndamanView() {
                         </div>
 
                         <div className="relative z-10">
-                            <h2 className="text-4xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none mb-12">
+                            <h2 className="text-4xl md:text-8xl font-semibold text-white uppercase tracking-tight leading-none mb-12">
                                 Ready to <span className="text-sunset-orange">Deploy?</span>
                             </h2>
                             <p className="text-white/60 text-lg md:text-2xl font-bold italic mb-16 max-w-2xl mx-auto">
@@ -257,7 +257,7 @@ export default function AndamanView() {
                                             const msg = "ANDAMAN EXPEDITION: I am ready to begin the booking protocol.";
                                             window.open(`https://wa.me/919997812237?text=${encodeURIComponent(msg)}`, '_blank');
                                         }}
-                                        className="bg-sunset-orange text-white py-8 px-16 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-2xl"
+                                        className="bg-sunset-orange text-white py-8 px-16 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-md"
                                     >
                                         Execute Booking
                                     </button>
@@ -265,7 +265,7 @@ export default function AndamanView() {
                                 <Magnetic>
                                     <Link
                                         href="/destinations"
-                                        className="bg-white/10 backdrop-blur-xl text-white py-8 px-16 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-white/20 transition-all duration-500 border border-white/10"
+                                        className="bg-white/10 backdrop-blur-xl text-white py-8 px-16 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white/20 transition-all duration-500 border border-white/10"
                                     >
                                         Explore Other Zones
                                     </Link>
