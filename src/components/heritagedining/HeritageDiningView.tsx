@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { DiningCategory, DiningItem } from "@/data/heritageDining";
 
 function Shell({ children }: { children: React.ReactNode }) {
@@ -137,15 +138,19 @@ export function DiningItemView({
                 </div>
             </section>
 
-            <section className="py-28 container mx-auto px-6">
-                <div className="glass-card p-12 md:p-20 rounded-3xl bg-sunset-orange text-white text-center shadow-md relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-white/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                    <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Curate a <span className="text-royal-blue">heritage table</span></h2>
-                    <Magnetic>
-                        <Link href="/booking" className="inline-block relative z-10 bg-royal-blue text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Brief the Dining Wing</Link>
-                    </Magnetic>
-                </div>
-            </section>
+            <LeadBlock
+                source={`Heritage dining: ${item.name}`}
+                context={{ "Inquiry Type": "Heritage dining", Category: category.name, Subject: item.name }}
+                heading={`Reserve ${item.name}`}
+                waMessage={`Hi MyTripMyTravel, I would like to arrange ${item.name} during my trip.`}
+                faqs={item.faqs}
+                breadcrumbs={[
+                    { name: "Home", item: "https://www.mytripmytravel.com" },
+                    { name: "Heritage dining", item: "https://www.mytripmytravel.com/heritage-dining" },
+                    { name: category.segment, item: `https://www.mytripmytravel.com/heritage-dining/${category.slug}` },
+                    { name: item.name },
+                ]}
+            />
         </Shell>
     );
 }

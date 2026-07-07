@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, Calendar, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Destination } from "@/data/destinations";
 import type { ItineraryContent, ItineraryDuration } from "@/data/destinationItineraries";
 import { ITINERARY_DURATIONS } from "@/data/destinationItineraries";
@@ -57,6 +58,20 @@ export function ItineraryIndexView({ dest }: { dest: Destination }) {
                         ))}
                     </div>
                 </section>
+
+                <LeadBlock
+                    source={`Destination itineraries index: ${dest.name}`}
+                    context={{ "Inquiry Type": "Itinerary", Destination: dest.name, Region: dest.region }}
+                    heading={`Plan your ${dest.name} itinerary`}
+                    pitch={`Not sure how many days ${dest.name} needs? Tell us your dates and party size, and our travel desk shapes a private, chauffeured plan around you with a transparent quote.`}
+                    waMessage={`Hi MyTripMyTravel, I would like help planning a ${dest.name} itinerary.`}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Destinations", item: "https://www.mytripmytravel.com/destinations" },
+                        { name: dest.name, item: `https://www.mytripmytravel.com/destinations/${dest.slug}` },
+                        { name: "Itineraries" },
+                    ]}
+                />
 
                 <Footer />
             </main>
@@ -218,15 +233,21 @@ export function ItineraryView({
                     </section>
                 )}
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Architect this <span className="text-sunset-orange">{content.duration}-day {dest.name}</span> trip</h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Begin a Mission Brief</Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    source={`Destination itinerary: ${content.duration}-day ${dest.name}`}
+                    context={{ "Inquiry Type": "Itinerary", Destination: dest.name, Duration: `${content.duration}-day`, Region: dest.region }}
+                    heading={`Plan your ${content.duration}-day ${dest.name} trip`}
+                    pitch={`Private, chauffeured travel with this ${content.duration}-day ${dest.name} plan tuned to your pace. Tell us your dates and party size, and we reply with a tailored itinerary and a transparent quote.`}
+                    waMessage={`Hi MyTripMyTravel, I would like a ${content.duration}-day ${dest.name} itinerary.`}
+                    faqs={content.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Destinations", item: "https://www.mytripmytravel.com/destinations" },
+                        { name: dest.name, item: `https://www.mytripmytravel.com/destinations/${dest.slug}` },
+                        { name: "Itineraries", item: `https://www.mytripmytravel.com/destinations/${dest.slug}/itinerary` },
+                        { name: `${content.duration}-Day` },
+                    ]}
+                />
 
                 <Footer />
             </main>

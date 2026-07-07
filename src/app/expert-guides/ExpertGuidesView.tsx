@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 import { SmoothScroll, CharBlurIn, Magnetic, Tilt3D } from "@/components/ClientComponents";
 import Link from "next/link";
 import { Landmark, Award, ArrowRight, Languages } from "lucide-react";
@@ -73,6 +74,18 @@ export default function ExpertGuidesView() {
                         </p>
                     </div>
                 </section>
+
+                <LeadBlock
+                    source="Expert guides hub"
+                    variant="cta"
+                    heading="Request a licensed expert guide"
+                    subheading="Tell us your cities and languages, and we will match you with a vetted, licensed heritage specialist who guides in your own language."
+                    waMessage="Hi MyTripMyTravel, I would like to arrange a licensed expert guide in India."
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Expert guides" },
+                    ]}
+                />
 
                 <Footer />
             </main>

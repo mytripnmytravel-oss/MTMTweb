@@ -165,3 +165,66 @@ export function ContactChips({ waMessage = "Hi MyTripMyTravel, I have a question
         </div>
     );
 }
+
+export type Crumb = { name: string; item?: string };
+
+/**
+ * One drop-in lead block for programmatic/long-tail pages. Renders contextual
+ * JSON-LD (optional primary type + FAQPage + BreadcrumbList), a lead section
+ * (inline EnquiryForm or a CTA band), and the floating WhatsApp button.
+ * Insert once, immediately before <Footer />.
+ */
+export function LeadBlock({
+    source,
+    context,
+    heading,
+    subheading,
+    pitch,
+    waMessage = "Hi MyTripMyTravel, I would like to plan a trip in India.",
+    variant = "form",
+    faqs,
+    breadcrumbs,
+    primarySchema,
+}: {
+    source: string;
+    context?: Record<string, string>;
+    heading: string;
+    subheading?: string;
+    pitch?: string;
+    waMessage?: string;
+    variant?: "form" | "cta";
+    faqs?: { q: string; a: string }[];
+    breadcrumbs?: Crumb[];
+    primarySchema?: Record<string, unknown>;
+}) {
+    const graph: Record<string, unknown>[] = [];
+    if (primarySchema) graph.push({ "@context": "https://schema.org", ...primarySchema });
+    if (faqs && faqs.length) graph.push({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) });
+    if (breadcrumbs && breadcrumbs.length) graph.push({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: breadcrumbs.map((b, i) => ({ "@type": "ListItem", position: i + 1, name: b.name, ...(b.item ? { item: b.item } : {}) })) });
+
+    return (
+        <>
+            {graph.length > 0 && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }} />}
+            {variant === "cta" ? (
+                <LeadCTA title={heading} subtitle={subheading} waMessage={waMessage} />
+            ) : (
+                <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
+                    <div className="container-x grid items-start gap-14 lg:grid-cols-2">
+                        <div>
+                            <p className="eyebrow eyebrow-accent">Plan with us</p>
+                            <h2 className="display-2 mt-3 text-ink">{heading}</h2>
+                            <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-muted">
+                                {pitch || "Tell us your dates and what you love. Our travel desk builds a private, chauffeured plan around you, with handpicked hotels and a transparent quote, usually within a few hours."}
+                            </p>
+                            <div className="mt-7">
+                                <ContactChips waMessage={waMessage} />
+                            </div>
+                        </div>
+                        <EnquiryForm source={source} context={context} heading={heading} subheading={subheading || "Free, no obligation quote. Your details stay private."} />
+                    </div>
+                </section>
+            )}
+            <WhatsAppFab message={waMessage} />
+        </>
+    );
+}

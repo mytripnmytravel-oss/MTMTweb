@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Wind, MapPin, ArrowRight, Sun, Moon, Zap, UserCheck, Shield } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 import { SmoothScroll, Magnetic, CharBlurIn, Tilt3D } from "@/components/ClientComponents";
 import WellnessProgrammeDetail from "@/components/wellness/WellnessProgrammeDetail";
 import type { WellnessProgramme } from "@/data/wellness";
@@ -160,6 +161,19 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
 
                 {/* --- Shared programme detail: quick facts, variants, FAQ, CTA --- */}
                 <WellnessProgrammeDetail programme={programme} />
+
+                <LeadBlock
+                    source={`Wellness: ${programme.name}`}
+                    context={{ "Inquiry Type": "Wellness", Programme: programme.name }}
+                    heading={`Plan your ${programme.name} journey`}
+                    pitch={`Master-led yoga and meditation with qualified teachers of genuine lineage, private transfers and handpicked stays, arranged with honest guidance for every level. Tell us what you are looking for and we reply within a few hours with a tailored plan.`}
+                    waMessage={`Hi MyTripMyTravel, I am interested in ${programme.name} in India.`}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Wellness", item: "https://www.mytripmytravel.com/wellness" },
+                        { name: programme.name },
+                    ]}
+                />
 
                 <Footer />
             </main>

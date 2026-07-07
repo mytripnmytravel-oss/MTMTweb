@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2, Languages } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Destination } from "@/data/destinations";
 import type { GuideLanguage, GuideContent } from "@/data/expertGuides";
 
@@ -165,15 +166,19 @@ export function GuideDetailView({
                 </div>
             </section>
 
-            <section className="py-28 container mx-auto px-6">
-                <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                    <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">{lang.name} guide in <span className="text-sunset-orange">{dest.name}</span></h2>
-                    <Magnetic>
-                        <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Request a Guide</Link>
-                    </Magnetic>
-                </div>
-            </section>
+            <LeadBlock
+                source={`Expert guide: ${content.h1}`}
+                context={{ "Inquiry Type": "Expert guide", City: dest.name, Language: lang.name }}
+                heading={`Arrange a ${lang.name} guide in ${dest.name}`}
+                waMessage={`Hi MyTripMyTravel, I would like a licensed ${lang.name}-speaking guide in ${dest.name}.`}
+                faqs={content.faqs}
+                breadcrumbs={[
+                    { name: "Home", item: "https://www.mytripmytravel.com" },
+                    { name: "Expert guides", item: "https://www.mytripmytravel.com/expert-guides" },
+                    { name: dest.name, item: `https://www.mytripmytravel.com/expert-guides/${dest.slug}` },
+                    { name: lang.name },
+                ]}
+            />
         </Shell>
     );
 }

@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import { packageSlug } from "@/data/tours";
 import type { RegionVariantContent } from "@/data/regionVariants";
@@ -104,6 +105,20 @@ export default function RegionVariantView({
                         <Link href={`/destinations/region/${content.regionSlug}`} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-2">{content.regionName} destinations <ArrowRight size={14} /></Link>
                     </div>
                 </section>
+
+                <LeadBlock
+                    source={`Region variant: ${content.label}`}
+                    context={{ "Inquiry Type": "Tour", Region: content.regionName, Subject: content.label }}
+                    heading={`Plan your ${content.label}`}
+                    waMessage={`Hi MyTripMyTravel, I am interested in ${content.label}.`}
+                    faqs={content.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Tours", item: "https://www.mytripmytravel.com/tours" },
+                        { name: content.regionName, item: `https://www.mytripmytravel.com/tours/${content.regionSlug}` },
+                        { name: content.label },
+                    ]}
+                />
 
                 <Footer />
             </main>

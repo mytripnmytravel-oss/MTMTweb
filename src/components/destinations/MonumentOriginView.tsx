@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, Plane, Clock, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { MonumentOriginContent } from "@/data/monumentOrigins";
 
 export default function MonumentOriginView({ content }: { content: MonumentOriginContent }) {
@@ -121,16 +122,21 @@ export default function MonumentOriginView({ content }: { content: MonumentOrigi
                     </div>
                 </section>
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">The Mission</h4>
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Visit the <span className="text-sunset-orange">{monument.name}</span> from <span className="text-sunset-orange">{origin.city}</span></h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Begin a Mission Brief</Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    source={`Monument from origin: ${monument.name} from ${origin.city}`}
+                    context={{ "Inquiry Type": "Monument", Monument: monument.name, Destination: dest.name, Origin: origin.city }}
+                    heading={`Plan your ${monument.name} visit from ${origin.city}`}
+                    pitch={`Private, chauffeured visits to the ${monument.name} with flights and gateway timing worked out from ${origin.city}. Tell us your dates and party size, and we reply with a tailored plan and a transparent quote.`}
+                    waMessage={`Hi MyTripMyTravel, I would like to visit the ${monument.name} from ${origin.city}.`}
+                    faqs={content.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Destinations", item: "https://www.mytripmytravel.com/destinations" },
+                        { name: dest.name, item: `https://www.mytripmytravel.com/destinations/${dest.slug}` },
+                        { name: monument.name, item: `https://www.mytripmytravel.com/destinations/${dest.slug}/monuments/${monument.slug}` },
+                        { name: `From ${origin.city}` },
+                    ]}
+                />
 
                 <Footer />
             </main>

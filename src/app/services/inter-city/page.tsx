@@ -5,6 +5,7 @@ import { ROUTES } from "@/data/transferRoutes";
 import { getDestination } from "@/data/destinations";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 
 export const metadata: Metadata = {
     title: "Inter-City Chauffeur Transfers | MyTripMyTravel",
@@ -73,6 +74,14 @@ export default function Page() {
                         ))}
                     </div>
                 </section>
+                <LeadBlock
+                    variant="cta"
+                    source="Inter-city transfers hub"
+                    context={{ "Inquiry Type": "Inter-city transfer" }}
+                    heading="Need a chauffeured transfer?"
+                    subheading="Tell us your route and dates. Our travel desk replies fast with a private, GPS-tracked car and a transparent, pre-priced quote."
+                    waMessage="Hi MyTripMyTravel, I would like a chauffeured inter-city transfer in India."
+                />
                 <Footer />
             </main>
         </>

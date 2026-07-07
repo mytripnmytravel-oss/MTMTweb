@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Droplets, Leaf, Flame, Sparkles, Sprout, ArrowRight, ShieldCheck, Wind } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 import { SmoothScroll, Magnetic, CharBlurIn, Tilt3D } from "@/components/ClientComponents";
 import WellnessProgrammeDetail from "@/components/wellness/WellnessProgrammeDetail";
 import type { WellnessProgramme } from "@/data/wellness";
@@ -116,6 +117,19 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
 
                 {/* --- Shared programme detail: quick facts, variants, FAQ, CTA --- */}
                 <WellnessProgrammeDetail programme={programme} />
+
+                <LeadBlock
+                    source={`Wellness: ${programme.name}`}
+                    context={{ "Inquiry Type": "Wellness", Programme: programme.name }}
+                    heading={`Plan your ${programme.name} journey`}
+                    pitch={`Physician-led classical Ayurveda at AYUSH-certified partners, private transfers and handpicked stays, arranged with honest guidance as recuperative care, never an overstated cure. Tell us what you are looking for and we reply within a few hours with a tailored plan.`}
+                    waMessage={`Hi MyTripMyTravel, I am interested in ${programme.name} in India.`}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Wellness", item: "https://www.mytripmytravel.com/wellness" },
+                        { name: programme.name },
+                    ]}
+                />
 
                 <Footer />
             </main>

@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import { packageSlug } from "@/data/tours";
 import type { RegionalTourHubContent } from "@/data/tourHubs";
 import {
@@ -216,15 +217,20 @@ export default function RegionalTourHubView({
                     </div>
                 </section>
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Architect a <span className="text-sunset-orange">{hub.name}</span> mission</h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Begin a Mission Brief</Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    variant="cta"
+                    source={`Regional tour hub: ${hub.name}`}
+                    context={{ "Inquiry Type": "Tour", Subject: hub.name }}
+                    heading={`Plan your ${hub.name} tour`}
+                    subheading="Tell us your dates and travel style and we craft a private, chauffeured itinerary with handpicked hotels and a transparent quote."
+                    waMessage={`Hi MyTripMyTravel, I am interested in a ${hub.name} tour.`}
+                    faqs={faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Tours", item: "https://www.mytripmytravel.com/tours" },
+                        { name: hub.name },
+                    ]}
+                />
 
                 <Footer />
             </main>

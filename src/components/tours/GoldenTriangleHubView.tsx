@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronRight, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 
 export default function GoldenTriangleHubView({
@@ -78,6 +79,20 @@ export default function GoldenTriangleHubView({
                     <Block title="By Departure City" items={byOrigin} />
                     {byCombo && byCombo.length > 0 && <Block title="By Duration × Theme" items={byCombo} />}
                 </section>
+
+                <LeadBlock
+                    variant="cta"
+                    source="Golden Triangle tours hub"
+                    context={{ "Inquiry Type": "Tour", Subject: "Golden Triangle" }}
+                    heading="Plan your Golden Triangle tour"
+                    subheading="Delhi, Agra, and Jaipur, tailored to your dates, pace, and budget. Tell us what you want and we send a private, chauffeured plan with a transparent quote."
+                    waMessage="Hi MyTripMyTravel, I am interested in a Golden Triangle tour."
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Tours", item: "https://www.mytripmytravel.com/tours" },
+                        { name: "Golden Triangle" },
+                    ]}
+                />
 
                 <Footer />
             </main>

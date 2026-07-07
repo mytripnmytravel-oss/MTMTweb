@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Destination } from "@/data/destinations";
 import type { ServiceCityContent } from "@/data/services";
 
@@ -115,15 +116,20 @@ export default function ServiceCityView({
                     </div>
                 </section>
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">{lineName} in <span className="text-sunset-orange">{dest.name}</span></h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Consult a Master Planner</Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    source={`Service city: ${lineName} in ${dest.name}`}
+                    context={{ "Inquiry Type": lineName, City: dest.name, State: dest.state }}
+                    heading={`${lineName} in ${dest.name}`}
+                    pitch={`Private, chauffeured ${lineName.toLowerCase()} in ${dest.name}, planned around your dates and pace, with a transparent quote and no surprise fees. Tell us what you need and our travel desk replies within a few hours.`}
+                    waMessage={`Hi MyTripMyTravel, I would like ${lineName.toLowerCase()} in ${dest.name}.`}
+                    faqs={content.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Services", item: "https://www.mytripmytravel.com/services" },
+                        { name: lineName, item: `https://www.mytripmytravel.com/services/${lineSlug}` },
+                        { name: `${lineName} in ${dest.name}` },
+                    ]}
+                />
 
                 <Footer />
             </main>

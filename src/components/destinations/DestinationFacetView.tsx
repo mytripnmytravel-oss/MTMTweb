@@ -4,10 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, ArrowRight, HelpCircle, MapPin, Compass } from "lucide-react";
+import { ChevronRight, ArrowRight, HelpCircle, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Destination } from "@/data/destinations";
 import type { FacetContent, FacetSlug } from "@/data/destinationFacets";
 import { FACET_SLUGS, FACET_LABELS } from "@/data/destinationFacets";
@@ -160,19 +161,23 @@ export default function DestinationFacetView({
                         </div>
                     )}
 
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-sunset-orange text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <Compass className="mx-auto mb-8 opacity-30" size={56} />
-                        <h2 className="text-3xl md:text-6xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">
-                            Architect <span className="text-royal-blue">{dest.name}</span>
-                        </h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-royal-blue text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">
-                                Consult a Master Planner
-                            </Link>
-                        </Magnetic>
-                    </div>
                 </section>
+
+                <LeadBlock
+                    source={`Destination facet: ${dest.name} ${content.label}`}
+                    context={{ "Inquiry Type": "Destination", Destination: dest.name, Facet: content.label, Region: dest.region }}
+                    heading={`Plan your ${dest.name} ${content.label} trip`}
+                    pitch={`Private, chauffeured travel across ${dest.name} with a focus on ${content.label.toLowerCase()}. Tell us your dates and party size, and we reply with a tailored plan and a transparent quote.`}
+                    waMessage={`Hi MyTripMyTravel, I would like to plan a ${dest.name} trip focused on ${content.label}.`}
+                    faqs={content.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Destinations", item: "https://www.mytripmytravel.com/destinations" },
+                        { name: dest.region, item: `https://www.mytripmytravel.com/destinations/region/${dest.regionSlug}` },
+                        { name: dest.name, item: `https://www.mytripmytravel.com/destinations/${dest.slug}` },
+                        { name: content.label },
+                    ]}
+                />
 
                 <Footer />
             </main>

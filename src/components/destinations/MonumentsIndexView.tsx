@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ChevronRight, ArrowRight, Landmark } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Destination } from "@/data/destinations";
 import type { Monument } from "@/data/monuments";
@@ -81,6 +82,21 @@ export default function MonumentsIndexView({
                         ))}
                     </div>
                 </section>
+
+                <LeadBlock
+                    variant="cta"
+                    source={`Monuments index: ${dest.name}`}
+                    context={{ "Inquiry Type": "Destination", Subject: `Monuments of ${dest.name}` }}
+                    heading={`See the monuments of ${dest.name} with a private guide`}
+                    subheading="Tell us your dates and we sequence escorted, skip-the-queue access with a chauffeured plan and a transparent quote."
+                    waMessage={`Hi MyTripMyTravel, I would like to visit the monuments of ${dest.name}.`}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Destinations", item: "https://www.mytripmytravel.com/destinations" },
+                        { name: dest.name, item: `https://www.mytripmytravel.com/destinations/${dest.slug}` },
+                        { name: "Monuments" },
+                    ]}
+                />
 
                 <Footer />
             </main>

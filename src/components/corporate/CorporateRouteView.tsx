@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2, Plane } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Destination } from "@/data/destinations";
 import type { CorporateRoute, CorporateRouteContent } from "@/data/corporateRoutes";
 
@@ -110,15 +111,19 @@ export default function CorporateRouteView({
                     </div>
                 </section>
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">{route.originLabel} → <span className="text-sunset-orange">{destination.name}</span></h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Brief the Corporate Desk</Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    source={`Corporate route: ${route.originLabel} to ${destination.name}`}
+                    context={{ "Inquiry Type": "Corporate offsite", From: route.originLabel, To: destination.name }}
+                    heading={`Plan your ${route.originLabel} to ${destination.name} offsite`}
+                    pitch={`Fully managed ground operation in ${destination.name} for teams flying from ${route.originLabel}, with transfers, hotels and on-ground logistics handled end to end. Tell us your team size and dates and our corporate desk replies within a few hours.`}
+                    waMessage={`Hi MyTripMyTravel, I would like to plan a corporate offsite from ${route.originLabel} to ${destination.name}.`}
+                    faqs={content.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Corporate", item: "https://www.mytripmytravel.com/corporate" },
+                        { name: `${route.originLabel} to ${destination.name}` },
+                    ]}
+                />
 
                 <Footer />
             </main>

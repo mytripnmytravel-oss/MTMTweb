@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
 import type { MonthContent, Verdict } from "@/data/destinationMonths";
 import { VERDICT_TAG } from "@/data/destinationMonths";
@@ -259,18 +260,21 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                     </div>
                 </section>
 
-                {/* CTA */}
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">The {content.monthLabel} Mission</h4>
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Architect <span className="text-sunset-orange">{dest.name}</span> in {content.monthLabel}</h2>
-                        <p className="text-white/80 text-base md:text-lg font-bold leading-relaxed max-w-2xl mx-auto mb-10 relative z-10">Private, chauffeured, escorted, day-pacing tuned to {content.monthLabel}'s conditions in {dest.name}. We'll brief the architecture against your party and dates.</p>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Begin a Mission Brief</Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    source={`Destination month: ${dest.name} in ${content.monthLabel}`}
+                    context={{ "Inquiry Type": "Destination", Destination: dest.name, Month: content.monthLabel, Region: dest.region }}
+                    heading={`Plan ${dest.name} in ${content.monthLabel}`}
+                    pitch={`Private, chauffeured travel with day pacing tuned to ${content.monthLabel} conditions in ${dest.name}. Tell us your dates and party size, and we reply with a tailored plan and a transparent quote.`}
+                    waMessage={`Hi MyTripMyTravel, I would like to visit ${dest.name} in ${content.monthLabel}.`}
+                    faqs={content.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Destinations", item: "https://www.mytripmytravel.com/destinations" },
+                        { name: dest.region, item: `https://www.mytripmytravel.com/destinations/region/${dest.regionSlug}` },
+                        { name: dest.name, item: `https://www.mytripmytravel.com/destinations/${dest.slug}` },
+                        { name: `${dest.name} in ${content.monthLabel}` },
+                    ]}
+                />
 
                 <Footer />
             </main>

@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, Clock, HelpCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import { packageSlug } from "@/data/tours";
 import type { VariantContent } from "@/data/tourVariants";
@@ -121,6 +122,20 @@ export default function TourVariantView({
                         </Link>
                     </div>
                 </section>
+
+                <LeadBlock
+                    source={`Tour variant: ${content.label}`}
+                    context={{ "Inquiry Type": "Tour", Region: "Golden Triangle", Subject: content.label }}
+                    heading={`Plan your ${content.label}`}
+                    waMessage={`Hi MyTripMyTravel, I am interested in ${content.label}.`}
+                    faqs={content.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Tours", item: "https://www.mytripmytravel.com/tours" },
+                        { name: "Golden Triangle", item: "https://www.mytripmytravel.com/tours/golden-triangle" },
+                        { name: content.label },
+                    ]}
+                />
 
                 <Footer />
             </main>

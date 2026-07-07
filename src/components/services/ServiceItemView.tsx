@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { ServiceItem } from "@/data/serviceItems";
 
 export default function ServiceItemView({
@@ -93,15 +94,19 @@ export default function ServiceItemView({
                     </div>
                 </section>
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Brief the <span className="text-sunset-orange">operations desk</span></h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Begin a Mission Brief</Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    source={`Service: ${item.name}`}
+                    context={{ "Inquiry Type": item.name, Category: item.category }}
+                    heading={`Plan your ${item.name}`}
+                    pitch={`${item.answer} Tell us your dates and preferences and our travel desk replies within a few hours with a tailored plan and a transparent quote.`}
+                    waMessage={`Hi MyTripMyTravel, I am interested in ${item.name}.`}
+                    faqs={item.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Services", item: "https://www.mytripmytravel.com/services" },
+                        { name: item.name },
+                    ]}
+                />
 
                 <Footer />
             </main>

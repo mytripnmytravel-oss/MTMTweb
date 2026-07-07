@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { WeddingCategory, WeddingItem } from "@/data/weddings";
 
 function Shell({ children }: { children: React.ReactNode }) {
@@ -137,15 +138,19 @@ export function WeddingItemView({
                 </div>
             </section>
 
-            <section className="py-28 container mx-auto px-6">
-                <div className="glass-card p-12 md:p-20 rounded-3xl bg-sunset-orange text-white text-center shadow-md relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-white/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                    <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Architect your <span className="text-royal-blue">royal wedding</span></h2>
-                    <Magnetic>
-                        <Link href="/booking" className="inline-block relative z-10 bg-royal-blue text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Speak to the Weddings Wing</Link>
-                    </Magnetic>
-                </div>
-            </section>
+            <LeadBlock
+                source={`Royal wedding: ${item.name}`}
+                context={{ "Inquiry Type": "Royal wedding", Category: category.name, Subject: item.name }}
+                heading={`Plan your wedding: ${item.name}`}
+                waMessage={`Hi MyTripMyTravel, I would like to plan a royal wedding and I am interested in ${item.name}.`}
+                faqs={item.faqs}
+                breadcrumbs={[
+                    { name: "Home", item: "https://www.mytripmytravel.com" },
+                    { name: "Weddings", item: "https://www.mytripmytravel.com/weddings" },
+                    { name: category.segment, item: `https://www.mytripmytravel.com/weddings/${category.slug}` },
+                    { name: item.name },
+                ]}
+            />
         </Shell>
     );
 }

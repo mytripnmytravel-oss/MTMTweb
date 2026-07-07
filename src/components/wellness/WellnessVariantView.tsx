@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2, Clock, UserCheck } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { WellnessProgramme, WellnessVariant } from "@/data/wellness";
 
 export default function WellnessVariantView({
@@ -138,26 +139,21 @@ export default function WellnessVariantView({
                     </div>
                 </section>
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-sunset-orange text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-6xl font-semibold uppercase tracking-tight leading-none mb-8 relative z-10">
-                            Architect a <span className="text-royal-blue">{variant.name}</span> programme
-                        </h2>
-                        <div className="flex flex-wrap justify-center gap-3 mb-10 relative z-10">
-                            {variant.relatedDestinations.map((r, i) => (
-                                <Link key={i} href={r.href} className="px-6 py-3 bg-white/10 rounded-2xl border border-white/20 font-semibold uppercase text-[11px] tracking-widest text-white hover:bg-white hover:text-royal-blue transition-all duration-500">
-                                    {r.label}
-                                </Link>
-                            ))}
-                        </div>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-royal-blue text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">
-                                Consult a Master Planner
-                            </Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    source={`Wellness: ${programme.name} (${variant.name})`}
+                    context={{ "Inquiry Type": "Wellness", Programme: programme.name, Variant: variant.name }}
+                    heading={`Plan your ${variant.name} journey`}
+                    subheading={`Free, no obligation plan for ${variant.name}. Your details stay private.`}
+                    pitch={`Physician-led where relevant, AYUSH-certified partners and private transfers, arranged with honest guidance as recuperative care, never an overstated cure. Tell us what you are looking for and we reply within a few hours with a tailored plan.`}
+                    waMessage={`Hi MyTripMyTravel, I am interested in ${variant.name} (${programme.name}) in India.`}
+                    faqs={variant.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Wellness", item: "https://www.mytripmytravel.com/wellness" },
+                        { name: programme.name, item: `https://www.mytripmytravel.com/wellness/${programme.slug}` },
+                        { name: variant.name },
+                    ]}
+                />
 
                 <Footer />
             </main>

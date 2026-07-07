@@ -4,10 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, ArrowRight, Compass, ChevronRight } from "lucide-react";
+import { MapPin, ArrowRight, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Region, Destination } from "@/data/destinations";
 
 export default function DestinationsHubView({
@@ -150,28 +151,17 @@ export default function DestinationsHubView({
                     </div>
                 </section>
 
-                {/* CTA */}
-                <section className="py-40 container mx-auto px-6 relative z-10">
-                    <div className="glass-card p-12 md:p-28 rounded-3xl bg-sunset-orange text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <Compass className="mx-auto mb-10 opacity-30" size={64} />
-                        <h2 className="text-4xl md:text-7xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">
-                            Don&apos;t see your <span className="text-royal-blue">zone?</span>
-                        </h2>
-                        <p className="max-w-2xl mx-auto font-bold italic text-white/80 mb-12 relative z-10">
-                            Every itinerary is bespoke. If the geography exists and we can guarantee the standard,
-                            our master planners will architect the mission.
-                        </p>
-                        <Magnetic>
-                            <Link
-                                href="/booking"
-                                className="inline-block relative z-10 bg-royal-blue text-white py-7 px-14 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl"
-                            >
-                                Consult a Master Planner
-                            </Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    variant="cta"
+                    source="Destinations hub"
+                    heading="Ready to plan your India journey?"
+                    subheading="Tell us where you want to go and we craft a private, chauffeured itinerary with a transparent quote."
+                    waMessage="Hi MyTripMyTravel, I would like help planning a trip across India."
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Destinations" },
+                    ]}
+                />
 
                 <Footer />
             </main>

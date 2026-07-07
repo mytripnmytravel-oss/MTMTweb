@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, MapPin, Users, Briefcase } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Vehicle } from "@/data/fleet";
 import type { Destination } from "@/data/destinations";
 import type { FleetCityContent } from "@/data/fleetCities";
@@ -122,19 +123,20 @@ export default function FleetCityView({
                     </div>
                 </section>
 
-                <section className="py-24 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">
-                            {vehicle.name} chauffeur in <span className="text-sunset-orange">{dest.name}</span>
-                        </h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">
-                                Consult a Master Planner
-                            </Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    source={`Fleet city: ${vehicle.name} in ${dest.name}`}
+                    context={{ "Inquiry Type": "Car rental", Vehicle: vehicle.name, City: dest.name }}
+                    heading={`Hire the ${vehicle.name} in ${dest.name}`}
+                    pitch={`Private, GPS-tracked, chauffeur-driven ${vehicle.name} in ${dest.name}, with fuel, tolls and permits pre calculated. Tell us your route and dates and we reply with a transparent quote.`}
+                    waMessage={`Hi MyTripMyTravel, I would like to hire the ${vehicle.name} in ${dest.name}.`}
+                    faqs={content.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Fleet", item: "https://www.mytripmytravel.com/fleet" },
+                        { name: vehicle.name, item: `https://www.mytripmytravel.com/fleet/${vehicle.id}` },
+                        { name: `${vehicle.name} in ${dest.name}` },
+                    ]}
+                />
 
                 <Footer />
             </main>

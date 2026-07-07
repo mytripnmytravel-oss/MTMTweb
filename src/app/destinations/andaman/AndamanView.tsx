@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
     Palmtree, Waves, Wind, Compass,
@@ -12,6 +11,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 import {
     Magnetic, CharBlurIn, SmoothScroll,
     GlassyProgressBar
@@ -230,50 +230,23 @@ export default function AndamanView() {
                     </div>
                 </section>
 
-                {/* Final CTA Bridge */}
-                <section className="pb-40 container mx-auto px-6">
-                    <div className="relative rounded-3xl overflow-hidden bg-royal-blue p-12 md:p-32 text-center border-t border-white/10">
-                        <div className="absolute inset-0 z-0">
-                            <Image
-                                src="https://upload.wikimedia.org/wikipedia/commons/d/de/Elephant_Beach%2C_Havelock_Island.jpg"
-                                alt="Elephant Beach, Havelock Island, Andaman"
-                                fill
-                                className="object-cover opacity-20"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/80 to-transparent" />
-                        </div>
-
-                        <div className="relative z-10">
-                            <h2 className="text-4xl md:text-8xl font-semibold text-white uppercase tracking-tight leading-none mb-12">
-                                Ready to <span className="text-sunset-orange">Deploy?</span>
-                            </h2>
-                            <p className="text-white/60 text-lg md:text-2xl font-bold italic mb-16 max-w-2xl mx-auto">
-                                The islands are waiting for the few who know how to navigate them. Initiate your protocol today.
-                            </p>
-                            <div className="flex flex-col md:flex-row justify-center gap-8">
-                                <Magnetic>
-                                    <button
-                                        onClick={() => {
-                                            const msg = "ANDAMAN EXPEDITION: I am ready to begin the booking protocol.";
-                                            window.open(`https://wa.me/919997812237?text=${encodeURIComponent(msg)}`, '_blank');
-                                        }}
-                                        className="bg-sunset-orange text-white py-8 px-16 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-md"
-                                    >
-                                        Execute Booking
-                                    </button>
-                                </Magnetic>
-                                <Magnetic>
-                                    <Link
-                                        href="/destinations"
-                                        className="bg-white/10 backdrop-blur-xl text-white py-8 px-16 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white/20 transition-all duration-500 border border-white/10"
-                                    >
-                                        Explore Other Zones
-                                    </Link>
-                                </Magnetic>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <LeadBlock
+                    source="Destination: Andaman Islands expedition"
+                    context={{ "Inquiry Type": "Destination", Destination: "Andaman Islands", Region: "Andaman and Nicobar" }}
+                    heading="Plan your Andaman Islands trip"
+                    pitch="Private, concierge-led island travel across Port Blair, Havelock, and Neil, with premium stays and smooth inter-island transfers. Tell us your dates and party size, and we reply with a tailored plan and a transparent quote."
+                    waMessage="Hi MyTripMyTravel, I would like to plan an Andaman Islands trip."
+                    faqs={[
+                        { q: "Is mobile connectivity available across all islands?", a: "Port Blair and Havelock generally offer stable mobile data, while some remote areas have limited coverage. We plan around this and keep backup communication for coordination." },
+                        { q: "What is the best timeline for an Andaman Expedition?", a: "The optimal window is between October and May, characterized by calmer Andaman Sea conditions and good visibility for diving and snorkelling." },
+                        { q: "Can we customize the inter-island transfer timing?", a: "Yes. We coordinate around your preferred rhythm, though certain marine transfers are subject to local harbour authority schedules." },
+                    ]}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Destinations", item: "https://www.mytripmytravel.com/destinations" },
+                        { name: "Andaman Islands" },
+                    ]}
+                />
 
                 <Footer />
             </main>

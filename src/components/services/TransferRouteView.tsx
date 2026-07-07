@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2, Clock, Navigation2, Users, Briefcase } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Destination } from "@/data/destinations";
 import type { TransferRoute, RouteContent } from "@/data/transferRoutes";
 
@@ -138,15 +139,20 @@ export default function TransferRouteView({
                     </div>
                 </section>
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">{origin.name} → <span className="text-sunset-orange">{destination.name}</span></h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Book this Transfer</Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    source={`Inter-city transfer: ${origin.name} to ${destination.name}`}
+                    context={{ "Inquiry Type": "Inter-city transfer", From: origin.name, To: destination.name }}
+                    heading={`Book your ${origin.name} to ${destination.name} transfer`}
+                    pitch={`Private, GPS-tracked chauffeured transfer from ${origin.name} to ${destination.name}, roughly ${route.distanceKm} km in about ${route.driveHrs} hours, with fuel, tolls and permits pre calculated. Tell us your dates and we reply with a transparent quote.`}
+                    waMessage={`Hi MyTripMyTravel, I would like to book the ${origin.name} to ${destination.name} transfer.`}
+                    faqs={content.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Services", item: "https://www.mytripmytravel.com/services" },
+                        { name: "Inter-City Transfers", item: "https://www.mytripmytravel.com/services/inter-city" },
+                        { name: `${origin.name} to ${destination.name}` },
+                    ]}
+                />
 
                 <Footer />
             </main>

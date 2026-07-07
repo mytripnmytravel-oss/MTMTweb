@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 import { SmoothScroll, CharBlurIn, Magnetic, Tilt3D } from "@/components/ClientComponents";
 import Link from "next/link";
 import { Utensils, Crown, ChefHat, ArrowRight } from "lucide-react";
@@ -74,6 +75,18 @@ export default function HeritageDiningView() {
                         </p>
                     </div>
                 </section>
+
+                <LeadBlock
+                    source="Heritage dining hub"
+                    variant="cta"
+                    heading="Reserve a heritage dining experience"
+                    subheading="Tell us your cities and dates, and our dining desk arranges thalis and royal-kitchen tables in historic palace settings."
+                    waMessage="Hi MyTripMyTravel, I would like to arrange heritage dining during my trip in India."
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Heritage dining" },
+                    ]}
+                />
 
                 <Footer />
             </main>

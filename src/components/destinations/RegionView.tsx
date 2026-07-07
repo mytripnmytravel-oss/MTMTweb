@@ -7,7 +7,8 @@ import Link from "next/link";
 import { MapPin, ArrowRight, ChevronRight, Compass } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Region, Destination } from "@/data/destinations";
 
 export default function RegionView({
@@ -91,20 +92,19 @@ export default function RegionView({
                     )}
                 </section>
 
-                {/* CTA */}
-                <section className="pb-32 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-24 rounded-3xl bg-sunset-orange text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-4xl md:text-7xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">
-                            Architect the <span className="text-royal-blue">{region.name}</span>
-                        </h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-royal-blue text-white py-7 px-14 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">
-                                Consult a Master Planner
-                            </Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    variant="cta"
+                    source={`Region: ${region.name}`}
+                    context={{ "Inquiry Type": "Destination", Subject: region.name }}
+                    heading={`Plan your journey through ${region.name}`}
+                    subheading="Tell us your dates and travel style and we craft a private, chauffeured route through the region with a transparent quote."
+                    waMessage={`Hi MyTripMyTravel, I would like to plan a trip through ${region.name}.`}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Destinations", item: "https://www.mytripmytravel.com/destinations" },
+                        { name: region.name },
+                    ]}
+                />
 
                 <Footer />
             </main>

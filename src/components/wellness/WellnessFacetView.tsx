@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { WellnessProgramme } from "@/data/wellness";
 import type { WellnessFacetContent } from "@/data/wellnessFacets";
 
@@ -117,15 +118,20 @@ export default function WellnessFacetView({
                     </section>
                 )}
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-sunset-orange text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-white/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Architect a <span className="text-royal-blue">{programme.name}</span> programme</h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-royal-blue text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Begin a Mission Brief</Link>
-                        </Magnetic>
-                    </div>
-                </section>
+                <LeadBlock
+                    source={`Wellness: ${programme.name} (${breadcrumbSegment})`}
+                    context={{ "Inquiry Type": "Wellness", Programme: programme.name, Focus: breadcrumbSegment }}
+                    heading={`Plan your ${programme.name} journey`}
+                    pitch={`Physician-led where relevant, AYUSH-certified partners and private transfers, arranged with honest guidance as recuperative care, never an overstated cure. Tell us what you are looking for and we reply within a few hours with a tailored plan.`}
+                    waMessage={`Hi MyTripMyTravel, I am interested in ${programme.name} (${breadcrumbSegment}) in India.`}
+                    faqs={content.faqs}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Wellness", item: "https://www.mytripmytravel.com/wellness" },
+                        { name: programme.name, item: `https://www.mytripmytravel.com/wellness/${programme.slug}` },
+                        { name: breadcrumbSegment },
+                    ]}
+                />
 
                 <Footer />
             </main>

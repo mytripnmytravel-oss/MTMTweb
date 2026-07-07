@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadBlock } from "@/components/lead/Lead";
+import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { FaqTopic, FaqAtom } from "@/data/faq";
 
 function Shell({ children }: { children: React.ReactNode }) {
@@ -153,17 +154,21 @@ export function FaqAtomView({
                 </div>
             </section>
 
-            <section className="py-28 container mx-auto px-6">
-                <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                    <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Still have a question?</h2>
-                    <Magnetic>
-                        <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">
-                            Ask a Master Planner
-                        </Link>
-                    </Magnetic>
-                </div>
-            </section>
+            <LeadBlock
+                source={`FAQ: ${atom.q}`}
+                context={{ "Inquiry Type": "Question", Topic: topic.name, Question: atom.q }}
+                variant="cta"
+                heading="Still have a question?"
+                subheading="Talk to a master planner about your India trip. We reply fast, quote transparently, and tailor every journey to you."
+                waMessage={`Hi MyTripMyTravel, I have a question about ${topic.name}.`}
+                faqs={[{ q: atom.q, a: atom.a }, ...siblings.map((s) => ({ q: s.q, a: s.a }))]}
+                breadcrumbs={[
+                    { name: "Home", item: "https://www.mytripmytravel.com" },
+                    { name: "FAQ", item: "https://www.mytripmytravel.com/faq" },
+                    { name: topic.name, item: `https://www.mytripmytravel.com/faq/${topic.slug}` },
+                    { name: atom.q },
+                ]}
+            />
         </Shell>
     );
 }

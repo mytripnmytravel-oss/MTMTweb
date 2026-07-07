@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Stethoscope, Activity, ShieldCheck, HeartPulse, Building2, MapPin, ArrowRight, Tablets, Award } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadBlock } from "@/components/lead/Lead";
 import { SmoothScroll, Magnetic, CharBlurIn, Tilt3D } from "@/components/ClientComponents";
 import WellnessProgrammeDetail from "@/components/wellness/WellnessProgrammeDetail";
 import type { WellnessProgramme } from "@/data/wellness";
@@ -141,6 +142,19 @@ export default function OrthopedicView({ programme }: { programme: WellnessProgr
 
                 {/* --- Shared programme detail: quick facts, variants, FAQ, CTA --- */}
                 <WellnessProgrammeDetail programme={programme} />
+
+                <LeadBlock
+                    source={`Wellness: ${programme.name}`}
+                    context={{ "Inquiry Type": "Wellness", Programme: programme.name }}
+                    heading={`Plan your ${programme.name} journey`}
+                    pitch={`We are travel architects, not a medical provider. Around treatment you arrange with JCI and NABH accredited hospitals and surgeons of your choice, we design private transfers, accessible stays and gentle-paced recovery logistics, with honest guidance throughout. Tell us what you are looking for and we reply within a few hours with a tailored plan.`}
+                    waMessage={`Hi MyTripMyTravel, I am interested in ${programme.name} logistics in India.`}
+                    breadcrumbs={[
+                        { name: "Home", item: "https://www.mytripmytravel.com" },
+                        { name: "Wellness", item: "https://www.mytripmytravel.com/wellness" },
+                        { name: programme.name },
+                    ]}
+                />
 
                 <Footer />
             </main>
