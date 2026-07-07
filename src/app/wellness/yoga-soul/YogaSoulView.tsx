@@ -33,7 +33,7 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
                                 className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
                             />
                             <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed mb-12">
-                                A master-led practice of movement, breath and meditation — grounded in the Indian places where these traditions took shape. Suited to every level, from first-timers finding their footing to seasoned practitioners deepening their discipline.
+                                A master-led practice of movement, breath and meditation, grounded in the Indian places where these traditions took shape. Suited to every level, from first-timers finding their footing to seasoned practitioners deepening their discipline.
                             </p>
                             <div className="flex flex-wrap gap-6">
                                 <Magnetic>
@@ -145,7 +145,7 @@ export default function YogaSoulView({ programme }: { programme: WellnessProgram
                                 AUTHENTIC <br /> <span className="text-sunset-orange">PRACTICE.</span>
                             </h2>
                             <p className="text-white/60 font-bold italic text-2xl mb-16 px-12">
-                                Every yoga retreat arranged by MyTripMyTravel is led by qualified teachers with a genuine lineage, in settings chosen for their authenticity. We don't sell generic tours — we design considered, master-led practice for every level.
+                                Every yoga retreat arranged by MyTripMyTravel is led by qualified teachers with a genuine lineage, in settings chosen for their authenticity. We don't sell generic tours, we design considered, master-led practice for every level.
                             </p>
                             <Magnetic>
                                 <Link href="/booking">

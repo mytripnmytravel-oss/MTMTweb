@@ -57,7 +57,7 @@ export default function DestinationsHubView({
                             >
                                 <Image
                                     src={region.heroImg}
-                                    alt={`${region.name} — ${region.tagline}`}
+                                    alt={`${region.name}, ${region.tagline}`}
                                     fill
                                     className="object-cover scale-110 group-hover:scale-100 transition-all duration-[2s]"
                                 />
@@ -86,7 +86,7 @@ export default function DestinationsHubView({
                     </div>
                 </section>
 
-                {/* Featured cities — interlinking surface */}
+                {/* Featured cities, interlinking surface */}
                 <section className="py-32 bg-royal-blue/5 relative z-10">
                     <div className="container mx-auto px-6">
                         <div className="text-center max-w-3xl mx-auto mb-20">

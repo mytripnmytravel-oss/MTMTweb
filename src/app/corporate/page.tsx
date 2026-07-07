@@ -4,7 +4,7 @@ import CorporateView from "./CorporateView";
 
 const TITLE = "Corporate & MICE Travel in India | MyTripMyTravel";
 const DESCRIPTION =
-    "Corporate and MICE travel in India — executive offsites, incentives and delegations, run on GPS-tracked convoys with a single accountable mission lead.";
+    "Corporate and MICE travel in India, executive offsites, incentives and delegations, run on GPS-tracked convoys with a single accountable mission lead.";
 const URL = `${SITE_URL}/corporate`;
 
 export const metadata: Metadata = {
@@ -23,23 +23,23 @@ export const metadata: Metadata = {
 const FAQS = [
     {
         q: "Do you handle small corporate groups?",
-        a: "Yes — under-15 teams are run as compact, fully-private missions with one or two premium vehicles, an accountable mission lead, and concierge-level attention rather than scaled convoy logistics.",
+        a: "Yes, under-15 teams are run as compact, fully-private missions with one or two premium vehicles, an accountable mission lead, and concierge-level attention rather than scaled convoy logistics.",
     },
     {
         q: "Can you run a mid-size company offsite?",
-        a: "Yes — a 15–50 mission uses a small GPS-tracked convoy with coordinated room blocks and choreographed session-to-offsite-to-dining flow, run with a named on-ground coordinator and single-point accountability.",
+        a: "Yes, a 15 to 50 mission uses a small GPS-tracked convoy with coordinated room blocks and choreographed session-to-offsite-to-dining flow, run with a named on-ground coordinator and single-point accountability.",
     },
     {
         q: "Can you run a large corporate trip of 150 people?",
-        a: "Yes — large missions (50–200) are full managed operations with a large GPS-tracked convoy, dedicated on-ground command, multi-property block management, and wave-sequenced movement.",
+        a: "Yes, large missions (50 to 200) are full managed operations with a large GPS-tracked convoy, dedicated on-ground command, multi-property block management, and wave-sequenced movement.",
     },
     {
         q: "Do you plan MICE events and conferences?",
-        a: "Yes — MyTripMyTravel coordinates meetings, incentives, conferences and offsite events in India, handling fleet, accommodation, dining and on-ground event flow under one accountable mission lead.",
+        a: "Yes, MyTripMyTravel coordinates meetings, incentives, conferences and offsite events in India, handling fleet, accommodation, dining and on-ground event flow under one accountable mission lead.",
     },
     {
         q: "Is there a single point of accountability?",
-        a: "Yes — the company receives one accountable mission owner over the whole operation, not a set of vendors to coordinate.",
+        a: "Yes, the company receives one accountable mission owner over the whole operation, not a set of vendors to coordinate.",
     },
 ];
 
@@ -51,7 +51,7 @@ const jsonLd = {
             name: "Corporate & MICE Travel in India",
             serviceType: "Corporate & MICE Travel",
             description:
-                "Corporate and MICE travel across India — executive offsites, incentives, conferences and delegations from small teams to 200, run on GPS-tracked convoys with coordinated accommodation, dining and on-ground command under one accountable mission lead.",
+                "Corporate and MICE travel across India, executive offsites, incentives, conferences and delegations from small teams to 200, run on GPS-tracked convoys with coordinated accommodation, dining and on-ground command under one accountable mission lead.",
             url: URL,
             image: `${SITE_URL}/logo.png`,
             areaServed: { "@type": "Country", name: "India" },

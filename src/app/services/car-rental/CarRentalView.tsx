@@ -11,10 +11,10 @@ import { Footer } from "@/components/Footer";
 const fade = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } } as const;
 
 const FLEET = [
-    { title: "Executive sedan", image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200&auto=format&fit=crop", capacity: "4 guests", luggage: "2–3 bags", description: "Premium Maruti Dzire or Toyota Etios for swift city transfers and business arrivals." },
-    { title: "Premium SUV", image: "https://images.unsplash.com/photo-1627927141576-0256f4c21ab1?q=80&w=1200&auto=format&fit=crop", capacity: "6 guests", luggage: "4–5 bags", description: "The Toyota Innova Crysta — excellent AC and legroom for long highway hauls." },
-    { title: "Luxury SUV", image: "https://images.unsplash.com/photo-1574701427742-acc058398496?q=80&w=1200&auto=format&fit=crop", capacity: "6 guests", luggage: "4 bags", description: "The Toyota Fortuner — commanding presence for VIP arrivals and state visits." },
-    { title: "Large group", image: "https://images.unsplash.com/photo-1758292109543-a5c7f0c4cb9b?q=80&w=1200&auto=format&fit=crop", capacity: "12–20 guests", luggage: "15+ bags", description: "Force Tempo Traveller with dedicated luggage racks and reclining pilot seats." },
+    { title: "Executive sedan", image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200&auto=format&fit=crop", capacity: "4 guests", luggage: "2 to 3 bags", description: "Premium Maruti Dzire or Toyota Etios for swift city transfers and business arrivals." },
+    { title: "Premium SUV", image: "https://images.unsplash.com/photo-1627927141576-0256f4c21ab1?q=80&w=1200&auto=format&fit=crop", capacity: "6 guests", luggage: "4 to 5 bags", description: "The Toyota Innova Crysta, excellent AC and legroom for long highway hauls." },
+    { title: "Luxury SUV", image: "https://images.unsplash.com/photo-1574701427742-acc058398496?q=80&w=1200&auto=format&fit=crop", capacity: "6 guests", luggage: "4 bags", description: "The Toyota Fortuner, commanding presence for VIP arrivals and state visits." },
+    { title: "Large group", image: "https://images.unsplash.com/photo-1758292109543-a5c7f0c4cb9b?q=80&w=1200&auto=format&fit=crop", capacity: "12 to 20 guests", luggage: "15+ bags", description: "Force Tempo Traveller with dedicated luggage racks and reclining pilot seats." },
 ];
 
 export default function CarRentalView() {
@@ -29,7 +29,7 @@ export default function CarRentalView() {
                 <div className="container-x relative z-10 pb-14 pt-32">
                     <p className="eyebrow text-paper/70">Chauffeured car rental</p>
                     <h1 className="display-1 mt-4 max-w-3xl font-medium text-paper">A private fleet, always chauffeured.</h1>
-                    <p className="mt-5 max-w-xl text-lg text-paper/80">Performance and comfort with a vetted driver — never self-drive.</p>
+                    <p className="mt-5 max-w-xl text-lg text-paper/80">Performance and comfort with a vetted driver, never self-drive.</p>
                     <div className="mt-6 flex flex-wrap gap-5">
                         {["GPS tracking", "Onboard WiFi", "Vetted crew"].map((t) => (
                             <span key={t} className="flex items-center gap-2 text-[13px] font-medium text-paper/85"><CheckCircle2 size={16} className="text-clay-soft" /> {t}</span>
@@ -56,7 +56,7 @@ export default function CarRentalView() {
                         {FLEET.map((car, idx) => (
                             <motion.div key={idx} variants={fade} className="card overflow-hidden">
                                 <div className="relative aspect-[16/10] overflow-hidden">
-                                    <Image src={car.image} alt={`${car.title} — chauffeur-driven ${car.capacity} rental in India`} fill className="object-cover" />
+                                    <Image src={car.image} alt={`${car.title}, chauffeur-driven ${car.capacity} rental in India`} fill className="object-cover" />
                                     <span className="absolute left-4 top-4 rounded-full bg-clay px-3 py-1 text-[11px] font-medium text-paper">Chauffeured</span>
                                 </div>
                                 <div className="p-7">

@@ -43,7 +43,7 @@ export function ItineraryIndexView({ dest }: { dest: Destination }) {
                 <section className="py-24 container mx-auto px-6">
                     <p className="max-w-3xl text-lg md:text-xl text-dark-slate/70 font-bold leading-relaxed mb-12">
                         Pick the length that matches your trip. Each plan is a starting architecture for
-                        {' '}{dest.name} — sequenced from real city data, refined to your party in planning.
+                        {' '}{dest.name}, sequenced from real city data, refined to your party in planning.
                     </p>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                         {ITINERARY_DURATIONS.map((n) => (
@@ -192,13 +192,13 @@ export function ItineraryView({
                             <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">Ready-to-Book</h4>
                             <h2 className="text-3xl md:text-5xl font-semibold text-royal-blue uppercase tracking-tight leading-none mb-6">Itineraries featuring {dest.name}</h2>
                             <p className="text-lg font-bold italic text-royal-blue/50 max-w-3xl mb-12 leading-relaxed">
-                                Prefer a fully planned, day-by-day tour? These private, chauffeured itineraries feature {dest.name} or the wider {dest.region} — each customisable to this {content.duration}-day plan.
+                                Prefer a fully planned, day-by-day tour? These private, chauffeured itineraries feature {dest.name} or the wider {dest.region}, each customisable to this {content.duration}-day plan.
                             </p>
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {tours.slice(0, 3).map((t) => (
                                     <Link key={t.slug} href={`/tours/${t.slug}`} className="block glass-card rounded-2xl overflow-hidden group border-royal-blue/5 hover:border-sunset-orange/30 transition-all duration-700 bg-white">
                                         <div className="relative h-44">
-                                            <Image src={t.img} alt={`${t.title} — itinerary featuring ${dest.name}`} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
+                                            <Image src={t.img} alt={`${t.title}, itinerary featuring ${dest.name}`} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
                                             <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/70 to-transparent" />
                                             <div className="absolute bottom-5 left-6 right-6 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white">
                                                 <Clock size={13} className="text-sunset-orange" />{t.duration}<span className="text-sunset-orange">·</span>{t.theme}

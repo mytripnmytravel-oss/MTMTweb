@@ -11,8 +11,8 @@ import Image from "next/image";
 const fade = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } } as const;
 
 const VENUES = [
-    { title: "Rajputana palaces", desc: "Centuries-old royal courts in Jaipur, Udaipur and Jodhpur — maximum architectural grandeur and historical weight.", icon: Castle, features: ["Palace courtyards", "Baraat processions", "Heritage suites"], image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Umaid_Bhawan_Palace%2C_Jodhpur.JPG", alt: "Umaid Bhawan Palace, Jodhpur — a Rajput palace wedding venue" },
-    { title: "Beside the Taj", desc: "Luxury hotel settings overlooking the Taj Mahal — considered logistics beside the ultimate monument to love.", icon: Gem, features: ["Monument views", "Curated catering", "Arrival transfers"], image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg", alt: "The Taj Mahal at sunrise, backdrop for an Agra wedding" },
+    { title: "Rajputana palaces", desc: "Centuries-old royal courts in Jaipur, Udaipur and Jodhpur, maximum architectural grandeur and historical weight.", icon: Castle, features: ["Palace courtyards", "Baraat processions", "Heritage suites"], image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Umaid_Bhawan_Palace%2C_Jodhpur.JPG", alt: "Umaid Bhawan Palace, Jodhpur, a Rajput palace wedding venue" },
+    { title: "Beside the Taj", desc: "Luxury hotel settings overlooking the Taj Mahal, considered logistics beside the ultimate monument to love.", icon: Gem, features: ["Monument views", "Curated catering", "Arrival transfers"], image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg", alt: "The Taj Mahal at sunrise, backdrop for an Agra wedding" },
     { title: "Imperial forts", desc: "Elevated fortresses offering complete exclusivity, privacy and panoramic views of the Aravalli range.", icon: Crown, features: ["Full exclusivity", "Historical setting", "Discreet security"], image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jodhpur-Mehrangarh_Fort-06-Blue_city-20131011.jpg", alt: "Mehrangarh Fort above Jodhpur, a heritage fort wedding setting" },
 ];
 
@@ -42,7 +42,7 @@ export default function WeddingsView() {
                     <h1 className="display-1 mt-4 font-medium text-ink">Royal weddings, orchestrated.</h1>
                     <div className="mt-6 flex flex-col items-start gap-6 lg:flex-row lg:items-end lg:justify-between">
                         <p className="max-w-2xl text-lg leading-relaxed text-muted">
-                            We don't simply plan events — we run complete productions. Venue buyouts, coordinated air and ground transit, and discreet professional security for a considered Indian royal wedding.
+                            We don't simply plan events, we run complete productions. Venue buyouts, coordinated air and ground transit, and discreet professional security for a considered Indian royal wedding.
                         </p>
                         <Link href="/booking" className="btn-primary shrink-0">Start planning <ArrowRight size={16} /></Link>
                     </div>

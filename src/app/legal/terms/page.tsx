@@ -7,7 +7,7 @@ const url = `${SITE_URL}/legal/terms`;
 export const metadata: Metadata = {
     title: "Terms of Service | MyTripMyTravel",
     description:
-        "The terms for engaging MyTripMyTravel — bookings and payments, changes and cancellations, our responsibilities and liability, and how to contact us.",
+        "The terms for engaging MyTripMyTravel, bookings and payments, changes and cancellations, our responsibilities and liability, and how to contact us.",
     alternates: { canonical: url },
     openGraph: { title: "Terms of Service | MyTripMyTravel", description: "Booking, payment, cancellation and liability terms.", url, type: "website" },
 };

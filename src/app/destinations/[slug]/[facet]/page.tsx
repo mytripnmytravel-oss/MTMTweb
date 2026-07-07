@@ -21,7 +21,7 @@ export async function generateMetadata({
     const resolved = resolveFacet(slug, facet);
     if (!resolved) return { title: "Not Found | MyTripMyTravel" };
     const { dest, content } = resolved;
-    const title = `${content.h1} — ${dest.state} | MyTripMyTravel`;
+    const title = `${content.h1}, ${dest.state} | MyTripMyTravel`;
     const description = content.answer.slice(0, 300);
     const url = `${SITE}/destinations/${dest.slug}/${content.facet}`;
     return {

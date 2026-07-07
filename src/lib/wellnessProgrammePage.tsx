@@ -5,24 +5,24 @@ import { getProgramme, programmeFaqs } from "@/data/wellness";
 /** Hand-crafted, keyword-front-loaded metadata per wellness programme. */
 const META: Record<string, { title: string; description: string }> = {
     "yoga-soul": {
-        title: "Yoga Retreats in India — Rishikesh & Himalayan Immersions | MyTripMyTravel",
+        title: "Yoga Retreats in India, Rishikesh & Himalayan Immersions | MyTripMyTravel",
         description:
-            "Private, master-led yoga & meditation retreats in Rishikesh and Himalayan sanctuaries — Hatha, Vinyasa, meditation, pranayama and yin, calibrated to every level. Enquire now.",
+            "Private, master-led yoga & meditation retreats in Rishikesh and Himalayan sanctuaries, Hatha, Vinyasa, meditation, pranayama and yin, calibrated to every level. Enquire now.",
     },
     ayurvedic: {
-        title: "Ayurveda Retreats in Kerala — Panchakarma & Therapies | MyTripMyTravel",
+        title: "Ayurveda Retreats in Kerala, Panchakarma & Therapies | MyTripMyTravel",
         description:
-            "AYUSH-certified Ayurveda programmes in Kerala — physician-led Panchakarma, Abhyanga, Shirodhara and Rasayana. Honest recuperative care, not a cure. Enquire now.",
+            "AYUSH-certified Ayurveda programmes in Kerala, physician-led Panchakarma, Abhyanga, Shirodhara and Rasayana. Honest recuperative care, not a cure. Enquire now.",
     },
     orthopedic: {
-        title: "Orthopaedic Recovery Travel in India — Rehab Logistics | MyTripMyTravel",
+        title: "Orthopaedic Recovery Travel in India, Rehab Logistics | MyTripMyTravel",
         description:
-            "Gentle-paced orthopaedic recovery travel — knee, spine, joint and sports rehab logistics around accredited providers, with luxury transit and concierge. Enquire now.",
+            "Gentle-paced orthopaedic recovery travel, knee, spine, joint and sports rehab logistics around accredited providers, with luxury transit and concierge. Enquire now.",
     },
     massage: {
-        title: "Therapeutic Massage in India — Deep-Tissue, Marma & Hot-Stone | MyTripMyTravel",
+        title: "Therapeutic Massage in India, Deep-Tissue, Marma & Hot-Stone | MyTripMyTravel",
         description:
-            "Master-therapist bodywork across India — deep-tissue, Swedish, Thai, marma-point and hot-stone therapy at Kerala, Rajasthan palaces and city sanctuaries. Enquire now.",
+            "Master-therapist bodywork across India, deep-tissue, Swedish, Thai, marma-point and hot-stone therapy at Kerala, Rajasthan palaces and city sanctuaries. Enquire now.",
     },
 };
 
@@ -56,7 +56,7 @@ export function wellnessProgrammeJsonLd(slug: string) {
             {
                 "@type": "Service",
                 name: programme.name,
-                serviceType: `Wellness — ${programme.label}`,
+                serviceType: `Wellness, ${programme.label}`,
                 description: programme.blurb,
                 url,
                 image: programme.heroImg,

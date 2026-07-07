@@ -9,17 +9,17 @@ import { Footer } from "@/components/Footer";
 import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
 
 const ROLE_AREAS = [
-    { name: "Mission Architects", detail: "Bespoke itinerary design across the Golden Triangle, Rajasthan, and beyond — the people who turn an enquiry into a sequenced private mission." },
+    { name: "Mission Architects", detail: "Bespoke itinerary design across the Golden Triangle, Rajasthan, and beyond, the people who turn an enquiry into a sequenced private mission." },
     { name: "Performance Chauffeurs", detail: "Vetted, defensively-trained drivers operating the GPS-tracked Elite Fleet to a hospitality and security standard, not a taxi standard." },
-    { name: "Heritage & Experience Curators", detail: "Specialists who build the dining, guiding, and access layers — and hold the relationships that make escorted entry possible." },
+    { name: "Heritage & Experience Curators", detail: "Specialists who build the dining, guiding, and access layers, and hold the relationships that make escorted entry possible." },
     { name: "Organic Growth & Content", detail: "Editorial, SEO, and AI-surface specialists building the page and citation engine that drives qualified inquiries." },
     { name: "Guest Operations", detail: "The 24/7 desk and on-ground coordination that makes large missions and weddings run invisibly." },
 ];
 
 const PRINCIPLES = [
-    "Architect, don't sell — every traveller is a mission, not a transaction.",
+    "Architect, don't sell, every traveller is a mission, not a transaction.",
     "Discretion and reliability over volume.",
-    "Organic and earned — we don't buy attention, we deserve it.",
+    "Organic and earned, we don't buy attention, we deserve it.",
     "The standard is invisible logistics and a remembered experience.",
 ];
 

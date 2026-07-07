@@ -42,7 +42,7 @@ export function getMonumentOriginContent(
     const intro: string[] = [
         `${monument.tagline} ${monument.answer.split(".").slice(0, 2).join(".")}.`,
         `From ${origin.city}, the routing is the first decision: ${cityOrigin.gateway.routingNote}`,
-        `${cityOrigin.arrivalNote} On the ground, the ${monument.name} is sequenced for the prime viewing window — ${accessNote.toLowerCase()} — rather than dropped into a generic city sightseeing block.`,
+        `${cityOrigin.arrivalNote} On the ground, the ${monument.name} is sequenced for the prime viewing window, ${accessNote.toLowerCase()}, rather than dropped into a generic city sightseeing block.`,
         `Beyond the ${monument.name}, ${dest.name} sits inside the wider ${dest.region}; we plan the trip end to end on a single chauffeured architecture.`,
     ];
 
@@ -57,18 +57,18 @@ export function getMonumentOriginContent(
         gateway: cityOrigin.gateway,
         accessNote,
         facets: [
-            { heading: `The ${monument.name} — what you're visiting`, body: `${monument.intro[0]} ${monument.tagline}` },
+            { heading: `The ${monument.name}, what you're visiting`, body: `${monument.intro[0]} ${monument.tagline}` },
             { heading: "Gateway and routing from " + origin.city, body: cityOrigin.gateway.routingNote },
             { heading: "Arrival day pacing", body: cityOrigin.arrivalNote },
             { heading: "Monument access", body: `${monument.name} is sequenced for the prime viewing hour with escorted access and a vetted guide. ${accessNote}. ${monument.tips[0] ?? ""}` },
-            { heading: "How we run the visit", body: `From ${origin.city}, the on-ground operation is: chauffeured Elite Fleet, escorted entry, the prime hour at the ${monument.name}, and a sequenced day around it — not a checklist sprint. We pre-arrange access where access requires arrangement.` },
+            { heading: "How we run the visit", body: `From ${origin.city}, the on-ground operation is: chauffeured Elite Fleet, escorted entry, the prime hour at the ${monument.name}, and a sequenced day around it, not a checklist sprint. We pre-arrange access where access requires arrangement.` },
         ],
         faqs: [
             { q: `How do I visit the ${monument.name} from ${origin.city}?`, a: answer },
             { q: `How long is the flight from ${origin.city}?`, a: `${origin.flightBand}. Gateway: ${cityOrigin.gateway.label}; ${cityOrigin.gateway.routingNote}` },
             { q: `When is the best time to visit the ${monument.name}?`, a: accessNote + (monument.tips.length ? ` Tip from our planning desk: ${monument.tips[0]}` : "") },
             { q: `Do I need a visa to travel from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
-            { q: `Is the visit private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted monument access. Never a shared group departure.` },
+            { q: `Is the visit private?`, a: `Always, single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted monument access. Never a shared group departure.` },
         ],
         crossLinks: [
             { label: `Full ${monument.name} brief`, href: `/destinations/${dest.slug}/monuments/${monument.slug}` },

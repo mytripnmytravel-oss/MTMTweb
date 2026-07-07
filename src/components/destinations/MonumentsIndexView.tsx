@@ -48,7 +48,7 @@ export default function MonumentsIndexView({
 
                 <section className="py-24 container mx-auto px-6">
                     <p className="max-w-3xl text-lg md:text-xl text-dark-slate/70 font-bold leading-relaxed mb-16">
-                        Each {dest.name} monument has its own intelligence brief — history, what to see,
+                        Each {dest.name} monument has its own intelligence brief, history, what to see,
                         visitor protocol, and exactly how MyTripMyTravel sequences escorted access for it.
                     </p>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

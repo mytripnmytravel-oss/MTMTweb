@@ -81,7 +81,7 @@ export default function OrthopedicView({ programme }: { programme: WellnessProgr
                                 HOW WE <br /> <span className="text-sunset-orange">HELP.</span>
                             </h3>
                             <p className="text-dark-slate/60 font-bold italic text-lg mb-12">
-                                A dedicated travel coordinator manages your itinerary from arrival to departure — flights, transfers, stays and paced rest days — so the non-medical side of recovery runs smoothly while your clinical care stays entirely with your chosen providers.
+                                A dedicated travel coordinator manages your itinerary from arrival to departure, flights, transfers, stays and paced rest days, so the non-medical side of recovery runs smoothly while your clinical care stays entirely with your chosen providers.
                             </p>
                             <div className="p-8 rounded-3xl bg-royal-blue/5 border-2 border-dashed border-royal-blue/10">
                                 <h6 className="text-royal-blue font-semibold uppercase tracking-widest text-xs mb-4 flex items-center gap-3">

@@ -3,9 +3,9 @@ import { SITE_URL } from "@/lib/site";
 import ExpertGuidesView from "./ExpertGuidesView";
 
 const TITLE =
-    "Expert Local Guides in India — Multilingual Heritage Specialists | MyTripMyTravel";
+    "Expert Local Guides in India, Multilingual Heritage Specialists | MyTripMyTravel";
 const DESCRIPTION =
-    "Vetted, licensed local guides across India's heritage cities — Delhi, Agra, Jaipur, Udaipur and Kerala — leading private escorted visits in your own language.";
+    "Vetted, licensed local guides across India's heritage cities, Delhi, Agra, Jaipur, Udaipur and Kerala, leading private escorted visits in your own language.";
 const URL = `${SITE_URL}/expert-guides`;
 
 export const metadata: Metadata = {

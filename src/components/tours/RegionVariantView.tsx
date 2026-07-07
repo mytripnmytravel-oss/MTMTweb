@@ -68,7 +68,7 @@ export default function RegionVariantView({
                         </div>
                     ) : (
                         <div className="glass-card rounded-3xl p-12 border-royal-blue/5 max-w-3xl">
-                            <p className="text-base md:text-lg text-dark-slate/70 font-bold italic leading-relaxed">No fixed packages match this slice yet — the planning desk builds it bespoke for your party.</p>
+                            <p className="text-base md:text-lg text-dark-slate/70 font-bold italic leading-relaxed">No fixed packages match this slice yet, the planning desk builds it bespoke for your party.</p>
                         </div>
                     )}
                 </section>

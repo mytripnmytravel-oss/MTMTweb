@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 
-// Explicitly welcome search AND AI/LLM crawlers — MyTripMyTravel's
+// Explicitly welcome search AND AI/LLM crawlers, MyTripMyTravel's
 // strategy depends on AI Overview + LLM citation, not just classic search.
 const AI_CRAWLERS = [
     "GPTBot",

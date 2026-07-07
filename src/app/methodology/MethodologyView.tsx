@@ -79,9 +79,9 @@ export default function MethodologyView() {
                     </div>
 
                     <div className="grid md:grid-cols-4 gap-6 mt-20">
-                        <StatItem label="Every Journey" value="Private" desc="Each itinerary is built for one party — never a shared coach tour." />
+                        <StatItem label="Every Journey" value="Private" desc="Each itinerary is built for one party, never a shared coach tour." />
                         <StatItem label="On-Ground" value="Escorted" desc="Chauffeured, sequenced and accompanied across the route." />
-                        <StatItem label="Wellness Framing" value="Honest" desc="Recuperative care described as care — never an overstated cure." />
+                        <StatItem label="Wellness Framing" value="Honest" desc="Recuperative care described as care, never an overstated cure." />
                         <StatItem label="Your Contact" value="Personal" desc="You deal directly with the people planning your trip." />
                     </div>
                 </div>

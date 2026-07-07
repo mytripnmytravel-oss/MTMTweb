@@ -14,27 +14,27 @@ import type { Package } from "./tours";
 export const tourEnrichments: Record<number, Partial<Package>> = {
 
     12: {
-        metaTitle: "5-Day Luxury Golden Triangle — Oberoi, Amarvilas & Rambagh | MyTripMyTravel",
-        metaDescription: "Ultra-luxe 5-day Golden Triangle: The Oberoi Delhi, Amarvilas Taj-view suite, Rambagh Palace, helicopter transfer & balloon breakfast — from ₹66,300pp. Enquire now.",
-        bestTime: "October–March for crisp, clear flying and ballooning weather; the palaces and Taj views are magnificent year-round.",
-        answer: "The 5-Day Luxury Weekend is a private, chauffeured Golden Triangle for travellers who want the icons without compromise. You stay at The Oberoi New Delhi, Amarvilas in Agra with a Taj Mahal balcony, and Jaipur's Rambagh Palace, with a helicopter transfer to Agra, a sunrise Taj tour, and a hot-air-balloon breakfast over the Pink City. Everything is private and butler-supported. It runs best October–March and starts from ₹66,300 per person.",
+        metaTitle: "5-Day Luxury Golden Triangle, Oberoi, Amarvilas & Rambagh | MyTripMyTravel",
+        metaDescription: "Ultra-luxe 5-day Golden Triangle: The Oberoi Delhi, Amarvilas Taj-view suite, Rambagh Palace, helicopter transfer & balloon breakfast, from ₹66,300pp. Enquire now.",
+        bestTime: "October to March for crisp, clear flying and ballooning weather; the palaces and Taj views are magnificent year-round.",
+        answer: "The 5-Day Luxury Weekend is a private, chauffeured Golden Triangle for travellers who want the icons without compromise. You stay at The Oberoi New Delhi, Amarvilas in Agra with a Taj Mahal balcony, and Jaipur's Rambagh Palace, with a helicopter transfer to Agra, a sunrise Taj tour, and a hot-air-balloon breakfast over the Pink City. Everything is private and butler-supported. It runs best October to March and starts from ₹66,300 per person.",
         quickFacts: [
             { label: "Duration", value: "5 days / 4 nights" },
             { label: "Route", value: "Delhi → Agra → Jaipur → Delhi" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Indulgent — few sights, deep luxury" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Indulgent, few sights, deep luxury" },
             { label: "Hotels", value: "Palace & 5★ (Oberoi, Amarvilas, Rambagh)" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹66,300 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Private flight to Delhi. VIP airport pickup and stay at The Oberoi New Delhi.",
-                title: "Delhi — VIP Arrival & The Oberoi",
+                title: "Delhi, VIP Arrival & The Oberoi",
                 detail: [
                     "You land in Delhi to a fast-track VIP meet-and-greet, clearing arrivals with a dedicated concierge before your chauffeur transfers you to The Oberoi New Delhi overlooking the Delhi Golf Club and Humayun's Tomb.",
-                    "The rest of the day is deliberately unstructured — a spa treatment, a swim, or a quiet dinner at one of the hotel's award-winning restaurants — so you arrive at the monuments rested rather than jet-lagged.",
+                    "The rest of the day is deliberately unstructured, a spa treatment, a swim, or a quiet dinner at one of the hotel's award-winning restaurants, so you arrive at the monuments rested rather than jet-lagged.",
                 ],
                 overnight: "Delhi",
                 meals: "None (arrival day)",
@@ -43,7 +43,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Helicopter transfer to Agra. Stay at Amarvilas with balcony view of Taj Mahal.",
-                title: "Agra — Helicopter Transfer & Amarvilas Taj View",
+                title: "Agra, Helicopter Transfer & Amarvilas Taj View",
                 detail: [
                     "After breakfast you lift off for Agra by private helicopter, trading the four-hour road for a scenic aerial crossing of the Yamuna plains (subject to permits and weather; a chauffeured luxury car is the seamless fallback).",
                     "You check in to The Oberoi Amarvilas, the only hotel where every room and suite faces the Taj Mahal, just 600 metres from the east gate. The afternoon is yours to watch the marble change colour from your private balcony, glass of champagne in hand.",
@@ -56,11 +56,11 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Private sunrise Taj Mahal tour. Private drive to Jaipur. Stay at Rambagh Palace.",
-                title: "Agra — Taj Sunrise & Rambagh Palace, Jaipur",
+                title: "Agra, Taj Sunrise & Rambagh Palace, Jaipur",
                 detail: [
-                    "You enter the Taj Mahal at first light with a private historian-guide, when the marble glows pink-to-pearl and the complex is at its quietest — an unhurried couple of hours inside the world's greatest monument to love.",
+                    "You enter the Taj Mahal at first light with a private historian-guide, when the marble glows pink-to-pearl and the complex is at its quietest, an unhurried couple of hours inside the world's greatest monument to love.",
                     "After breakfast your chauffeur drives you to Jaipur, with an optional pause at the UNESCO ghost-capital of Fatehpur Sikri en route.",
-                    "You arrive at the Rambagh Palace — once the residence of the Maharaja of Jaipur, now a Taj-run palace hotel of peacock lawns, marble corridors and liveried service — in time for a royal high tea.",
+                    "You arrive at the Rambagh Palace, once the residence of the Maharaja of Jaipur, now a Taj-run palace hotel of peacock lawns, marble corridors and liveried service, in time for a royal high tea.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -69,11 +69,11 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Hot air balloon breakfast over Jaipur. Private palace tours and royal dining.",
-                title: "Jaipur — Balloon Breakfast & Private Palace Tours",
+                title: "Jaipur, Balloon Breakfast & Private Palace Tours",
                 detail: [
                     "You begin before dawn with a hot-air-balloon flight over the Amber and Jaigarh forts and the Aravalli foothills, landing to a champagne breakfast in the fields (weather permitting).",
                     "Later, a private curator-led tour of the City Palace takes you into rooms usually closed to the public, followed by the honey-stone Amber Fort and its Sheesh Mahal mirror hall.",
-                    "The day closes with a royal dinner — a candlelit table at Rambagh's Suvarna Mahal or a private in-palace chef's menu.",
+                    "The day closes with a royal dinner, a candlelit table at Rambagh's Suvarna Mahal or a private in-palace chef's menu.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -82,12 +82,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Spa morning at the palace. Afternoon private jet/charter flight to Delhi/Home.",
-                title: "Jaipur — Spa Morning & Charter Departure",
+                title: "Jaipur, Spa Morning & Charter Departure",
                 detail: [
                     "Your final morning is slow: a Jiva Spa ritual, a swim in the palace pool, or a last wander through Rambagh's gardens.",
                     "In the afternoon you transfer to the airport for your onward charter or scheduled flight to Delhi and home, your concierge handling every formality to the gate.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jaipur → Delhi · ~1 hr flight (charter or scheduled)",
             },
@@ -108,36 +108,36 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Is 5 days enough for a luxury Golden Triangle?", a: "Yes — this tour is built around depth of experience rather than a long list of sights. You still see the Taj Mahal, Amber Fort and Jaipur's palaces, but with palace stays, a helicopter transfer and a balloon flight woven in. If you want to add Udaipur or Ranthambore at the same standard, we extend it easily." },
-            { q: "Is the helicopter transfer guaranteed?", a: "It is arranged and included, but helicopter and balloon operations depend on civil-aviation permits and weather on the day. If either can't fly, we substitute a chauffeured luxury car for the Agra leg and reschedule or refund the balloon — you never lose the value." },
+            { q: "Is 5 days enough for a luxury Golden Triangle?", a: "Yes, this tour is built around depth of experience rather than a long list of sights. You still see the Taj Mahal, Amber Fort and Jaipur's palaces, but with palace stays, a helicopter transfer and a balloon flight woven in. If you want to add Udaipur or Ranthambore at the same standard, we extend it easily." },
+            { q: "Is the helicopter transfer guaranteed?", a: "It is arranged and included, but helicopter and balloon operations depend on civil-aviation permits and weather on the day. If either can't fly, we substitute a chauffeured luxury car for the Agra leg and reschedule or refund the balloon, you never lose the value." },
             { q: "Which hotels will we actually stay in?", a: "The base plan uses The Oberoi New Delhi, Amarvilas in Agra with a Taj-view room, and Rambagh Palace in Jaipur. Specific room categories depend on availability at booking; suites and the Amarvilas Kohinoor Suite can be confirmed on request." },
-            { q: "Is this suitable for a honeymoon or anniversary?", a: "It's one of our most-booked romantic itineraries — private throughout, with a Taj-view balcony, candlelit palace dining and a balloon breakfast. Tell us the occasion and we'll arrange in-room touches, a private dinner or a photographer." },
-            { q: "How much walking is involved?", a: "Very little by choice — monuments involve one to two hours on foot, but everything else is designed around comfort, with the car and staff at the gate. We can arrange golf-cart access at the Taj and a jeep ascent at Amber Fort for anyone who prefers to minimise steps." },
+            { q: "Is this suitable for a honeymoon or anniversary?", a: "It's one of our most-booked romantic itineraries, private throughout, with a Taj-view balcony, candlelit palace dining and a balloon breakfast. Tell us the occasion and we'll arrange in-room touches, a private dinner or a photographer." },
+            { q: "How much walking is involved?", a: "Very little by choice, monuments involve one to two hours on foot, but everything else is designed around comfort, with the car and staff at the gate. We can arrange golf-cart access at the Taj and a jeep ascent at Amber Fort for anyone who prefers to minimise steps." },
             { q: "Can you customise or upgrade further?", a: "Absolutely. We routinely add a private jet between cities, extend to Udaipur's Lake Palace, or arrange a maharaja's private residence dinner. Share your dates and wishes and we'll return a bespoke plan and quote." },
         ],
     },
     3: {
-        metaTitle: "9-Day Golden Triangle & Udaipur Tour — Delhi, Agra, Jaipur | MyTripMyTravel",
-        metaDescription: "Private 9-day Golden Triangle & Udaipur romance tour: Taj Mahal, Jaipur forts, Lake Pichola & a Lake Palace stay. Chauffeured, guided — from ₹74,600pp. Enquire now.",
-        bestTime: "October–March is ideal, when Udaipur's lakes are full and the days are mild across Rajasthan.",
-        answer: "GT + Udaipur Romance is a private, chauffeured 9-day journey pairing the Golden Triangle with the lake city of Udaipur — the 'Venice of the East'. You explore Delhi, ride a superfast train to Agra for the Taj Mahal and Agra Fort, cross to Jaipur via the Abhaneri stepwells, then fly to Udaipur for sunset boat rides on Lake Pichola and a stay at the Lake Palace. Travel is private with licensed guides. It runs best October–March and starts from ₹74,600 per person.",
+        metaTitle: "9-Day Golden Triangle & Udaipur Tour, Delhi, Agra, Jaipur | MyTripMyTravel",
+        metaDescription: "Private 9-day Golden Triangle & Udaipur romance tour: Taj Mahal, Jaipur forts, Lake Pichola & a Lake Palace stay. Chauffeured, guided, from ₹74,600pp. Enquire now.",
+        bestTime: "October to March is ideal, when Udaipur's lakes are full and the days are mild across Rajasthan.",
+        answer: "GT + Udaipur Romance is a private, chauffeured 9-day journey pairing the Golden Triangle with the lake city of Udaipur, the 'Venice of the East'. You explore Delhi, ride a superfast train to Agra for the Taj Mahal and Agra Fort, cross to Jaipur via the Abhaneri stepwells, then fly to Udaipur for sunset boat rides on Lake Pichola and a stay at the Lake Palace. Travel is private with licensed guides. It runs best October to March and starts from ₹74,600 per person.",
         quickFacts: [
             { label: "Duration", value: "9 days / 8 nights" },
             { label: "Route", value: "Delhi → Agra → Jaipur → Udaipur → Delhi" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Relaxed — time to savour each city" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Relaxed, time to savour each city" },
             { label: "Hotels", value: "5★, heritage & palace (incl. Lake Palace)" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹74,600 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival & Luxury Stay. Evening Rickshaw tour.",
-                title: "Delhi — Arrival & Old Delhi Rickshaw Ride",
+                title: "Delhi, Arrival & Old Delhi Rickshaw Ride",
                 detail: [
                     "Your chauffeur meets you at Delhi (DEL) and transfers you to your hotel to settle in and shake off the flight.",
-                    "As the heat softens, you head into Old Delhi for a cycle-rickshaw ride through the spice-scented lanes of Chandni Chowk, past the great Jama Masjid and the ramparts of the Red Fort — a gentle, sensory first taste of India.",
+                    "As the heat softens, you head into Old Delhi for a cycle-rickshaw ride through the spice-scented lanes of Chandni Chowk, past the great Jama Masjid and the ramparts of the Red Fort, a gentle, sensory first taste of India.",
                 ],
                 overnight: "Delhi",
                 meals: "None (arrival day)",
@@ -146,10 +146,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Full day Delhi history tour. Evening classical music concert.",
-                title: "Delhi — Full-Day Heritage & Classical Concert",
+                title: "Delhi, Full-Day Heritage & Classical Concert",
                 detail: [
                     "A full day traces Delhi's layered history: Humayun's Tomb, the garden-tomb that rehearsed the Taj Mahal's design; the towering 12th-century Qutub Minar; and the ceremonial sweep of India Gate and New Delhi's colonial avenues.",
-                    "In the evening you attend a live Indian classical music recital — sitar, tabla and raga — an intimate cultural counterpoint to the day's monuments.",
+                    "In the evening you attend a live Indian classical music recital, sitar, tabla and raga, an intimate cultural counterpoint to the day's monuments.",
                 ],
                 overnight: "Delhi",
                 meals: "Breakfast",
@@ -158,7 +158,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Superfast train to Agra. Taj Mahal & Agra Fort. Overnight Agra.",
-                title: "Agra — Superfast Train, Taj Mahal & Agra Fort",
+                title: "Agra, Superfast Train, Taj Mahal & Agra Fort",
                 detail: [
                     "You board a superfast train from Delhi to Agra, gliding across the plains in around ninety minutes with breakfast served at your seat.",
                     "With your guide you tour the Taj Mahal, unpacking Shah Jahan's grief-struck love story and its flawless Mughal symmetry, then the red-sandstone Agra Fort, where the emperor spent his final years gazing at the Taj across the Yamuna.",
@@ -171,10 +171,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Drive to Jaipur. Stop at Abhaneri Stepwells. Evening Jaipur Market.",
-                title: "Jaipur — Abhaneri Stepwells & Pink City Bazaars",
+                title: "Jaipur, Abhaneri Stepwells & Pink City Bazaars",
                 detail: [
-                    "You drive to Jaipur, breaking the journey at Abhaneri to see Chand Baori, one of India's deepest and most geometrically dazzling stepwells — 3,500 steps plunging thirteen storeys into the earth.",
-                    "Reaching the Pink City by late afternoon, you dive into the bazaars — block-print textiles, blue pottery, lac bangles and gemstones around Johari and Bapu Bazaar.",
+                    "You drive to Jaipur, breaking the journey at Abhaneri to see Chand Baori, one of India's deepest and most geometrically dazzling stepwells, 3,500 steps plunging thirteen storeys into the earth.",
+                    "Reaching the Pink City by late afternoon, you dive into the bazaars, block-print textiles, blue pottery, lac bangles and gemstones around Johari and Bapu Bazaar.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -183,10 +183,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Jaipur Forts tour. Royal Dinner at Jal Mahal. Overnight Jaipur.",
-                title: "Jaipur — Amber Fort & Royal Dining by Jal Mahal",
+                title: "Jaipur, Amber Fort & Royal Dining by Jal Mahal",
                 detail: [
                     "The morning belongs to the honey-coloured Amber Fort above Maota Lake, with its Sheesh Mahal mirror hall and sweeping ramparts (jeep ascent included), plus the City Palace and the Hawa Mahal facade in the old city.",
-                    "As the sun sets you dine beside the Jal Mahal — the 'Water Palace' seemingly floating on Man Sagar Lake — a romantic close to the Pink City.",
+                    "As the sun sets you dine beside the Jal Mahal, the 'Water Palace' seemingly floating on Man Sagar Lake, a romantic close to the Pink City.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -195,10 +195,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Flight to Udaipur. Boat ride on Lake Pichola at sunset.",
-                title: "Udaipur — Fly In & Sunset on Lake Pichola",
+                title: "Udaipur, Fly In & Sunset on Lake Pichola",
                 detail: [
                     "A short morning flight carries you south to Udaipur, Rajasthan's lake city cradled by the Aravalli hills.",
-                    "As the light turns gold you take a private boat across Lake Pichola, gliding past the City Palace waterfront, Jag Mandir island and the shimmering Lake Palace — the definitive Udaipur sunset.",
+                    "As the light turns gold you take a private boat across Lake Pichola, gliding past the City Palace waterfront, Jag Mandir island and the shimmering Lake Palace, the definitive Udaipur sunset.",
                 ],
                 overnight: "Udaipur",
                 meals: "Breakfast",
@@ -207,10 +207,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "City Palace Udaipur tour. Stay at the Lake Palace (Jag Niwas).",
-                title: "Udaipur — City Palace & the Lake Palace",
+                title: "Udaipur, City Palace & the Lake Palace",
                 detail: [
                     "You tour the vast City Palace complex, a warren of courtyards, mirror-work rooms, coloured-glass windows and terraces with commanding lake views, still part-home to Udaipur's royal family.",
-                    "By afternoon a private launch delivers you to the Taj Lake Palace (Jag Niwas) — the 18th-century marble palace that appears to float on the water — for a night of pure old-world romance.",
+                    "By afternoon a private launch delivers you to the Taj Lake Palace (Jag Niwas), the 18th-century marble palace that appears to float on the water, for a night of pure old-world romance.",
                 ],
                 overnight: "Udaipur",
                 meals: "Breakfast",
@@ -219,10 +219,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Jagdish Temple & Saheliyon ki bari. Cooking class with a Rajput family.",
-                title: "Udaipur — Temples, Gardens & Rajput Cooking Class",
+                title: "Udaipur, Temples, Gardens & Rajput Cooking Class",
                 detail: [
                     "The morning takes in the ornate 17th-century Jagdish Temple and Saheliyon-ki-Bari, the 'garden of the maidens' with its fountains, lotus pool and marble elephants.",
-                    "In the afternoon you join a Rajput family in their home for a hands-on cooking class, learning to make dal-baati-churma and regional curries before sitting down to eat what you've cooked — the trip's most personal experience.",
+                    "In the afternoon you join a Rajput family in their home for a hands-on cooking class, learning to make dal-baati-churma and regional curries before sitting down to eat what you've cooked, the trip's most personal experience.",
                 ],
                 overnight: "Udaipur",
                 meals: "Breakfast",
@@ -231,12 +231,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 9,
                 plan: "Morning at leisure by the lake. Afternoon flight back to Delhi.",
-                title: "Udaipur — Lakeside Leisure & Departure",
+                title: "Udaipur, Lakeside Leisure & Departure",
                 detail: [
-                    "Your final morning is unhurried — a lakeside breakfast, a last stroll along the ghats, or a spa hour before checkout.",
+                    "Your final morning is unhurried, a lakeside breakfast, a last stroll along the ghats, or a spa hour before checkout.",
                     "In the afternoon your chauffeur transfers you to Udaipur airport for the flight to Delhi and your onward international connection.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Udaipur → Delhi · ~1.5 hr flight",
             },
@@ -257,33 +257,33 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Is 9 days enough for the Golden Triangle plus Udaipur?", a: "Yes — nine days gives two nights in Delhi, a full Agra day, two nights in Jaipur and three nights in Udaipur, so nothing feels rushed. The internal flight to Udaipur saves a long day on the road and leaves real time by the lakes." },
+            { q: "Is 9 days enough for the Golden Triangle plus Udaipur?", a: "Yes, nine days gives two nights in Delhi, a full Agra day, two nights in Jaipur and three nights in Udaipur, so nothing feels rushed. The internal flight to Udaipur saves a long day on the road and leaves real time by the lakes." },
             { q: "Do we really stay on the Lake Palace island?", a: "The base plan includes a night at the Taj Lake Palace (Jag Niwas), reached by private launch, subject to availability at booking. If it's full for your dates we secure an equivalent lakefront heritage property such as the Leela Palace or Taj Fateh Prakash, and price accordingly." },
-            { q: "Why fly to Udaipur instead of driving?", a: "The Jaipur–Udaipur road is around seven hours; the flight is under an hour. Flying keeps the pace relaxed and gives you a full extra evening on Lake Pichola. If you'd prefer the scenic drive via Ajmer and Chittorgarh, we can arrange that instead." },
-            { q: "Is this a good honeymoon itinerary?", a: "It's one of our most popular romantic tours — sunset boat rides, a floating palace hotel and private dining throughout. Tell us it's a honeymoon or anniversary and we'll add candlelit dinners, floral touches or a private photographer." },
-            { q: "When is the best time to go?", a: "October to March is ideal, with mild days and Udaipur's lakes at their fullest after the monsoon. April–June is hot but quieter; the monsoon months bring dramatic skies and green hills but can affect boat operations on the lake." },
-            { q: "Can we extend to Jodhpur or Ranthambore?", a: "Easily — Udaipur pairs naturally with Jodhpur's Blue City or a tiger safari at Ranthambore, and we can add Pushkar or the Ranakpur temples on the drive. Send your dates and we'll design the extension and quote." },
+            { q: "Why fly to Udaipur instead of driving?", a: "The Jaipur to Udaipur road is around seven hours; the flight is under an hour. Flying keeps the pace relaxed and gives you a full extra evening on Lake Pichola. If you'd prefer the scenic drive via Ajmer and Chittorgarh, we can arrange that instead." },
+            { q: "Is this a good honeymoon itinerary?", a: "It's one of our most popular romantic tours, sunset boat rides, a floating palace hotel and private dining throughout. Tell us it's a honeymoon or anniversary and we'll add candlelit dinners, floral touches or a private photographer." },
+            { q: "When is the best time to go?", a: "October to March is ideal, with mild days and Udaipur's lakes at their fullest after the monsoon. April to June is hot but quieter; the monsoon months bring dramatic skies and green hills but can affect boat operations on the lake." },
+            { q: "Can we extend to Jodhpur or Ranthambore?", a: "Easily, Udaipur pairs naturally with Jodhpur's Blue City or a tiger safari at Ranthambore, and we can add Pushkar or the Ranakpur temples on the drive. Send your dates and we'll design the extension and quote." },
         ],
     },
     4: {
-        metaTitle: "9-Day Rishikesh Yoga & Golden Triangle Tour — Delhi, Agra | MyTripMyTravel",
-        metaDescription: "Private 9-day tour: Ganga Aarti at Haridwar, yoga & meditation in Rishikesh, then the Taj Mahal & Jaipur. Chauffeured, guided — from ₹66,300pp. Enquire now.",
-        bestTime: "September–November and February–April are ideal, with mild Himalayan foothills and comfortable days across the plains.",
-        answer: "GT + Rishikesh Yoga is a private, chauffeured 9-day journey blending spiritual India with the Golden Triangle. You witness the Ganga Aarti at Haridwar, practise yoga and meditation on the banks of the Ganges in Rishikesh — the yoga capital of the world — then continue to Agra's Taj Mahal, Fatehpur Sikri and Jaipur. Travel is private with licensed guides and yoga instructors. It runs best in spring and autumn and starts from ₹66,300 per person.",
+        metaTitle: "9-Day Rishikesh Yoga & Golden Triangle Tour, Delhi, Agra | MyTripMyTravel",
+        metaDescription: "Private 9-day tour: Ganga Aarti at Haridwar, yoga & meditation in Rishikesh, then the Taj Mahal & Jaipur. Chauffeured, guided, from ₹66,300pp. Enquire now.",
+        bestTime: "September to November and February to April are ideal, with mild Himalayan foothills and comfortable days across the plains.",
+        answer: "GT + Rishikesh Yoga is a private, chauffeured 9-day journey blending spiritual India with the Golden Triangle. You witness the Ganga Aarti at Haridwar, practise yoga and meditation on the banks of the Ganges in Rishikesh, the yoga capital of the world, then continue to Agra's Taj Mahal, Fatehpur Sikri and Jaipur. Travel is private with licensed guides and yoga instructors. It runs best in spring and autumn and starts from ₹66,300 per person.",
         quickFacts: [
             { label: "Duration", value: "9 days / 8 nights" },
             { label: "Route", value: "Delhi → Haridwar → Rishikesh → Delhi → Agra → Jaipur → Delhi" },
-            { label: "Best time", value: "Sep–Nov & Feb–Apr" },
-            { label: "Pace", value: "Gentle — spiritual first, sights second" },
+            { label: "Best time", value: "Sep to Nov & Feb to Apr" },
+            { label: "Pace", value: "Gentle, spiritual first, sights second" },
             { label: "Hotels", value: "Ashram / retreat + 4★ & 5★" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹66,300 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival & Spiritual briefing. Evening at Birla Mandir.",
-                title: "Delhi — Arrival & Birla Mandir",
+                title: "Delhi, Arrival & Birla Mandir",
                 detail: [
                     "Your chauffeur welcomes you at Delhi (DEL) and transfers you to your hotel, where your guide gives a gentle briefing on the spiritual arc of the journey ahead.",
                     "In the evening you visit the Birla Mandir (Laxminarayan Temple), a serene, colourful Hindu temple that makes an easy, contemplative first stop after a long flight.",
@@ -295,10 +295,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi to Haridwar by train. Evening Ganga Aarti at Har-ki-Pauri.",
-                title: "Haridwar — Train North & Ganga Aarti",
+                title: "Haridwar, Train North & Ganga Aarti",
                 detail: [
                     "You take a morning train north from Delhi to Haridwar, one of Hinduism's seven holiest cities, where the Ganges leaves the mountains for the plains.",
-                    "At dusk you join the Ganga Aarti at Har-ki-Pauri ghat — hundreds of oil lamps floating on the river, chanting priests and a wave of devotion that is among the most moving sights in India.",
+                    "At dusk you join the Ganga Aarti at Har-ki-Pauri ghat, hundreds of oil lamps floating on the river, chanting priests and a wave of devotion that is among the most moving sights in India.",
                 ],
                 overnight: "Haridwar",
                 meals: "Breakfast",
@@ -307,9 +307,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Haridwar to Rishikesh. Check-in at Ashrams. Evening Yoga by the bank.",
-                title: "Rishikesh — Ashram Check-in & Riverside Yoga",
+                title: "Rishikesh, Ashram Check-in & Riverside Yoga",
                 detail: [
-                    "A short drive brings you to Rishikesh, cradled in the Himalayan foothills where the Ganges runs clear and green — the birthplace of modern yoga.",
+                    "A short drive brings you to Rishikesh, cradled in the Himalayan foothills where the Ganges runs clear and green, the birthplace of modern yoga.",
                     "You check in to a riverside ashram or wellness retreat and ease into the setting with an evening yoga session on the bank, breathing to the sound of the river.",
                 ],
                 overnight: "Rishikesh",
@@ -319,7 +319,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Sunrise meditation. Visit Vashistha cave. Evening Aarti at Parmarth Niketan.",
-                title: "Rishikesh — Sunrise Meditation & Parmarth Aarti",
+                title: "Rishikesh, Sunrise Meditation & Parmarth Aarti",
                 detail: [
                     "You begin at dawn with a guided meditation as the valley wakes, followed by a visit to the Vashistha Gufa, an ancient riverside cave where sages have meditated for centuries.",
                     "At sunset you attend the Ganga Aarti at Parmarth Niketan ashram, a more intimate, song-filled ceremony led by resident students on the ghats.",
@@ -331,10 +331,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Nature trek & bridge crossing (Laxman Jhula). Forest meditation session.",
-                title: "Rishikesh — Laxman Jhula & Forest Meditation",
+                title: "Rishikesh, Laxman Jhula & Forest Meditation",
                 detail: [
                     "You take a nature walk to and across Laxman Jhula, the famous swaying iron footbridge over the Ganges, exploring the temples and cafés of the far bank.",
-                    "The day includes a guided forest meditation in the quiet above the town — a chance to sit with the stillness before you turn back towards the plains.",
+                    "The day includes a guided forest meditation in the quiet above the town, a chance to sit with the stillness before you turn back towards the plains.",
                 ],
                 overnight: "Rishikesh",
                 meals: "Breakfast",
@@ -343,9 +343,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Rishikesh to Delhi. Overnight in Delhi. Rest.",
-                title: "Delhi — Return & Rest Day",
+                title: "Delhi, Return & Rest Day",
                 detail: [
-                    "You drive back down to Delhi, arriving in the afternoon for a deliberate rest day — a decompression between the spiritual first half of the tour and the monuments to come.",
+                    "You drive back down to Delhi, arriving in the afternoon for a deliberate rest day, a decompression between the spiritual first half of the tour and the monuments to come.",
                     "The evening is at leisure: a spa treatment, a quiet dinner, or simply an early night before the Golden Triangle begins.",
                 ],
                 overnight: "Delhi",
@@ -355,7 +355,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Drive to Agra. Taj Mahal sunset. Overnight in Agra.",
-                title: "Agra — Drive South & Taj Mahal at Sunset",
+                title: "Agra, Drive South & Taj Mahal at Sunset",
                 detail: [
                     "A morning run down the Yamuna Expressway brings you to Agra by early afternoon and your hotel check-in.",
                     "You visit the Taj Mahal at sunset, when the marble warms to amber and gold and the crowds thin, your guide unpacking Shah Jahan's love story and the monument's perfect symmetry.",
@@ -367,9 +367,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Fatehpur Sikri & Drive to Jaipur. Chokhi Dhani evening.",
-                title: "Fatehpur Sikri & Jaipur — Chokhi Dhani Evening",
+                title: "Fatehpur Sikri & Jaipur, Chokhi Dhani Evening",
                 detail: [
-                    "You drive to Jaipur, pausing at the UNESCO ghost-city of Fatehpur Sikri — Akbar's perfectly preserved red-sandstone capital, abandoned within decades of its building.",
+                    "You drive to Jaipur, pausing at the UNESCO ghost-city of Fatehpur Sikri, Akbar's perfectly preserved red-sandstone capital, abandoned within decades of its building.",
                     "Reaching the Pink City by evening, you round off the day at Chokhi Dhani, a lively recreated Rajasthani village with folk dance, camel rides and a traditional thali dinner.",
                 ],
                 overnight: "Jaipur",
@@ -379,12 +379,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 9,
                 plan: "Jaipur City Tour & Afternoon flight to Delhi/Home.",
-                title: "Jaipur — City Tour & Departure",
+                title: "Jaipur, City Tour & Departure",
                 detail: [
                     "Your final morning takes in the highlights of the Pink City: the honey-stone Amber Fort with its Sheesh Mahal (jeep ascent included), the five-storey Hawa Mahal facade, and the City Palace or Jantar Mantar observatory.",
                     "In the afternoon your chauffeur transfers you for your flight to Delhi and onward home.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jaipur → Delhi · ~1 hr flight",
             },
@@ -406,35 +406,35 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
         ],
         faqs: [
             { q: "Do I need yoga experience for this tour?", a: "Not at all. The sessions in Rishikesh are private and paced to your level, from gentle hatha and breathwork for complete beginners to more demanding practice for the experienced. Just tell your instructor your background and any injuries." },
-            { q: "What are the ashram stays like?", a: "We use comfortable riverside ashrams and wellness retreats — clean, simple rooms in serene settings rather than bare dormitories. If you'd prefer a full-service boutique hotel in Rishikesh instead, we can swap it in at a supplement." },
+            { q: "What are the ashram stays like?", a: "We use comfortable riverside ashrams and wellness retreats, clean, simple rooms in serene settings rather than bare dormitories. If you'd prefer a full-service boutique hotel in Rishikesh instead, we can swap it in at a supplement." },
             { q: "Is the food vegetarian?", a: "Haridwar and Rishikesh are sacred, alcohol-free and almost entirely vegetarian towns, and the ashrams serve simple sattvic meals. Elsewhere on the tour the full range of Indian and international cuisine is available, and we cater to any dietary needs." },
-            { q: "When is the best time for this itinerary?", a: "September to November and February to April are ideal — mild in the foothills and comfortable on the plains. Winter nights in Rishikesh get cold; the monsoon (July–August) swells the Ganges and can affect river activities." },
-            { q: "Is it suitable for older travellers or families?", a: "Yes — the pace is gentle, with a built-in rest day, and the yoga and walking can be softened. The forest treks and the Laxman Jhula crossing are optional; we adapt the Rishikesh days to your fitness and interests." },
-            { q: "Can we do more of the Himalayas or add cities?", a: "Absolutely — this pairs well with an extension to Rishikesh's temples and waterfalls, on to Mussoorie, or the ghats of Varanasi for a deeper spiritual journey. Share your dates and we'll tailor the plan and quote." },
+            { q: "When is the best time for this itinerary?", a: "September to November and February to April are ideal, mild in the foothills and comfortable on the plains. Winter nights in Rishikesh get cold; the monsoon (July to August) swells the Ganges and can affect river activities." },
+            { q: "Is it suitable for older travellers or families?", a: "Yes, the pace is gentle, with a built-in rest day, and the yoga and walking can be softened. The forest treks and the Laxman Jhula crossing are optional; we adapt the Rishikesh days to your fitness and interests." },
+            { q: "Can we do more of the Himalayas or add cities?", a: "Absolutely, this pairs well with an extension to Rishikesh's temples and waterfalls, on to Mussoorie, or the ghats of Varanasi for a deeper spiritual journey. Share your dates and we'll tailor the plan and quote." },
         ],
     },
     5: {
-        metaTitle: "8-Day Golden Triangle & Amritsar Tour — Delhi, Agra, Jaipur | MyTripMyTravel",
-        metaDescription: "Private 8-day tour: the Golden Temple, Wagah Border ceremony, then the Taj Mahal & Jaipur's forts. Chauffeured, guided, hotels — from ₹58,000pp. Enquire now.",
-        bestTime: "October–March for clear, mild days at the Golden Temple and across the Golden Triangle.",
-        answer: "GT + Amritsar Heritage is a private, chauffeured 8-day tour combining the Golden Triangle with the spiritual and patriotic heart of Punjab. You visit the Golden Temple at sunrise and by night, pay respects at Jallianwala Bagh, watch the electric Wagah Border ceremony, then continue to Agra's Taj Mahal and Jaipur's forts. Travel is private with a superfast train to Amritsar and licensed guides throughout. It runs best October–March and starts from ₹58,000 per person.",
+        metaTitle: "8-Day Golden Triangle & Amritsar Tour, Delhi, Agra, Jaipur | MyTripMyTravel",
+        metaDescription: "Private 8-day tour: the Golden Temple, Wagah Border ceremony, then the Taj Mahal & Jaipur's forts. Chauffeured, guided, hotels, from ₹58,000pp. Enquire now.",
+        bestTime: "October to March for clear, mild days at the Golden Temple and across the Golden Triangle.",
+        answer: "GT + Amritsar Heritage is a private, chauffeured 8-day tour combining the Golden Triangle with the spiritual and patriotic heart of Punjab. You visit the Golden Temple at sunrise and by night, pay respects at Jallianwala Bagh, watch the electric Wagah Border ceremony, then continue to Agra's Taj Mahal and Jaipur's forts. Travel is private with a superfast train to Amritsar and licensed guides throughout. It runs best October to March and starts from ₹58,000 per person.",
         quickFacts: [
             { label: "Duration", value: "8 days / 7 nights" },
             { label: "Route", value: "Delhi → Amritsar → Delhi → Agra → Jaipur → Delhi" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Balanced — culture, faith and monuments" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Balanced, culture, faith and monuments" },
             { label: "Hotels", value: "4★ / 5★ & heritage options" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹58,000 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival. Evening at Gurudwara Bangla Sahib.",
-                title: "Delhi — Arrival & Bangla Sahib",
+                title: "Delhi, Arrival & Bangla Sahib",
                 detail: [
                     "Your chauffeur meets you at Delhi (DEL) and transfers you to your hotel to settle in.",
-                    "In the evening you visit Gurudwara Bangla Sahib, the most prominent Sikh temple in Delhi, with its golden dome and vast holy pool — a gentle, welcoming introduction to the Sikh faith you'll encounter fully in Amritsar.",
+                    "In the evening you visit Gurudwara Bangla Sahib, the most prominent Sikh temple in Delhi, with its golden dome and vast holy pool, a gentle, welcoming introduction to the Sikh faith you'll encounter fully in Amritsar.",
                 ],
                 overnight: "Delhi",
                 meals: "None (arrival day)",
@@ -443,10 +443,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi to Amritsar by Shatabdi Express. Golden Temple night view.",
-                title: "Amritsar — Shatabdi Express & Golden Temple by Night",
+                title: "Amritsar, Shatabdi Express & Golden Temple by Night",
                 detail: [
                     "You board the Shatabdi Express from Delhi to Amritsar, a comfortable day-train across the Punjab plains with meals served at your seat.",
-                    "After checking in, you make your first visit to the Golden Temple (Harmandir Sahib) after dark, when the gilded shrine glows against the black water of the sacred pool and the crowds are calmer — an unforgettable first sight.",
+                    "After checking in, you make your first visit to the Golden Temple (Harmandir Sahib) after dark, when the gilded shrine glows against the black water of the sacred pool and the crowds are calmer, an unforgettable first sight.",
                 ],
                 overnight: "Amritsar",
                 meals: "Breakfast",
@@ -455,11 +455,11 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Golden Temple at sunrise. Jallianwala Bagh. Wagah Border ceremony.",
-                title: "Amritsar — Golden Temple Sunrise & Wagah Border",
+                title: "Amritsar, Golden Temple Sunrise & Wagah Border",
                 detail: [
-                    "You return to the Golden Temple at sunrise for the peaceful morning prayers, and visit the langar — the world's largest free community kitchen, feeding tens of thousands daily.",
-                    "A short walk away is Jallianwala Bagh, the memorial garden marking the 1919 massacre, its walls still scarred by bullet holes — a sombre, essential piece of Indian history.",
-                    "In the late afternoon you drive to the India–Pakistan frontier for the Wagah Border ceremony, a theatrical, foot-stamping flag-lowering drill roared on by patriotic crowds.",
+                    "You return to the Golden Temple at sunrise for the peaceful morning prayers, and visit the langar, the world's largest free community kitchen, feeding tens of thousands daily.",
+                    "A short walk away is Jallianwala Bagh, the memorial garden marking the 1919 massacre, its walls still scarred by bullet holes, a sombre, essential piece of Indian history.",
+                    "In the late afternoon you drive to the India to Pakistan frontier for the Wagah Border ceremony, a theatrical, foot-stamping flag-lowering drill roared on by patriotic crowds.",
                 ],
                 overnight: "Amritsar",
                 meals: "Breakfast",
@@ -468,10 +468,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Amritsar to Delhi. Overnight in New Delhi.",
-                title: "Delhi — Return & New Delhi at Leisure",
+                title: "Delhi, Return & New Delhi at Leisure",
                 detail: [
                     "You travel back to Delhi by train (or a short flight), arriving in the afternoon.",
-                    "The evening is at leisure in New Delhi — time to rest, shop the boutiques of Khan Market or Connaught Place, or take an optional drive past India Gate and the illuminated government buildings before the Golden Triangle leg begins.",
+                    "The evening is at leisure in New Delhi, time to rest, shop the boutiques of Khan Market or Connaught Place, or take an optional drive past India Gate and the illuminated government buildings before the Golden Triangle leg begins.",
                 ],
                 overnight: "Delhi",
                 meals: "Breakfast",
@@ -480,7 +480,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Delhi to Agra. Afternoon Agra Fort. Sunset Taj Mahal view from Mehtab Bagh.",
-                title: "Agra — Agra Fort & Taj Sunset from Mehtab Bagh",
+                title: "Agra, Agra Fort & Taj Sunset from Mehtab Bagh",
                 detail: [
                     "A morning run down the Yamuna Expressway brings you to Agra, where you tour the red-sandstone Agra Fort, the Mughal seat of power and Shah Jahan's gilded final prison.",
                     "At sunset you cross to Mehtab Bagh, the riverside 'moonlight garden' directly opposite the Taj Mahal, for a serene, uncrowded view of the mausoleum glowing gold across the Yamuna.",
@@ -492,7 +492,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Taj Mahal tour. Drive to Jaipur via Fatehpur Sikri and Stepwells.",
-                title: "Agra — Taj Mahal & Drive to Jaipur",
+                title: "Agra, Taj Mahal & Drive to Jaipur",
                 detail: [
                     "You enter the Taj Mahal in the morning light for a full, guided tour of the mausoleum, gardens and mosque before the day heats up.",
                     "You then drive to Jaipur via the UNESCO ghost-capital of Fatehpur Sikri and the astonishing Chand Baori stepwell at Abhaneri, arriving in the Pink City by evening.",
@@ -504,7 +504,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Jaipur City tour: Amber Fort, City Palace, Hawa Mahal.",
-                title: "Jaipur — Amber Fort, City Palace & Hawa Mahal",
+                title: "Jaipur, Amber Fort, City Palace & Hawa Mahal",
                 detail: [
                     "A full day explores the Pink City: the honey-coloured Amber Fort above Maota Lake with its Sheesh Mahal mirror hall (jeep ascent included), and the City Palace, still home to Jaipur's royal family.",
                     "You photograph the five-storey Hawa Mahal facade and, if you wish, visit the Jantar Mantar observatory and browse the bazaars for textiles and gemstones.",
@@ -516,12 +516,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Jaipur Markets & High tea at Nahargarh Fort. Evening departure.",
-                title: "Jaipur — Markets, Nahargarh High Tea & Departure",
+                title: "Jaipur, Markets, Nahargarh High Tea & Departure",
                 detail: [
-                    "Your final morning is for the markets — block-print textiles, blue pottery, lac bangles and gemstones — followed by a high tea at Nahargarh Fort, perched on the Aravalli ridge with sweeping views over the Pink City.",
+                    "Your final morning is for the markets, block-print textiles, blue pottery, lac bangles and gemstones, followed by a high tea at Nahargarh Fort, perched on the Aravalli ridge with sweeping views over the Pink City.",
                     "By evening your chauffeur drives you back to Delhi in time for your onward flight.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jaipur → Delhi · ~5 hrs / 280 km",
             },
@@ -542,36 +542,36 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Is 8 days enough to combine Amritsar with the Golden Triangle?", a: "Yes — this itinerary gives two nights in Amritsar for the Golden Temple, Jallianwala Bagh and Wagah Border, then a full Golden Triangle across Agra and Jaipur. It's a well-paced week; if you'd like a slower version we can add a night in each city." },
-            { q: "What should I know about visiting the Golden Temple?", a: "It welcomes visitors of all faiths. You'll cover your head (scarves are provided), remove your shoes and wash your feet before entering. Dress modestly, and consider joining the langar — the free community kitchen is one of the temple's most moving experiences." },
-            { q: "Is the Wagah Border ceremony worth it?", a: "Absolutely — the daily flag-lowering drill between Indian and Pakistani guards is loud, theatrical and deeply patriotic, watched by roaring stadium crowds. We arrange seating and time your arrival to beat the queues; it does involve some walking and waiting." },
-            { q: "How do we travel to Amritsar?", a: "By the Shatabdi Express, a comfortable air-conditioned day-train from Delhi with meals served at your seat. For the return we use the train or a short flight depending on your dates — flying frees up more time in Delhi." },
-            { q: "Is this tour suitable for families and older travellers?", a: "Yes — the pace is comfortable and the private car allows rest stops and flexible timing. The Golden Temple, Jallianwala Bagh and monuments involve moderate walking; we adapt the Wagah visit and fort climbs for anyone who prefers to take it easy." },
-            { q: "Can we customise or extend the tour?", a: "Certainly — popular add-ons include Dharamshala and the Himalayan foothills beyond Amritsar, or Udaipur and Ranthambore after Jaipur. Tell us your dates and interests and we'll design a tailored plan and quote." },
+            { q: "Is 8 days enough to combine Amritsar with the Golden Triangle?", a: "Yes, this itinerary gives two nights in Amritsar for the Golden Temple, Jallianwala Bagh and Wagah Border, then a full Golden Triangle across Agra and Jaipur. It's a well-paced week; if you'd like a slower version we can add a night in each city." },
+            { q: "What should I know about visiting the Golden Temple?", a: "It welcomes visitors of all faiths. You'll cover your head (scarves are provided), remove your shoes and wash your feet before entering. Dress modestly, and consider joining the langar, the free community kitchen is one of the temple's most moving experiences." },
+            { q: "Is the Wagah Border ceremony worth it?", a: "Absolutely, the daily flag-lowering drill between Indian and Pakistani guards is loud, theatrical and deeply patriotic, watched by roaring stadium crowds. We arrange seating and time your arrival to beat the queues; it does involve some walking and waiting." },
+            { q: "How do we travel to Amritsar?", a: "By the Shatabdi Express, a comfortable air-conditioned day-train from Delhi with meals served at your seat. For the return we use the train or a short flight depending on your dates, flying frees up more time in Delhi." },
+            { q: "Is this tour suitable for families and older travellers?", a: "Yes, the pace is comfortable and the private car allows rest stops and flexible timing. The Golden Temple, Jallianwala Bagh and monuments involve moderate walking; we adapt the Wagah visit and fort climbs for anyone who prefers to take it easy." },
+            { q: "Can we customise or extend the tour?", a: "Certainly, popular add-ons include Dharamshala and the Himalayan foothills beyond Amritsar, or Udaipur and Ranthambore after Jaipur. Tell us your dates and interests and we'll design a tailored plan and quote." },
         ],
     },
     13: {
-        metaTitle: "8-Day Golden Triangle & Jodhpur Tour — Delhi, Agra, Jaipur | MyTripMyTravel",
-        metaDescription: "Private 8-day Golden Triangle & Jodhpur tour: Taj Mahal, Jaipur's forts, Mehrangarh & the Blue City. Chauffeured, guided, hotels — from ₹70,500pp. Enquire now.",
-        bestTime: "October–March is ideal, when Jodhpur's desert days are mild and the skies are clear across Rajasthan.",
-        answer: "GT + Jodhpur Sun City is a private, chauffeured 8-day tour pairing the Golden Triangle with Jodhpur, Rajasthan's blue-washed 'Sun City'. You see the Taj Mahal at sunrise, Agra Fort and Jaipur's Amber Fort, then travel to Jodhpur for the mighty Mehrangarh Fort, the Umaid Bhawan Palace and a Bishnoi village safari. Travel is private, with an internal flight home from Jodhpur and licensed guides throughout. It runs best October–March and starts from ₹70,500 per person.",
+        metaTitle: "8-Day Golden Triangle & Jodhpur Tour, Delhi, Agra, Jaipur | MyTripMyTravel",
+        metaDescription: "Private 8-day Golden Triangle & Jodhpur tour: Taj Mahal, Jaipur's forts, Mehrangarh & the Blue City. Chauffeured, guided, hotels, from ₹70,500pp. Enquire now.",
+        bestTime: "October to March is ideal, when Jodhpur's desert days are mild and the skies are clear across Rajasthan.",
+        answer: "GT + Jodhpur Sun City is a private, chauffeured 8-day tour pairing the Golden Triangle with Jodhpur, Rajasthan's blue-washed 'Sun City'. You see the Taj Mahal at sunrise, Agra Fort and Jaipur's Amber Fort, then travel to Jodhpur for the mighty Mehrangarh Fort, the Umaid Bhawan Palace and a Bishnoi village safari. Travel is private, with an internal flight home from Jodhpur and licensed guides throughout. It runs best October to March and starts from ₹70,500 per person.",
         quickFacts: [
             { label: "Duration", value: "8 days / 7 nights" },
             { label: "Route", value: "Delhi → Agra → Jaipur → Jodhpur → Delhi" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Balanced — icons plus the Blue City" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Balanced, icons plus the Blue City" },
             { label: "Hotels", value: "5★, heritage & palace options" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹70,500 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival. Evening cultural walk.",
-                title: "Delhi — Arrival & Evening Cultural Walk",
+                title: "Delhi, Arrival & Evening Cultural Walk",
                 detail: [
                     "Your chauffeur meets you at Delhi (DEL) and transfers you to your hotel to settle in after your flight.",
-                    "As the evening cools you take a gentle cultural walk — the lanes of Old Delhi around Chandni Chowk, or the gardens and tomb of Humayun — a low-key introduction that eases you into the trip.",
+                    "As the evening cools you take a gentle cultural walk, the lanes of Old Delhi around Chandni Chowk, or the gardens and tomb of Humayun, a low-key introduction that eases you into the trip.",
                 ],
                 overnight: "Delhi",
                 meals: "None (arrival day)",
@@ -580,7 +580,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi City tour & evening drive to Agra.",
-                title: "Delhi — City Tour & Drive to Agra",
+                title: "Delhi, City Tour & Drive to Agra",
                 detail: [
                     "A day of Delhi's highlights: the towering 12th-century Qutub Minar, the garden-tomb of Humayun that inspired the Taj Mahal, and the ceremonial sweep of India Gate and New Delhi's colonial avenues.",
                     "In the evening your chauffeur drives you down the Yamuna Expressway to Agra, positioning you for next morning's sunrise at the Taj.",
@@ -592,9 +592,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Sunrise Taj Mahal. Agra Fort. Evening train to Jaipur.",
-                title: "Agra — Taj Sunrise, Agra Fort & Train to Jaipur",
+                title: "Agra, Taj Sunrise, Agra Fort & Train to Jaipur",
                 detail: [
-                    "You enter the Taj Mahal at first light with your guide, when the marble shifts from pink to pearl-white and the queues are shortest — the single best hour to experience it.",
+                    "You enter the Taj Mahal at first light with your guide, when the marble shifts from pink to pearl-white and the queues are shortest, the single best hour to experience it.",
                     "After breakfast you tour the red-sandstone Agra Fort, where Shah Jahan spent his final years gazing at the Taj across the Yamuna.",
                     "In the evening you board a train to Jaipur, arriving in the Pink City by night.",
                 ],
@@ -605,7 +605,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Jaipur Pink City tour: Amer Fort & Hawa Mahal.",
-                title: "Jaipur — Amber Fort & Hawa Mahal",
+                title: "Jaipur, Amber Fort & Hawa Mahal",
                 detail: [
                     "The morning belongs to the honey-coloured Amber Fort above Maota Lake, with its Sheesh Mahal mirror hall and sweeping ramparts (jeep ascent included).",
                     "Back in the old city you photograph the five-storey Hawa Mahal facade, visit the City Palace and, if you wish, the Jantar Mantar observatory, with time for the bazaars.",
@@ -617,10 +617,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Jaipur to Jodhpur by road. Evening visit to Umaid Bhawan Palace.",
-                title: "Jodhpur — Drive West & Umaid Bhawan Palace",
+                title: "Jodhpur, Drive West & Umaid Bhawan Palace",
                 detail: [
                     "You drive west across Rajasthan to Jodhpur, the 'Sun City', edged by the Thar desert.",
-                    "In the evening you visit the Umaid Bhawan Palace, one of the world's largest private residences — part royal home, part heritage hotel, part museum — its golden sandstone glowing at dusk.",
+                    "In the evening you visit the Umaid Bhawan Palace, one of the world's largest private residences, part royal home, part heritage hotel, part museum, its golden sandstone glowing at dusk.",
                 ],
                 overnight: "Jodhpur",
                 meals: "Breakfast",
@@ -629,7 +629,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Mehrangarh Fort & Jaswant Thada. Blue City walk.",
-                title: "Jodhpur — Mehrangarh Fort & the Blue City",
+                title: "Jodhpur, Mehrangarh Fort & the Blue City",
                 detail: [
                     "You spend the morning at the mighty Mehrangarh Fort, rising 120 metres of sheer cliff above the old town, its palaces, courtyards and cannon-scarred ramparts among the most dramatic in India.",
                     "Nearby stands the Jaswant Thada, a serene white-marble royal cenotaph, before you descend for a walk through the tangle of indigo-washed houses that give Jodhpur its 'Blue City' name.",
@@ -641,9 +641,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Village Safari & Bishnoi community visit. Sunset desert tea.",
-                title: "Jodhpur — Bishnoi Village Safari & Desert Sunset",
+                title: "Jodhpur, Bishnoi Village Safari & Desert Sunset",
                 detail: [
-                    "You head into the countryside for a village safari among the Bishnoi, India's original conservationists, whose faith centres on protecting trees and wildlife — a genuine encounter with rural Rajasthan, its potters, weavers and blackbuck.",
+                    "You head into the countryside for a village safari among the Bishnoi, India's original conservationists, whose faith centres on protecting trees and wildlife, a genuine encounter with rural Rajasthan, its potters, weavers and blackbuck.",
                     "As the light fades you settle in for tea in the desert, watching the sun sink over the scrub and dunes.",
                 ],
                 overnight: "Jodhpur",
@@ -653,12 +653,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Jodhpur to Delhi Flight. Afternoon departure.",
-                title: "Jodhpur — Flight to Delhi & Departure",
+                title: "Jodhpur, Flight to Delhi & Departure",
                 detail: [
                     "Your final morning is at leisure for a last stroll or some shopping before checkout.",
                     "Your chauffeur transfers you to Jodhpur airport for the flight to Delhi and your onward international connection.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jodhpur → Delhi · ~1.5 hr flight",
             },
@@ -679,36 +679,36 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Is 8 days enough for the Golden Triangle plus Jodhpur?", a: "Yes — you get the full Golden Triangle across Agra and Jaipur, then three nights in Jodhpur for Mehrangarh Fort, the Blue City and a Bishnoi village safari. The flight home from Jodhpur saves a long backtrack and keeps the pace comfortable." },
-            { q: "Why is Jodhpur called the Blue City?", a: "The old town below Mehrangarh Fort is a maze of indigo-washed houses, traditionally the colour of Brahmin homes and prized for keeping interiors cool. Seen from the fort ramparts the effect is extraordinary — a sea of blue against the desert." },
+            { q: "Is 8 days enough for the Golden Triangle plus Jodhpur?", a: "Yes, you get the full Golden Triangle across Agra and Jaipur, then three nights in Jodhpur for Mehrangarh Fort, the Blue City and a Bishnoi village safari. The flight home from Jodhpur saves a long backtrack and keeps the pace comfortable." },
+            { q: "Why is Jodhpur called the Blue City?", a: "The old town below Mehrangarh Fort is a maze of indigo-washed houses, traditionally the colour of Brahmin homes and prized for keeping interiors cool. Seen from the fort ramparts the effect is extraordinary, a sea of blue against the desert." },
             { q: "Can we stay at the Umaid Bhawan Palace?", a: "The base plan includes a visit; an overnight in the Taj-run palace wing is a spectacular upgrade we can arrange subject to availability. We also offer characterful heritage havelis in the old city with fort views at a range of price points." },
             { q: "What is the Bishnoi village safari like?", a: "It's a jeep excursion into the villages around Jodhpur to meet the Bishnoi, a community devoted to protecting nature, alongside local potters and weavers. It's a respectful, genuine cultural encounter rather than a staged show, and often a trip highlight." },
-            { q: "When is the best time to visit Jodhpur?", a: "October to March, when desert days are mild and clear. April–June is very hot in the Thar; the monsoon (July–September) is cooler and green but can bring occasional showers. Mehrangarh and the Blue City photograph beautifully in the low winter light." },
-            { q: "Can we extend to Jaisalmer or Udaipur?", a: "Easily — Jodhpur is the gateway west to Jaisalmer's golden dunes and south to Udaipur's lakes, and we can add the Ranakpur temples en route. Share your dates and we'll design the extension and quote." },
+            { q: "When is the best time to visit Jodhpur?", a: "October to March, when desert days are mild and clear. April to June is very hot in the Thar; the monsoon (July to September) is cooler and green but can bring occasional showers. Mehrangarh and the Blue City photograph beautifully in the low winter light." },
+            { q: "Can we extend to Jaisalmer or Udaipur?", a: "Easily, Jodhpur is the gateway west to Jaisalmer's golden dunes and south to Udaipur's lakes, and we can add the Ranakpur temples en route. Share your dates and we'll design the extension and quote." },
         ],
     },
 
     14: {
         metaTitle: "8-Day Golden Triangle & Khajuraho Temples Tour | MyTripMyTravel",
-        metaDescription: "Private 8-day Golden Triangle & Khajuraho tour — UNESCO temples, Taj Mahal, Agra Fort & Jaipur's forts, with Delhi–Khajuraho flights. From ₹62,200pp. Enquire now.",
-        bestTime: "October–March for clear, mild days across all four cities; the Khajuraho Dance Festival in late February adds a cultural highlight.",
-        answer: "The 8-Day GT + Khajuraho Art tour pairs India's Golden Triangle with the UNESCO-listed temples of Khajuraho, celebrated for their intricate 10th-century Chandela sculpture. You fly Delhi–Khajuraho to explore the Western and Eastern temple groups, then travel by private car through Agra's Taj Mahal and Agra Fort and on to Jaipur's forts and bazaars via the Abhaneri stepwell. Guided throughout, it runs best October–March and starts from ₹62,200 per person.",
+        metaDescription: "Private 8-day Golden Triangle & Khajuraho tour, UNESCO temples, Taj Mahal, Agra Fort & Jaipur's forts, with Delhi to Khajuraho flights. From ₹62,200pp. Enquire now.",
+        bestTime: "October to March for clear, mild days across all four cities; the Khajuraho Dance Festival in late February adds a cultural highlight.",
+        answer: "The 8-Day GT + Khajuraho Art tour pairs India's Golden Triangle with the UNESCO-listed temples of Khajuraho, celebrated for their intricate 10th-century Chandela sculpture. You fly Delhi to Khajuraho to explore the Western and Eastern temple groups, then travel by private car through Agra's Taj Mahal and Agra Fort and on to Jaipur's forts and bazaars via the Abhaneri stepwell. Guided throughout, it runs best October to March and starts from ₹62,200 per person.",
         quickFacts: [
             { label: "Duration", value: "8 days / 7 nights" },
             { label: "Route", value: "Delhi → Khajuraho → Agra → Jaipur → Delhi" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Moderate — one internal flight, comfortable drives" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Moderate, one internal flight, comfortable drives" },
             { label: "Hotels", value: "4★ / 5★ & heritage options" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹62,200 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival & half day sightseeing.",
-                title: "Delhi — Arrival & Half-Day Sightseeing",
+                title: "Delhi, Arrival & Half-Day Sightseeing",
                 detail: [
-                    "Your chauffeur meets you at Delhi (DEL) arrivals and transfers you to your hotel. Depending on your landing time, the afternoon covers a gentle first taste of the capital — the towering Qutub Minar, the garden-set Humayun's Tomb, or a drive past India Gate along the ceremonial Rajpath.",
+                    "Your chauffeur meets you at Delhi (DEL) arrivals and transfers you to your hotel. Depending on your landing time, the afternoon covers a gentle first taste of the capital, the towering Qutub Minar, the garden-set Humayun's Tomb, or a drive past India Gate along the ceremonial Rajpath.",
                     "It is a deliberately light start to shake off jet lag before the temples and monuments of the days ahead.",
                 ],
                 overnight: "Delhi",
@@ -718,9 +718,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi to Khajuraho by flight. Western group of temples.",
-                title: "Khajuraho — Fly In & Western Group of Temples",
+                title: "Khajuraho, Fly In & Western Group of Temples",
                 detail: [
-                    "A short morning flight brings you to Khajuraho, the quiet Bundelkhand town whose temples are among India's finest medieval art. Your guide leads you through the Western Group — the crowning Kandariya Mahadeva and the Lakshmana temple — whose walls carry thousands of finely carved figures of gods, musicians, dancers and daily life.",
+                    "A short morning flight brings you to Khajuraho, the quiet Bundelkhand town whose temples are among India's finest medieval art. Your guide leads you through the Western Group, the crowning Kandariya Mahadeva and the Lakshmana temple, whose walls carry thousands of finely carved figures of gods, musicians, dancers and daily life.",
                     "Built by the Chandela dynasty between AD 950 and 1050, these are the best-preserved of the surviving temples and the reason the site holds UNESCO World Heritage status.",
                 ],
                 overnight: "Khajuraho",
@@ -730,9 +730,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Eastern group of temples. Flight back to Delhi. Overnight in Delhi.",
-                title: "Khajuraho — Eastern Group & Return to Delhi",
+                title: "Khajuraho, Eastern Group & Return to Delhi",
                 detail: [
-                    "The morning is given to the Eastern Group, a cluster of elegant Jain temples — Parsvanath, Adinath and the Ghantai — set among the village lanes and quieter than the Western enclosure.",
+                    "The morning is given to the Eastern Group, a cluster of elegant Jain temples, Parsvanath, Adinath and the Ghantai, set among the village lanes and quieter than the Western enclosure.",
                     "After lunch you fly back to Delhi, where your chauffeur is waiting for the evening transfer to your hotel. An easy night positions you for the drive to Agra the next morning.",
                 ],
                 overnight: "Delhi",
@@ -742,11 +742,11 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Delhi to Agra. Taj Mahal & evening Mughlai dinner.",
-                title: "Agra — Drive to Agra, Taj Mahal & Mughlai Dinner",
+                title: "Agra, Drive to Agra, Taj Mahal & Mughlai Dinner",
                 detail: [
                     "A morning run down the Yamuna Expressway brings you to Agra by early afternoon and your hotel check-in.",
                     "You visit the Taj Mahal in the softer light of late afternoon, when the marble warms to amber and the day-trippers thin out; your guide unpacks Shah Jahan's love story and the flawless Mughal symmetry.",
-                    "The evening rounds off with a Mughlai dinner — rich Awadhi-Mughal kebabs and slow-cooked curries that trace their roots to the imperial kitchens.",
+                    "The evening rounds off with a Mughlai dinner, rich Awadhi-Mughal kebabs and slow-cooked curries that trace their roots to the imperial kitchens.",
                 ],
                 overnight: "Agra",
                 meals: "Breakfast",
@@ -758,7 +758,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 title: "Agra Fort, Abhaneri Stepwell & Jaipur",
                 detail: [
                     "The morning starts at the red-sandstone Agra Fort, the Mughal seat of power where Shah Jahan spent his final years gazing at the Taj across the river.",
-                    "You then drive to Jaipur, breaking the journey at Abhaneri to see the Chand Baori — one of India's deepest and most geometric stepwells, its 3,500 symmetrical steps plunging thirteen storeys underground.",
+                    "You then drive to Jaipur, breaking the journey at Abhaneri to see the Chand Baori, one of India's deepest and most geometric stepwells, its 3,500 symmetrical steps plunging thirteen storeys underground.",
                     "You reach the Pink City by evening for check-in and a relaxed first night.",
                 ],
                 overnight: "Jaipur",
@@ -768,10 +768,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Jaipur Heritage tour & elephant village visit.",
-                title: "Jaipur — Amber Fort & Elephant Village",
+                title: "Jaipur, Amber Fort & Elephant Village",
                 detail: [
                     "The morning belongs to the honey-coloured Amber Fort above Maota Lake, where the Sheesh Mahal mirror hall is the highlight (jeep ascent included).",
-                    "Afterwards you visit an elephant village on the city's edge — a chance to meet, feed and learn about the resident elephants and their mahouts in an unhurried, ethical setting away from the fort crowds.",
+                    "Afterwards you visit an elephant village on the city's edge, a chance to meet, feed and learn about the resident elephants and their mahouts in an unhurried, ethical setting away from the fort crowds.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -780,10 +780,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Jantar Mantar & Hawa Mahal. Afternoon leisure/shopping.",
-                title: "Jaipur — Jantar Mantar, Hawa Mahal & Bazaars",
+                title: "Jaipur, Jantar Mantar, Hawa Mahal & Bazaars",
                 detail: [
                     "You begin at Jantar Mantar, the 18th-century royal observatory whose giant masonry instruments still track time and the stars, then photograph the five-storey pink facade of the Hawa Mahal, the 'Palace of Winds'.",
-                    "The afternoon is yours for the bazaars of the old city — block-print textiles, blue pottery, silver and gemstones — or simply a slower pace before your final day.",
+                    "The afternoon is yours for the bazaars of the old city, block-print textiles, blue pottery, silver and gemstones, or simply a slower pace before your final day.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -792,19 +792,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Jaipur to Delhi. Final departure.",
-                title: "Jaipur — Return to Delhi & Departure",
+                title: "Jaipur, Return to Delhi & Departure",
                 detail: [
                     "After breakfast your chauffeur drives you back to Delhi along the highway, timed to your onward flight.",
                     "Depending on your departure, we can add a final Delhi stop or a lunch break en route; your driver delivers you to the airport with time to spare.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jaipur → Delhi · ~5 hrs / 280 km",
             },
         ],
         inclusions: [
             "Private air-conditioned vehicle with professional chauffeur for all road legs",
-            "Return Delhi–Khajuraho–Delhi economy flights",
+            "Return Delhi to Khajuraho to Delhi economy flights",
             "7 nights' hotel accommodation with daily breakfast",
             "Licensed local guides in Delhi, Khajuraho, Agra and Jaipur",
             "All fuel, tolls, parking, driver allowance and inter-city transfers",
@@ -818,36 +818,36 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Why does this tour include flights to Khajuraho?", a: "Khajuraho sits deep in central India, far off the Golden Triangle road route, so a flight is by far the most sensible way to reach it. We include return Delhi–Khajuraho economy flights so you gain two temple-focused days without losing a full day to driving each way." },
-            { q: "What makes the Khajuraho temples so famous?", a: "They are among the finest surviving examples of medieval Indian temple art, built by the Chandela dynasty around a thousand years ago. Of an original 85 temples, about 25 remain, covered in exquisitely detailed sculpture — which is why they hold UNESCO World Heritage status." },
+            { q: "Why does this tour include flights to Khajuraho?", a: "Khajuraho sits deep in central India, far off the Golden Triangle road route, so a flight is by far the most sensible way to reach it. We include return Delhi to Khajuraho economy flights so you gain two temple-focused days without losing a full day to driving each way." },
+            { q: "What makes the Khajuraho temples so famous?", a: "They are among the finest surviving examples of medieval Indian temple art, built by the Chandela dynasty around a thousand years ago. Of an original 85 temples, about 25 remain, covered in exquisitely detailed sculpture, which is why they hold UNESCO World Heritage status." },
             { q: "Are the temples suitable for families and older travellers?", a: "Yes. The temple grounds are open and relatively flat, with paved paths between the main structures, and your guide sets the pace. Some carvings are frankly sensual in nature, which most families navigate comfortably; do let us know if you would prefer the tour framed accordingly." },
-            { q: "How much time do we actually spend in Khajuraho?", a: "Two nights and roughly a day and a half — enough to see both the Western and Eastern temple groups unhurried, with time for the small museum. It is a calm, uncrowded counterpoint to the busier Golden Triangle cities." },
-            { q: "What is the best time of year for this itinerary?", a: "October to March offers the clearest skies and mildest temperatures everywhere on the route. If you can time it, the Khajuraho Dance Festival in late February stages classical Indian dance against the floodlit temples — a rare spectacle worth building your dates around." },
-            { q: "Can we upgrade hotels or extend the trip?", a: "Absolutely. The base uses hand-picked 4-star hotels; 5-star and heritage-palace upgrades are available in Agra and Jaipur. Popular extensions include Varanasi (an easy pairing with the spiritual theme) or a Ranthambore tiger safari — send your dates and we'll quote." },
+            { q: "How much time do we actually spend in Khajuraho?", a: "Two nights and roughly a day and a half, enough to see both the Western and Eastern temple groups unhurried, with time for the small museum. It is a calm, uncrowded counterpoint to the busier Golden Triangle cities." },
+            { q: "What is the best time of year for this itinerary?", a: "October to March offers the clearest skies and mildest temperatures everywhere on the route. If you can time it, the Khajuraho Dance Festival in late February stages classical Indian dance against the floodlit temples, a rare spectacle worth building your dates around." },
+            { q: "Can we upgrade hotels or extend the trip?", a: "Absolutely. The base uses hand-picked 4-star hotels; 5-star and heritage-palace upgrades are available in Agra and Jaipur. Popular extensions include Varanasi (an easy pairing with the spiritual theme) or a Ranthambore tiger safari, send your dates and we'll quote." },
         ],
     },
     15: {
-        metaTitle: "7-Day Golden Triangle & Pushkar Tour — Delhi, Agra, Jaipur | MyTripMyTravel",
-        metaDescription: "Private 7-day Golden Triangle & Pushkar tour — Taj Mahal, Agra Fort, Jaipur's forts and the sacred Brahma temple & lake. From ₹49,700pp. Enquire now.",
-        bestTime: "October–March for mild weather; visit during the Pushkar Camel Fair (usually November) for one of India's great desert spectacles.",
-        answer: "The 7-Day GT + Pushkar Culture tour adds the sacred town of Pushkar to the classic Golden Triangle. You see the Taj Mahal at sunset and sunrise, Agra Fort and Jaipur's forts and palaces, then drive to Pushkar for its rare Brahma temple, holy lake and a desert camel safari. Travel is by private air-conditioned car with licensed local guides throughout. It runs best October–March and starts from ₹49,700 per person.",
+        metaTitle: "7-Day Golden Triangle & Pushkar Tour, Delhi, Agra, Jaipur | MyTripMyTravel",
+        metaDescription: "Private 7-day Golden Triangle & Pushkar tour, Taj Mahal, Agra Fort, Jaipur's forts and the sacred Brahma temple & lake. From ₹49,700pp. Enquire now.",
+        bestTime: "October to March for mild weather; visit during the Pushkar Camel Fair (usually November) for one of India's great desert spectacles.",
+        answer: "The 7-Day GT + Pushkar Culture tour adds the sacred town of Pushkar to the classic Golden Triangle. You see the Taj Mahal at sunset and sunrise, Agra Fort and Jaipur's forts and palaces, then drive to Pushkar for its rare Brahma temple, holy lake and a desert camel safari. Travel is by private air-conditioned car with licensed local guides throughout. It runs best October to March and starts from ₹49,700 per person.",
         quickFacts: [
             { label: "Duration", value: "7 days / 6 nights" },
             { label: "Route", value: "Delhi → Agra → Jaipur → Pushkar → Jaipur → Delhi" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Relaxed — comfortable drives, no flights" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Relaxed, comfortable drives, no flights" },
             { label: "Hotels", value: "4★ / 5★ & heritage options" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹49,700 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival. Visit Raj Ghat & India Gate.",
-                title: "Delhi — Arrival, Raj Ghat & India Gate",
+                title: "Delhi, Arrival, Raj Ghat & India Gate",
                 detail: [
                     "Your chauffeur meets you at Delhi (DEL) arrivals and transfers you to your hotel. In the afternoon you visit Raj Ghat, the tranquil riverside memorial marking the spot where Mahatma Gandhi was cremated in 1948.",
-                    "You then drive to India Gate, the 42-metre war memorial anchoring New Delhi's ceremonial axis — a gentle, low-energy introduction to the capital before the road trip begins.",
+                    "You then drive to India Gate, the 42-metre war memorial anchoring New Delhi's ceremonial axis, a gentle, low-energy introduction to the capital before the road trip begins.",
                 ],
                 overnight: "Delhi",
                 meals: "None (arrival day)",
@@ -856,10 +856,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi to Agra. Sunset Taj Mahal visit.",
-                title: "Agra — Drive to Agra & Taj Mahal at Sunset",
+                title: "Agra, Drive to Agra & Taj Mahal at Sunset",
                 detail: [
                     "A morning run down the Yamuna Expressway brings you to Agra by lunchtime and your hotel check-in.",
-                    "In the late afternoon you visit the Taj Mahal at sunset, when the white marble warms to amber and gold and the crowds thin — a softer, quieter first look at Shah Jahan's monument to love, with your guide tracing its history and symmetry.",
+                    "In the late afternoon you visit the Taj Mahal at sunset, when the white marble warms to amber and gold and the crowds thin, a softer, quieter first look at Shah Jahan's monument to love, with your guide tracing its history and symmetry.",
                 ],
                 overnight: "Agra",
                 meals: "Breakfast",
@@ -868,9 +868,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Sunrise at Taj Mahal. Agra Fort. Drive to Jaipur.",
-                title: "Agra — Taj Mahal Sunrise, Agra Fort & Jaipur",
+                title: "Agra, Taj Mahal Sunrise, Agra Fort & Jaipur",
                 detail: [
-                    "You return to the Taj Mahal at first light, when the marble shifts from pink to pearl-white and the complex is at its calmest — the best hour to see and photograph it a second time.",
+                    "You return to the Taj Mahal at first light, when the marble shifts from pink to pearl-white and the complex is at its calmest, the best hour to see and photograph it a second time.",
                     "After breakfast you visit the red-sandstone Agra Fort, where Shah Jahan spent his last years imprisoned by his son with a view of the Taj across the Yamuna.",
                     "You then drive to Jaipur, reaching the Pink City by evening.",
                 ],
@@ -881,9 +881,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Jaipur City Tour. Evening drive to Pushkar.",
-                title: "Jaipur — City Tour & Drive to Pushkar",
+                title: "Jaipur, City Tour & Drive to Pushkar",
                 detail: [
-                    "The morning covers the highlights of the Pink City — the hilltop Amber Fort with its Sheesh Mahal, the City Palace, and the photogenic facade of the Hawa Mahal.",
+                    "The morning covers the highlights of the Pink City, the hilltop Amber Fort with its Sheesh Mahal, the City Palace, and the photogenic facade of the Hawa Mahal.",
                     "In the late afternoon you drive to Pushkar, one of Hinduism's oldest and holiest towns, set against the Aravalli hills at the edge of the Thar Desert.",
                     "You arrive in the evening for check-in and a first, quiet sense of the town's temple-lined lanes.",
                 ],
@@ -894,10 +894,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Brahma Temple visit & Pushkar Lake session. Evening camel safari.",
-                title: "Pushkar — Brahma Temple, Sacred Lake & Camel Safari",
+                title: "Pushkar, Brahma Temple, Sacred Lake & Camel Safari",
                 detail: [
                     "You visit the Jagatpita Brahma Mandir, one of the very few temples in the world dedicated to Brahma the creator, and walk down to the ghats of the sacred Pushkar Lake, ringed by 52 bathing steps and pilgrims performing rituals.",
-                    "As the heat eases, you head into the surrounding desert scrub for a sunset camel safari over the dunes — an unhurried, atmospheric close to the day.",
+                    "As the heat eases, you head into the surrounding desert scrub for a sunset camel safari over the dunes, an unhurried, atmospheric close to the day.",
                 ],
                 overnight: "Pushkar",
                 meals: "Breakfast",
@@ -909,7 +909,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 title: "Pushkar to Jaipur & Pink City Bazaars",
                 detail: [
                     "After a relaxed morning you drive back to Jaipur, arriving around midday.",
-                    "The afternoon is yours for the city's famous bazaars — Johari and Bapu markets for block-print textiles, blue pottery, jootis, silver and Jaipur's celebrated gemstones — with your guide on hand to help you navigate and bargain.",
+                    "The afternoon is yours for the city's famous bazaars, Johari and Bapu markets for block-print textiles, blue pottery, jootis, silver and Jaipur's celebrated gemstones, with your guide on hand to help you navigate and bargain.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -918,12 +918,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Jaipur to Delhi. Final departure.",
-                title: "Jaipur — Return to Delhi & Departure",
+                title: "Jaipur, Return to Delhi & Departure",
                 detail: [
                     "After breakfast your chauffeur drives you back to Delhi along the highway, timed to your onward flight.",
                     "We can add a lunch stop or a final Delhi sight en route depending on your departure time, before your driver delivers you to the airport.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jaipur → Delhi · ~5 hrs / 280 km",
             },
@@ -945,35 +945,35 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
         ],
         faqs: [
             { q: "What makes Pushkar worth adding to the Golden Triangle?", a: "Pushkar is one of India's oldest pilgrimage towns and home to the rare Brahma temple, its sacred lake, and a laid-back bohemian atmosphere quite unlike the big monument cities. It gives the trip a spiritual, small-town rhythm that balances the grand forts and palaces." },
-            { q: "Should we plan around the Pushkar Camel Fair?", a: "If your dates are flexible, yes — the fair (usually early-to-mid November) fills the desert with thousands of camels, traders, folk performers and pilgrims. It is spectacular but very busy, so hotels book out early; we'd secure accommodation well in advance and quote accordingly." },
+            { q: "Should we plan around the Pushkar Camel Fair?", a: "If your dates are flexible, yes, the fair (usually early-to-mid November) fills the desert with thousands of camels, traders, folk performers and pilgrims. It is spectacular but very busy, so hotels book out early; we'd secure accommodation well in advance and quote accordingly." },
             { q: "Do we see the Taj Mahal at both sunrise and sunset?", a: "Yes. This itinerary visits at sunset on Day 2 and returns at sunrise on Day 3, so you experience both moods of the marble. The Taj is closed on Fridays, and we re-sequence the Agra days so your visit is never affected." },
-            { q: "Is the camel safari suitable for everyone?", a: "It is a gentle sunset ride over easy desert terrain rather than a strenuous trek, and staff help you mount and dismount. Travellers with back or hip concerns can opt instead for a jeep sundowner in the dunes — just let us know." },
-            { q: "How much driving is involved on this tour?", a: "This is an all-road itinerary with no flights, and the drives are comfortable — the longest single leg is the Jaipur–Delhi return at around five hours. The Jaipur–Pushkar hops are only about three hours each, on good highways with rest stops." },
-            { q: "Can we upgrade hotels or extend the itinerary?", a: "Certainly. The base uses hand-picked 4-star hotels; heritage-haveli and 5-star upgrades are available in Jaipur and Pushkar. The route also extends naturally into Udaipur, Jodhpur or Ranthambore — share your dates and preferences for a tailored quote." },
+            { q: "Is the camel safari suitable for everyone?", a: "It is a gentle sunset ride over easy desert terrain rather than a strenuous trek, and staff help you mount and dismount. Travellers with back or hip concerns can opt instead for a jeep sundowner in the dunes, just let us know." },
+            { q: "How much driving is involved on this tour?", a: "This is an all-road itinerary with no flights, and the drives are comfortable, the longest single leg is the Jaipur to Delhi return at around five hours. The Jaipur to Pushkar hops are only about three hours each, on good highways with rest stops." },
+            { q: "Can we upgrade hotels or extend the itinerary?", a: "Certainly. The base uses hand-picked 4-star hotels; heritage-haveli and 5-star upgrades are available in Jaipur and Pushkar. The route also extends naturally into Udaipur, Jodhpur or Ranthambore, share your dates and preferences for a tailored quote." },
         ],
     },
     10: {
         metaTitle: "8-Day Golden Triangle & Ranthambore Tiger Safari Tour | MyTripMyTravel",
-        metaDescription: "Private 8-day Golden Triangle & Ranthambore tour — Taj Mahal, Agra Fort, Jaipur's forts plus three tiger safaris. From ₹70,500pp. Enquire now.",
-        bestTime: "October–March for pleasant weather across the circuit; April–June is hot but delivers the year's best tiger sightings (park closed July–September).",
-        answer: "Wildlife & Wonders combines India's Golden Triangle with a tiger safari at Ranthambore National Park. Over eight private, chauffeured days you see the Taj Mahal, Agra Fort and Jaipur's forts and palaces, and spend two days on jungle safaris hunting for wild Bengal tigers among the park's ruined forts and lakes. Travel is by private air-conditioned car with licensed guides; safaris are in shared park jeeps or canters. It runs best October–March and starts from ₹70,500 per person.",
+        metaDescription: "Private 8-day Golden Triangle & Ranthambore tour, Taj Mahal, Agra Fort, Jaipur's forts plus three tiger safaris. From ₹70,500pp. Enquire now.",
+        bestTime: "October to March for pleasant weather across the circuit; April to June is hot but delivers the year's best tiger sightings (park closed July to September).",
+        answer: "Wildlife & Wonders combines India's Golden Triangle with a tiger safari at Ranthambore National Park. Over eight private, chauffeured days you see the Taj Mahal, Agra Fort and Jaipur's forts and palaces, and spend two days on jungle safaris hunting for wild Bengal tigers among the park's ruined forts and lakes. Travel is by private air-conditioned car with licensed guides; safaris are in shared park jeeps or canters. It runs best October to March and starts from ₹70,500 per person.",
         quickFacts: [
             { label: "Duration", value: "8 days / 7 nights" },
             { label: "Route", value: "Delhi → Agra → Ranthambore → Jaipur → Delhi" },
-            { label: "Best time", value: "October–March (Apr–Jun for sightings)" },
-            { label: "Pace", value: "Moderate — early safari starts, easy drives" },
+            { label: "Best time", value: "October to March (Apr to Jun for sightings)" },
+            { label: "Pace", value: "Moderate, early safari starts, easy drives" },
             { label: "Hotels", value: "4★ / 5★, jungle lodge at Ranthambore" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹70,500 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival. Full day heritage exploration.",
-                title: "Delhi — Arrival & Heritage Day",
+                title: "Delhi, Arrival & Heritage Day",
                 detail: [
                     "Your chauffeur meets you at Delhi (DEL) arrivals and, once you've settled in, you begin a full day across the capital's layers of history.",
-                    "Old Delhi brings the Mughal-era Red Fort, the vast Jama Masjid and a cycle-rickshaw ride through Chandni Chowk; New Delhi adds India Gate, Humayun's Tomb and the towering Qutub Minar — the architectural prelude to the Taj you'll see tomorrow.",
+                    "Old Delhi brings the Mughal-era Red Fort, the vast Jama Masjid and a cycle-rickshaw ride through Chandni Chowk; New Delhi adds India Gate, Humayun's Tomb and the towering Qutub Minar, the architectural prelude to the Taj you'll see tomorrow.",
                 ],
                 overnight: "Delhi",
                 meals: "None (arrival day)",
@@ -982,7 +982,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi to Agra. Taj Mahal in the afternoon.",
-                title: "Agra — Drive to Agra & Taj Mahal",
+                title: "Agra, Drive to Agra & Taj Mahal",
                 detail: [
                     "A morning run down the Yamuna Expressway brings you to Agra by lunchtime and your hotel check-in.",
                     "In the afternoon you visit the Taj Mahal, the white-marble mausoleum Shah Jahan raised for his wife Mumtaz Mahal, as the light softens and the day-trippers thin; your guide unpacks its history and its famously perfect symmetry.",
@@ -996,7 +996,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 plan: "Sunrise Agra Fort. Drive to Ranthambore Safari camp.",
                 title: "Agra Fort & Drive to Ranthambore",
                 detail: [
-                    "You start early at the red-sandstone Agra Fort, the walled Mughal city where Shah Jahan spent his final years gazing at the Taj across the river — best seen before the day heats up.",
+                    "You start early at the red-sandstone Agra Fort, the walled Mughal city where Shah Jahan spent his final years gazing at the Taj across the river, best seen before the day heats up.",
                     "You then drive south to Ranthambore, checking into your jungle lodge near Sawai Madhopur in the afternoon with time to settle before the next morning's safari.",
                 ],
                 overnight: "Ranthambore",
@@ -1006,7 +1006,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Early morning Jungle Safari in search of Tigers. Afternoon jungle trek.",
-                title: "Ranthambore — Morning Tiger Safari & Jungle Trek",
+                title: "Ranthambore, Morning Tiger Safari & Jungle Trek",
                 detail: [
                     "Before dawn you enter Ranthambore National Park by open safari vehicle in search of its wild Bengal tigers, moving through a dramatic landscape of dry forest, lakes and the crumbling 10th-century Ranthambore Fort.",
                     "Alongside tigers the park shelters leopard, sloth bear, sambar deer, marsh crocodile and hundreds of bird species. The afternoon offers a guided nature walk or a second exploration of the buffer zone.",
@@ -1018,9 +1018,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Sunrise Jungle Safari. Morning drive to Jaipur.",
-                title: "Ranthambore — Sunrise Safari & Drive to Jaipur",
+                title: "Ranthambore, Sunrise Safari & Drive to Jaipur",
                 detail: [
-                    "A final sunrise safari gives you another chance at a tiger sighting in the soft early light — often the most active and rewarding part of the day in the park.",
+                    "A final sunrise safari gives you another chance at a tiger sighting in the soft early light, often the most active and rewarding part of the day in the park.",
                     "After breakfast you drive north to Jaipur, reaching the Pink City by early afternoon for check-in and a relaxed evening.",
                 ],
                 overnight: "Jaipur",
@@ -1030,10 +1030,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Jaipur Heritage tour. Amer Fort & Jaigarh Fort.",
-                title: "Jaipur — Amber Fort & Jaigarh Fort",
+                title: "Jaipur, Amber Fort & Jaigarh Fort",
                 detail: [
                     "The morning belongs to the honey-coloured Amber Fort above Maota Lake, with its Sheesh Mahal mirror hall and grand courtyards (jeep ascent included).",
-                    "Above it sits Jaigarh Fort, connected by ramparts and home to Jaivana — once the world's largest wheeled cannon — with sweeping views over the Aravalli hills and the city below.",
+                    "Above it sits Jaigarh Fort, connected by ramparts and home to Jaivana, once the world's largest wheeled cannon, with sweeping views over the Aravalli hills and the city below.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -1042,10 +1042,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "City Palace & Hawa Mahal. Afternoon Jaipur artisan walk.",
-                title: "Jaipur — City Palace, Hawa Mahal & Artisans",
+                title: "Jaipur, City Palace, Hawa Mahal & Artisans",
                 detail: [
                     "You explore the City Palace, still the residence of Jaipur's royal family, and photograph the five-storey pink facade of the Hawa Mahal, the 'Palace of Winds'.",
-                    "The afternoon is an artisan walk through the old city — block-printers, blue-pottery workshops and gem-cutters — where Jaipur's centuries-old crafts are still made by hand.",
+                    "The afternoon is an artisan walk through the old city, block-printers, blue-pottery workshops and gem-cutters, where Jaipur's centuries-old crafts are still made by hand.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -1054,12 +1054,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Jaipur to Delhi. Final departure.",
-                title: "Jaipur — Return to Delhi & Departure",
+                title: "Jaipur, Return to Delhi & Departure",
                 detail: [
                     "After breakfast your chauffeur drives you back to Delhi along the highway, timed to your onward flight.",
                     "We can arrange a lunch stop or a final Delhi sight en route depending on your departure, before your driver delivers you to the airport.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jaipur → Delhi · ~5 hrs / 280 km",
             },
@@ -1080,36 +1080,36 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Are we guaranteed to see a tiger at Ranthambore?", a: "No — Ranthambore's tigers are wild and sightings are never guaranteed. That said, the park has a healthy population and a strong record, and three safaris across two days give you a genuinely good chance. Even without a tiger, the fort, lakes, leopards, deer and birdlife make every drive rewarding." },
-            { q: "How do the safaris work — are they private?", a: "Ranthambore safaris run in shared park vehicles (6-seat jeeps or 20-seat canters) allocated by the forest department across fixed zones and time slots; fully private jeeps are limited and can sometimes be arranged at extra cost. We book your permits in advance and request jeeps where availability allows." },
+            { q: "Are we guaranteed to see a tiger at Ranthambore?", a: "No, Ranthambore's tigers are wild and sightings are never guaranteed. That said, the park has a healthy population and a strong record, and three safaris across two days give you a genuinely good chance. Even without a tiger, the fort, lakes, leopards, deer and birdlife make every drive rewarding." },
+            { q: "How do the safaris work, are they private?", a: "Ranthambore safaris run in shared park vehicles (6-seat jeeps or 20-seat canters) allocated by the forest department across fixed zones and time slots; fully private jeeps are limited and can sometimes be arranged at extra cost. We book your permits in advance and request jeeps where availability allows." },
             { q: "When is the best time to see tigers?", a: "October to March is the most comfortable weather, but the hotter months of April to June often bring the best sightings, as tigers gather at shrinking waterholes. The park closes during the monsoon, roughly July to September, so we plan dates accordingly." },
             { q: "What should we wear and bring for the safaris?", a: "Muted, layered clothing (mornings are cold in winter), a hat, sunglasses, sunscreen and binoculars. A camera with a decent zoom is well worth carrying. The lodge provides early tea before the pre-dawn departures." },
             { q: "Is this tour suitable for children and older travellers?", a: "Yes, with the caveat that safaris mean very early starts and a few hours on bumpy forest tracks. The rest of the circuit is comfortably paced in a private car. For young children or those who prefer it, a canter or a shorter zone can be arranged." },
-            { q: "Can we upgrade to a luxury jungle lodge or extend the trip?", a: "Absolutely. Ranthambore has some of India's finest wildlife lodges and tented camps, and we can upgrade your Agra and Jaipur hotels too. The tour also extends well into Udaipur or a longer Rajasthan loop — send your dates for a tailored quote." },
+            { q: "Can we upgrade to a luxury jungle lodge or extend the trip?", a: "Absolutely. Ranthambore has some of India's finest wildlife lodges and tented camps, and we can upgrade your Agra and Jaipur hotels too. The tour also extends well into Udaipur or a longer Rajasthan loop, send your dates for a tailored quote." },
         ],
     },
     16: {
         metaTitle: "8-Day Golden Triangle & Lucknow Nawabi Heritage Tour | MyTripMyTravel",
-        metaDescription: "Private 8-day Golden Triangle & Lucknow tour — Taj Mahal, Agra Fort, the Imambaras, Awadhi cuisine and Jaipur's forts. From ₹66,300pp. Enquire now.",
-        bestTime: "October–March for the most pleasant weather across Agra, Lucknow and Jaipur; winter evenings suit Lucknow's food walks best.",
-        answer: "The 8-Day GT + Lucknow Royal tour blends the Golden Triangle with Lucknow, the elegant former capital of the Nawabs of Awadh. You see the Taj Mahal and Agra Fort, then travel to Lucknow for the grand Imambaras, the Residency ruins and its celebrated kebab-and-biryani food culture, before finishing among Jaipur's forts and palaces. Travel is by private air-conditioned car with licensed local guides. It runs best October–March and starts from ₹66,300 per person.",
+        metaDescription: "Private 8-day Golden Triangle & Lucknow tour, Taj Mahal, Agra Fort, the Imambaras, Awadhi cuisine and Jaipur's forts. From ₹66,300pp. Enquire now.",
+        bestTime: "October to March for the most pleasant weather across Agra, Lucknow and Jaipur; winter evenings suit Lucknow's food walks best.",
+        answer: "The 8-Day GT + Lucknow Royal tour blends the Golden Triangle with Lucknow, the elegant former capital of the Nawabs of Awadh. You see the Taj Mahal and Agra Fort, then travel to Lucknow for the grand Imambaras, the Residency ruins and its celebrated kebab-and-biryani food culture, before finishing among Jaipur's forts and palaces. Travel is by private air-conditioned car with licensed local guides. It runs best October to March and starts from ₹66,300 per person.",
         quickFacts: [
             { label: "Duration", value: "8 days / 7 nights" },
             { label: "Route", value: "Delhi → Agra → Lucknow → Jaipur → Departure" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Moderate — one long transit day" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Moderate, one long transit day" },
             { label: "Hotels", value: "5★ & heritage haveli in Lucknow" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹66,300 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival & Luxury Stay.",
-                title: "Delhi — Arrival & Luxury Stay",
+                title: "Delhi, Arrival & Luxury Stay",
                 detail: [
                     "Your chauffeur meets you at Delhi (DEL) arrivals and transfers you to your hotel for check-in and rest.",
-                    "Depending on your landing time, the afternoon can include a gentle first look at the capital — a drive past India Gate or a visit to Humayun's Tomb — or simply an unhurried evening to recover before the road trip begins.",
+                    "Depending on your landing time, the afternoon can include a gentle first look at the capital, a drive past India Gate or a visit to Humayun's Tomb, or simply an unhurried evening to recover before the road trip begins.",
                 ],
                 overnight: "Delhi",
                 meals: "None (arrival day)",
@@ -1118,9 +1118,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi to Agra. Taj Mahal & Agra Fort.",
-                title: "Agra — Taj Mahal & Agra Fort",
+                title: "Agra, Taj Mahal & Agra Fort",
                 detail: [
-                    "A morning run down the Yamuna Expressway brings you to Agra, where you visit the Taj Mahal with your guide — the white-marble mausoleum Shah Jahan built for Mumtaz Mahal, and the finest achievement of Mughal architecture.",
+                    "A morning run down the Yamuna Expressway brings you to Agra, where you visit the Taj Mahal with your guide, the white-marble mausoleum Shah Jahan built for Mumtaz Mahal, and the finest achievement of Mughal architecture.",
                     "You also tour the red-sandstone Agra Fort, the imperial seat where Shah Jahan later spent his final years imprisoned, with its palaces, audience halls and views of the Taj across the Yamuna.",
                 ],
                 overnight: "Agra",
@@ -1130,10 +1130,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Drive to Lucknow. Check-in at a Heritage Haveli. Evening kebab walk.",
-                title: "Lucknow — Drive to the City of Nawabs & Kebab Walk",
+                title: "Lucknow, Drive to the City of Nawabs & Kebab Walk",
                 detail: [
                     "You drive east to Lucknow, the refined former capital of the Nawabs of Awadh, and check into a heritage haveli that captures the city's old-world grace.",
-                    "As evening falls you set out on a guided kebab walk through the lanes of the old city — the legendary galawati kebabs of Tunday, rich Awadhi biryani and Lucknawi sweets, in the birthplace of India's most delicate courtly cuisine.",
+                    "As evening falls you set out on a guided kebab walk through the lanes of the old city, the legendary galawati kebabs of Tunday, rich Awadhi biryani and Lucknawi sweets, in the birthplace of India's most delicate courtly cuisine.",
                 ],
                 overnight: "Lucknow",
                 meals: "Breakfast",
@@ -1142,10 +1142,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Bara Imambara, Chhota Imambara, and Residency ruins tour.",
-                title: "Lucknow — Imambaras & the Residency",
+                title: "Lucknow, Imambaras & the Residency",
                 detail: [
                     "You explore the Bara Imambara, whose vast central hall stands without pillars and whose Bhulbhulaiya labyrinth of corridors is a highlight, then the ornate Chhota Imambara, glittering with chandeliers and gilded domes.",
-                    "The afternoon turns to the British Residency, the evocative shell-scarred ruins that witnessed the 1857 siege — a poignant counterpoint to the Nawabi splendour, set in quiet gardens.",
+                    "The afternoon turns to the British Residency, the evocative shell-scarred ruins that witnessed the 1857 siege, a poignant counterpoint to the Nawabi splendour, set in quiet gardens.",
                 ],
                 overnight: "Lucknow",
                 meals: "Breakfast",
@@ -1154,22 +1154,22 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Lucknow to Delhi. Overnight stay.",
-                title: "Lucknow to Delhi — Transit Day",
+                title: "Lucknow to Delhi, Transit Day",
                 detail: [
                     "Today is the tour's one long travel day, returning west to Delhi for an overnight stay before the final leg to Jaipur.",
                     "The full road journey is long, so for comfort many travellers prefer the fast Tejas or Shatabdi Express, which we can pre-book; either way your chauffeur handles all transfers and you rest on arrival in Delhi.",
                 ],
                 overnight: "Delhi",
                 meals: "Breakfast",
-                drive: "Lucknow → Delhi · long transit (drive ~8–9 hrs, or express train ~6.5 hrs)",
+                drive: "Lucknow → Delhi · long transit (drive ~8 to 9 hrs, or express train ~6.5 hrs)",
             },
             {
                 day: 6,
                 plan: "Delhi to Jaipur. Pink City evening walk.",
-                title: "Jaipur — Drive to the Pink City & Evening Walk",
+                title: "Jaipur, Drive to the Pink City & Evening Walk",
                 detail: [
                     "A morning drive brings you to Jaipur, Rajasthan's rose-pink capital, for check-in around midday.",
-                    "As the day cools you take an evening walk through the old city — the glowing facade of the Hawa Mahal, the bustle of Johari and Bapu bazaars, and the terracotta-pink walls that give the city its name.",
+                    "As the day cools you take an evening walk through the old city, the glowing facade of the Hawa Mahal, the bustle of Johari and Bapu bazaars, and the terracotta-pink walls that give the city its name.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -1178,10 +1178,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Amber Fort & City Palace tour.",
-                title: "Jaipur — Amber Fort & City Palace",
+                title: "Jaipur, Amber Fort & City Palace",
                 detail: [
                     "The morning belongs to the honey-coloured Amber Fort above Maota Lake, with its Sheesh Mahal mirror hall and grand hilltop courtyards (jeep ascent included).",
-                    "In the afternoon you tour the City Palace, still home to Jaipur's royal family, with its museums, the Chandra Mahal and the famous painted gates — a fitting royal finale to the trip.",
+                    "In the afternoon you tour the City Palace, still home to Jaipur's royal family, with its museums, the Chandra Mahal and the famous painted gates, a fitting royal finale to the trip.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -1190,12 +1190,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Jaipur departure.",
-                title: "Jaipur — Departure",
+                title: "Jaipur, Departure",
                 detail: [
                     "After a relaxed breakfast, your chauffeur transfers you to Jaipur International Airport (JAI) for your onward flight.",
-                    "If your departure is later in the day, we can add a final bazaar stop for souvenirs — block-print textiles, gemstones or blue pottery — before you head to the airport.",
+                    "If your departure is later in the day, we can add a final bazaar stop for souvenirs, block-print textiles, gemstones or blue pottery, before you head to the airport.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jaipur → airport transfer",
             },
@@ -1210,41 +1210,41 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
         ],
         exclusions: [
             "International and domestic flights",
-            "The optional Lucknow–Delhi express train fare, if chosen (arranged on request)",
+            "The optional Lucknow to Delhi express train fare, if chosen (arranged on request)",
             "Monument entrance fees, lunches and dinners except where noted",
             "Personal expenses, tips and camera fees",
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Why visit Lucknow alongside the Golden Triangle?", a: "Lucknow was the capital of the Nawabs of Awadh and remains India's benchmark for courtly refinement — its architecture, etiquette and above all its cuisine. It adds a genuinely different flavour to the trip: slower, more elegant, and a food-lover's highlight between the grand monuments of Agra and Jaipur." },
-            { q: "Is the Lucknow to Delhi journey really necessary by road?", a: "The route runs Lucknow back to Delhi before turning south to Jaipur, and it is a long day. Because of that we usually recommend the fast Tejas or Shatabdi Express instead of the full drive — it is far more comfortable and we can pre-book it; your chauffeur still handles every transfer." },
-            { q: "What is Awadhi cuisine and will vegetarians enjoy it?", a: "Awadhi cooking is Lucknow's slow, aromatic courtly style — melt-in-the-mouth galawati kebabs, dum biryani and rich curries. It is famously meat-forward, but there are excellent vegetarian dishes too, from kebabs to nihari-style gravies and Lucknawi sweets. We tailor the food walk to your preferences." },
-            { q: "What kind of hotels are included?", a: "The base uses 5-star and premium hotels, with a heritage haveli in Lucknow to match the city's character. Palace and luxury upgrades in Agra and Jaipur are available — ask for options with your quote." },
-            { q: "Do we fly home from Jaipur or Delhi?", a: "The itinerary ends with a departure from Jaipur International Airport, which has good domestic connections and some international flights. If you need to fly out of Delhi, we simply add the Jaipur–Delhi transfer and adjust the final day — just tell us your flight." },
+            { q: "Why visit Lucknow alongside the Golden Triangle?", a: "Lucknow was the capital of the Nawabs of Awadh and remains India's benchmark for courtly refinement, its architecture, etiquette and above all its cuisine. It adds a genuinely different flavour to the trip: slower, more elegant, and a food-lover's highlight between the grand monuments of Agra and Jaipur." },
+            { q: "Is the Lucknow to Delhi journey really necessary by road?", a: "The route runs Lucknow back to Delhi before turning south to Jaipur, and it is a long day. Because of that we usually recommend the fast Tejas or Shatabdi Express instead of the full drive, it is far more comfortable and we can pre-book it; your chauffeur still handles every transfer." },
+            { q: "What is Awadhi cuisine and will vegetarians enjoy it?", a: "Awadhi cooking is Lucknow's slow, aromatic courtly style, melt-in-the-mouth galawati kebabs, dum biryani and rich curries. It is famously meat-forward, but there are excellent vegetarian dishes too, from kebabs to nihari-style gravies and Lucknawi sweets. We tailor the food walk to your preferences." },
+            { q: "What kind of hotels are included?", a: "The base uses 5-star and premium hotels, with a heritage haveli in Lucknow to match the city's character. Palace and luxury upgrades in Agra and Jaipur are available, ask for options with your quote." },
+            { q: "Do we fly home from Jaipur or Delhi?", a: "The itinerary ends with a departure from Jaipur International Airport, which has good domestic connections and some international flights. If you need to fly out of Delhi, we simply add the Jaipur to Delhi transfer and adjust the final day, just tell us your flight." },
             { q: "Can the pace or route be adjusted?", a: "Yes. If the transit day concerns you we can add a night or fly a leg; equally, the trip extends naturally into Varanasi or a wider Rajasthan loop. Share your dates and preferences and we'll return a tailored plan and quote." },
         ],
     },
     17: {
         metaTitle: "7-Day Golden Triangle & Haridwar Ganga Aarti Tour | MyTripMyTravel",
-        metaDescription: "Private 7-day Golden Triangle & Haridwar tour — the Ganga Aarti at Har Ki Pauri, Taj Mahal, Agra Fort and Jaipur's forts. From ₹45,600pp. Enquire now.",
-        bestTime: "October–March for mild weather; the evening Ganga Aarti at Har Ki Pauri runs year-round, at its most atmospheric in the cooler months.",
-        answer: "The 7-Day GT + Haridwar Sacred tour pairs the Golden Triangle with Haridwar, one of Hinduism's holiest cities and the gateway to the Himalayas. You witness the nightly Ganga Aarti on the ghats of Har Ki Pauri and visit the hilltop Mansa Devi temple, then travel by private car to the Taj Mahal, Agra Fort and Jaipur's forts via the Abhaneri stepwell. Guided throughout, it runs best October–March and starts from ₹45,600 per person.",
+        metaDescription: "Private 7-day Golden Triangle & Haridwar tour, the Ganga Aarti at Har Ki Pauri, Taj Mahal, Agra Fort and Jaipur's forts. From ₹45,600pp. Enquire now.",
+        bestTime: "October to March for mild weather; the evening Ganga Aarti at Har Ki Pauri runs year-round, at its most atmospheric in the cooler months.",
+        answer: "The 7-Day GT + Haridwar Sacred tour pairs the Golden Triangle with Haridwar, one of Hinduism's holiest cities and the gateway to the Himalayas. You witness the nightly Ganga Aarti on the ghats of Har Ki Pauri and visit the hilltop Mansa Devi temple, then travel by private car to the Taj Mahal, Agra Fort and Jaipur's forts via the Abhaneri stepwell. Guided throughout, it runs best October to March and starts from ₹45,600 per person.",
         quickFacts: [
             { label: "Duration", value: "7 days / 6 nights" },
             { label: "Route", value: "Delhi → Haridwar → Agra → Jaipur → Delhi" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Moderate — comfortable drives, no flights" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Moderate, comfortable drives, no flights" },
             { label: "Hotels", value: "4★ / 5★ options" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹45,600 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival. Half day tour of spiritual monuments.",
-                title: "Delhi — Arrival & Spiritual Monuments",
+                title: "Delhi, Arrival & Spiritual Monuments",
                 detail: [
-                    "Your chauffeur meets you at Delhi (DEL) arrivals and transfers you to your hotel. The afternoon takes in some of the capital's places of worship — the serene Lotus Temple, the Sikh Gurudwara Bangla Sahib with its sacred tank, or the marble Birla Mandir — depending on your arrival time.",
+                    "Your chauffeur meets you at Delhi (DEL) arrivals and transfers you to your hotel. The afternoon takes in some of the capital's places of worship, the serene Lotus Temple, the Sikh Gurudwara Bangla Sahib with its sacred tank, or the marble Birla Mandir, depending on your arrival time.",
                     "It is a gentle, reflective opening that sets the spiritual tone of the days ahead.",
                 ],
                 overnight: "Delhi",
@@ -1254,9 +1254,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi to Haridwar by road. Evening Ganga Aarti at Har Ki Pauri.",
-                title: "Haridwar — Drive North & Evening Ganga Aarti",
+                title: "Haridwar, Drive North & Evening Ganga Aarti",
                 detail: [
-                    "You drive north from Delhi to Haridwar, where the Ganges leaves the Himalayan foothills and enters the plains — one of the seven holiest cities in Hinduism.",
+                    "You drive north from Delhi to Haridwar, where the Ganges leaves the Himalayan foothills and enters the plains, one of the seven holiest cities in Hinduism.",
                     "At dusk you take your place among the pilgrims on the ghats of Har Ki Pauri for the Ganga Aarti: hundreds of oil lamps set adrift on the river, chanting and bells, and the current carrying a flotilla of flickering flames downstream. It is one of North India's most moving spectacles.",
                 ],
                 overnight: "Haridwar",
@@ -1266,7 +1266,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Mansha Devi Temple visit & local ashram walk. Evening drive to Delhi.",
-                title: "Haridwar — Mansa Devi Temple & Return to Delhi",
+                title: "Haridwar, Mansa Devi Temple & Return to Delhi",
                 detail: [
                     "In the morning you ride the cable car up to the hilltop Mansa Devi temple, the 'wish-fulfilling' shrine overlooking the town and the river, followed by an unhurried walk through the ashrams and ghats that line the Ganges.",
                     "In the late afternoon you drive back to Delhi for an overnight stay, positioning you for the morning run to Agra.",
@@ -1278,10 +1278,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Delhi to Agra. Sunset Taj Mahal visit.",
-                title: "Agra — Drive to Agra & Taj Mahal at Sunset",
+                title: "Agra, Drive to Agra & Taj Mahal at Sunset",
                 detail: [
                     "A morning run down the Yamuna Expressway brings you to Agra by lunchtime and your hotel check-in.",
-                    "In the late afternoon you visit the Taj Mahal at sunset, when the white marble warms to amber and gold and the crowds thin — a softer, quieter way to first meet Shah Jahan's monument to love, with your guide tracing its history and symmetry.",
+                    "In the late afternoon you visit the Taj Mahal at sunset, when the white marble warms to amber and gold and the crowds thin, a softer, quieter way to first meet Shah Jahan's monument to love, with your guide tracing its history and symmetry.",
                 ],
                 overnight: "Agra",
                 meals: "Breakfast",
@@ -1293,7 +1293,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 title: "Agra Fort, Abhaneri Stepwell & Jaipur",
                 detail: [
                     "You begin at the red-sandstone Agra Fort, the Mughal seat of power where Shah Jahan spent his final years gazing at the Taj across the Yamuna.",
-                    "You then drive to Jaipur, breaking the journey at Abhaneri to see the Chand Baori — one of India's deepest and most geometric stepwells, its thousands of symmetrical steps plunging thirteen storeys underground.",
+                    "You then drive to Jaipur, breaking the journey at Abhaneri to see the Chand Baori, one of India's deepest and most geometric stepwells, its thousands of symmetrical steps plunging thirteen storeys underground.",
                     "You reach the Pink City by evening for check-in.",
                 ],
                 overnight: "Jaipur",
@@ -1303,7 +1303,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Jaipur Heritage tour including Hawa Mahal and Amber Fort.",
-                title: "Jaipur — Amber Fort & Hawa Mahal",
+                title: "Jaipur, Amber Fort & Hawa Mahal",
                 detail: [
                     "The morning belongs to the honey-coloured Amber Fort above Maota Lake, with its Sheesh Mahal mirror hall and grand hilltop courtyards (jeep ascent included).",
                     "Back in the old city you photograph the five-storey pink facade of the Hawa Mahal, the 'Palace of Winds', and can browse the surrounding bazaars for textiles, blue pottery and gemstones.",
@@ -1315,12 +1315,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Jaipur to Delhi departure.",
-                title: "Jaipur — Return to Delhi & Departure",
+                title: "Jaipur, Return to Delhi & Departure",
                 detail: [
                     "After breakfast your chauffeur drives you back to Delhi along the highway, timed to your onward flight.",
                     "Depending on your departure time we can add a lunch stop or a final Delhi sight en route, before your driver delivers you to the airport.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jaipur → Delhi · ~5 hrs / 280 km",
             },
@@ -1342,33 +1342,33 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
         ],
         faqs: [
             { q: "What is the Ganga Aarti and when does it happen?", a: "The Ganga Aarti is a nightly Hindu ritual of thanksgiving to the river goddess, performed at dusk on the ghats of Har Ki Pauri with fire lamps, chanting and bells. It runs every evening year-round; your guide positions you well and explains the ceremony as it unfolds." },
-            { q: "Is Haridwar suitable for non-Hindu or first-time visitors?", a: "Very much so — the Aarti is a public spectacle open to everyone, and visitors are warmly received. We simply ask you to dress modestly and respect the rituals at the ghats and temples. It offers a genuine, unpolished glimpse of living Indian faith." },
-            { q: "How strenuous is the Mansa Devi temple visit?", a: "Not strenuous at all if you take the cable car (Udan Khatola), which we recommend and can arrange — it whisks you to the hilltop in a few minutes. There is also a walking path for those who prefer it. The short walk around the ashrams and ghats afterwards is flat and easy." },
+            { q: "Is Haridwar suitable for non-Hindu or first-time visitors?", a: "Very much so, the Aarti is a public spectacle open to everyone, and visitors are warmly received. We simply ask you to dress modestly and respect the rituals at the ghats and temples. It offers a genuine, unpolished glimpse of living Indian faith." },
+            { q: "How strenuous is the Mansa Devi temple visit?", a: "Not strenuous at all if you take the cable car (Udan Khatola), which we recommend and can arrange, it whisks you to the hilltop in a few minutes. There is also a walking path for those who prefer it. The short walk around the ashrams and ghats afterwards is flat and easy." },
             { q: "Do we see the Taj Mahal at sunrise or sunset?", a: "This itinerary visits at sunset on Day 4, when the marble glows amber and the crowds ease. If you'd rather go at sunrise, we can flip the Agra timing at no extra cost. Note the Taj is closed on Fridays, and we re-sequence the days so you never miss it." },
-            { q: "Is there much driving on this tour?", a: "It is an all-road itinerary with no flights. The Delhi–Haridwar legs are around five hours each on good highways, as is the final Jaipur–Delhi run; the Agra–Jaipur drive via Abhaneri is roughly the same. All are broken with rest stops in a comfortable private car." },
-            { q: "Can we extend into Rishikesh or the Himalayas?", a: "Yes — Rishikesh, the yoga capital, is only a short drive beyond Haridwar and pairs beautifully with this route for meditation, the Triveni Ghat aarti or river time. We can also extend into the hills or add Varanasi. Share your dates for a tailored plan and quote." },
+            { q: "Is there much driving on this tour?", a: "It is an all-road itinerary with no flights. The Delhi to Haridwar legs are around five hours each on good highways, as is the final Jaipur to Delhi run; the Agra to Jaipur drive via Abhaneri is roughly the same. All are broken with rest stops in a comfortable private car." },
+            { q: "Can we extend into Rishikesh or the Himalayas?", a: "Yes, Rishikesh, the yoga capital, is only a short drive beyond Haridwar and pairs beautifully with this route for meditation, the Triveni Ghat aarti or river time. We can also extend into the hills or add Varanasi. Share your dates for a tailored plan and quote." },
         ],
     },
 
     6: {
-        metaTitle: "Golden Triangle & Goa Tour — 12 Days Culture + Beach",
-        metaDescription: "Private 12-day Golden Triangle & Goa tour: Delhi, Agra, Jaipur then Goa's beaches, forts & spice trails. Flights, guides, luxury resort — from ₹1,07,800pp. Enquire now.",
-        bestTime: "November–February pairs crisp North India days with dry, sunny Goa beach weather; avoid the June–September monsoon on the coast.",
-        answer: "The GT + Goa Beach Holiday is a private 12-day tour that opens with India's Golden Triangle — Delhi, Agra and Jaipur — then flies you south for a week on Goa's Arabian Sea coast. You'll see the Taj Mahal, Amber Fort and Old Delhi, then trade forts for beaches, Portuguese churches, spice plantations and a luxury resort base. Travel is by private car up north and internal flight to Goa, with licensed guides throughout. It runs best November–February and starts from ₹1,07,800 per person.",
+        metaTitle: "Golden Triangle & Goa Tour, 12 Days Culture + Beach",
+        metaDescription: "Private 12-day Golden Triangle & Goa tour: Delhi, Agra, Jaipur then Goa's beaches, forts & spice trails. Flights, guides, luxury resort, from ₹1,07,800pp. Enquire now.",
+        bestTime: "November to February pairs crisp North India days with dry, sunny Goa beach weather; avoid the June to September monsoon on the coast.",
+        answer: "The GT + Goa Beach Holiday is a private 12-day tour that opens with India's Golden Triangle, Delhi, Agra and Jaipur, then flies you south for a week on Goa's Arabian Sea coast. You'll see the Taj Mahal, Amber Fort and Old Delhi, then trade forts for beaches, Portuguese churches, spice plantations and a luxury resort base. Travel is by private car up north and internal flight to Goa, with licensed guides throughout. It runs best November to February and starts from ₹1,07,800 per person.",
         quickFacts: [
             { label: "Duration", value: "12 days / 11 nights" },
             { label: "Route", value: "Delhi → Agra → Jaipur → Goa (fly) → depart" },
-            { label: "Best time", value: "November–February" },
-            { label: "Pace", value: "Balanced — culture first, then unwind" },
+            { label: "Best time", value: "November to February" },
+            { label: "Pace", value: "Balanced, culture first, then unwind" },
             { label: "Hotels", value: "5★ city hotels & beach resort" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹1,07,800 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "D1: Delhi Arrival & stay at 5-star hotel.",
-                title: "Delhi — Arrival & Welcome",
+                title: "Delhi, Arrival & Welcome",
                 detail: [
                     "Your chauffeur meets you at Delhi (DEL) arrivals and transfers you to your 5-star hotel, with the rest of the day free to shake off the flight.",
                     "If your energy allows, an evening stroll through the hotel's neighbourhood or a first Indian dinner eases you gently into the trip; otherwise simply rest for tomorrow's full day.",
@@ -1380,10 +1380,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "D2: Full day Delhi history & food tour.",
-                title: "Delhi — History & Street-Food Day",
+                title: "Delhi, History & Street-Food Day",
                 detail: [
                     "A full day threads Old and New Delhi: the Mughal Red Fort, the vast Jama Masjid, and a cycle-rickshaw ride through Chandni Chowk's spice lanes, then India Gate, Humayun's Tomb and the Qutub Minar.",
-                    "Woven through it is a guided street-food tour — parathas, chaat, kebabs and jalebi from the stalls locals actually queue at, with your guide navigating what to try and where.",
+                    "Woven through it is a guided street-food tour, parathas, chaat, kebabs and jalebi from the stalls locals actually queue at, with your guide navigating what to try and where.",
                 ],
                 overnight: "Delhi",
                 meals: "Breakfast",
@@ -1392,10 +1392,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "D3: Morning superfast to Agra. Taj Mahal Afternoon visit.",
-                title: "Agra — Gatimaan Express & Taj Mahal",
+                title: "Agra, Gatimaan Express & Taj Mahal",
                 detail: [
                     "You board the morning Gatimaan Express, India's fastest train, and reach Agra in around 100 minutes for check-in and lunch.",
-                    "In the afternoon you enter the Taj Mahal with your guide, who unpacks the love story and flawless Mughal symmetry as the marble warms toward sunset — an unhurried two hours inside the complex.",
+                    "In the afternoon you enter the Taj Mahal with your guide, who unpacks the love story and flawless Mughal symmetry as the marble warms toward sunset, an unhurried two hours inside the complex.",
                 ],
                 overnight: "Agra",
                 meals: "Breakfast",
@@ -1416,10 +1416,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "D5: Jaipur Heritage tour & boutique shopping.",
-                title: "Jaipur — Amber Fort, Pink City & Shopping",
+                title: "Jaipur, Amber Fort, Pink City & Shopping",
                 detail: [
                     "The morning belongs to the honey-coloured Amber Fort above Maota Lake, with its Sheesh Mahal mirror hall (jeep ascent included), followed by the City Palace and the Jantar Mantar observatory.",
-                    "The afternoon is for the Pink City bazaars and boutique ateliers — block-print textiles, blue pottery and gemstones — with your guide steering you to reputable workshops.",
+                    "The afternoon is for the Pink City bazaars and boutique ateliers, block-print textiles, blue pottery and gemstones, with your guide steering you to reputable workshops.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -1428,7 +1428,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "D6: Jaipur to Goa flight. Airport transfer to luxury resort.",
-                title: "Goa — Fly South to the Coast",
+                title: "Goa, Fly South to the Coast",
                 detail: [
                     "After breakfast your chauffeur delivers you to Jaipur airport for the flight south to Goa, swapping desert forts for the Arabian Sea in a single afternoon.",
                     "On arrival you're met and transferred to your luxury beach resort, with the evening free to settle in, feel the sea air and enjoy your first coastal dinner.",
@@ -1440,21 +1440,21 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "D7: North Goa Heritage: Churches & Fort Aguada.",
-                title: "North Goa — Portuguese Heritage",
+                title: "North Goa, Portuguese Heritage",
                 detail: [
-                    "You explore Old Goa's UNESCO-listed churches — the Basilica of Bom Jesus, holding St Francis Xavier's relics, and the vast Sé Cathedral — remnants of four centuries of Portuguese rule.",
+                    "You explore Old Goa's UNESCO-listed churches, the Basilica of Bom Jesus, holding St Francis Xavier's relics, and the vast Sé Cathedral, remnants of four centuries of Portuguese rule.",
                     "The afternoon takes in Fort Aguada, the 17th-century clifftop bastion and lighthouse above the Mandovi, with sweeping views over the sea and Sinquerim beach.",
                 ],
                 overnight: "Goa",
                 meals: "Breakfast",
-                drive: "Around North Goa · ~1–2 hrs total",
+                drive: "Around North Goa · ~1 to 2 hrs total",
             },
             {
                 day: 8,
                 plan: "D8: Goa Beach Leisure Day. Private beach dinner.",
-                title: "Goa — Beach Leisure & Private Dinner",
+                title: "Goa, Beach Leisure & Private Dinner",
                 detail: [
-                    "A full day at leisure on the sand — swim, laze under a shack umbrella, or add optional watersports like parasailing and jet-skiing.",
+                    "A full day at leisure on the sand, swim, laze under a shack umbrella, or add optional watersports like parasailing and jet-skiing.",
                     "As the sun drops you're hosted at a private beachside dinner, a candlelit table set on the shore with fresh Goan seafood and the sound of the surf.",
                 ],
                 overnight: "Goa",
@@ -1464,7 +1464,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 9,
                 plan: "D9: South Goa: Palolem beach & spiritual temples.",
-                title: "South Goa — Palolem & Temples",
+                title: "South Goa, Palolem & Temples",
                 detail: [
                     "You head to quieter, greener South Goa and the crescent of Palolem beach, one of the coast's most beautiful bays, with time to swim or take a short dolphin-spotting boat ride.",
                     "En route you visit Hindu temples such as Shri Mangeshi, showing the other, older layer of Goan faith beneath the Portuguese churches.",
@@ -1476,10 +1476,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 10,
                 plan: "D10: Goa Spice Garden tour & Elephant swim.",
-                title: "Goa — Spice Plantation & Elephants",
+                title: "Goa, Spice Plantation & Elephants",
                 detail: [
                     "An inland spice plantation tour walks you through cardamom, pepper, vanilla and nutmeg, finishing with a traditional Goan banana-leaf lunch cooked from the estate's own produce.",
-                    "You'll have the chance to meet and bathe resident elephants — a gentle, welfare-minded encounter — before returning to the coast for the evening.",
+                    "You'll have the chance to meet and bathe resident elephants, a gentle, welfare-minded encounter, before returning to the coast for the evening.",
                 ],
                 overnight: "Goa",
                 meals: "Breakfast",
@@ -1488,10 +1488,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 11,
                 plan: "D11: Leisure day by the ocean. Spa treatments.",
-                title: "Goa — Ocean Leisure & Spa",
+                title: "Goa, Ocean Leisure & Spa",
                 detail: [
                     "Your final full day is unstructured: sleep in, linger over breakfast and let the pace drop to nothing by the ocean.",
-                    "A signature spa treatment — an ayurvedic massage or a sea-view therapy — rounds off the trip before a last Goan sunset.",
+                    "A signature spa treatment, an ayurvedic massage or a sea-view therapy, rounds off the trip before a last Goan sunset.",
                 ],
                 overnight: "Goa",
                 meals: "Breakfast",
@@ -1500,19 +1500,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 12,
                 plan: "D12: Goa to Home departure.",
-                title: "Goa — Departure",
+                title: "Goa, Departure",
                 detail: [
                     "After a relaxed breakfast you're transferred to Goa airport in good time for your onward or international flight.",
-                    "Your driver handles the logistics so your last morning stays calm — the culture-then-coast arc closes exactly as it should.",
+                    "Your driver handles the logistics so your last morning stays calm, the culture-then-coast arc closes exactly as it should.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Resort → Goa airport · ~1 hr",
             },
         ],
         inclusions: [
-            "Jaipur → Goa domestic flight, plus the Delhi–Agra fast train",
-            "11 nights' accommodation — 5★ city hotels and a luxury Goa beach resort — with daily breakfast",
+            "Jaipur → Goa domestic flight, plus the Delhi to Agra fast train",
+            "11 nights' accommodation, 5★ city hotels and a luxury Goa beach resort, with daily breakfast",
             "Private air-conditioned vehicle with chauffeur across the Golden Triangle and in Goa",
             "Licensed local guides in Delhi, Agra, Jaipur and Goa",
             "One private beachside dinner and a spice-plantation lunch",
@@ -1527,32 +1527,32 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
         ],
         faqs: [
             { q: "Why fly to Goa instead of driving?", a: "Goa is over 1,500 km from Jaipur, so a road trip would swallow two full days each way. A direct flight of around two and a half hours means you land in time for a sunset by the sea, keeping the beach week intact rather than spent in a car." },
-            { q: "How much of this trip is culture versus beach?", a: "The first five days are the classic Golden Triangle — Delhi, Agra and Jaipur — at a proper pace, and the final six are Goa. It's deliberately front-loaded: you do the monuments while fresh, then decompress on the coast. We can shift the balance either way on request." },
+            { q: "How much of this trip is culture versus beach?", a: "The first five days are the classic Golden Triangle, Delhi, Agra and Jaipur, at a proper pace, and the final six are Goa. It's deliberately front-loaded: you do the monuments while fresh, then decompress on the coast. We can shift the balance either way on request." },
             { q: "Is Goa good for families or couples?", a: "Both. Couples love the private beach dinner and spa days, while families get watersports, the spice plantation and gentle elephant bathing. Being fully private, the itinerary flexes to lazy mornings or busier days as your group prefers." },
-            { q: "Which part of Goa will we stay in?", a: "Your base is a luxury beach resort, typically in North Goa for its heritage sites and lively shacks, with a day trip south to tranquil Palolem. If you prefer the quieter south for your whole stay, we can base you there instead — just ask with your dates." },
-            { q: "Are the elephant and spice experiences ethical?", a: "We use plantations and sanctuaries that prioritise animal welfare — the elephant interaction is a supervised bathing experience, not a performance or heavy riding. If you would rather skip the animal element entirely, we simply extend your plantation and beach time." },
-            { q: "Can we add more of South India after Goa?", a: "Yes — Goa pairs naturally with a Kerala extension of backwaters and tea hills, or with Hampi's ruins inland. Since you're already flying south, adding a leg is straightforward. Share your dates and we'll design and quote the extension." },
+            { q: "Which part of Goa will we stay in?", a: "Your base is a luxury beach resort, typically in North Goa for its heritage sites and lively shacks, with a day trip south to tranquil Palolem. If you prefer the quieter south for your whole stay, we can base you there instead, just ask with your dates." },
+            { q: "Are the elephant and spice experiences ethical?", a: "We use plantations and sanctuaries that prioritise animal welfare, the elephant interaction is a supervised bathing experience, not a performance or heavy riding. If you would rather skip the animal element entirely, we simply extend your plantation and beach time." },
+            { q: "Can we add more of South India after Goa?", a: "Yes, Goa pairs naturally with a Kerala extension of backwaters and tea hills, or with Hampi's ruins inland. Since you're already flying south, adding a leg is straightforward. Share your dates and we'll design and quote the extension." },
         ],
     },
     7: {
-        metaTitle: "Medical Recovery Tour India — 15-Day Slow Luxury Travel",
-        metaDescription: "Gentle 15-day recuperative India tour: Delhi, Agra & Jaipur at a slow pace with wellness care and 24/7 concierge. Private, accessible — from ₹1,32,700pp. Enquire now.",
-        bestTime: "October–March offers mild, comfortable temperatures ideal for gentle-paced travel and outdoor rest without heat stress.",
-        answer: "The Medical Recovery Tour is a slow-paced, 15-day private journey through Delhi, Agra and Jaipur designed for travellers who want to see India while recuperating in comfort. It pairs the Golden Triangle's headline sights with generous rest days, accessible routes, spa and ayurvedic sessions and a dedicated wellness concierge on call. This is gentle luxury travel with support — not a hospital or medical-procedure package, and it does not provide clinical treatment. It runs best October–March and starts from ₹1,32,700 per person.",
+        metaTitle: "Medical Recovery Tour India, 15-Day Slow Luxury Travel",
+        metaDescription: "Gentle 15-day recuperative India tour: Delhi, Agra & Jaipur at a slow pace with wellness care and 24/7 concierge. Private, accessible, from ₹1,32,700pp. Enquire now.",
+        bestTime: "October to March offers mild, comfortable temperatures ideal for gentle-paced travel and outdoor rest without heat stress.",
+        answer: "The Medical Recovery Tour is a slow-paced, 15-day private journey through Delhi, Agra and Jaipur designed for travellers who want to see India while recuperating in comfort. It pairs the Golden Triangle's headline sights with generous rest days, accessible routes, spa and ayurvedic sessions and a dedicated wellness concierge on call. This is gentle luxury travel with support, not a hospital or medical-procedure package, and it does not provide clinical treatment. It runs best October to March and starts from ₹1,32,700 per person.",
         quickFacts: [
             { label: "Duration", value: "15 days / 14 nights" },
             { label: "Route", value: "Delhi → Agra → Jaipur → Delhi → depart" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Very slow — rest days built in" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Very slow, rest days built in" },
             { label: "Hotels", value: "5★ with accessible rooms & spa" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹1,32,700 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "D1: Delhi Arrival & Medical Concierge briefing. Hospital visit if needed.",
-                title: "Delhi — Arrival & Concierge Briefing",
+                title: "Delhi, Arrival & Concierge Briefing",
                 detail: [
                     "You're met at Delhi (DEL) and transferred to a 5-star hotel with an accessible room, where your wellness concierge sits down with you to understand your pace, dietary needs and any care preferences.",
                     "If you have a scheduled follow-up or wish to register with a nearby hospital for peace of mind, the concierge arranges it; otherwise the day is pure rest.",
@@ -1564,10 +1564,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "D2: Wellness consultation. Light garden walk in Lodhi Gardens.",
-                title: "Delhi — Wellness Consultation & Lodhi Gardens",
+                title: "Delhi, Wellness Consultation & Lodhi Gardens",
                 detail: [
                     "The morning is an unhurried wellness consultation to shape your diet plan and daily rhythm for the trip ahead.",
-                    "In the cool of late afternoon you take a gentle, flat stroll through Lodhi Gardens, among 15th-century tombs and shaded lawns — fresh air and easy movement without crowds or steps.",
+                    "In the cool of late afternoon you take a gentle, flat stroll through Lodhi Gardens, among 15th-century tombs and shaded lawns, fresh air and easy movement without crowds or steps.",
                 ],
                 overnight: "Delhi",
                 meals: "Breakfast",
@@ -1576,7 +1576,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "D3: Gentle pulse tour of Old Delhi. Rest periods included.",
-                title: "Delhi — Gentle Old Delhi, at Your Pace",
+                title: "Delhi, Gentle Old Delhi, at Your Pace",
                 detail: [
                     "A softened tour of Old Delhi lets you experience the Red Fort's forecourt and the lanes around Chandni Chowk from a comfortable vehicle and cushioned cycle-rickshaw, seeing the colour without the exertion.",
                     "Built-in rest breaks and an early return to the hotel keep the day low-stress, with the afternoon free to nap or relax.",
@@ -1588,9 +1588,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "D4: Rest day with physiotherapy session.",
-                title: "Delhi — Rest & Physiotherapy",
+                title: "Delhi, Rest & Physiotherapy",
                 detail: [
-                    "A full recovery day with nothing on the schedule but your comfort — sleep in, read, and let your body reset.",
+                    "A full recovery day with nothing on the schedule but your comfort, sleep in, read, and let your body reset.",
                     "A qualified therapist can visit for a gentle physiotherapy or mobility session in your room or the hotel spa, arranged around how you feel.",
                 ],
                 overnight: "Delhi",
@@ -1600,10 +1600,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "D5: Delhi to Agra. Low-stress luxury vehicle transit. Evening Taj sunset from a private veranda.",
-                title: "Agra — Easy Transit & Taj at Sunset",
+                title: "Agra, Easy Transit & Taj at Sunset",
                 detail: [
                     "You transfer to Agra in a spacious luxury vehicle with reclining seats and unhurried comfort stops along the Yamuna Expressway.",
-                    "Rather than the busy monument gate, you watch the Taj Mahal glow at sunset from a private hotel veranda with a clear view — the same magic, none of the crowd or walking.",
+                    "Rather than the busy monument gate, you watch the Taj Mahal glow at sunset from a private hotel veranda with a clear view, the same magic, none of the crowd or walking.",
                 ],
                 overnight: "Agra",
                 meals: "Breakfast",
@@ -1612,10 +1612,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "D6: Morning garden visit near Taj Mahal. Relaxed hotel stay.",
-                title: "Agra — Mehtab Bagh & Rest",
+                title: "Agra, Mehtab Bagh & Rest",
                 detail: [
                     "A short morning visit to Mehtab Bagh, the riverside 'moonlight garden' directly across from the Taj Mahal, gives you an unobstructed view over flat, easy paths.",
-                    "The rest of the day is deliberately empty — a relaxed hotel stay with spa access and time by the pool.",
+                    "The rest of the day is deliberately empty, a relaxed hotel stay with spa access and time by the pool.",
                 ],
                 overnight: "Agra",
                 meals: "Breakfast",
@@ -1624,7 +1624,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "D7: Agra to Jaipur. Scenic drive with medical stopovers. Royal stay.",
-                title: "Jaipur — Scenic Transit & Royal Arrival",
+                title: "Jaipur, Scenic Transit & Royal Arrival",
                 detail: [
                     "The drive to Jaipur is broken into comfortable segments with planned stopovers for rest, refreshment and any medication timings, so nothing is rushed.",
                     "You arrive at a heritage-style royal hotel with attentive service and a calm atmosphere, settling in for the evening.",
@@ -1636,7 +1636,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "D8: Jaipur City Palace & Hawa Mahal (accessible route). Afternoon Spa session.",
-                title: "Jaipur — Accessible City Palace & Spa",
+                title: "Jaipur, Accessible City Palace & Spa",
                 detail: [
                     "A morning on an accessible route takes in the City Palace courtyards and a photo stop at the Hawa Mahal facade, with vehicle drop-offs close to each point and minimal walking.",
                     "The afternoon is reserved for a restorative spa session back at the hotel, keeping the day balanced between gentle sightseeing and rest.",
@@ -1648,7 +1648,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 9,
                 plan: "D9: Full day of luxury ayurvedic treatments & health diet plan.",
-                title: "Jaipur — Ayurvedic Wellness Day",
+                title: "Jaipur, Ayurvedic Wellness Day",
                 detail: [
                     "A full day devoted to wellbeing: guided ayurvedic treatments such as gentle abhyanga oil therapy, tailored to your comfort by the spa's therapists.",
                     "Meals follow a nourishing, easy-to-digest health diet plan, and there's nothing to do but rest between sessions.",
@@ -1660,7 +1660,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 10,
                 plan: "D10: Jaipur Amber fort (Jeep ride, no climb). Afternoon rest.",
-                title: "Jaipur — Amber Fort by Jeep",
+                title: "Jaipur, Amber Fort by Jeep",
                 detail: [
                     "You ascend to the Amber Fort by jeep rather than on foot, then explore the courtyards and Sheesh Mahal mirror hall at a slow pace with your guide, sitting to rest whenever you like.",
                     "The afternoon returns you to the hotel for quiet recovery time.",
@@ -1672,10 +1672,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 11,
                 plan: "D11: Cultural show in hotel gardens. Relaxation by pool.",
-                title: "Jaipur — Garden Culture & Poolside Rest",
+                title: "Jaipur, Garden Culture & Poolside Rest",
                 detail: [
                     "A relaxed day by the pool with no travel, letting the wellness of the past days settle.",
-                    "In the evening a private Rajasthani folk music and dance performance is staged in the hotel gardens — culture brought to you, comfortably seated.",
+                    "In the evening a private Rajasthani folk music and dance performance is staged in the hotel gardens, culture brought to you, comfortably seated.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -1684,7 +1684,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 12,
                 plan: "D12: Jaipur to Delhi slow transit. Overnight Delhi.",
-                title: "Delhi — Gentle Return Transit",
+                title: "Delhi, Gentle Return Transit",
                 detail: [
                     "You transit back to Delhi in the luxury vehicle with unhurried breaks, timed to your comfort rather than the clock.",
                     "You overnight at an accessible Delhi hotel, well placed for the final days and your eventual departure.",
@@ -1696,7 +1696,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 13,
                 plan: "D13: Final checkups & shopping for wellness products.",
-                title: "Delhi — Check-ins & Wellness Shopping",
+                title: "Delhi, Check-ins & Wellness Shopping",
                 detail: [
                     "The concierge arranges any final consultation or check-in you'd like before travelling home, purely for reassurance.",
                     "A gentle outing lets you shop for ayurvedic oils, herbal teas and wellness products to take with you, with the car close at hand throughout.",
@@ -1708,7 +1708,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 14,
                 plan: "D14: Leisure morning. Afternoon city light-walk.",
-                title: "Delhi — Leisure & Light Evening Walk",
+                title: "Delhi, Leisure & Light Evening Walk",
                 detail: [
                     "A leisurely morning with nothing scheduled lets you pack and rest at your own speed.",
                     "In the cool of the afternoon, an optional short, flat walk through a garden or quiet quarter gives a last easy taste of the city before you leave.",
@@ -1720,12 +1720,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 15,
                 plan: "D15: Medical concierge airport escort. Final Departure.",
-                title: "Delhi — Concierge Escort & Departure",
+                title: "Delhi, Concierge Escort & Departure",
                 detail: [
                     "Your wellness concierge personally escorts you to Delhi airport, handling wheelchairs, fast-track assistance and check-in as needed.",
-                    "You depart calm and cared-for, with the trip having done exactly what it set out to — gentle travel with support at every step.",
+                    "You depart calm and cared-for, with the trip having done exactly what it set out to, gentle travel with support at every step.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Hotel → airport · ~45 min",
             },
@@ -1751,28 +1751,28 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             { q: "What does the wellness concierge actually do?", a: "They shape your daily pace, coordinate spa, ayurvedic and physiotherapy sessions, oversee your diet plan, keep timings gentle, and are on call 24/7. They can also liaise with a nearby hospital for reassurance and escort you through the airport. They are a travel-and-wellness coordinator, not a substitute for your own doctor." },
             { q: "How much walking and physical effort is involved?", a: "Very little by design. Vehicles drop you close to each site, ascents like Amber Fort are by jeep, viewpoints are chosen for flat access, and rest days punctuate the trip. We tailor every day to your mobility and energy, and you can shorten or skip any activity without penalty." },
             { q: "Can you accommodate dietary needs, medication and mobility aids?", a: "Yes. We plan meals around a health diet, build medication timings into the schedule, arrange accessible rooms, and can provide wheelchairs and airport assistance. Please share your specific needs when enquiring so we prepare everything in advance rather than on arrival." },
-            { q: "Is India safe and comfortable for recuperative travel?", a: "In the cooler October–March months and with private, unhurried logistics, it is very comfortable. You have your own vehicle, vetted 5-star hotels, filtered water and round-the-clock support. We strongly recommend comprehensive travel and medical insurance, and we're honest that this is restful travel rather than medical care." },
+            { q: "Is India safe and comfortable for recuperative travel?", a: "In the cooler October to March months and with private, unhurried logistics, it is very comfortable. You have your own vehicle, vetted 5-star hotels, filtered water and round-the-clock support. We strongly recommend comprehensive travel and medical insurance, and we're honest that this is restful travel rather than medical care." },
         ],
     },
     18: {
-        metaTitle: "Golden Triangle & Munnar Tour — 14 Days North to Kerala",
-        metaDescription: "Private 14-day tour: Golden Triangle forts plus Kerala's Munnar tea hills, Thekkady wildlife & Alleppey backwaters. Flights, houseboat — from ₹1,57,600pp. Enquire now.",
-        bestTime: "October–March gives dry North India days and pleasant, mist-touched Kerala hills; avoid the June–August monsoon in the Western Ghats.",
-        answer: "GT + Munnar Nature is a 14-day private tour that runs from the desert forts of the Golden Triangle to the green heart of Kerala. You'll see the Taj Mahal, Amber Fort and Old Delhi, then fly south to Kochi for the Munnar tea hills, Thekkady's Periyar wildlife reserve, and a night on an Alleppey backwater houseboat. Travel is by private car up north, internal flight to Kochi, and boat in Kerala, with guides throughout. It runs best October–March and starts from ₹1,57,600 per person.",
+        metaTitle: "Golden Triangle & Munnar Tour, 14 Days North to Kerala",
+        metaDescription: "Private 14-day tour: Golden Triangle forts plus Kerala's Munnar tea hills, Thekkady wildlife & Alleppey backwaters. Flights, houseboat, from ₹1,57,600pp. Enquire now.",
+        bestTime: "October to March gives dry North India days and pleasant, mist-touched Kerala hills; avoid the June to August monsoon in the Western Ghats.",
+        answer: "GT + Munnar Nature is a 14-day private tour that runs from the desert forts of the Golden Triangle to the green heart of Kerala. You'll see the Taj Mahal, Amber Fort and Old Delhi, then fly south to Kochi for the Munnar tea hills, Thekkady's Periyar wildlife reserve, and a night on an Alleppey backwater houseboat. Travel is by private car up north, internal flight to Kochi, and boat in Kerala, with guides throughout. It runs best October to March and starts from ₹1,57,600 per person.",
         quickFacts: [
             { label: "Duration", value: "14 days / 13 nights" },
             { label: "Route", value: "Delhi → Agra → Jaipur → Kochi (fly) → Munnar → Thekkady → Alleppey → Kochi" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Balanced — heritage then nature" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Balanced, heritage then nature" },
             { label: "Hotels", value: "5★, hill resorts & a houseboat" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹1,57,600 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "D1: Delhi Arrival & Heritage intro.",
-                title: "Delhi — Arrival & Heritage Introduction",
+                title: "Delhi, Arrival & Heritage Introduction",
                 detail: [
                     "Your chauffeur meets you at Delhi (DEL) and transfers you to your hotel, with a gentle first orientation to the city and the trip ahead.",
                     "If jet lag permits, an easy evening drive past the illuminated India Gate sets the scene without over-tiring you.",
@@ -1784,7 +1784,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "D2: Delhi City Tour. Evening food tour.",
-                title: "Delhi — City Sights & Street Food",
+                title: "Delhi, City Sights & Street Food",
                 detail: [
                     "A full day covers Old and New Delhi: the Red Fort, Jama Masjid and Chandni Chowk's lanes, then Humayun's Tomb, the Qutub Minar and the ceremonial avenues of Lutyens' Delhi.",
                     "As evening falls, a guided street-food walk introduces chaat, kebabs and jalebi from the stalls locals trust.",
@@ -1796,7 +1796,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "D3: Delhi to Agra. Taj Mahal afternoon visit.",
-                title: "Agra — Drive South & Taj Mahal",
+                title: "Agra, Drive South & Taj Mahal",
                 detail: [
                     "A morning run down the Yamuna Expressway brings you to Agra by lunchtime and your hotel check-in.",
                     "In the afternoon you visit the Taj Mahal with your guide, who unpacks its love story and Mughal symmetry as the marble warms toward evening light.",
@@ -1820,7 +1820,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "D5: Jaipur Heritage tour. Palace & Fort exploration.",
-                title: "Jaipur — Amber Fort & City Palace",
+                title: "Jaipur, Amber Fort & City Palace",
                 detail: [
                     "The morning belongs to the honey-coloured Amber Fort above Maota Lake, with its Sheesh Mahal mirror hall (jeep ascent included).",
                     "The City Palace, Jantar Mantar observatory and the Hawa Mahal facade fill the rest of the day, with time to browse the Pink City bazaars.",
@@ -1832,7 +1832,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "D6: Flight from Jaipur to Kochi. Check-in at Fort Kochi heritage hotel.",
-                title: "Kochi — Fly to Kerala's Coast",
+                title: "Kochi, Fly to Kerala's Coast",
                 detail: [
                     "After breakfast your chauffeur delivers you to Jaipur airport for the flight to Kochi, trading Rajasthan's desert palette for Kerala's palm-fringed green.",
                     "You check in at a Fort Kochi heritage hotel, with the evening free to wander the atmospheric old quarter of colonial-era streets and cafes.",
@@ -1844,7 +1844,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "D7: Kochi to Munnar drive (High range tea hills).",
-                title: "Munnar — Into the Tea Hills",
+                title: "Munnar, Into the Tea Hills",
                 detail: [
                     "You drive up into the Western Ghats to Munnar, climbing through waterfalls and hairpin bends as the air cools and endless tea gardens carpet the slopes.",
                     "The scenic ascent is part of the experience, with photo stops along the way; you settle into a hill resort by evening.",
@@ -1856,19 +1856,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "D8: Munnar tea garden visit & Eravikulam National Park.",
-                title: "Munnar — Tea Gardens & Eravikulam",
+                title: "Munnar, Tea Gardens & Eravikulam",
                 detail: [
                     "A working tea estate and the Tata Tea Museum show how the leaf is grown, plucked and processed in these hills, finishing with a tasting.",
                     "You then visit Eravikulam National Park, home to the endangered Nilgiri tahr and, seasonally, the rare blue Neelakurinji bloom, set beneath Anamudi, South India's highest peak.",
                 ],
                 overnight: "Munnar",
                 meals: "Breakfast",
-                drive: "Around Munnar · ~1–2 hrs total",
+                drive: "Around Munnar · ~1 to 2 hrs total",
             },
             {
                 day: 9,
                 plan: "D9: Munnar to Thekkady. Elephant safari & Spice plantation.",
-                title: "Thekkady — Spice Country & Elephants",
+                title: "Thekkady, Spice Country & Elephants",
                 detail: [
                     "You descend to Thekkady, the gateway to the Periyar reserve and Kerala's cardamom-scented spice country.",
                     "A guided spice plantation walk explains cardamom, pepper and clove, and you can add an elephant interaction and jungle activities before your evening stay.",
@@ -1880,7 +1880,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 10,
                 plan: "D10: Periyar Lake boat ride & forest trek.",
-                title: "Thekkady — Periyar Lake & Forest",
+                title: "Thekkady, Periyar Lake & Forest",
                 detail: [
                     "A morning boat cruise on Periyar Lake, inside the tiger reserve, is your best chance to spot wild elephants, sambar deer, gaur and birdlife along the shoreline.",
                     "A guided forest trek or nature walk with a local ranger deepens the wildlife experience on foot.",
@@ -1892,7 +1892,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 11,
                 plan: "D11: Thekkady to Alleppey. Overnight luxury houseboat.",
-                title: "Alleppey — Backwater Houseboat",
+                title: "Alleppey, Backwater Houseboat",
                 detail: [
                     "You drive down to Alleppey and board a private luxury houseboat, a converted rice barge with an en-suite cabin, deck and onboard cook.",
                     "The rest of the day drifts through the palm-lined backwater canals, with a fresh Keralan lunch and dinner served aboard as village life slides by.",
@@ -1904,10 +1904,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 12,
                 plan: "D12: Backwater cruise & local village walk.",
-                title: "Alleppey — Backwaters & Village Life",
+                title: "Alleppey, Backwaters & Village Life",
                 detail: [
                     "The morning continues cruising the quieter narrow canals, where the houseboat gives way to a smaller shikara for the tightest waterways.",
-                    "A guided village walk ashore shows coir-making, toddy-tapping and paddy farming — the everyday rhythm of backwater Kerala — before you check into a lakeside hotel.",
+                    "A guided village walk ashore shows coir-making, toddy-tapping and paddy farming, the everyday rhythm of backwater Kerala, before you check into a lakeside hotel.",
                 ],
                 overnight: "Alleppey",
                 meals: "Breakfast",
@@ -1916,10 +1916,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 13,
                 plan: "D13: Alleppey to Kochi. Fort Kochi Chinese fishing nets.",
-                title: "Kochi — Return & Fort Kochi",
+                title: "Kochi, Return & Fort Kochi",
                 detail: [
                     "You return to Kochi and explore Fort Kochi's historic waterfront, where the cantilevered Chinese fishing nets have worked the tide-line for centuries.",
-                    "Nearby stand St Francis Church, the Dutch-era Mattancherry Palace and the lanes of Jew Town — layers of Portuguese, Dutch and trading history to close the trip.",
+                    "Nearby stand St Francis Church, the Dutch-era Mattancherry Palace and the lanes of Jew Town, layers of Portuguese, Dutch and trading history to close the trip.",
                 ],
                 overnight: "Kochi",
                 meals: "Breakfast",
@@ -1928,19 +1928,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 14,
                 plan: "D14: Departure from Kochi.",
-                title: "Kochi — Departure",
+                title: "Kochi, Departure",
                 detail: [
                     "After a relaxed breakfast you're transferred to Kochi (COK) airport in good time for your onward or international flight.",
                     "The journey closes having spanned North India's forts and South India's tea, wildlife and water in a single arc.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Hotel → Kochi airport · ~1.5 hrs",
             },
         ],
         inclusions: [
             "Jaipur → Kochi domestic flight and all inter-city transfers",
-            "13 nights' accommodation — 5★ city hotels, hill resorts and one luxury houseboat — with daily breakfast",
+            "13 nights' accommodation, 5★ city hotels, hill resorts and one luxury houseboat, with daily breakfast",
             "Private air-conditioned vehicle with chauffeur across the Golden Triangle and Kerala",
             "Periyar Lake boat cruise and a private overnight houseboat with full board aboard",
             "Licensed local guides in Delhi, Agra, Jaipur, Munnar, Thekkady and Kochi",
@@ -1954,33 +1954,33 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "How much of this trip is North India versus Kerala?", a: "The first five days are the Golden Triangle — Delhi, Agra and Jaipur — and the remaining eight are Kerala, from Munnar's tea hills to the Alleppey backwaters. It's a genuine two-halves tour: heritage and monuments first, then nature, wildlife and water. The internal flight on Day 6 is what makes the span practical." },
-            { q: "Will we actually see wildlife at Periyar?", a: "The Periyar Lake cruise regularly turns up wild elephants, sambar deer, gaur and abundant birdlife along the shoreline, and the reserve is a tiger habitat, though tiger sightings are rare and never guaranteed. Early-morning cruises and the dry months of October–March give the best odds. It's genuine wild nature, not a safari park." },
-            { q: "What is the houseboat night like?", a: "You have a private converted rice barge with an en-suite cabin, an open deck and an onboard cook preparing fresh Keralan meals. You cruise the palm-lined canals by day and moor peacefully overnight. It's a highlight of the trip — comfortable and scenic, though simpler than a 5-star hotel by nature." },
+            { q: "How much of this trip is North India versus Kerala?", a: "The first five days are the Golden Triangle, Delhi, Agra and Jaipur, and the remaining eight are Kerala, from Munnar's tea hills to the Alleppey backwaters. It's a genuine two-halves tour: heritage and monuments first, then nature, wildlife and water. The internal flight on Day 6 is what makes the span practical." },
+            { q: "Will we actually see wildlife at Periyar?", a: "The Periyar Lake cruise regularly turns up wild elephants, sambar deer, gaur and abundant birdlife along the shoreline, and the reserve is a tiger habitat, though tiger sightings are rare and never guaranteed. Early-morning cruises and the dry months of October to March give the best odds. It's genuine wild nature, not a safari park." },
+            { q: "What is the houseboat night like?", a: "You have a private converted rice barge with an en-suite cabin, an open deck and an onboard cook preparing fresh Keralan meals. You cruise the palm-lined canals by day and moor peacefully overnight. It's a highlight of the trip, comfortable and scenic, though simpler than a 5-star hotel by nature." },
             { q: "Is the Munnar hill drive difficult?", a: "It's a winding climb of around four and a half hours from Kochi on well-maintained but twisting ghat roads, with waterfalls and tea-garden viewpoints to break it up. If you're prone to motion sickness we pace it with frequent stops. The scenery genuinely is part of the experience rather than just transit." },
-            { q: "When is the best time for this tour?", a: "October to March: dry, clear days in the north and cool, pleasant weather in the Kerala hills. Avoid June to August, when the Western Ghats monsoon makes hill roads and wildlife viewing difficult. September and April are shoulder months — greener and quieter, with a chance of showers." },
-            { q: "Can we add a Kerala beach stay or Ayurveda retreat?", a: "Yes — Kovalam or Marari beach and dedicated Ayurveda retreats extend naturally from Kochi at the end of this tour. Since you finish in Kerala, adding a few restful days by the sea is straightforward. Share your dates and we'll design and quote the extension." },
+            { q: "When is the best time for this tour?", a: "October to March: dry, clear days in the north and cool, pleasant weather in the Kerala hills. Avoid June to August, when the Western Ghats monsoon makes hill roads and wildlife viewing difficult. September and April are shoulder months, greener and quieter, with a chance of showers." },
+            { q: "Can we add a Kerala beach stay or Ayurveda retreat?", a: "Yes, Kovalam or Marari beach and dedicated Ayurveda retreats extend naturally from Kochi at the end of this tour. Since you finish in Kerala, adding a few restful days by the sea is straightforward. Share your dates and we'll design and quote the extension." },
         ],
     },
     19: {
-        metaTitle: "Golden Triangle & Varanasi Tour — 11 Days on the Ganges",
-        metaDescription: "Private 11-day Golden Triangle & Varanasi tour: Ganga Aarti, sunrise boat ride, Sarnath, plus Delhi, Agra & Jaipur. Train, flight, guides — from ₹91,200pp. Enquire now.",
-        bestTime: "October–March brings mild days and the clearest Ganges sunrises; the winter months are ideal for the ghats and the Golden Triangle alike.",
-        answer: "GT + Varanasi Eternity is an 11-day private tour that pairs the sacred city of Varanasi with India's Golden Triangle. You'll witness the Ganga Aarti fire ceremony, take a sunrise boat ride on the Ganges, and visit Sarnath where the Buddha first taught, then see the Taj Mahal, Amber Fort and Delhi's temples. Travel blends an overnight train, an internal flight and a private car with guides throughout. It runs best October–March and starts from ₹91,200 per person.",
+        metaTitle: "Golden Triangle & Varanasi Tour, 11 Days on the Ganges",
+        metaDescription: "Private 11-day Golden Triangle & Varanasi tour: Ganga Aarti, sunrise boat ride, Sarnath, plus Delhi, Agra & Jaipur. Train, flight, guides, from ₹91,200pp. Enquire now.",
+        bestTime: "October to March brings mild days and the clearest Ganges sunrises; the winter months are ideal for the ghats and the Golden Triangle alike.",
+        answer: "GT + Varanasi Eternity is an 11-day private tour that pairs the sacred city of Varanasi with India's Golden Triangle. You'll witness the Ganga Aarti fire ceremony, take a sunrise boat ride on the Ganges, and visit Sarnath where the Buddha first taught, then see the Taj Mahal, Amber Fort and Delhi's temples. Travel blends an overnight train, an internal flight and a private car with guides throughout. It runs best October to March and starts from ₹91,200 per person.",
         quickFacts: [
             { label: "Duration", value: "11 days / 10 nights" },
             { label: "Route", value: "Delhi → Varanasi (train) → Delhi (fly) → Agra → Jaipur → depart" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Balanced — spiritual then heritage" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Balanced, spiritual then heritage" },
             { label: "Hotels", value: "4★ / 5★ & Ganges-view options" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹91,200 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "D1: Delhi Arrival & Spiritual Briefing. Akshardham Temple visit.",
-                title: "Delhi — Arrival & Akshardham",
+                title: "Delhi, Arrival & Akshardham",
                 detail: [
                     "Your chauffeur meets you at Delhi (DEL) and, after check-in, your guide sets the spiritual arc of the journey ahead.",
                     "In the afternoon you visit the vast Swaminarayan Akshardham temple complex, an intricately carved sandstone-and-marble sanctuary on the Yamuna's banks (note: cameras and phones are not permitted inside).",
@@ -1992,22 +1992,22 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "D2: Delhi heritage walk. Evening train to Varanasi.",
-                title: "Delhi — Heritage Walk & Overnight Train",
+                title: "Delhi, Heritage Walk & Overnight Train",
                 detail: [
                     "A morning heritage walk covers Old Delhi's Red Fort and Jama Masjid and New Delhi's Humayun's Tomb and Qutub Minar, with lunch and a rest before evening.",
-                    "You then board an overnight train to Varanasi from Delhi — a comfortable air-conditioned berth and an authentic slice of Indian rail travel as you sleep your way east.",
+                    "You then board an overnight train to Varanasi from Delhi, a comfortable air-conditioned berth and an authentic slice of Indian rail travel as you sleep your way east.",
                 ],
                 overnight: "Overnight train",
                 meals: "Breakfast",
-                drive: "Delhi → Varanasi · overnight train (~10–12 hrs)",
+                drive: "Delhi → Varanasi · overnight train (~10 to 12 hrs)",
             },
             {
                 day: 3,
                 plan: "D3: Varanasi Arrival. Evening Ganga Aarti on the Ghats.",
-                title: "Varanasi — Arrival & Ganga Aarti",
+                title: "Varanasi, Arrival & Ganga Aarti",
                 detail: [
                     "You arrive in Varanasi and transfer to your hotel to freshen up and rest after the train, easing into the world's oldest living city.",
-                    "As dusk falls you take your place for the Ganga Aarti at Dashashwamedh Ghat — a mesmerising ritual of fire lamps, chanting and incense honouring the river, best watched from a boat just offshore.",
+                    "As dusk falls you take your place for the Ganga Aarti at Dashashwamedh Ghat, a mesmerising ritual of fire lamps, chanting and incense honouring the river, best watched from a boat just offshore.",
                 ],
                 overnight: "Varanasi",
                 meals: "Breakfast",
@@ -2016,9 +2016,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "D4: Sunrise boat ride on Ganges. Sarnath visit (where Buddha gave his first sermon).",
-                title: "Varanasi — Ganges Sunrise & Sarnath",
+                title: "Varanasi, Ganges Sunrise & Sarnath",
                 detail: [
-                    "Before dawn you glide onto the Ganges by boat as the sun rises over the ghats and pilgrims perform their morning ablutions — the defining, unforgettable Varanasi experience.",
+                    "Before dawn you glide onto the Ganges by boat as the sun rises over the ghats and pilgrims perform their morning ablutions, the defining, unforgettable Varanasi experience.",
                     "Later you visit Sarnath, where the Buddha delivered his first sermon after enlightenment, taking in the Dhamek Stupa, the ruined monasteries and the archaeological museum.",
                 ],
                 overnight: "Varanasi",
@@ -2028,9 +2028,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "D5: Narrow alley tour of Old Kashi. Evening meditation session.",
-                title: "Varanasi — Old Kashi & Meditation",
+                title: "Varanasi, Old Kashi & Meditation",
                 detail: [
-                    "A walking tour threads the labyrinthine lanes of Old Kashi — past the Kashi Vishwanath temple precinct, silk-weaving workshops and tucked-away shrines that reveal the city's living faith.",
+                    "A walking tour threads the labyrinthine lanes of Old Kashi, past the Kashi Vishwanath temple precinct, silk-weaving workshops and tucked-away shrines that reveal the city's living faith.",
                     "As the day winds down you join a guided meditation or yoga session by the river, a calm counterpoint to the intensity of the ghats.",
                 ],
                 overnight: "Varanasi",
@@ -2040,10 +2040,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "D6: Varanasi to Delhi by Flight. Evening leisure.",
-                title: "Delhi — Fly Back & Leisure",
+                title: "Delhi, Fly Back & Leisure",
                 detail: [
                     "After a final Varanasi morning you fly back to Delhi, a short hop that saves a long overland return and keeps the pace easy.",
-                    "The evening is at leisure — rest, or an optional stroll and dinner — before the Golden Triangle leg begins.",
+                    "The evening is at leisure, rest, or an optional stroll and dinner, before the Golden Triangle leg begins.",
                 ],
                 overnight: "Delhi",
                 meals: "Breakfast",
@@ -2052,7 +2052,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "D7: Delhi to Agra. Afternoon Agr Fort. Sunset Taj Mahal.",
-                title: "Agra — Agra Fort & Taj at Sunset",
+                title: "Agra, Agra Fort & Taj at Sunset",
                 detail: [
                     "A morning run down the Yamuna Expressway brings you to Agra and your hotel by lunchtime.",
                     "The afternoon starts at the red-sandstone Agra Fort, the Mughal seat of power, before you visit the Taj Mahal at sunset, when the marble warms to amber and the crowds thin.",
@@ -2064,9 +2064,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "D8: Sunrise Taj Mahal (Inside tour). Drive to Jaipur via specialty stepwells.",
-                title: "Agra — Taj at Sunrise & Drive to Jaipur",
+                title: "Agra, Taj at Sunrise & Drive to Jaipur",
                 detail: [
-                    "You return to enter the Taj Mahal at first light for the full inside tour, when the mausoleum shifts from pink to pearl-white — the best hour to see and photograph it.",
+                    "You return to enter the Taj Mahal at first light for the full inside tour, when the mausoleum shifts from pink to pearl-white, the best hour to see and photograph it.",
                     "After breakfast you drive to Jaipur via Abhaneri's Chand Baori, one of India's deepest and most spectacular ancient stepwells, and UNESCO-listed Fatehpur Sikri en route.",
                 ],
                 overnight: "Jaipur",
@@ -2076,7 +2076,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 9,
                 plan: "D9: Jaipur City Tour. Palace of Winds & Royal Observatory.",
-                title: "Jaipur — City Palace, Hawa Mahal & Jantar Mantar",
+                title: "Jaipur, City Palace, Hawa Mahal & Jantar Mantar",
                 detail: [
                     "The day explores the Pink City: the City Palace, still home to the erstwhile royal family, and the honeycombed Hawa Mahal, the 'Palace of Winds'.",
                     "You also visit Jantar Mantar, the 18th-century royal observatory of monumental stone instruments, with time to browse the bazaars for textiles and gemstones.",
@@ -2088,10 +2088,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 10,
                 plan: "D10: Amber Fort trek & afternoon heritage craft session.",
-                title: "Jaipur — Amber Fort & Craft Workshop",
+                title: "Jaipur, Amber Fort & Craft Workshop",
                 detail: [
                     "The morning ascends to the honey-coloured Amber Fort above Maota Lake, exploring the Sheesh Mahal mirror hall and ramparts (walk up, or jeep on request).",
-                    "In the afternoon a hands-on heritage craft session — block-printing or blue pottery — with local artisans lets you make and take home a piece of Rajasthan.",
+                    "In the afternoon a hands-on heritage craft session, block-printing or blue pottery, with local artisans lets you make and take home a piece of Rajasthan.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -2100,12 +2100,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 11,
                 plan: "D11: Departure from Jaipur/Delhi Flight.",
-                title: "Jaipur — Departure",
+                title: "Jaipur, Departure",
                 detail: [
-                    "After breakfast you're transferred for your departure — a direct flight out of Jaipur, or a road transfer to Delhi for an onward international connection, as your ticket requires.",
+                    "After breakfast you're transferred for your departure, a direct flight out of Jaipur, or a road transfer to Delhi for an onward international connection, as your ticket requires.",
                     "The tour closes having traced the circle of life on the Ganges and the grandeur of the Mughal and Rajput north.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jaipur airport, or Jaipur → Delhi · ~5 hrs if required",
             },
@@ -2126,37 +2126,37 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Why an overnight train to Varanasi but a flight back?", a: "The overnight train is a deliberate, comfortable experience — you sleep in an air-conditioned berth and wake near Varanasi, saving a day and adding an authentic slice of Indian rail travel. The return flight then keeps the pace easy so you reach Agra fresh. If you'd prefer to fly both ways, we can arrange it and re-quote." },
+            { q: "Why an overnight train to Varanasi but a flight back?", a: "The overnight train is a deliberate, comfortable experience, you sleep in an air-conditioned berth and wake near Varanasi, saving a day and adding an authentic slice of Indian rail travel. The return flight then keeps the pace easy so you reach Agra fresh. If you'd prefer to fly both ways, we can arrange it and re-quote." },
             { q: "What exactly is the Ganga Aarti and can we get close?", a: "It's a nightly fire-and-chant ceremony honouring the Ganges, performed by priests with towering brass lamps at Dashashwamedh Ghat. We arrange a boat just offshore for an unobstructed, atmospheric view above the crowd, plus optional ghat-side seating. It's the emotional heart of any Varanasi visit." },
-            { q: "Is the sunrise boat ride suitable for everyone?", a: "Yes — it's a gentle, seated ride on a stable rowing or motor boat, with an early but easy start. It's genuinely the highlight of Varanasi as the ghats wake and the light turns golden. We can arrange later timings or a private boat for families and older travellers on request." },
-            { q: "Varanasi can feel intense — how do you handle that?", a: "We're honest that Varanasi is raw and crowded, and you will pass the cremation ghats where the cycle of life and death is openly present. A good private guide makes the difference, explaining customs, keeping you comfortable and steering the pace. Most travellers find it moving rather than overwhelming when guided well." },
-            { q: "Do we still get the full Golden Triangle?", a: "Yes — after Varanasi you cover Agra and Jaipur properly, with both a sunset and a sunrise at the Taj Mahal, Agra Fort, Amber Fort and the Pink City. The stepwell stop at Abhaneri en route to Jaipur is a bonus most standard tours skip. Only Delhi is trimmed, since you see its highlights on Days 1 and 2." },
-            { q: "What is the best time of year for this tour?", a: "October to March for mild days and the clearest Ganges sunrises, which is also peak season for the Golden Triangle. Winter mornings in Varanasi can be misty and atmospheric. Summer (April–June) is very hot on the plains, and the monsoon can raise the river level, so the cooler months are strongly preferred." },
+            { q: "Is the sunrise boat ride suitable for everyone?", a: "Yes, it's a gentle, seated ride on a stable rowing or motor boat, with an early but easy start. It's genuinely the highlight of Varanasi as the ghats wake and the light turns golden. We can arrange later timings or a private boat for families and older travellers on request." },
+            { q: "Varanasi can feel intense, how do you handle that?", a: "We're honest that Varanasi is raw and crowded, and you will pass the cremation ghats where the cycle of life and death is openly present. A good private guide makes the difference, explaining customs, keeping you comfortable and steering the pace. Most travellers find it moving rather than overwhelming when guided well." },
+            { q: "Do we still get the full Golden Triangle?", a: "Yes, after Varanasi you cover Agra and Jaipur properly, with both a sunset and a sunrise at the Taj Mahal, Agra Fort, Amber Fort and the Pink City. The stepwell stop at Abhaneri en route to Jaipur is a bonus most standard tours skip. Only Delhi is trimmed, since you see its highlights on Days 1 and 2." },
+            { q: "What is the best time of year for this tour?", a: "October to March for mild days and the clearest Ganges sunrises, which is also peak season for the Golden Triangle. Winter mornings in Varanasi can be misty and atmospheric. Summer (April to June) is very hot on the plains, and the monsoon can raise the river level, so the cooler months are strongly preferred." },
         ],
     },
 
     20: {
-        metaTitle: "16-Day Luxury Rajasthan Tour — The Maharaja Circuit | MyTripMyTravel",
-        metaDescription: "Private 16-day luxury Rajasthan tour — Delhi, Agra, Jaipur, Udaipur, Jodhpur & Jaisalmer in palace hotels with butler service. From ₹2,07,400 pp. Enquire now.",
-        bestTime: "October–March is ideal, with cool desert nights and clear light; the Jaisalmer and Jodhpur desert legs are best avoided in the April–June heat.",
-        answer: "The Maharaja Circuit is our flagship 16-day private tour of royal Rajasthan, staying in the region's finest palace hotels — options such as Rambagh Palace, the Lake Palace and Umaid Bhawan — with butler service throughout. You travel Delhi, Agra, Jaipur, Udaipur, Jodhpur, Jaisalmer and Bikaner by chauffeured luxury car and two private flights, seeing the Taj Mahal at sunrise, lake sunsets and Thar dunes. It runs best October–March and starts from ₹2,07,400 per person.",
+        metaTitle: "16-Day Luxury Rajasthan Tour, The Maharaja Circuit | MyTripMyTravel",
+        metaDescription: "Private 16-day luxury Rajasthan tour, Delhi, Agra, Jaipur, Udaipur, Jodhpur & Jaisalmer in palace hotels with butler service. From ₹2,07,400 pp. Enquire now.",
+        bestTime: "October to March is ideal, with cool desert nights and clear light; the Jaisalmer and Jodhpur desert legs are best avoided in the April to June heat.",
+        answer: "The Maharaja Circuit is our flagship 16-day private tour of royal Rajasthan, staying in the region's finest palace hotels, options such as Rambagh Palace, the Lake Palace and Umaid Bhawan, with butler service throughout. You travel Delhi, Agra, Jaipur, Udaipur, Jodhpur, Jaisalmer and Bikaner by chauffeured luxury car and two private flights, seeing the Taj Mahal at sunrise, lake sunsets and Thar dunes. It runs best October to March and starts from ₹2,07,400 per person.",
         quickFacts: [
             { label: "Duration", value: "16 days / 15 nights" },
             { label: "Route", value: "Delhi → Agra → Jaipur → Udaipur → Jodhpur → Jaisalmer → Bikaner → Delhi" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Unhurried — a grand tour, one region per stay" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Unhurried, a grand tour, one region per stay" },
             { label: "Hotels", value: "5★ palace & heritage hotels with butler service" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹2,07,400 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival. VIP transfer to stay at Taj Mahal Hotel New Delhi.",
-                title: "Delhi — VIP Arrival & Palace-Hotel Check-in",
+                title: "Delhi, VIP Arrival & Palace-Hotel Check-in",
                 detail: [
                     "You are met inside Delhi (DEL) arrivals with fast-track assistance and driven to a landmark five-star such as The Taj Mahal Hotel on Mansingh Road, in the heart of Lutyens' Delhi.",
-                    "The rest of the day is yours to settle in, shake off the flight and dine at leisure — a deliberately soft opening before the circuit begins.",
+                    "The rest of the day is yours to settle in, shake off the flight and dine at leisure, a deliberately soft opening before the circuit begins.",
                 ],
                 overnight: "Delhi",
                 meals: "None (arrival day)",
@@ -2165,7 +2165,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi Curated History Tour. Private dining at a royal residence.",
-                title: "Delhi — Curated History & a Private Royal Dinner",
+                title: "Delhi, Curated History & a Private Royal Dinner",
                 detail: [
                     "A private historian-guide leads a curated day across the capital: the Mughal grandeur of Humayun's Tomb and the Red Fort, the quiet of Lodhi Gardens, and the ceremonial sweep of New Delhi past India Gate.",
                     "In the evening you dine privately at a heritage residence, an intimate introduction to the old aristocratic Delhi that public restaurants never show.",
@@ -2177,10 +2177,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Private drive to Agra. Stay at Oberoi Amarvilas. Taj Mahal Tour.",
-                title: "Agra — Drive to Agra & the Taj Mahal",
+                title: "Agra, Drive to Agra & the Taj Mahal",
                 detail: [
                     "A morning run down the Yamuna Expressway brings you to Agra and a Taj-facing suite at a hotel such as The Oberoi Amarvilas, where every room looks onto the mausoleum.",
-                    "In the softer afternoon light your guide walks you through the Taj Mahal — the story of Shah Jahan and Mumtaz Mahal, the pietra dura inlay and the flawless symmetry — at an unhurried, private pace.",
+                    "In the softer afternoon light your guide walks you through the Taj Mahal, the story of Shah Jahan and Mumtaz Mahal, the pietra dura inlay and the flawless symmetry, at an unhurried, private pace.",
                 ],
                 overnight: "Agra",
                 meals: "Breakfast",
@@ -2191,7 +2191,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 plan: "Sunrise Taj view. Private drive to Jaipur via Fatehpur Sikri. Stay at Rambagh Palace.",
                 title: "Sunrise Taj, Fatehpur Sikri & Jaipur",
                 detail: [
-                    "You return to the Taj Mahal at first light — the least crowded, most photogenic hour, when the marble shifts from rose to pearl.",
+                    "You return to the Taj Mahal at first light, the least crowded, most photogenic hour, when the marble shifts from rose to pearl.",
                     "The drive to Jaipur pauses at UNESCO-listed Fatehpur Sikri, Akbar's perfectly preserved red-sandstone ghost capital.",
                     "By evening you check into a palace hotel such as Rambagh Palace, the former residence of the Maharaja of Jaipur, set in 47 acres of gardens.",
                 ],
@@ -2202,10 +2202,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Full day Jaipur. Palace VIP tour & evening Polo match.",
-                title: "Jaipur — Amber Fort, City Palace & Polo",
+                title: "Jaipur, Amber Fort, City Palace & Polo",
                 detail: [
                     "A full private day in the Pink City: the honey-stone Amber Fort with its Sheesh Mahal mirror hall, the royal City Palace, and the Jantar Mantar observatory.",
-                    "Where the season allows, the evening is arranged around Jaipur's great sporting tradition — a polo match or an elephant/heritage experience — followed by dinner at the palace.",
+                    "Where the season allows, the evening is arranged around Jaipur's great sporting tradition, a polo match or an elephant/heritage experience, followed by dinner at the palace.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -2214,7 +2214,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Private flight to Udaipur. Stay at Lake Palace Jag Niwas.",
-                title: "Udaipur — Private Flight to the City of Lakes",
+                title: "Udaipur, Private Flight to the City of Lakes",
                 detail: [
                     "A short private flight carries you south to Udaipur, Rajasthan's most romantic city, cradled by the Aravalli hills and its lakes.",
                     "You are boated across Lake Pichola to an island palace hotel such as the Taj Lake Palace (Jag Niwas), a floating white-marble vision that appears to rise from the water.",
@@ -2226,7 +2226,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Udaipur Lakes & Palaces. Sunset boat with butler service.",
-                title: "Udaipur — City Palace, Lakes & Sunset Cruise",
+                title: "Udaipur, City Palace, Lakes & Sunset Cruise",
                 detail: [
                     "The morning explores the vast City Palace complex rising above Lake Pichola, the Jagdish Temple and the Saheliyon-ki-Bari gardens with your private guide.",
                     "As the light fades you take a butler-served sunset cruise past Jag Mandir island, one of the circuit's quiet, unforgettable set-pieces.",
@@ -2238,9 +2238,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Drive to Jodhpur via Ranakpur. Stay at Umaid Bhawan Palace.",
-                title: "Jodhpur — Ranakpur Temples & the Blue City",
+                title: "Jodhpur, Ranakpur Temples & the Blue City",
                 detail: [
-                    "The scenic drive north pauses at Ranakpur, whose 15th-century Jain temple is a forest of 1,444 individually carved marble pillars — no two alike.",
+                    "The scenic drive north pauses at Ranakpur, whose 15th-century Jain temple is a forest of 1,444 individually carved marble pillars, no two alike.",
                     "You arrive in Jodhpur at a hotel such as Umaid Bhawan Palace, the sandstone Art Deco palace that is still partly the Maharaja's family home, set high above the Blue City.",
                 ],
                 overnight: "Jodhpur",
@@ -2250,7 +2250,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 9,
                 plan: "Jodhpur Fort VIP exploration. Private desert safari.",
-                title: "Jodhpur — Mehrangarh Fort & Desert Safari",
+                title: "Jodhpur, Mehrangarh Fort & Desert Safari",
                 detail: [
                     "A private tour of the mighty Mehrangarh Fort, rising sheer 120 metres above the city, with its palaces, courtyards and the marble memorial of Jaswant Thada nearby.",
                     "In the afternoon you head into the surrounding countryside on a private safari to a Bishnoi village, for a glimpse of rural Rajasthani life and a desert sunset.",
@@ -2262,10 +2262,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 10,
                 plan: "Jodhpur to Jaisalmer drive. Stay in luxury tented camps.",
-                title: "Jaisalmer — Drive into the Thar Desert",
+                title: "Jaisalmer, Drive into the Thar Desert",
                 detail: [
                     "You cross deeper into the Thar Desert to Jaisalmer, the remote Golden City built entirely of yellow sandstone.",
-                    "The night is spent under canvas at a luxury tented camp near the dunes — private, richly furnished tents with proper beds and en-suite bathrooms, far from any town glow.",
+                    "The night is spent under canvas at a luxury tented camp near the dunes, private, richly furnished tents with proper beds and en-suite bathrooms, far from any town glow.",
                 ],
                 overnight: "Jaisalmer (luxury desert camp)",
                 meals: "Breakfast, Dinner",
@@ -2274,7 +2274,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 11,
                 plan: "Sam Sand Dunes sunset & Jaisalmer Fort tour.",
-                title: "Jaisalmer — Living Fort & Sam Dunes Sunset",
+                title: "Jaisalmer, Living Fort & Sam Dunes Sunset",
                 detail: [
                     "You explore Jaisalmer Fort, one of the world's few still-inhabited forts, with its Jain temples, carved havelis and lanes of daily life inside the walls.",
                     "At day's end you drive out to the Sam Sand Dunes for a camel ride and a golden desert sunset, followed by folk music and dinner back at camp.",
@@ -2286,10 +2286,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 12,
                 plan: "Private drive to Bikaner. Stay at Junagarh Fort heritage hotel.",
-                title: "Bikaner — Drive North & Heritage Fort Stay",
+                title: "Bikaner, Drive North & Heritage Fort Stay",
                 detail: [
                     "A long, open desert drive brings you to Bikaner, a former caravan city on the old silk-and-spice routes.",
-                    "You check into a heritage hotel near Junagarh Fort — an unusual fort in that it was never conquered, its interiors intact with painted halls, lacquer work and gilded chambers.",
+                    "You check into a heritage hotel near Junagarh Fort, an unusual fort in that it was never conquered, its interiors intact with painted halls, lacquer work and gilded chambers.",
                 ],
                 overnight: "Bikaner",
                 meals: "Breakfast",
@@ -2298,7 +2298,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 13,
                 plan: "Rat Temple & Bikaner heritage walk. Private flight to Delhi.",
-                title: "Bikaner — Karni Mata Temple & Flight to Delhi",
+                title: "Bikaner, Karni Mata Temple & Flight to Delhi",
                 detail: [
                     "The morning visits the extraordinary Karni Mata 'Rat Temple' at Deshnoke, where thousands of sacred rats are revered, followed by a heritage walk through Bikaner's old havelis.",
                     "In the afternoon a private flight returns you to Delhi and your luxury hotel for the final chapter of the circuit.",
@@ -2310,7 +2310,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 14,
                 plan: "Delhi Luxury Day. High-end shopping with a personal stylist.",
-                title: "Delhi — Personal-Stylist Shopping Day",
+                title: "Delhi, Personal-Stylist Shopping Day",
                 detail: [
                     "A relaxed day in the capital with a personal stylist, moving between the designer boutiques of Khan Market, DLF Emporio and Mehrauli's ateliers for textiles, jewellery and couture.",
                     "Everything is private and unhurried, with lunch woven in and your car and butler on hand throughout.",
@@ -2322,10 +2322,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 15,
                 plan: "Relaxed morning. Spa and final celebratory dinner.",
-                title: "Delhi — Spa Day & Celebratory Dinner",
+                title: "Delhi, Spa Day & Celebratory Dinner",
                 detail: [
                     "The penultimate day is deliberately gentle: a long spa morning and time at leisure to let the journey settle.",
-                    "In the evening we host a private celebratory dinner to close the circuit — a fitting send-off after sixteen days across royal Rajasthan.",
+                    "In the evening we host a private celebratory dinner to close the circuit, a fitting send-off after sixteen days across royal Rajasthan.",
                 ],
                 overnight: "Delhi",
                 meals: "Breakfast, Dinner",
@@ -2334,19 +2334,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 16,
                 plan: "Final Luxury departure escort.",
-                title: "Delhi — Departure",
+                title: "Delhi, Departure",
                 detail: [
                     "After a relaxed breakfast you are escorted to Delhi airport with fast-track assistance for your onward international flight.",
-                    "Late check-out or a day-use room can be arranged if your flight departs late — just ask.",
+                    "Late check-out or a day-use room can be arranged if your flight departs late, just ask.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Central Delhi → Airport · ~45 min",
             },
         ],
         inclusions: [
             "15 nights in 5★ palace, heritage and luxury tented accommodation with butler service, daily breakfast and select dinners",
-            "Two private internal flights (Jaipur–Udaipur and Bikaner–Delhi) with fast-track assistance",
+            "Two private internal flights (Jaipur to Udaipur and Bikaner to Delhi) with fast-track assistance",
             "Private chauffeured luxury vehicle for the full circuit with all fuel, tolls, parking and driver costs",
             "Private licensed guides and curated experiences in every city, plus lake and desert transfers",
             "VIP airport meet-and-assist on arrival and departure",
@@ -2360,36 +2360,36 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Are the palace hotels guaranteed, or can I choose them?", a: "We book the finest available palace and heritage hotels for each city and confirm the exact properties with your quote — options such as Rambagh Palace, the Taj Lake Palace and Umaid Bhawan. Named suites and specific rooms depend on availability at the time of booking, so we recommend confirming early, especially in peak season." },
-            { q: "How much of the travel is by car versus flight?", a: "Most legs are by private chauffeured luxury car so you see the countryside and stop where you like. Two longer hops — Jaipur to Udaipur and Bikaner back to Delhi — are private flights to save a full day of driving each. If you'd prefer to fly more legs or drive them, we can re-cost the circuit either way." },
-            { q: "Is 16 days too long, or can it be shortened?", a: "Sixteen days is what royal Rajasthan deserves without rushing, but the circuit is fully modular. We can drop Bikaner or Jaisalmer to bring it to 12–13 days, or add Ranthambore's tigers or Pushkar. Tell us your total days and we'll rebalance the route and price." },
+            { q: "Are the palace hotels guaranteed, or can I choose them?", a: "We book the finest available palace and heritage hotels for each city and confirm the exact properties with your quote, options such as Rambagh Palace, the Taj Lake Palace and Umaid Bhawan. Named suites and specific rooms depend on availability at the time of booking, so we recommend confirming early, especially in peak season." },
+            { q: "How much of the travel is by car versus flight?", a: "Most legs are by private chauffeured luxury car so you see the countryside and stop where you like. Two longer hops, Jaipur to Udaipur and Bikaner back to Delhi, are private flights to save a full day of driving each. If you'd prefer to fly more legs or drive them, we can re-cost the circuit either way." },
+            { q: "Is 16 days too long, or can it be shortened?", a: "Sixteen days is what royal Rajasthan deserves without rushing, but the circuit is fully modular. We can drop Bikaner or Jaisalmer to bring it to 12 to 13 days, or add Ranthambore's tigers or Pushkar. Tell us your total days and we'll rebalance the route and price." },
             { q: "What does butler service actually include?", a: "At the palace hotels a dedicated butler handles unpacking, pressing, in-room dining, reservations and the small logistics of each stay, while your tour manager and chauffeur cover everything between cities. The aim is that you never handle a bag, a booking or a queue across the whole trip." },
             { q: "Is this suitable for a honeymoon or a milestone celebration?", a: "It's one of our most popular choices for honeymoons and big anniversaries. We arrange private lake-sunset cruises, candlelit dinners, room decoration and the celebratory closing dinner in Delhi. Share the occasion when you enquire and we'll build the surprises in discreetly." },
             { q: "When is the best time to travel this route?", a: "October to March is ideal, with cool clear days and comfortable desert nights across Jaisalmer, Jodhpur and Bikaner. April to June is very hot in the western desert and best avoided for those legs; the monsoon months are green and atmospheric but can affect the desert-camp experience." },
         ],
     },
     21: {
-        metaTitle: "12-Day Rajasthan Desert & Palaces Tour — Jaisalmer & Jodhpur | MyTripMyTravel",
-        metaDescription: "Private 12-day Rajasthan desert tour — Jaisalmer dunes, Jodhpur's fort, Jaipur & the Taj Mahal by private car and train. From ₹99,500 pp. Enquire now.",
-        bestTime: "October–March for cool desert days and clear nights; the Jaisalmer and Jodhpur legs are best avoided in the fierce April–June heat.",
-        answer: "Desert & Palaces is a private 12-day tour that folds the golden dunes of Jaisalmer into the classic Golden Triangle. You travel Delhi, Jaisalmer, Jodhpur, Jaipur and Agra — mixing chauffeured drives with two scenic Rajasthan train journeys — for camel safaris and campfire folk music in the Thar, Mehrangarh Fort in the Blue City, the Pink City's palaces and a sunrise Taj Mahal. It runs best October–March and starts from ₹99,500 per person.",
+        metaTitle: "12-Day Rajasthan Desert & Palaces Tour, Jaisalmer & Jodhpur | MyTripMyTravel",
+        metaDescription: "Private 12-day Rajasthan desert tour, Jaisalmer dunes, Jodhpur's fort, Jaipur & the Taj Mahal by private car and train. From ₹99,500 pp. Enquire now.",
+        bestTime: "October to March for cool desert days and clear nights; the Jaisalmer and Jodhpur legs are best avoided in the fierce April to June heat.",
+        answer: "Desert & Palaces is a private 12-day tour that folds the golden dunes of Jaisalmer into the classic Golden Triangle. You travel Delhi, Jaisalmer, Jodhpur, Jaipur and Agra, mixing chauffeured drives with two scenic Rajasthan train journeys, for camel safaris and campfire folk music in the Thar, Mehrangarh Fort in the Blue City, the Pink City's palaces and a sunrise Taj Mahal. It runs best October to March and starts from ₹99,500 per person.",
         quickFacts: [
             { label: "Duration", value: "12 days / 11 nights" },
             { label: "Route", value: "Delhi → Jaisalmer → Jodhpur → Jaipur → Agra → Delhi" },
-            { label: "Best time", value: "October–March" },
-            { label: "Pace", value: "Balanced — desert immersion plus the Triangle" },
+            { label: "Best time", value: "October to March" },
+            { label: "Pace", value: "Balanced, desert immersion plus the Triangle" },
             { label: "Hotels", value: "4★ / 5★, heritage & luxury desert camp" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹99,500 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival & introduction to culture.",
-                title: "Delhi — Arrival & Orientation",
+                title: "Delhi, Arrival & Orientation",
                 detail: [
                     "Your chauffeur meets you at Delhi (DEL) arrivals and transfers you to your hotel to settle in after the flight.",
-                    "A gentle first evening introduces you to the capital — a briefing on the route ahead and time to rest before the journey west into Rajasthan begins.",
+                    "A gentle first evening introduces you to the capital, a briefing on the route ahead and time to rest before the journey west into Rajasthan begins.",
                 ],
                 overnight: "Delhi",
                 meals: "None (arrival day)",
@@ -2401,18 +2401,18 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 title: "Delhi Sightseeing & Overnight Train to Jaisalmer",
                 detail: [
                     "A full day across Old and New Delhi: the Red Fort and Jama Masjid, a rickshaw ride through Chandni Chowk, then India Gate and Humayun's Tomb.",
-                    "In the evening you board the overnight train to Jaisalmer — a classic Indian rail journey in a reserved air-conditioned berth that carries you deep into the desert as you sleep.",
+                    "In the evening you board the overnight train to Jaisalmer, a classic Indian rail journey in a reserved air-conditioned berth that carries you deep into the desert as you sleep.",
                 ],
                 overnight: "Overnight train",
                 meals: "Breakfast",
-                drive: "Delhi → Jaisalmer · overnight train (~17–18 hrs)",
+                drive: "Delhi → Jaisalmer · overnight train (~17 to 18 hrs)",
             },
             {
                 day: 3,
                 plan: "Jaisalmer Arrival. Fort exploration & Gadsisar Lake.",
-                title: "Jaisalmer — The Golden Fort & Gadsisar Lake",
+                title: "Jaisalmer, The Golden Fort & Gadsisar Lake",
                 detail: [
-                    "You arrive in Jaisalmer and explore its living sandstone fort — one of the few forts on earth still fully inhabited, with Jain temples, carved havelis and lanes of everyday life inside the walls.",
+                    "You arrive in Jaisalmer and explore its living sandstone fort, one of the few forts on earth still fully inhabited, with Jain temples, carved havelis and lanes of everyday life inside the walls.",
                     "The afternoon eases off at Gadsisar Lake, a man-made oasis ringed by shrines and ghats, before a first desert sunset.",
                 ],
                 overnight: "Jaisalmer",
@@ -2422,9 +2422,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Sam Sand Dunes Camel Safari & folk music around campfire.",
-                title: "Jaisalmer — Sam Dunes Safari & Desert Camp",
+                title: "Jaisalmer, Sam Dunes Safari & Desert Camp",
                 detail: [
-                    "You drive out to the Sam Sand Dunes for a camel safari across the rippled sand as the light turns gold — the signature Thar Desert experience.",
+                    "You drive out to the Sam Sand Dunes for a camel safari across the rippled sand as the light turns gold, the signature Thar Desert experience.",
                     "The evening unfolds around a campfire with Rajasthani folk musicians and dancers and dinner under a huge desert sky, with the option of a night in a comfortable tented camp.",
                 ],
                 overnight: "Jaisalmer / Sam desert camp",
@@ -2436,7 +2436,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 plan: "Desert lifestyle tour. Evening train back to Jodhpur.",
                 title: "Desert Villages & Train to Jodhpur",
                 detail: [
-                    "The morning takes you into the desert's rhythms — village life, artisan crafts and the cenotaphs and abandoned havelis around Jaisalmer.",
+                    "The morning takes you into the desert's rhythms, village life, artisan crafts and the cenotaphs and abandoned havelis around Jaisalmer.",
                     "In the evening you take the train east to Jodhpur, a scenic run across the open Thar into the Blue City.",
                 ],
                 overnight: "Jodhpur",
@@ -2446,7 +2446,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Jodhpur Mehrangarh Fort and Jaswant Thada visit.",
-                title: "Jodhpur — Mehrangarh Fort & the Blue City",
+                title: "Jodhpur, Mehrangarh Fort & the Blue City",
                 detail: [
                     "You tour the colossal Mehrangarh Fort, rising sheer above Jodhpur, with its palace museum, ornate courtyards and cannon-lined ramparts looking out over a sea of blue houses.",
                     "Nearby stands Jaswant Thada, the serene white-marble royal cenotaph, before a walk through the old Blue City lanes below the fort.",
@@ -2458,10 +2458,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Jodhpur to Jaipur drive. Pink City cultural intro.",
-                title: "Jaipur — Drive East to the Pink City",
+                title: "Jaipur, Drive East to the Pink City",
                 detail: [
                     "A long, comfortable drive east brings you to Jaipur, the Pink City, in the afternoon.",
-                    "An easy first evening introduces you to the old walled city — its rose-washed facades and bustling bazaars — before a full day of sightseeing tomorrow.",
+                    "An easy first evening introduces you to the old walled city, its rose-washed facades and bustling bazaars, before a full day of sightseeing tomorrow.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -2470,7 +2470,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Amer Fort, City Palace, and Jantar Mantar Jaipur.",
-                title: "Jaipur — Amber Fort, City Palace & Jantar Mantar",
+                title: "Jaipur, Amber Fort, City Palace & Jantar Mantar",
                 detail: [
                     "The day begins at the hilltop Amber Fort above Maota Lake, with its Sheesh Mahal mirror hall and grand courtyards (jeep ascent included).",
                     "Back in the walled city you visit the royal City Palace, still home to the erstwhile royal family, and the Jantar Mantar observatory, pausing at the Hawa Mahal facade for photographs.",
@@ -2482,7 +2482,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 9,
                 plan: "Jaipur to Agra via Abhaneri. Evening at leisure.",
-                title: "Agra — Drive via the Abhaneri Stepwell",
+                title: "Agra, Drive via the Abhaneri Stepwell",
                 detail: [
                     "The road to Agra pauses at Abhaneri to see Chand Baori, one of India's deepest and most geometrically spectacular stepwells, plunging thirteen storeys underground.",
                     "You reach Agra by evening, with time at leisure to rest ahead of an early start at the Taj Mahal.",
@@ -2494,9 +2494,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 10,
                 plan: "Taj Mahal Sunrise. Agra Fort Afternoon.",
-                title: "Agra — Sunrise Taj Mahal & Agra Fort",
+                title: "Agra, Sunrise Taj Mahal & Agra Fort",
                 detail: [
-                    "You enter the Taj Mahal at first light with your guide, when the marble glows and the crowds are thinnest — the finest hour to see and photograph it.",
+                    "You enter the Taj Mahal at first light with your guide, when the marble glows and the crowds are thinnest, the finest hour to see and photograph it.",
                     "The afternoon explores the red-sandstone Agra Fort, from where a captive Shah Jahan spent his final years gazing across the Yamuna at the Taj he built.",
                 ],
                 overnight: "Agra",
@@ -2506,10 +2506,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 11,
                 plan: "Drive back to Delhi. Evening Farewell dinner.",
-                title: "Delhi — Return & Farewell Dinner",
+                title: "Delhi, Return & Farewell Dinner",
                 detail: [
                     "A morning drive up the Yamuna Expressway returns you to Delhi.",
-                    "The evening closes the tour with a farewell dinner — a relaxed final night to look back over the desert, the forts and the Taj.",
+                    "The evening closes the tour with a farewell dinner, a relaxed final night to look back over the desert, the forts and the Taj.",
                 ],
                 overnight: "Delhi",
                 meals: "Breakfast, Dinner",
@@ -2518,19 +2518,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 12,
                 plan: "Final transfer & Departure.",
-                title: "Delhi — Departure",
+                title: "Delhi, Departure",
                 detail: [
                     "After breakfast your chauffeur transfers you to Delhi airport in good time for your onward flight.",
                     "A late check-out or day-use room can be arranged for late departures on request.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Hotel → Airport · ~45 min",
             },
         ],
         inclusions: [
             "11 nights in 4★/5★, heritage and desert-camp accommodation with daily breakfast and select dinners",
-            "Two reserved air-conditioned train journeys (Delhi–Jaisalmer overnight and Jaisalmer–Jodhpur)",
+            "Two reserved air-conditioned train journeys (Delhi to Jaisalmer overnight and Jaisalmer to Jodhpur)",
             "Private air-conditioned vehicle with chauffeur for all road legs, including fuel, tolls and parking",
             "Sam Dunes camel safari and evening folk performance with campfire dinner",
             "Licensed local guides in Jaisalmer, Jodhpur, Jaipur and Agra, plus airport transfers",
@@ -2544,35 +2544,35 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "What are the overnight and inter-city trains like?", a: "You travel in reserved, air-conditioned carriages — the Delhi–Jaisalmer leg is an overnight train with berths so you sleep as you cross the desert, and the Jaisalmer–Jodhpur run is a shorter daytime journey. Trains are a genuine, comfortable part of Rajasthan travel; if you'd rather drive or fly any leg, we can adjust the plan and price." },
-            { q: "Is the desert camp roughing it, or comfortable?", a: "The Sam Dunes camp is a comfortable 'glamping' experience — furnished tents with proper beds, en-suite bathrooms and hot water, plus campfire dinners and folk music. We can upgrade to a premium luxury camp if you'd like more indulgence in the desert." },
+            { q: "What are the overnight and inter-city trains like?", a: "You travel in reserved, air-conditioned carriages, the Delhi to Jaisalmer leg is an overnight train with berths so you sleep as you cross the desert, and the Jaisalmer to Jodhpur run is a shorter daytime journey. Trains are a genuine, comfortable part of Rajasthan travel; if you'd rather drive or fly any leg, we can adjust the plan and price." },
+            { q: "Is the desert camp roughing it, or comfortable?", a: "The Sam Dunes camp is a comfortable 'glamping' experience, furnished tents with proper beds, en-suite bathrooms and hot water, plus campfire dinners and folk music. We can upgrade to a premium luxury camp if you'd like more indulgence in the desert." },
             { q: "How much desert heat should I expect?", a: "That depends entirely on season. October to March gives warm, pleasant days and cool nights, ideal for the dunes. April to June is genuinely fierce in Jaisalmer and Jodhpur and best avoided. We plan camel safaris and fort visits for the cooler morning and evening hours year-round." },
-            { q: "Does this tour include the full Golden Triangle?", a: "It includes Delhi, Jaipur and Agra — with the Taj Mahal at sunrise, Amber Fort and the Pink City — plus the desert cities of Jaisalmer and Jodhpur. It skips a dedicated Fatehpur Sikri stop in favour of the Abhaneri stepwell, but that can be added on request." },
+            { q: "Does this tour include the full Golden Triangle?", a: "It includes Delhi, Jaipur and Agra, with the Taj Mahal at sunrise, Amber Fort and the Pink City, plus the desert cities of Jaisalmer and Jodhpur. It skips a dedicated Fatehpur Sikri stop in favour of the Abhaneri stepwell, but that can be added on request." },
             { q: "Is the pace manageable for older travellers?", a: "It's balanced rather than rushed, but there are two train journeys and some long drives between the desert cities. The forts involve walking on uneven historic ground, though jeep ascents and rest stops soften this. We're happy to build in extra nights or lighter days for a gentler pace." },
-            { q: "Can we add Udaipur or Pushkar to this route?", a: "Yes — Udaipur's lakes slot in naturally after Jodhpur, and Pushkar's sacred lake and Brahma temple fit between Jodhpur and Jaipur. Both extend the tour by a couple of days each. Send your total available days and we'll design the ideal Rajasthan loop and quote it." },
+            { q: "Can we add Udaipur or Pushkar to this route?", a: "Yes, Udaipur's lakes slot in naturally after Jodhpur, and Pushkar's sacred lake and Brahma temple fit between Jodhpur and Jaipur. Both extend the tour by a couple of days each. Send your total available days and we'll design the ideal Rajasthan loop and quote it." },
         ],
     },
     8: {
-        metaTitle: "Royal Wedding Venue Scouting Tour — Jaipur & Agra | MyTripMyTravel",
+        metaTitle: "Royal Wedding Venue Scouting Tour, Jaipur & Agra | MyTripMyTravel",
         metaDescription: "Six-day royal wedding venue-scouting tour of Jaipur & Agra palaces with a planner, private car and on-site venue meetings. From ₹49,700 pp. Enquire now.",
-        bestTime: "October–March is both the best scouting weather and India's core wedding season, so book scouting well ahead of your event dates.",
-        answer: "The Royal Wedding Scout is a focused 6-day recce for couples and planners choosing a destination-wedding venue across the Golden Triangle. With a dedicated wedding planner and private car, you tour and meet the teams at palace and heritage venues in Agra and Jaipur — options such as Samode Palace, City Palace and leading five-stars — assess backdrops and logistics, and leave with a shortlist and selection report. It runs best October–March and starts from ₹49,700 per person.",
+        bestTime: "October to March is both the best scouting weather and India's core wedding season, so book scouting well ahead of your event dates.",
+        answer: "The Royal Wedding Scout is a focused 6-day recce for couples and planners choosing a destination-wedding venue across the Golden Triangle. With a dedicated wedding planner and private car, you tour and meet the teams at palace and heritage venues in Agra and Jaipur, options such as Samode Palace, City Palace and leading five-stars, assess backdrops and logistics, and leave with a shortlist and selection report. It runs best October to March and starts from ₹49,700 per person.",
         quickFacts: [
             { label: "Duration", value: "6 days / 5 nights" },
             { label: "Route", value: "Delhi → Agra → Jaipur → Delhi" },
-            { label: "Best time", value: "October–March (peak scouting & wedding season)" },
-            { label: "Pace", value: "Focused — venue visits & planner meetings" },
+            { label: "Best time", value: "October to March (peak scouting & wedding season)" },
+            { label: "Pace", value: "Focused, venue visits & planner meetings" },
             { label: "Hotels", value: "4★ / 5★ & palace venues under review" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹49,700 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi Arrival. Consultation with wedding planner & luxury car preview.",
-                title: "Delhi — Planner Consultation & Briefing",
+                title: "Delhi, Planner Consultation & Briefing",
                 detail: [
-                    "On arrival in Delhi you sit down with your dedicated wedding planner to define the brief — guest numbers, budget band, aesthetic, ceremony sequence and must-have moments.",
+                    "On arrival in Delhi you sit down with your dedicated wedding planner to define the brief, guest numbers, budget band, aesthetic, ceremony sequence and must-have moments.",
                     "You preview the luxury vehicle fleet and guest-transfer options, and agree the shortlist of venues to scout across Agra and Jaipur over the coming days.",
                 ],
                 overnight: "Delhi",
@@ -2582,10 +2582,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi to Agra. Visit Taj Khema & Jaypee Palace venues.",
-                title: "Agra — Taj-View & Resort Venue Scouting",
+                title: "Agra, Taj-View & Resort Venue Scouting",
                 detail: [
                     "A morning transfer to Agra begins the venue tour with properties that offer that once-in-a-lifetime Taj Mahal backdrop, such as the Taj Khema viewpoint area.",
-                    "You then assess large-format resort venues like the Jaypee Palace — walking the lawns, banquet halls and guest-capacity, and meeting the events team on-site.",
+                    "You then assess large-format resort venues like the Jaypee Palace, walking the lawns, banquet halls and guest-capacity, and meeting the events team on-site.",
                 ],
                 overnight: "Agra",
                 meals: "Breakfast",
@@ -2596,7 +2596,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 plan: "Sunrise Taj photoshoot venue checking. Drive to Jaipur. Jai Mahal Palace view.",
                 title: "Sunrise Taj Backdrops & Drive to Jaipur",
                 detail: [
-                    "At sunrise you evaluate the light and vantage points for pre-wedding photoshoots around the Taj Mahal — the angles, timing and access that make or break the shots.",
+                    "At sunrise you evaluate the light and vantage points for pre-wedding photoshoots around the Taj Mahal, the angles, timing and access that make or break the shots.",
                     "You then drive to Jaipur and view a palace-hotel venue such as Jai Mahal Palace, set in landscaped Mughal gardens, as an evening reception option.",
                 ],
                 overnight: "Jaipur",
@@ -2606,7 +2606,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Jaipur: Samode Palace, Fairmont, and City Palace venue meetings.",
-                title: "Jaipur — Flagship Palace Venue Meetings",
+                title: "Jaipur, Flagship Palace Venue Meetings",
                 detail: [
                     "A full day of Jaipur's marquee venues: the fresco-covered Samode Palace, the grand Rajput-Mughal architecture of the Fairmont, and the royal City Palace for a truly regal ceremony setting.",
                     "At each you meet the events and catering teams, review capacity, décor rules, permissions and available dates, and gather formal proposals.",
@@ -2618,7 +2618,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Nahargarh Fort & wedding backdrop sessions. Designer lehenga preview.",
-                title: "Jaipur — Fort Backdrops & Designer Preview",
+                title: "Jaipur, Fort Backdrops & Designer Preview",
                 detail: [
                     "The morning scouts Nahargarh Fort and its ramparts above the city for dramatic sundowner and sangeet backdrops, testing the light and logistics of a hilltop event.",
                     "The afternoon adds a designer studio preview for bridal lehengas and trousseau, so wardrobe and venue aesthetics can be planned together.",
@@ -2630,12 +2630,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Drive back to Delhi. Final selection report & Departure.",
-                title: "Delhi — Selection Report & Departure",
+                title: "Delhi, Selection Report & Departure",
                 detail: [
-                    "On the drive back to Delhi your planner walks you through a written selection report — a shortlist with capacities, indicative costs, available dates and pros and cons for each venue.",
+                    "On the drive back to Delhi your planner walks you through a written selection report, a shortlist with capacities, indicative costs, available dates and pros and cons for each venue.",
                     "You depart with everything you need to make a confident decision, and the option for us to carry the chosen venue straight into full planning.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jaipur → Delhi · ~5 hrs / 280 km",
             },
@@ -2656,35 +2656,35 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Can you actually book the venue, or only show it to us?", a: "Both. The scout is designed to help you choose with confidence, but once you select a venue we can carry it straight into full wedding planning — negotiating rates, holding dates, coordinating décor, catering and guest logistics. Many couples use the trip precisely so the same team runs the wedding itself." },
+            { q: "Can you actually book the venue, or only show it to us?", a: "Both. The scout is designed to help you choose with confidence, but once you select a venue we can carry it straight into full wedding planning, negotiating rates, holding dates, coordinating décor, catering and guest logistics. Many couples use the trip precisely so the same team runs the wedding itself." },
             { q: "Are venue site visits and meetings pre-arranged?", a: "Yes. We schedule the site visits and events-team meetings in advance so you're expected, shown the ceremony and reception spaces, and given real availability and indicative pricing. This is far more productive than turning up as a walk-in, and it's why a planned scout saves months later." },
-            { q: "How far ahead of the wedding should we scout?", a: "Ideally 9–18 months before your dates. India's best palace venues book out a year or more ahead for the October–March peak season, so scouting early protects both your preferred venue and your date. We can advise realistic date options for each shortlisted property." },
-            { q: "Can we scout venues beyond Jaipur and Agra?", a: "Absolutely. Udaipur's lake palaces, Jodhpur's forts and Delhi farmhouse venues are all popular wedding settings we can add. Tell us your vision — intimate lakeside, grand fort, or Taj-view — and we'll shape the scouting route around the venues that fit your guest count and budget." },
-            { q: "What's in the final selection report?", a: "A written shortlist of the venues visited, each with capacity, indicative cost, available dates, décor and permission notes, logistics, and honest pros and cons. It's built so you — and any family members who couldn't travel — can compare properly and decide, rather than relying on memory and phone photos." },
+            { q: "How far ahead of the wedding should we scout?", a: "Ideally 9 to 18 months before your dates. India's best palace venues book out a year or more ahead for the October to March peak season, so scouting early protects both your preferred venue and your date. We can advise realistic date options for each shortlisted property." },
+            { q: "Can we scout venues beyond Jaipur and Agra?", a: "Absolutely. Udaipur's lake palaces, Jodhpur's forts and Delhi farmhouse venues are all popular wedding settings we can add. Tell us your vision, intimate lakeside, grand fort, or Taj-view, and we'll shape the scouting route around the venues that fit your guest count and budget." },
+            { q: "What's in the final selection report?", a: "A written shortlist of the venues visited, each with capacity, indicative cost, available dates, décor and permission notes, logistics, and honest pros and cons. It's built so you, and any family members who couldn't travel, can compare properly and decide, rather than relying on memory and phone photos." },
             { q: "Do you handle permissions, catering and vendors too?", a: "Yes, once you appoint us for the wedding. We coordinate the licences and permissions each venue requires, in-house or external catering, décor, photography, entertainment and guest transfers. The scout focuses on the venue decision; full vendor management follows in the planning phase." },
         ],
     },
     9: {
-        metaTitle: "7-Day India Photography Tour — Golden Triangle Golden Hour | MyTripMyTravel",
-        metaDescription: "Seven-day India photography tour of the Golden Triangle — sunrise Taj Mahal, forts and bazaars at golden hour with a master guide. From ₹62,200 pp. Enquire now.",
-        bestTime: "October–March offers the clearest light and richest colour; winter mornings bring soft mist that flatters the Taj Mahal and forts.",
-        answer: "The Photography Expedition is a 7-day Golden Triangle tour built entirely around light. Guided by a photographer who knows the locations, you shoot Chandni Chowk's street life, the Taj Mahal at sunrise with minimal crowds, Fatehpur Sikri's sandstone texture, Panna Meena stepwell and Jaipur's forts at golden hour. Timings are set around dawn and dusk, with review-and-editing sessions built in. It runs best October–March and starts from ₹62,200 per person.",
+        metaTitle: "7-Day India Photography Tour, Golden Triangle Golden Hour | MyTripMyTravel",
+        metaDescription: "Seven-day India photography tour of the Golden Triangle, sunrise Taj Mahal, forts and bazaars at golden hour with a master guide. From ₹62,200 pp. Enquire now.",
+        bestTime: "October to March offers the clearest light and richest colour; winter mornings bring soft mist that flatters the Taj Mahal and forts.",
+        answer: "The Photography Expedition is a 7-day Golden Triangle tour built entirely around light. Guided by a photographer who knows the locations, you shoot Chandni Chowk's street life, the Taj Mahal at sunrise with minimal crowds, Fatehpur Sikri's sandstone texture, Panna Meena stepwell and Jaipur's forts at golden hour. Timings are set around dawn and dusk, with review-and-editing sessions built in. It runs best October to March and starts from ₹62,200 per person.",
         quickFacts: [
             { label: "Duration", value: "7 days / 6 nights" },
             { label: "Route", value: "Delhi → Agra → Jaipur → Delhi" },
-            { label: "Best time", value: "October–March (clearest light, winter mist)" },
-            { label: "Pace", value: "Light-led — early starts & golden-hour shoots" },
+            { label: "Best time", value: "October to March (clearest light, winter mist)" },
+            { label: "Pace", value: "Light-led, early starts & golden-hour shoots" },
             { label: "Hotels", value: "4★ / 5★ & heritage options" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹62,200 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi: Street photography in Chandni Chowk & Jama Masjid.",
-                title: "Delhi — Street Photography in Old Delhi",
+                title: "Delhi, Street Photography in Old Delhi",
                 detail: [
-                    "Your photographer-guide leads you into the sensory chaos of Chandni Chowk — spice markets, cycle-rickshaws, artisans and faces — for a first day of documentary street work.",
+                    "Your photographer-guide leads you into the sensory chaos of Chandni Chowk, spice markets, cycle-rickshaws, artisans and faces, for a first day of documentary street work.",
                     "You climb to a rooftop vantage over Jama Masjid for the late-afternoon call to prayer, learning to read the light and work respectfully among crowds.",
                 ],
                 overnight: "Delhi",
@@ -2694,10 +2694,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi to Agra. Sunset silhouette of Taj Mahal from Mehtab Bagh.",
-                title: "Agra — Mehtab Bagh Sunset Taj",
+                title: "Agra, Mehtab Bagh Sunset Taj",
                 detail: [
                     "A morning transfer to Agra leaves the afternoon for scouting angles ahead of two dawn shoots.",
-                    "At sunset you set up across the Yamuna at Mehtab Bagh, the classic garden vantage, to capture the Taj Mahal in silhouette and warm reflected light — a very different mood from the sunrise shot to come.",
+                    "At sunset you set up across the Yamuna at Mehtab Bagh, the classic garden vantage, to capture the Taj Mahal in silhouette and warm reflected light, a very different mood from the sunrise shot to come.",
                 ],
                 overnight: "Agra",
                 meals: "Breakfast",
@@ -2706,7 +2706,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Sunrise inside Taj Mahal (No-crowd photography). Agra Fort light-play sessions.",
-                title: "Agra — Sunrise Taj Mahal & Agra Fort",
+                title: "Agra, Sunrise Taj Mahal & Agra Fort",
                 detail: [
                     "You enter the Taj Mahal at opening for the low-crowd first light, working the changing colour on the marble, the symmetry and the detail of the pietra dura inlay before the day-tourists arrive.",
                     "The afternoon moves to the red-sandstone Agra Fort for light-play sessions among its arches, jali screens and the framed Taj views across the river.",
@@ -2730,7 +2730,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Sunrise at Hawa Mahal. Afternoon Jaipur stepwell (Panna Meena Kund) session.",
-                title: "Jaipur — Hawa Mahal Dawn & Panna Meena Stepwell",
+                title: "Jaipur, Hawa Mahal Dawn & Panna Meena Stepwell",
                 detail: [
                     "At first light you shoot the Hawa Mahal from the facing rooftop café, when the rising sun hits the pink honeycomb facade and the street below is still quiet.",
                     "In the afternoon you work the symmetry of Panna Meena ka Kund, the 16th-century criss-cross stepwell near Amber, whose staircases are a photographer's geometry playground.",
@@ -2742,10 +2742,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Jaipur Forts at Golden Hour. Elephant village portraits. Review & editing session.",
-                title: "Jaipur — Forts at Golden Hour & Editing",
+                title: "Jaipur, Forts at Golden Hour & Editing",
                 detail: [
                     "Golden hour is spent at Amber and Nahargarh forts, working the warm side-light on the ramparts and the panoramic views over the Pink City below.",
-                    "You add portrait work at an elephant village, then close with a guided review-and-editing session — culling, developing and critiquing your best frames from the week.",
+                    "You add portrait work at an elephant village, then close with a guided review-and-editing session, culling, developing and critiquing your best frames from the week.",
                 ],
                 overnight: "Jaipur",
                 meals: "Breakfast",
@@ -2754,12 +2754,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Pink City market life photography. Return drive to Delhi.",
-                title: "Jaipur — Market Life & Return to Delhi",
+                title: "Jaipur, Market Life & Return to Delhi",
                 detail: [
-                    "A final morning photographing the Pink City bazaars — bangles, textiles, flower markets and daily life in the walled old town.",
+                    "A final morning photographing the Pink City bazaars, bangles, textiles, flower markets and daily life in the walled old town.",
                     "By early afternoon you begin the drive back to Delhi for your onward flight, memory cards full.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Jaipur → Delhi · ~5 hrs / 280 km",
             },
@@ -2780,36 +2780,36 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "What skill level is this tour for?", a: "Any level. The photographer-guide tailors the coaching — composition, light and settings for beginners and enthusiasts, or pure logistics and access for pros who just want to be in the right place at the right time. Tell us your level and gear when you book and we'll pitch the guidance accordingly." },
+            { q: "What skill level is this tour for?", a: "Any level. The photographer-guide tailors the coaching, composition, light and settings for beginners and enthusiasts, or pure logistics and access for pros who just want to be in the right place at the right time. Tell us your level and gear when you book and we'll pitch the guidance accordingly." },
             { q: "Can I photograph inside the Taj Mahal, and can I bring a tripod?", a: "You can photograph in the Taj Mahal grounds, and we time your entry for the low-crowd first light. However, tripods and professional rigs are restricted inside the main mausoleum, and a camera fee applies. We'll brief you on exactly what's allowed at each monument and arrange permissions where possible." },
             { q: "Are drones allowed at these locations?", a: "Generally no. Drones are prohibited at the Taj Mahal, Agra Fort and most protected monuments without special government clearance, which is rarely granted. We're honest about this upfront; where a legal aerial or rooftop alternative exists, we'll build it in rather than promise flights we can't deliver." },
-            { q: "How early are the starts?", a: "Early — the whole tour is built around dawn and dusk light, so expect pre-sunrise departures on the Taj, Hawa Mahal and fort days. Middays, when the light is harsh, are lighter or reserved for rest, editing and scouting. It's demanding but it's where the best frames come from." },
+            { q: "How early are the starts?", a: "Early, the whole tour is built around dawn and dusk light, so expect pre-sunrise departures on the Taj, Hawa Mahal and fort days. Middays, when the light is harsh, are lighter or reserved for rest, editing and scouting. It's demanding but it's where the best frames come from." },
             { q: "Is winter really the best time for photography here?", a: "Yes. October to March gives the clearest, richest light, and cool winter mornings often bring a soft mist that makes the Taj Mahal and forts look ethereal. Summer is hazy and punishingly bright by mid-morning; the monsoon brings dramatic skies but unpredictable access." },
             { q: "Can you customise locations or add a wildlife leg?", a: "Definitely. We can add Ranthambore for tiger and bird photography, Varanasi's ghats at dawn, or Rajasthan's desert light in Jaisalmer. If you have specific shots or a portfolio theme in mind, share it and we'll design the route and timings around getting you those images." },
         ],
     },
 
     22: {
-        metaTitle: "Kerala Backwaters Tour — Munnar, Thekkady & Alleppey | MyTripMyTravel",
-        metaDescription: "Private 7-day Kerala tour: Fort Kochi, Munnar tea hills, Periyar wildlife & an Alleppey houseboat night. Chauffeured, hotels, breakfasts — from ₹53,900pp. Enquire now.",
-        bestTime: "September–March for dry days and green hills; the backwaters and tea estates are at their most photogenic just after the monsoon.",
-        answer: "Kerala Backwater Bliss is a private, chauffeured 7-day loop through the best of God's Own Country — Fort Kochi's colonial waterfront, the tea-carpeted hills of Munnar, the Periyar wildlife sanctuary at Thekkady, and a full night aboard a private Alleppey houseboat. You travel by air-conditioned car with a dedicated driver, sleeping in hand-picked hotels and one backwater cruiser, and close with a Kathakali performance in Kochi. It runs best September–March and starts from ₹53,900 per person.",
+        metaTitle: "Kerala Backwaters Tour, Munnar, Thekkady & Alleppey | MyTripMyTravel",
+        metaDescription: "Private 7-day Kerala tour: Fort Kochi, Munnar tea hills, Periyar wildlife & an Alleppey houseboat night. Chauffeured, hotels, breakfasts, from ₹53,900pp. Enquire now.",
+        bestTime: "September to March for dry days and green hills; the backwaters and tea estates are at their most photogenic just after the monsoon.",
+        answer: "Kerala Backwater Bliss is a private, chauffeured 7-day loop through the best of God's Own Country, Fort Kochi's colonial waterfront, the tea-carpeted hills of Munnar, the Periyar wildlife sanctuary at Thekkady, and a full night aboard a private Alleppey houseboat. You travel by air-conditioned car with a dedicated driver, sleeping in hand-picked hotels and one backwater cruiser, and close with a Kathakali performance in Kochi. It runs best September to March and starts from ₹53,900 per person.",
         quickFacts: [
             { label: "Duration", value: "7 days / 6 nights" },
             { label: "Route", value: "Kochi → Munnar → Thekkady → Alleppey → Kochi" },
-            { label: "Best time", value: "September–March" },
-            { label: "Pace", value: "Relaxed — scenic drives, no rush" },
+            { label: "Best time", value: "September to March" },
+            { label: "Pace", value: "Relaxed, scenic drives, no rush" },
             { label: "Hotels", value: "4★ / 5★, resorts & 1 private houseboat" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹53,900 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Kochi Arrival. Chinese Fishing Nets & Fort Kochi walking tour.",
-                title: "Kochi — Arrival & Fort Kochi Heritage Walk",
+                title: "Kochi, Arrival & Fort Kochi Heritage Walk",
                 detail: [
-                    "Your chauffeur meets you at Cochin (COK) arrivals and transfers you to your Fort Kochi hotel — the layered old town where Portuguese, Dutch and British quarters sit side by side.",
+                    "Your chauffeur meets you at Cochin (COK) arrivals and transfers you to your Fort Kochi hotel, the layered old town where Portuguese, Dutch and British quarters sit side by side.",
                     "An easy afternoon walk takes in the cantilevered Chinese fishing nets on the waterfront, St Francis Church (once Vasco da Gama's resting place), and the spice-scented lanes and antique shops of Jew Town and Mattancherry.",
                 ],
                 overnight: "Kochi",
@@ -2819,7 +2819,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Kochi to Munnar. Scenic drive through tea plantations and waterfalls.",
-                title: "Munnar — Drive Through the Tea Hills",
+                title: "Munnar, Drive Through the Tea Hills",
                 detail: [
                     "You climb from the coast into the Western Ghats, the road winding past roadside waterfalls, spice groves and the first sweeping tea slopes as you gain altitude toward Munnar at around 1,600 metres.",
                     "Arriving by afternoon, you settle into your hill hotel with the cool, eucalyptus-scented air that makes Munnar Kerala's favourite escape from the heat. The evening is free for tea and the view.",
@@ -2831,7 +2831,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Munnar Sightseeing: Eravikulam National Park and Tea Museum.",
-                title: "Munnar — Eravikulam Park & Tea Country",
+                title: "Munnar, Eravikulam Park & Tea Country",
                 detail: [
                     "The morning is Eravikulam National Park, home to the endangered Nilgiri tahr and, in season, the rare Neelakurinji bloom; a shuttle carries you up to the high-altitude grasslands beneath Anamudi, South India's tallest peak.",
                     "In the afternoon the Tata Tea Museum walks you through Munnar's colonial planting history and a live tasting, before a drive out past Mattupetty Dam and the Echo Point lake for photographs.",
@@ -2843,9 +2843,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Munnar to Thekkady. Periyar Wildlife Sanctuary visit and Spice plantation.",
-                title: "Thekkady — Periyar Wildlife & Spice Gardens",
+                title: "Thekkady, Periyar Wildlife & Spice Gardens",
                 detail: [
-                    "A scenic morning drive brings you down to Thekkady, gateway to the Periyar Tiger Reserve — one of India's best-known elephant and wildlife sanctuaries wrapped around a lake.",
+                    "A scenic morning drive brings you down to Thekkady, gateway to the Periyar Tiger Reserve, one of India's best-known elephant and wildlife sanctuaries wrapped around a lake.",
                     "You take a guided cruise on Periyar Lake to watch for elephant, gaur and deer at the water's edge, then tour a working cardamom-and-pepper spice plantation to see how Kerala earned its name in the spice trade.",
                 ],
                 overnight: "Thekkady",
@@ -2855,7 +2855,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Thekkady to Alleppey. Boat check-in for a night in the backwaters.",
-                title: "Alleppey — Private Houseboat on the Backwaters",
+                title: "Alleppey, Private Houseboat on the Backwaters",
                 detail: [
                     "You descend from the hills to Alleppey (Alappuzha) and board your private Kettuvallam houseboat, a converted rice barge with an ensuite cabin, sundeck and onboard cook.",
                     "The afternoon drifts through the palm-fringed canals and lagoons of the Kuttanad backwaters, past paddy fields below sea level and village life on the banks, with a fresh Keralan lunch and dinner served aboard and the boat mooring for the night.",
@@ -2867,10 +2867,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Alleppey to Kochi. Evening Kathakali dance performance.",
-                title: "Kochi — Return & Kathakali Performance",
+                title: "Kochi, Return & Kathakali Performance",
                 detail: [
                     "After a sunrise cruise and breakfast on the water, you disembark and drive back up the coast to Kochi for check-in and an afternoon at leisure.",
-                    "In the evening you attend a Kathakali performance — Kerala's centuries-old classical dance-drama of elaborate make-up, mudras and expression; arriving early lets you watch the performers apply their masks by hand.",
+                    "In the evening you attend a Kathakali performance, Kerala's centuries-old classical dance-drama of elaborate make-up, mudras and expression; arriving early lets you watch the performers apply their masks by hand.",
                 ],
                 overnight: "Kochi",
                 meals: "Breakfast",
@@ -2879,19 +2879,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Kochi Departure.",
-                title: "Kochi — Departure",
+                title: "Kochi, Departure",
                 detail: [
                     "A relaxed final morning allows for last-minute shopping for spices, coir and Keralan tea before check-out.",
                     "Your chauffeur transfers you to Cochin airport in good time for your onward flight.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Kochi → Airport · ~1 hr / 40 km",
             },
         ],
         inclusions: [
             "Private air-conditioned vehicle with professional chauffeur for the full circuit",
-            "6 nights' accommodation — hotels/resorts plus one private Alleppey houseboat, with daily breakfast",
+            "6 nights' accommodation, hotels/resorts plus one private Alleppey houseboat, with daily breakfast",
             "Full board (lunch and dinner) aboard the houseboat on Day 5",
             "Licensed local guides and a Fort Kochi heritage walk",
             "All fuel, tolls, parking, driver allowance and inter-city transfers",
@@ -2905,36 +2905,36 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Do we get a private houseboat or a shared one?", a: "Private. The Alleppey Kettuvallam on Day 5 is yours alone — an ensuite cabin, private sundeck and a dedicated cook and crew — so you cruise and moor on your own schedule rather than sharing with other travellers." },
-            { q: "When is the best time to visit Kerala?", a: "September to March is ideal: the monsoon has left the hills lush and the backwaters full, while the weather stays dry and pleasant. April–May is hot and humid on the coast; June–August brings the heavy monsoon, which some travellers love for the greenery and lower rates." },
-            { q: "Will we actually see wildlife at Periyar?", a: "Periyar is a genuine tiger reserve, but it's best known for reliable sightings of elephant, gaur, sambar deer and abundant birdlife from the lake cruise. Tiger and leopard are present but rarely seen — we set honest expectations rather than overpromise big cats." },
+            { q: "Do we get a private houseboat or a shared one?", a: "Private. The Alleppey Kettuvallam on Day 5 is yours alone, an ensuite cabin, private sundeck and a dedicated cook and crew, so you cruise and moor on your own schedule rather than sharing with other travellers." },
+            { q: "When is the best time to visit Kerala?", a: "September to March is ideal: the monsoon has left the hills lush and the backwaters full, while the weather stays dry and pleasant. April to May is hot and humid on the coast; June to August brings the heavy monsoon, which some travellers love for the greenery and lower rates." },
+            { q: "Will we actually see wildlife at Periyar?", a: "Periyar is a genuine tiger reserve, but it's best known for reliable sightings of elephant, gaur, sambar deer and abundant birdlife from the lake cruise. Tiger and leopard are present but rarely seen, we set honest expectations rather than overpromise big cats." },
             { q: "How much walking and altitude is involved in Munnar?", a: "Munnar sits at around 1,600 m with cool weather and gentle walking; Eravikulam involves a short shuttle plus a modest uphill stroll on paved paths. It suits most fitness levels, and the pace can be softened for older travellers on request." },
-            { q: "Can you add an Ayurveda retreat or a beach stay?", a: "Yes — Kerala is the home of Ayurveda, and we regularly extend this tour with a supervised programme at a vetted centre or a few nights at Marari or Kovalam beach. Share your dates and we'll design and quote the extension." },
-            { q: "Is this trip suitable for families and older travellers?", a: "Very much so — the drives are scenic rather than gruelling, the houseboat and hill resorts are comfortable, and the private car allows rest stops and flexible timings. We tailor walking distances and activities to your group's needs." },
+            { q: "Can you add an Ayurveda retreat or a beach stay?", a: "Yes, Kerala is the home of Ayurveda, and we regularly extend this tour with a supervised programme at a vetted centre or a few nights at Marari or Kovalam beach. Share your dates and we'll design and quote the extension." },
+            { q: "Is this trip suitable for families and older travellers?", a: "Very much so, the drives are scenic rather than gruelling, the houseboat and hill resorts are comfortable, and the private car allows rest stops and flexible timings. We tailor walking distances and activities to your group's needs." },
         ],
     },
     23: {
-        metaTitle: "Himachal Tour — Shimla, Manali & Solang Valley | MyTripMyTravel",
-        metaDescription: "Private 8-day Himachal tour: Shimla's Mall Road, Kullu Valley, Manali temples & Solang adventure. Chauffeured, hotels, breakfasts — from ₹45,600pp. Enquire now.",
-        bestTime: "March–June for pleasant hill weather and Solang activities; December–February for snow, when Rohtang and high passes may close.",
-        answer: "Himachal Heights is a private, chauffeured 8-day journey through the Himalayan foothills — the colonial hill station of Shimla, the pine-and-river drive through the Kullu Valley, Manali's temples and hot springs, and the adventure playground of Solang Valley. You travel by air-conditioned car with a dedicated driver, staying in hand-picked hill hotels, and finish in Chandigarh. It runs best March–June or in the winter snow season, and starts from ₹45,600 per person.",
+        metaTitle: "Himachal Tour, Shimla, Manali & Solang Valley | MyTripMyTravel",
+        metaDescription: "Private 8-day Himachal tour: Shimla's Mall Road, Kullu Valley, Manali temples & Solang adventure. Chauffeured, hotels, breakfasts, from ₹45,600pp. Enquire now.",
+        bestTime: "March to June for pleasant hill weather and Solang activities; December to February for snow, when Rohtang and high passes may close.",
+        answer: "Himachal Heights is a private, chauffeured 8-day journey through the Himalayan foothills, the colonial hill station of Shimla, the pine-and-river drive through the Kullu Valley, Manali's temples and hot springs, and the adventure playground of Solang Valley. You travel by air-conditioned car with a dedicated driver, staying in hand-picked hill hotels, and finish in Chandigarh. It runs best March to June or in the winter snow season, and starts from ₹45,600 per person.",
         quickFacts: [
             { label: "Duration", value: "8 days / 7 nights" },
             { label: "Route", value: "Chandigarh → Shimla → Manali → Chandigarh" },
-            { label: "Best time", value: "March–June & Dec–Feb (snow)" },
-            { label: "Pace", value: "Moderate — long but scenic mountain drives" },
+            { label: "Best time", value: "March to June & Dec to Feb (snow)" },
+            { label: "Pace", value: "Moderate, long but scenic mountain drives" },
             { label: "Hotels", value: "3★ / 4★ hill hotels & resorts" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹45,600 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Chandigarh Arrival. Drive to Shimla. Evening at The Mall Road.",
-                title: "Shimla — Arrival & The Mall Road",
+                title: "Shimla, Arrival & The Mall Road",
                 detail: [
                     "Your chauffeur meets you at Chandigarh airport and climbs into the hills toward Shimla, the former summer capital of British India at around 2,200 metres.",
-                    "After check-in you stroll The Mall and the Ridge — the pedestrian heart of Shimla lined with colonial-era buildings, Christ Church and Scandal Point — for your first crisp mountain evening.",
+                    "After check-in you stroll The Mall and the Ridge, the pedestrian heart of Shimla lined with colonial-era buildings, Christ Church and Scandal Point, for your first crisp mountain evening.",
                 ],
                 overnight: "Shimla",
                 meals: "None (arrival day)",
@@ -2943,7 +2943,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Shimla Sightseeing: Kufri, Jakhoo Temple and Ridge.",
-                title: "Shimla — Kufri, Jakhoo & the Ridge",
+                title: "Shimla, Kufri, Jakhoo & the Ridge",
                 detail: [
                     "You drive out to Kufri, a small resort village with valley viewpoints and, in winter, snow slopes, before returning toward town.",
                     "The afternoon takes in the hilltop Jakhoo Temple, crowned by a towering Hanuman statue and its resident monkeys, with sweeping views back over the Ridge and the surrounding deodar-forested ranges.",
@@ -2955,19 +2955,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Shimla to Manali via Kullu Valley. Riverside drive.",
-                title: "Manali — Drive via the Kullu Valley",
+                title: "Manali, Drive via the Kullu Valley",
                 detail: [
-                    "This is the tour's big transfer day — a long, spectacular drive following the Beas River down and through the apple-orchard country of the Kullu Valley.",
+                    "This is the tour's big transfer day, a long, spectacular drive following the Beas River down and through the apple-orchard country of the Kullu Valley.",
                     "You may pause for a riverside break or, on request, a stop for white-water rafting or shawl weaving near Kullu before arriving in Manali by evening.",
                 ],
                 overnight: "Manali",
                 meals: "Breakfast",
-                drive: "Shimla → Manali · ~7–8 hrs / 250 km",
+                drive: "Shimla → Manali · ~7 to 8 hrs / 250 km",
             },
             {
                 day: 4,
                 plan: "Manali City Tour: Hadimba Temple & Vashisht Springs.",
-                title: "Manali — Hadimba Temple & Vashisht Springs",
+                title: "Manali, Hadimba Temple & Vashisht Springs",
                 detail: [
                     "A gentler day explores Manali on foot: the cedar-shaded Hadimba Devi Temple, a 16th-century wooden pagoda set in a deodar forest, and Old Manali's cafés and Manu Temple.",
                     "You then visit the natural hot springs at Vashisht village and its stone temple, with time to browse the Tibetan and woollen markets of the Mall.",
@@ -2979,7 +2979,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Solang Valley adventure: Paragliding and snow activities.",
-                title: "Solang Valley — Adventure Day",
+                title: "Solang Valley, Adventure Day",
                 detail: [
                     "A short drive up-valley brings you to Solang, Manali's adventure hub ringed by snow peaks and ski slopes.",
                     "Depending on season you can try paragliding, zorbing and the cable-car ropeway, or in winter play in the snow; all activities are optional and paid locally, and your driver waits while you explore at your own pace.",
@@ -2994,32 +2994,32 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 title: "Rohtang Pass / Atal Tunnel Excursion",
                 detail: [
                     "Weather and permits allowing, you head toward the 3,980-metre Rohtang Pass for high-alpine snow and views; access is seasonal, capped by a daily permit quota and closed in winter.",
-                    "When Rohtang is shut, the engineering marvel of the 9-km Atal Tunnel offers a reliable alternative through to the Lahaul valley and Sissu — an equally scenic and all-weather high-mountain outing.",
+                    "When Rohtang is shut, the engineering marvel of the 9-km Atal Tunnel offers a reliable alternative through to the Lahaul valley and Sissu, an equally scenic and all-weather high-mountain outing.",
                 ],
                 overnight: "Manali",
                 meals: "Breakfast",
-                drive: "Excursion — up to ~5 hrs return depending on route",
+                drive: "Excursion, up to ~5 hrs return depending on route",
             },
             {
                 day: 7,
                 plan: "Manali to Chandigarh. Evening at Rock Garden.",
-                title: "Chandigarh — Descent & Rock Garden",
+                title: "Chandigarh, Descent & Rock Garden",
                 detail: [
                     "You retrace the Beas valley on a long descent back to the plains and Chandigarh, India's planned garden city.",
-                    "If time and arrival allow, you visit Nek Chand's Rock Garden — a sprawling fantasy world built entirely from industrial and household waste — before checking in for the night.",
+                    "If time and arrival allow, you visit Nek Chand's Rock Garden, a sprawling fantasy world built entirely from industrial and household waste, before checking in for the night.",
                 ],
                 overnight: "Chandigarh",
                 meals: "Breakfast",
-                drive: "Manali → Chandigarh · ~8–9 hrs / 305 km",
+                drive: "Manali → Chandigarh · ~8 to 9 hrs / 305 km",
             },
             {
                 day: 8,
                 plan: "Chandigarh Departure.",
-                title: "Chandigarh — Departure",
+                title: "Chandigarh, Departure",
                 detail: [
                     "After a relaxed breakfast, your chauffeur transfers you to Chandigarh airport for your onward flight, or continues to Delhi on request.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Hotel → Airport · ~30 min / 12 km",
             },
@@ -3040,33 +3040,33 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Will we see snow, and when?", a: "For guaranteed snow, travel December–February, when Shimla, Kufri, Manali and Solang are white — though Rohtang Pass is closed and high roads can be affected. March–April often still has snow at Rohtang/Solang while the valleys turn pleasant. Summer (May–June) is green and mild with snow only on the highest passes." },
-            { q: "Is Rohtang Pass guaranteed?", a: "No — and we're honest about this. Rohtang is seasonal (roughly May–October), needs a daily permit capped by a government quota, and closes for weather at short notice. When it's shut we route through the all-weather Atal Tunnel to Lahaul instead, which is equally scenic." },
-            { q: "The Shimla–Manali drive looks long — is it hard?", a: "The Day 3 and Day 7 transfers are 7–9 hours on winding mountain roads, but they're among the most scenic in the tour, and your private car means comfort stops whenever you like. If you're prone to motion sickness, tell us and we'll plan breaks and medication timing." },
-            { q: "Are the Solang adventure activities included?", a: "No — paragliding, the ropeway, zorbing and snow sports are optional and paid on the spot, because availability depends entirely on weather and season. Your driver waits while you choose what to do, and we're happy to advise on reputable operators." },
+            { q: "Will we see snow, and when?", a: "For guaranteed snow, travel December to February, when Shimla, Kufri, Manali and Solang are white, though Rohtang Pass is closed and high roads can be affected. March to April often still has snow at Rohtang/Solang while the valleys turn pleasant. Summer (May to June) is green and mild with snow only on the highest passes." },
+            { q: "Is Rohtang Pass guaranteed?", a: "No, and we're honest about this. Rohtang is seasonal (roughly May to October), needs a daily permit capped by a government quota, and closes for weather at short notice. When it's shut we route through the all-weather Atal Tunnel to Lahaul instead, which is equally scenic." },
+            { q: "The Shimla to Manali drive looks long, is it hard?", a: "The Day 3 and Day 7 transfers are 7 to 9 hours on winding mountain roads, but they're among the most scenic in the tour, and your private car means comfort stops whenever you like. If you're prone to motion sickness, tell us and we'll plan breaks and medication timing." },
+            { q: "Are the Solang adventure activities included?", a: "No, paragliding, the ropeway, zorbing and snow sports are optional and paid on the spot, because availability depends entirely on weather and season. Your driver waits while you choose what to do, and we're happy to advise on reputable operators." },
             { q: "Is this tour suitable for families with children or older travellers?", a: "Yes, with a note: the long mountain drives suit most families, and the pace in Shimla and Manali is gentle. For older travellers we can shorten daily distances, skip the highest-altitude excursions and add rest days. Solang and Rohtang involve altitude, so we advise accordingly." },
-            { q: "Can you start or end in Delhi instead of Chandigarh?", a: "Yes — many travellers connect from Delhi. We can arrange the Delhi–Chandigarh leg by road or the scenic toy-train from Kalka to Shimla, or extend the trip with a Golden Triangle add-on. Send your dates and we'll tailor the plan and quote." },
+            { q: "Can you start or end in Delhi instead of Chandigarh?", a: "Yes, many travellers connect from Delhi. We can arrange the Delhi to Chandigarh leg by road or the scenic toy-train from Kalka to Shimla, or extend the trip with a Golden Triangle add-on. Send your dates and we'll tailor the plan and quote." },
         ],
     },
     24: {
-        metaTitle: "Sikkim Tour — Gangtok, Tsomgo Lake & Pelling | MyTripMyTravel",
-        metaDescription: "Private 6-day Sikkim tour: Gangtok monasteries, high-altitude Tsomgo Lake, Baba Mandir & Kanchenjunga views at Pelling. Permits arranged — from ₹49,700pp. Enquire now.",
-        bestTime: "March–May and October–early December for clear Kanchenjunga views; permits and weather can close the high Tsomgo Lake road in peak winter.",
-        answer: "Sikkim Silk Route is a private, chauffeured 6-day tour of India's Buddhist Himalaya — Gangtok's monasteries and MG Marg, the glacial high-altitude Tsomgo Lake and Baba Mandir near the Tibet border, and the Kanchenjunga viewpoints and ruins of Pelling. You travel by air-conditioned mountain vehicle with a dedicated driver, and all Sikkim inner-line and protected-area permits are arranged for you. It runs best in spring and autumn and starts from ₹49,700 per person.",
+        metaTitle: "Sikkim Tour, Gangtok, Tsomgo Lake & Pelling | MyTripMyTravel",
+        metaDescription: "Private 6-day Sikkim tour: Gangtok monasteries, high-altitude Tsomgo Lake, Baba Mandir & Kanchenjunga views at Pelling. Permits arranged, from ₹49,700pp. Enquire now.",
+        bestTime: "March to May and October to early December for clear Kanchenjunga views; permits and weather can close the high Tsomgo Lake road in peak winter.",
+        answer: "Sikkim Silk Route is a private, chauffeured 6-day tour of India's Buddhist Himalaya, Gangtok's monasteries and MG Marg, the glacial high-altitude Tsomgo Lake and Baba Mandir near the Tibet border, and the Kanchenjunga viewpoints and ruins of Pelling. You travel by air-conditioned mountain vehicle with a dedicated driver, and all Sikkim inner-line and protected-area permits are arranged for you. It runs best in spring and autumn and starts from ₹49,700 per person.",
         quickFacts: [
             { label: "Duration", value: "6 days / 5 nights" },
             { label: "Route", value: "Bagdogra → Gangtok → Pelling → Bagdogra" },
-            { label: "Best time", value: "March–May & Oct–early Dec" },
-            { label: "Pace", value: "Moderate — mountain roads, some altitude" },
+            { label: "Best time", value: "March to May & Oct to early Dec" },
+            { label: "Pace", value: "Moderate, mountain roads, some altitude" },
             { label: "Hotels", value: "3★ / 4★ hotels & resorts" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹49,700 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Bagdogra Arrival. Drive to Gangtok. Evening at MG Marg.",
-                title: "Gangtok — Arrival via the Teesta Valley",
+                title: "Gangtok, Arrival via the Teesta Valley",
                 detail: [
                     "Your chauffeur meets you at Bagdogra (IXB) and drives up alongside the Teesta River into Sikkim, climbing to the capital Gangtok at around 1,650 metres.",
                     "After check-in you walk MG Marg, Gangtok's spotless, traffic-free café-and-shopping promenade, for your first evening in the mountains.",
@@ -3078,7 +3078,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Gangtok Local: Rumtek Monastery & Enchey Monastery.",
-                title: "Gangtok — Rumtek & Enchey Monasteries",
+                title: "Gangtok, Rumtek & Enchey Monasteries",
                 detail: [
                     "The day centres on Sikkim's living Buddhist heritage: Rumtek, the seat of the Karmapa and one of the most significant Kagyu monasteries outside Tibet, set on a ridge across the valley.",
                     "You also visit the 200-year-old Enchey Monastery in town and, as time allows, viewpoints, the Namgyal Institute of Tibetology and a handicraft centre.",
@@ -3093,7 +3093,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 title: "Tsomgo Lake & Baba Mandir",
                 detail: [
                     "A high-altitude excursion climbs the old Silk Route road to the glacial Tsomgo (Changu) Lake at about 3,750 metres, sacred to the local Bhutia and often frozen or snow-ringed in the cold months.",
-                    "You continue to Baba Harbhajan Singh Mandir, a shrine near the Nathula frontier, before descending — this is a permit-controlled border zone, so your papers are arranged in advance and altitude is real, so take it slowly.",
+                    "You continue to Baba Harbhajan Singh Mandir, a shrine near the Nathula frontier, before descending, this is a permit-controlled border zone, so your papers are arranged in advance and altitude is real, so take it slowly.",
                 ],
                 overnight: "Gangtok",
                 meals: "Breakfast",
@@ -3102,10 +3102,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Gangtok to Pelling. Views of Mt. Kanchenjunga.",
-                title: "Pelling — Drive to West Sikkim",
+                title: "Pelling, Drive to West Sikkim",
                 detail: [
                     "You cross Sikkim from east to west on a scenic ridge-and-valley drive to Pelling, a quiet hill town famed for its front-row views of Mt Kanchenjunga, the world's third-highest peak.",
-                    "Arriving by afternoon, you settle in for what — on a clear dawn — is one of the finest sunrise mountain panoramas in India.",
+                    "Arriving by afternoon, you settle in for what, on a clear dawn, is one of the finest sunrise mountain panoramas in India.",
                 ],
                 overnight: "Pelling",
                 meals: "Breakfast",
@@ -3114,7 +3114,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Pelling Local: Skywalk and Rabdentse Ruins.",
-                title: "Pelling — Skywalk & Rabdentse Ruins",
+                title: "Pelling, Skywalk & Rabdentse Ruins",
                 detail: [
                     "The morning takes in the Pelling Skywalk, a glass cantilever leading to the giant Chenrezig statue, and the atmospheric Rabdentse ruins, the former royal capital of Sikkim set in forest.",
                     "You can add the Pemayangtse Monastery, the Kanchenjunga (Khecheopalri) area and the Singshore suspension bridge, with the afternoon at leisure among the peaks.",
@@ -3126,12 +3126,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Pelling to Bagdogra Departure.",
-                title: "Bagdogra — Descent & Departure",
+                title: "Bagdogra, Descent & Departure",
                 detail: [
                     "An early start allows for the long, scenic descent from the Sikkim hills back down to the plains and Bagdogra airport.",
                     "Your chauffeur delivers you in good time for your onward flight; connections to Darjeeling or Kalimpong can be added on request.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Pelling → Bagdogra · ~4.5 hrs / 150 km",
             },
@@ -3152,33 +3152,33 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Do I need permits for Sikkim, and are they included?", a: "Foreign nationals need an Inner Line Permit (ILP) simply to enter Sikkim, plus a Protected Area Permit for restricted zones like Tsomgo Lake and Baba Mandir. We arrange all of these for you — we just need passport copies and photos in advance. Nathula Pass itself needs a separate permit and isn't guaranteed for foreign passport-holders." },
-            { q: "When is the best time to visit Sikkim?", a: "March–May brings rhododendron blooms and generally clear skies, while October to early December offers the crispest Kanchenjunga views. The June–September monsoon can trigger landslides and road closures, and deep winter can shut the high Tsomgo Lake road with snow." },
-            { q: "How high is Tsomgo Lake and will altitude affect me?", a: "Tsomgo Lake sits at about 3,750 m — high enough that some visitors feel breathless, light-headed or headachy on the day excursion. It's a short exposure with an overnight back down in Gangtok, so serious sickness is uncommon, but we advise a slow pace, water and skipping it if you have heart or breathing conditions." },
-            { q: "Will I actually see Kanchenjunga?", a: "Pelling gives you a genuine front-row seat, and on a clear dawn the views are extraordinary — but mountains make their own weather. Spring and autumn offer the best odds; in cloud or monsoon the peak can hide for days, so we build in an early Pelling morning to maximise your chance." },
+            { q: "Do I need permits for Sikkim, and are they included?", a: "Foreign nationals need an Inner Line Permit (ILP) simply to enter Sikkim, plus a Protected Area Permit for restricted zones like Tsomgo Lake and Baba Mandir. We arrange all of these for you, we just need passport copies and photos in advance. Nathula Pass itself needs a separate permit and isn't guaranteed for foreign passport-holders." },
+            { q: "When is the best time to visit Sikkim?", a: "March to May brings rhododendron blooms and generally clear skies, while October to early December offers the crispest Kanchenjunga views. The June to September monsoon can trigger landslides and road closures, and deep winter can shut the high Tsomgo Lake road with snow." },
+            { q: "How high is Tsomgo Lake and will altitude affect me?", a: "Tsomgo Lake sits at about 3,750 m, high enough that some visitors feel breathless, light-headed or headachy on the day excursion. It's a short exposure with an overnight back down in Gangtok, so serious sickness is uncommon, but we advise a slow pace, water and skipping it if you have heart or breathing conditions." },
+            { q: "Will I actually see Kanchenjunga?", a: "Pelling gives you a genuine front-row seat, and on a clear dawn the views are extraordinary, but mountains make their own weather. Spring and autumn offer the best odds; in cloud or monsoon the peak can hide for days, so we build in an early Pelling morning to maximise your chance." },
             { q: "Are the mountain roads and drives difficult?", a: "The drives are winding and can be slow, especially the border-permit road to Tsomgo, but they're managed by experienced local hill drivers in vehicles suited to the terrain. If you're prone to motion sickness, let us know and we'll plan breaks and timing." },
-            { q: "Can you extend the trip to Darjeeling, Kalimpong or North Sikkim?", a: "Yes — Darjeeling and Kalimpong pair naturally with this route via Bagdogra, and North Sikkim (Lachung, Yumthang Valley) adds spectacular high-altitude scenery with extra permits. Share your dates and we'll design and quote the extension." },
+            { q: "Can you extend the trip to Darjeeling, Kalimpong or North Sikkim?", a: "Yes, Darjeeling and Kalimpong pair naturally with this route via Bagdogra, and North Sikkim (Lachung, Yumthang Valley) adds spectacular high-altitude scenery with extra permits. Share your dates and we'll design and quote the extension." },
         ],
     },
     25: {
-        metaTitle: "Tamil Nadu Temple Tour — Madurai, Tanjore & Rameswaram | MyTripMyTravel",
-        metaDescription: "Private 9-day Tamil Nadu temple tour: Mahabalipuram, Pondicherry, Brihadisvara & Meenakshi temples to Kanyakumari. Chauffeured, hotels — from ₹74,600pp. Enquire now.",
-        bestTime: "November–March for cooler, dry days across the plains; the temple towns are intensely hot from April to June.",
-        answer: "Tamil Nadu Temple Trail is a private, chauffeured 9-day pilgrimage through South India's Dravidian heartland — from Chennai and the seaside carvings of Mahabalipuram to French Pondicherry, the UNESCO Brihadisvara temple at Tanjore, Madurai's towering Meenakshi temple, the island shrine of Rameswaram, and land's end at Kanyakumari. You travel by air-conditioned car with a dedicated driver and licensed guides, finishing at Trivandrum. It runs best November–March and starts from ₹74,600 per person.",
+        metaTitle: "Tamil Nadu Temple Tour, Madurai, Tanjore & Rameswaram | MyTripMyTravel",
+        metaDescription: "Private 9-day Tamil Nadu temple tour: Mahabalipuram, Pondicherry, Brihadisvara & Meenakshi temples to Kanyakumari. Chauffeured, hotels, from ₹74,600pp. Enquire now.",
+        bestTime: "November to March for cooler, dry days across the plains; the temple towns are intensely hot from April to June.",
+        answer: "Tamil Nadu Temple Trail is a private, chauffeured 9-day pilgrimage through South India's Dravidian heartland, from Chennai and the seaside carvings of Mahabalipuram to French Pondicherry, the UNESCO Brihadisvara temple at Tanjore, Madurai's towering Meenakshi temple, the island shrine of Rameswaram, and land's end at Kanyakumari. You travel by air-conditioned car with a dedicated driver and licensed guides, finishing at Trivandrum. It runs best November to March and starts from ₹74,600 per person.",
         quickFacts: [
             { label: "Duration", value: "9 days / 8 nights" },
             { label: "Route", value: "Chennai → Mahabalipuram → Pondicherry → Tanjore → Madurai → Rameswaram → Kanyakumari → Trivandrum" },
-            { label: "Best time", value: "November–March" },
-            { label: "Pace", value: "Moderate — steady drives, temple-rich days" },
+            { label: "Best time", value: "November to March" },
+            { label: "Pace", value: "Moderate, steady drives, temple-rich days" },
             { label: "Hotels", value: "4★ / 5★ & heritage options" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹74,600 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Chennai Arrival. Visit Kapaleeshwarar Temple.",
-                title: "Chennai — Arrival & Kapaleeshwarar Temple",
+                title: "Chennai, Arrival & Kapaleeshwarar Temple",
                 detail: [
                     "Your chauffeur meets you at Chennai (MAA) and transfers you to your hotel in Tamil Nadu's coastal capital.",
                     "Your first temple is the Kapaleeshwarar Temple in Mylapore, a classic Dravidian shrine to Shiva with a vividly painted gopuram tower, followed as time allows by Marina Beach and the colonial Fort St George.",
@@ -3190,10 +3190,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Chennai to Mahabalipuram. Shore Temple & Five Rathas.",
-                title: "Mahabalipuram — Shore Temple & Five Rathas",
+                title: "Mahabalipuram, Shore Temple & Five Rathas",
                 detail: [
                     "A short coastal drive brings you to Mahabalipuram (Mamallapuram), the 7th-century Pallava port and a UNESCO World Heritage Site.",
-                    "You explore the sea-facing Shore Temple, the monolithic Five Rathas carved from single boulders, and the vast rock relief of Arjuna's Penance — the finest open-air gallery of early Dravidian art in India.",
+                    "You explore the sea-facing Shore Temple, the monolithic Five Rathas carved from single boulders, and the vast rock relief of Arjuna's Penance, the finest open-air gallery of early Dravidian art in India.",
                 ],
                 overnight: "Mahabalipuram",
                 meals: "Breakfast",
@@ -3202,10 +3202,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Mahabalipuram to Pondicherry. Auroville and French Quarter walk.",
-                title: "Pondicherry — Auroville & the French Quarter",
+                title: "Pondicherry, Auroville & the French Quarter",
                 detail: [
                     "You drive south down the Coromandel coast to Pondicherry, the former French colony where mustard-yellow villas and bougainvillea line the seafront promenade.",
-                    "You walk the French Quarter and Sri Aurobindo Ashram, and visit the experimental township of Auroville with its golden Matrimandir — a contemplative counterpoint to the temple towns.",
+                    "You walk the French Quarter and Sri Aurobindo Ashram, and visit the experimental township of Auroville with its golden Matrimandir, a contemplative counterpoint to the temple towns.",
                 ],
                 overnight: "Pondicherry",
                 meals: "Breakfast",
@@ -3214,10 +3214,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Pondicherry to Tanjore. Brihadisvara Temple (UNESCO).",
-                title: "Tanjore — Brihadisvara Temple",
+                title: "Tanjore, Brihadisvara Temple",
                 detail: [
                     "An inland drive takes you to Thanjavur (Tanjore), the Chola capital, past the rice fields of the Cauvery delta.",
-                    "Here stands the UNESCO-listed Brihadisvara Temple, a 1,000-year-old granite masterpiece crowned by a 66-metre vimana tower and a monolithic Nandi bull — the high-water mark of Chola architecture and engineering.",
+                    "Here stands the UNESCO-listed Brihadisvara Temple, a 1,000-year-old granite masterpiece crowned by a 66-metre vimana tower and a monolithic Nandi bull, the high-water mark of Chola architecture and engineering.",
                 ],
                 overnight: "Tanjore",
                 meals: "Breakfast",
@@ -3226,10 +3226,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Tanjore to Madurai. Meenakshi Amman Temple evening ceremony.",
-                title: "Madurai — Meenakshi Temple Evening Ceremony",
+                title: "Madurai, Meenakshi Temple Evening Ceremony",
                 detail: [
                     "You continue south to Madurai, one of the oldest continuously inhabited cities in the world, built around its living temple.",
-                    "The Meenakshi Amman Temple is the trip's centrepiece — a riot of thousand-figure gopurams and a hall of a thousand pillars — and in the evening you witness the nightly ceremony in which an image of Shiva is carried to Meenakshi's chamber.",
+                    "The Meenakshi Amman Temple is the trip's centrepiece, a riot of thousand-figure gopurams and a hall of a thousand pillars, and in the evening you witness the nightly ceremony in which an image of Shiva is carried to Meenakshi's chamber.",
                 ],
                 overnight: "Madurai",
                 meals: "Breakfast",
@@ -3238,10 +3238,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Madurai to Rameshwaram. Pamban Bridge & Temple visit.",
-                title: "Rameswaram — Pamban Bridge & Ramanathaswamy Temple",
+                title: "Rameswaram, Pamban Bridge & Ramanathaswamy Temple",
                 detail: [
                     "You drive out to the sacred island of Rameswaram, crossing the sea on the iconic Pamban rail-and-road bridge with the Palk Strait on either side.",
-                    "The Ramanathaswamy Temple, one of the twelve Jyotirlinga shrines and a Char Dham pilgrimage site, is famed for its immense pillared corridors — the longest of any temple in India — and its 22 holy wells.",
+                    "The Ramanathaswamy Temple, one of the twelve Jyotirlinga shrines and a Char Dham pilgrimage site, is famed for its immense pillared corridors, the longest of any temple in India, and its 22 holy wells.",
                 ],
                 overnight: "Rameswaram",
                 meals: "Breakfast",
@@ -3250,10 +3250,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Rameshwaram to Kanyakumari. Sunset at the tip of India.",
-                title: "Kanyakumari — Sunset at Land's End",
+                title: "Kanyakumari, Sunset at Land's End",
                 detail: [
                     "A long coastal drive brings you to Kanyakumari, the southernmost tip of the Indian mainland where the Bay of Bengal, Arabian Sea and Indian Ocean meet.",
-                    "You visit the Kumari Amman Temple and settle in for the celebrated sunset over the ocean — and, at the right time of month, the rare sight of sunset and moonrise together.",
+                    "You visit the Kumari Amman Temple and settle in for the celebrated sunset over the ocean, and, at the right time of month, the rare sight of sunset and moonrise together.",
                 ],
                 overnight: "Kanyakumari",
                 meals: "Breakfast",
@@ -3262,7 +3262,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Vivekananda Rock Memorial & Thiruvalluvar Statue.",
-                title: "Kanyakumari — Vivekananda Rock & Thiruvalluvar Statue",
+                title: "Kanyakumari, Vivekananda Rock & Thiruvalluvar Statue",
                 detail: [
                     "A morning ferry carries you to the Vivekananda Rock Memorial, built on the offshore rock where Swami Vivekananda meditated in 1892, alongside the towering 133-foot statue of the Tamil poet-saint Thiruvalluvar.",
                     "The afternoon is free for the Gandhi Memorial and a sunrise or sunset by the confluence, or an early rest before the final leg.",
@@ -3274,12 +3274,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 9,
                 plan: "Drive to Trivandrum Departure.",
-                title: "Trivandrum — Drive & Departure",
+                title: "Trivandrum, Drive & Departure",
                 detail: [
                     "You cross into Kerala for the short drive up to Thiruvananthapuram (Trivandrum), with an optional stop at the Padmanabhaswamy Temple if time allows.",
                     "Your chauffeur delivers you to Trivandrum airport in good time for your onward flight.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Kanyakumari → Trivandrum · ~2.5 hrs / 90 km",
             },
@@ -3300,35 +3300,35 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Can non-Hindus enter these temples?", a: "Most Tamil Nadu temples on this route — Kapaleeshwarar, Brihadisvara, Meenakshi, Ramanathaswamy — welcome visitors of all faiths into the main complex, though inner sanctums may be restricted to Hindus at some shrines. Modest dress is required and shoes are removed; your guide advises on etiquette at each site." },
-            { q: "What is the best time of year for this tour?", a: "November to March is by far the most comfortable, with cooler, drier days for the long drives and temple walks. April to June is punishingly hot on the Tamil plains, and the October–December northeast monsoon can bring heavy coastal rain, so we plan around the dry window." },
-            { q: "Is there a dress code, and how much walking is involved?", a: "Temples require modest clothing — shoulders and knees covered — and you'll walk barefoot on stone floors that get hot midday, so we time visits for morning and evening. Expect moderate walking over uneven, sometimes crowded ground; the pace can be softened for older pilgrims." },
-            { q: "Are the drives long?", a: "A few legs are substantial — Rameswaram to Kanyakumari on Day 7 is around seven hours — but they run through changing coastal and delta scenery, and your private car allows comfort stops whenever you like. We break up the longest days with meal and photo halts." },
-            { q: "Will we see the temple ceremonies?", a: "Yes — the itinerary is timed for the famous evening ceremony at Madurai's Meenakshi Temple, and your guide helps you catch aarti and rituals elsewhere where schedules allow. Ceremony timings shift with the temple calendar, so we confirm them close to travel." },
-            { q: "Can you add a Kerala backwaters or hill extension?", a: "Very easily — the tour already ends at Trivandrum in Kerala, so a houseboat night in Alleppey, the beaches of Kovalam or the tea hills of Munnar slot on naturally. Share your dates and we'll design and quote the extension." },
+            { q: "Can non-Hindus enter these temples?", a: "Most Tamil Nadu temples on this route, Kapaleeshwarar, Brihadisvara, Meenakshi, Ramanathaswamy, welcome visitors of all faiths into the main complex, though inner sanctums may be restricted to Hindus at some shrines. Modest dress is required and shoes are removed; your guide advises on etiquette at each site." },
+            { q: "What is the best time of year for this tour?", a: "November to March is by far the most comfortable, with cooler, drier days for the long drives and temple walks. April to June is punishingly hot on the Tamil plains, and the October to December northeast monsoon can bring heavy coastal rain, so we plan around the dry window." },
+            { q: "Is there a dress code, and how much walking is involved?", a: "Temples require modest clothing, shoulders and knees covered, and you'll walk barefoot on stone floors that get hot midday, so we time visits for morning and evening. Expect moderate walking over uneven, sometimes crowded ground; the pace can be softened for older pilgrims." },
+            { q: "Are the drives long?", a: "A few legs are substantial, Rameswaram to Kanyakumari on Day 7 is around seven hours, but they run through changing coastal and delta scenery, and your private car allows comfort stops whenever you like. We break up the longest days with meal and photo halts." },
+            { q: "Will we see the temple ceremonies?", a: "Yes, the itinerary is timed for the famous evening ceremony at Madurai's Meenakshi Temple, and your guide helps you catch aarti and rituals elsewhere where schedules allow. Ceremony timings shift with the temple calendar, so we confirm them close to travel." },
+            { q: "Can you add a Kerala backwaters or hill extension?", a: "Very easily, the tour already ends at Trivandrum in Kerala, so a houseboat night in Alleppey, the beaches of Kovalam or the tea hills of Munnar slot on naturally. Share your dates and we'll design and quote the extension." },
         ],
     },
     26: {
-        metaTitle: "Ladakh Tour — Leh, Nubra Valley & Pangong Lake | MyTripMyTravel",
-        metaDescription: "Private 10-day Ladakh tour: acclimatise in Leh, cross Khardung La to Nubra, camp by Pangong Lake & tour Hemis monastery. Permits arranged — from ₹99,500pp. Enquire now.",
-        bestTime: "Roughly June–September, when the passes and roads are open; Ladakh is effectively cut off by snow the rest of the year.",
-        answer: "Ladakh Leh Expedition is a private, chauffeured 10-day journey across the trans-Himalaya — beginning with proper acclimatisation in Leh at 3,500 m, then crossing Khardung La to the sand dunes of Nubra Valley, camping beside the electric-blue Pangong Lake, and touring the Hemis and Thiksey monasteries. You travel by high-altitude vehicle with a dedicated driver, with all inner-line permits arranged. Ladakh is strictly seasonal (about June–September) and the tour starts from ₹99,500 per person.",
+        metaTitle: "Ladakh Tour, Leh, Nubra Valley & Pangong Lake | MyTripMyTravel",
+        metaDescription: "Private 10-day Ladakh tour: acclimatise in Leh, cross Khardung La to Nubra, camp by Pangong Lake & tour Hemis monastery. Permits arranged, from ₹99,500pp. Enquire now.",
+        bestTime: "Roughly June to September, when the passes and roads are open; Ladakh is effectively cut off by snow the rest of the year.",
+        answer: "Ladakh Leh Expedition is a private, chauffeured 10-day journey across the trans-Himalaya, beginning with proper acclimatisation in Leh at 3,500 m, then crossing Khardung La to the sand dunes of Nubra Valley, camping beside the electric-blue Pangong Lake, and touring the Hemis and Thiksey monasteries. You travel by high-altitude vehicle with a dedicated driver, with all inner-line permits arranged. Ladakh is strictly seasonal (about June to September) and the tour starts from ₹99,500 per person.",
         quickFacts: [
             { label: "Duration", value: "10 days / 9 nights" },
             { label: "Route", value: "Leh → Nubra Valley → Pangong Lake → Leh" },
-            { label: "Best time", value: "June–September (seasonal)" },
-            { label: "Pace", value: "Measured — high altitude, acclimatisation built in" },
+            { label: "Best time", value: "June to September (seasonal)" },
+            { label: "Pace", value: "Measured, high altitude, acclimatisation built in" },
             { label: "Hotels", value: "3★ / 4★ Leh hotels & valley camps" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹99,500 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Leh Arrival. Full day rest for acclimatization.",
-                title: "Leh — Fly In & Acclimatisation Rest",
+                title: "Leh, Fly In & Acclimatisation Rest",
                 detail: [
-                    "You fly into Leh (IXL) at around 3,500 metres — one of the world's highest commercial airports — and your chauffeur transfers you straight to your hotel.",
+                    "You fly into Leh (IXL) at around 3,500 metres, one of the world's highest commercial airports, and your chauffeur transfers you straight to your hotel.",
                     "This is a mandatory full rest day, and we do not skip it: at this altitude your body needs 24 hours of near-total rest, plenty of water and no exertion to adjust. Doing nothing today is what makes the rest of the trip safe and enjoyable.",
                 ],
                 overnight: "Leh",
@@ -3338,10 +3338,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Leh Local: Shanti Stupa & Leh Palace.",
-                title: "Leh — Shanti Stupa & Leh Palace",
+                title: "Leh, Shanti Stupa & Leh Palace",
                 detail: [
                     "A gentle second acclimatisation day keeps you in and around Leh: the white Shanti Stupa on its hill, the nine-storey Leh Palace overlooking the old town, and the bazaar.",
-                    "Activity stays deliberately light so acclimatisation continues — short walks, frequent rests, and no high-altitude excursions yet. Watch for any headache, nausea or breathlessness and tell your driver-guide.",
+                    "Activity stays deliberately light so acclimatisation continues, short walks, frequent rests, and no high-altitude excursions yet. Watch for any headache, nausea or breathlessness and tell your driver-guide.",
                 ],
                 overnight: "Leh",
                 meals: "Breakfast",
@@ -3350,21 +3350,21 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "Leh to Nubra Valley via Khardung La (Highest Motorable Road).",
-                title: "Nubra Valley — Over Khardung La",
+                title: "Nubra Valley, Over Khardung La",
                 detail: [
-                    "Now acclimatised, you cross Khardung La — one of the world's highest motorable passes at around 5,360 metres — where stops are kept short because of the thin air.",
+                    "Now acclimatised, you cross Khardung La, one of the world's highest motorable passes at around 5,360 metres, where stops are kept short because of the thin air.",
                     "You descend into the green Nubra Valley, a startling oasis of villages and rivers between the Karakoram and Ladakh ranges, and check into your valley camp or hotel for the night.",
                 ],
                 overnight: "Nubra Valley (Hunder/Diskit)",
                 meals: "Breakfast",
-                drive: "Leh → Nubra (via Khardung La) · ~5–6 hrs / 120 km",
+                drive: "Leh → Nubra (via Khardung La) · ~5 to 6 hrs / 120 km",
             },
             {
                 day: 4,
                 plan: "Nubra Valley: Hunder Sand Dunes & Diskit Monastery.",
-                title: "Nubra Valley — Hunder Dunes & Diskit Monastery",
+                title: "Nubra Valley, Hunder Dunes & Diskit Monastery",
                 detail: [
-                    "The morning is the surreal white sand dunes of Hunder, where you can ride a double-humped Bactrian camel — a living relic of the old Silk Route caravans.",
+                    "The morning is the surreal white sand dunes of Hunder, where you can ride a double-humped Bactrian camel, a living relic of the old Silk Route caravans.",
                     "You then visit the hilltop Diskit Monastery and its giant Maitreya Buddha statue gazing over the valley, with the afternoon at leisure in the thinner but lower, easier air of Nubra.",
                 ],
                 overnight: "Nubra Valley",
@@ -3374,31 +3374,31 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Nubra to Pangong Lake via Shyok River. Sunset by the azure water.",
-                title: "Pangong Lake — Via the Shyok River",
+                title: "Pangong Lake, Via the Shyok River",
                 detail: [
                     "You take the dramatic Shyok River route directly from Nubra to Pangong Tso, a rough but spectacular road hugging the river through remote high desert.",
                     "You reach Pangong Lake at around 4,350 metres in time for sunset, when the vast, brackish lake shifts through impossible blues against the bare mountains. Nights here are cold and basic; camps are simple by design.",
                 ],
                 overnight: "Pangong Lake camp",
                 meals: "Breakfast, Dinner",
-                drive: "Nubra → Pangong (via Shyok) · ~6–7 hrs / 150 km",
+                drive: "Nubra → Pangong (via Shyok) · ~6 to 7 hrs / 150 km",
             },
             {
                 day: 6,
                 plan: "Early morning at Pangong. Drive back to Leh via Chang La.",
-                title: "Pangong to Leh — Over Chang La",
+                title: "Pangong to Leh, Over Chang La",
                 detail: [
                     "You catch the lake at first light, its colours changing minute by minute, before the long drive back toward Leh.",
-                    "The return crosses Chang La at about 5,360 metres — another of the world's highest passes — where, again, you pause only briefly before descending to the comfort and thicker air of Leh for the night.",
+                    "The return crosses Chang La at about 5,360 metres, another of the world's highest passes, where, again, you pause only briefly before descending to the comfort and thicker air of Leh for the night.",
                 ],
                 overnight: "Leh",
                 meals: "Breakfast",
-                drive: "Pangong → Leh (via Chang La) · ~5–6 hrs / 220 km",
+                drive: "Pangong → Leh (via Chang La) · ~5 to 6 hrs / 220 km",
             },
             {
                 day: 7,
                 plan: "Leh to Sham Valley: Magnetic Hill & Confluence of Indus-Zanskar.",
-                title: "Sham Valley — Magnetic Hill & the Confluence",
+                title: "Sham Valley, Magnetic Hill & the Confluence",
                 detail: [
                     "A relaxed lower-altitude day heads down the Indus valley to the famous Magnetic Hill optical illusion and the Gurudwara Pathar Sahib.",
                     "You stop at the striking confluence of the Indus and Zanskar rivers near Nimmu, where two differently coloured rivers meet, before returning to Leh.",
@@ -3410,7 +3410,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Monastery Tour: Hemis and Thiksey Monasteries.",
-                title: "Leh — Hemis & Thiksey Monasteries",
+                title: "Leh, Hemis & Thiksey Monasteries",
                 detail: [
                     "You explore Ladakh's spiritual heart: Hemis, the largest and wealthiest monastery in Ladakh, hidden in a gorge and famed for its summer masked-dance festival.",
                     "Then the hilltop Thiksey Monastery, a twelve-storey complex resembling Lhasa's Potala Palace, with its two-storey Maitreya Buddha and, if you rise early, the atmospheric morning prayers.",
@@ -3422,10 +3422,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 9,
                 plan: "Leh Market exploration & shopping.",
-                title: "Leh — Market & Leisure",
+                title: "Leh, Market & Leisure",
                 detail: [
                     "A free day in Leh lets you browse the bazaar for pashmina, apricots, Tibetan handicrafts and prayer flags, or relax over Ladakhi food at a rooftop café.",
-                    "It also builds in a buffer — mountain weather and roads are unpredictable, so a spare day in Leh protects your onward flight against delays.",
+                    "It also builds in a buffer, mountain weather and roads are unpredictable, so a spare day in Leh protects your onward flight against delays.",
                 ],
                 overnight: "Leh",
                 meals: "Breakfast",
@@ -3434,98 +3434,98 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 10,
                 plan: "Leh Departure.",
-                title: "Leh — Departure",
+                title: "Leh, Departure",
                 detail: [
                     "Leh flights leave early, so after breakfast your chauffeur transfers you to the airport for your morning departure.",
-                    "You leave acclimatised and rewarded — the high passes, monasteries and lakes of Ladakh behind you.",
+                    "You leave acclimatised and rewarded, the high passes, monasteries and lakes of Ladakh behind you.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Leh hotel → Airport · ~20 min / 8 km",
             },
         ],
         inclusions: [
             "Private high-altitude vehicle with an experienced mountain driver for the full circuit",
-            "9 nights' accommodation — Leh hotels plus Nubra and Pangong camps/hotels, with daily breakfast",
+            "9 nights' accommodation, Leh hotels plus Nubra and Pangong camps/hotels, with daily breakfast",
             "All Ladakh inner-line permits for Nubra, Pangong and the high passes arranged for you",
             "Dinner at the Pangong Lake camp and local sightseeing per the itinerary",
             "All fuel, tolls, parking, driver allowance and inter-region transfers",
             "Airport pick-up and drop-off with bottled water, oxygen support in-vehicle and 24/7 assistance",
         ],
         exclusions: [
-            "Flights to and from Leh (Delhi–Leh recommended)",
+            "Flights to and from Leh (Delhi to Leh recommended)",
             "Monastery, monument and camera fees, and any adventure activities",
             "Lunches and most dinners, plus personal expenses and tips",
-            "Travel/medical insurance — strongly recommended at this altitude",
+            "Travel/medical insurance, strongly recommended at this altitude",
             "Visa and anything not listed under inclusions",
         ],
         faqs: [
             { q: "How serious is the altitude, and how do you manage it?", a: "Very serious, and we treat it that way honestly. Leh sits at 3,500 m and the passes exceed 5,300 m, so Acute Mountain Sickness is a real risk. We build in a mandatory rest day on arrival and a second light day before any high excursion, keep pass stops short, carry in-vehicle oxygen, and pace the whole trip to let your body adjust. Rushing this is what makes people ill." },
             { q: "Who should not do this trip?", a: "We're candid here: travellers with significant heart or lung conditions, uncontrolled high blood pressure, severe anaemia, or who are pregnant should consult a doctor and may be advised against high-altitude travel. Ladakh rewards reasonable fitness and patience rather than athleticism, but it is not a trip to take lightly with those conditions." },
-            { q: "When is Ladakh open, and what's the best time to go?", a: "Roughly June to September. Outside that window the high passes and roads to Nubra and Pangong are closed by snow and Ladakh is effectively cut off by road, so the tour runs only in the summer season. July–August is warmest and busiest; June and September are quieter with crisper air." },
-            { q: "Do I need permits, and are they arranged?", a: "Yes — Nubra Valley, Pangong Lake and the high passes lie in protected border zones requiring Inner Line Permits (Protected Area Permits for foreign nationals). We arrange all of them for you; we just need passport details in advance. You simply carry copies and your driver handles the checkposts." },
-            { q: "Why fly in rather than drive to Leh?", a: "Flying into Leh is faster but gives your body no gradual adjustment, which is exactly why Day 1 is a strict rest day. The overland routes from Manali or Srinagar acclimatise you more gradually over two-plus days and are spectacular — if you'd prefer to drive in, we can build that in; just ask for the extended version." },
-            { q: "What are the camps at Nubra and Pangong like?", a: "Comfortable but deliberately simple — Nubra has good hotels and camps, while Pangong is remote, cold at night and more basic, with limited electricity and hot water because of its altitude and fragile environment. That rawness is part of the experience; we choose the best available and warn you honestly rather than overselling luxury where there is none." },
+            { q: "When is Ladakh open, and what's the best time to go?", a: "Roughly June to September. Outside that window the high passes and roads to Nubra and Pangong are closed by snow and Ladakh is effectively cut off by road, so the tour runs only in the summer season. July to August is warmest and busiest; June and September are quieter with crisper air." },
+            { q: "Do I need permits, and are they arranged?", a: "Yes, Nubra Valley, Pangong Lake and the high passes lie in protected border zones requiring Inner Line Permits (Protected Area Permits for foreign nationals). We arrange all of them for you; we just need passport details in advance. You simply carry copies and your driver handles the checkposts." },
+            { q: "Why fly in rather than drive to Leh?", a: "Flying into Leh is faster but gives your body no gradual adjustment, which is exactly why Day 1 is a strict rest day. The overland routes from Manali or Srinagar acclimatise you more gradually over two-plus days and are spectacular, if you'd prefer to drive in, we can build that in; just ask for the extended version." },
+            { q: "What are the camps at Nubra and Pangong like?", a: "Comfortable but deliberately simple, Nubra has good hotels and camps, while Pangong is remote, cold at night and more basic, with limited electricity and hot water because of its altitude and fragile environment. That rawness is part of the experience; we choose the best available and warn you honestly rather than overselling luxury where there is none." },
         ],
     },
 
     27: {
-        metaTitle: "Goa Tour Package — Beaches, Forts & Portuguese Heritage | MyTripMyTravel",
-        metaDescription: "Private 5-day Goa tour: Baga & Palolem beaches, Fort Aguada, Old Goa churches and a sunset cruise. Chauffeured car, hotels, guide — from ₹33,100pp. Enquire now.",
-        bestTime: "November–February for warm, dry beach weather; the June–September monsoon turns Goa lush but wet, with rough seas and closed water sports.",
-        answer: "The Goa Coastal Escape is a private, chauffeured 5-day break that pairs Goa's beaches with its Portuguese past. You unwind at buzzing Baga, cliff-backed Vagator and tranquil Palolem, tour the ramparts of Fort Aguada, and explore the UNESCO churches of Old Goa and the Mangueshi Temple, closing with a Mandovi sunset cruise. Travel is by private air-conditioned car with a local driver-guide; it runs best November–February and starts from ₹33,100 per person.",
+        metaTitle: "Goa Tour Package, Beaches, Forts & Portuguese Heritage | MyTripMyTravel",
+        metaDescription: "Private 5-day Goa tour: Baga & Palolem beaches, Fort Aguada, Old Goa churches and a sunset cruise. Chauffeured car, hotels, guide, from ₹33,100pp. Enquire now.",
+        bestTime: "November to February for warm, dry beach weather; the June to September monsoon turns Goa lush but wet, with rough seas and closed water sports.",
+        answer: "The Goa Coastal Escape is a private, chauffeured 5-day break that pairs Goa's beaches with its Portuguese past. You unwind at buzzing Baga, cliff-backed Vagator and tranquil Palolem, tour the ramparts of Fort Aguada, and explore the UNESCO churches of Old Goa and the Mangueshi Temple, closing with a Mandovi sunset cruise. Travel is by private air-conditioned car with a local driver-guide; it runs best November to February and starts from ₹33,100 per person.",
         quickFacts: [
             { label: "Duration", value: "5 days / 4 nights" },
             { label: "Route", value: "North Goa → South Goa → Old Goa" },
-            { label: "Best time", value: "November–February" },
-            { label: "Pace", value: "Relaxed — beaches and short drives" },
+            { label: "Best time", value: "November to February" },
+            { label: "Pace", value: "Relaxed, beaches and short drives" },
             { label: "Hotels", value: "4★ / 5★ beach-resort options" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹33,100 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "D1: Goa Arrival. Evening at Baga Beach.",
-                title: "Goa — Arrival & Baga Beach Evening",
+                title: "Goa, Arrival & Baga Beach Evening",
                 detail: [
                     "Your chauffeur meets you at Goa's Dabolim airport (or the new Mopa/Manohar terminal) and transfers you to your North Goa resort, roughly 45 minutes to an hour depending on the beach belt you choose.",
-                    "After check-in and time to settle, you head out to Baga Beach for the evening — the liveliest stretch on the Calangute–Baga strip, with its shacks, live music and a first taste of Goan seafood as the sun drops into the Arabian Sea.",
+                    "After check-in and time to settle, you head out to Baga Beach for the evening, the liveliest stretch on the Calangute to Baga strip, with its shacks, live music and a first taste of Goan seafood as the sun drops into the Arabian Sea.",
                 ],
                 overnight: "North Goa",
                 meals: "None (arrival day)",
-                drive: "Airport → North Goa · ~45–60 min",
+                drive: "Airport → North Goa · ~45 to 60 min",
             },
             {
                 day: 2,
                 plan: "D2: North Goa: Fort Aguada and vagator Beach.",
-                title: "North Goa — Fort Aguada & Vagator Beach",
+                title: "North Goa, Fort Aguada & Vagator Beach",
                 detail: [
-                    "The morning belongs to the 17th-century Fort Aguada, a Portuguese bastion above the Mandovi estuary with its landmark lighthouse and sweeping views over Sinquerim beach — built to guard against Dutch and Maratha raids.",
+                    "The morning belongs to the 17th-century Fort Aguada, a Portuguese bastion above the Mandovi estuary with its landmark lighthouse and sweeping views over Sinquerim beach, built to guard against Dutch and Maratha raids.",
                     "In the afternoon you move north to the dramatic red-cliff coves of Vagator and Chapora, where the ruined Chapora Fort looks down over the headland. It is an easy day of short hops with plenty of beach time built in.",
                 ],
                 overnight: "North Goa",
                 meals: "Breakfast",
-                drive: "North Goa loop · ~30–40 km total",
+                drive: "North Goa loop · ~30 to 40 km total",
             },
             {
                 day: 3,
                 plan: "D3: South Goa: Old Goa Churches and Mangueshi Temple.",
-                title: "Old Goa — Churches, Basilica & Mangueshi Temple",
+                title: "Old Goa, Churches, Basilica & Mangueshi Temple",
                 detail: [
-                    "You drive into Old Goa, the former Portuguese capital and a UNESCO World Heritage Site, to see the Basilica of Bom Jesus — which holds the relics of St Francis Xavier — and the vast whitewashed Se Cathedral, once the largest church in Asia.",
+                    "You drive into Old Goa, the former Portuguese capital and a UNESCO World Heritage Site, to see the Basilica of Bom Jesus, which holds the relics of St Francis Xavier, and the vast whitewashed Se Cathedral, once the largest church in Asia.",
                     "The route then turns inland to the Shri Mangueshi Temple at Ponda, one of Goa's most revered Hindu shrines, showing the Konkan side of the state that the beaches hide. You continue on to your South Goa hotel for the night.",
                 ],
                 overnight: "South Goa",
                 meals: "Breakfast",
-                drive: "North Goa → Old Goa → South Goa · ~2–2.5 hrs across the day",
+                drive: "North Goa → Old Goa → South Goa · ~2 to 2.5 hrs across the day",
             },
             {
                 day: 4,
                 plan: "D4: Full day at Palolem Beach. Evening Sunset cruise.",
-                title: "South Goa — Palolem Beach & Sunset Cruise",
+                title: "South Goa, Palolem Beach & Sunset Cruise",
                 detail: [
-                    "A full, unhurried day at Palolem, the crescent-shaped palm-fringed bay in South Goa that is calmer and more scenic than the northern beaches — ideal for swimming, kayaking, or a dolphin-spotting boat trip.",
+                    "A full, unhurried day at Palolem, the crescent-shaped palm-fringed bay in South Goa that is calmer and more scenic than the northern beaches, ideal for swimming, kayaking, or a dolphin-spotting boat trip.",
                     "In the evening you board a sunset cruise (Palolem backwaters or a Mandovi river cruise, depending on your base) to close the day on the water with the coastline glowing gold.",
                 ],
                 overnight: "South Goa",
@@ -3535,14 +3535,14 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "D5: Goa Departure.",
-                title: "Goa — Departure",
+                title: "Goa, Departure",
                 detail: [
                     "After breakfast and a final morning by the sea, your chauffeur transfers you to the airport for your onward flight.",
                     "If your flight is late, we can arrange a leisurely lunch or a last beach stop, and luggage storage on request, so you use every hour of the day.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
-                drive: "South Goa → Airport · ~1.5–2 hrs",
+                drive: "South Goa → Airport · ~1.5 to 2 hrs",
             },
         ],
         inclusions: [
@@ -3561,35 +3561,35 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Which is better for this trip — North Goa or South Goa?", a: "You get both. North Goa (Baga, Vagator, the forts) is livelier, with shacks, markets and nightlife, while South Goa (Palolem) is quieter, greener and better for relaxing. The itinerary bases you in the north first, then moves south, so you sample each mood." },
-            { q: "Is Goa worth visiting in the monsoon?", a: "It depends on what you want. June–September is lush, dramatic and cheap, with waterfalls and empty beaches — but seas are rough, most water sports and shacks close, and swimming is often unsafe. For classic beach weather, come November–February." },
-            { q: "How much time do the drives take?", a: "Goa is compact. Most sightseeing hops are 30–60 minutes, and the longest transfer — the North-to-South shift on Day 3 — is around two to two-and-a-half hours spread across sightseeing stops, so no day feels like a long drive." },
+            { q: "Which is better for this trip, North Goa or South Goa?", a: "You get both. North Goa (Baga, Vagator, the forts) is livelier, with shacks, markets and nightlife, while South Goa (Palolem) is quieter, greener and better for relaxing. The itinerary bases you in the north first, then moves south, so you sample each mood." },
+            { q: "Is Goa worth visiting in the monsoon?", a: "It depends on what you want. June to September is lush, dramatic and cheap, with waterfalls and empty beaches, but seas are rough, most water sports and shacks close, and swimming is often unsafe. For classic beach weather, come November to February." },
+            { q: "How much time do the drives take?", a: "Goa is compact. Most sightseeing hops are 30 to 60 minutes, and the longest transfer, the North-to-South shift on Day 3, is around two to two-and-a-half hours spread across sightseeing stops, so no day feels like a long drive." },
             { q: "Are the beaches and cruise suitable for families?", a: "Yes. Palolem's calm, shallow bay is well suited to children, and the sunset cruise is gentle and family-friendly. The private car means flexible timings, rest stops and no early group departures." },
             { q: "Do we need to dress conservatively for the churches and temple?", a: "Beachwear is fine on the sand, but Old Goa's churches and the Mangueshi Temple expect covered shoulders and knees; the temple also requires you to remove footwear. We flag this before each visit so you can carry a scarf or change." },
             { q: "Can you extend the trip or add water sports and Dudhsagar Falls?", a: "Absolutely. Popular add-ons include a Dudhsagar Falls jeep safari, scuba diving at Grande Island, a spice-plantation lunch, or extra beach nights. Send your dates and we'll tailor the plan and quote." },
         ],
     },
     28: {
-        metaTitle: "Andaman Islands Tour — Havelock, Neil & Port Blair | MyTripMyTravel",
-        metaDescription: "Private 7-day Andaman tour: Radhanagar Beach, Havelock & Neil islands, scuba, Cellular Jail and Ross Island. Ferries, hotels, transfers — from ₹78,800pp. Enquire now.",
-        bestTime: "October–May for calm seas and clear diving visibility; the May–September monsoon brings rough crossings and frequent ferry disruptions.",
-        answer: "The Andaman Island Adventure is a private 7-day escape across Port Blair, Havelock and Neil islands. You witness the moving Cellular Jail sound-and-light show, sail by ferry to Havelock for sunset at Radhanagar Beach, snorkel or dive at Elephant Beach, hop to Neil's Bharatpur and Laxmanpur, and cross to Ross Island. Travel combines inter-island ferries with private transfers and local guides; it runs best October–May and starts from ₹78,800 per person.",
+        metaTitle: "Andaman Islands Tour, Havelock, Neil & Port Blair | MyTripMyTravel",
+        metaDescription: "Private 7-day Andaman tour: Radhanagar Beach, Havelock & Neil islands, scuba, Cellular Jail and Ross Island. Ferries, hotels, transfers, from ₹78,800pp. Enquire now.",
+        bestTime: "October to May for calm seas and clear diving visibility; the May to September monsoon brings rough crossings and frequent ferry disruptions.",
+        answer: "The Andaman Island Adventure is a private 7-day escape across Port Blair, Havelock and Neil islands. You witness the moving Cellular Jail sound-and-light show, sail by ferry to Havelock for sunset at Radhanagar Beach, snorkel or dive at Elephant Beach, hop to Neil's Bharatpur and Laxmanpur, and cross to Ross Island. Travel combines inter-island ferries with private transfers and local guides; it runs best October to May and starts from ₹78,800 per person.",
         quickFacts: [
             { label: "Duration", value: "7 days / 6 nights" },
             { label: "Route", value: "Port Blair → Havelock → Neil → Port Blair" },
-            { label: "Best time", value: "October–May" },
-            { label: "Pace", value: "Moderate — island-hopping by ferry" },
+            { label: "Best time", value: "October to May" },
+            { label: "Pace", value: "Moderate, island-hopping by ferry" },
             { label: "Hotels", value: "4★ / 5★ island resorts" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹78,800 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "D1: Port Blair Arrival. Cellular Jail Sound & Light Show.",
-                title: "Port Blair — Arrival & Cellular Jail",
+                title: "Port Blair, Arrival & Cellular Jail",
                 detail: [
-                    "You fly into Port Blair's Veer Savarkar airport, where your representative meets you and transfers you to your hotel — the Andamans are reached only by air or sea from the mainland, so most guests arrive from Chennai, Kolkata or Bengaluru.",
+                    "You fly into Port Blair's Veer Savarkar airport, where your representative meets you and transfers you to your hotel, the Andamans are reached only by air or sea from the mainland, so most guests arrive from Chennai, Kolkata or Bengaluru.",
                     "In the evening you visit the Cellular Jail National Memorial, the colonial-era prison that held India's freedom fighters, for its poignant sound-and-light show that narrates their story after dark.",
                 ],
                 overnight: "Port Blair",
@@ -3599,10 +3599,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "D2: Port Blair to Havelock Island via Cruise. Radhanagar Beach sunset.",
-                title: "Havelock — Ferry Crossing & Radhanagar Sunset",
+                title: "Havelock, Ferry Crossing & Radhanagar Sunset",
                 detail: [
                     "After breakfast you transfer to Haddo jetty and board a private high-speed catamaran ferry to Havelock (Swaraj Dweep), a crossing of roughly two hours across the turquoise Andaman Sea.",
-                    "In the late afternoon you head to Radhanagar Beach — regularly rated among Asia's finest — for a spectacular sunset over its wide white sand and clear shallows.",
+                    "In the late afternoon you head to Radhanagar Beach, regularly rated among Asia's finest, for a spectacular sunset over its wide white sand and clear shallows.",
                 ],
                 overnight: "Havelock",
                 meals: "Breakfast",
@@ -3611,7 +3611,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "D3: Elephanta Beach: Snorkeling and Water Sports.",
-                title: "Havelock — Elephant Beach & Snorkelling",
+                title: "Havelock, Elephant Beach & Snorkelling",
                 detail: [
                     "A short boat ride (or a jungle trek) takes you to Elephant Beach, Havelock's best spot for snorkelling over shallow coral gardens teeming with fish, plus optional sea-walking, jet-ski and glass-bottom-boat rides.",
                     "Havelock is also India's premier scuba-diving base; certified and try-dive courses can be arranged for the afternoon, or you can simply relax on the beach.",
@@ -3623,10 +3623,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "D4: Havelock to Neil Island. Bharatpur and Laxmanpur Beach.",
-                title: "Neil Island — Ferry, Bharatpur & Laxmanpur",
+                title: "Neil Island, Ferry, Bharatpur & Laxmanpur",
                 detail: [
                     "You take a short morning ferry from Havelock to Neil Island (Shaheed Dweep), the smaller, sleepier sister isle about an hour away, known for its farmland and laid-back pace.",
-                    "The day covers Bharatpur Beach, with its calm coral lagoon and water sports, and Laxmanpur Beach, famed for its long sandbar and a glowing sunset — with the natural coral bridge nearby if the tide allows.",
+                    "The day covers Bharatpur Beach, with its calm coral lagoon and water sports, and Laxmanpur Beach, famed for its long sandbar and a glowing sunset, with the natural coral bridge nearby if the tide allows.",
                 ],
                 overnight: "Neil Island",
                 meals: "Breakfast",
@@ -3635,22 +3635,22 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "D5: Return to Port Blair. Visit Ross Island & North Bay.",
-                title: "Port Blair — Return Ferry, Ross Island & North Bay",
+                title: "Port Blair, Return Ferry, Ross Island & North Bay",
                 detail: [
                     "A morning ferry returns you to Port Blair, roughly one-and-a-half to two hours across the water, where you rejoin your Port Blair hotel.",
-                    "In the afternoon you take a boat to Ross Island (Netaji Subhas Chandra Bose Dweep) — the atmospheric ruined British administrative capital reclaimed by roots and deer — and North Bay, the coral point known for glass-bottom boats and snorkelling.",
+                    "In the afternoon you take a boat to Ross Island (Netaji Subhas Chandra Bose Dweep), the atmospheric ruined British administrative capital reclaimed by roots and deer, and North Bay, the coral point known for glass-bottom boats and snorkelling.",
                 ],
                 overnight: "Port Blair",
                 meals: "Breakfast",
-                drive: "Neil → Port Blair · ~1.5–2 hr ferry; boat to Ross & North Bay",
+                drive: "Neil → Port Blair · ~1.5 to 2 hr ferry; boat to Ross & North Bay",
             },
             {
                 day: 6,
                 plan: "D6: Port Blair Local Sightseeing.",
-                title: "Port Blair — City Sightseeing",
+                title: "Port Blair, City Sightseeing",
                 detail: [
                     "A relaxed day exploring Port Blair: the Samudrika Naval Marine Museum, the Anthropological Museum on the islands' indigenous tribes, and Corbyn's Cove Beach for a final swim.",
-                    "There is time for last-minute shopping — shell craft and Andaman pearls — and an easy evening before your departure, with buffer built in for any ferry or weather changes over the week.",
+                    "There is time for last-minute shopping, shell craft and Andaman pearls, and an easy evening before your departure, with buffer built in for any ferry or weather changes over the week.",
                 ],
                 overnight: "Port Blair",
                 meals: "Breakfast",
@@ -3659,19 +3659,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "D7: Port Blair Departure.",
-                title: "Port Blair — Departure",
+                title: "Port Blair, Departure",
                 detail: [
                     "After breakfast your representative transfers you to Veer Savarkar airport for your flight back to the mainland.",
                     "Because island flights are limited and often morning departures, we schedule the transfer with time to spare and can store luggage if you have a late slot.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Port Blair hotel → Airport · ~20 min",
             },
         ],
         inclusions: [
             "6 nights' island-resort accommodation across Port Blair, Havelock and Neil with daily breakfast",
-            "Private and premium inter-island ferry tickets (Port Blair–Havelock–Neil–Port Blair)",
+            "Private and premium inter-island ferry tickets (Port Blair to Havelock to Neil to Port Blair)",
             "Airport and jetty transfers, and all island sightseeing by private vehicle",
             "Cellular Jail show, Ross Island and North Bay boat visits as per the itinerary",
             "Local guides and permits for restricted areas where required",
@@ -3686,25 +3686,25 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
         ],
         faqs: [
             { q: "How do I get to the Andamans, and are the ferries reliable?", a: "The islands are reached only by air (or a long mainland ship) into Port Blair, usually from Chennai, Kolkata or Bengaluru. Inter-island travel is by ferry; we book premium high-speed services, but sailings depend on sea conditions, so we build buffer time and keep a backup plan." },
-            { q: "When is the best time to visit, and should I avoid the monsoon?", a: "October to May offers calm seas, sunshine and the clearest diving visibility. The May–September monsoon can be beautiful but brings rough crossings and frequent ferry cancellations, so we generally advise against it for island-hopping." },
+            { q: "When is the best time to visit, and should I avoid the monsoon?", a: "October to May offers calm seas, sunshine and the clearest diving visibility. The May to September monsoon can be beautiful but brings rough crossings and frequent ferry cancellations, so we generally advise against it for island-hopping." },
             { q: "Do I need a permit to visit the Andaman Islands?", a: "Indian nationals do not need a permit for the main tourist islands. Foreign nationals no longer need the earlier RAP for most areas but must register on arrival, and some islands remain restricted; we handle the paperwork and advise on current rules." },
             { q: "Is this trip good for non-swimmers and families?", a: "Yes. Much of the snorkelling is in shallow, calm water, and options like glass-bottom boats and sea-walking let non-swimmers see the reef. The pace is moderate with beach time each day, and we adjust activities for children and older travellers." },
             { q: "Can I add scuba diving or a PADI course?", a: "Certainly. Havelock is one of the world's best-value dive bases; we can arrange try-dives, fun dives or full PADI certification. Tell us your experience level and we'll slot the diving into your Havelock days and quote accordingly." },
-            { q: "How much does the itinerary depend on the weather?", a: "The Andamans are weather-led — ferries and boat excursions can shift at short notice. We keep Day 6 flexible as a buffer and re-sequence activities if the sea is rough, always prioritising your onward flight on Day 7." },
+            { q: "How much does the itinerary depend on the weather?", a: "The Andamans are weather-led, ferries and boat excursions can shift at short notice. We keep Day 6 flexible as a buffer and re-sequence activities if the sea is rough, always prioritising your onward flight on Day 7." },
         ],
     },
     29: {
-        metaTitle: "Meghalaya Tour — Living Root Bridges, Cherrapunji & Dawki | MyTripMyTravel",
-        metaDescription: "Private 6-day Meghalaya tour: Shillong, Cherrapunji's waterfalls, the double-decker root bridge trek, Mawlynnong and Dawki. Car, hotels, guide — from ₹41,400pp. Enquire now.",
-        bestTime: "September–May for waterfalls with clearer skies; the June–August monsoon is spectacular but very wet, and heavy rain can make root-bridge treks slippery.",
-        answer: "Meghalaya Monsoon Mist is a private 6-day journey through India's North-East. From Guwahati you climb to Shillong and Umiam Lake, tour Cherrapunji's Nohkalikai and Seven Sisters falls, trek to the famous double-decker living root bridge, and reach Asia's cleanest village Mawlynnong and the crystal-clear Dawki river. Travel is by private vehicle with a local driver-guide over hilly roads; it runs best September–May and starts from ₹41,400 per person.",
+        metaTitle: "Meghalaya Tour, Living Root Bridges, Cherrapunji & Dawki | MyTripMyTravel",
+        metaDescription: "Private 6-day Meghalaya tour: Shillong, Cherrapunji's waterfalls, the double-decker root bridge trek, Mawlynnong and Dawki. Car, hotels, guide, from ₹41,400pp. Enquire now.",
+        bestTime: "September to May for waterfalls with clearer skies; the June to August monsoon is spectacular but very wet, and heavy rain can make root-bridge treks slippery.",
+        answer: "Meghalaya Monsoon Mist is a private 6-day journey through India's North-East. From Guwahati you climb to Shillong and Umiam Lake, tour Cherrapunji's Nohkalikai and Seven Sisters falls, trek to the famous double-decker living root bridge, and reach Asia's cleanest village Mawlynnong and the crystal-clear Dawki river. Travel is by private vehicle with a local driver-guide over hilly roads; it runs best September to May and starts from ₹41,400 per person.",
         quickFacts: [
             { label: "Duration", value: "6 days / 5 nights" },
             { label: "Route", value: "Guwahati → Shillong → Cherrapunji → Dawki → Guwahati" },
-            { label: "Best time", value: "September–May" },
-            { label: "Pace", value: "Active — hills and a full-day trek" },
+            { label: "Best time", value: "September to May" },
+            { label: "Pace", value: "Active, hills and a full-day trek" },
             { label: "Hotels", value: "3★ / 4★ & boutique stays" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹41,400 per person" },
         ],
         itinerary: [
@@ -3713,7 +3713,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 plan: "D1: Guwahati Arrival. Drive to Shillong. Umiam Lake.",
                 title: "Guwahati → Shillong & Umiam Lake",
                 detail: [
-                    "Your chauffeur meets you at Guwahati airport in Assam and you begin the scenic climb into the Meghalaya hills — a drive of roughly three hours up to Shillong, the 'Scotland of the East'.",
+                    "Your chauffeur meets you at Guwahati airport in Assam and you begin the scenic climb into the Meghalaya hills, a drive of roughly three hours up to Shillong, the 'Scotland of the East'.",
                     "En route you stop at Umiam Lake, a vast man-made reservoir ringed by pine-covered hills that is the classic first view of the plateau, before checking in at Shillong for the evening.",
                 ],
                 overnight: "Shillong",
@@ -3723,10 +3723,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "D2: Shillong to Cherrapunji. Nohkalikai Falls & Seven Sister Falls.",
-                title: "Cherrapunji — Nohkalikai & Seven Sisters Falls",
+                title: "Cherrapunji, Nohkalikai & Seven Sisters Falls",
                 detail: [
                     "You drive south to Cherrapunji (Sohra), one of the wettest places on earth, along a ridge road with dramatic gorge views.",
-                    "The day takes in Nohkalikai Falls — India's tallest plunge waterfall at around 340 metres — and the Seven Sisters (Nohsngithiang) Falls, plus the Mawsmai limestone caves if time allows. The falls run fullest just after the monsoon.",
+                    "The day takes in Nohkalikai Falls, India's tallest plunge waterfall at around 340 metres, and the Seven Sisters (Nohsngithiang) Falls, plus the Mawsmai limestone caves if time allows. The falls run fullest just after the monsoon.",
                 ],
                 overnight: "Cherrapunji",
                 meals: "Breakfast",
@@ -3735,10 +3735,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 3,
                 plan: "D3: Double Decker living root bridge trek (Full day).",
-                title: "Nongriat — Double-Decker Root Bridge Trek",
+                title: "Nongriat, Double-Decker Root Bridge Trek",
                 detail: [
                     "The day's centrepiece is the trek to the double-decker living root bridge at Nongriat, hand-grown over generations by the Khasi people from the roots of rubber fig trees.",
-                    "It is a demanding hike — around 3,500 stone steps down into the valley and back up — rewarded by the twin-tiered bridge and natural rock pools where you can swim. Sturdy shoes and a reasonable fitness level are essential.",
+                    "It is a demanding hike, around 3,500 stone steps down into the valley and back up, rewarded by the twin-tiered bridge and natural rock pools where you can swim. Sturdy shoes and a reasonable fitness level are essential.",
                 ],
                 overnight: "Cherrapunji",
                 meals: "Breakfast",
@@ -3747,10 +3747,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "D4: Cherrapunji to Mawlynnong (Cleanest village) & Dawki Lake.",
-                title: "Mawlynnong & Dawki — Cleanest Village & Umngot River",
+                title: "Mawlynnong & Dawki, Cleanest Village & Umngot River",
                 detail: [
                     "You drive to Mawlynnong, famed as Asia's cleanest village, with its living root bridges, bamboo sky-view platform and immaculate flower-lined lanes.",
-                    "The route continues to Dawki on the Bangladesh border, where the Umngot river runs so clear that boats appear to float on air — a gentle boat ride here is the day's highlight before your overnight nearby.",
+                    "The route continues to Dawki on the Bangladesh border, where the Umngot river runs so clear that boats appear to float on air, a gentle boat ride here is the day's highlight before your overnight nearby.",
                 ],
                 overnight: "Dawki / Shnongpdeng",
                 meals: "Breakfast",
@@ -3759,10 +3759,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "D5: Drive back to Shillong. Laitlum Canyons.",
-                title: "Shillong — Laitlum Canyons",
+                title: "Shillong, Laitlum Canyons",
                 detail: [
                     "You drive back up towards Shillong, stopping at the breathtaking Laitlum Canyons, a natural amphitheatre of green gorges that opens up dramatically at the ridge's edge.",
-                    "The rest of the day is at leisure in Shillong — Ward's Lake, the buzzing Police Bazaar, and the city's café and live-music scene are all easy to explore before your final night.",
+                    "The rest of the day is at leisure in Shillong, Ward's Lake, the buzzing Police Bazaar, and the city's café and live-music scene are all easy to explore before your final night.",
                 ],
                 overnight: "Shillong",
                 meals: "Breakfast",
@@ -3776,7 +3776,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                     "After breakfast you descend from the hills back to Guwahati, roughly a three-hour drive, for your onward flight.",
                     "If time allows before the airport, we can add a quick stop at Guwahati's Kamakhya Temple or the Brahmaputra riverfront to round off the trip.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Shillong → Guwahati · ~3 hrs / 100 km",
             },
@@ -3797,33 +3797,33 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "How difficult is the double-decker root bridge trek?", a: "It is genuinely strenuous — roughly 3,500 uneven stone steps down to Nongriat and the same climb back, taking most of a day. It suits reasonably fit travellers with sturdy shoes; we can arrange a porter, a shorter single-bridge alternative, or a rest day for those who prefer." },
-            { q: "Is Meghalaya worth visiting in the monsoon?", a: "The name says it all — the June–August monsoon makes the waterfalls thunderous and the hills impossibly green, which is why many come. But rain is near-constant, trails get slippery and views cloud over. September–May is the drier, more reliable window while the falls still flow." },
-            { q: "Why does the trip start and end in Guwahati, not Shillong?", a: "Shillong's airport has very limited connectivity, so almost all visitors fly into Guwahati in neighbouring Assam and drive up — a scenic three-hour climb into the Meghalaya plateau that is part of the experience." },
-            { q: "Is the Dawki river really as clear as the photos?", a: "In the dry season, yes — the Umngot river at Dawki runs so transparent that boats seem to float on air, and it is genuinely one of India's clearest waters. After heavy rain it turns muddy, which is another reason we favour the September–May window." },
-            { q: "Are the hotels comfortable in these remote areas?", a: "Shillong offers solid 3–4 star and boutique hotels. Cherrapunji and Dawki are more remote, with comfortable but simpler resorts and riverside camps; we pick the best available and set expectations honestly for each stop." },
+            { q: "How difficult is the double-decker root bridge trek?", a: "It is genuinely strenuous, roughly 3,500 uneven stone steps down to Nongriat and the same climb back, taking most of a day. It suits reasonably fit travellers with sturdy shoes; we can arrange a porter, a shorter single-bridge alternative, or a rest day for those who prefer." },
+            { q: "Is Meghalaya worth visiting in the monsoon?", a: "The name says it all, the June to August monsoon makes the waterfalls thunderous and the hills impossibly green, which is why many come. But rain is near-constant, trails get slippery and views cloud over. September to May is the drier, more reliable window while the falls still flow." },
+            { q: "Why does the trip start and end in Guwahati, not Shillong?", a: "Shillong's airport has very limited connectivity, so almost all visitors fly into Guwahati in neighbouring Assam and drive up, a scenic three-hour climb into the Meghalaya plateau that is part of the experience." },
+            { q: "Is the Dawki river really as clear as the photos?", a: "In the dry season, yes, the Umngot river at Dawki runs so transparent that boats seem to float on air, and it is genuinely one of India's clearest waters. After heavy rain it turns muddy, which is another reason we favour the September to May window." },
+            { q: "Are the hotels comfortable in these remote areas?", a: "Shillong offers solid 3 to 4 star and boutique hotels. Cherrapunji and Dawki are more remote, with comfortable but simpler resorts and riverside camps; we pick the best available and set expectations honestly for each stop." },
             { q: "Can you add Kaziranga, Assam or extra trekking?", a: "Yes. Popular extensions include a rhino safari at Kaziranga National Park, more time in Assam's tea country, or additional root-bridge and canyon treks. Share your dates and fitness level and we'll tailor the route and quote." },
         ],
     },
     30: {
-        metaTitle: "Rann Utsav Tour — White Desert of Kutch & Bhuj | MyTripMyTravel",
-        metaDescription: "Private 5-day Rann Utsav tour: the White Rann at Dhordo, Bhuj palaces, Kalo Dungar, artisan villages and Mandvi beach. Car, hotels, guide — from ₹58,000pp. Enquire now.",
-        bestTime: "November–February, timed to the seasonal Rann Utsav festival, when the salt desert dries white and the weather is cool; the Rann is flooded and inaccessible the rest of the year.",
-        answer: "The Gujarat Rann Utsav is a private 5-day journey into Kutch, timed to the seasonal White Desert festival. You explore Bhuj's Aina Mahal and Prag Mahal palaces, stand on the vast salt flats at Dhordo under a full moon, climb Kalo Dungar for Kutch's highest view, meet artisans at Gandhi ni Gam, and unwind at Mandvi beach and Vijay Vilas Palace. Travel is by private car with a local guide; it runs November–February and starts from ₹58,000 per person.",
+        metaTitle: "Rann Utsav Tour, White Desert of Kutch & Bhuj | MyTripMyTravel",
+        metaDescription: "Private 5-day Rann Utsav tour: the White Rann at Dhordo, Bhuj palaces, Kalo Dungar, artisan villages and Mandvi beach. Car, hotels, guide, from ₹58,000pp. Enquire now.",
+        bestTime: "November to February, timed to the seasonal Rann Utsav festival, when the salt desert dries white and the weather is cool; the Rann is flooded and inaccessible the rest of the year.",
+        answer: "The Gujarat Rann Utsav is a private 5-day journey into Kutch, timed to the seasonal White Desert festival. You explore Bhuj's Aina Mahal and Prag Mahal palaces, stand on the vast salt flats at Dhordo under a full moon, climb Kalo Dungar for Kutch's highest view, meet artisans at Gandhi ni Gam, and unwind at Mandvi beach and Vijay Vilas Palace. Travel is by private car with a local guide; it runs November to February and starts from ₹58,000 per person.",
         quickFacts: [
             { label: "Duration", value: "5 days / 4 nights" },
             { label: "Route", value: "Bhuj → Dhordo (White Rann) → Mandvi → Bhuj" },
-            { label: "Best time", value: "November–February (Rann Utsav season)" },
-            { label: "Pace", value: "Relaxed — desert, palaces and crafts" },
+            { label: "Best time", value: "November to February (Rann Utsav season)" },
+            { label: "Pace", value: "Relaxed, desert, palaces and crafts" },
             { label: "Hotels", value: "4★ hotels & Rann Utsav tents" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹58,000 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "D1: Bhuj Arrival. Visit Aina Mahal and Prag Mahal.",
-                title: "Bhuj — Arrival, Aina Mahal & Prag Mahal",
+                title: "Bhuj, Arrival, Aina Mahal & Prag Mahal",
                 detail: [
                     "Your chauffeur meets you at Bhuj airport (or the railway station) and transfers you to your hotel in this historic capital of Kutch.",
                     "In the afternoon you tour the adjoining royal palaces: the 18th-century Aina Mahal, the 'Palace of Mirrors' with its Venetian glass and Indo-European craftsmanship, and the Italian-Gothic Prag Mahal next door, whose bell tower gives sweeping views over the old city.",
@@ -3835,10 +3835,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "D2: Bhuj to Dhordo (Rann of Kutch). Evening in the White Desert.",
-                title: "Dhordo — The White Rann at Sunset",
+                title: "Dhordo, The White Rann at Sunset",
                 detail: [
                     "You drive north to Dhordo, the gateway to the Great Rann of Kutch and the hub of the Rann Utsav tent city, roughly two-and-a-half hours across increasingly stark landscape.",
-                    "In the evening you head onto the endless white salt flats for sunset and, on the right nights, a full moon rising over the desert — the signature image of the region — with camel carts, folk music and craft stalls at the festival grounds.",
+                    "In the evening you head onto the endless white salt flats for sunset and, on the right nights, a full moon rising over the desert, the signature image of the region, with camel carts, folk music and craft stalls at the festival grounds.",
                 ],
                 overnight: "Dhordo (Rann Utsav tents) / Bhuj",
                 meals: "Breakfast",
@@ -3850,19 +3850,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 title: "Kalo Dungar & Gandhi ni Gam Artisans",
                 detail: [
                     "The morning climbs Kalo Dungar (Black Hill), the highest point in Kutch, for a panoramic view over the white expanse of the Rann stretching to the Pakistan border, with its 400-year-old Dattatreya temple.",
-                    "You then visit Gandhi ni Gam and the surrounding craft villages, meeting the weavers, block-printers and embroiderers who make Kutch one of India's great handicraft regions — an honest look at living artisan traditions.",
+                    "You then visit Gandhi ni Gam and the surrounding craft villages, meeting the weavers, block-printers and embroiderers who make Kutch one of India's great handicraft regions, an honest look at living artisan traditions.",
                 ],
                 overnight: "Bhuj",
                 meals: "Breakfast",
-                drive: "Rann region loop · ~3–4 hrs across the day",
+                drive: "Rann region loop · ~3 to 4 hrs across the day",
             },
             {
                 day: 4,
                 plan: "D4: Mandvi Beach visit & Vijay Vilas Palace.",
-                title: "Mandvi — Beach & Vijay Vilas Palace",
+                title: "Mandvi, Beach & Vijay Vilas Palace",
                 detail: [
                     "You drive south to the coastal town of Mandvi, an old shipbuilding port where wooden dhows are still made by hand on the shore.",
-                    "The day combines relaxed time on Mandvi's clean private beach with a visit to the Vijay Vilas Palace, the 1920s royal summer retreat set in gardens — its Rajput-style domes and pavilions a familiar Bollywood filming location.",
+                    "The day combines relaxed time on Mandvi's clean private beach with a visit to the Vijay Vilas Palace, the 1920s royal summer retreat set in gardens, its Rajput-style domes and pavilions a familiar Bollywood filming location.",
                 ],
                 overnight: "Bhuj",
                 meals: "Breakfast",
@@ -3871,14 +3871,14 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "D5: Bhuj Departure.",
-                title: "Bhuj — Departure",
+                title: "Bhuj, Departure",
                 detail: [
                     "After breakfast and any last-minute craft shopping in Bhuj's bazaars, your chauffeur transfers you to the airport or station for your onward journey.",
                     "If your departure is later in the day, we can add the Bhujodi weaver village or the Aina Mahal museum, so no time is wasted.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
-                drive: "Bhuj hotel → Airport/Station · ~15–20 min",
+                drive: "Bhuj hotel → Airport/Station · ~15 to 20 min",
             },
         ],
         inclusions: [
@@ -3897,60 +3897,60 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "When does Rann Utsav happen — can I do this trip any time of year?", a: "No — this is a strictly seasonal trip. The Rann Utsav runs roughly November to February, when the salt marsh dries into the walkable White Desert and the weather is cool. Through the monsoon and summer the Rann is flooded or blazing hot and the festival is closed, so we only operate it in season." },
+            { q: "When does Rann Utsav happen, can I do this trip any time of year?", a: "No, this is a strictly seasonal trip. The Rann Utsav runs roughly November to February, when the salt marsh dries into the walkable White Desert and the weather is cool. Through the monsoon and summer the Rann is flooded or blazing hot and the festival is closed, so we only operate it in season." },
             { q: "Will I see the White Rann under a full moon?", a: "The desert is at its most magical on full-moon nights, when the salt glows silver. We try to align your dates with the moon calendar where possible, but even on other nights the sunset and floodlit festival grounds are spectacular. Tell us your dates and we'll advise." },
             { q: "Should I stay in the Rann Utsav tent city or in Bhuj?", a: "Both work. The Dhordo tent city puts you right beside the desert with an immersive festival atmosphere and premium tents, while basing in Bhuj offers more hotel choice and central access. We'll recommend based on your dates, budget and availability, which is tight in peak season." },
             { q: "Is this trip suitable for families and older travellers?", a: "Yes. The pace is relaxed, drives are short, and the palaces, crafts and beach suit all ages. The Kalo Dungar viewpoint and desert walks involve some easy walking; we adapt timings and can skip the steeper stretches for anyone who prefers." },
-            { q: "What kind of crafts and shopping can I expect in Kutch?", a: "Kutch is one of India's richest handicraft regions — Ajrakh block-printing, Bandhani tie-dye, mirror embroidery, Rogan art and Bhujodi weaving. You meet artisans directly in their villages, so purchases support them fairly. It's an honest, non-touristy highlight of the trip." },
-            { q: "Do I need a permit for the Rann of Kutch?", a: "Yes — because the Great Rann sits on a sensitive border zone, a permit is required to access the White Desert. We arrange this as part of the tour, and foreign nationals should carry their passport for the checkpoint." },
+            { q: "What kind of crafts and shopping can I expect in Kutch?", a: "Kutch is one of India's richest handicraft regions, Ajrakh block-printing, Bandhani tie-dye, mirror embroidery, Rogan art and Bhujodi weaving. You meet artisans directly in their villages, so purchases support them fairly. It's an honest, non-touristy highlight of the trip." },
+            { q: "Do I need a permit for the Rann of Kutch?", a: "Yes, because the Great Rann sits on a sensitive border zone, a permit is required to access the White Desert. We arrange this as part of the tour, and foreign nationals should carry their passport for the checkpoint." },
         ],
     },
     31: {
-        metaTitle: "Hampi Heritage Tour — Vijayanagara Ruins, Badami & Aihole | MyTripMyTravel",
-        metaDescription: "Private 7-day Hampi tour: Virupaksha & Vitthala temples, the stone chariot, Royal Enclosure, Pattadakal, Aihole and Badami caves. Car, hotels, guide — from ₹49,700pp. Enquire now.",
-        bestTime: "October–February for cool, comfortable days among the ruins; March–May is intensely hot, and the June–September monsoon can green the boulders but bring showers.",
-        answer: "Karnataka Hampi Heritage is a private 7-day journey through the stone-carved wonders of the Deccan. From Bengaluru you travel to Hampi, the UNESCO-listed capital of the Vijayanagara Empire, to see the Virupaksha and Vitthala temples, the iconic stone chariot, the Royal Enclosure and Lotus Mahal, then continue to the ancient temple towns of Pattadakal, Aihole and Badami's cave temples. Travel is by private car with local guides; it runs best October–February and starts from ₹49,700 per person.",
+        metaTitle: "Hampi Heritage Tour, Vijayanagara Ruins, Badami & Aihole | MyTripMyTravel",
+        metaDescription: "Private 7-day Hampi tour: Virupaksha & Vitthala temples, the stone chariot, Royal Enclosure, Pattadakal, Aihole and Badami caves. Car, hotels, guide, from ₹49,700pp. Enquire now.",
+        bestTime: "October to February for cool, comfortable days among the ruins; March to May is intensely hot, and the June to September monsoon can green the boulders but bring showers.",
+        answer: "Karnataka Hampi Heritage is a private 7-day journey through the stone-carved wonders of the Deccan. From Bengaluru you travel to Hampi, the UNESCO-listed capital of the Vijayanagara Empire, to see the Virupaksha and Vitthala temples, the iconic stone chariot, the Royal Enclosure and Lotus Mahal, then continue to the ancient temple towns of Pattadakal, Aihole and Badami's cave temples. Travel is by private car with local guides; it runs best October to February and starts from ₹49,700 per person.",
         quickFacts: [
             { label: "Duration", value: "7 days / 6 nights" },
             { label: "Route", value: "Bengaluru → Hampi → Badami → Hubli" },
-            { label: "Best time", value: "October–February" },
-            { label: "Pace", value: "Moderate — ruins on foot, some long drives" },
+            { label: "Best time", value: "October to February" },
+            { label: "Pace", value: "Moderate, ruins on foot, some long drives" },
             { label: "Hotels", value: "3★ / 4★ & heritage stays" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹49,700 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "D1: Bangalore Arrival. Visit Lalbagh and Palace.",
-                title: "Bengaluru — Arrival, Lalbagh & Bangalore Palace",
+                title: "Bengaluru, Arrival, Lalbagh & Bangalore Palace",
                 detail: [
                     "Your chauffeur meets you at Bengaluru (Kempegowda) airport and transfers you into the city for check-in and time to settle.",
-                    "The afternoon takes in the 240-acre Lalbagh Botanical Gardens, with its glasshouse modelled on London's Crystal Palace, and the Tudor-style Bangalore Palace, built by the Wodeyar rulers — an easy introduction to Karnataka's capital.",
+                    "The afternoon takes in the 240-acre Lalbagh Botanical Gardens, with its glasshouse modelled on London's Crystal Palace, and the Tudor-style Bangalore Palace, built by the Wodeyar rulers, an easy introduction to Karnataka's capital.",
                 ],
                 overnight: "Bengaluru",
                 meals: "None (arrival day)",
-                drive: "Airport → Bengaluru city · ~1–1.5 hrs",
+                drive: "Airport → Bengaluru city · ~1 to 1.5 hrs",
             },
             {
                 day: 2,
                 plan: "D2: Bangalore to Hampi by road. Evening at Hemakuta Hill.",
-                title: "Hampi — Drive & Hemakuta Hill Sunset",
+                title: "Hampi, Drive & Hemakuta Hill Sunset",
                 detail: [
-                    "A long but scenic drive north brings you into the boulder-strewn landscape of Hampi, the former Vijayanagara capital — roughly six to seven hours across the Deccan plateau.",
+                    "A long but scenic drive north brings you into the boulder-strewn landscape of Hampi, the former Vijayanagara capital, roughly six to seven hours across the Deccan plateau.",
                     "You arrive in time to climb Hemakuta Hill for sunset, dotted with ancient shrines and looking out over the temple town as the granite boulders glow orange.",
                 ],
                 overnight: "Hampi",
                 meals: "Breakfast",
-                drive: "Bengaluru → Hampi · ~6–7 hrs / 340 km",
+                drive: "Bengaluru → Hampi · ~6 to 7 hrs / 340 km",
             },
             {
                 day: 3,
                 plan: "D3: Virupaksha Temple & Vitthala Temple stone chariot.",
-                title: "Hampi — Virupaksha & Vitthala Temples",
+                title: "Hampi, Virupaksha & Vitthala Temples",
                 detail: [
                     "The morning begins at the living Virupaksha Temple, dedicated to Shiva and in continuous worship for centuries, with its towering gopuram over Hampi Bazaar.",
-                    "The afternoon is the celebrated Vitthala Temple complex, home to the iconic stone chariot and the musical pillars that ring when tapped — the artistic peak of Vijayanagara stonework and the image on India's ₹50 note.",
+                    "The afternoon is the celebrated Vitthala Temple complex, home to the iconic stone chariot and the musical pillars that ring when tapped, the artistic peak of Vijayanagara stonework and the image on India's ₹50 note.",
                 ],
                 overnight: "Hampi",
                 meals: "Breakfast",
@@ -3959,10 +3959,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "D4: Royal Enclosure and Lotus Mahal exploration.",
-                title: "Hampi — Royal Enclosure & Lotus Mahal",
+                title: "Hampi, Royal Enclosure & Lotus Mahal",
                 detail: [
                     "You explore the royal core of the city: the Royal Enclosure with its stepped tank, the grand Mahanavami Dibba platform, and the underground temple.",
-                    "Nearby stand the Islamic-influenced Lotus Mahal pavilion and the majestic Elephant Stables, along with the Zenana enclosure — showing the courtly, secular side of the empire alongside its temples.",
+                    "Nearby stand the Islamic-influenced Lotus Mahal pavilion and the majestic Elephant Stables, along with the Zenana enclosure, showing the courtly, secular side of the empire alongside its temples.",
                 ],
                 overnight: "Hampi",
                 meals: "Breakfast",
@@ -3971,19 +3971,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "D5: Hampi to Badami via Pattadakal and Aihole ruins.",
-                title: "Pattadakal & Aihole — Chalukyan Temple Towns",
+                title: "Pattadakal & Aihole, Chalukyan Temple Towns",
                 detail: [
-                    "You drive west towards Badami, breaking the journey at two cradles of South Indian temple architecture. UNESCO-listed Pattadakal showcases a stunning group of 7th–8th-century Chalukyan temples blending northern and southern styles.",
+                    "You drive west towards Badami, breaking the journey at two cradles of South Indian temple architecture. UNESCO-listed Pattadakal showcases a stunning group of 7th to 8th-century Chalukyan temples blending northern and southern styles.",
                     "Nearby Aihole, often called the birthplace of Hindu temple architecture, holds over a hundred early experimental shrines, including the Durga temple. You continue to Badami for the night.",
                 ],
                 overnight: "Badami",
                 meals: "Breakfast",
-                drive: "Hampi → Badami (via Pattadakal & Aihole) · ~4–5 hrs / 145 km",
+                drive: "Hampi → Badami (via Pattadakal & Aihole) · ~4 to 5 hrs / 145 km",
             },
             {
                 day: 6,
                 plan: "D6: Badami Cave Temples and Agastya Lake.",
-                title: "Badami — Cave Temples & Agastya Lake",
+                title: "Badami, Cave Temples & Agastya Lake",
                 detail: [
                     "The morning is the spectacular Badami cave temples, four rock-cut sanctuaries carved into a red-sandstone cliff, dedicated to Vishnu, Shiva and a Jain tirthankara, with intricate reliefs.",
                     "Across the emerald Agastya Lake stand the Bhutanatha temples, a classic Badami view. The rest of the day is relaxed, exploring the old town beneath the cliffs.",
@@ -4000,9 +4000,9 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                     "After breakfast you drive to Hubli, roughly two-and-a-half to three hours away, for your onward flight or train.",
                     "Hubli's airport connects to Bengaluru, Mumbai and other cities; we time the transfer with buffer so you reach your departure comfortably.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
-                drive: "Badami → Hubli · ~2.5–3 hrs / 105 km",
+                drive: "Badami → Hubli · ~2.5 to 3 hrs / 105 km",
             },
         ],
         inclusions: [
@@ -4021,37 +4021,37 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Is Hampi worth a full three days?", a: "Yes — Hampi's ruins sprawl over a vast area, from the sacred centre and Vitthala complex to the Royal Enclosure and outlying temples. Three days lets you see it on foot at a comfortable pace, with time for sunrise or sunset over the boulder landscape, rather than rushing the highlights." },
-            { q: "How long is the drive from Bengaluru to Hampi?", a: "It is a long day — roughly six to seven hours by road across around 340 km. We start early with comfort breaks, and the private car means flexible stops. Prefer to fly? We can route via Hubli or an overnight train and adjust the itinerary and quote." },
-            { q: "What is the best time of year to visit Hampi and Badami?", a: "October to February is ideal, with cooler days for walking the open ruins. March to May is intensely hot and demanding on foot; the June–September monsoon greens the landscape and fills the rivers but brings occasional showers and humid conditions." },
-            { q: "How much walking is involved among the ruins?", a: "A fair amount — Hampi and Badami are explored largely on foot over uneven rock, steps and open ground, with some climbs at Hemakuta Hill and the Badami caves. Good shoes, sun protection and water are essential; we pace the days and adapt for older travellers." },
+            { q: "Is Hampi worth a full three days?", a: "Yes, Hampi's ruins sprawl over a vast area, from the sacred centre and Vitthala complex to the Royal Enclosure and outlying temples. Three days lets you see it on foot at a comfortable pace, with time for sunrise or sunset over the boulder landscape, rather than rushing the highlights." },
+            { q: "How long is the drive from Bengaluru to Hampi?", a: "It is a long day, roughly six to seven hours by road across around 340 km. We start early with comfort breaks, and the private car means flexible stops. Prefer to fly? We can route via Hubli or an overnight train and adjust the itinerary and quote." },
+            { q: "What is the best time of year to visit Hampi and Badami?", a: "October to February is ideal, with cooler days for walking the open ruins. March to May is intensely hot and demanding on foot; the June to September monsoon greens the landscape and fills the rivers but brings occasional showers and humid conditions." },
+            { q: "How much walking is involved among the ruins?", a: "A fair amount, Hampi and Badami are explored largely on foot over uneven rock, steps and open ground, with some climbs at Hemakuta Hill and the Badami caves. Good shoes, sun protection and water are essential; we pace the days and adapt for older travellers." },
             { q: "Why does the tour end in Hubli rather than back in Bengaluru?", a: "Ending at Hubli avoids a second long drive back to Bengaluru and puts you near Badami on the final day. Hubli's airport connects to major cities, saving you time. If you'd rather return to Bengaluru, we can re-route and quote accordingly." },
             { q: "Can you add Badami's neighbours, Goa or Bengaluru city time?", a: "Certainly. Popular extensions include more of the Chalukyan heartland, a beach add-on in nearby Goa, or extra days in Bengaluru or Mysuru. Share your dates and interests and we'll tailor the route and quote." },
         ],
     },
 
     32: {
-        metaTitle: "Sikkim Silk Route Premium — Gangtok, Lachung & Pelling | MyTripMyTravel",
-        metaDescription: "Premium 8-day Sikkim tour: Gangtok, Yumthang Valley, Kanchenjunga views & Pelling monasteries. Private car, permits, upgraded stays — from ₹68,500pp. Enquire now.",
-        bestTime: "March–May for rhododendron bloom at Yumthang and October–December for the clearest Kanchenjunga views; monsoon (June–September) brings landslide risk on the north Sikkim roads.",
-        answer: "Sikkim Silk Route Premium is an 8-day private tour of Gangtok, north Sikkim and Pelling — the deluxe tier, with slower pacing, upgraded boutique and heritage stays, and private chauffeured 4x4s for the mountain roads. You trace the Teesta Valley to Gangtok, cross to Lachung for the rhododendron-lined Yumthang Valley, then finish among Pelling's Buddhist monasteries under Mt Kanchenjunga. All Sikkim inner-line and protected-area permits are handled for you. It runs best March–May and October–December, from ₹68,500 per person.",
+        metaTitle: "Sikkim Silk Route Premium, Gangtok, Lachung & Pelling | MyTripMyTravel",
+        metaDescription: "Premium 8-day Sikkim tour: Gangtok, Yumthang Valley, Kanchenjunga views & Pelling monasteries. Private car, permits, upgraded stays, from ₹68,500pp. Enquire now.",
+        bestTime: "March to May for rhododendron bloom at Yumthang and October to December for the clearest Kanchenjunga views; monsoon (June to September) brings landslide risk on the north Sikkim roads.",
+        answer: "Sikkim Silk Route Premium is an 8-day private tour of Gangtok, north Sikkim and Pelling, the deluxe tier, with slower pacing, upgraded boutique and heritage stays, and private chauffeured 4x4s for the mountain roads. You trace the Teesta Valley to Gangtok, cross to Lachung for the rhododendron-lined Yumthang Valley, then finish among Pelling's Buddhist monasteries under Mt Kanchenjunga. All Sikkim inner-line and protected-area permits are handled for you. It runs best March to May and October to December, from ₹68,500 per person.",
         quickFacts: [
             { label: "Duration", value: "8 days / 7 nights" },
             { label: "Route", value: "Bagdogra → Gangtok → Lachung → Pelling → Bagdogra" },
-            { label: "Best time", value: "March–May & October–December" },
-            { label: "Pace", value: "Relaxed — long scenic drives, unhurried stops" },
+            { label: "Best time", value: "March to May & October to December" },
+            { label: "Pace", value: "Relaxed, long scenic drives, unhurried stops" },
             { label: "Hotels", value: "Premium boutique & heritage 4★/5★" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹68,500 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Bagdogra arrival. Chauffeured 4-hr ascent to Gangtok via the Teesta Valley.",
-                title: "Bagdogra — Arrival & Ascent to Gangtok",
+                title: "Bagdogra, Arrival & Ascent to Gangtok",
                 detail: [
                     "Your chauffeur meets you at Bagdogra (IXB) and begins the scenic climb into Sikkim, following the jade-green Teesta river as it winds up from the plains to the state capital at around 1,650 m.",
-                    "The Premium tier means a private 4x4 rather than a shared vehicle, with unhurried photo stops at the Teesta–Rangeet confluence. You reach Gangtok by evening for check-in and a stroll along the pedestrianised MG Marg.",
+                    "The Premium tier means a private 4x4 rather than a shared vehicle, with unhurried photo stops at the Teesta to Rangeet confluence. You reach Gangtok by evening for check-in and a stroll along the pedestrianised MG Marg.",
                 ],
                 overnight: "Gangtok",
                 meals: "Dinner",
@@ -4059,11 +4059,11 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 2,
-                plan: "Gangtok — Rumtek Monastery, Enchey Monastery, Hanuman Tok viewpoint.",
-                title: "Gangtok — Monasteries & Ridge Viewpoints",
+                plan: "Gangtok, Rumtek Monastery, Enchey Monastery, Hanuman Tok viewpoint.",
+                title: "Gangtok, Monasteries & Ridge Viewpoints",
                 detail: [
                     "You spend the day among Gangtok's living Buddhist heritage: Rumtek, seat of the Karmapa and one of the most important monasteries of the Kagyu lineage, and the 200-year-old Enchey Monastery closer to town.",
-                    "The Hanuman Tok viewpoint on the ridge above the city gives clear-weather views toward the Kanchenjunga range. The pace is deliberately gentle — this is also your body's first full day settling into the altitude.",
+                    "The Hanuman Tok viewpoint on the ridge above the city gives clear-weather views toward the Kanchenjunga range. The pace is deliberately gentle, this is also your body's first full day settling into the altitude.",
                 ],
                 overnight: "Gangtok",
                 meals: "Breakfast",
@@ -4071,11 +4071,11 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 3,
-                plan: "Drive to Lachung (130 km, 7 hrs) via Mangan and Chungthang — north Sikkim entry.",
-                title: "Gangtok to Lachung — North Sikkim",
+                plan: "Drive to Lachung (130 km, 7 hrs) via Mangan and Chungthang, north Sikkim entry.",
+                title: "Gangtok to Lachung, North Sikkim",
                 detail: [
                     "Today you enter protected north Sikkim, a full-day mountain drive through Mangan and Chungthang along the Teesta gorge, passing waterfalls that tumble straight onto the road.",
-                    "This is a genuinely long journey on demanding roads — seven hours is honest, not padded — so the Premium tier books an early start and a comfortable Lachung stay at around 2,700 m to reward it. Your protected-area permit is pre-arranged.",
+                    "This is a genuinely long journey on demanding roads, seven hours is honest, not padded, so the Premium tier books an early start and a comfortable Lachung stay at around 2,700 m to reward it. Your protected-area permit is pre-arranged.",
                 ],
                 overnight: "Lachung",
                 meals: "Breakfast, Dinner",
@@ -4083,10 +4083,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 4,
-                plan: "Yumthang Valley day-trip — rhododendron bloom (Apr-May) or post-monsoon clarity. Optional Zero Point.",
-                title: "Yumthang — Valley of Flowers",
+                plan: "Yumthang Valley day-trip, rhododendron bloom (Apr-May) or post-monsoon clarity. Optional Zero Point.",
+                title: "Yumthang, Valley of Flowers",
                 detail: [
-                    "An early drive climbs to the Yumthang Valley at roughly 3,600 m — the 'Valley of Flowers', carpeted with rhododendron blooms in April–May and starkly beautiful in the clear post-monsoon months.",
+                    "An early drive climbs to the Yumthang Valley at roughly 3,600 m, the 'Valley of Flowers', carpeted with rhododendron blooms in April to May and starkly beautiful in the clear post-monsoon months.",
                     "You can extend higher to Zero Point (Yumesamdong, ~4,700 m) when the road and weather permit; this is a genuinely high-altitude add-on, so we keep it optional and weather-dependent. Return to Lachung by evening.",
                 ],
                 overnight: "Lachung",
@@ -4096,10 +4096,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Return to Gangtok. Afternoon at Tsongmo Lake / Baba Mandir (weather permitting).",
-                title: "Lachung to Gangtok — Tsongmo Lake",
+                title: "Lachung to Gangtok, Tsongmo Lake",
                 detail: [
                     "You retrace the Teesta valley back to Gangtok. Weather and road conditions permitting, the afternoon adds the glacial Tsongmo (Tsomgo) Lake at 3,750 m and the nearby Baba Harbhajan Singh Mandir on the old Nathu La road.",
-                    "Because this stretch sits close to the border and above the treeline, access can be closed at short notice — we hold it flexibly and never promise what the mountain won't allow.",
+                    "Because this stretch sits close to the border and above the treeline, access can be closed at short notice, we hold it flexibly and never promise what the mountain won't allow.",
                 ],
                 overnight: "Gangtok",
                 meals: "Breakfast",
@@ -4108,10 +4108,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Drive to Pelling (110 km, 4.5 hrs). Sunset at Singshore Bridge.",
-                title: "Gangtok to Pelling — West Sikkim",
+                title: "Gangtok to Pelling, West Sikkim",
                 detail: [
                     "You cross to west Sikkim and the hill town of Pelling, famed for its front-row Kanchenjunga panorama. The drive passes terraced hills and forest, a quieter and greener side of the state.",
-                    "Late afternoon you stop at the Singshore Bridge, one of the highest bridges in the region, spanning a deep forested gorge — dramatic at sunset. Check in to your Pelling stay for the night.",
+                    "Late afternoon you stop at the Singshore Bridge, one of the highest bridges in the region, spanning a deep forested gorge, dramatic at sunset. Check in to your Pelling stay for the night.",
                 ],
                 overnight: "Pelling",
                 meals: "Breakfast",
@@ -4119,11 +4119,11 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 7,
-                plan: "Pelling — Pemayangtse Monastery, Sky Walk, Kanchenjunga falls.",
-                title: "Pelling — Monasteries & Kanchenjunga",
+                plan: "Pelling, Pemayangtse Monastery, Sky Walk, Kanchenjunga falls.",
+                title: "Pelling, Monasteries & Kanchenjunga",
                 detail: [
                     "The morning belongs to the 17th-century Pemayangtse Monastery, one of Sikkim's oldest, and the adjacent Rabdentse ruins of the former royal capital, set on a forested spur.",
-                    "You walk the Pelling Sky Walk to the towering Chenrezig statue for its glass-floor Kanchenjunga view, and stop at the Kanchenjunga (Rimbi) falls. On a clear dawn the peak itself glows pink above your hotel — the tour's signature sight.",
+                    "You walk the Pelling Sky Walk to the towering Chenrezig statue for its glass-floor Kanchenjunga view, and stop at the Kanchenjunga (Rimbi) falls. On a clear dawn the peak itself glows pink above your hotel, the tour's signature sight.",
                 ],
                 overnight: "Pelling",
                 meals: "Breakfast",
@@ -4132,12 +4132,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 8,
                 plan: "Pelling to Bagdogra departure.",
-                title: "Pelling to Bagdogra — Departure",
+                title: "Pelling to Bagdogra, Departure",
                 detail: [
                     "After a final Kanchenjunga sunrise, if the sky is kind, your chauffeur begins the descent from the hills back to the plains and Bagdogra airport.",
                     "It is a long half-day drive, so we align it with afternoon and evening departures; your driver sees you to the terminal with time to spare.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Pelling → Bagdogra · ~4.5 hrs / 155 km",
             },
@@ -4158,35 +4158,35 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Do I need permits for Sikkim, and are they included?", a: "Yes — foreign and domestic visitors need permits for north Sikkim (Lachung, Yumthang) and for Tsongmo Lake near the border. On this Premium tour we arrange and pay for all inner-line and protected-area permits; we only need your passport and photo details in advance. Certain sensitive zones like Zero Point remain weather- and army-dependent." },
+            { q: "Do I need permits for Sikkim, and are they included?", a: "Yes, foreign and domestic visitors need permits for north Sikkim (Lachung, Yumthang) and for Tsongmo Lake near the border. On this Premium tour we arrange and pay for all inner-line and protected-area permits; we only need your passport and photo details in advance. Certain sensitive zones like Zero Point remain weather- and army-dependent." },
             { q: "How high does this tour go, and is altitude a concern?", a: "The highest regular points are Yumthang (~3,600 m) and Tsongmo Lake (~3,750 m), with the optional Zero Point near 4,700 m. Most travellers feel only mild breathlessness, as nights are spent lower in Gangtok, Lachung and Pelling. We pace the early days gently and advise skipping Zero Point if you feel unwell." },
-            { q: "Why is this the Premium version, and how does it differ from the standard Sikkim tour?", a: "The Premium tour adds two extra days, extends into north Sikkim's Yumthang Valley, and upgrades to boutique and heritage stays with private 4x4s rather than shared jeeps. The pace is slower with unhurried monastery and viewpoint stops — built for comfort and photography, not a rushed circuit." },
-            { q: "Will I actually see Mt Kanchenjunga?", a: "Pelling gives one of India's best chances of a clear Kanchenjunga view, especially at dawn, but the world's third-highest peak makes its own weather and can hide behind cloud. October–December offers the crispest odds; we build in two Pelling mornings and honest expectations rather than guarantees." },
-            { q: "Are the long drives really necessary?", a: "Yes — north Sikkim's roads are mountainous and slow by nature, so the Gangtok–Lachung leg genuinely takes about seven hours. We use a comfortable private 4x4, plan early starts, and break the journey with scenic stops so the drive becomes part of the experience rather than an ordeal." },
-            { q: "Is this tour suitable in the monsoon?", a: "We advise against June–September. The Teesta valley and north Sikkim roads are prone to landslides and closures in heavy rain, and Yumthang access is often cut. The rewarding windows are March–May for the rhododendron bloom and October–December for clear high-mountain views." },
+            { q: "Why is this the Premium version, and how does it differ from the standard Sikkim tour?", a: "The Premium tour adds two extra days, extends into north Sikkim's Yumthang Valley, and upgrades to boutique and heritage stays with private 4x4s rather than shared jeeps. The pace is slower with unhurried monastery and viewpoint stops, built for comfort and photography, not a rushed circuit." },
+            { q: "Will I actually see Mt Kanchenjunga?", a: "Pelling gives one of India's best chances of a clear Kanchenjunga view, especially at dawn, but the world's third-highest peak makes its own weather and can hide behind cloud. October to December offers the crispest odds; we build in two Pelling mornings and honest expectations rather than guarantees." },
+            { q: "Are the long drives really necessary?", a: "Yes, north Sikkim's roads are mountainous and slow by nature, so the Gangtok to Lachung leg genuinely takes about seven hours. We use a comfortable private 4x4, plan early starts, and break the journey with scenic stops so the drive becomes part of the experience rather than an ordeal." },
+            { q: "Is this tour suitable in the monsoon?", a: "We advise against June to September. The Teesta valley and north Sikkim roads are prone to landslides and closures in heavy rain, and Yumthang access is often cut. The rewarding windows are March to May for the rhododendron bloom and October to December for clear high-mountain views." },
         ],
     },
     33: {
-        metaTitle: "Andaman Island Luxury — Havelock & Neil Beaches | MyTripMyTravel",
-        metaDescription: "Luxury 7-day Andaman tour: Cellular Jail heritage, Radhanagar Beach, diving at Havelock & Neil. Private transfers, ferries, beach resorts — from ₹95,400pp. Enquire now.",
-        bestTime: "October–May for calm seas, clear water and the best diving visibility; the monsoon (June–September) brings rough crossings and reduced ferry reliability.",
-        answer: "Andaman Island Luxury is a 7-day private tour of Port Blair, Havelock and Neil islands — the deluxe tier, with premium beachfront resorts, private transfers and reserved seats on the fast air-conditioned catamaran ferries. You explore the Cellular Jail's colonial history, snorkel at Ross and North Bay, then settle into Radhanagar Beach at Havelock and the quieter coves of Neil. Diving and snorkelling are optional and PADI-run. It runs best October–May and starts from ₹95,400 per person.",
+        metaTitle: "Andaman Island Luxury, Havelock & Neil Beaches | MyTripMyTravel",
+        metaDescription: "Luxury 7-day Andaman tour: Cellular Jail heritage, Radhanagar Beach, diving at Havelock & Neil. Private transfers, ferries, beach resorts, from ₹95,400pp. Enquire now.",
+        bestTime: "October to May for calm seas, clear water and the best diving visibility; the monsoon (June to September) brings rough crossings and reduced ferry reliability.",
+        answer: "Andaman Island Luxury is a 7-day private tour of Port Blair, Havelock and Neil islands, the deluxe tier, with premium beachfront resorts, private transfers and reserved seats on the fast air-conditioned catamaran ferries. You explore the Cellular Jail's colonial history, snorkel at Ross and North Bay, then settle into Radhanagar Beach at Havelock and the quieter coves of Neil. Diving and snorkelling are optional and PADI-run. It runs best October to May and starts from ₹95,400 per person.",
         quickFacts: [
             { label: "Duration", value: "7 days / 6 nights" },
             { label: "Route", value: "Port Blair → Havelock → Neil → Port Blair" },
-            { label: "Best time", value: "October–May" },
-            { label: "Pace", value: "Slow — beach-led, generous free time" },
+            { label: "Best time", value: "October to May" },
+            { label: "Pace", value: "Slow, beach-led, generous free time" },
             { label: "Hotels", value: "Premium beach resorts 4★/5★" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹95,400 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Port Blair arrival. Afternoon at Cellular Jail heritage circuit. Evening sound-and-light show.",
-                title: "Port Blair — Arrival & Cellular Jail",
+                title: "Port Blair, Arrival & Cellular Jail",
                 detail: [
-                    "You're met at Port Blair (IXZ) and transferred to your harbour-side hotel. The afternoon is given to the Cellular Jail National Memorial — the colonial-era prison where India's freedom fighters were held, its radiating wings a sober, moving start.",
+                    "You're met at Port Blair (IXZ) and transferred to your harbour-side hotel. The afternoon is given to the Cellular Jail National Memorial, the colonial-era prison where India's freedom fighters were held, its radiating wings a sober, moving start.",
                     "As dusk falls you return for the sound-and-light show, which tells the jail's story against the illuminated walls. The pace is easy after your flight, with the evening free.",
                 ],
                 overnight: "Port Blair",
@@ -4196,7 +4196,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Ross Island and North Bay snorkelling. Anthropological Museum.",
-                title: "Port Blair — Ross Island & North Bay",
+                title: "Port Blair, Ross Island & North Bay",
                 detail: [
                     "A short private boat takes you to Ross Island (Netaji Subhas Chandra Bose Dweep), the former British administrative capital now reclaimed by jungle and roaming deer, its ballroom and church ruins wrapped in banyan roots.",
                     "At North Bay you snorkel over shallow coral or try a glass-bottom boat. Back on shore, the Anthropological Museum gives honest context on the Andaman's indigenous tribes before an evening at leisure.",
@@ -4207,11 +4207,11 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 3,
-                plan: "Ferry to Havelock (Swaraj Dweep) — 1.5 hrs. Afternoon at Radhanagar Beach (Asia's 7th best beach).",
-                title: "Havelock — Ferry & Radhanagar Beach",
+                plan: "Ferry to Havelock (Swaraj Dweep), 1.5 hrs. Afternoon at Radhanagar Beach (Asia's 7th best beach).",
+                title: "Havelock, Ferry & Radhanagar Beach",
                 detail: [
                     "You cross to Havelock (Swaraj Dweep) on a reserved seat aboard the fast air-conditioned catamaran, about 90 minutes over turquoise water, and check in to your premium beach resort.",
-                    "The afternoon is Radhanagar Beach — a long arc of white sand and casuarina trees regularly rated among Asia's finest — timed for its celebrated sunset. The rest of the day is yours to swim or simply do nothing well.",
+                    "The afternoon is Radhanagar Beach, a long arc of white sand and casuarina trees regularly rated among Asia's finest, timed for its celebrated sunset. The rest of the day is yours to swim or simply do nothing well.",
                 ],
                 overnight: "Havelock",
                 meals: "Breakfast",
@@ -4219,11 +4219,11 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 4,
-                plan: "Havelock — diving / snorkelling at Elephant Beach. Sunset on Radhanagar.",
-                title: "Havelock — Elephant Beach & Diving",
+                plan: "Havelock, diving / snorkelling at Elephant Beach. Sunset on Radhanagar.",
+                title: "Havelock, Elephant Beach & Diving",
                 detail: [
-                    "Elephant Beach, reached by a short boat or forest walk, has one of Havelock's most accessible fringing reefs — ideal for snorkelling and beginner 'Discover Scuba' dives run by PADI-certified local operators.",
-                    "Certified divers can go deeper on the island's better-known sites. We arrange the dive but keep it optional and safety-led — no pressure to get in the water. Sunset returns you to Radhanagar.",
+                    "Elephant Beach, reached by a short boat or forest walk, has one of Havelock's most accessible fringing reefs, ideal for snorkelling and beginner 'Discover Scuba' dives run by PADI-certified local operators.",
+                    "Certified divers can go deeper on the island's better-known sites. We arrange the dive but keep it optional and safety-led, no pressure to get in the water. Sunset returns you to Radhanagar.",
                 ],
                 overnight: "Havelock",
                 meals: "Breakfast",
@@ -4232,10 +4232,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Optional second dive day or beach rest. Evening Havelock luxury dining.",
-                title: "Havelock — Free Day & Fine Dining",
+                title: "Havelock, Free Day & Fine Dining",
                 detail: [
                     "This is your unhurried Premium day: a second dive or discovery session for enthusiasts, a kayak through the mangroves, or simply the resort's pool and spa for those who came to slow down.",
-                    "The evening is a curated luxury dinner — fresh Andaman seafood, often beachfront — a highlight the standard island tour doesn't build in.",
+                    "The evening is a curated luxury dinner, fresh Andaman seafood, often beachfront, a highlight the standard island tour doesn't build in.",
                 ],
                 overnight: "Havelock",
                 meals: "Breakfast",
@@ -4243,8 +4243,8 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 6,
-                plan: "Ferry to Neil (Shaheed Dweep) — 1 hr. Bharatpur Beach, Natural Bridge, Laxmanpur Beach sunset.",
-                title: "Neil Island — Bridges & Sunset Coves",
+                plan: "Ferry to Neil (Shaheed Dweep), 1 hr. Bharatpur Beach, Natural Bridge, Laxmanpur Beach sunset.",
+                title: "Neil Island, Bridges & Sunset Coves",
                 detail: [
                     "A short reserved-seat ferry brings you to Neil (Shaheed Dweep), the quieter, greener island of paddy-like glades and coral coves. Bharatpur Beach offers calm, clear snorkelling water.",
                     "At low tide you walk out to the Natural Bridge (Howrah Bridge), a wave-carved rock arch over tidal pools, then close the day at Laxmanpur Beach for its wide, shallow sunset. Overnight on Neil.",
@@ -4256,18 +4256,18 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 7,
                 plan: "Ferry to Port Blair. Departure.",
-                title: "Neil to Port Blair — Departure",
+                title: "Neil to Port Blair, Departure",
                 detail: [
                     "A morning ferry returns you across the water to Port Blair, timed to connect with afternoon mainland flights.",
                     "Your representative assists with the transfer and sees you to the airport. Because Andaman ferries and flights are weather-sensitive, we build in a comfortable buffer rather than a tight connection.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
-                drive: "Neil → Port Blair · ~1.5–2 hrs · ferry, then airport transfer",
+                drive: "Neil → Port Blair · ~1.5 to 2 hrs · ferry, then airport transfer",
             },
         ],
         inclusions: [
-            "Reserved seats on fast air-conditioned catamaran ferries (Port Blair–Havelock–Neil–Port Blair)",
+            "Reserved seats on fast air-conditioned catamaran ferries (Port Blair to Havelock to Neil to Port Blair)",
             "6 nights in premium beach resorts with daily breakfast",
             "Private air-conditioned vehicle and boat transfers for all island sightseeing",
             "Ross Island, North Bay and Elephant Beach excursions with snorkelling assistance",
@@ -4282,36 +4282,36 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "How do you travel between the islands — is it reliable?", a: "By fast air-conditioned catamaran ferry, and this Premium tour includes reserved seats rather than leaving you to the standby queue. Crossings are 1–1.5 hours. Ferries do occasionally reschedule for weather or sea state, so we plan buffers and never book a same-day ferry-to-flight connection." },
-            { q: "Do I need to be a certified diver to dive here?", a: "No. Havelock and Neil run beginner 'Discover Scuba' dives with PADI-certified instructors in shallow, calm water, and snorkelling needs no experience at all. Certified divers get access to deeper sites. Diving is optional and safety-led — we book it around your comfort, and non-divers have plenty to enjoy." },
+            { q: "How do you travel between the islands, is it reliable?", a: "By fast air-conditioned catamaran ferry, and this Premium tour includes reserved seats rather than leaving you to the standby queue. Crossings are 1 to 1.5 hours. Ferries do occasionally reschedule for weather or sea state, so we plan buffers and never book a same-day ferry-to-flight connection." },
+            { q: "Do I need to be a certified diver to dive here?", a: "No. Havelock and Neil run beginner 'Discover Scuba' dives with PADI-certified instructors in shallow, calm water, and snorkelling needs no experience at all. Certified divers get access to deeper sites. Diving is optional and safety-led, we book it around your comfort, and non-divers have plenty to enjoy." },
             { q: "What makes this the Luxury version of the Andaman tour?", a: "Premium beachfront resorts over standard hotels, reserved private ferry seats, private rather than shared transfers, an extra unhurried day on Havelock, and a curated seafood dinner. The pace is slower and beach-led, designed for travellers who want the Andamans done comfortably, not crammed." },
-            { q: "When is the best time to visit the Andamans?", a: "October to May offers calm seas, clear water and the best diving visibility, with January–April the prime window. We advise against the June–September monsoon, when crossings turn rough and ferries and flights are more prone to disruption." },
+            { q: "When is the best time to visit the Andamans?", a: "October to May offers calm seas, clear water and the best diving visibility, with January to April the prime window. We advise against the June to September monsoon, when crossings turn rough and ferries and flights are more prone to disruption." },
             { q: "Is there mobile signal and connectivity on the islands?", a: "Port Blair has decent coverage; Havelock and Neil are patchier, and postpaid Indian SIMs work far better than prepaid or roaming. Many travellers treat this as a genuine disconnect. Resorts have Wi-Fi of variable speed, and we make sure you can always reach our 24/7 support." },
-            { q: "Can you tailor the beach time or add islands?", a: "Yes — we can add nights on Havelock or Neil, include Baratang's limestone caves or Long Island, upgrade to sea-view suites, or arrange private candlelit dinners and honeymoon touches. Send your dates and preferences and we'll return a tailored plan and quote." },
+            { q: "Can you tailor the beach time or add islands?", a: "Yes, we can add nights on Havelock or Neil, include Baratang's limestone caves or Long Island, upgrade to sea-view suites, or arrange private candlelit dinners and honeymoon touches. Send your dates and preferences and we'll return a tailored plan and quote." },
         ],
     },
     34: {
-        metaTitle: "Ladakh Expedition — Leh, Nubra Valley & Pangong | MyTripMyTravel",
-        metaDescription: "10-day Ladakh expedition: Leh fly-in, Khardung La, Nubra Valley camels & Pangong Lake. Private 4x4, permits, acclimatisation-paced — from ₹89,200pp. Enquire now.",
-        bestTime: "June–September, when the Khardung La and Chang La passes and Pangong road are reliably open; winter closes the high passes and Nubra–Pangong access.",
-        answer: "Himalayan Ladakh Expedition is a 10-day private trans-Himalayan tour — Delhi, then a fly-in to Leh, Nubra Valley over Khardung La, and Pangong Tso — run in the deluxe tier with private 4x4s, the best available Leh and camp stays, and a schedule built honestly around altitude. Ladakh sits at 3,500 m and higher, so the first two days are deliberate rest and acclimatisation, not sightseeing sprints. Expect monasteries, high passes and stark beauty. It runs June–September, from ₹89,200 per person.",
+        metaTitle: "Ladakh Expedition, Leh, Nubra Valley & Pangong | MyTripMyTravel",
+        metaDescription: "10-day Ladakh expedition: Leh fly-in, Khardung La, Nubra Valley camels & Pangong Lake. Private 4x4, permits, acclimatisation-paced, from ₹89,200pp. Enquire now.",
+        bestTime: "June to September, when the Khardung La and Chang La passes and Pangong road are reliably open; winter closes the high passes and Nubra to Pangong access.",
+        answer: "Himalayan Ladakh Expedition is a 10-day private trans-Himalayan tour, Delhi, then a fly-in to Leh, Nubra Valley over Khardung La, and Pangong Tso, run in the deluxe tier with private 4x4s, the best available Leh and camp stays, and a schedule built honestly around altitude. Ladakh sits at 3,500 m and higher, so the first two days are deliberate rest and acclimatisation, not sightseeing sprints. Expect monasteries, high passes and stark beauty. It runs June to September, from ₹89,200 per person.",
         quickFacts: [
             { label: "Duration", value: "10 days / 9 nights" },
             { label: "Route", value: "Delhi → Leh → Nubra → Pangong → Leh → Delhi" },
-            { label: "Best time", value: "June–September" },
-            { label: "Pace", value: "Acclimatisation-led — gentle early, expedition later" },
+            { label: "Best time", value: "June to September" },
+            { label: "Pace", value: "Acclimatisation-led, gentle early, expedition later" },
             { label: "Hotels", value: "Premium Leh hotels & deluxe Nubra/Pangong camps" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹89,200 per person" },
         ],
         itinerary: [
             {
                 day: 1,
                 plan: "Delhi arrival. Afternoon at Qutub Minar and Humayun's Tomb.",
-                title: "Delhi — Arrival & Mughal Landmarks",
+                title: "Delhi, Arrival & Mughal Landmarks",
                 detail: [
                     "Your chauffeur meets you at Delhi (DEL) and, after check-in, you ease into India with two UNESCO landmarks: the 73-metre Qutub Minar and the garden-set Humayun's Tomb, the architectural forerunner of the Taj Mahal.",
-                    "The night in Delhi is intentional — it sets up a morning flight to Leh so you arrive rested, which matters enormously for the altitude that follows.",
+                    "The night in Delhi is intentional, it sets up a morning flight to Leh so you arrive rested, which matters enormously for the altitude that follows.",
                 ],
                 overnight: "Delhi",
                 meals: "None (arrival day)",
@@ -4320,10 +4320,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Delhi-Leh flight (1 hr). Mandatory 24-hr acclimatisation at 3,500 m.",
-                title: "Leh — Fly-in & Complete Rest",
+                title: "Leh, Fly-in & Complete Rest",
                 detail: [
                     "The spectacular one-hour flight to Leh crosses the main Himalayan range, landing on the high desert plateau at about 3,500 m. From here the rule is simple and non-negotiable: today you rest.",
-                    "You check in and stay put — no sightseeing, plenty of water, no alcohol. Flying straight to this altitude means your body needs a full 24 hours to begin adjusting, and skipping it is the single biggest cause of altitude sickness. Mild headache or breathlessness on day one is normal.",
+                    "You check in and stay put, no sightseeing, plenty of water, no alcohol. Flying straight to this altitude means your body needs a full 24 hours to begin adjusting, and skipping it is the single biggest cause of altitude sickness. Mild headache or breathlessness on day one is normal.",
                 ],
                 overnight: "Leh",
                 meals: "Breakfast, Dinner",
@@ -4331,11 +4331,11 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 3,
-                plan: "Leh — Shanti Stupa, Leh Palace, Sankar Monastery. Continued acclimatisation.",
-                title: "Leh — Gentle Acclimatisation Day",
+                plan: "Leh, Shanti Stupa, Leh Palace, Sankar Monastery. Continued acclimatisation.",
+                title: "Leh, Gentle Acclimatisation Day",
                 detail: [
                     "A deliberately light day of low-exertion sights in and around town: the white-domed Shanti Stupa on its ridge, the nine-storey Leh Palace above the old town, and the quiet Sankar Monastery.",
-                    "Everything is drive-up with short walks, giving your body a second day to acclimatise before you go higher. We keep the schedule flexible — if you're feeling the altitude, we slow down further. This second night at Leh's elevation is what makes the high passes ahead safe.",
+                    "Everything is drive-up with short walks, giving your body a second day to acclimatise before you go higher. We keep the schedule flexible, if you're feeling the altitude, we slow down further. This second night at Leh's elevation is what makes the high passes ahead safe.",
                 ],
                 overnight: "Leh",
                 meals: "Breakfast",
@@ -4346,20 +4346,20 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 plan: "Leh to Nubra Valley via Khardung La (18,380 ft). Diskit Monastery, Bactrian camel ride at Hunder dunes.",
                 title: "Leh to Nubra via Khardung La",
                 detail: [
-                    "Now acclimatised, you cross Khardung La at around 18,000 ft, one of the world's highest motorable passes, and descend into the Nubra Valley. You stop only briefly at the pass summit — the air is thin and lingering is unwise.",
+                    "Now acclimatised, you cross Khardung La at around 18,000 ft, one of the world's highest motorable passes, and descend into the Nubra Valley. You stop only briefly at the pass summit, the air is thin and lingering is unwise.",
                     "In Nubra you visit the Diskit Monastery beneath its giant Maitreya Buddha and ride double-humped Bactrian camels across the Hunder sand dunes, a genuine Silk Road curiosity. Overnight in a deluxe Nubra camp at a gentler altitude than Leh.",
                 ],
                 overnight: "Nubra Valley (Hunder)",
                 meals: "Breakfast, Dinner",
-                drive: "Leh → Nubra via Khardung La · ~5–6 hrs / 120 km · inner-line permit included",
+                drive: "Leh → Nubra via Khardung La · ~5 to 6 hrs / 120 km · inner-line permit included",
             },
             {
                 day: 5,
-                plan: "Nubra Valley — Turtuk village near Pakistan border, Panamik hot springs.",
-                title: "Nubra — Turtuk & Panamik",
+                plan: "Nubra Valley, Turtuk village near Pakistan border, Panamik hot springs.",
+                title: "Nubra, Turtuk & Panamik",
                 detail: [
                     "A full day exploring the valley's far reaches: Turtuk, a Balti village near the Pakistan border that only opened to visitors in 2010, with its own culture, apricot orchards and quietly remarkable history.",
-                    "On the way back you can stop at the Panamik hot springs. It's a long day of driving through dramatic, remote country — the reward for coming this far into the Himalayas.",
+                    "On the way back you can stop at the Panamik hot springs. It's a long day of driving through dramatic, remote country, the reward for coming this far into the Himalayas.",
                 ],
                 overnight: "Nubra Valley (Hunder)",
                 meals: "Breakfast, Dinner",
@@ -4368,14 +4368,14 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 6,
                 plan: "Drive back to Leh via Khardung La. Rest day.",
-                title: "Nubra to Leh — Recovery Day",
+                title: "Nubra to Leh, Recovery Day",
                 detail: [
-                    "You re-cross Khardung La back to Leh, arriving by afternoon. The rest of the day is deliberately unstructured — a market wander, a bakery, or simply rest.",
+                    "You re-cross Khardung La back to Leh, arriving by afternoon. The rest of the day is deliberately unstructured, a market wander, a bakery, or simply rest.",
                     "This built-in recovery day is part of the acclimatisation strategy: it lets you re-sea-level a little before the push to Pangong, which sits higher still. The Premium pacing is what keeps the trip enjoyable rather than exhausting.",
                 ],
                 overnight: "Leh",
                 meals: "Breakfast",
-                drive: "Nubra → Leh via Khardung La · ~5–6 hrs / 120 km",
+                drive: "Nubra → Leh via Khardung La · ~5 to 6 hrs / 120 km",
             },
             {
                 day: 7,
@@ -4383,7 +4383,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 title: "Leh to Pangong via Chang La",
                 detail: [
                     "You drive to Pangong Tso over the Chang La pass at roughly 17,600 ft, descending to the lake at about 4,350 m. The first sight of Pangong's electric blue water stretching toward Tibet is the trip's defining image.",
-                    "You overnight lakeside in a deluxe camp. Pangong is high and cold at night even in summer — layers matter — and the thin air means a quiet evening rather than exertion.",
+                    "You overnight lakeside in a deluxe camp. Pangong is high and cold at night even in summer, layers matter, and the thin air means a quiet evening rather than exertion.",
                 ],
                 overnight: "Pangong Tso (lakeside camp)",
                 meals: "Breakfast, Dinner",
@@ -4394,17 +4394,17 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
                 plan: "Pangong sunrise. Drive back to Leh via Chang La.",
                 title: "Pangong Sunrise & Return to Leh",
                 detail: [
-                    "You wake for sunrise over Pangong, when the lake shifts through turquoise, cobalt and violet as the light climbs the surrounding peaks — worth the cold start.",
+                    "You wake for sunrise over Pangong, when the lake shifts through turquoise, cobalt and violet as the light climbs the surrounding peaks, worth the cold start.",
                     "After breakfast you retrace the route over Chang La to Leh, arriving by evening for a comfortable night back at hotel altitude.",
                 ],
                 overnight: "Leh",
                 meals: "Breakfast",
-                drive: "Pangong → Leh via Chang La · ~5–6 hrs / 220 km",
+                drive: "Pangong → Leh via Chang La · ~5 to 6 hrs / 220 km",
             },
             {
                 day: 9,
-                plan: "Leh — Hemis Monastery (largest in Ladakh), Thiksey Monastery, Shey Palace.",
-                title: "Leh — Monastery Circuit",
+                plan: "Leh, Hemis Monastery (largest in Ladakh), Thiksey Monastery, Shey Palace.",
+                title: "Leh, Monastery Circuit",
                 detail: [
                     "A day among the Indus Valley's great gompas: Hemis, the largest and wealthiest monastery in Ladakh; the hilltop Thiksey, often likened to Lhasa's Potala Palace, best in the early morning prayers; and the old royal seat at Shey.",
                     "It's a fitting, contemplative close to the expedition, back at Leh's altitude and pace before tomorrow's flight home.",
@@ -4416,26 +4416,26 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 10,
                 plan: "Leh-Delhi flight. Onward departure.",
-                title: "Leh to Delhi — Departure",
+                title: "Leh to Delhi, Departure",
                 detail: [
                     "An early flight carries you back across the Himalayas to Delhi, with one last aerial view of the ranges you've just travelled.",
                     "On arrival our team assists with your connection or hotel transfer for onward departure. Leh flights leave early and can be weather-affected, so we plan the day with a buffer.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Leh → Delhi · 1-hr flight · onward transfer",
             },
         ],
         inclusions: [
-            "Delhi–Leh and Leh–Delhi domestic flights",
+            "Delhi to Leh and Leh to Delhi domestic flights",
             "Private 4x4 with experienced high-altitude driver for all Ladakh sectors",
-            "9 nights' accommodation — premium Leh hotels and deluxe Nubra and Pangong camps — with daily breakfast and dinners on camp nights",
+            "9 nights' accommodation, premium Leh hotels and deluxe Nubra and Pangong camps, with daily breakfast and dinners on camp nights",
             "All Ladakh inner-line and protected-area permits (Nubra, Turtuk, Pangong) arranged and paid",
             "Bactrian camel ride at Hunder, monastery entries and local guide support",
             "Airport transfers, bottled water, and 24/7 on-trip support including oxygen availability in vehicles",
         ],
         exclusions: [
-            "International flights and the Delhi–Leh sector's excess baggage",
+            "International flights and the Delhi to Leh sector's excess baggage",
             "Lunches and any meals not listed under inclusions",
             "Travel insurance (strongly recommended, with high-altitude cover)",
             "Personal medical costs, evacuation, tips and personal expenses",
@@ -4443,35 +4443,35 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
         ],
         faqs: [
             { q: "How serious is the altitude, and how do you handle it?", a: "It is genuine, not a formality. Leh sits at 3,500 m and you go above 5,300 m at Khardung La and Chang La, so acute mountain sickness is a real risk if rushed. We build in a mandatory rest day on arrival plus a second gentle Leh day before any high pass, keep hydration and no-alcohol advice front and centre, and carry oxygen in the vehicles. Anyone unwell is paced down, not pushed on." },
-            { q: "Who should not do this tour?", a: "Ladakh is demanding. We honestly advise travellers with significant heart or lung conditions, uncontrolled high blood pressure, or during pregnancy to consult their doctor first, and some should not attempt it. The pace is comfortable but the altitude is non-negotiable — please share any medical concerns before booking so we can advise responsibly." },
-            { q: "Why fly into Leh instead of driving up?", a: "Flying is faster and spectacular, but it drops you straight to 3,500 m, which is exactly why the first 24 hours are complete rest. The overland route from Manali or Srinagar acclimatises more gradually and can be arranged as an alternative if you prefer to earn the altitude — just ask and we'll rework the plan." },
-            { q: "Are permits included, and can foreigners visit Nubra and Pangong?", a: "Yes on both. Nubra, Turtuk and Pangong lie in protected border zones needing inner-line permits, which we arrange and pay for on this Premium tour — we only need your passport details in advance. Foreign nationals are permitted with these documents, though a few sensitive pockets remain restricted." },
-            { q: "What are the camps at Nubra and Pangong like?", a: "This is the deluxe tier, so the camps are the better-equipped ones — solid tents with attached bathrooms, proper beds and hot water within the constraints of a remote, high, off-grid location. Electricity and heating are limited by generator hours, and nights are genuinely cold even in summer, so we provide layers guidance." },
+            { q: "Who should not do this tour?", a: "Ladakh is demanding. We honestly advise travellers with significant heart or lung conditions, uncontrolled high blood pressure, or during pregnancy to consult their doctor first, and some should not attempt it. The pace is comfortable but the altitude is non-negotiable, please share any medical concerns before booking so we can advise responsibly." },
+            { q: "Why fly into Leh instead of driving up?", a: "Flying is faster and spectacular, but it drops you straight to 3,500 m, which is exactly why the first 24 hours are complete rest. The overland route from Manali or Srinagar acclimatises more gradually and can be arranged as an alternative if you prefer to earn the altitude, just ask and we'll rework the plan." },
+            { q: "Are permits included, and can foreigners visit Nubra and Pangong?", a: "Yes on both. Nubra, Turtuk and Pangong lie in protected border zones needing inner-line permits, which we arrange and pay for on this Premium tour, we only need your passport details in advance. Foreign nationals are permitted with these documents, though a few sensitive pockets remain restricted." },
+            { q: "What are the camps at Nubra and Pangong like?", a: "This is the deluxe tier, so the camps are the better-equipped ones, solid tents with attached bathrooms, proper beds and hot water within the constraints of a remote, high, off-grid location. Electricity and heating are limited by generator hours, and nights are genuinely cold even in summer, so we provide layers guidance." },
             { q: "When can this tour actually run?", a: "June to September only. That's when Khardung La, Chang La and the Pangong and Nubra roads are reliably open and the camps operate. In winter the high passes close and the valley routes shut, so the trans-Himalayan circuit isn't possible; we'd suggest an alternative Himalayan tour for those months." },
         ],
     },
     35: {
-        metaTitle: "Kerala Ayurveda Tour — Backwaters, Munnar & Wellness | MyTripMyTravel",
-        metaDescription: "10-day Kerala Ayurveda tour: Munnar tea hills, Alleppey backwaters & a 5-day authentic Ayurveda programme. Private, vetted centres — from ₹74,300pp. Enquire now.",
-        bestTime: "September–March for cooler, drier weather ideal for both sightseeing and Ayurveda; the monsoon (June–August) is traditionally considered the most receptive season for treatment.",
-        answer: "Kerala Backwater Ayurveda is a 10-day private tour pairing Kerala's classic arc — Fort Kochi, Munnar's tea hills, Periyar and the Alleppey backwaters — with an embedded multi-day Ayurveda programme at a vetted centre near Kumarakom and Marari beach. It's a wellness-leaning, deluxe-tier trip: slower pace, private houseboat, and authentic recuperative Ayurveda framed honestly as traditional rest, massage and diet under qualified therapists — not a medical cure. It runs best September–March and starts from ₹74,300 per person.",
+        metaTitle: "Kerala Ayurveda Tour, Backwaters, Munnar & Wellness | MyTripMyTravel",
+        metaDescription: "10-day Kerala Ayurveda tour: Munnar tea hills, Alleppey backwaters & a 5-day authentic Ayurveda programme. Private, vetted centres, from ₹74,300pp. Enquire now.",
+        bestTime: "September to March for cooler, drier weather ideal for both sightseeing and Ayurveda; the monsoon (June to August) is traditionally considered the most receptive season for treatment.",
+        answer: "Kerala Backwater Ayurveda is a 10-day private tour pairing Kerala's classic arc, Fort Kochi, Munnar's tea hills, Periyar and the Alleppey backwaters, with an embedded multi-day Ayurveda programme at a vetted centre near Kumarakom and Marari beach. It's a wellness-leaning, deluxe-tier trip: slower pace, private houseboat, and authentic recuperative Ayurveda framed honestly as traditional rest, massage and diet under qualified therapists, not a medical cure. It runs best September to March and starts from ₹74,300 per person.",
         quickFacts: [
             { label: "Duration", value: "10 days / 9 nights" },
             { label: "Route", value: "Kochi → Munnar → Thekkady → Kumarakom → Marari → Kochi" },
-            { label: "Best time", value: "September–March (monsoon also valued for Ayurveda)" },
-            { label: "Pace", value: "Slow — sightseeing first, then wellness-led" },
+            { label: "Best time", value: "September to March (monsoon also valued for Ayurveda)" },
+            { label: "Pace", value: "Slow, sightseeing first, then wellness-led" },
             { label: "Hotels", value: "Premium resorts, private houseboat & vetted Ayurveda centre" },
-            { label: "Group", value: "Private (1–9+)" },
+            { label: "Group", value: "Private (1 to 9+)" },
             { label: "From", value: "₹74,300 per person" },
         ],
         itinerary: [
             {
                 day: 1,
-                plan: "Kochi arrival. Fort Kochi heritage walk — Chinese fishing nets, Mattancherry Palace, Jew Town.",
-                title: "Kochi — Arrival & Fort Kochi Heritage",
+                plan: "Kochi arrival. Fort Kochi heritage walk, Chinese fishing nets, Mattancherry Palace, Jew Town.",
+                title: "Kochi, Arrival & Fort Kochi Heritage",
                 detail: [
                     "You're met at Kochi (COK) and transferred to Fort Kochi, the spice-trade port layered with Portuguese, Dutch and British history. An afternoon walk takes in the cantilevered Chinese fishing nets, the Mattancherry (Dutch) Palace and the antique lanes of Jew Town around the Paradesi Synagogue.",
-                    "It's a gentle, atmospheric opening — sea breeze, colonial facades and cafes — with the evening free for a Kathakali performance if you wish.",
+                    "It's a gentle, atmospheric opening, sea breeze, colonial facades and cafes, with the evening free for a Kathakali performance if you wish.",
                 ],
                 overnight: "Kochi",
                 meals: "None (arrival day)",
@@ -4480,7 +4480,7 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 2,
                 plan: "Drive to Munnar (130 km, 4 hrs). Afternoon at the tea estates.",
-                title: "Kochi to Munnar — Tea Country",
+                title: "Kochi to Munnar, Tea Country",
                 detail: [
                     "You climb from the coast into the Western Ghats to Munnar at around 1,600 m, the drive passing waterfalls and the first sweep of emerald tea slopes.",
                     "The afternoon is spent among the estates, with time to walk a plantation trail and take in the cool, misted air. Check in to your premium hill resort for two restful nights.",
@@ -4491,8 +4491,8 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 3,
-                plan: "Munnar — Eravikulam National Park (Nilgiri tahr), Mattupetty Dam, tea museum.",
-                title: "Munnar — Wildlife & Tea Heritage",
+                plan: "Munnar, Eravikulam National Park (Nilgiri tahr), Mattupetty Dam, tea museum.",
+                title: "Munnar, Wildlife & Tea Heritage",
                 detail: [
                     "The morning visits Eravikulam National Park, home to the endangered Nilgiri tahr, which graze remarkably close on the high grasslands (park access is by shuttle and can close seasonally for calving).",
                     "You continue to the Mattupetty Dam and lake, and the Tata Tea Museum, which traces the history and craft of the region's tea. A relaxed day at altitude before you descend toward the backwaters.",
@@ -4504,10 +4504,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 4,
                 plan: "Munnar to Thekkady (110 km). Periyar National Park boat ride.",
-                title: "Munnar to Thekkady — Periyar",
+                title: "Munnar to Thekkady, Periyar",
                 detail: [
                     "A scenic drive through cardamom and spice hills brings you to Thekkady, gateway to the Periyar Tiger Reserve. A boat cruise on Periyar Lake is the classic way to spot elephants, gaur and abundant birdlife along the shore.",
-                    "You can add a guided spice-plantation walk in the afternoon — cardamom, pepper, vanilla and clove — before an overnight in Thekkady.",
+                    "You can add a guided spice-plantation walk in the afternoon, cardamom, pepper, vanilla and clove, before an overnight in Thekkady.",
                 ],
                 overnight: "Thekkady",
                 meals: "Breakfast",
@@ -4516,10 +4516,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 5,
                 plan: "Thekkady to Kumarakom (130 km). Begin 5-day embedded Ayurveda programme at vetted centre.",
-                title: "Thekkady to Kumarakom — Ayurveda Begins",
+                title: "Thekkady to Kumarakom, Ayurveda Begins",
                 detail: [
                     "You descend to the backwaters and Kumarakom, where the wellness core of the trip begins at a centre we've vetted for qualified physicians and genuine practice.",
-                    "Day one is a consultation with the resident Ayurvedic doctor, who assesses your constitution and sets a personalised programme of massage, diet and rest. This is authentic recuperative Ayurveda — traditional therapy for relaxation and rejuvenation, not a cure for medical conditions — and the doctor's guidance shapes everything that follows.",
+                    "Day one is a consultation with the resident Ayurvedic doctor, who assesses your constitution and sets a personalised programme of massage, diet and rest. This is authentic recuperative Ayurveda, traditional therapy for relaxation and rejuvenation, not a cure for medical conditions, and the doctor's guidance shapes everything that follows.",
                 ],
                 overnight: "Kumarakom",
                 meals: "Breakfast, Dinner (Ayurvedic diet)",
@@ -4527,8 +4527,8 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 6,
-                plan: "Ayurveda Day 2 — full Abhyanga, Shirodhara, dietary supervision.",
-                title: "Kumarakom — Abhyanga & Shirodhara",
+                plan: "Ayurveda Day 2, full Abhyanga, Shirodhara, dietary supervision.",
+                title: "Kumarakom, Abhyanga & Shirodhara",
                 detail: [
                     "Your programme deepens with Abhyanga, the warm herbal-oil full-body massage, and Shirodhara, the steady stream of medicated oil across the forehead traditionally used to calm the mind.",
                     "Meals follow the doctor's dietary plan, and the backwater setting encourages the rest that makes the treatment meaningful. Days here are calm by design, with time to read, walk or simply be still.",
@@ -4539,10 +4539,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 7,
-                plan: "Ayurveda Day 3 — sustained programme.",
-                title: "Kumarakom — Sustained Programme",
+                plan: "Ayurveda Day 3, sustained programme.",
+                title: "Kumarakom, Sustained Programme",
                 detail: [
-                    "The therapies continue under supervision, adjusted by the physician to how your body is responding — the point of a multi-day programme is cumulative rest rather than a one-off spa treatment.",
+                    "The therapies continue under supervision, adjusted by the physician to how your body is responding, the point of a multi-day programme is cumulative rest rather than a one-off spa treatment.",
                     "Between sessions the backwaters are yours: birdsong, coconut palms and the slow rhythm of village life along the canals.",
                 ],
                 overnight: "Kumarakom",
@@ -4551,11 +4551,11 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             },
             {
                 day: 8,
-                plan: "Ayurveda Day 4 — programme continues. Optional evening backwater cruise.",
-                title: "Kumarakom — Programme & Backwater Cruise",
+                plan: "Ayurveda Day 4, programme continues. Optional evening backwater cruise.",
+                title: "Kumarakom, Programme & Backwater Cruise",
                 detail: [
                     "Another day of guided treatment and diet. By now the pace has fully slowed, which is exactly the intention.",
-                    "In the evening you can take an optional private cruise into the Vembanad backwaters — a sunset among the canals and lily-covered lagoons, a gentle counterpart to the day's rest.",
+                    "In the evening you can take an optional private cruise into the Vembanad backwaters, a sunset among the canals and lily-covered lagoons, a gentle counterpart to the day's rest.",
                 ],
                 overnight: "Kumarakom",
                 meals: "Breakfast, Lunch, Dinner (Ayurvedic diet)",
@@ -4564,10 +4564,10 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 9,
                 plan: "Transfer to Marari Beach (35 km). Final Ayurveda day; beach rest.",
-                title: "Marari Beach — Final Treatment & Sea Rest",
+                title: "Marari Beach, Final Treatment & Sea Rest",
                 detail: [
                     "A short transfer brings you to Mararikulam (Marari), one of Kerala's most tranquil beaches, for your final day of the programme at the resort's Ayurveda wing.",
-                    "The combination of concluding treatment and open coast is a deliberate wind-down — sea air, unhurried meals and time to let the week settle before you travel home.",
+                    "The combination of concluding treatment and open coast is a deliberate wind-down, sea air, unhurried meals and time to let the week settle before you travel home.",
                 ],
                 overnight: "Marari Beach",
                 meals: "Breakfast, Dinner",
@@ -4576,19 +4576,19 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             {
                 day: 10,
                 plan: "Marari to Kochi airport (75 km). Departure.",
-                title: "Marari to Kochi — Departure",
+                title: "Marari to Kochi, Departure",
                 detail: [
                     "After a final beach morning, your chauffeur drives you back up the coast to Kochi airport for your onward flight.",
-                    "Your Ayurvedic doctor typically provides simple take-home diet and lifestyle notes to extend the programme's benefit — a thoughtful, honest close rather than a hard sell.",
+                    "Your Ayurvedic doctor typically provides simple take-home diet and lifestyle notes to extend the programme's benefit, a thoughtful, honest close rather than a hard sell.",
                 ],
-                overnight: "—",
+                overnight: "On request",
                 meals: "Breakfast",
                 drive: "Marari → Kochi airport · ~2 hrs / 75 km",
             },
         ],
         inclusions: [
             "Private air-conditioned vehicle with professional chauffeur for the full Kerala arc",
-            "9 nights' accommodation — premium resorts, an overnight-standard vetted Ayurveda centre, and beach resort — with daily breakfast",
+            "9 nights' accommodation, premium resorts, an overnight-standard vetted Ayurveda centre, and beach resort, with daily breakfast",
             "5-day embedded Ayurveda programme: physician consultation, prescribed therapies (Abhyanga, Shirodhara and more) and supervised Ayurvedic diet",
             "Periyar Lake boat cruise, Munnar sightseeing and Fort Kochi guided walk",
             "Optional private backwater cruise and all inter-town transfers, tolls and parking",
@@ -4602,12 +4602,12 @@ export const tourEnrichments: Record<number, Partial<Package>> = {
             "Visa, travel insurance and anything not listed under inclusions",
         ],
         faqs: [
-            { q: "Is Ayurveda a medical treatment or a cure?", a: "We frame it honestly: this is authentic recuperative Ayurveda — traditional massage, therapies, diet and rest aimed at relaxation and rejuvenation — not a medical cure for illness. A qualified Ayurvedic physician oversees your programme, but it does not replace conventional medical care. If you have a health condition, please consult your own doctor and tell us in advance." },
-            { q: "How do you choose the Ayurveda centre?", a: "We only use centres we've vetted for qualified, registered physicians, trained therapists, hygiene and genuine practice — not the tourist 'massage' that trades on the name. Kerala's serious centres often hold government Green Leaf or Olive Leaf classification, and we're happy to confirm credentials before you book." },
-            { q: "Is five days of Ayurveda long enough to feel a benefit?", a: "For rest and rejuvenation, yes — five supervised days of therapy, diet and genuine slowing-down leave most travellers noticeably calmer and more rested. Traditional Panchakarma detox programmes run longer, typically two to three weeks; if you want a deeper course we can extend the wellness portion. Your consulting physician will set realistic expectations." },
+            { q: "Is Ayurveda a medical treatment or a cure?", a: "We frame it honestly: this is authentic recuperative Ayurveda, traditional massage, therapies, diet and rest aimed at relaxation and rejuvenation, not a medical cure for illness. A qualified Ayurvedic physician oversees your programme, but it does not replace conventional medical care. If you have a health condition, please consult your own doctor and tell us in advance." },
+            { q: "How do you choose the Ayurveda centre?", a: "We only use centres we've vetted for qualified, registered physicians, trained therapists, hygiene and genuine practice, not the tourist 'massage' that trades on the name. Kerala's serious centres often hold government Green Leaf or Olive Leaf classification, and we're happy to confirm credentials before you book." },
+            { q: "Is five days of Ayurveda long enough to feel a benefit?", a: "For rest and rejuvenation, yes, five supervised days of therapy, diet and genuine slowing-down leave most travellers noticeably calmer and more rested. Traditional Panchakarma detox programmes run longer, typically two to three weeks; if you want a deeper course we can extend the wellness portion. Your consulting physician will set realistic expectations." },
             { q: "What actually happens during the treatments?", a: "After a consultation, a typical day includes Abhyanga (warm herbal-oil massage) and often Shirodhara (a steady stream of oil over the forehead), alongside a supervised vegetarian Ayurvedic diet. Therapies are same-gender and modestly conducted. The physician adjusts your programme daily based on how you respond." },
-            { q: "When is the best time for a Kerala Ayurveda tour?", a: "September to March offers cooler, drier weather ideal for both sightseeing and treatment. Interestingly, the June–August monsoon is traditionally considered the most receptive season for Ayurveda, as the humid air is thought to help the body absorb therapies — and centres are quieter then, though touring is wetter." },
-            { q: "Can non-participating partners join, and can the trip be tailored?", a: "Yes — a travelling companion can enjoy the backwaters, beach and sightseeing while you follow the programme, or take selected treatments à la carte. We can also lengthen the Ayurveda days, swap Kumarakom for a different vetted centre, or add a houseboat night. Share your goals and we'll tailor the plan and quote." },
+            { q: "When is the best time for a Kerala Ayurveda tour?", a: "September to March offers cooler, drier weather ideal for both sightseeing and treatment. Interestingly, the June to August monsoon is traditionally considered the most receptive season for Ayurveda, as the humid air is thought to help the body absorb therapies, and centres are quieter then, though touring is wetter." },
+            { q: "Can non-participating partners join, and can the trip be tailored?", a: "Yes, a travelling companion can enjoy the backwaters, beach and sightseeing while you follow the programme, or take selected treatments à la carte. We can also lengthen the Ayurveda days, swap Kumarakom for a different vetted centre, or add a houseboat night. Share your goals and we'll tailor the plan and quote." },
         ],
     },
 };

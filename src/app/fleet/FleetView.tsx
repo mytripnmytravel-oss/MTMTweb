@@ -51,7 +51,7 @@ export default function FleetView() {
                     <p className="eyebrow eyebrow-accent">The fleet</p>
                     <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Chauffeured, immaculate, GPS-tracked.</h1>
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-                        From executive sedans to royal-convoy SUVs — every vehicle with a vetted performance-chauffeur, pre-calculated fuel, tolls and permits, and transparent pricing.
+                        From executive sedans to royal-convoy SUVs, every vehicle with a vetted performance-chauffeur, pre-calculated fuel, tolls and permits, and transparent pricing.
                     </p>
                 </div>
             </section>
@@ -84,7 +84,7 @@ export default function FleetView() {
                                 >
                                     <div className="grid h-full sm:grid-cols-2">
                                         <div className="relative aspect-[4/3] overflow-hidden sm:aspect-auto">
-                                            <Image src={v.img} alt={`${v.name} — chauffeured ${v.category.toLowerCase()} ${v.type.toLowerCase()} for hire`} fill className="object-cover" />
+                                            <Image src={v.img} alt={`${v.name}, chauffeured ${v.category.toLowerCase()} ${v.type.toLowerCase()} for hire`} fill className="object-cover" />
                                             <span className={`absolute left-4 top-4 rounded-full px-3 py-1 text-[11px] font-medium ${v.category === "Elite" ? "bg-clay text-white" : "bg-paper/90 text-ink"}`}>
                                                 {v.category}
                                             </span>

@@ -65,7 +65,7 @@ export function WellnessDurationRoute({
         "@graph": [
             {
                 "@type": "Service",
-                serviceType: `${programme.name} programme — ${d} day`,
+                serviceType: `${programme.name} programme, ${d} day`,
                 name: content.h1,
                 description: content.answer,
                 url,
@@ -243,7 +243,7 @@ export function WellnessMonthRoute({
         "@graph": [
             {
                 "@type": "Service",
-                serviceType: `${programme.name} — ${monthLabel}`,
+                serviceType: `${programme.name}, ${monthLabel}`,
                 name: content.h1,
                 description: content.answer,
                 url,

@@ -5,7 +5,7 @@ import FleetView from "./FleetView";
 
 const TITLE = "Luxury Chauffeured Fleet in India | MyTripMyTravel";
 const DESCRIPTION =
-    "Browse our chauffeured fleet for hire across India — luxury sedans, premium SUVs and coaches, from the Innova Crysta to Mercedes, Vellfire and Rolls-Royce.";
+    "Browse our chauffeured fleet for hire across India, luxury sedans, premium SUVs and coaches, from the Innova Crysta to Mercedes, Vellfire and Rolls-Royce.";
 const URL = `${SITE_URL}/fleet`;
 const OG_IMAGE = fleet[0]?.img ?? `${SITE_URL}/logo.png`;
 

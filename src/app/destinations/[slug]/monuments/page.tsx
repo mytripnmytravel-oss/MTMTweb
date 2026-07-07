@@ -27,7 +27,7 @@ export async function generateMetadata({
         return { title: "Not Found | MyTripMyTravel" };
     }
     const title = `Monuments of ${dest.name}, ${dest.state} | MyTripMyTravel`;
-    const description = `The definitive monument briefs for ${dest.name} — history, highlights, visitor protocol, and escorted access by MyTripMyTravel.`;
+    const description = `The definitive monument briefs for ${dest.name}, history, highlights, visitor protocol, and escorted access by MyTripMyTravel.`;
     const url = `${SITE}/destinations/${dest.slug}/monuments`;
     return {
         title,

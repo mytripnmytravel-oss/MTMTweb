@@ -1,5 +1,5 @@
 // Expert Guides city × language cluster (grid G5). Categorical service
-// pages — "[language]-speaking expert guide in [city]". No fabricated
+// pages, "[language]-speaking expert guide in [city]". No fabricated
 // guide identities or credentials; content describes the service offer.
 // City facts pulled from destinations data for accuracy + interlinking.
 
@@ -22,7 +22,7 @@ export const GUIDE_LANGUAGES: GuideLanguage[] = [
     { slug: "japanese", name: "Japanese", note: "culturally-attuned guiding for Japanese travellers (Phase-2 market)" },
 ];
 
-// Guide cities — must exist in destinations.ts.
+// Guide cities, must exist in destinations.ts.
 export const GUIDE_CITY_SLUGS = [
     "delhi",
     "agra",
@@ -53,20 +53,20 @@ export function getGuideContent(
 
     return {
         h1: `${lang.name}-Speaking Expert Guide in ${dest.name}`,
-        answer: `MyTripMyTravel provides ${lang.name}-speaking expert guides in ${dest.name}, ${dest.state} — vetted, licensed heritage specialists who lead escorted visits in ${lang.name}, not translated tours. ${dest.name} guiding covers ${coversBase} and the wider ${dest.region} context, ${lang.note}. Guides are matched to the party during planning and operate within the private, chauffeured mission.`,
+        answer: `MyTripMyTravel provides ${lang.name}-speaking expert guides in ${dest.name}, ${dest.state}, vetted, licensed heritage specialists who lead escorted visits in ${lang.name}, not translated tours. ${dest.name} guiding covers ${coversBase} and the wider ${dest.region} context, ${lang.note}. Guides are matched to the party during planning and operate within the private, chauffeured mission.`,
         intro: [
             `A ${lang.name}-speaking guide in ${dest.name} is the difference between seeing a monument and understanding it. We provide vetted, licensed heritage specialists who work directly in ${lang.name}.`,
             `${dest.name} is ${dest.region === "Golden Triangle" ? "a Golden Triangle vertex" : `a ${dest.region} destination`}; guiding here is sequenced into the escorted, chauffeured itinerary so language, access, and pacing are one continuous experience.`,
-            `Guides are matched to the party's interests and depth during planning — history, architecture, photography, or family-paced — and coordinate with the chauffeur for seamless monument access.`,
+            `Guides are matched to the party's interests and depth during planning, history, architecture, photography, or family-paced, and coordinate with the chauffeur for seamless monument access.`,
         ],
         covers: monuments.length
-            ? monuments.map((m) => `${m} — guided in ${lang.name}`)
-            : [`${dest.name} heritage core — guided in ${lang.name}`],
+            ? monuments.map((m) => `${m}, guided in ${lang.name}`)
+            : [`${dest.name} heritage core, guided in ${lang.name}`],
         faqs: [
-            { q: `Can I get a ${lang.name}-speaking guide in ${dest.name}?`, a: `Yes — MyTripMyTravel provides vetted, licensed ${lang.name}-speaking expert guides in ${dest.name}, matched to your party during planning.` },
-            { q: `Are ${dest.name} guides licensed?`, a: `Yes — guides are vetted heritage specialists, not freelance solicitors. They operate within the private mission alongside the chauffeur.` },
+            { q: `Can I get a ${lang.name}-speaking guide in ${dest.name}?`, a: `Yes, MyTripMyTravel provides vetted, licensed ${lang.name}-speaking expert guides in ${dest.name}, matched to your party during planning.` },
+            { q: `Are ${dest.name} guides licensed?`, a: `Yes, guides are vetted heritage specialists, not freelance solicitors. They operate within the private mission alongside the chauffeur.` },
             { q: `What does a ${dest.name} guide cover?`, a: `${coversBase}, plus the cultural and historical context of the wider ${dest.region}.` },
-            { q: `Is the guide private?`, a: `Always — a dedicated guide for your party only, never a shared group, coordinated with monument-access logistics.` },
+            { q: `Is the guide private?`, a: `Always, a dedicated guide for your party only, never a shared group, coordinated with monument-access logistics.` },
         ],
     };
 }

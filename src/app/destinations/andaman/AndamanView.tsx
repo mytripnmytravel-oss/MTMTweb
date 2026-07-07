@@ -194,7 +194,7 @@ export default function AndamanView() {
                                     viewport={{ once: true }}
                                     className="group relative h-[500px] rounded-2xl overflow-hidden border border-white/10"
                                 >
-                                    <Image src={asset.img} alt={`${asset.title} — private inter-island transfer, Andaman`} fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
+                                    <Image src={asset.img} alt={`${asset.title}, private inter-island transfer, Andaman`} fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/60 to-transparent p-12 flex flex-col justify-end">
                                         <h3 className="text-3xl font-semibold uppercase tracking-tight mb-4">{asset.title}</h3>
                                         <p className="text-white/60 font-bold italic text-sm">{asset.desc}</p>

@@ -30,7 +30,7 @@ export default function DestinationFacetView({
                 {/* Hero */}
                 <section className="relative h-[58vh] flex items-end overflow-hidden">
                     <div className="absolute inset-0 z-0">
-                        <Image src={dest.heroImg} alt={`${content.h1} — ${dest.state}`} fill priority className="object-cover" />
+                        <Image src={dest.heroImg} alt={`${content.h1}, ${dest.state}`} fill priority className="object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/40 to-royal-blue/10" />
                     </div>
                     <div className="container mx-auto px-6 relative z-10 pb-16">
@@ -89,7 +89,7 @@ export default function DestinationFacetView({
                     </div>
                 </section>
 
-                {/* Sibling facets — interlinking */}
+                {/* Sibling facets, interlinking */}
                 <section className="py-24 container mx-auto px-6">
                     <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">More on {dest.name}</h4>
                     <CharBlurIn text="DEEP BRIEFS" className="text-3xl md:text-6xl font-semibold text-royal-blue uppercase tracking-tight block leading-none mb-12" />
@@ -98,7 +98,7 @@ export default function DestinationFacetView({
                             href={`/destinations/${dest.slug}`}
                             className="glass-card rounded-3xl p-7 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all flex items-center justify-between"
                         >
-                            <span className="font-semibold uppercase text-sm tracking-tight text-royal-blue group-hover:text-sunset-orange transition-colors">{dest.name} — Full Brief</span>
+                            <span className="font-semibold uppercase text-sm tracking-tight text-royal-blue group-hover:text-sunset-orange transition-colors">{dest.name}, Full Brief</span>
                             <ArrowRight size={16} className="text-sunset-orange" />
                         </Link>
                         {FACET_SLUGS.filter((f) => f !== content.facet).map((f: FacetSlug) => (

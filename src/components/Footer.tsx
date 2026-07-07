@@ -69,8 +69,8 @@ export const Footer = () => {
                     <div className="lg:col-span-2">
                         <Logo3D light />
                         <p className="mt-6 max-w-sm text-sm leading-relaxed text-paper/55">
-                            Private, chauffeured journeys across India — the Golden Triangle, Rajasthan,
-                            Kerala, the Himalayas and beyond — designed one traveller at a time.
+                            Private, chauffeured journeys across India, the Golden Triangle, Rajasthan,
+                            Kerala, the Himalayas and beyond, designed one traveller at a time.
                         </p>
                         <div className="mt-8 flex gap-3">
                             {[

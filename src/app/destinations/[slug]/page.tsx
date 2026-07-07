@@ -27,7 +27,7 @@ export async function generateMetadata({
     if (!dest) {
         return { title: "Destination Not Found | MyTripMyTravel" };
     }
-    const title = `${dest.name}, ${dest.state} — Luxury Travel Guide | MyTripMyTravel`;
+    const title = `${dest.name}, ${dest.state}, Luxury Travel Guide | MyTripMyTravel`;
     const description = dest.answer.slice(0, 300);
     const url = `${SITE}/destinations/${dest.slug}`;
     return {

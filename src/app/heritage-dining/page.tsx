@@ -3,9 +3,9 @@ import { SITE_URL } from "@/lib/site";
 import HeritageDiningView from "./HeritageDiningView";
 
 const TITLE =
-    "Heritage Dining in India — Royal Thali & Palace Tables | MyTripMyTravel";
+    "Heritage Dining in India, Royal Thali & Palace Tables | MyTripMyTravel";
 const DESCRIPTION =
-    "Private heritage dining across India — royal thali tables, exclusive haveli dinners, chef's tables, escorted street-food trails and sundowner folk evenings.";
+    "Private heritage dining across India, royal thali tables, exclusive haveli dinners, chef's tables, escorted street-food trails and sundowner folk evenings.";
 const URL = `${SITE_URL}/heritage-dining`;
 
 export const metadata: Metadata = {

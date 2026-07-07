@@ -54,13 +54,13 @@ function arrivalProtocol(variant: WellnessVariant, programme: WellnessProgramme,
     const euro = isEuropean(origin);
     if (programme.slug === "ayurvedic") {
         if (variant.slug === "panchakarma") {
-            if (short) return `Panchakarma assessment is typically scheduled day two — the programme is too significant to begin in a jet-lagged state. We use day one for the consultation, dosha analysis, and dietary brief; day two is the formal entry into Purvakarma.`;
-            if (euro) return `Panchakarma is residential, multi-week, and clinically serious — we build a one-night minimum recovery before the Vaidya consultation and a two-night recommended buffer for European travellers. Treatments begin once the body is on local time.`;
-            return `Panchakarma is residential, multi-week, and clinically serious — for long-haul ${origin.city} travellers we recommend a 48-hour pre-programme rest before the Vaidya consultation. The treatments are too significant to start with a jet-lagged body.`;
+            if (short) return `Panchakarma assessment is typically scheduled day two, the programme is too significant to begin in a jet-lagged state. We use day one for the consultation, dosha analysis, and dietary brief; day two is the formal entry into Purvakarma.`;
+            if (euro) return `Panchakarma is residential, multi-week, and clinically serious, we build a one-night minimum recovery before the Vaidya consultation and a two-night recommended buffer for European travellers. Treatments begin once the body is on local time.`;
+            return `Panchakarma is residential, multi-week, and clinically serious, for long-haul ${origin.city} travellers we recommend a 48-hour pre-programme rest before the Vaidya consultation. The treatments are too significant to start with a jet-lagged body.`;
         }
-        if (short) return `Short-stay Ayurveda from ${origin.city} can begin within hours of arrival — the assessment and the first session on day one. The trip is the programme.`;
+        if (short) return `Short-stay Ayurveda from ${origin.city} can begin within hours of arrival, the assessment and the first session on day one. The trip is the programme.`;
         if (euro) return `One-night arrival recovery is recommended; the assessment happens day two with a refreshed body.`;
-        return `Two-night pre-programme rest for long-haul ${origin.city} travellers — the assessment is more accurate on a settled body.`;
+        return `Two-night pre-programme rest for long-haul ${origin.city} travellers, the assessment is more accurate on a settled body.`;
     }
     if (programme.slug === "yoga-soul") {
         if (variant.slug === "vinyasa") {
@@ -68,7 +68,7 @@ function arrivalProtocol(variant: WellnessVariant, programme: WellnessProgramme,
             return `Vinyasa is physically demanding; for ${origin.city} long-haul travellers we recommend day one as gentle yin/yoga-nidra, with the formal Vinyasa programme beginning day two when the body is on local time.`;
         }
         if (variant.slug === "meditation") {
-            return `Meditation begins immediately from any origin — the trip is itself part of the practice. The first 24-48h are silence and yoga-nidra, easing the body into the deeper sessions.`;
+            return `Meditation begins immediately from any origin, the trip is itself part of the practice. The first 24-48h are silence and yoga-nidra, easing the body into the deeper sessions.`;
         }
         if (short) return `Yoga sessions from ${origin.city} begin day one with a light teacher assessment and gentle practice; full programme intensity from day two.`;
         if (euro) return `One night of recovery before formal practice begins. Day two starts with the teacher assessment and a calibrated first session.`;
@@ -105,15 +105,15 @@ export function getSubVariantOriginContent(
         answer,
         intro: [
             `${variant.intro[0]}`,
-            `For ${origin.city}-based travellers, the trip is engineered as a single sequenced operation — the flight, the gateway pickup, the chauffeured leg to ${locStr}, the programme itself, and the return — not as three disconnected bookings.`,
+            `For ${origin.city}-based travellers, the trip is engineered as a single sequenced operation, the flight, the gateway pickup, the chauffeured leg to ${locStr}, the programme itself, and the return, not as three disconnected bookings.`,
             `${gw.routingNote} ${protocol}`,
             `The programme runs at ${locStr} on the vetted MyTripMyTravel architecture: chauffeured Elite Fleet from arrival, accommodation matched to the programme's requirements, dietary planning briefed in advance, physician handover where the programme requires it, and a 24/7 desk line throughout.`,
         ],
         points: [
-            { label: `${variant.name} — what it actually is`, detail: variant.answer.split(".").slice(0, 2).join(".") + "." },
+            { label: `${variant.name}, what it actually is`, detail: variant.answer.split(".").slice(0, 2).join(".") + "." },
             { label: "Gateway and routing", detail: gw.routingNote },
             { label: "Arrival protocol", detail: protocol },
-            { label: "Recommended length", detail: variant.duration ?? "Programme-dependent — planned at booking." },
+            { label: "Recommended length", detail: variant.duration ?? "Programme-dependent, planned at booking." },
             { label: "Ideal for", detail: variant.idealFor },
             { label: "Visa and travel basics", detail: `India offers an e-Visa to travellers of many nationalities; requirements vary by passport. Our concierge advises on the current process for ${origin.country} passport holders. For longer wellness stays (14+ days), we confirm the visa window fits the programme length.` },
         ],
@@ -122,9 +122,9 @@ export function getSubVariantOriginContent(
             { q: `What is ${variant.name}?`, a: variant.answer.split(".").slice(0, 2).join(".") + "." },
             { q: `How long is the flight from ${origin.city}?`, a: `${origin.flightBand}. Gateway: ${gw.label}; ${gw.routingNote}` },
             { q: `What about jet lag and the programme?`, a: protocol },
-            { q: `What is the recommended length?`, a: `${variant.duration ?? "Programme-dependent — planned at booking."} The ${origin.flightBand} crossing should be factored into total trip length.` },
+            { q: `What is the recommended length?`, a: `${variant.duration ?? "Programme-dependent, planned at booking."} The ${origin.flightBand} crossing should be factored into total trip length.` },
             { q: `Do I need a visa from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
-            { q: `Is the programme private?`, a: `Yes — single-party booking with private programme attention. Group sessions (where relevant) are scheduled to your party rather than shared with strangers.` },
+            { q: `Is the programme private?`, a: `Yes, single-party booking with private programme attention. Group sessions (where relevant) are scheduled to your party rather than shared with strangers.` },
         ],
         crossLinks: [
             { label: `${variant.name} overview`, href: `/wellness/${programme.slug}/${variant.slug}` },

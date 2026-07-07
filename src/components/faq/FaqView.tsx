@@ -120,7 +120,7 @@ export function FaqAtomView({
                 <h1 className="text-3xl md:text-6xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.95] mb-10">{atom.q}</h1>
                 <p className="text-2xl md:text-3xl font-semibold text-royal-blue leading-snug tracking-tight max-w-4xl mb-8">{atom.a}</p>
                 <p className="text-base md:text-lg text-dark-slate/60 font-bold italic max-w-3xl mb-12 leading-relaxed">
-                    This answer is part of MyTripMyTravel&apos;s {topic.name} guidance — {topic.blurb} Every itinerary it
+                    This answer is part of MyTripMyTravel&apos;s {topic.name} guidance, {topic.blurb} Every itinerary it
                     references is private, chauffeured, escorted, and built bespoke; the answers below cover the rest of
                     what travellers ask on this topic.
                 </p>
@@ -138,7 +138,7 @@ export function FaqAtomView({
             <section className="py-20 bg-royal-blue/5">
                 <div className="container mx-auto px-6">
                     <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-3">More in {topic.name}</h4>
-                    <p className="text-dark-slate/50 font-bold italic text-sm mb-10 max-w-2xl">The other answers in this topic, in full — so this page resolves the whole question, not just one.</p>
+                    <p className="text-dark-slate/50 font-bold italic text-sm mb-10 max-w-2xl">The other answers in this topic, in full, so this page resolves the whole question, not just one.</p>
                     <div className="grid md:grid-cols-2 gap-6 max-w-6xl">
                         {siblings.map((s) => (
                             <Link key={s.slug} href={`/faq/${topic.slug}/${s.slug}`} className="block glass-card rounded-3xl p-8 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all">

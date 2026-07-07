@@ -48,9 +48,9 @@ export function getMonumentMonthContent(
         answer,
         intro: [
             `${monument.tagline} ${monument.answer.split(".").slice(0, 2).join(".")}.`,
-            `${monthLabel} sits in the ${cityMonth.headline.toLowerCase()} for ${dest.name} — ${cityMonth.climate.weather}, with ${cityMonth.climate.light.toLowerCase()}. ${cityMonth.climate.crowd}. ${cityMonth.operationalNote}`,
+            `${monthLabel} sits in the ${cityMonth.headline.toLowerCase()} for ${dest.name}, ${cityMonth.climate.weather}, with ${cityMonth.climate.light.toLowerCase()}. ${cityMonth.climate.crowd}. ${cityMonth.operationalNote}`,
             `For the ${monument.name} specifically, ${accessNote.toLowerCase()}. We sequence the visit for the prime hour and avoid the worst conditions ${monthLabel} brings to ${dest.name}.`,
-            `Around the monument visit, the ${monthLabel} ${dest.name} circuit is built to the season — pacing, stays, dining, and contingency tuned to the conditions rather than fought against.`,
+            `Around the monument visit, the ${monthLabel} ${dest.name} circuit is built to the season, pacing, stays, dining, and contingency tuned to the conditions rather than fought against.`,
         ],
         points: [
             { label: `Visiting in ${monthLabel}`, detail: cityMonth.headline },
@@ -67,7 +67,7 @@ export function getMonumentMonthContent(
             { q: `Are crowds heavy in ${monthLabel}?`, a: cityMonth.climate.crowd },
             { q: `What time should I visit in ${monthLabel}?`, a: accessNote + (monument.tips.length ? ` Tip: ${monument.tips[0]}` : "") },
             { q: `What should I avoid for a ${monthLabel} visit?`, a: cityMonth.avoidThisMonth[0] ?? "Standard heritage-site protocols apply; we manage the pacing and timing." },
-            { q: `Is the visit private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted monument access.` },
+            { q: `Is the visit private?`, a: `Always, single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted monument access.` },
         ],
         crossLinks: [
             { label: `Full ${monument.name} brief`, href: `/destinations/${dest.slug}/monuments/${monument.slug}` },

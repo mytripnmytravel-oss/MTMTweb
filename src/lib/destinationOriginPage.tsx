@@ -22,7 +22,7 @@ export async function destinationOriginMetadata(
     const origin = findOrigin(originSlug);
     if (!dest || !origin) return { title: "Not Found | MyTripMyTravel" };
     const content = getCityOriginContent(dest, origin);
-    const title = `${content.h1} — ${dest.state} | MyTripMyTravel`;
+    const title = `${content.h1}, ${dest.state} | MyTripMyTravel`;
     const description = content.answer.slice(0, 300);
     const url = `${SITE_URL}/destinations/${citySlug}/from/${originSlug}`;
     return {

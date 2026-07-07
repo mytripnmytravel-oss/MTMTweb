@@ -134,7 +134,7 @@ export default function MonumentView({
                 <section className="border-y border-line bg-paper-dim/60 py-20 sm:py-24">
                     <div className="container-x">
                         <Eyebrow>Good to know</Eyebrow>
-                        <h2 className="display-3 mt-3 text-ink">{monument.name} — your questions</h2>
+                        <h2 className="display-3 mt-3 text-ink">{monument.name}, your questions</h2>
                         <div className="mt-10 grid gap-6 md:grid-cols-2">
                             {monument.faqs.map((f, i) => (
                                 <div key={i} className="card p-7">
@@ -155,7 +155,7 @@ export default function MonumentView({
                             <Eyebrow>More in {dest.name}</Eyebrow>
                             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                 <Link href={`/destinations/${dest.slug}`} className="card card-hover group flex items-center justify-between p-6">
-                                    <span className="text-[15px] font-medium text-ink group-hover:text-clay">{dest.name} — full guide</span>
+                                    <span className="text-[15px] font-medium text-ink group-hover:text-clay">{dest.name}, full guide</span>
                                     <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                                 </Link>
                                 {siblings.map((s) => (
@@ -170,7 +170,7 @@ export default function MonumentView({
 
                     <div className="relative overflow-hidden rounded-3xl bg-ink px-8 py-14 text-center sm:px-16 sm:py-20">
                         <h2 className="display-2 mx-auto max-w-2xl text-paper">See {monument.name}, properly.</h2>
-                        <p className="mx-auto mt-4 max-w-xl text-paper/70">A private, chauffeured visit with an expert guide — timed for the light and the crowds.</p>
+                        <p className="mx-auto mt-4 max-w-xl text-paper/70">A private, chauffeured visit with an expert guide, timed for the light and the crowds.</p>
                         <Link href="/booking" className="btn mt-8 rounded-full bg-paper px-7 py-3.5 text-ink hover:bg-clay hover:text-paper">Consult a planner</Link>
                     </div>
                 </div>

@@ -14,7 +14,7 @@ export async function guideCityMetadata(citySlug: string): Promise<Metadata> {
     const dest = getDestination(citySlug);
     if (!dest) return { title: "Not Found | MyTripMyTravel" };
     const title = `Expert Guides in ${dest.name}, ${dest.state} | MyTripMyTravel`;
-    const description = `Vetted, licensed multilingual heritage guides in ${dest.name} — guiding directly in English, Hindi, French, German, Spanish, Italian, and Japanese.`;
+    const description = `Vetted, licensed multilingual heritage guides in ${dest.name}, guiding directly in English, Hindi, French, German, Spanish, Italian, and Japanese.`;
     const url = `${SITE_URL}/expert-guides/${dest.slug}`;
     return { title, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "website" } };
 }

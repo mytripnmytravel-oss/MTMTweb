@@ -29,7 +29,7 @@ export default function FleetDetailView({
 
                 <section className="relative h-[64vh] flex items-end overflow-hidden">
                     <div className="absolute inset-0 z-0">
-                        <Image src={vehicle.img} alt={`${vehicle.name} — chauffeured ${vehicle.type}`} fill priority className="object-cover" />
+                        <Image src={vehicle.img} alt={`${vehicle.name}, chauffeured ${vehicle.type}`} fill priority className="object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/40 to-royal-blue/10" />
                     </div>
                     <div className="container mx-auto px-6 relative z-10 pb-16">
@@ -117,7 +117,7 @@ export default function FleetDetailView({
 
                 {cities.length > 0 && (
                     <section className="py-24 container mx-auto px-6">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">{vehicle.name} — Local Chauffeur Hire</h4>
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">{vehicle.name}, Local Chauffeur Hire</h4>
                         <CharBlurIn text="BY CITY" className="text-3xl md:text-5xl font-semibold text-royal-blue uppercase tracking-tight block leading-none mb-10" />
                         <div className="flex flex-wrap gap-3">
                             {cities.map((c) => (

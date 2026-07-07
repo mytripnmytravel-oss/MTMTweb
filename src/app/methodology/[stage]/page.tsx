@@ -22,7 +22,7 @@ export async function generateMetadata({
     const { stage: slug } = await params;
     const stage = getMethodologyStage(slug);
     if (!stage) return { title: "Not Found | MyTripMyTravel" };
-    const title = `${stage.name} — The Mission Protocol | MyTripMyTravel`;
+    const title = `${stage.name}, The Mission Protocol | MyTripMyTravel`;
     const description = stage.answer.slice(0, 300);
     const url = `${SITE_URL}/methodology/${stage.slug}`;
     return {
@@ -50,7 +50,7 @@ export default async function MethodologyStagePage({
         "@graph": [
             {
                 "@type": "Article",
-                headline: `${stage.name} — The Mission Protocol`,
+                headline: `${stage.name}, The Mission Protocol`,
                 description: stage.answer,
                 about: "MyTripMyTravel Mission Protocol",
                 url,

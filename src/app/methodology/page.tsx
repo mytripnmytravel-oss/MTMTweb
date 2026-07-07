@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import MethodologyView from "./MethodologyView";
 
-const TITLE = "Our Methodology — How MyTripMyTravel Plans Private India Journeys | MyTripMyTravel";
+const TITLE = "Our Methodology, How MyTripMyTravel Plans Private India Journeys | MyTripMyTravel";
 const DESCRIPTION =
-    "How MyTripMyTravel plans private luxury India journeys — a three-phase Mission Protocol of intelligent curation, kinetic activation and memory archiving.";
+    "How MyTripMyTravel plans private luxury India journeys, a three-phase Mission Protocol of intelligent curation, kinetic activation and memory archiving.";
 const URL = `${SITE_URL}/methodology`;
 
 export const metadata: Metadata = {

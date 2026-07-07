@@ -167,19 +167,19 @@ export function getRouteContent(
 
     return {
         h1: `${origin.name} to ${destination.name} Chauffeured Transfer`,
-        answer: `A chauffeured transfer from ${origin.name}, ${origin.state} to ${destination.name}, ${destination.state} with MyTripMyTravel covers ${approx}${km} km in ${approx}${hrs} hours${via}, in a private GPS-tracked Elite Fleet vehicle with a vetted performance-chauffeur. Fuel, tolls, and permits are pre-calculated; the same vehicle can continue into the onward itinerary in ${destination.name} without a handover. This is a private, single-party transfer — never shared.`,
+        answer: `A chauffeured transfer from ${origin.name}, ${origin.state} to ${destination.name}, ${destination.state} with MyTripMyTravel covers ${approx}${km} km in ${approx}${hrs} hours${via}, in a private GPS-tracked Elite Fleet vehicle with a vetted performance-chauffeur. Fuel, tolls, and permits are pre-calculated; the same vehicle can continue into the onward itinerary in ${destination.name} without a handover. This is a private, single-party transfer, never shared.`,
         intro: [
             `The ${origin.name}→${destination.name} leg is one of the standard chauffeured routes MyTripMyTravel operates. ${via ? `The route is normally driven ${via}, which adds context to the drive rather than treating it as a transfer to endure.` : `It is a single chauffeured drive, planned end-to-end so the journey is part of the mission rather than friction before it.`}`,
-            `${origin.name} is ${origin.tagline.toLowerCase()}; ${destination.name} is ${destination.tagline.toLowerCase()}. The transfer is sequenced so arrival at ${destination.name} lands at a usable hour — not late afternoon when the day's experiences have already closed.`,
-            `Vehicle class is matched to party size and tier. The chauffeur is performance-trained and GPS-tracked; the 24/7 desk is reachable throughout. Fuel, tolls, and any permits are pre-calculated into transparent pricing — no surprise gate fees on the route.`,
-            `If the trip extends beyond ${destination.name}, the same vehicle and chauffeur continue seamlessly — no re-booking, no handover gap. The transfer is treated as a leg of the wider mission, not a standalone job.`,
+            `${origin.name} is ${origin.tagline.toLowerCase()}; ${destination.name} is ${destination.tagline.toLowerCase()}. The transfer is sequenced so arrival at ${destination.name} lands at a usable hour, not late afternoon when the day's experiences have already closed.`,
+            `Vehicle class is matched to party size and tier. The chauffeur is performance-trained and GPS-tracked; the 24/7 desk is reachable throughout. Fuel, tolls, and any permits are pre-calculated into transparent pricing, no surprise gate fees on the route.`,
+            `If the trip extends beyond ${destination.name}, the same vehicle and chauffeur continue seamlessly, no re-booking, no handover gap. The transfer is treated as a leg of the wider mission, not a standalone job.`,
         ],
         inclusions: [
             "Vetted performance-chauffeur, GPS-tracked",
             "Fuel, tolls, and permits pre-calculated",
             `${approx}${km} km · ${approx}${hrs} hours${via}`,
             "Optional sightseeing stop(s) on the route, where logical",
-            "Single-party private vehicle — never shared",
+            "Single-party private vehicle, never shared",
             "Onward continuity into the destination itinerary",
             "24/7 human desk backup",
         ],
@@ -187,9 +187,9 @@ export function getRouteContent(
         faqs: [
             { q: `How far is ${origin.name} from ${destination.name}?`, a: `${approx.charAt(0).toUpperCase() + approx.slice(1)}${km} km${via}, with a drive time of ${approx}${hrs} hours by chauffeured car.` },
             { q: `How long does the ${origin.name} to ${destination.name} drive take?`, a: `${approx.charAt(0).toUpperCase() + approx.slice(1)}${hrs} hours${via}, depending on traffic and any sightseeing stops we build in on the route.` },
-            { q: `Is the ${origin.name} to ${destination.name} transfer private?`, a: `Always — a single party, dedicated chauffeur, GPS-tracked. Never shared or pooled.` },
-            { q: `Can the chauffeur continue beyond ${destination.name}?`, a: `Yes — the same vehicle and chauffeur continue seamlessly into your ${destination.name} itinerary and onward across India.` },
-            { q: `What is included in the ${origin.name}→${destination.name} price?`, a: `Fuel, tolls, permits, and the chauffeur — all pre-calculated. There are no hidden gate fees, and the price does not surge with traffic.` },
+            { q: `Is the ${origin.name} to ${destination.name} transfer private?`, a: `Always, a single party, dedicated chauffeur, GPS-tracked. Never shared or pooled.` },
+            { q: `Can the chauffeur continue beyond ${destination.name}?`, a: `Yes, the same vehicle and chauffeur continue seamlessly into your ${destination.name} itinerary and onward across India.` },
+            { q: `What is included in the ${origin.name}→${destination.name} price?`, a: `Fuel, tolls, permits, and the chauffeur, all pre-calculated. There are no hidden gate fees, and the price does not surge with traffic.` },
         ],
     };
 }

@@ -13,29 +13,29 @@ export const PROGRAMME_META: Record<
 > = {
     "yoga-soul": {
         setting: "Rishikesh & private Himalayan sanctuaries",
-        bestTime: "September–April",
-        typicalLength: "3–14 days",
+        bestTime: "September to April",
+        typicalLength: "3 to 14 days",
         framing:
-            "A genuine, teacher-led practice for every level — from complete beginner to advanced practitioner — held with vetted master teachers at the source. This is an immersion in an authentic tradition, not a fitness class.",
+            "A genuine, teacher-led practice for every level, from complete beginner to advanced practitioner, held with vetted master teachers at the source. This is an immersion in an authentic tradition, not a fitness class.",
     },
     ayurvedic: {
         setting: "Kerala & the Kovalam coast",
-        bestTime: "September–March (the monsoon is traditionally prized for treatment)",
-        typicalLength: "7–21 days",
+        bestTime: "September to March (the monsoon is traditionally prized for treatment)",
+        typicalLength: "7 to 21 days",
         framing:
-            "Authentic, AYUSH-certified recuperative Ayurveda — traditional therapy for rest and rejuvenation, overseen by a qualified physician. We frame it honestly: this is not a medical cure, and it does not replace conventional care. If you have a health condition, please consult your own doctor.",
+            "Authentic, AYUSH-certified recuperative Ayurveda, traditional therapy for rest and rejuvenation, overseen by a qualified physician. We frame it honestly: this is not a medical cure, and it does not replace conventional care. If you have a health condition, please consult your own doctor.",
     },
     orthopedic: {
         setting: "Accredited hospitals + gentle-paced luxury recovery transit",
         bestTime: "Year-round (climate-controlled)",
-        typicalLength: "10–28 days",
+        typicalLength: "10 to 28 days",
         framing:
-            "We arrange the travel, accommodation and slow-paced recovery logistics around treatment you arrange with accredited providers. MyTripMyTravel is a travel architect and concierge — not a medical provider — and does not deliver clinical care or outcomes.",
+            "We arrange the travel, accommodation and slow-paced recovery logistics around treatment you arrange with accredited providers. MyTripMyTravel is a travel architect and concierge, not a medical provider, and does not deliver clinical care or outcomes.",
     },
     massage: {
-        setting: "Across India — Kerala, Rajasthan palaces & city sanctuaries",
+        setting: "Across India, Kerala, Rajasthan palaces & city sanctuaries",
         bestTime: "Year-round",
-        typicalLength: "1–7 days",
+        typicalLength: "1 to 7 days",
         framing:
             "Master-therapist bodywork for relaxation and physical recovery, tailored to you across Indian and global modalities. Therapies are same-gender and professionally conducted.",
     },
@@ -87,7 +87,7 @@ export default function WellnessProgrammeDetail({
                 </section>
             )}
 
-            {/* Variants — the itinerary menu (each links to its deep brief) */}
+            {/* Variants, the itinerary menu (each links to its deep brief) */}
             <section className="py-20 bg-royal-blue/5">
                 <div className="container mx-auto px-6">
                     <div className="flex items-center gap-5 mb-12">

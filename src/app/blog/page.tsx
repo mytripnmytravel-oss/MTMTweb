@@ -4,9 +4,9 @@ import { blogPosts } from "@/data/blog";
 import BlogView from "./BlogView";
 
 const TITLE =
-    "India Travel Blog — Golden Triangle, Rajasthan & Kerala Guides | MyTripMyTravel";
+    "India Travel Blog, Golden Triangle, Rajasthan & Kerala Guides | MyTripMyTravel";
 const DESCRIPTION =
-    "Field notes and planning guides for luxury India travel — Golden Triangle routes, best time to visit, India e-Visa, Ayurveda and tiger-safari deep-dives.";
+    "Field notes and planning guides for luxury India travel, Golden Triangle routes, best time to visit, India e-Visa, Ayurveda and tiger-safari deep-dives.";
 const URL = `${SITE_URL}/blog`;
 
 export const metadata: Metadata = {

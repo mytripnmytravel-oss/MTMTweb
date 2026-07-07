@@ -4,7 +4,7 @@ import CarRentalView from "./CarRentalView";
 
 const TITLE = "Luxury Car Rental with Driver in India | MyTripMyTravel";
 const DESCRIPTION =
-    "Chauffeured car rental across India — sedans, premium SUVs and coaches with a vetted driver, GPS tracking, and fuel, tolls and permits included. No self-drive.";
+    "Chauffeured car rental across India, sedans, premium SUVs and coaches with a vetted driver, GPS tracking, and fuel, tolls and permits included. No self-drive.";
 const URL = `${SITE_URL}/services/car-rental`;
 const OG_IMAGE =
     "https://images.unsplash.com/photo-1627927141576-0256f4c21ab1?q=80&w=1200&auto=format&fit=crop";

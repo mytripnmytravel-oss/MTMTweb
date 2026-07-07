@@ -81,7 +81,7 @@ export default function MonumentMonthView({ content }: { content: MonumentMonthC
 
                 <section className="py-20 bg-royal-blue/5">
                     <div className="container mx-auto px-6">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-10">{monument.name} in {content.monthLabel} — operating notes</h4>
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-10">{monument.name} in {content.monthLabel}, operating notes</h4>
                         <div className="grid md:grid-cols-2 gap-6">
                             {content.points.map((p, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="glass-card rounded-2xl p-9 border-royal-blue/5">

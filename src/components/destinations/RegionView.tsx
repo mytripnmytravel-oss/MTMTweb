@@ -26,7 +26,7 @@ export default function RegionView({
                 {/* Hero */}
                 <section className="relative h-[64vh] flex items-end overflow-hidden">
                     <div className="absolute inset-0 z-0">
-                        <Image src={region.heroImg} alt={`${region.name} — ${region.tagline}`} fill priority className="object-cover" />
+                        <Image src={region.heroImg} alt={`${region.name}, ${region.tagline}`} fill priority className="object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/30 to-royal-blue/10" />
                     </div>
                     <div className="container mx-auto px-6 relative z-10 pb-20">

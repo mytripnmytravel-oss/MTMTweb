@@ -24,7 +24,7 @@ export default function CorporateView() {
                         <p className="eyebrow eyebrow-accent">Corporate travel</p>
                         <h1 className="display-1 mt-4 font-medium text-ink">Executive journeys, seamlessly run.</h1>
                         <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-                            Zero-friction logistics for executive teams and delegations across India — GPS-tracked ground fleets, private aviation, accommodation and MICE events, all under a single accountable lead.
+                            Zero-friction logistics for executive teams and delegations across India, GPS-tracked ground fleets, private aviation, accommodation and MICE events, all under a single accountable lead.
                         </p>
                         <Link href="/booking" className="btn-primary mt-8">Brief the corporate desk <ArrowRight size={16} /></Link>
                     </div>

@@ -19,8 +19,8 @@ export async function generateMetadata({
     const { slug } = await params;
     const dest = getDestination(slug);
     if (!dest) return { title: "Not Found | MyTripMyTravel" };
-    const title = `${dest.name} Itineraries — by length | MyTripMyTravel`;
-    const description = `Plan a ${dest.name}, ${dest.state} trip — itinerary architectures by length (3, 5, 7, 10, 14 days) from MyTripMyTravel.`;
+    const title = `${dest.name} Itineraries, by length | MyTripMyTravel`;
+    const description = `Plan a ${dest.name}, ${dest.state} trip, itinerary architectures by length (3, 5, 7, 10, 14 days) from MyTripMyTravel.`;
     const url = `${SITE_URL}/destinations/${dest.slug}/itinerary`;
     return {
         title,

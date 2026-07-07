@@ -7,7 +7,7 @@ import { DiningCategoryView, DiningItemView } from "@/components/heritagedining/
 export async function diningCategoryMetadata(slug: string): Promise<Metadata> {
     const c = getDiningCategory(slug);
     if (!c) return { title: "Not Found | MyTripMyTravel" };
-    const title = `Heritage Dining — ${c.name} | MyTripMyTravel`;
+    const title = `Heritage Dining, ${c.name} | MyTripMyTravel`;
     const url = `${SITE_URL}/heritage-dining/${c.slug}`;
     return { title, description: c.blurb, alternates: { canonical: url }, openGraph: { title, description: c.blurb, url, type: "website" } };
 }
@@ -19,7 +19,7 @@ export function DiningCategoryRoute({ slug }: { slug: string }) {
     const jsonLd = {
         "@context": "https://schema.org",
         "@graph": [
-            { "@type": "CollectionPage", name: `Heritage Dining — ${c.name}`, url },
+            { "@type": "CollectionPage", name: `Heritage Dining, ${c.name}`, url },
             {
                 "@type": "BreadcrumbList",
                 itemListElement: [

@@ -74,7 +74,7 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                             {[
                                 { title: "Abhyanga", desc: "Warm herbal-oil full-body massage in the classical Ayurvedic style, valued for deep relaxation.", icon: Waves },
                                 { title: "Marma Point", desc: "Gentle pressure applied to the body's traditional vital points to ease tension and encourage calm.", icon: Fingerprint },
-                                { title: "Shirodhara", desc: "A continuous, warm stream of oil poured slowly over the forehead — a deeply soothing signature therapy.", icon: BrainCircuit },
+                                { title: "Shirodhara", desc: "A continuous, warm stream of oil poured slowly over the forehead, a deeply soothing signature therapy.", icon: BrainCircuit },
                                 { title: "Udwarthana", desc: "Invigorating dry herbal-powder massage traditionally used to stimulate circulation and refresh the skin.", icon: Wind }
                             ].map((modality, i) => (
                                 <motion.div
@@ -102,7 +102,7 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                                 UNCOMPROMISING <br /> <span className="text-purple-400">RELAXATION.</span>
                             </h2>
                             <p className="text-white/60 font-bold italic text-2xl mb-16 px-12">
-                                Delivered in serene 5-star havelis and premium wellness wings by experienced, professionally trained therapists — so every session is as safe and considered as it is restful.
+                                Delivered in serene 5-star havelis and premium wellness wings by experienced, professionally trained therapists, so every session is as safe and considered as it is restful.
                             </p>
                             <Magnetic>
                                 <Link href="/booking">

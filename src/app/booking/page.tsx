@@ -3,9 +3,9 @@ import { SITE_URL, ORGANIZATION } from "@/lib/site";
 import BookingView from "./BookingView";
 
 const url = `${SITE_URL}/booking`;
-const title = "Plan Your India Trip — Enquire | MyTripMyTravel";
+const title = "Plan Your India Trip, Enquire | MyTripMyTravel";
 const description =
-    "Tell us your dates, group and interests and our concierge will craft a bespoke India itinerary — Golden Triangle, Rajasthan, Kerala and beyond. Enquire now.";
+    "Tell us your dates, group and interests and our concierge will craft a bespoke India itinerary, Golden Triangle, Rajasthan, Kerala and beyond. Enquire now.";
 
 export const metadata: Metadata = {
     title,

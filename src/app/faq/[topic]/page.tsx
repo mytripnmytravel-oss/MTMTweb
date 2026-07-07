@@ -18,7 +18,7 @@ export async function generateMetadata({
     const { topic: slug } = await params;
     const topic = getFaqTopic(slug);
     if (!topic) return { title: "Not Found | MyTripMyTravel" };
-    const title = `${topic.name} — FAQ | MyTripMyTravel`;
+    const title = `${topic.name}, FAQ | MyTripMyTravel`;
     const url = `${SITE_URL}/faq/${topic.slug}`;
     return {
         title,

@@ -11,9 +11,9 @@ import Image from "next/image";
 const fade = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } } as const;
 
 const PROGRAMMES = [
-    { title: "Yoga & Soul", desc: "Master-led yoga and meditation with vetted teachers in Rishikesh and Himalayan sanctuaries — calibrated to every level.", icon: Wind, tags: ["Hatha", "Vinyasa", "Meditation"], image: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Yoga_Meditation%2C_Rishikesh.jpg", alt: "Yoga on the banks of the Ganges at Rishikesh", href: "/wellness/yoga-soul" },
-    { title: "Orthopedic Restoration", desc: "Recovery travel and gentle-paced logistics arranged around treatment you undertake with accredited providers — a travel architect, not a medical provider.", icon: Stethoscope, tags: ["Joint Care", "Spine Health", "Post-Op Transit"], image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Hospital_Room_Interior.jpg", alt: "A calm private recovery suite", href: "/wellness/orthopedic" },
-    { title: "Ayurvedic Care", desc: "AYUSH-certified, physician-led Ayurveda in its Keralan home — authentic recuperative therapy, framed honestly rather than as a cure.", icon: Droplets, tags: ["Panchakarma", "Abhyanga", "Rasayana"], image: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Ayurvedic_Oil_Massage.jpg", alt: "Ayurvedic oil therapy at a certified Kerala centre", href: "/wellness/ayurvedic" },
+    { title: "Yoga & Soul", desc: "Master-led yoga and meditation with vetted teachers in Rishikesh and Himalayan sanctuaries, calibrated to every level.", icon: Wind, tags: ["Hatha", "Vinyasa", "Meditation"], image: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Yoga_Meditation%2C_Rishikesh.jpg", alt: "Yoga on the banks of the Ganges at Rishikesh", href: "/wellness/yoga-soul" },
+    { title: "Orthopedic Restoration", desc: "Recovery travel and gentle-paced logistics arranged around treatment you undertake with accredited providers, a travel architect, not a medical provider.", icon: Stethoscope, tags: ["Joint Care", "Spine Health", "Post-Op Transit"], image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Hospital_Room_Interior.jpg", alt: "A calm private recovery suite", href: "/wellness/orthopedic" },
+    { title: "Ayurvedic Care", desc: "AYUSH-certified, physician-led Ayurveda in its Keralan home, authentic recuperative therapy, framed honestly rather than as a cure.", icon: Droplets, tags: ["Panchakarma", "Abhyanga", "Rasayana"], image: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Ayurvedic_Oil_Massage.jpg", alt: "Ayurvedic oil therapy at a certified Kerala centre", href: "/wellness/ayurvedic" },
     { title: "Therapeutic Massage", desc: "Master-therapist bodywork for relaxation and physical recovery, across Indian and global modalities.", icon: Activity, tags: ["Deep Tissue", "Marma", "Hot Stone"], image: "https://upload.wikimedia.org/wikipedia/commons/4/48/Massage_in_India.jpg", alt: "Therapeutic bodywork at an Indian wellness sanctuary", href: "/wellness/massage" },
 ];
 
@@ -43,7 +43,7 @@ export default function WellnessHubView() {
                     <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Recovery, quietly held.</h1>
                     <div className="mt-6 flex flex-col items-start gap-6 lg:flex-row lg:items-end lg:justify-between">
                         <p className="max-w-2xl text-lg leading-relaxed text-muted">
-                            India is the world's wellness heartland — authentic Ayurveda, master-led yoga, therapeutic bodywork and carefully arranged recovery travel, delivered with vetted practitioners and honest guidance.
+                            India is the world's wellness heartland, authentic Ayurveda, master-led yoga, therapeutic bodywork and carefully arranged recovery travel, delivered with vetted practitioners and honest guidance.
                         </p>
                         <Link href="/booking" className="btn-primary shrink-0">Consult the wellness desk <ArrowRight size={16} /></Link>
                     </div>

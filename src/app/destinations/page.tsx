@@ -5,12 +5,12 @@ import DestinationsHubView from "@/components/destinations/DestinationsHubView";
 export const metadata: Metadata = {
     title: "Destination Archive | Curated Luxury India by MyTripMyTravel",
     description:
-        "Explore MyTripMyTravel's vetted deployment zones across India — the Golden Triangle, Rajasthan, Kerala, the Himalayas, Sikkim and the Andamans. Chauffeured, escorted, sequenced for the light.",
+        "Explore MyTripMyTravel's vetted deployment zones across India, the Golden Triangle, Rajasthan, Kerala, the Himalayas, Sikkim and the Andamans. Chauffeured, escorted, sequenced for the light.",
     alternates: { canonical: "https://www.mytripmytravel.com/destinations" },
     openGraph: {
         title: "Destination Archive | MyTripMyTravel",
         description:
-            "Vetted luxury deployment zones across India — every region a curated mission architecture.",
+            "Vetted luxury deployment zones across India, every region a curated mission architecture.",
         url: "https://www.mytripmytravel.com/destinations",
         type: "website",
     },

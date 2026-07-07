@@ -23,7 +23,7 @@ const blogPosts = [
     {
         id: 2,
         title: "Silent Havelis: A Slower Approach to Recovery Travel",
-        excerpt: "What \"recovery travel\" actually means when designed properly — paced itineraries, controlled environments, and the difference from a spa weekend.",
+        excerpt: "What \"recovery travel\" actually means when designed properly, paced itineraries, controlled environments, and the difference from a spa weekend.",
         date: "May 21, 2026",
         category: "Wellness",
         image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Rambagh_Palace_hotel_Jaipur_lobby_courtyard.jpg",
@@ -33,7 +33,7 @@ const blogPosts = [
     {
         id: 3,
         title: "Architecting a Royal Wedding in India: The 6-Month Lead Time",
-        excerpt: "How a destination wedding in a palace, fort, or lake-palace setting actually gets built — venue first, then design, then logistics.",
+        excerpt: "How a destination wedding in a palace, fort, or lake-palace setting actually gets built, venue first, then design, then logistics.",
         date: "May 21, 2026",
         category: "Weddings",
         image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Umaid_Bhawan_Palace%2C_Jodhpur.JPG",
@@ -43,7 +43,7 @@ const blogPosts = [
     {
         id: 4,
         title: "The Panthera Mission: Tiger Safaris That Earn Their Sightings",
-        excerpt: "How a real tiger-safari itinerary at Ranthambore is engineered — multiple drives, vetted naturalists, zone strategy, and the honest read on sightings.",
+        excerpt: "How a real tiger-safari itinerary at Ranthambore is engineered, multiple drives, vetted naturalists, zone strategy, and the honest read on sightings.",
         date: "May 21, 2026",
         category: "Wildlife",
         image: "https://upload.wikimedia.org/wikipedia/commons/f/ff/079_Bengal_tiger_in_Ranthambore_National_Park_Photo_by_Giles_Laurent.jpg",

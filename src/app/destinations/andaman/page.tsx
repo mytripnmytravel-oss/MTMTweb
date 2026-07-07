@@ -4,14 +4,14 @@ import AndamanView from "./AndamanView";
 
 const url = `${SITE_URL}/destinations/andaman`;
 const description =
-    "Andaman Islands luxury travel: a private, concierge-led 7-day itinerary through Port Blair, Havelock and Neil — pristine beaches, snorkelling and calm-sea inter-island cruises.";
+    "Andaman Islands luxury travel: a private, concierge-led 7-day itinerary through Port Blair, Havelock and Neil, pristine beaches, snorkelling and calm-sea inter-island cruises.";
 
 export const metadata: Metadata = {
-    title: "Andaman Islands Luxury Travel — Havelock & Neil Itinerary | MyTripMyTravel",
+    title: "Andaman Islands Luxury Travel, Havelock & Neil Itinerary | MyTripMyTravel",
     description,
     alternates: { canonical: url },
     openGraph: {
-        title: "Andaman Islands Luxury Travel — Havelock & Neil Itinerary | MyTripMyTravel",
+        title: "Andaman Islands Luxury Travel, Havelock & Neil Itinerary | MyTripMyTravel",
         description,
         url,
         type: "article",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Andaman Islands Luxury Travel — Havelock & Neil Itinerary | MyTripMyTravel",
+        title: "Andaman Islands Luxury Travel, Havelock & Neil Itinerary | MyTripMyTravel",
         description,
     },
 };

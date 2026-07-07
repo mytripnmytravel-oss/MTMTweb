@@ -24,7 +24,7 @@ export async function generateMetadata({
     const tour = getPackageByIdOrSlug(id);
     if (!tour) return { title: "Tour Not Found | MyTripMyTravel" };
     const slug = packageSlug(tour);
-    const title = tour.metaTitle ?? `${tour.title} — ${tour.duration} ${tour.theme} Tour | MyTripMyTravel`;
+    const title = tour.metaTitle ?? `${tour.title}, ${tour.duration} ${tour.theme} Tour | MyTripMyTravel`;
     const description = tour.metaDescription ?? `${tour.highlight} ${tour.duration}, ${tour.location}. From ${tour.price}. Private, chauffeured, escorted by MyTripMyTravel.`;
     // Canonical always points at the slug URL, even when reached by legacy numeric id.
     const url = `${SITE_URL}/tours/${slug}`;

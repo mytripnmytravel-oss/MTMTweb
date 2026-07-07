@@ -27,7 +27,7 @@ export default function ServicesHubView({
                     <p className="eyebrow eyebrow-accent">Ground services</p>
                     <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Chauffeured ground operations</h1>
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-                        Private, GPS-tracked, pre-priced transport across our hub cities — and continuous into any itinerary.
+                        Private, GPS-tracked, pre-priced transport across our hub cities, and continuous into any itinerary.
                     </p>
                 </div>
             </section>

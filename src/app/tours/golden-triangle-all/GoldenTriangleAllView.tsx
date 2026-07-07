@@ -74,7 +74,7 @@ export default function GoldenTriangleAllView() {
                     <p className="eyebrow eyebrow-accent">The full collection</p>
                     <h1 className="display-1 mt-4 font-medium text-ink">Golden Triangle & beyond</h1>
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-                        Every variation of India's most iconic routes and regional escapes. Each itinerary is a starting point — ready to shape around how you actually want to travel.
+                        Every variation of India's most iconic routes and regional escapes. Each itinerary is a starting point, ready to shape around how you actually want to travel.
                     </p>
                     <div className="mt-8 flex flex-wrap items-center gap-6 text-[12px] font-medium text-stone">
                         <span className="flex items-center gap-2"><ShieldCheck size={14} className="text-clay" /> Transparent pricing</span>
@@ -113,7 +113,7 @@ export default function GoldenTriangleAllView() {
                                     <motion.div key={pkg.id} layout initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.35 }}
                                         className="card card-hover group overflow-hidden">
                                         <div className="relative aspect-[16/10] overflow-hidden">
-                                            <Image src={pkg.img} alt={`${pkg.title} — ${pkg.duration} ${pkg.location} tour`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                                            <Image src={pkg.img} alt={`${pkg.title}, ${pkg.duration} ${pkg.location} tour`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                                             <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink">{pkg.duration}</span>
                                             <span className="absolute right-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-[11px] font-medium text-paper backdrop-blur-sm">{pkg.location}</span>
                                         </div>
@@ -164,7 +164,7 @@ export default function GoldenTriangleAllView() {
                         <div className="sticky top-24 space-y-5">
                             <div className="rounded-2xl bg-ink p-6 text-paper">
                                 <h3 className="text-lg font-medium text-paper">Design your own route</h3>
-                                <p className="mt-2 text-[13px] leading-relaxed text-paper/70">Don't settle for a template — our team can merge any of these into one bespoke journey.</p>
+                                <p className="mt-2 text-[13px] leading-relaxed text-paper/70">Don't settle for a template, our team can merge any of these into one bespoke journey.</p>
                                 <div className="my-5 space-y-2.5">
                                     {["Custom stop-overs", "Your kind of hotels", "Dietary-ready", "24/7 human backup"].map((f) => (
                                         <div key={f} className="flex items-center gap-2.5 text-[13px] text-paper/80"><CheckCircle2 size={14} className="shrink-0 text-clay-soft" /> {f}</div>
@@ -212,8 +212,8 @@ export default function GoldenTriangleAllView() {
                         </div>
                         <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/10 bg-ink/70 p-7 backdrop-blur-sm">
                             <Star className="text-clay-soft" fill="currentColor" size={20} />
-                            <p className="mt-4 text-lg leading-relaxed text-paper">"Every route here is a starting point — we tailor the pace, hotels and stops to how you want to travel."</p>
-                            <span className="mt-4 block text-[12px] font-medium uppercase tracking-[0.16em] text-clay-soft">— The MyTripMyTravel team</span>
+                            <p className="mt-4 text-lg leading-relaxed text-paper">"Every route here is a starting point, we tailor the pace, hotels and stops to how you want to travel."</p>
+                            <span className="mt-4 block text-[12px] font-medium uppercase tracking-[0.16em] text-clay-soft">, The MyTripMyTravel team</span>
                         </div>
                     </div>
                 </div>
@@ -226,9 +226,9 @@ export default function GoldenTriangleAllView() {
                     <h2 className="display-2 mt-3 text-ink">Questions about the collection</h2>
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {[
-                            { q: "Can I swap Agra for Varanasi?", a: "Absolutely. These are variations, not rigid rules — almost any city in India is on the menu, and we can build a loop starting anywhere." },
+                            { q: "Can I swap Agra for Varanasi?", a: "Absolutely. These are variations, not rigid rules, almost any city in India is on the menu, and we can build a loop starting anywhere." },
                             { q: "What defines a 'medical' tour?", a: "These pair calmer stays with comfortable vehicles and run at an easier pace, suited to post-op rest and physical therapy." },
-                            { q: "Are drivers experienced with large groups?", a: "Yes — our chauffeurs have run multi-car convoys for palace weddings in Jaipur and coordinate closely across the group." },
+                            { q: "Are drivers experienced with large groups?", a: "Yes, our chauffeurs have run multi-car convoys for palace weddings in Jaipur and coordinate closely across the group." },
                             { q: "How is golden-hour photography handled?", a: "We plan visits around the best light, arriving early where possible to enjoy monuments before the busiest crowds." },
                         ].map((f, i) => (
                             <div key={i} className="card p-7">
@@ -261,7 +261,7 @@ export default function GoldenTriangleAllView() {
                             className="relative flex max-h-[85vh] w-full max-w-4xl flex-col overflow-hidden rounded-3xl bg-white sm:flex-row">
                             <button onClick={() => setSelected(null)} className="absolute right-5 top-5 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-ink text-paper transition hover:bg-clay"><X size={20} /></button>
                             <div className="relative h-56 sm:h-auto sm:w-2/5">
-                                <Image src={selected.img} alt={`${selected.title} — ${selected.duration} itinerary`} fill className="object-cover" />
+                                <Image src={selected.img} alt={`${selected.title}, ${selected.duration} itinerary`} fill className="object-cover" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent sm:bg-gradient-to-r" />
                                 <div className="absolute bottom-8 left-8 right-8 text-paper">
                                     <div className="eyebrow text-clay-soft">{selected.theme}</div>

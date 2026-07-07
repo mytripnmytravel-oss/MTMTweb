@@ -5,14 +5,14 @@ import GoldenTriangleAllView from "./GoldenTriangleAllView";
 
 const url = `${SITE_URL}/tours/golden-triangle-all`;
 const description =
-    "Browse every Golden Triangle tour variation and India itinerary in one archive — filter by region, theme and duration, then tailor any route into a bespoke, chauffeured trip.";
+    "Browse every Golden Triangle tour variation and India itinerary in one archive, filter by region, theme and duration, then tailor any route into a bespoke, chauffeured trip.";
 
 export const metadata: Metadata = {
-    title: "Golden Triangle Tours — All Itinerary Variations & India Tour Archive | MyTripMyTravel",
+    title: "Golden Triangle Tours, All Itinerary Variations & India Tour Archive | MyTripMyTravel",
     description,
     alternates: { canonical: url },
     openGraph: {
-        title: "Golden Triangle Tours — All Itinerary Variations & India Tour Archive | MyTripMyTravel",
+        title: "Golden Triangle Tours, All Itinerary Variations & India Tour Archive | MyTripMyTravel",
         description,
         url,
         type: "website",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Golden Triangle Tours — All Itinerary Variations & India Tour Archive | MyTripMyTravel",
+        title: "Golden Triangle Tours, All Itinerary Variations & India Tour Archive | MyTripMyTravel",
         description,
     },
 };
@@ -34,7 +34,7 @@ const jsonLd = {
     "@graph": [
         {
             "@type": "CollectionPage",
-            name: "Golden Triangle Tours — All Itinerary Variations",
+            name: "Golden Triangle Tours, All Itinerary Variations",
             description,
             url,
         },
@@ -43,7 +43,7 @@ const jsonLd = {
             itemListElement: [
                 { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
                 { "@type": "ListItem", position: 2, name: "Tours", item: `${SITE_URL}/tours` },
-                { "@type": "ListItem", position: 3, name: "Golden Triangle — All Variations", item: url },
+                { "@type": "ListItem", position: 3, name: "Golden Triangle, All Variations", item: url },
             ],
         },
         {

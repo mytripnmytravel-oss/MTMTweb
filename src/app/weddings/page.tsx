@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import WeddingsView from "./WeddingsView";
 
-const TITLE = "Destination Weddings in India — Palace & Fort Venues | MyTripMyTravel";
+const TITLE = "Destination Weddings in India, Palace & Fort Venues | MyTripMyTravel";
 const DESCRIPTION =
-    "Destination weddings in India — lake palaces, Rajput forts, heritage havelis and desert camps. MyTripMyTravel runs venue, fleet, decor and dining together.";
+    "Destination weddings in India, lake palaces, Rajput forts, heritage havelis and desert camps. MyTripMyTravel runs venue, fleet, decor and dining together.";
 const URL = `${SITE_URL}/weddings`;
 const HERO_IMG = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Umaid_Bhawan_Palace%2C_Jodhpur.JPG";
 
@@ -32,11 +32,11 @@ const FAQS = [
     },
     {
         q: "Are havelis good for small weddings?",
-        a: "Yes — restored heritage havelis suit intimate-to-classic counts (up to roughly 150) where atmosphere and design matter more than scale.",
+        a: "Yes, restored heritage havelis suit intimate-to-classic counts (up to roughly 150) where atmosphere and design matter more than scale.",
     },
     {
         q: "Can I have a desert wedding in Rajasthan?",
-        a: "Yes — luxury tented camps on the Thar dunes near Jaisalmer or Jodhpur, where the camp build and remote logistics are handled end to end.",
+        a: "Yes, luxury tented camps on the Thar dunes near Jaisalmer or Jodhpur, where the camp build and remote logistics are handled end to end.",
     },
     {
         q: "Who manages the whole wedding production?",
@@ -52,7 +52,7 @@ const jsonLd = {
             name: "Destination Wedding Planning in India",
             serviceType: "Destination Wedding Planning",
             description:
-                "Planning and coordination of destination weddings in India across lake palaces, Rajput forts, heritage havelis and desert camps — venue, fleet, decor, dining and logistics under one accountable lead.",
+                "Planning and coordination of destination weddings in India across lake palaces, Rajput forts, heritage havelis and desert camps, venue, fleet, decor, dining and logistics under one accountable lead.",
             url: URL,
             image: HERO_IMG,
             areaServed: { "@type": "Country", name: "India" },

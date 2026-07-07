@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import AboutView from "./AboutView";
 
-const TITLE = "About MyTripMyTravel — Luxury India Travel Architects | MyTripMyTravel";
+const TITLE = "About MyTripMyTravel, Luxury India Travel Architects | MyTripMyTravel";
 const DESCRIPTION =
-    "Meet the boutique team behind MyTripMyTravel — architecting private, chauffeured luxury journeys across India's Golden Triangle, Rajasthan, Kerala and beyond.";
+    "Meet the boutique team behind MyTripMyTravel, architecting private, chauffeured luxury journeys across India's Golden Triangle, Rajasthan, Kerala and beyond.";
 const URL = `${SITE_URL}/about`;
 
 export const metadata: Metadata = {

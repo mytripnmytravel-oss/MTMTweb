@@ -63,7 +63,7 @@ export function WellnessOriginRoute({
         "@graph": [
             {
                 "@type": "Service",
-                serviceType: `${programme.name} — travellers from ${origin.city}`,
+                serviceType: `${programme.name}, travellers from ${origin.city}`,
                 name: content.h1,
                 description: content.answer,
                 url,

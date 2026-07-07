@@ -106,7 +106,7 @@ export default function ServiceCityView({
 
                 <section className="py-20 bg-royal-blue/5">
                     <div className="container mx-auto px-6">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">{lineName} — Other Cities</h4>
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">{lineName}, Other Cities</h4>
                         <div className="flex flex-wrap gap-3">
                             {otherCities.map((c) => (
                                 <Link key={c.slug} href={`/services/${lineSlug}/${c.slug}`} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">{c.name}</Link>

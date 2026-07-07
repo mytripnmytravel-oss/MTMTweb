@@ -32,7 +32,7 @@ function regionGateway(dest: Destination, origin: Origin): { code: string; label
             return {
                 code: "COK",
                 label: "Kochi (COK)",
-                routingNote: `${origin.city} offers direct non-stop service into Kochi (COK), Kerala's primary international gateway — onward to ${dest.name} by chauffeured leg.`,
+                routingNote: `${origin.city} offers direct non-stop service into Kochi (COK), Kerala's primary international gateway, onward to ${dest.name} by chauffeured leg.`,
             };
         }
         return {
@@ -45,7 +45,7 @@ function regionGateway(dest: Destination, origin: Origin): { code: string; label
         return {
             code: "IXB",
             label: "Bagdogra (IXB)",
-            routingNote: `Sikkim's nearest commercial airport is Bagdogra (IXB) in West Bengal. From ${origin.city}, route via Delhi (DEL) or Kolkata (CCU) onwards to Bagdogra, then a chauffeured 4–5h ascent to ${dest.name}.`,
+            routingNote: `Sikkim's nearest commercial airport is Bagdogra (IXB) in West Bengal. From ${origin.city}, route via Delhi (DEL) or Kolkata (CCU) onwards to Bagdogra, then a chauffeured 4 to 5h ascent to ${dest.name}.`,
         };
     }
     if (r === "andaman") {
@@ -60,7 +60,7 @@ function regionGateway(dest: Destination, origin: Origin): { code: string; label
             return {
                 code: "IXL",
                 label: "Leh (IXL)",
-                routingNote: `Leh's airport (IXL) sits at 3,256m — flights are weather-dependent and operate primarily from Delhi (DEL). From ${origin.city}, route via Delhi with at least one acclimatisation night before flying up.`,
+                routingNote: `Leh's airport (IXL) sits at 3,256m, flights are weather-dependent and operate primarily from Delhi (DEL). From ${origin.city}, route via Delhi with at least one acclimatisation night before flying up.`,
             };
         }
         if (dest.slug === "srinagar") {
@@ -94,38 +94,38 @@ function regionGateway(dest: Destination, origin: Origin): { code: string; label
     return {
         code: "DEL",
         label: "Delhi (DEL)",
-        routingNote: `Delhi (DEL) is the gateway. From ${origin.city}, the chauffeured leg to ${dest.name} runs on the Elite Fleet — Delhi → Agra via the Yamuna Expressway (3h), Delhi → Jaipur via NH-48 (5h).`,
+        routingNote: `Delhi (DEL) is the gateway. From ${origin.city}, the chauffeured leg to ${dest.name} runs on the Elite Fleet, Delhi → Agra via the Yamuna Expressway (3h), Delhi → Jaipur via NH-48 (5h).`,
     };
 }
 
 function arrivalNoteFor(origin: Origin): string {
     if (/\b(3\.5|4 hrs|5\.5|6 hrs)\b/.test(origin.flightBand)) {
-        return `${origin.city} is a short crossing — the chauffeured leg and the first activity can run the same day with a refreshed arrival. No mandatory recovery buffer beyond the airport handover.`;
+        return `${origin.city} is a short crossing, the chauffeured leg and the first activity can run the same day with a refreshed arrival. No mandatory recovery buffer beyond the airport handover.`;
     }
     if (/9.5|9 hrs|8.5|8 hrs|7.5/.test(origin.flightBand)) {
-        return `${origin.city} is a manageable European-shift crossing — we recommend a single arrival-day recovery night before the first major site, with a light evening only.`;
+        return `${origin.city} is a manageable European-shift crossing, we recommend a single arrival-day recovery night before the first major site, with a light evening only.`;
     }
-    return `${origin.city} is a long crossing with a significant time shift. We build a firm first-night recovery into the architecture — orientation only, no marquee sites on arrival day. Sleep, light evening, breakfast at the stay, monuments from day two.`;
+    return `${origin.city} is a long crossing with a significant time shift. We build a firm first-night recovery into the architecture, orientation only, no marquee sites on arrival day. Sleep, light evening, breakfast at the stay, monuments from day two.`;
 }
 
 function sequencingNoteFor(dest: Destination, origin: Origin): string {
     if (dest.regionSlug === "golden-triangle") {
-        return `From ${origin.city}, the standard sequencing is Delhi (arrival recovery) → Agra (Taj at sunrise) → Jaipur (forts and palace) → return. Total 5–7 days for the canonical Triangle, extendable into Rajasthan, the Himalayas, or Kerala on the same chauffeured architecture.`;
+        return `From ${origin.city}, the standard sequencing is Delhi (arrival recovery) → Agra (Taj at sunrise) → Jaipur (forts and palace) → return. Total 5 to 7 days for the canonical Triangle, extendable into Rajasthan, the Himalayas, or Kerala on the same chauffeured architecture.`;
     }
     if (dest.regionSlug === "rajasthan") {
-        return `From ${origin.city}, ${dest.name} sits naturally within a Rajasthan circuit — typically paired with Jaipur or Udaipur as the entry city, plus 2–4 onward stops. 7–10 days is the standard Rajasthan length; extend with the Golden Triangle for a 10–14 day mission.`;
+        return `From ${origin.city}, ${dest.name} sits naturally within a Rajasthan circuit, typically paired with Jaipur or Udaipur as the entry city, plus 2 to 4 onward stops. 7 to 10 days is the standard Rajasthan length; extend with the Golden Triangle for a 10 to 14 day mission.`;
     }
     if (dest.regionSlug === "kerala") {
-        return `From ${origin.city}, ${dest.name} sits inside the Kerala arc — typically a Kochi entry, the backwaters (Alleppey / Kumarakom), Munnar tea estates, and the southern beaches (Kovalam / Varkala). 7–10 days for the core circuit, 14+ for an integrated Ayurveda programme.`;
+        return `From ${origin.city}, ${dest.name} sits inside the Kerala arc, typically a Kochi entry, the backwaters (Alleppey / Kumarakom), Munnar tea estates, and the southern beaches (Kovalam / Varkala). 7 to 10 days for the core circuit, 14+ for an integrated Ayurveda programme.`;
     }
     if (dest.regionSlug === "himalayas") {
-        return `From ${origin.city}, ${dest.name} typically forms part of a wider Himalayan circuit. Pacing is built around altitude — slow ascents, acclimatisation nights, and weather-flex buffer days. 7+ days for a meaningful Himalayan leg; longer for high-altitude routes.`;
+        return `From ${origin.city}, ${dest.name} typically forms part of a wider Himalayan circuit. Pacing is built around altitude, slow ascents, acclimatisation nights, and weather-flex buffer days. 7+ days for a meaningful Himalayan leg; longer for high-altitude routes.`;
     }
     if (dest.regionSlug === "sikkim") {
-        return `From ${origin.city}, ${dest.name} sits within the Sikkim circuit. The standard arc is Bagdogra → Gangtok → high-altitude valleys (Lachen, Lachung) → Pelling. 6–8 days for the core; longer if including Darjeeling.`;
+        return `From ${origin.city}, ${dest.name} sits within the Sikkim circuit. The standard arc is Bagdogra → Gangtok → high-altitude valleys (Lachen, Lachung) → Pelling. 6 to 8 days for the core; longer if including Darjeeling.`;
     }
     if (dest.regionSlug === "andaman") {
-        return `From ${origin.city}, ${dest.name} is part of an Andaman island arc — typically Port Blair (arrival) → Havelock → Neil. 5–7 days minimum to factor the ferry transit and one-island-per-3-nights pacing.`;
+        return `From ${origin.city}, ${dest.name} is part of an Andaman island arc, typically Port Blair (arrival) → Havelock → Neil. 5 to 7 days minimum to factor the ferry transit and one-island-per-3-nights pacing.`;
     }
     return `From ${origin.city}, ${dest.name} sits within the wider ${dest.region} circuit and pairs naturally with adjacent destinations on the same chauffeured architecture.`;
 }
@@ -135,11 +135,11 @@ export function getCityOriginContent(dest: Destination, origin: Origin): CityOri
     const arrivalNote = arrivalNoteFor(origin);
     const sequencingNote = sequencingNoteFor(dest, origin);
 
-    const answer = `Travelling to ${dest.name}, ${dest.state} from ${origin.city}, ${origin.country} is a managed mission with MyTripMyTravel — flight context: ${origin.flightBand}; arrival gateway: ${gw.label}; ${origin.note} The on-ground operation in ${dest.name} runs on the GPS-tracked Elite Fleet protocol with escorted access, vetted stays, and a 24/7 desk.`;
+    const answer = `Travelling to ${dest.name}, ${dest.state} from ${origin.city}, ${origin.country} is a managed mission with MyTripMyTravel, flight context: ${origin.flightBand}; arrival gateway: ${gw.label}; ${origin.note} The on-ground operation in ${dest.name} runs on the GPS-tracked Elite Fleet protocol with escorted access, vetted stays, and a 24/7 desk.`;
 
     const intro: string[] = [
-        `Travel from ${origin.city} to ${dest.name} is a single sequenced operation, not three disconnected bookings. We do not duplicate the flight desk — that is typically the company's or your own — but we own everything from the gateway handover onward, including airport pickup, chauffeured leg to ${dest.name}, accommodation, daily sequencing, and contingency.`,
-        `${dest.tagline} — and the way ${origin.city}-based travellers experience that is shaped as much by how the arrival is engineered as by what is seen on the ground. ${arrivalNote}`,
+        `Travel from ${origin.city} to ${dest.name} is a single sequenced operation, not three disconnected bookings. We do not duplicate the flight desk, that is typically the company's or your own, but we own everything from the gateway handover onward, including airport pickup, chauffeured leg to ${dest.name}, accommodation, daily sequencing, and contingency.`,
+        `${dest.tagline}, and the way ${origin.city}-based travellers experience that is shaped as much by how the arrival is engineered as by what is seen on the ground. ${arrivalNote}`,
         `${gw.routingNote}`,
         `${sequencingNote}`,
         `Every architecture from ${origin.city} is paced around your ${origin.flightBand} crossing rather than against it.`,
@@ -161,7 +161,7 @@ export function getCityOriginContent(dest: Destination, origin: Origin): CityOri
             { heading: `Sequencing into ${dest.region}`, body: sequencingNote },
             {
                 heading: "Visa and travel basics",
-                body: `India offers an e-Visa to travellers of many nationalities; requirements vary by passport. Our concierge advises on the current process for ${origin.country} passport holders as part of planning — we do not duplicate the visa service, but we confirm timing windows fit your arrival.`,
+                body: `India offers an e-Visa to travellers of many nationalities; requirements vary by passport. Our concierge advises on the current process for ${origin.country} passport holders as part of planning, we do not duplicate the visa service, but we confirm timing windows fit your arrival.`,
             },
             {
                 heading: `What we own on the ground in ${dest.name}`,
@@ -173,7 +173,7 @@ export function getCityOriginContent(dest: Destination, origin: Origin): CityOri
             { q: `Do I need a visa to travel from ${origin.country}?`, a: `India offers an e-Visa to travellers of many nationalities; our concierge advises on the current process for ${origin.country} passport holders as part of planning.` },
             { q: `How many days should I plan for ${dest.name} from ${origin.city}?`, a: `${sequencingNote}` },
             { q: `What's the arrival day like coming from ${origin.city}?`, a: `${arrivalNote}` },
-            { q: `Is the trip private?`, a: `Always — single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access at the major sites, 24/7 desk line. Never a shared group departure.` },
+            { q: `Is the trip private?`, a: `Always, single party, dedicated chauffeur, GPS-tracked Elite Fleet, escorted access at the major sites, 24/7 desk line. Never a shared group departure.` },
         ],
         crossLinks: [
             { label: `Explore ${dest.name}`, href: `/destinations/${dest.slug}` },

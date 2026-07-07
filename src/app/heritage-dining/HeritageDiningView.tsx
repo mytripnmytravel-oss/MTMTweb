@@ -29,7 +29,7 @@ export default function HeritageDiningView() {
                                 className="text-5xl md:text-[6.5rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
                             />
                             <p className="text-dark-slate font-bold italic text-lg opacity-60 leading-relaxed mb-12">
-                                We favour heritage settings over commercial restaurants — authentic, architecturally significant dining featuring colourful, balanced Indian thalis served in historic palace courtyards.
+                                We favour heritage settings over commercial restaurants, authentic, architecturally significant dining featuring colourful, balanced Indian thalis served in historic palace courtyards.
                             </p>
                             <Magnetic>
                                 <Link href="/booking">
@@ -70,7 +70,7 @@ export default function HeritageDiningView() {
                             THE THALI <br /> <span className="text-sunset-orange">PROTOCOL.</span>
                         </h2>
                         <p className="text-white/60 font-bold italic text-xl mb-16 max-w-2xl mx-auto">
-                            The thali is a complete regional meal — a balanced circle of colourful, local dishes spanning textures and flavours, curated to the city you are dining in.
+                            The thali is a complete regional meal, a balanced circle of colourful, local dishes spanning textures and flavours, curated to the city you are dining in.
                         </p>
                     </div>
                 </section>

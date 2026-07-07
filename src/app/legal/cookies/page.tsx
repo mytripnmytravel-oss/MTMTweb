@@ -7,7 +7,7 @@ const url = `${SITE_URL}/legal/cookies`;
 export const metadata: Metadata = {
     title: "Cookie Policy | MyTripMyTravel",
     description:
-        "How MyTripMyTravel uses cookies — essential and privacy-respecting analytics cookies — and how you can manage or disable them in your browser at any time.",
+        "How MyTripMyTravel uses cookies, essential and privacy-respecting analytics cookies, and how you can manage or disable them in your browser at any time.",
     alternates: { canonical: url },
     openGraph: { title: "Cookie Policy | MyTripMyTravel", description: "How we use cookies and how to manage them.", url, type: "website" },
 };

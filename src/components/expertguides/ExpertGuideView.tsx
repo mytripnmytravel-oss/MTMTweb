@@ -52,8 +52,7 @@ export function GuideCityView({
             </section>
             <section className="py-24 container mx-auto px-6">
                 <p className="max-w-3xl text-lg md:text-xl text-dark-slate/70 font-bold leading-relaxed mb-14">
-                    Vetted, licensed heritage specialists in {dest.name}, available in multiple languages —
-                    guiding directly in your language, not translating a script.
+                    Vetted, licensed heritage specialists in {dest.name}, available in multiple languages,                     guiding directly in your language, not translating a script.
                 </p>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     {languages.map((l, idx) => (

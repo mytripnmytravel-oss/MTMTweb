@@ -80,7 +80,7 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                     </div>
                 </section>
 
-                {/* Answer block — AIO citation surface */}
+                {/* Answer block, AIO citation surface */}
                 <section className="py-20 md:py-28 container mx-auto px-6">
                     <div className="max-w-5xl">
                         <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">The Brief</h4>
@@ -182,7 +182,7 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                 {/* Editorial blocks */}
                 <section className="py-20 bg-royal-blue/5">
                     <div className="container mx-auto px-6">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-10">{dest.name} &middot; {content.monthLabel} — Operating Notes</h4>
+                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-10">{dest.name} &middot; {content.monthLabel}, Operating Notes</h4>
                         <div className="grid md:grid-cols-2 gap-6">
                             {content.facets.map((f, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="glass-card rounded-2xl p-9 border-royal-blue/5">
@@ -198,7 +198,7 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                 {content.pairedRegions.length > 0 && (
                     <section className="py-20 container mx-auto px-6">
                         <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">{content.monthLabel} is also strong in</h4>
-                        <p className="text-base md:text-lg text-dark-slate/65 font-bold italic mb-7 max-w-3xl">Pair {dest.name} with — or pivot to — these regions where {content.monthLabel} is also in the recommended window.</p>
+                        <p className="text-base md:text-lg text-dark-slate/65 font-bold italic mb-7 max-w-3xl">Pair {dest.name} with, or pivot to, these regions where {content.monthLabel} is also in the recommended window.</p>
                         <div className="flex flex-wrap gap-3">
                             {content.pairedRegions.map((r) => (
                                 <Link key={r.href} href={r.href} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-2">
@@ -265,7 +265,7 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                         <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
                         <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">The {content.monthLabel} Mission</h4>
                         <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Architect <span className="text-sunset-orange">{dest.name}</span> in {content.monthLabel}</h2>
-                        <p className="text-white/80 text-base md:text-lg font-bold leading-relaxed max-w-2xl mx-auto mb-10 relative z-10">Private, chauffeured, escorted — day-pacing tuned to {content.monthLabel}'s conditions in {dest.name}. We'll brief the architecture against your party and dates.</p>
+                        <p className="text-white/80 text-base md:text-lg font-bold leading-relaxed max-w-2xl mx-auto mb-10 relative z-10">Private, chauffeured, escorted, day-pacing tuned to {content.monthLabel}'s conditions in {dest.name}. We'll brief the architecture against your party and dates.</p>
                         <Magnetic>
                             <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Begin a Mission Brief</Link>
                         </Magnetic>

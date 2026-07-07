@@ -129,7 +129,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         urls.push(entry(variantHref(dimension, value), 0.6, "monthly"));
     }
 
-    // Regional variant slices (B12 — Rajasthan / Kerala / Himalayas)
+    // Regional variant slices (B12, Rajasthan / Kerala / Himalayas)
     for (const region of getAllVariantRegions()) {
         for (const { dimension, value } of getRegionVariantParams(region)) {
             urls.push(entry(regionVariantHref(region, dimension, value), 0.6, "monthly"));
@@ -269,21 +269,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         urls.push(entry(`/destinations/${slug}/itinerary/${duration}`, 0.6, "monthly"));
     }
 
-    // Destination × month (C12) — 43 cities × 12 months
+    // Destination × month (C12), 43 cities × 12 months
     for (const { slug, month } of getAllCityMonthParams()) {
         urls.push(entry(`/destinations/${slug}/in/${month}`, 0.6, "monthly"));
     }
 
-    // Destination × origin (C13) — 37 cities × 18 origins
+    // Destination × origin (C13), 37 cities × 18 origins
     for (const { slug, origin } of getAllCityOriginParams()) {
         urls.push(entry(`/destinations/${slug}/from/${origin}`, 0.5, "monthly"));
     }
 
-    // Monument × origin (C16) — monuments × origins
+    // Monument × origin (C16), monuments × origins
     for (const { slug, monument, origin } of getAllMonumentOriginParams()) {
         urls.push(entry(`/destinations/${slug}/monuments/${monument}/from/${origin}`, 0.5, "monthly"));
     }
-    // Monument × month — monuments × 12 months
+    // Monument × month, monuments × 12 months
     for (const { slug, monument, month } of getAllMonumentMonthParams()) {
         urls.push(entry(`/destinations/${slug}/monuments/${monument}/in/${month}`, 0.5, "monthly"));
     }

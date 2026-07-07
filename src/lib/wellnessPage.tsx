@@ -11,7 +11,7 @@ export async function wellnessMetadata(
     const resolved = getVariant(programmeSlug, variantSlug);
     if (!resolved) return { title: "Not Found | MyTripMyTravel" };
     const { programme, variant } = resolved;
-    const title = `${variant.name} — ${programme.name} | MyTripMyTravel`;
+    const title = `${variant.name}, ${programme.name} | MyTripMyTravel`;
     const description = variant.answer.slice(0, 300);
     const url = `${SITE_URL}/wellness/${programme.slug}/${variant.slug}`;
     return {
@@ -43,7 +43,7 @@ export function WellnessVariantRoute({
                 // (Avoids over-claiming MedicalTherapy on yoga/massage/Ayurveda briefs.)
                 "@type": "Service",
                 name: variant.name,
-                serviceType: `Wellness — ${programme.name}`,
+                serviceType: `Wellness, ${programme.name}`,
                 description: variant.answer,
                 url,
                 areaServed: { "@type": "Country", name: "India" },

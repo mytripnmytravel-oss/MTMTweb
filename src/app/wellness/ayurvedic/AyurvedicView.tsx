@@ -33,7 +33,7 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                                 className="text-5xl md:text-[7rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
                             />
                             <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed mb-12">
-                                Practitioner-led classical Ayurveda in its Keralan home — authentic Panchakarma and herbal therapies delivered at AYUSH-certified centres, framed honestly as recuperative care rather than a medical cure.
+                                Practitioner-led classical Ayurveda in its Keralan home, authentic Panchakarma and herbal therapies delivered at AYUSH-certified centres, framed honestly as recuperative care rather than a medical cure.
                             </p>
                             <div className="flex flex-wrap gap-6">
                                 <Magnetic>
@@ -79,7 +79,7 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                             {[
                                 { title: "Vamana", desc: "Therapeutic emesis, traditionally used to clear the upper respiratory and digestive channels.", icon: Wind },
                                 { title: "Virechana", desc: "Purgation therapy directed at the liver and gallbladder in classical practice.", icon: Flame },
-                                { title: "Basti", desc: "Medicated enema therapy — considered the cornerstone of Panchakarma.", icon: Sprout },
+                                { title: "Basti", desc: "Medicated enema therapy, considered the cornerstone of Panchakarma.", icon: Sprout },
                                 { title: "Nasya", desc: "Nasal administration of herbal oils for the head and sinuses.", icon: Sparkles },
                                 { title: "Raktamokshana", desc: "Traditional blood-letting therapy, used selectively for specific conditions.", icon: Droplets }
                             ].map((pillar, i) => (
@@ -108,7 +108,7 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                                 CERTIFIED <br /> <span className="text-sunset-orange">CARE.</span>
                             </h2>
                             <p className="text-white/60 font-bold italic text-2xl mb-16 px-12">
-                                MyTripMyTravel partners with Ministry of AYUSH-certified facilities and qualified physicians. Every programme is overseen by a doctor and framed honestly — genuine recuperative therapy, never an overstated cure.
+                                MyTripMyTravel partners with Ministry of AYUSH-certified facilities and qualified physicians. Every programme is overseen by a doctor and framed honestly, genuine recuperative therapy, never an overstated cure.
                             </p>
                         </div>
                     </div>

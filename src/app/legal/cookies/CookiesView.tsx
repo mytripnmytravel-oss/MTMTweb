@@ -28,11 +28,11 @@ export default function CookiesView() {
                     <div className="space-y-12 text-dark-slate/80 font-medium leading-relaxed">
                         <div>
                             <h2 className="text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-4">1. What cookies we use</h2>
-                            <p>MyTripMyTravel uses cookies — small text files stored by your browser — to help the website work and to remember your preferences as you browse, so your experience is smooth when you return.</p>
+                            <p>MyTripMyTravel uses cookies, small text files stored by your browser, to help the website work and to remember your preferences as you browse, so your experience is smooth when you return.</p>
                         </div>
                         <div>
                             <h2 className="text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-4">2. Analytics</h2>
-                            <p>We use privacy-respecting analytics cookies to understand how the site is used — which pages are popular and where loading can be improved — so we can make the site faster and more useful. This data is aggregated and does not identify you personally.</p>
+                            <p>We use privacy-respecting analytics cookies to understand how the site is used, which pages are popular and where loading can be improved, so we can make the site faster and more useful. This data is aggregated and does not identify you personally.</p>
                         </div>
                         <div>
                             <h2 className="text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-4">3. Managing cookies</h2>

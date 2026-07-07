@@ -47,7 +47,7 @@ export default function DestinationCityView({
 
             {/* Hero */}
             <section className="relative flex h-[70vh] min-h-[520px] items-end overflow-hidden">
-                <Image src={dest.heroImg} alt={`${dest.name}, ${dest.state} — ${dest.tagline}`} fill priority className="object-cover" />
+                <Image src={dest.heroImg} alt={`${dest.name}, ${dest.state}, ${dest.tagline}`} fill priority className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/10" />
                 <div className="container-x relative z-10 pb-14 pt-32">
                     <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-[12px] text-paper/70">
@@ -224,7 +224,7 @@ export default function DestinationCityView({
                             </Link>
                         ))}
                         <Link href={`/destinations/${dest.slug}/itinerary`} className="card card-hover group flex items-center justify-between p-6">
-                            <span className="text-[15px] font-medium text-ink group-hover:text-clay">Itineraries (3–14 days)</span>
+                            <span className="text-[15px] font-medium text-ink group-hover:text-clay">Itineraries (3 to 14 days)</span>
                             <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                         </Link>
                         <Link href={`/destinations/${dest.slug}/in/january`} className="card card-hover group flex items-center justify-between p-6">
@@ -242,13 +242,13 @@ export default function DestinationCityView({
                         <Eyebrow>Ready to book</Eyebrow>
                         <h2 className="display-3 mt-3 text-ink">Itineraries featuring {dest.name}</h2>
                         <p className="mt-4 max-w-3xl text-[16px] leading-relaxed text-muted">
-                            Private, chauffeured, day-by-day journeys that feature {dest.name} or explore the wider {dest.region} — each fully customisable, or built around your dates.
+                            Private, chauffeured, day-by-day journeys that feature {dest.name} or explore the wider {dest.region}, each fully customisable, or built around your dates.
                         </p>
                         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {tours.map((t) => (
                                 <Link key={t.slug} href={`/tours/${t.slug}`} className="card card-hover group overflow-hidden">
                                     <div className="relative aspect-[16/10] overflow-hidden">
-                                        <Image src={t.img} alt={`${t.title} — itinerary including ${dest.name}`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                                        <Image src={t.img} alt={`${t.title}, itinerary including ${dest.name}`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
                                         <div className="absolute bottom-4 left-5 flex items-center gap-2 text-[11px] font-medium text-paper">
                                             <Clock size={12} className="text-clay-soft" />{t.duration} · {t.theme}
@@ -273,7 +273,7 @@ export default function DestinationCityView({
             <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
                 <div className="container-x">
                     <Eyebrow>Good to know</Eyebrow>
-                    <h2 className="display-3 mt-3 text-ink">{dest.name} — your questions</h2>
+                    <h2 className="display-3 mt-3 text-ink">{dest.name}, your questions</h2>
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {dest.faqs.map((f, i) => (
                             <div key={i} className="card p-7">

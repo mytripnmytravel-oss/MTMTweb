@@ -30,7 +30,7 @@ export const FLEET_CITY_SLUGS = [
 ];
 
 // Real, per-city role phrase derived from the destination's own tagline
-// (unique per city — no thin/duplicated fallback text). Reads mid-sentence
+// (unique per city, no thin/duplicated fallback text). Reads mid-sentence
 // as "<City> is <role>."
 function deriveFleetRole(dest: Destination): string {
     const t = dest.tagline?.trim();
@@ -63,18 +63,18 @@ export function getFleetCityContent(
     dest: Destination
 ): FleetCityContent {
     const role = CITY_ROLE[dest.slug] ?? deriveFleetRole(dest);
-    const answer = `Chauffeured ${v.name} hire in ${dest.name}, ${dest.state} is available from MyTripMyTravel as part of a private, GPS-tracked Elite Fleet service. ${dest.name} is ${role}. The ${v.name} — a ${v.category.toLowerCase()}-tier ${v.type.toLowerCase()} seating up to ${v.passengers} with ${v.luggage} — is deployed here with a vetted performance-chauffeur, pre-calculated fuel, tolls and permits, and transparent ${v.priceRange}-band pricing.`;
+    const answer = `Chauffeured ${v.name} hire in ${dest.name}, ${dest.state} is available from MyTripMyTravel as part of a private, GPS-tracked Elite Fleet service. ${dest.name} is ${role}. The ${v.name}, a ${v.category.toLowerCase()}-tier ${v.type.toLowerCase()} seating up to ${v.passengers} with ${v.luggage}, is deployed here with a vetted performance-chauffeur, pre-calculated fuel, tolls and permits, and transparent ${v.priceRange}-band pricing.`;
     const intro = [
-        `Hiring the ${v.name} in ${dest.name} is not a car-rental transaction — it is a chauffeured mission. ${v.description}`,
-        `Because ${dest.name} is ${role}, the ${v.name} here is typically used for ${dest.region === "Golden Triangle" ? "the Delhi–Agra–Jaipur circuit, airport handovers, and monument days" : `the ${dest.region} circuit, transfers, and exploration from ${dest.name}`} — always with a chauffeur, never self-drive.`,
+        `Hiring the ${v.name} in ${dest.name} is not a car-rental transaction, it is a chauffeured mission. ${v.description}`,
+        `Because ${dest.name} is ${role}, the ${v.name} here is typically used for ${dest.region === "Golden Triangle" ? "the Delhi to Agra to Jaipur circuit, airport handovers, and monument days" : `the ${dest.region} circuit, transfers, and exploration from ${dest.name}`}, always with a chauffeur, never self-drive.`,
         `Every ${v.name} deployment in ${dest.name} includes live telemetry, zero-surprise pricing, and seamless onward continuity if the itinerary extends beyond ${dest.state}.`,
     ];
     const localNote = `In ${dest.name}, the ${v.name} pairs naturally with our ${dest.name} destination programme and the wider ${dest.region} circuit.`;
     const faqs = [
-        { q: `Can I hire a chauffeured ${v.name} in ${dest.name}?`, a: `Yes — MyTripMyTravel deploys the ${v.name} in ${dest.name}, ${dest.state} with a vetted chauffeur, GPS telemetry, and transparent ${v.priceRange}-band pricing. Self-drive is not offered.` },
+        { q: `Can I hire a chauffeured ${v.name} in ${dest.name}?`, a: `Yes, MyTripMyTravel deploys the ${v.name} in ${dest.name}, ${dest.state} with a vetted chauffeur, GPS telemetry, and transparent ${v.priceRange}-band pricing. Self-drive is not offered.` },
         { q: `What is the ${v.name} used for in ${dest.name}?`, a: `${dest.name} is ${role}, so the ${v.name} is typically used for circuit travel, airport handovers, and monument days from here, seating up to ${v.passengers}.` },
-        { q: `Does ${dest.name} ${v.name} hire include fuel and tolls?`, a: `Yes — fuel, tolls, permits, and the chauffeur are pre-calculated into the ${v.priceRange}-band price. There are no hidden gate fees.` },
-        { q: `Can the ${v.name} continue beyond ${dest.name}?`, a: `Yes — the ${v.name} provides seamless onward continuity from ${dest.name} into the wider ${dest.region} circuit or across India.` },
+        { q: `Does ${dest.name} ${v.name} hire include fuel and tolls?`, a: `Yes, fuel, tolls, permits, and the chauffeur are pre-calculated into the ${v.priceRange}-band price. There are no hidden gate fees.` },
+        { q: `Can the ${v.name} continue beyond ${dest.name}?`, a: `Yes, the ${v.name} provides seamless onward continuity from ${dest.name} into the wider ${dest.region} circuit or across India.` },
     ];
     return { answer, intro, localNote, faqs };
 }
