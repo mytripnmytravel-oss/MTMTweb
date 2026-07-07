@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LeadCTA, WhatsAppFab } from "@/components/lead/Lead";
 
 export default function ServicesHubView({
     lines, cities,
@@ -58,7 +59,14 @@ export default function ServicesHubView({
                 </div>
             </section>
 
+            <LeadCTA
+                title="Need a chauffeured transfer or rental?"
+                subtitle="Airport pickups, day hire or a full multi-city circuit. Tell us your route and we quote it transparently, with a vetted driver every time."
+                waMessage="Hi MyTripMyTravel, I would like a chauffeured transfer or car rental in India."
+            />
+
             <Footer />
+            <WhatsAppFab message="Hi MyTripMyTravel, I would like a chauffeured transfer or car rental in India." />
         </main>
     );
 }

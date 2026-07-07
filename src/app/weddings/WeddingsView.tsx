@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Castle, Gem, Shield, Crown, MapPin, Users, HeartHandshake, ArrowRight, Music, Camera, Utensils } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { EnquiryForm, WhatsAppFab } from "@/components/lead/Lead";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -117,19 +118,32 @@ export default function WeddingsView() {
                 </div>
             </section>
 
-            {/* CTA */}
+            {/* Enquiry */}
             <section className="section">
-                <div className="container-x">
-                    <div className="rounded-3xl bg-paper-dim/70 px-8 py-16 text-center sm:px-16">
-                        <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white text-clay"><Gem size={28} /></span>
-                        <h2 className="display-2 mx-auto mt-8 max-w-2xl text-ink">Let's begin the planning.</h2>
-                        <p className="mx-auto mt-4 max-w-xl text-muted">Royal wedding productions typically need several months' lead time for venue buyouts and coordination.</p>
-                        <Link href="/booking" className="btn-primary mt-8">Schedule a confidential briefing <ArrowRight size={16} /></Link>
+                <div className="container-x grid items-start gap-14 lg:grid-cols-2">
+                    <div>
+                        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-paper-dim text-clay"><Gem size={26} /></span>
+                        <h2 className="display-2 mt-6 text-ink">Let us begin the planning.</h2>
+                        <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-muted">
+                            Share your dates, guest count and the setting you dream of. Our wedding desk replies with venue options, a logistics outline and a transparent quote. Royal productions typically need several months of lead time for venue buyouts and coordination, so the earlier we talk, the better.
+                        </p>
+                        <ul className="mt-6 space-y-2.5 text-[15px] text-ink-soft">
+                            <li className="flex items-center gap-2.5"><Shield size={16} className="text-clay" /> Discreet and confidential throughout</li>
+                            <li className="flex items-center gap-2.5"><Users size={16} className="text-clay" /> Full guest logistics and transfers</li>
+                            <li className="flex items-center gap-2.5"><Castle size={16} className="text-clay" /> Palace, fort and heritage venue access</li>
+                        </ul>
                     </div>
+                    <EnquiryForm
+                        source="Weddings hub"
+                        context={{ "Inquiry Type": "Wedding" }}
+                        heading="Enquire about your wedding"
+                        subheading="Confidential, no obligation, and tailored to your celebration."
+                    />
                 </div>
             </section>
 
             <Footer />
+            <WhatsAppFab message="Hi MyTripMyTravel, I would like to plan a wedding in India." />
         </main>
     );
 }

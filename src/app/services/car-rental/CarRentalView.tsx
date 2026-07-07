@@ -7,6 +7,7 @@ import { Users, Briefcase, MessageCircle, ShieldCheck, CheckCircle2, ArrowRight 
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WhatsAppFab } from "@/components/lead/Lead";
 
 const fade = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } } as const;
 
@@ -90,6 +91,7 @@ export default function CarRentalView() {
             </section>
 
             <Footer />
+            <WhatsAppFab message="Hi MyTripMyTravel, I would like to hire a chauffeured car in India." />
         </main>
     );
 }

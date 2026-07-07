@@ -7,6 +7,7 @@ import { Users, Briefcase, MessageCircle, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FleetInquiryModal } from "@/components/FleetInquiryModal";
+import { LeadCTA, WhatsAppFab } from "@/components/lead/Lead";
 import { fleet, Vehicle } from "@/data/fleet";
 
 const Pill = ({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) => (
@@ -128,7 +129,14 @@ export default function FleetView() {
                 </div>
             </section>
 
+            <LeadCTA
+                title="Need the right vehicle for your journey?"
+                subtitle="Tell us your route, dates and group size. We match the ideal chauffeured vehicle and quote it transparently, usually within a few hours."
+                waMessage="Hi MyTripMyTravel, I would like to hire a chauffeured vehicle in India."
+            />
+
             <Footer />
+            <WhatsAppFab message="Hi MyTripMyTravel, I would like to hire a chauffeured vehicle in India." />
         </main>
     );
 }

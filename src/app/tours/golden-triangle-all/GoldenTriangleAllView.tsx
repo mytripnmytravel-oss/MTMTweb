@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WhatsAppFab } from "@/components/lead/Lead";
 import { packages, packageSlug, type Package } from "@/data/tours";
 
 const Pill = ({ active, label, onClick }: { active: boolean; label: string; onClick: () => void }) => (
@@ -292,6 +293,7 @@ export default function GoldenTriangleAllView() {
                     </div>
                 )}
             </AnimatePresence>
+            <WhatsAppFab message="Hi MyTripMyTravel, I would like help choosing a tour." />
         </main>
     );
 }

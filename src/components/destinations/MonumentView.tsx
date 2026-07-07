@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ChevronRight, ArrowRight, Landmark, Lightbulb } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { EnquiryForm, WhatsAppFab } from "@/components/lead/Lead";
 import type { Destination } from "@/data/destinations";
 import type { Monument } from "@/data/monuments";
 
@@ -24,9 +25,24 @@ export default function MonumentView({
 }: {
     dest: Destination; monument: Monument; siblings: Monument[];
 }) {
+    const waMsg = `Hi MyTripMyTravel, I would like to visit ${monument.name} in ${dest.name}. Could you help me plan?`;
+    const waHref = `https://wa.me/919997812237?text=${encodeURIComponent(waMsg)}`;
+
+    const jsonLd = [
+        { "@context": "https://schema.org", "@type": "TouristAttraction", name: monument.name, description: monument.answer, address: { "@type": "PostalAddress", addressLocality: dest.name, addressRegion: dest.state, addressCountry: "IN" } },
+        ...(monument.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: monument.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] : []),
+        { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.mytripmytravel.com" },
+            { "@type": "ListItem", position: 2, name: dest.name, item: `https://www.mytripmytravel.com/destinations/${dest.slug}` },
+            { "@type": "ListItem", position: 3, name: "Monuments", item: `https://www.mytripmytravel.com/destinations/${dest.slug}/monuments` },
+            { "@type": "ListItem", position: 4, name: monument.name },
+        ] },
+    ];
+
     return (
         <main className="min-h-screen bg-paper">
             <Navbar />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Hero */}
             <section className="relative flex h-[66vh] min-h-[500px] items-end overflow-hidden">
@@ -168,15 +184,36 @@ export default function MonumentView({
                         </div>
                     )}
 
-                    <div className="relative overflow-hidden rounded-3xl bg-ink px-8 py-14 text-center sm:px-16 sm:py-20">
-                        <h2 className="display-2 mx-auto max-w-2xl text-paper">See {monument.name}, properly.</h2>
-                        <p className="mx-auto mt-4 max-w-xl text-paper/70">A private, chauffeured visit with an expert guide, timed for the light and the crowds.</p>
-                        <Link href="/booking" className="btn mt-8 rounded-full bg-paper px-7 py-3.5 text-ink hover:bg-clay hover:text-paper">Consult a planner</Link>
+                    <div className="grid items-start gap-12 rounded-3xl border border-line bg-white p-8 sm:p-10 lg:grid-cols-2">
+                        <div>
+                            <p className="eyebrow eyebrow-accent">Visit with us</p>
+                            <h2 className="display-3 mt-3 text-ink">See {monument.name}, properly.</h2>
+                            <p className="mt-4 text-[17px] leading-relaxed text-muted">
+                                A private, chauffeured visit with a licensed expert guide, timed for the best light and the smallest crowds. We fold {monument.name} into a wider {dest.name} and {dest.region} itinerary, built entirely around you.
+                            </p>
+                            <ul className="mt-6 space-y-2.5 text-[15px] text-ink-soft">
+                                <li className="flex items-center gap-2.5"><Landmark size={16} className="text-clay" /> Skip the queue where possible, at the right hour</li>
+                                <li className="flex items-center gap-2.5"><Landmark size={16} className="text-clay" /> Licensed local guide who brings the story to life</li>
+                                <li className="flex items-center gap-2.5"><Landmark size={16} className="text-clay" /> Private car and chauffeur, door to door</li>
+                            </ul>
+                            <div className="mt-7 flex flex-wrap gap-3">
+                                <a href={waHref} target="_blank" rel="noopener noreferrer" className="btn rounded-full bg-[#25D366] px-6 py-3 text-white hover:opacity-90">WhatsApp us</a>
+                                <a href="tel:+919997812237" className="btn-outline btn-sm">Call us</a>
+                            </div>
+                        </div>
+                        <EnquiryForm
+                            source={`Monument: ${monument.name}, ${dest.name}`}
+                            context={{ "Inquiry Type": "Monument visit", Monument: monument.name, Destination: dest.name, Region: dest.region }}
+                            heading={`Plan a visit to ${monument.name}`}
+                            subheading="Free, no obligation quote. Your details stay private."
+                            compact
+                        />
                     </div>
                 </div>
             </section>
 
             <Footer />
+            <WhatsAppFab message={waMsg} />
         </main>
     );
 }

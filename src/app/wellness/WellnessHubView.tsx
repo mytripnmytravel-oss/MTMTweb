@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Activity, Heart, Shield, Stethoscope, Wind, Droplets, MapPin, ArrowRight, ArrowUpRight, Clock, Star, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { EnquiryForm, WhatsAppFab } from "@/components/lead/Lead";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -131,7 +132,32 @@ export default function WellnessHubView() {
                 </div>
             </section>
 
+            {/* Enquiry */}
+            <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x grid items-start gap-14 lg:grid-cols-2">
+                    <div>
+                        <p className="eyebrow eyebrow-accent">Talk to the wellness desk</p>
+                        <h2 className="display-2 mt-3 text-ink">Plan a restorative journey.</h2>
+                        <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-muted">
+                            Tell us what you are looking for, whether it is classical Ayurveda in Kerala, yoga in the Himalayas, or a quiet recovery stay. We reply within a few hours with honest guidance and a tailored plan.
+                        </p>
+                        <ul className="mt-6 space-y-2.5 text-[15px] text-ink-soft">
+                            <li className="flex items-center gap-2.5"><CheckCircle2 size={16} className="text-clay" /> Vetted, AYUSH-certified partners</li>
+                            <li className="flex items-center gap-2.5"><CheckCircle2 size={16} className="text-clay" /> Private transfers and dedicated facilitator</li>
+                            <li className="flex items-center gap-2.5"><CheckCircle2 size={16} className="text-clay" /> Honest care, never an overstated cure</li>
+                        </ul>
+                    </div>
+                    <EnquiryForm
+                        source="Wellness hub"
+                        context={{ "Inquiry Type": "Wellness" }}
+                        heading="Enquire about a wellness journey"
+                        subheading="Free, no obligation and completely confidential."
+                    />
+                </div>
+            </section>
+
             <Footer />
+            <WhatsAppFab message="Hi MyTripMyTravel, I am interested in a wellness or recovery journey in India." />
         </main>
     );
 }

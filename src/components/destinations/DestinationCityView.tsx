@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { EnquiryForm, WhatsAppFab } from "@/components/lead/Lead";
 import type { Destination } from "@/data/destinations";
 import type { Monument } from "@/data/monuments";
 import { FACET_SLUGS, FACET_LABELS } from "@/data/destinationFacets";
@@ -39,11 +40,24 @@ export default function DestinationCityView({
 }: {
     dest: Destination; related: Destination[]; monuments?: Monument[]; tours?: CityTour[];
 }) {
-    const waHref = `https://wa.me/919997812237?text=${encodeURIComponent(`I'd like to plan a journey through ${dest.name}, ${dest.state}.`)}`;
+    const waMsg = `Hi MyTripMyTravel, I would like to plan a journey through ${dest.name}, ${dest.state}.`;
+    const waHref = `https://wa.me/919997812237?text=${encodeURIComponent(waMsg)}`;
+
+    const jsonLd = [
+        { "@context": "https://schema.org", "@type": "TouristDestination", name: dest.name, description: dest.answer, address: { "@type": "PostalAddress", addressRegion: dest.state, addressCountry: "IN" } },
+        ...(dest.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: dest.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] : []),
+        { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.mytripmytravel.com" },
+            { "@type": "ListItem", position: 2, name: "Destinations", item: "https://www.mytripmytravel.com/destinations" },
+            { "@type": "ListItem", position: 3, name: dest.region, item: `https://www.mytripmytravel.com/destinations/region/${dest.regionSlug}` },
+            { "@type": "ListItem", position: 4, name: dest.name },
+        ] },
+    ];
 
     return (
         <main className="min-h-screen bg-paper">
             <Navbar />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Hero */}
             <section className="relative flex h-[70vh] min-h-[520px] items-end overflow-hidden">
@@ -316,32 +330,44 @@ export default function DestinationCityView({
                 </section>
             )}
 
-            {/* CTA */}
-            <section className="section">
-                <div className="container-x">
-                    <div className="relative overflow-hidden rounded-3xl bg-ink px-8 py-14 sm:px-16 sm:py-20">
-                        <div className="relative z-10 max-w-2xl">
-                            <p className="eyebrow text-clay-soft">Plan with us</p>
-                            <h2 className="display-2 mt-4 text-paper">Design a journey through {dest.name}.</h2>
-                            {dest.relatedTours.length > 0 && (
-                                <div className="mt-8 flex flex-wrap gap-3">
+            {/* Lead + CTA */}
+            <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x grid items-start gap-14 lg:grid-cols-2">
+                    <div>
+                        <p className="eyebrow eyebrow-accent">Plan with us</p>
+                        <h2 className="display-2 mt-3 text-ink">Design a private journey through {dest.name}.</h2>
+                        <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-muted">
+                            Tell us your dates and what you love. Our travel desk builds a private, chauffeured itinerary around {dest.name} and the wider {dest.region}, with handpicked hotels and a transparent quote, usually within a few hours.
+                        </p>
+                        {dest.relatedTours.length > 0 && (
+                            <div className="mt-8">
+                                <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">Related journeys</p>
+                                <div className="mt-3 flex flex-wrap gap-2.5">
                                     {dest.relatedTours.map((r, i) => (
-                                        <Link key={i} href={r.href} className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-paper transition hover:border-clay-soft hover:text-clay-soft">
+                                        <Link key={i} href={r.href} className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-ink transition hover:border-ink hover:text-clay">
                                             {r.label} <ArrowUpRight size={14} />
                                         </Link>
                                     ))}
                                 </div>
-                            )}
-                            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                                <Link href="/booking" className="btn rounded-full bg-paper px-7 py-3.5 text-ink hover:bg-clay hover:text-paper">Consult a planner</Link>
-                                <a href={waHref} target="_blank" rel="noopener noreferrer" className="btn rounded-full border border-white/25 px-7 py-3.5 text-paper hover:bg-paper hover:text-ink">WhatsApp the desk</a>
                             </div>
+                        )}
+                        <div className="mt-8 flex flex-wrap gap-3">
+                            <a href={waHref} target="_blank" rel="noopener noreferrer" className="btn rounded-full bg-[#25D366] px-6 py-3 text-white hover:opacity-90">WhatsApp the desk</a>
+                            <a href="tel:+919997812237" className="btn-outline btn-sm">Call us</a>
+                            <a href="mailto:info@mytripmytravel.com" className="btn-outline btn-sm">Email us</a>
                         </div>
                     </div>
+                    <EnquiryForm
+                        source={`Destination: ${dest.name}`}
+                        context={{ "Inquiry Type": "Destination", Destination: dest.name, Region: dest.region, State: dest.state }}
+                        heading={`Plan your ${dest.name} trip`}
+                        subheading="Free, no obligation quote. Your details stay private."
+                    />
                 </div>
             </section>
 
             <Footer />
+            <WhatsAppFab message={waMsg} />
         </main>
     );
 }
