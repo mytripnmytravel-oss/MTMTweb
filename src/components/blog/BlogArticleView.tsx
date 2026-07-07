@@ -4,140 +4,140 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronRight, ArrowRight, HelpCircle, Clock, Calendar } from "lucide-react";
+import { ChevronRight, ArrowRight, Clock, Calendar } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
+import { LeadCTA, WhatsAppFab } from "@/components/lead/Lead";
 import type { BlogPost } from "@/data/blog";
 
-export default function BlogArticleView({
-    post,
-    related,
-}: {
-    post: BlogPost;
-    related: BlogPost[];
-}) {
+export default function BlogArticleView({ post, related }: { post: BlogPost; related: BlogPost[] }) {
+    const jsonLd = [
+        {
+            "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description: post.excerpt,
+            image: post.heroImg, datePublished: post.datePublished, dateModified: post.dateModified,
+            author: { "@type": "Organization", name: "MyTripMyTravel Editorial Desk" },
+            publisher: { "@type": "Organization", name: "MyTripMyTravel", logo: { "@type": "ImageObject", url: "https://www.mytripmytravel.com/logo.png" } },
+            mainEntityOfPage: `https://www.mytripmytravel.com/blog/${post.slug}`,
+        },
+        ...(post.faqs.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: post.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] : []),
+        { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.mytripmytravel.com" },
+            { "@type": "ListItem", position: 2, name: "Journal", item: "https://www.mytripmytravel.com/blog" },
+            { "@type": "ListItem", position: 3, name: post.title },
+        ] },
+    ];
+
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
-                <GlassyProgressBar />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-                <section className="relative h-[60vh] flex items-end overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <Image src={post.heroImg} alt={post.title} fill priority className="object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/40 to-royal-blue/10" />
+            {/* Hero */}
+            <section className="relative flex h-[58vh] min-h-[420px] items-end overflow-hidden">
+                <Image src={post.heroImg} alt={post.title} fill priority className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/15" />
+                <div className="container-x relative z-10 pb-14 pt-32">
+                    <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-[12px] text-paper/70">
+                        <Link href="/" className="hover:text-clay-soft">Home</Link>
+                        <ChevronRight size={12} />
+                        <Link href="/blog" className="hover:text-clay-soft">Journal</Link>
+                        <ChevronRight size={12} />
+                        <span className="text-clay-soft">{post.category}</span>
+                    </nav>
+                    <span className="eyebrow text-paper/70">{post.category}</span>
+                    <h1 className="display-2 mt-4 max-w-4xl font-medium text-paper">{post.title}</h1>
+                </div>
+            </section>
+
+            {/* Body */}
+            <article className="section">
+                <div className="container-narrow">
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-muted">
+                        <span className="flex items-center gap-1.5"><Calendar size={14} className="text-clay" /> <time dateTime={post.datePublished}>{post.datePublished}</time></span>
+                        <span className="flex items-center gap-1.5"><Clock size={14} className="text-clay" /> {post.readingMinutes} min read</span>
+                        <span>By the MyTripMyTravel Editorial Desk</span>
                     </div>
-                    <div className="container mx-auto px-6 relative z-10 pb-16">
-                        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-3 mb-8 text-white/70 font-semibold uppercase text-[10px] tracking-[0.3em]">
-                            <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
-                            <ChevronRight size={12} />
-                            <Link href="/blog" className="hover:text-sunset-orange transition-colors">Journal</Link>
-                            <ChevronRight size={12} />
-                            <span className="text-sunset-orange">{post.category}</span>
-                        </nav>
-                        <motion.h4 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">{post.category}</motion.h4>
-                        <CharBlurIn text={post.title} className="text-3xl md:text-6xl font-semibold text-white tracking-tight leading-[0.95] block" />
+
+                    <p className="mt-10 font-display text-[22px] font-medium leading-snug text-ink sm:text-[26px]">{post.answer}</p>
+
+                    <div className="mt-12 space-y-12">
+                        {post.sections.map((s, i) => (
+                            <motion.section key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                                <h2 className="text-2xl font-medium text-ink sm:text-[28px]">{s.heading}</h2>
+                                <div className="mt-4 space-y-4">
+                                    {s.paragraphs.map((p, j) => (
+                                        <p key={j} className="text-[17px] leading-relaxed text-ink-soft">{p}</p>
+                                    ))}
+                                </div>
+                            </motion.section>
+                        ))}
                     </div>
-                </section>
 
-                <section className="py-24 md:py-28 container mx-auto px-6">
-                    <div className="max-w-4xl">
-                        <div className="flex flex-wrap items-center gap-6 mb-12 text-[10px] font-semibold uppercase tracking-[0.3em] text-royal-blue/50">
-                            <span className="flex items-center gap-2"><Calendar size={14} className="text-sunset-orange" /> Published <time dateTime={post.datePublished}>{post.datePublished}</time></span>
-                            <span className="flex items-center gap-2"><Clock size={14} className="text-sunset-orange" /> {post.readingMinutes} min read</span>
-                            <span>By MyTripMyTravel Editorial Desk</span>
-                        </div>
-
-                        <p className="text-2xl md:text-3xl font-semibold text-royal-blue leading-snug tracking-tight mb-16">{post.answer}</p>
-
-                        <div className="space-y-12">
-                            {post.sections.map((s, i) => (
-                                <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                                    <h2 className="text-2xl md:text-4xl font-semibold text-royal-blue uppercase tracking-tight leading-tight mb-6">{s.heading}</h2>
-                                    <div className="space-y-5">
-                                        {s.paragraphs.map((p, j) => (
-                                            <p key={j} className="text-lg md:text-xl text-dark-slate/75 font-bold leading-relaxed">{p}</p>
-                                        ))}
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {post.related.length > 0 && (
-                    <section className="py-16 bg-royal-blue/5">
-                        <div className="container mx-auto px-6">
-                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-6">Explore further</h4>
-                            <div className="flex flex-wrap gap-3">
+                    {post.related.length > 0 && (
+                        <div className="mt-14 rounded-2xl border border-line bg-white p-7">
+                            <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">Explore further</p>
+                            <div className="mt-4 flex flex-wrap gap-2.5">
                                 {post.related.map((l, i) => (
-                                    <Link key={i} href={l.href} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-3">
+                                    <Link key={i} href={l.href} className="inline-flex items-center gap-2 rounded-full border border-line bg-paper-dim px-4 py-2 text-sm font-medium text-ink transition hover:border-ink hover:text-clay">
                                         {l.label} <ArrowRight size={14} />
                                     </Link>
                                 ))}
                             </div>
                         </div>
-                    </section>
-                )}
+                    )}
 
-                {post.faqs.length > 0 && (
-                    <section className="py-24 container mx-auto px-6">
-                        <div className="text-center mb-14">
-                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">Intelligence</h4>
-                            <CharBlurIn text="FAQ" className="text-2xl md:text-5xl font-semibold text-royal-blue uppercase tracking-tight block leading-none" />
-                        </div>
-                        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                            {post.faqs.map((f, i) => (
-                                <div key={i} className="glass-card p-10 rounded-3xl border-royal-blue/5">
-                                    <div className="flex items-start gap-4 mb-4">
-                                        <HelpCircle className="text-sunset-orange shrink-0 mt-1" size={20} />
-                                        <h3 className="font-semibold text-royal-blue uppercase tracking-tight text-base leading-tight">{f.q}</h3>
-                                    </div>
-                                    <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed pl-9">{f.a}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-                )}
-
-                {related.length > 0 && (
-                    <section className="py-24 bg-royal-blue/5">
-                        <div className="container mx-auto px-6">
-                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-8">Related reads</h4>
-                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {related.map((p) => (
-                                    <Link key={p.slug} href={`/blog/${p.slug}`} className="block glass-card rounded-2xl overflow-hidden group border-royal-blue/5 hover:border-sunset-orange/30 transition-all duration-700">
-                                        <div className="relative h-48">
-                                            <Image src={p.heroImg} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/70 to-transparent" />
-                                            <div className="absolute bottom-5 left-6 right-6">
-                                                <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-sunset-orange mb-1">{p.category}</div>
-                                                <h3 className="text-lg font-semibold text-white leading-tight">{p.title}</h3>
-                                            </div>
-                                        </div>
-                                        <div className="p-6">
-                                            <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed line-clamp-3">{p.excerpt}</p>
-                                        </div>
-                                    </Link>
+                    {post.faqs.length > 0 && (
+                        <div className="mt-14">
+                            <h2 className="text-2xl font-medium text-ink sm:text-[28px]">Frequently asked</h2>
+                            <div className="mt-6 divide-y divide-line">
+                                {post.faqs.map((f, i) => (
+                                    <details key={i} className="group py-5 [&_summary::-webkit-details-marker]:hidden">
+                                        <summary className="flex cursor-pointer items-center justify-between gap-4 text-[17px] font-medium text-ink">
+                                            {f.q}
+                                            <ChevronRight size={18} className="shrink-0 text-stone transition-transform group-open:rotate-90 group-open:text-clay" />
+                                        </summary>
+                                        <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
+                                    </details>
                                 ))}
                             </div>
                         </div>
-                    </section>
-                )}
+                    )}
+                </div>
+            </article>
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Plan it with a <span className="text-sunset-orange">master planner</span></h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Begin a Mission Brief</Link>
-                        </Magnetic>
+            {/* Related reads */}
+            {related.length > 0 && (
+                <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
+                    <div className="container-x">
+                        <p className="eyebrow eyebrow-accent">Related reads</p>
+                        <h2 className="display-3 mt-3 text-ink">More from the journal</h2>
+                        <div className="mt-10 grid gap-6 md:grid-cols-3">
+                            {related.map((p) => (
+                                <Link key={p.slug} href={`/blog/${p.slug}`} className="card card-hover group overflow-hidden">
+                                    <div className="relative aspect-[16/10] overflow-hidden">
+                                        <Image src={p.heroImg} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+                                        <span className="absolute bottom-4 left-5 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink">{p.category}</span>
+                                    </div>
+                                    <div className="p-6">
+                                        <h3 className="text-lg font-medium text-ink group-hover:text-clay">{p.title}</h3>
+                                        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{p.excerpt}</p>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </section>
+            )}
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <LeadCTA
+                title="Ready to turn reading into travelling?"
+                subtitle="Our travel desk builds a private, chauffeured itinerary around everything you have just read. Free quote, no obligation."
+                waMessage="Hi MyTripMyTravel, I read your journal and would like to plan a trip."
+            />
+
+            <Footer />
+            <WhatsAppFab message="Hi MyTripMyTravel, I would like to plan a trip in India." />
+        </main>
     );
 }

@@ -31,13 +31,13 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
     {
         slug: "golden-triangle-protocol",
-        title: "The Golden Triangle Protocol: Executing the Perfect Route",
+        title: "The Golden Triangle: How to Sequence the Perfect Route",
         excerpt:
             "Delhi → Agra → Jaipur reads simple on paper. Done well, it is a logistics problem most travellers underestimate. This is how MyTripMyTravel sequences it.",
         answer:
             "The Golden Triangle, Delhi, Agra, and Jaipur, is India's most popular tourist circuit, a roughly 720 km route connecting three cities of empire, art, and architecture. The optimal sequence is Delhi → Agra → Jaipur → Delhi: it starts at the main international gateway, routes the Agra to Jaipur leg via Fatehpur Sikri as a sightseeing drive rather than a transfer, and returns to Delhi for departure. Five to seven days is the sweet spot. The Taj Mahal is closed every Friday; itineraries must be built around it. October to March is the prime window; April to June is severe heat that requires dawn-only sightseeing. MyTripMyTravel runs the Triangle as a private, chauffeured, escorted mission, never a shared coach.",
         heroImg: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Taj_Mahal_on_a_beautiful_sunrise.jpg",
-        category: "Itinerary Architecture",
+        category: "Itineraries",
         datePublished: "2026-05-21",
         dateModified: "2026-05-21",
         readingMinutes: 9,
@@ -289,7 +289,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
         slug: "architecting-royal-wedding",
-        title: "Architecting a Royal Wedding in India: The 6-Month Lead Time",
+        title: "Planning a Royal Wedding in India: The Six-Month Lead Time",
         excerpt:
             "How a destination wedding in a palace, fort, or lake-palace setting actually gets built, venue first, then design, then logistics. Read this six months out.",
         answer:
@@ -353,7 +353,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
         slug: "panthera-safari-mission",
-        title: "The Panthera Mission: Tiger Safaris That Earn Their Sightings",
+        title: "Tiger Safaris in India That Earn Their Sightings",
         excerpt:
             "How a real tiger-safari itinerary at Ranthambore is engineered, multiple drives, vetted naturalists, zone strategy, and the honest read on sightings.",
         answer:

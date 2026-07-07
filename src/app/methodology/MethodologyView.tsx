@@ -184,7 +184,7 @@ export default function MethodologyView() {
                         Experience The <br /> <span className="text-sunset-orange">Absolute Protocol.</span>
                     </h2>
                     <Magnetic>
-                        <Link href="/contact" className="inline-flex items-center gap-6 px-12 py-8 bg-royal-blue text-white rounded-full font-semibold uppercase tracking-widest text-sm hover:bg-sunset-orange transition-all shadow-md">
+                        <Link href="/booking" className="inline-flex items-center gap-6 px-12 py-8 bg-royal-blue text-white rounded-full font-semibold uppercase tracking-widest text-sm hover:bg-sunset-orange transition-all shadow-md">
                            Execute Destination <ArrowRight size={20} />
                         </Link>
                     </Magnetic>
