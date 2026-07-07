@@ -3,279 +3,145 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Compass, ShieldCheck, Heart } from "lucide-react";
+import { ShieldCheck, Compass, Heart, Landmark, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { CharBlurIn, Magnetic } from "@/components/ClientComponents";
+
+const TEAM = [
+    {
+        name: "Nitesh Jain", role: "Founder", img: "/team-1.jpg",
+        bio: "I started MyTripMyTravel with a simple belief — travel should be meaningful, seamless, and built on trust. After my MBA I explored different paths, from recruitment consulting to eventually finding my passion in travel, and that journey shaped how I see the world today. Travel has been my greatest teacher. With MyTripMyTravel I wanted to create more than packages — journeys people remember for a lifetime. We are a close-knit team working across several countries, and I personally oversee operations so every experience meets our standards. We don't sell the cheapest option; we deliver the right experience, with honesty, quality and attention to detail. My vision is simple: to build one of India's most trusted travel companies — chosen not just for where we take people, but for how we make them feel along the way.",
+    },
+    {
+        name: "Sarah Sahai", role: "Market Expansion & Partnerships", img: "/team-2.jpg",
+        bio: "Sarah supports MyTripMyTravel across international market expansion, strategic partnerships and business development. With a background in client relations, branding and cross-cultural engagement, she brings a people-centric approach to building lasting relationships. Having travelled widely, she has a nuanced feel for global markets, cultural dynamics and evolving traveller expectations, and helps strengthen the company's presence beyond India.",
+    },
+    {
+        name: "Ajsal Abbas", role: "Technology Lead", img: "/team-3.jpg",
+        bio: "Ajsal looks after the website and the digital enquiry experience, keeping the online side of MyTripMyTravel clear, fast and easy to use.",
+    },
+];
+
+const VALUES = [
+    { icon: ShieldCheck, title: "Integrity", desc: "Transparency in every quote, route and stay — no hidden fees, no surprises." },
+    { icon: Compass, title: "Precision", desc: "Itineraries engineered to the detail for a frictionless, well-paced journey." },
+    { icon: Heart, title: "Hospitality", desc: "Bespoke care that treats every guest as the only guest." },
+    { icon: Landmark, title: "Heritage", desc: "Preserving the soul of India alongside genuinely modern comfort." },
+];
+
+const PROCESS = [
+    { step: "01", title: "Plan", desc: "We translate your intent into a considered, day-by-day plan." },
+    { step: "02", title: "Prepare", desc: "The fleet, chauffeurs, stays and guides are booked and briefed." },
+    { step: "03", title: "Accompany", desc: "Constant coordination and a point of contact throughout the journey." },
+    { step: "04", title: "Follow up", desc: "We check in afterwards — the memory should be effortless." },
+];
 
 export default function AboutView() {
     return (
-        <div className="min-h-screen bg-[#F8FAFC] selection:bg-sunset-orange selection:text-white font-sans overflow-hidden">
+        <main className="min-h-screen bg-paper">
             <Navbar />
 
-            {/* Hero Section: The Mosaic Protocol */}
-            <section className="relative min-h-screen flex flex-col justify-center pt-32 pb-20 overflow-hidden bg-royal-blue">
-                {/* Background Image Marquee (Repeated Effect) */}
-                <div className="absolute inset-0 z-0 opacity-40">
-                    <div className="flex w-[200%] h-full animate-marquee pointer-events-none">
-                        {[1, 2, 3, 1, 2, 3].map((num, i) => (
-                            <div key={i} className="relative w-1/6 h-full border-r border-white/5">
-                                <Image
-                                    src={`/about-hero-${num}.png`}
-                                    alt="Luxury travel scene across India"
-                                    fill
-                                    className="object-cover filter grayscale hover:grayscale-0 transition-all duration-1000"
-                                />
-                                <div className="absolute inset-0 bg-royal-blue/60" />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-b from-royal-blue/90 via-transparent to-royal-blue/90 z-[1]" />
-
-                <div className="container mx-auto px-6 relative z-10">
-                    <div className="max-w-5xl mx-auto text-center">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1.2 }}
-                            className="inline-block px-6 py-2 rounded-full border border-sunset-orange/30 bg-sunset-orange/5 backdrop-blur-md mb-8"
-                        >
-                            <span className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-[10px]">The Archive 001</span>
-                        </motion.div>
-
-                        <CharBlurIn
-                            text="BEYOND"
-                            className="text-7xl md:text-[8rem] font-semibold text-white leading-none tracking-tight uppercase mb-4 drop-shadow-md"
-                        />
-                        <CharBlurIn
-                            text="CONVENTIONAL"
-                            className="text-7xl md:text-[8rem] font-semibold text-white leading-none tracking-tight uppercase filter drop-shadow-[0_10px_30px_rgba(249,115,22,0.4)]"
-                        />
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 1, duration: 1 }}
-                            className="flex flex-col md:flex-row items-center justify-center gap-12 mt-16"
-                        >
-                            <div className="flex -space-x-4 mb-4 md:mb-0">
-                                {[1, 2, 3].map((i) => (
-                                    <div key={i} className="w-16 h-16 rounded-full border-4 border-royal-blue overflow-hidden relative shadow-md skew-x-12 hover:skew-x-0 transition-transform">
-                                        <Image src={`/about-hero-${i}.png`} alt="MyTripMyTravel curated journey moment" fill className="object-cover" />
-                                    </div>
-                                ))}
-                            </div>
-                            <p className="text-white/80 font-bold text-lg md:text-xl max-w-xl leading-relaxed italic text-center md:text-left">
-                                "We don't sell tours. We architect uncompromising journeys. Translating high-speed chauffeured intent into a 3D geometric sanctuary of travel."
-                            </p>
-                        </motion.div>
-                    </div>
-                </div>
-
-                {/* Vertical Scroll Indicator Protocol */}
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
-                    <div className="w-[1px] h-20 bg-gradient-to-b from-sunset-orange to-transparent animate-pulse" />
-                    <span className="text-[8px] font-semibold text-sunset-orange uppercase tracking-[0.5em] vertical-text">Scroll to Briefing</span>
+            {/* Hero */}
+            <section className="relative flex min-h-[70vh] items-end overflow-hidden">
+                <Image src="/about-hero-1.png" alt="Luxury travel across India" fill priority className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/20" />
+                <div className="container-x relative z-10 pb-16 pt-40">
+                    <span className="eyebrow text-paper/70">About us</span>
+                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-paper">We architect journeys, not tours.</h1>
+                    <p className="mt-5 max-w-xl text-lg text-paper/80">
+                        Translating chauffeured intent into calm, considered travel across India — one traveller at a time.
+                    </p>
                 </div>
             </section>
 
-
-            {/* Editorial Story Section */}
-            <section className="py-20 md:py-40 bg-white relative z-20 border-t border-royal-blue/5">
-                <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-2 gap-20 items-center">
-                        <div className="order-2 md:order-1">
-                            <h2 className="text-4xl md:text-6xl font-semibold text-royal-blue uppercase tracking-tight leading-none mb-8">
-                                The Genesis <br /> of Luxury.
-                            </h2>
-                            <div className="space-y-6 text-dark-slate font-medium text-lg leading-relaxed opacity-80">
-                                <p>
-                                    India is not a country you simply look at; it is an environment you must absorb, navigate, and respect. It requires a master key. MyTripMyTravel was born from an obsession with perfect execution. We realized that true luxury travel missing from the modern market was predictability clothed in absolute comfort.
-                                </p>
-                                <p>
-                                    We didn’t just want to provide cars. We wanted to build a fleet. We didn’t want to hand you an itinerary; we wanted to provide a master-crafted protocol.
-                                </p>
-                                <p className="font-semibold italic text-royal-blue opacity-100">
-                                    Every component of our Golden Triangle operations, our elite fleet rentals, and our wellness sanctuary expeditions is engineered to ensure one thing: absolute peace of mind.
-                                </p>
-                            </div>
+            {/* Genesis */}
+            <section className="section">
+                <div className="container-x grid items-center gap-14 lg:grid-cols-2">
+                    <div>
+                        <p className="eyebrow eyebrow-accent">Our story</p>
+                        <h2 className="display-2 mt-4 text-ink">The beginning.</h2>
+                        <div className="mt-6 space-y-5 text-[17px] leading-relaxed text-muted">
+                            <p>India is not a country you simply look at; it is an environment you absorb, navigate and respect — and that takes a master key. MyTripMyTravel was born from an obsession with getting the execution right: the luxury the market was missing was predictability, wrapped in absolute comfort.</p>
+                            <p>We didn't just want to provide cars — we wanted to build a fleet. We didn't want to hand over an itinerary — we wanted to craft a journey.</p>
+                            <p className="font-medium text-ink">Every part of what we do — the Golden Triangle, the elite fleet, the wellness journeys — is built for one thing: your peace of mind.</p>
                         </div>
-
-                        <div className="order-1 md:order-2 relative perspective-1000">
-                             <div className="relative aspect-[4/5] glass-card p-4 rounded-3xl overflow-hidden transform md:rotate-y-[-10deg] md:rotate-x-[5deg]">
-                                 <Image
-                                    src="/hero-taj.png"
-                                    alt="The Majestic Taj Mahal - The Genesis of Our Luxury Journeys"
-                                    fill
-                                    className="object-cover rounded-2xl"
-                                 />
-                                 <div className="absolute bottom-10 left-10 text-white">
-                                     <div className="font-semibold uppercase tracking-[0.5em] text-[10px] text-sunset-orange mb-2">Archive 01</div>
-                                     <div className="text-3xl font-semibold uppercase tracking-tight">The Standard</div>
-                                 </div>
-                             </div>
-                        </div>
+                    </div>
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+                        <Image src="/hero-taj.png" alt="The Taj Mahal — where our journeys begin" fill className="object-cover" />
                     </div>
                 </div>
             </section>
 
-            {/* The Architects (Team) Section */}
-            <section className="py-32 relative bg-royal-blue z-20 overflow-hidden">
-                <div className="absolute inset-0 bg-grid-white/[0.03] bg-[size:3vw_3vw]" />
-                <div className="container mx-auto px-6 relative z-10">
-                    <div className="text-center mb-24">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-4">The Council</h4>
-                        <h2 className="text-5xl md:text-7xl font-semibold text-white uppercase tracking-tight leading-none">The Architects</h2>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-
-                        {/* Team Member 1 */}
-                        <div className="group">
-                            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-white/5 border border-white/10">
-                                <Image src="/team-1.jpg" alt="Nitesh Jain, Founder of MyTripMyTravel" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-transparent to-transparent opacity-80" />
-                            </div>
-                            <div className="pl-4 border-l-2 border-sunset-orange">
-                                <h3 className="text-2xl font-semibold text-white uppercase tracking-tight mb-1">Nitesh Jain</h3>
-                                <p className="text-sunset-orange text-[10px] font-semibold uppercase tracking-[0.4em] mb-3">Founder</p>
-                                <p className="text-white/60 font-medium text-sm leading-relaxed">
-                                    I started MyTripMyTravel with a simple belief, travel should be meaningful, seamless, and built on trust. After completing my MBA, I explored different paths, from recruitment consulting to eventually finding my passion in travel. That journey shaped how I see the world today. Travel has been my greatest teacher. It opened my eyes to cultures, people, and experiences that go far beyond destinations. With MyTripMyTravel, I wanted to create more than just packages, I wanted to create journeys that people remember for a lifetime. We are a close-knit team working across multiple countries, ensuring every trip is handled with care and precision. I personally oversee operations to make sure every experience meets our standards. We don’t believe in selling the cheapest options. We believe in delivering the right experience, with honesty, quality, and attention to detail. My vision is simple: to build one of India’s most trusted travel companies, where people choose us not just for where we take them, but for how we make them feel along the way.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Team Member 2 */}
-                        <div className="group md:mt-16">
-                            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-white/5 border border-white/10">
-                                <Image src="/team-2.jpg" alt="Sarah Sahai, Market Expansion & Partnerships at MyTripMyTravel" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-transparent to-transparent opacity-80" />
-                            </div>
-                            <div className="pl-4 border-l-2 border-sunset-orange">
-                                <h3 className="text-2xl font-semibold text-white uppercase tracking-tight mb-1">Sarah Sahai</h3>
-                                <p className="text-sunset-orange text-[10px] font-semibold uppercase tracking-[0.4em] mb-3">Market Expansion & Partnerships</p>
-                                <p className="text-white/60 font-medium text-sm leading-relaxed">
-                                    Sarah Sahai supports MyTripMyTravel across international market expansion, strategic partnerships, and business development. With a background in client relations, branding, and cross-cultural engagement, she brings a people-centric approach to building lasting relationships. Having travelled widely, she has a nuanced feel for global markets, cultural dynamics, and evolving traveller expectations, and she helps strengthen the company’s presence beyond India.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Team Member 3 */}
-                        <div className="group md:-mt-8">
-                            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-white/5 border border-white/10">
-                                <Image src="/team-3.jpg" alt="Ajsal Abbas, Technology Lead at MyTripMyTravel" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-transparent to-transparent opacity-80" />
-                            </div>
-                            <div className="pl-4 border-l-2 border-sunset-orange">
-                                <h3 className="text-2xl font-semibold text-white uppercase tracking-tight mb-1">Ajsal Abbas</h3>
-                                <p className="text-sunset-orange text-[10px] font-semibold uppercase tracking-[0.4em] mb-3">Technology Lead</p>
-                                <p className="text-white/60 font-medium text-sm leading-relaxed">
-                                    Ajsal looks after the website and the digital enquiry experience, keeping the online side of MyTripMyTravel clear, fast, and easy to use.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* Section: Core Directives */}
-            <section className="py-20 md:py-40 bg-[#F8FAFC] relative z-20 overflow-hidden">
-                <div className="container mx-auto px-6">
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
-                        <div>
-                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-8">Directives</h4>
-                            <h2 className="text-5xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight leading-none mb-12">
-                                Our Sacred <br /> <span className="text-sunset-orange">Standards.</span>
-                            </h2>
-                            <div className="grid sm:grid-cols-2 gap-8">
-                                <div className="glass-card p-8 border-royal-blue/5">
-                                    <div className="w-12 h-12 bg-royal-blue/10 rounded-xl flex items-center justify-center text-royal-blue mb-6">
-                                        <ShieldCheck size={24} />
-                                    </div>
-                                    <h3 className="text-xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Integrity</h3>
-                                    <p className="text-dark-slate/60 text-sm font-medium">Absolute transparency in every transaction, route, and palatial accommodation.</p>
+            {/* Team */}
+            <section className="bg-ink py-20 sm:py-28">
+                <div className="container-x">
+                    <p className="eyebrow text-clay-soft">The team</p>
+                    <h2 className="display-2 mt-3 text-paper">The people behind the journeys</h2>
+                    <div className="mt-12 grid gap-8 md:grid-cols-3">
+                        {TEAM.map((m) => (
+                            <div key={m.name} className="flex flex-col">
+                                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
+                                    <Image src={m.img} alt={`${m.name}, ${m.role} at MyTripMyTravel`} fill className="object-cover" />
                                 </div>
-                                <div className="glass-card p-8 border-royal-blue/5">
-                                    <div className="w-12 h-12 bg-royal-blue/10 rounded-xl flex items-center justify-center text-royal-blue mb-6">
-                                        <Compass size={24} />
-                                    </div>
-                                    <h3 className="text-xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Precision</h3>
-                                    <p className="text-dark-slate/60 text-sm font-medium">Engineering itineraries down to the second for a frictionless travel experience.</p>
+                                <div className="mt-5 border-l-2 border-clay pl-4">
+                                    <h3 className="text-xl font-medium text-paper">{m.name}</h3>
+                                    <p className="mt-1 text-[12px] font-medium uppercase tracking-[0.18em] text-clay-soft">{m.role}</p>
                                 </div>
-                                <div className="glass-card p-8 border-royal-blue/5">
-                                    <div className="w-12 h-12 bg-royal-blue/10 rounded-xl flex items-center justify-center text-royal-blue mb-6">
-                                        <Heart size={24} />
-                                    </div>
-                                    <h3 className="text-xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Humanity</h3>
-                                    <p className="text-dark-slate/60 text-sm font-medium">Bespoke hospitality that treats every guest as a priority protocol.</p>
-                                </div>
-                                <div className="glass-card p-8 border-royal-blue/5">
-                                    <div className="w-12 h-12 bg-royal-blue/10 rounded-xl flex items-center justify-center text-royal-blue mb-6">
-                                        <Compass size={24} />
-                                    </div>
-                                    <h3 className="text-xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Heritage</h3>
-                                    <p className="text-dark-slate/60 text-sm font-medium">Preserving the soul of India while providing 5-star modern sanctuaries.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="relative group perspective-1000 hidden lg:block">
-                            <div className="relative aspect-square glass-card p-4 rounded-2xl overflow-hidden transform transition-all duration-700 group-hover:rotate-y-12">
-                                <Image src="/about-standards.png" alt="Curated luxury stay in India" fill className="object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-1000" />
-                                <div className="absolute inset-0 bg-gradient-to-tr from-sunset-orange/40 to-royal-blue/40 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Section: The Protocol (Operations) */}
-            <section className="py-20 md:py-40 bg-white relative z-20 border-t border-royal-blue/5">
-                <div className="container mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center mb-24">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-8">The Execution</h4>
-                        <h2 className="text-5xl md:text-[8rem] font-semibold text-royal-blue leading-none tracking-tight uppercase mb-12">How we <br /> Architecture.</h2>
-                        <p className="text-dark-slate font-medium text-lg leading-relaxed opacity-60">
-                            Our operational cycle is a high-velocity feedback loop of logistics, tech, and hospitality. Every mission briefing includes:
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-4 gap-12">
-                        {[
-                            { step: "01", title: "Curation", desc: "Translating your intent into a geometric master plan." },
-                            { step: "02", title: "Activation", desc: "Deploying the elite fleet and assigned Attachés." },
-                            { step: "03", title: "Execution", desc: "Constant coordination and contact throughout every kinetic movement." },
-                            { step: "04", title: "Debrief", desc: "Ensuring the memory remains a zero-friction masterpiece." }
-                        ].map((item, idx) => (
-                            <div key={idx} className="relative p-8 border-l border-royal-blue/10 group hover:border-sunset-orange transition-colors">
-                                <div className="text-4xl font-semibold text-royal-blue/5 mb-6 transition-colors group-hover:text-sunset-orange/10">{item.step}</div>
-                                <h3 className="text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-4">{item.title}</h3>
-                                <p className="text-dark-slate/60 text-sm leading-relaxed">{item.desc}</p>
+                                <p className="mt-4 text-[14px] leading-relaxed text-paper/60">{m.bio}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Final CTA Strip */}
-            <section className="py-20 bg-sunset-orange relative z-20 overflow-hidden">
-                <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
-                    <h2 className="text-3xl md:text-5xl font-semibold text-white uppercase tracking-tight leading-none">
-                        Ready to Begin <br /> Your Protocol?
-                    </h2>
-                    <Magnetic>
-                        <Link href="/contact" className="px-12 py-6 bg-royal-blue text-white rounded-full font-semibold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-md">
-                            Initiate Contact
-                        </Link>
-                    </Magnetic>
+            {/* Values */}
+            <section className="section">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">What we stand for</p>
+                    <h2 className="display-2 mt-3 text-ink">Our standards</h2>
+                    <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                        {VALUES.map((v) => {
+                            const Icon = v.icon;
+                            return (
+                                <div key={v.title} className="card p-7">
+                                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-paper-dim text-clay"><Icon size={22} /></span>
+                                    <h3 className="mt-5 text-xl font-medium text-ink">{v.title}</h3>
+                                    <p className="mt-2 text-[14px] leading-relaxed text-muted">{v.desc}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
             </section>
 
+            {/* Process */}
+            <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">How we work</p>
+                    <h2 className="display-2 mt-3 text-ink">From first note to last mile</h2>
+                    <div className="mt-12 grid gap-8 md:grid-cols-4">
+                        {PROCESS.map((p) => (
+                            <div key={p.step} className="border-l border-line pl-6">
+                                <div className="font-display text-3xl font-semibold text-line-strong">{p.step}</div>
+                                <h3 className="mt-4 text-xl font-medium text-ink">{p.title}</h3>
+                                <p className="mt-2 text-[14px] leading-relaxed text-muted">{p.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className="section">
+                <div className="container-x">
+                    <div className="flex flex-col items-start justify-between gap-8 rounded-3xl bg-ink px-8 py-14 sm:flex-row sm:items-center sm:px-16">
+                        <h2 className="display-3 max-w-md text-paper">Ready to plan your journey?</h2>
+                        <Link href="/booking" className="btn rounded-full bg-paper px-7 py-3.5 text-ink hover:bg-clay hover:text-paper">Start planning <ArrowRight size={16} /></Link>
+                    </div>
+                </div>
+            </section>
 
             <Footer />
-        </div>
+        </main>
     );
 }

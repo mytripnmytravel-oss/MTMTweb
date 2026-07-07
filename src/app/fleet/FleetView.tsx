@@ -2,227 +2,115 @@
 
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-    Filter, Zap, Star,
-    CheckCircle2, MapPin, Gauge, X, MessageCircle, Users, Briefcase
-} from "lucide-react";
+import { Users, Briefcase, MessageCircle, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import {
-    Magnetic, CharBlurIn, SmoothScroll,
-    GlassyProgressBar, Tilt3D
-} from "@/components/ClientComponents";
 import { FleetInquiryModal } from "@/components/FleetInquiryModal";
 import { fleet, Vehicle } from "@/data/fleet";
 
-const sectionVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1,
-            delayChildren: 0.2
-        }
-    }
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
-    visible: {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        transition: {
-            type: "spring" as const,
-            stiffness: 80,
-            damping: 12
-        }
-    }
-};
-
-const FilterButton = ({ active, onClick, children }: { active: boolean, onClick: () => void, children: React.ReactNode }) => (
+const Pill = ({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) => (
     <button
         onClick={onClick}
-        className={`px-4 py-2 rounded-full font-semibold uppercase text-[10px] tracking-widest transition-all duration-300 border ${active
-            ? "bg-sunset-orange text-white border-sunset-orange shadow-md scale-105"
-            : "bg-white/50 text-royal-blue/70 border-royal-blue/10 hover:border-sunset-orange/50 hover:text-sunset-orange"
-            }`}
+        className={`rounded-full px-4 py-2 text-[13px] font-medium transition-all duration-300 ${
+            active ? "bg-ink text-paper" : "border border-line bg-white text-muted hover:border-ink hover:text-ink"
+        }`}
     >
         {children}
     </button>
 );
 
-
-
 export default function FleetView() {
-    const [activeType, setActiveType] = useState<string>("All");
-    const [activeCategory, setActiveCategory] = useState<string>("All");
+    const [activeType, setActiveType] = useState("All");
+    const [activeCategory, setActiveCategory] = useState("All");
     const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const handleCheckAvailability = (v: Vehicle) => {
-        setSelectedVehicle(v);
-        setIsModalOpen(true);
+    const openModal = (v: Vehicle) => { setSelectedVehicle(v); setIsModalOpen(true); };
+    const whatsapp = (v: Vehicle) => {
+        const msg = `I'd like to reserve the ${v.name} (${v.type}) for a chauffeured journey. Please help me plan.`;
+        window.open(`https://wa.me/919997812237?text=${encodeURIComponent(msg)}`, "_blank");
     };
 
-    const handleWhatsApp = (v: Vehicle) => {
-        const msg = `MISSION PROTOCOL: I would like to reserve the ${v.name} (${v.type}) for a Golden Triangle journey. Please initiate planning.`;
-        window.open(`https://wa.me/919997812237?text=${encodeURIComponent(msg)}`, '_blank');
-    };
+    const filtered = useMemo(
+        () => fleet.filter((v) => (activeType === "All" || v.type === activeType) && (activeCategory === "All" || v.category === activeCategory)),
+        [activeType, activeCategory]
+    );
 
-    const filteredFleet = useMemo(() => {
-        return fleet.filter(v => {
-            const matchesType = activeType === "All" || v.type === activeType;
-            const matchesCategory = activeCategory === "All" || v.category === activeCategory;
-            return matchesType && matchesCategory;
-        });
-    }, [activeType, activeCategory]);
-
-    const vehicleTypes = ["All", ...Array.from(new Set(fleet.map(v => v.type)))];
+    const vehicleTypes = ["All", ...Array.from(new Set(fleet.map((v) => v.type)))];
     const categories = ["All", "Elite", "Premium", "Standard"];
 
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white pb-40">
-                <GlassyProgressBar />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
+            <FleetInquiryModal vehicle={selectedVehicle} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
-                {/* Inquiry Modal */}
-                <FleetInquiryModal
-                    vehicle={selectedVehicle}
-                    isOpen={isModalOpen}
-                    onClose={() => setIsModalOpen(false)}
-                />
+            {/* Hero */}
+            <section className="border-b border-line pb-14 pt-36 sm:pt-40">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">The fleet</p>
+                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Chauffeured, immaculate, GPS-tracked.</h1>
+                    <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
+                        From executive sedans to royal-convoy SUVs — every vehicle with a vetted performance-chauffeur, pre-calculated fuel, tolls and permits, and transparent pricing.
+                    </p>
+                </div>
+            </section>
 
-                {/* --- Hero Section --- */}
-                <section className="relative pt-60 pb-40 bg-royal-blue overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
-                    <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-sunset-orange/10 blur-[200px] -translate-y-1/2 translate-x-1/2 rounded-full" />
-
-                    <div className="container mx-auto px-6 relative z-10 text-center">
-                        <motion.div initial="hidden" animate="visible" variants={sectionVariants}>
-                            <motion.h4 variants={itemVariants} className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-8">The Garage</motion.h4>
-                            <CharBlurIn text="ELITE FLEET" className="text-6xl md:text-[10rem] font-semibold text-white uppercase tracking-tight leading-none block mb-12" />
-                            <motion.p variants={itemVariants} className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto font-bold italic leading-relaxed">
-                                Curated high-performance vehicle archetypes. From executive mobility to royal convoy logistics.
-                            </motion.p>
-                        </motion.div>
+            {/* Filters */}
+            <section className="sticky top-[60px] z-40 border-b border-line bg-paper/90 py-4 backdrop-blur-md">
+                <div className="container-x flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                    <div className="flex flex-wrap items-center gap-2">
+                        <span className="mr-1 text-[12px] font-medium uppercase tracking-[0.16em] text-stone">Type</span>
+                        {vehicleTypes.map((t) => <Pill key={t} active={activeType === t} onClick={() => setActiveType(t)}>{t}</Pill>)}
                     </div>
-                </section>
-
-                {/* --- Performance Filter Bar --- */}
-                <section className="sticky top-[120px] z-[100] py-8 glass-card border-none rounded-none shadow-md">
-                    <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-8">
-                        <div className="flex flex-wrap items-center justify-center gap-6">
-                            <div className="flex items-center gap-4 mr-4">
-                                <Filter size={16} className="text-sunset-orange" />
-                                <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/30">Vehicle Type:</span>
-                            </div>
-                            {vehicleTypes.map(t => (
-                                <FilterButton key={t} active={activeType === t} onClick={() => setActiveType(t)}>{t}</FilterButton>
-                            ))}
-                        </div>
-                        <div className="flex flex-wrap items-center justify-center gap-6">
-                            <div className="flex items-center gap-4 mr-4">
-                                <Zap size={16} className="text-sunset-orange" />
-                                <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/30">Class:</span>
-                            </div>
-                            {categories.map(c => (
-                                <FilterButton key={c} active={activeCategory === c} onClick={() => setActiveCategory(c)}>{c}</FilterButton>
-                            ))}
-                        </div>
+                    <div className="flex flex-wrap items-center gap-2">
+                        <span className="mr-1 text-[12px] font-medium uppercase tracking-[0.16em] text-stone">Class</span>
+                        {categories.map((c) => <Pill key={c} active={activeCategory === c} onClick={() => setActiveCategory(c)}>{c}</Pill>)}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* --- Fleet Grid --- */}
-                <section className="py-40 container mx-auto px-6 relative z-10">
+            {/* Grid */}
+            <section className="section">
+                <div className="container-x">
                     <AnimatePresence mode="popLayout">
-                        <motion.div
-                            layout
-                            className="grid md:grid-cols-2 gap-12"
-                        >
-                            {filteredFleet.map((vehicle) => (
+                        <motion.div layout className="grid gap-8 lg:grid-cols-2">
+                            {filtered.map((v) => (
                                 <motion.div
-                                    layout
-                                    key={vehicle.id}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 0.9 }}
-                                    transition={{ duration: 0.5 }}
-                                    className="glass-card rounded-3xl overflow-hidden group hover:border-sunset-orange/30 transition-all duration-700"
+                                    layout key={v.id}
+                                    initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.4 }}
+                                    className="card overflow-hidden"
                                 >
-                                    <div className="grid lg:grid-cols-2 h-full">
-                                        <div className="relative h-[400px] lg:h-full overflow-hidden bg-royal-blue/5">
-                                            <Image
-                                                src={vehicle.img}
-                                                alt={`${vehicle.name} — chauffeured ${vehicle.category.toLowerCase()} ${vehicle.type.toLowerCase()} for hire across India`}
-                                                fill
-                                                className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                                            />
-                                            <div className="absolute top-8 left-8">
-                                                <div className={`px-6 py-2 rounded-full font-semibold uppercase text-[10px] tracking-widest shadow-xl border border-white/20 ${vehicle.category === "Elite" ? "bg-sunset-orange text-white" : "bg-white/90 text-royal-blue"
-                                                    }`}>
-                                                    {vehicle.category} Protocol
-                                                </div>
-                                            </div>
+                                    <div className="grid h-full sm:grid-cols-2">
+                                        <div className="relative aspect-[4/3] overflow-hidden sm:aspect-auto">
+                                            <Image src={v.img} alt={`${v.name} — chauffeured ${v.category.toLowerCase()} ${v.type.toLowerCase()} for hire`} fill className="object-cover" />
+                                            <span className={`absolute left-4 top-4 rounded-full px-3 py-1 text-[11px] font-medium ${v.category === "Elite" ? "bg-clay text-white" : "bg-paper/90 text-ink"}`}>
+                                                {v.category}
+                                            </span>
                                         </div>
-                                        <div className="p-12 flex flex-col justify-between">
+                                        <div className="flex flex-col justify-between p-7">
                                             <div>
-                                                <div className="flex items-center gap-3 mb-4">
-                                                    <span className="text-[10px] font-semibold text-sunset-orange uppercase tracking-[0.4em]">{vehicle.type}</span>
-                                                    <div className="w-1 h-1 rounded-full bg-royal-blue/20" />
-                                                    <span className="text-[10px] font-semibold text-royal-blue/40 uppercase tracking-[0.2em]">{vehicle.priceRange}</span>
+                                                <div className="flex items-center gap-2">
+                                                    <span className="eyebrow">{v.type}</span>
+                                                    <span className="text-stone">·</span>
+                                                    <span className="text-[12px] text-muted">{v.priceRange}</span>
                                                 </div>
-                                                <h3 className="text-4xl font-semibold text-royal-blue uppercase tracking-tight mb-6 leading-none group-hover:text-sunset-orange transition-colors">
-                                                    {vehicle.name}
-                                                </h3>
-                                                <p className="text-dark-slate/60 text-sm font-bold italic mb-10 leading-relaxed">
-                                                    {vehicle.description}
-                                                </p>
-
-                                                <div className="grid grid-cols-2 gap-6 mb-10">
-                                                    <div className="flex items-center gap-4">
-                                                        <div className="w-10 h-10 rounded-xl bg-royal-blue/5 flex items-center justify-center text-royal-blue">
-                                                            <Users size={18} />
-                                                        </div>
-                                                        <span className="text-xs font-semibold text-royal-blue uppercase tracking-widest">{vehicle.passengers} Seats</span>
-                                                    </div>
-                                                    <div className="flex items-center gap-4">
-                                                        <div className="w-10 h-10 rounded-xl bg-royal-blue/5 flex items-center justify-center text-royal-blue">
-                                                            <Briefcase size={18} />
-                                                        </div>
-                                                        <span className="text-xs font-semibold text-royal-blue uppercase tracking-widest">{vehicle.luggage}</span>
-                                                    </div>
+                                                <h3 className="mt-2 text-2xl font-medium text-ink">{v.name}</h3>
+                                                <p className="mt-3 text-sm leading-relaxed text-muted">{v.description}</p>
+                                                <div className="mt-6 flex gap-6">
+                                                    <div className="flex items-center gap-2 text-sm text-ink-soft"><Users size={16} className="text-clay" /> {v.passengers} seats</div>
+                                                    <div className="flex items-center gap-2 text-sm text-ink-soft"><Briefcase size={16} className="text-clay" /> {v.luggage}</div>
                                                 </div>
-
-                                                <div className="flex flex-wrap gap-2 mb-12">
-                                                    {vehicle.features.map((feat, i) => (
-                                                        <span key={i} className="px-4 py-2 bg-royal-blue/[0.03] rounded-lg text-[9px] font-semibold uppercase tracking-widest text-royal-blue/40">
-                                                            {feat}
-                                                        </span>
-                                                    ))}
+                                                <div className="mt-5 flex flex-wrap gap-2">
+                                                    {v.features.slice(0, 4).map((f, i) => <span key={i} className="pill">{f}</span>)}
                                                 </div>
                                             </div>
-
-                                            <div className="flex flex-wrap gap-4">
-                                                <Magnetic>
-                                                    <button
-                                                        onClick={() => handleCheckAvailability(vehicle)}
-                                                        className="bg-royal-blue text-white px-8 py-4 rounded-2xl font-semibold uppercase text-[10px] tracking-widest hover:bg-sunset-orange transition-colors shadow-lg"
-                                                    >
-                                                        Check Availability
-                                                    </button>
-                                                </Magnetic>
-                                                <Magnetic>
-                                                    <button
-                                                        onClick={() => handleWhatsApp(vehicle)}
-                                                        className="w-14 h-14 bg-white border border-royal-blue/10 rounded-2xl flex items-center justify-center text-royal-blue hover:text-sunset-orange transition-colors"
-                                                    >
-                                                        <MessageCircle size={20} />
-                                                    </button>
-                                                </Magnetic>
+                                            <div className="mt-8 flex gap-3">
+                                                <button onClick={() => openModal(v)} className="btn-primary flex-1">Check availability</button>
+                                                <button onClick={() => whatsapp(v)} aria-label="WhatsApp" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line text-ink transition hover:border-ink hover:text-clay">
+                                                    <MessageCircle size={18} />
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -231,27 +119,16 @@ export default function FleetView() {
                         </motion.div>
                     </AnimatePresence>
 
-                    {filteredFleet.length === 0 && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            className="py-60 text-center"
-                        >
-                            <div className="w-24 h-24 bg-royal-blue/5 rounded-full flex items-center justify-center mx-auto mb-10" />
-                            <h3 className="text-4xl font-semibold text-royal-blue uppercase tracking-tight mb-4">No assets match your filter</h3>
-                            <button
-                                onClick={() => { setActiveType("All"); setActiveCategory("All"); }}
-                                className="text-sunset-orange font-semibold uppercase tracking-widest text-xs underline decoration-2 underline-offset-8"
-                            >
-                                Reset Elite Parameters
-                            </button>
-                        </motion.div>
+                    {filtered.length === 0 && (
+                        <div className="py-24 text-center">
+                            <h3 className="display-3 text-ink">No vehicles match those filters</h3>
+                            <button onClick={() => { setActiveType("All"); setActiveCategory("All"); }} className="link-line mt-5 text-sm">Reset filters <ChevronRight size={15} /></button>
+                        </div>
                     )}
-                </section>
+                </div>
+            </section>
 
-                {/* Footer */}
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <Footer />
+        </main>
     );
 }
