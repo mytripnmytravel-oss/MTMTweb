@@ -6,7 +6,6 @@ import { ChevronRight, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LeadBlock } from "@/components/lead/Lead";
-import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 
 export default function GoldenTriangleHubView({
     byTheme,
@@ -28,18 +27,14 @@ export default function GoldenTriangleHubView({
         title: string;
         items: { label: string; href: string }[];
     }) => (
-        <div className="mb-20">
-            <div className="flex items-center gap-5 mb-8">
-                <h2 className="text-2xl md:text-4xl font-semibold text-royal-blue uppercase tracking-tight">{title}</h2>
-                <div className="h-px flex-1 bg-royal-blue/10" />
+        <div className="mb-16">
+            <div className="mb-8 flex items-center gap-5">
+                <h2 className="display-3 text-ink">{title}</h2>
+                <div className="h-px flex-1 bg-line" />
             </div>
             <div className="flex flex-wrap gap-3">
                 {items.map((i) => (
-                    <Link
-                        key={i.href}
-                        href={i.href}
-                        className="px-6 py-4 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-3"
-                    >
+                    <Link key={i.href} href={i.href} className="btn-outline btn-sm">
                         {i.label} <ArrowRight size={14} />
                     </Link>
                 ))}
@@ -48,54 +43,58 @@ export default function GoldenTriangleHubView({
     );
 
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white relative overflow-hidden">
-                <GlassyProgressBar />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                <section className="pt-60 pb-20 container mx-auto px-6 relative z-10">
-                    <nav aria-label="Breadcrumb" className="flex items-center gap-3 mb-8 text-royal-blue/50 font-semibold uppercase text-[10px] tracking-[0.3em]">
-                        <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
+            {/* Hero */}
+            <section className="border-b border-line pb-14 pt-36 sm:pt-40">
+                <div className="container-x">
+                    <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-[12px] text-muted">
+                        <Link href="/" className="hover:text-clay">Home</Link>
                         <ChevronRight size={12} />
-                        <Link href="/tours" className="hover:text-sunset-orange transition-colors">Tours</Link>
+                        <Link href="/tours" className="hover:text-clay">Tours</Link>
                         <ChevronRight size={12} />
-                        <span className="text-sunset-orange">Golden Triangle</span>
+                        <span className="text-clay">Golden Triangle</span>
                     </nav>
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6">The Definitive Circuit</h4>
-                    <CharBlurIn text="GOLDEN TRIANGLE" className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] block mb-8" />
-                    <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed max-w-2xl mb-6">
-                        Delhi, Agra, and Jaipur &mdash; sliced every way travellers actually search. Pick the
+                    <p className="eyebrow eyebrow-accent">The definitive circuit</p>
+                    <h1 className="display-1 mt-4 font-medium text-ink">Golden Triangle</h1>
+                    <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
+                        Delhi, Agra, and Jaipur, sliced every way travellers actually search. Pick the
                         angle that matches your trip: by theme, by duration, or by the month you travel.
                     </p>
-                    <Link href="/tours/golden-triangle-all" className="inline-flex items-center gap-3 text-sunset-orange font-semibold uppercase text-xs tracking-[0.3em] hover:text-royal-blue transition-colors">
-                        Browse all variations <ArrowRight size={14} />
-                    </Link>
-                </section>
+                    <div className="mt-8">
+                        <Link href="/tours/golden-triangle-all" className="btn-outline btn-sm">
+                            Browse all variations <ArrowRight size={14} />
+                        </Link>
+                    </div>
+                </div>
+            </section>
 
-                <section className="pb-24 container mx-auto px-6 relative z-10">
-                    <Block title="By Theme" items={byTheme} />
-                    <Block title="By Duration" items={byDuration} />
-                    <Block title="By Month of Travel" items={byMonth} />
-                    <Block title="By Departure City" items={byOrigin} />
-                    {byCombo && byCombo.length > 0 && <Block title="By Duration × Theme" items={byCombo} />}
-                </section>
+            <section className="section">
+                <div className="container-x">
+                    <Block title="By theme" items={byTheme} />
+                    <Block title="By duration" items={byDuration} />
+                    <Block title="By month of travel" items={byMonth} />
+                    <Block title="By departure city" items={byOrigin} />
+                    {byCombo && byCombo.length > 0 && <Block title="By duration and theme" items={byCombo} />}
+                </div>
+            </section>
 
-                <LeadBlock
-                    variant="cta"
-                    source="Golden Triangle tours hub"
-                    context={{ "Inquiry Type": "Tour", Subject: "Golden Triangle" }}
-                    heading="Plan your Golden Triangle tour"
-                    subheading="Delhi, Agra, and Jaipur, tailored to your dates, pace, and budget. Tell us what you want and we send a private, chauffeured plan with a transparent quote."
-                    waMessage="Hi MyTripMyTravel, I am interested in a Golden Triangle tour."
-                    breadcrumbs={[
-                        { name: "Home", item: "https://www.mytripmytravel.com" },
-                        { name: "Tours", item: "https://www.mytripmytravel.com/tours" },
-                        { name: "Golden Triangle" },
-                    ]}
-                />
+            <LeadBlock
+                variant="cta"
+                source="Golden Triangle tours hub"
+                context={{ "Inquiry Type": "Tour", Subject: "Golden Triangle" }}
+                heading="Plan your Golden Triangle tour"
+                subheading="Delhi, Agra, and Jaipur, tailored to your dates, pace, and budget. Tell us what you want and we send a private, chauffeured plan with a transparent quote."
+                waMessage="Hi MyTripMyTravel, I am interested in a Golden Triangle tour."
+                breadcrumbs={[
+                    { name: "Home", item: "https://www.mytripmytravel.com" },
+                    { name: "Tours", item: "https://www.mytripmytravel.com/tours" },
+                    { name: "Golden Triangle" },
+                ]}
+            />
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <Footer />
+        </main>
     );
 }

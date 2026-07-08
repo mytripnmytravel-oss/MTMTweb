@@ -55,23 +55,27 @@ export default function Page() {
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
+            <main className="min-h-screen bg-paper">
                 <Navbar />
-                <section className="pt-60 pb-20 container mx-auto px-6">
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6">Inter-City Transfers</h4>
-                    <h1 className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-8">CURATED ROUTES</h1>
-                    <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed max-w-2xl">
-                        Private, GPS-tracked, pre-priced chauffeured transfers between the cities MyTripMyTravel operates &mdash; the same Elite Fleet protocol as the rest of every mission, no surprise fees on the road.
-                    </p>
+                <section className="pb-20 pt-36 sm:pt-40">
+                    <div className="container-x">
+                        <p className="eyebrow eyebrow-accent">Inter-City Transfers</p>
+                        <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Curated routes</h1>
+                        <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-muted">
+                            Private, GPS-tracked, pre-priced chauffeured transfers between the cities MyTripMyTravel operates, the same Elite Fleet protocol as the rest of every mission, no surprise fees on the road.
+                        </p>
+                    </div>
                 </section>
-                <section className="pb-32 container mx-auto px-6">
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {items.map((r) => (
-                            <Link key={r.slug} href={`/services/inter-city/${r.slug}`} className="block glass-card rounded-3xl p-7 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all">
-                                <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-sunset-orange mb-3">~{r.distanceKm} km · ~{r.driveHrs} hrs{r.via ? ` · via ${r.via}` : ""}</div>
-                                <span className="text-xl font-semibold uppercase tracking-tight text-royal-blue group-hover:text-sunset-orange transition-colors">{r.originName} → {r.destinationName}</span>
-                            </Link>
-                        ))}
+                <section className="section pt-0">
+                    <div className="container-x">
+                        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                            {items.map((r) => (
+                                <Link key={r.slug} href={`/services/inter-city/${r.slug}`} className="card group p-7">
+                                    <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-stone">~{r.distanceKm} km · ~{r.driveHrs} hrs{r.via ? ` · via ${r.via}` : ""}</p>
+                                    <span className="mt-3 block text-xl font-medium text-ink transition-colors group-hover:text-clay">{r.originName} → {r.destinationName}</span>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </section>
                 <LeadBlock

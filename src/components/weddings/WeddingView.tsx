@@ -3,49 +3,45 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2 } from "lucide-react";
+import { ChevronRight, ArrowRight, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LeadBlock } from "@/components/lead/Lead";
-import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { WeddingCategory, WeddingItem } from "@/data/weddings";
 
 function Shell({ children }: { children: React.ReactNode }) {
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
-                <GlassyProgressBar />
-                <Navbar />
-                {children}
-                <Footer />
-            </main>
-        </SmoothScroll>
+        <main className="min-h-screen bg-paper">
+            <Navbar />
+            {children}
+            <Footer />
+        </main>
     );
 }
 
 export function WeddingCategoryView({ category }: { category: WeddingCategory }) {
     return (
         <Shell>
-            <section className="pt-60 pb-20 container mx-auto px-6">
-                <nav aria-label="Breadcrumb" className="flex items-center gap-3 mb-8 text-royal-blue/50 font-semibold uppercase text-[10px] tracking-[0.3em]">
-                    <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
+            <section className="container-x pt-40 pb-16">
+                <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-[12px] text-muted">
+                    <Link href="/" className="hover:text-clay">Home</Link>
                     <ChevronRight size={12} />
-                    <Link href="/weddings" className="hover:text-sunset-orange transition-colors">Weddings</Link>
+                    <Link href="/weddings" className="hover:text-clay">Weddings</Link>
                     <ChevronRight size={12} />
-                    <span className="text-sunset-orange">{category.segment}</span>
+                    <span className="text-clay">{category.segment}</span>
                 </nav>
-                <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6">Royal Weddings</h4>
-                <CharBlurIn text={category.name.toUpperCase()} className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] block mb-8" />
-                <p className="text-dark-slate font-bold italic text-xl opacity-60 max-w-2xl">{category.blurb}</p>
+                <p className="eyebrow eyebrow-accent">Royal Weddings</p>
+                <h1 className="display-1 mt-4 font-medium text-ink">{category.name}</h1>
+                <p className="mt-6 max-w-2xl text-[16px] leading-relaxed text-muted">{category.blurb}</p>
             </section>
-            <section className="pb-32 container mx-auto px-6">
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section className="container-x pb-28">
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {category.items.map((it, idx) => (
                         <motion.div key={it.slug} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (idx % 3) * 0.06 }}>
-                            <Link href={`/weddings/${category.slug}/${it.slug}`} className="block glass-card rounded-2xl p-9 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all duration-500 h-full">
-                                <h3 className="text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-4 leading-tight group-hover:text-sunset-orange transition-colors">{it.name}</h3>
-                                <p className="text-dark-slate/60 font-bold italic text-sm mb-6 leading-relaxed line-clamp-3">{it.answer}</p>
-                                <span className="font-semibold uppercase text-[10px] tracking-[0.3em] flex items-center gap-3 text-royal-blue group-hover:text-sunset-orange transition-colors">Open <ArrowRight size={14} /></span>
+                            <Link href={`/weddings/${category.slug}/${it.slug}`} className="card group block h-full p-7">
+                                <h3 className="text-xl font-medium leading-snug text-ink">{it.name}</h3>
+                                <p className="mt-3 line-clamp-3 text-[15px] leading-relaxed text-muted">{it.answer}</p>
+                                <span className="mt-6 inline-flex items-center gap-2 text-[13px] font-medium text-clay">Open <ArrowRight size={14} /></span>
                             </Link>
                         </motion.div>
                     ))}
@@ -65,43 +61,43 @@ export function WeddingItemView({
     const siblings = category.items.filter((i) => i.slug !== item.slug);
     return (
         <Shell>
-            <section className="pt-60 pb-16 container mx-auto px-6">
-                <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-3 mb-8 text-royal-blue/50 font-semibold uppercase text-[10px] tracking-[0.3em]">
-                    <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
+            <section className="container-x pt-40 pb-16">
+                <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-[12px] text-muted">
+                    <Link href="/" className="hover:text-clay">Home</Link>
                     <ChevronRight size={12} />
-                    <Link href="/weddings" className="hover:text-sunset-orange transition-colors">Weddings</Link>
+                    <Link href="/weddings" className="hover:text-clay">Weddings</Link>
                     <ChevronRight size={12} />
-                    <Link href={`/weddings/${category.slug}`} className="hover:text-sunset-orange transition-colors">{category.segment}</Link>
+                    <Link href={`/weddings/${category.slug}`} className="hover:text-clay">{category.segment}</Link>
                     <ChevronRight size={12} />
-                    <span className="text-sunset-orange">{item.name}</span>
+                    <span className="text-clay">{item.name}</span>
                 </nav>
-                <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">{category.name}</h4>
-                <h1 className="text-4xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.92] mb-12">{item.name}</h1>
-                <p className="text-2xl md:text-3xl font-semibold text-royal-blue leading-snug tracking-tight max-w-4xl mb-12">{item.answer}</p>
-                <div className="space-y-6 max-w-3xl">
+                <p className="eyebrow eyebrow-accent">{category.name}</p>
+                <h1 className="display-1 mt-4 font-medium text-ink">{item.name}</h1>
+                <p className="mt-6 max-w-4xl font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{item.answer}</p>
+                <div className="mt-10 max-w-3xl space-y-5">
                     {item.intro.map((p, i) => (
-                        <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-lg md:text-xl text-dark-slate/70 font-bold leading-relaxed">{p}</motion.p>
+                        <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[16px] leading-relaxed text-muted">{p}</motion.p>
                     ))}
                 </div>
             </section>
 
-            <section className="py-20 bg-royal-blue/5">
-                <div className="container mx-auto px-6">
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-8">The Detail</h4>
-                    <div className="grid md:grid-cols-3 gap-5">
+            <section className="border-y border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">The Detail</p>
+                    <div className="mt-8 grid gap-5 md:grid-cols-3">
                         {item.points.map((pt, i) => (
-                            <div key={i} className="glass-card rounded-3xl p-7 border-royal-blue/5">
-                                <div className="flex items-center gap-3 mb-3">
-                                    <CheckCircle2 className="text-sunset-orange shrink-0" size={18} />
-                                    <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-sunset-orange">{pt.label}</span>
+                            <div key={i} className="card p-7">
+                                <div className="flex items-center gap-3">
+                                    <CheckCircle2 className="shrink-0 text-clay" size={18} />
+                                    <span className="text-[13px] font-medium uppercase tracking-[0.12em] text-stone">{pt.label}</span>
                                 </div>
-                                <p className="text-base text-dark-slate/70 font-bold italic leading-relaxed">{pt.detail}</p>
+                                <p className="mt-3 text-[15px] leading-relaxed text-muted">{pt.detail}</p>
                             </div>
                         ))}
                     </div>
                     <div className="mt-10 flex flex-wrap gap-3">
                         {item.links.map((l, i) => (
-                            <Link key={i} href={l.href} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-3">
+                            <Link key={i} href={l.href} className="btn-outline btn-sm">
                                 {l.label} <ArrowRight size={14} />
                             </Link>
                         ))}
@@ -109,30 +105,29 @@ export function WeddingItemView({
                 </div>
             </section>
 
-            <section className="py-24 container mx-auto px-6">
-                <div className="text-center mb-14">
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">Intelligence</h4>
-                    <CharBlurIn text={`${item.name} FAQ`.toUpperCase()} className="text-2xl md:text-5xl font-semibold text-royal-blue uppercase tracking-tight block leading-none" />
-                </div>
-                <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    {item.faqs.map((f, i) => (
-                        <div key={i} className="glass-card p-10 rounded-3xl border-royal-blue/5">
-                            <div className="flex items-start gap-4 mb-4">
-                                <HelpCircle className="text-sunset-orange shrink-0 mt-1" size={20} />
-                                <h3 className="font-semibold text-royal-blue uppercase tracking-tight text-base leading-tight">{f.q}</h3>
+            <section className="section">
+                <div className="container-x">
+                    <div className="mb-12 text-center">
+                        <p className="eyebrow eyebrow-accent">Intelligence</p>
+                        <h2 className="display-3 mt-3 text-ink">{item.name} FAQ</h2>
+                    </div>
+                    <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
+                        {item.faqs.map((f, i) => (
+                            <div key={i} className="card p-7">
+                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
-                            <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed pl-9">{f.a}</p>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </section>
 
-            <section className="py-20 bg-royal-blue/5">
-                <div className="container mx-auto px-6">
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">More {category.segment}</h4>
-                    <div className="flex flex-wrap gap-3">
+            <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">More {category.segment}</p>
+                    <div className="mt-8 flex flex-wrap gap-3">
                         {siblings.map((s) => (
-                            <Link key={s.slug} href={`/weddings/${category.slug}/${s.slug}`} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">{s.name}</Link>
+                            <Link key={s.slug} href={`/weddings/${category.slug}/${s.slug}`} className="btn-outline btn-sm">{s.name}</Link>
                         ))}
                     </div>
                 </div>

@@ -8,7 +8,6 @@ import { MapPin, ArrowRight, ChevronRight, Compass } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LeadBlock } from "@/components/lead/Lead";
-import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Region, Destination } from "@/data/destinations";
 
 export default function RegionView({
@@ -19,40 +18,35 @@ export default function RegionView({
     cities: Destination[];
 }) {
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
-                <GlassyProgressBar />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                {/* Hero */}
-                <section className="relative h-[64vh] flex items-end overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <Image src={region.heroImg} alt={`${region.name}, ${region.tagline}`} fill priority className="object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/30 to-royal-blue/10" />
-                    </div>
-                    <div className="container mx-auto px-6 relative z-10 pb-20">
-                        <nav aria-label="Breadcrumb" className="flex items-center gap-3 mb-8 text-white/70 font-semibold uppercase text-[10px] tracking-[0.3em]">
-                            <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
-                            <ChevronRight size={12} />
-                            <Link href="/destinations" className="hover:text-sunset-orange transition-colors">Destinations</Link>
-                            <ChevronRight size={12} />
-                            <span className="text-sunset-orange">{region.name}</span>
-                        </nav>
-                        <motion.h4 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">
-                            {region.tagline}
-                        </motion.h4>
-                        <CharBlurIn text={region.name.toUpperCase()} className="text-5xl md:text-8xl font-semibold text-white uppercase tracking-tight leading-[0.85] block mb-6" />
-                        <p className="text-white/70 font-bold italic text-lg md:text-xl max-w-3xl leading-relaxed">{region.blurb}</p>
-                    </div>
-                </section>
+            {/* Hero */}
+            <section className="relative flex h-[64vh] min-h-[480px] items-end overflow-hidden">
+                <Image src={region.heroImg} alt={`${region.name}, ${region.tagline}`} fill priority className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-ink/10" />
+                <div className="container-x relative z-10 pb-16 pt-32">
+                    <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-[12px] text-paper/70">
+                        <Link href="/" className="hover:text-clay-soft">Home</Link>
+                        <ChevronRight size={12} />
+                        <Link href="/destinations" className="hover:text-clay-soft">Destinations</Link>
+                        <ChevronRight size={12} />
+                        <span className="text-clay-soft">{region.name}</span>
+                    </nav>
+                    <p className="eyebrow text-paper/70 mb-4">{region.tagline}</p>
+                    <h1 className="display-1 font-medium text-paper">{region.name}</h1>
+                    <p className="mt-4 max-w-3xl text-lg leading-relaxed text-paper/80">{region.blurb}</p>
+                </div>
+            </section>
 
-                {/* Cities */}
-                <section className="py-28 container mx-auto px-6">
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">City Briefs</h4>
-                    <CharBlurIn text="DEPLOYMENT NODES" className="text-4xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight block leading-none mb-16" />
+            {/* Cities */}
+            <section className="section">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">City briefs</p>
+                    <h2 className="display-2 mt-3 font-medium text-ink">Places in {region.name}</h2>
 
                     {cities.length > 0 ? (
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                             {cities.map((c, idx) => (
                                 <motion.div
                                     key={c.slug}
@@ -63,17 +57,17 @@ export default function RegionView({
                                 >
                                     <Link
                                         href={`/destinations/${c.slug}`}
-                                        className="block group relative h-[480px] rounded-2xl overflow-hidden"
+                                        className="group relative block h-[460px] overflow-hidden rounded-2xl"
                                     >
-                                        <Image src={c.heroImg} alt={`${c.name}, ${c.state}`} fill className="object-cover scale-110 group-hover:scale-100 transition-all duration-[2s]" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/40 to-transparent p-10 flex flex-col justify-end">
-                                            <div className="flex items-center gap-3 mb-3">
-                                                <MapPin className="text-sunset-orange" size={20} />
-                                                <h3 className="text-3xl font-semibold text-white uppercase tracking-tight">{c.name}</h3>
+                                        <Image src={c.heroImg} alt={`${c.name}, ${c.state}`} fill className="object-cover transition-transform duration-[1.2s] group-hover:scale-105" />
+                                        <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/85 via-ink/35 to-transparent p-8">
+                                            <div className="flex items-center gap-2">
+                                                <MapPin className="text-clay-soft" size={18} />
+                                                <h3 className="text-2xl font-medium text-paper">{c.name}</h3>
                                             </div>
-                                            <p className="text-white/60 font-bold italic text-sm mb-8 leading-relaxed">{c.tagline}</p>
-                                            <span className="font-semibold uppercase text-[10px] tracking-[0.3em] flex items-center gap-4 text-sunset-orange group-hover:text-white transition-colors">
-                                                Open Brief <ArrowRight size={14} />
+                                            <p className="mt-2 text-[14px] leading-relaxed text-paper/70">{c.tagline}</p>
+                                            <span className="mt-6 flex items-center gap-2 text-[13px] font-medium text-clay-soft transition-colors group-hover:text-paper">
+                                                Open brief <ArrowRight size={14} />
                                             </span>
                                         </div>
                                     </Link>
@@ -81,33 +75,33 @@ export default function RegionView({
                             ))}
                         </div>
                     ) : (
-                        <div className="glass-card rounded-2xl py-28 text-center border-royal-blue/5">
-                            <Compass className="mx-auto text-sunset-orange opacity-20 mb-8" size={72} />
-                            <h3 className="text-3xl font-semibold text-royal-blue uppercase tracking-tight mb-4">Briefs in architecture</h3>
-                            <p className="text-dark-slate/50 font-bold italic max-w-xl mx-auto">
-                                Detailed city intelligence for the {region.name} corridor is being authored. Contact HQ
-                                for a bespoke mission through this region in the meantime.
+                        <div className="card mt-12 py-24 text-center">
+                            <Compass className="mx-auto mb-8 text-clay opacity-40" size={56} />
+                            <h3 className="text-2xl font-medium text-ink">Briefs in progress</h3>
+                            <p className="mx-auto mt-4 max-w-xl text-[16px] leading-relaxed text-muted">
+                                Detailed city guides for the {region.name} corridor are being authored. Contact us
+                                for a bespoke journey through this region in the meantime.
                             </p>
                         </div>
                     )}
-                </section>
+                </div>
+            </section>
 
-                <LeadBlock
-                    variant="cta"
-                    source={`Region: ${region.name}`}
-                    context={{ "Inquiry Type": "Destination", Subject: region.name }}
-                    heading={`Plan your journey through ${region.name}`}
-                    subheading="Tell us your dates and travel style and we craft a private, chauffeured route through the region with a transparent quote."
-                    waMessage={`Hi MyTripMyTravel, I would like to plan a trip through ${region.name}.`}
-                    breadcrumbs={[
-                        { name: "Home", item: "https://www.mytripmytravel.com" },
-                        { name: "Destinations", item: "https://www.mytripmytravel.com/destinations" },
-                        { name: region.name },
-                    ]}
-                />
+            <LeadBlock
+                variant="cta"
+                source={`Region: ${region.name}`}
+                context={{ "Inquiry Type": "Destination", Subject: region.name }}
+                heading={`Plan your journey through ${region.name}`}
+                subheading="Tell us your dates and travel style and we craft a private, chauffeured route through the region with a transparent quote."
+                waMessage={`Hi MyTripMyTravel, I would like to plan a trip through ${region.name}.`}
+                breadcrumbs={[
+                    { name: "Home", item: "https://www.mytripmytravel.com" },
+                    { name: "Destinations", item: "https://www.mytripmytravel.com/destinations" },
+                    { name: region.name },
+                ]}
+            />
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <Footer />
+        </main>
     );
 }

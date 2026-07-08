@@ -4,11 +4,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2, Clock, Navigation2, Users, Briefcase } from "lucide-react";
+import { ChevronRight, ArrowRight, CheckCircle2, Clock, Navigation2, Users, Briefcase } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LeadBlock } from "@/components/lead/Lead";
-import { SmoothScroll, CharBlurIn, GlassyProgressBar } from "@/components/ClientComponents";
 import type { Destination } from "@/data/destinations";
 import type { TransferRoute, RouteContent } from "@/data/transferRoutes";
 
@@ -24,138 +23,137 @@ export default function TransferRouteView({
     content: RouteContent;
 }) {
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
-                <GlassyProgressBar />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                <section className="relative h-[58vh] flex items-end overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <Image src={destination.heroImg} alt={content.h1} fill priority className="object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-royal-blue via-royal-blue/40 to-royal-blue/10" />
-                    </div>
-                    <div className="container mx-auto px-6 relative z-10 pb-16">
-                        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-3 mb-8 text-white/70 font-semibold uppercase text-[10px] tracking-[0.3em]">
-                            <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
-                            <ChevronRight size={12} />
-                            <Link href="/services" className="hover:text-sunset-orange transition-colors">Services</Link>
-                            <ChevronRight size={12} />
-                            <Link href="/services/inter-city" className="hover:text-sunset-orange transition-colors">Inter-City Transfers</Link>
-                            <ChevronRight size={12} />
-                            <span className="text-sunset-orange">{origin.name} → {destination.name}</span>
-                        </nav>
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">Inter-City Transfer</h4>
-                        <CharBlurIn text={content.h1.toUpperCase()} className="text-3xl md:text-7xl font-semibold text-white uppercase tracking-tight leading-[0.9] block" />
-                    </div>
-                </section>
+            {/* Hero */}
+            <section className="relative flex h-[58vh] min-h-[440px] items-end overflow-hidden">
+                <Image src={destination.heroImg} alt={content.h1} fill priority className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/10" />
+                <div className="container-x relative z-10 pb-16 pt-32">
+                    <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-[12px] text-paper/70">
+                        <Link href="/" className="hover:text-clay-soft">Home</Link>
+                        <ChevronRight size={12} />
+                        <Link href="/services" className="hover:text-clay-soft">Services</Link>
+                        <ChevronRight size={12} />
+                        <Link href="/services/inter-city" className="hover:text-clay-soft">Inter-City Transfers</Link>
+                        <ChevronRight size={12} />
+                        <span className="text-clay-soft">{origin.name} → {destination.name}</span>
+                    </nav>
+                    <p className="eyebrow text-paper/70">Inter-City Transfer</p>
+                    <h1 className="display-1 mt-4 font-medium text-paper">{content.h1}</h1>
+                </div>
+            </section>
 
-                <section className="py-24 md:py-28 container mx-auto px-6">
-                    <div className="max-w-5xl">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">The Brief</h4>
-                        <p className="text-2xl md:text-4xl font-semibold text-royal-blue leading-snug tracking-tight mb-12">{content.answer}</p>
-                        <div className="space-y-7 max-w-3xl">
-                            {content.intro.map((p, i) => (
-                                <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-lg md:text-xl text-dark-slate/70 font-bold leading-relaxed">{p}</motion.p>
-                            ))}
+            {/* Brief */}
+            <section className="section">
+                <div className="container-x max-w-5xl">
+                    <p className="eyebrow eyebrow-accent">The Brief</p>
+                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{content.answer}</p>
+                    <div className="mt-10 max-w-3xl space-y-5">
+                        {content.intro.map((p, i) => (
+                            <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[17px] leading-relaxed text-muted">{p}</motion.p>
+                        ))}
+                    </div>
+                    <div className="mt-10 flex flex-wrap gap-3">
+                        <div className="card flex items-center gap-3 px-6 py-4">
+                            <Navigation2 className="text-clay" size={18} />
+                            <span className="text-[14px] font-medium text-ink">~{route.distanceKm} km</span>
                         </div>
-                        <div className="flex flex-wrap gap-4 mt-12">
-                            <div className="glass-card rounded-2xl px-7 py-4 border-royal-blue/5 flex items-center gap-3">
-                                <Navigation2 className="text-sunset-orange" size={18} />
-                                <span className="font-semibold uppercase text-xs tracking-widest text-royal-blue">~{route.distanceKm} km</span>
+                        <div className="card flex items-center gap-3 px-6 py-4">
+                            <Clock className="text-clay" size={18} />
+                            <span className="text-[14px] font-medium text-ink">~{route.driveHrs} hrs</span>
+                        </div>
+                        {route.via && (
+                            <div className="card flex items-center gap-3 px-6 py-4">
+                                <span className="text-[14px] font-medium text-ink">via {route.via}</span>
                             </div>
-                            <div className="glass-card rounded-2xl px-7 py-4 border-royal-blue/5 flex items-center gap-3">
-                                <Clock className="text-sunset-orange" size={18} />
-                                <span className="font-semibold uppercase text-xs tracking-widest text-royal-blue">~{route.driveHrs} hrs</span>
+                        )}
+                    </div>
+                </div>
+            </section>
+
+            {/* Inclusions */}
+            <section className="border-y border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">What's Included</p>
+                    <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        {content.inclusions.map((inc, i) => (
+                            <div key={i} className="card flex gap-4 p-7">
+                                <CheckCircle2 className="mt-0.5 shrink-0 text-clay" size={20} />
+                                <span className="text-[15px] leading-relaxed text-muted">{inc}</span>
                             </div>
-                            {route.via && (
-                                <div className="glass-card rounded-2xl px-7 py-4 border-royal-blue/5 flex items-center gap-3">
-                                    <span className="font-semibold uppercase text-xs tracking-widest text-royal-blue">via {route.via}</span>
-                                </div>
-                            )}
-                        </div>
+                        ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="py-20 bg-royal-blue/5">
-                    <div className="container mx-auto px-6">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-8">What&apos;s Included</h4>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {content.inclusions.map((inc, i) => (
-                                <div key={i} className="glass-card rounded-3xl p-7 border-royal-blue/5 flex gap-4">
-                                    <CheckCircle2 className="text-sunset-orange shrink-0 mt-0.5" size={20} />
-                                    <span className="text-base text-dark-slate/70 font-bold italic leading-relaxed">{inc}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <section className="py-20 container mx-auto px-6">
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-8">Vehicle Classes</h4>
-                    <div className="grid sm:grid-cols-3 gap-5">
+            {/* Vehicle classes */}
+            <section className="section">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">Vehicle Classes</p>
+                    <div className="mt-8 grid gap-5 sm:grid-cols-3">
                         {content.vehicleClasses.map((v, i) => (
-                            <div key={i} className="glass-card rounded-3xl p-7 border-royal-blue/5">
-                                <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-sunset-orange mb-2">{v.tier} tier</div>
-                                <div className="text-xl font-semibold text-royal-blue uppercase tracking-tight mb-4">{v.name}</div>
-                                <div className="space-y-2 text-[11px] font-semibold uppercase tracking-widest text-royal-blue/60">
-                                    <div className="flex items-center gap-2"><Users size={12} className="text-sunset-orange" /> {v.passengers} passengers</div>
-                                    <div className="flex items-center gap-2"><Briefcase size={12} className="text-sunset-orange" /> {v.luggage}</div>
+                            <div key={i} className="card p-7">
+                                <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-stone">{v.tier} tier</p>
+                                <p className="mt-2 text-xl font-medium text-ink">{v.name}</p>
+                                <div className="mt-4 space-y-2 text-[14px] text-ink-soft">
+                                    <div className="flex items-center gap-2"><Users size={14} className="text-clay" /> {v.passengers} passengers</div>
+                                    <div className="flex items-center gap-2"><Briefcase size={14} className="text-clay" /> {v.luggage}</div>
                                 </div>
                             </div>
                         ))}
                     </div>
                     <div className="mt-8">
-                        <Link href="/fleet" className="px-7 py-4 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 inline-flex items-center gap-3">Full Elite Fleet <ArrowRight size={14} /></Link>
+                        <Link href="/fleet" className="btn-outline btn-sm">Full Elite Fleet <ArrowRight size={14} /></Link>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="py-24 bg-royal-blue/5">
-                    <div className="container mx-auto px-6">
-                        <div className="text-center mb-14">
-                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">Intelligence</h4>
-                            <CharBlurIn text={`${origin.name} → ${destination.name} FAQ`.toUpperCase()} className="text-2xl md:text-5xl font-semibold text-royal-blue uppercase tracking-tight block leading-none" />
-                        </div>
-                        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                            {content.faqs.map((f, i) => (
-                                <div key={i} className="glass-card p-10 rounded-3xl border-royal-blue/5">
-                                    <div className="flex items-start gap-4 mb-4">
-                                        <HelpCircle className="text-sunset-orange shrink-0 mt-1" size={20} />
-                                        <h3 className="font-semibold text-royal-blue uppercase tracking-tight text-base leading-tight">{f.q}</h3>
-                                    </div>
-                                    <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed pl-9">{f.a}</p>
-                                </div>
-                            ))}
-                        </div>
+            {/* FAQ */}
+            <section className="border-y border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">Intelligence</p>
+                    <h2 className="display-3 mt-3 text-ink">{origin.name} → {destination.name} FAQ</h2>
+                    <div className="mt-10 grid gap-6 md:grid-cols-2">
+                        {content.faqs.map((f, i) => (
+                            <div key={i} className="card p-7">
+                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
+                            </div>
+                        ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="py-20 container mx-auto px-6">
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">Continue planning</h4>
-                    <div className="flex flex-wrap gap-3">
-                        <Link href={`/destinations/${origin.slug}`} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">Explore {origin.name}</Link>
-                        <Link href={`/destinations/${destination.slug}`} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">Explore {destination.name}</Link>
-                        <Link href={`/destinations/${destination.slug}/itinerary`} className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500">{destination.name} itineraries</Link>
-                        <Link href="/services/inter-city" className="px-6 py-3 glass-card rounded-2xl border-royal-blue/10 font-semibold uppercase text-[11px] tracking-widest text-royal-blue hover:bg-sunset-orange hover:text-white transition-all duration-500 flex items-center gap-2">All inter-city routes <ArrowRight size={14} /></Link>
+            <section className="section">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">Continue planning</p>
+                    <div className="mt-6 flex flex-wrap gap-3">
+                        <Link href={`/destinations/${origin.slug}`} className="btn-outline btn-sm">Explore {origin.name}</Link>
+                        <Link href={`/destinations/${destination.slug}`} className="btn-outline btn-sm">Explore {destination.name}</Link>
+                        <Link href={`/destinations/${destination.slug}/itinerary`} className="btn-outline btn-sm">{destination.name} itineraries</Link>
+                        <Link href="/services/inter-city" className="btn-outline btn-sm">All inter-city routes <ArrowRight size={14} /></Link>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <LeadBlock
-                    source={`Inter-city transfer: ${origin.name} to ${destination.name}`}
-                    context={{ "Inquiry Type": "Inter-city transfer", From: origin.name, To: destination.name }}
-                    heading={`Book your ${origin.name} to ${destination.name} transfer`}
-                    pitch={`Private, GPS-tracked chauffeured transfer from ${origin.name} to ${destination.name}, roughly ${route.distanceKm} km in about ${route.driveHrs} hours, with fuel, tolls and permits pre calculated. Tell us your dates and we reply with a transparent quote.`}
-                    waMessage={`Hi MyTripMyTravel, I would like to book the ${origin.name} to ${destination.name} transfer.`}
-                    faqs={content.faqs}
-                    breadcrumbs={[
-                        { name: "Home", item: "https://www.mytripmytravel.com" },
-                        { name: "Services", item: "https://www.mytripmytravel.com/services" },
-                        { name: "Inter-City Transfers", item: "https://www.mytripmytravel.com/services/inter-city" },
-                        { name: `${origin.name} to ${destination.name}` },
-                    ]}
-                />
+            <LeadBlock
+                source={`Inter-city transfer: ${origin.name} to ${destination.name}`}
+                context={{ "Inquiry Type": "Inter-city transfer", From: origin.name, To: destination.name }}
+                heading={`Book your ${origin.name} to ${destination.name} transfer`}
+                pitch={`Private, GPS-tracked chauffeured transfer from ${origin.name} to ${destination.name}, roughly ${route.distanceKm} km in about ${route.driveHrs} hours, with fuel, tolls and permits pre calculated. Tell us your dates and we reply with a transparent quote.`}
+                waMessage={`Hi MyTripMyTravel, I would like to book the ${origin.name} to ${destination.name} transfer.`}
+                faqs={content.faqs}
+                breadcrumbs={[
+                    { name: "Home", item: "https://www.mytripmytravel.com" },
+                    { name: "Services", item: "https://www.mytripmytravel.com/services" },
+                    { name: "Inter-City Transfers", item: "https://www.mytripmytravel.com/services/inter-city" },
+                    { name: `${origin.name} to ${destination.name}` },
+                ]}
+            />
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <Footer />
+        </main>
     );
 }

@@ -1,215 +1,201 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-    Calendar, Users, MapPin, Phone, Mail, MessageCircle,
-    ShieldCheck, Sparkles, Send, ArrowRight, Clock, Star
+    MapPin, Phone, Mail, MessageCircle,
+    ShieldCheck, Send, ArrowRight, Clock, Star
 } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, Magnetic, CharBlurIn, Tilt3D } from "@/components/ClientComponents";
 
 export default function BookingView() {
     const [state, handleSubmit] = useForm("maqaanvz");
 
     return (
-        <SmoothScroll>
-            <main className="bg-[#f8fafc] min-h-screen relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(30,64,175,0.03),transparent)] pointer-events-none" />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                {/* --- Hero Section --- */}
-                <section className="pt-60 pb-20 container mx-auto px-6 relative z-10">
-                    <div className="max-w-5xl mx-auto text-center">
-                        <motion.h4
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6"
-                        >
-                            Plan Your Journey
-                        </motion.h4>
-                        <CharBlurIn
-                            text="SECURE YOUR JOURNEY"
-                            className="text-5xl md:text-[8rem] font-semibold text-royal-blue uppercase tracking-tight leading-none mb-12"
-                        />
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.5 }}
-                            className="text-dark-slate font-bold italic text-xl max-w-2xl mx-auto opacity-60 leading-relaxed"
-                        >
-                            Share your travel plans below and our concierge will personally respond to your enquiry, usually within a day, to shape your itinerary.
-                        </motion.p>
-                    </div>
-                </section>
+            {/* --- Hero Section --- */}
+            <section className="container-x pt-40 pb-16">
+                <div className="mx-auto max-w-3xl text-center">
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="eyebrow eyebrow-accent"
+                    >
+                        Plan Your Journey
+                    </motion.p>
+                    <h1 className="display-1 mt-4 font-medium text-ink">Secure your journey</h1>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.5 }}
+                        className="mx-auto mt-6 max-w-2xl text-[16px] leading-relaxed text-muted"
+                    >
+                        Share your travel plans below and our concierge will personally respond to your enquiry, usually within a day, to shape your itinerary.
+                    </motion.p>
+                </div>
+            </section>
 
-                {/* --- Main Booking Grid --- */}
-                <section className="pb-40 container mx-auto px-6 relative z-10">
-                    <div className="grid lg:grid-cols-12 gap-12 items-start">
+            {/* --- Main Booking Grid --- */}
+            <section className="container-x pb-28">
+                <div className="grid items-start gap-10 lg:grid-cols-12">
 
-                        {/* Left Column: Form Protocol */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="lg:col-span-7 bg-white rounded-2xl p-12 md:p-16 shadow-md border border-royal-blue/5 relative overflow-hidden"
-                        >
-                            {/* Form Success Overlay */}
-                            <AnimatePresence>
-                                {state.succeeded && (
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        className="absolute inset-0 bg-royal-blue z-50 flex flex-col items-center justify-center p-12 text-center"
-                                    >
-                                        <div className="w-24 h-24 bg-sunset-orange rounded-full flex items-center justify-center mb-8 shadow-md">
-                                            <Send className="text-white" size={40} />
-                                        </div>
-                                        <h3 className="text-4xl font-semibold text-white uppercase tracking-tight mb-4">Enquiry Received</h3>
-                                        <p className="text-white/60 font-bold italic mb-10">Your enquiry has been received. A Lead Curator will contact you shortly.</p>
-                                        <button
-                                            onClick={() => window.location.reload()}
-                                            className="text-sunset-orange font-semibold uppercase tracking-widest text-xs underline decoration-2 underline-offset-8"
-                                        >
-                                            Return to Form
-                                        </button>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-
-                            <form
-                                onSubmit={handleSubmit}
-                                action="https://formspree.io/f/maqaanvz"
-                                method="POST"
-                                className="space-y-10"
-                            >
-                                <input type="hidden" name="Inquiry Type" value="General Booking" />
-                                <div className="grid md:grid-cols-2 gap-10">
-                                    <div className="space-y-4">
-                                        <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Full Name</label>
-                                        <input required name="Full Name" type="text" placeholder="ALEXANDER VANCE" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
-                                        <ValidationError prefix="Name" field="Full Name" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
+                    {/* Left Column: Form */}
+                    <div className="card relative overflow-hidden p-7 sm:p-9 lg:col-span-7">
+                        {/* Form Success Overlay */}
+                        <AnimatePresence>
+                            {state.succeeded && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-ink p-10 text-center"
+                                >
+                                    <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-clay text-paper">
+                                        <Send size={30} />
                                     </div>
-                                    <div className="space-y-4">
-                                        <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Email Address</label>
-                                        <input required name="Email" type="email" placeholder="VANCE@MISSION.COM" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
-                                        <ValidationError prefix="Email" field="Email" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
-                                    </div>
-                                </div>
-
-                                <div className="grid md:grid-cols-2 gap-10">
-                                    <div className="space-y-4">
-                                        <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Contact Number</label>
-                                        <input required name="Phone" type="tel" placeholder="+91 XXXXX XXXXX" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all shadow-sm" />
-                                        <ValidationError prefix="Phone" field="Phone" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
-                                    </div>
-                                    <div className="space-y-4">
-                                        <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Service Required</label>
-                                        <select name="Service Required" className="w-full bg-white border border-royal-blue/5 rounded-2xl p-6 text-royal-blue font-semibold uppercase focus:ring-2 focus:ring-sunset-orange transition-all appearance-none cursor-pointer shadow-sm">
-                                            <option>Tour Master Packages</option>
-                                            <option>Elite Fleet Rental</option>
-                                            <option>Medical Sanctuary</option>
-                                            <option>Royal Wedding Logistics</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div className="space-y-4">
-                                    <label className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60 ml-4">Mission directives / Details</label>
-                                    <textarea required name="Directives" rows={4} placeholder="DESCRIBE YOUR SPECIFIC REQUIREMENTS..." className="w-full bg-white border border-royal-blue/5 rounded-3xl p-8 text-royal-blue font-semibold uppercase placeholder:text-royal-blue/40 focus:ring-2 focus:ring-sunset-orange transition-all resize-none shadow-sm"></textarea>
-                                    <ValidationError prefix="Message" field="Directives" errors={state.errors} className="text-[10px] text-red-500 font-bold uppercase ml-4" />
-                                </div>
-
-                                <div className="flex items-center gap-4 p-6 bg-sunset-orange/5 rounded-2xl border border-sunset-orange/10">
-                                    <ShieldCheck className="text-sunset-orange" />
-                                    <p className="text-[10px] font-bold text-royal-blue/60 uppercase tracking-widest italic leading-relaxed">
-                                        Your details stay private and are used only to plan your trip.
-                                    </p>
-                                </div>
-
-                                <Magnetic>
+                                    <h3 className="text-2xl font-medium text-paper">Enquiry received</h3>
+                                    <p className="mt-3 max-w-md text-[15px] leading-relaxed text-paper/70">Your enquiry has been received. Our travel desk will contact you shortly.</p>
                                     <button
-                                        type="submit"
-                                        disabled={state.submitting}
-                                        className="bg-royal-blue text-white px-16 py-8 rounded-2xl font-semibold uppercase tracking-[0.3em] text-sm shadow-md shadow-royal-blue/20 group flex items-center gap-6 hover:bg-sunset-orange transition-all duration-500 disabled:opacity-50"
+                                        onClick={() => window.location.reload()}
+                                        className="mt-8 text-[13px] font-medium text-clay-soft underline underline-offset-4"
                                     >
-                                        {state.submitting ? "TRANSMITTING..." : "SEND ENQUIRY"}
-                                        <ArrowRight className="group-hover:translate-x-3 transition-transform" />
+                                        Return to form
                                     </button>
-                                </Magnetic>
-                            </form>
-                        </motion.div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
 
-                        {/* Right Column: Authority & Proof */}
-                        <div className="lg:col-span-5 space-y-12">
-                            <Tilt3D>
-                                <div className="p-12 rounded-2xl bg-royal-blue shadow-md text-white relative overflow-hidden group">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-sunset-orange/10 blur-3xl -translate-y-1/2 translate-x-1/2 rounded-full" />
-                                    <h4 className="text-xs font-semibold uppercase tracking-[0.4em] text-sunset-orange mb-8 text-center sm:text-left">The Authority Standard</h4>
-                                    <div className="space-y-10">
-                                        {[
-                                            { icon: Star, title: "Bespoke Experience", desc: "Years of crafting tailored India journeys." },
-                                            { icon: Clock, title: "Prompt Replies", desc: "We respond to every enquiry, usually within a day." },
-                                            { icon: MessageCircle, title: "24/7 Support", desc: "On-call concierge support throughout your journey." }
-                                        ].map((item, i) => (
-                                            <div key={i} className="flex gap-6 items-start group">
-                                                <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-sunset-orange group-hover:border-sunset-orange transition-all duration-500">
-                                                    <item.icon size={20} className="text-white" />
-                                                </div>
-                                                <div>
-                                                    <h5 className="font-semibold uppercase tracking-widest text-sm mb-2">{item.title}</h5>
-                                                    <p className="text-[11px] font-bold text-white/70 italic leading-relaxed">{item.desc}</p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
+                        <p className="eyebrow eyebrow-accent">Request a quote</p>
+                        <h2 className="mt-3 text-2xl font-medium text-ink sm:text-[26px]">Tell us about your trip</h2>
+
+                        <form
+                            onSubmit={handleSubmit}
+                            action="https://formspree.io/f/maqaanvz"
+                            method="POST"
+                            className="mt-7 space-y-4"
+                        >
+                            <input type="hidden" name="Inquiry Type" value="General Booking" />
+                            <div className="grid gap-4 sm:grid-cols-2">
+                                <div>
+                                    <label className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Full Name</label>
+                                    <input required name="Full Name" type="text" placeholder="Your name" className="field" />
+                                    <ValidationError prefix="Name" field="Full Name" errors={state.errors} className="mt-1 text-xs text-red-500" />
                                 </div>
-                            </Tilt3D>
-
-                            <div className="space-y-8">
-                                <h4 className="text-[10px] font-semibold uppercase tracking-[0.6em] text-royal-blue/20 ml-6">Global Contact Grid</h4>
-                                <div className="grid sm:grid-cols-2 gap-6">
-                                    <a href="tel:+919997812237" className="bg-white border border-royal-blue/10 p-8 rounded-3xl shadow-xl flex flex-col gap-4 hover:border-sunset-orange transition-all duration-500 group">
-                                        <Phone className="text-sunset-orange" size={24} />
-                                        <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60">Voice Command</span>
-                                        <span className="text-sm font-semibold text-royal-blue">+91 99978 12237</span>
-                                    </a>
-                                    <a href="mailto:info@mytripmytravel.com" className="bg-white border border-royal-blue/10 p-8 rounded-3xl shadow-xl flex flex-col gap-4 hover:border-sunset-orange transition-all duration-500 group whitespace-normal break-all">
-                                        <Mail className="text-sunset-orange" size={24} />
-                                        <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/60">Intel Dispatch</span>
-                                        <div className="flex flex-col">
-                                            <span className="text-[11px] font-semibold text-royal-blue">info@mytripmytravel.com</span>
-                                            <span className="text-[11px] font-semibold text-royal-blue opacity-80">mytripmytravel@gmail.com</span>
-                                        </div>
-                                    </a>
+                                <div>
+                                    <label className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Email Address</label>
+                                    <input required name="Email" type="email" placeholder="Email address" className="field" />
+                                    <ValidationError prefix="Email" field="Email" errors={state.errors} className="mt-1 text-xs text-red-500" />
                                 </div>
                             </div>
 
-                            <div className="p-8 rounded-3xl bg-royal-blue text-white flex flex-col gap-6 shadow-md relative overflow-hidden">
-                                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 blur-3xl translate-y-1/2 -translate-x-1/2 rounded-full" />
-                                <div className="flex items-center gap-4 relative z-10">
-                                    <MapPin className="text-sunset-orange" size={24} />
-                                    <h4 className="text-[10px] font-semibold uppercase tracking-widest text-white/50 leading-none">Headquarters</h4>
+                            <div className="grid gap-4 sm:grid-cols-2">
+                                <div>
+                                    <label className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Contact Number</label>
+                                    <input required name="Phone" type="tel" placeholder="Phone or WhatsApp" className="field" />
+                                    <ValidationError prefix="Phone" field="Phone" errors={state.errors} className="mt-1 text-xs text-red-500" />
                                 </div>
-                                <p className="text-xs font-semibold uppercase tracking-widest leading-relaxed relative z-10">
-                                    House Number 80, Ansal Town,<br />Block C, Agra, Uttar Pradesh 283125
+                                <div>
+                                    <label className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Service Required</label>
+                                    <select name="Service Required" className="field appearance-none">
+                                        <option>Tour Master Packages</option>
+                                        <option>Elite Fleet Rental</option>
+                                        <option>Medical Sanctuary</option>
+                                        <option>Royal Wedding Logistics</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Trip Details</label>
+                                <textarea required name="Directives" rows={4} placeholder="Describe your specific requirements." className="field resize-none"></textarea>
+                                <ValidationError prefix="Message" field="Directives" errors={state.errors} className="mt-1 text-xs text-red-500" />
+                            </div>
+
+                            <div className="flex items-center gap-3 rounded-xl border border-line bg-paper-dim/60 p-4">
+                                <ShieldCheck className="shrink-0 text-clay" size={18} />
+                                <p className="text-[13px] leading-relaxed text-muted">
+                                    Your details stay private and are used only to plan your trip.
                                 </p>
                             </div>
 
-                            <div className="p-8 rounded-3xl bg-royal-blue/[0.03] border-2 border-dashed border-royal-blue/10 flex items-center justify-between group">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-4 h-4 rounded-full bg-emerald-500 animate-pulse" />
-                                    <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue">Direct WhatsApp Access</span>
-                                </div>
-                                <a href="https://wa.me/919997812237" target="_blank" rel="noopener noreferrer" className="bg-white border border-royal-blue/10 px-6 py-3 rounded-xl text-[10px] font-semibold text-emerald-600 hover:bg-emerald-50 hover:border-emerald-500/30 transition-all shadow-md">CONNECT NOW</a>
+                            <button
+                                type="submit"
+                                disabled={state.submitting}
+                                className="btn-primary w-full py-4 disabled:opacity-50"
+                            >
+                                {state.submitting ? "Sending your enquiry" : "Send enquiry"}
+                                <ArrowRight size={17} />
+                            </button>
+                        </form>
+                    </div>
+
+                    {/* Right Column: Authority & Proof */}
+                    <div className="space-y-8 lg:col-span-5">
+                        <div className="rounded-3xl bg-ink p-8 text-paper">
+                            <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-clay-soft">The Authority Standard</p>
+                            <div className="mt-8 space-y-8">
+                                {[
+                                    { icon: Star, title: "Bespoke Experience", desc: "Years of crafting tailored India journeys." },
+                                    { icon: Clock, title: "Prompt Replies", desc: "We respond to every enquiry, usually within a day." },
+                                    { icon: MessageCircle, title: "24/7 Support", desc: "On-call concierge support throughout your journey." }
+                                ].map((item, i) => (
+                                    <div key={i} className="flex items-start gap-4">
+                                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-paper/10">
+                                            <item.icon size={18} className="text-paper" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[15px] font-medium text-paper">{item.title}</h3>
+                                            <p className="mt-1.5 text-[13px] leading-relaxed text-paper/70">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                    </div>
-                </section>
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+                        <div>
+                            <p className="eyebrow eyebrow-accent">Global Contact Grid</p>
+                            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                                <a href="tel:+919997812237" className="card flex flex-col gap-3 p-7">
+                                    <Phone className="text-clay" size={22} />
+                                    <span className="text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Voice Command</span>
+                                    <span className="text-[15px] font-medium text-ink">+91 99978 12237</span>
+                                </a>
+                                <a href="mailto:info@mytripmytravel.com" className="card flex flex-col gap-3 break-all p-7">
+                                    <Mail className="text-clay" size={22} />
+                                    <span className="text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Intel Dispatch</span>
+                                    <div className="flex flex-col">
+                                        <span className="text-[13px] font-medium text-ink">info@mytripmytravel.com</span>
+                                        <span className="text-[13px] font-medium text-muted">mytripmytravel@gmail.com</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-4 rounded-3xl bg-ink p-8 text-paper">
+                            <div className="flex items-center gap-3">
+                                <MapPin className="text-clay-soft" size={22} />
+                                <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-paper/60">Headquarters</p>
+                            </div>
+                            <p className="text-[14px] leading-relaxed text-paper/80">
+                                House Number 80, Ansal Town,<br />Block C, Agra, Uttar Pradesh 283125
+                            </p>
+                        </div>
+
+                        <div className="flex items-center justify-between rounded-2xl border border-dashed border-line bg-paper-dim/40 p-5">
+                            <div className="flex items-center gap-3">
+                                <div className="h-3 w-3 animate-pulse rounded-full bg-emerald-500" />
+                                <span className="text-[13px] font-medium text-ink">Direct WhatsApp access</span>
+                            </div>
+                            <a href="https://wa.me/919997812237" target="_blank" rel="noopener noreferrer" className="btn-outline btn-sm">Connect now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <Footer />
+        </main>
     );
 }

@@ -2,11 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Wind, MapPin, ArrowRight, Sun, Moon, Zap, UserCheck, Shield } from "lucide-react";
+import { Wind, ArrowRight, Sun, Moon, Zap, UserCheck, Shield } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LeadBlock } from "@/components/lead/Lead";
-import { SmoothScroll, Magnetic, CharBlurIn, Tilt3D } from "@/components/ClientComponents";
 import WellnessProgrammeDetail from "@/components/wellness/WellnessProgrammeDetail";
 import type { WellnessProgramme } from "@/data/wellness";
 import Link from "next/link";
@@ -14,169 +13,143 @@ import Image from "next/image";
 
 export default function YogaSoulView({ programme }: { programme: WellnessProgramme }) {
     return (
-        <SmoothScroll>
-            <main className="bg-white min-h-screen relative overflow-hidden">
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                {/* --- Hero Section --- */}
-                <section className="pt-60 pb-20 container mx-auto px-6 relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
-                        <div>
-                            <motion.h4
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="text-emerald-600 font-semibold uppercase tracking-[0.8em] text-sm mb-6"
-                            >
-                                Yoga & Meditation
-                            </motion.h4>
-                            <CharBlurIn
-                                text="YOGA AT THE SOURCE"
-                                className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
-                            />
-                            <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed mb-12">
-                                A master-led practice of movement, breath and meditation, grounded in the Indian places where these traditions took shape. Suited to every level, from first-timers finding their footing to seasoned practitioners deepening their discipline.
-                            </p>
-                            <div className="flex flex-wrap gap-6">
-                                <Magnetic>
-                                    <Link href="/booking">
-                                        <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-semibold uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-sunset-orange transition-all duration-500">
-                                            Plan Your Retreat <ArrowRight size={16} />
-                                        </button>
-                                    </Link>
-                                </Magnetic>
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center">
-                                        <UserCheck className="text-emerald-600" size={20} />
-                                    </div>
-                                    <span className="text-[10px] font-semibold uppercase tracking-widest text-royal-blue/40">Master Led</span>
-                                </div>
+            {/* --- Hero Section --- */}
+            <section className="container-x pb-20 pt-36 sm:pt-40">
+                <div className="grid items-center gap-16 lg:grid-cols-2">
+                    <div>
+                        <p className="eyebrow eyebrow-accent">Yoga & meditation</p>
+                        <h1 className="display-1 mt-4 font-medium text-ink">Yoga at the source</h1>
+                        <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+                            A master-led practice of movement, breath and meditation, grounded in the Indian places where these traditions took shape. Suited to every level, from first-timers finding their footing to seasoned practitioners deepening their discipline.
+                        </p>
+                        <div className="mt-9 flex flex-wrap items-center gap-6">
+                            <Link href="/booking" className="btn-primary">Plan your retreat <ArrowRight size={16} /></Link>
+                            <div className="flex items-center gap-3">
+                                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-paper-dim text-clay">
+                                    <UserCheck size={20} />
+                                </span>
+                                <span className="text-[13px] font-medium text-ink">Master led</span>
                             </div>
                         </div>
-                        <div className="relative">
-                            <Tilt3D>
-                                <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-md">
-                                    <Image
-                                        src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Yoga_Meditation%2C_Rishikesh.jpg"
-                                        alt="Yoga and meditation session by the Ganges in Rishikesh, India"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/40 to-transparent" />
-                                </div>
-                            </Tilt3D>
-                        </div>
                     </div>
-                </section>
+                    <div className="relative h-[520px] w-full overflow-hidden rounded-2xl">
+                        <Image
+                            src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Yoga_Meditation%2C_Rishikesh.jpg"
+                            alt="Yoga and meditation session by the Ganges in Rishikesh, India"
+                            fill
+                            className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
+                    </div>
+                </div>
+            </section>
 
-                {/* --- Practice Modules --- */}
-                <section className="py-40 bg-slate-50 relative overflow-hidden">
-                    <div className="container mx-auto px-6">
-                        <div className="text-center mb-24">
-                            <h2 className="text-5xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight mb-8">THE DISCIPLINE</h2>
-                            <p className="text-dark-slate/40 font-semibold uppercase tracking-widest text-xs">Four Pillars of a Complete Practice</p>
-                        </div>
+            {/* --- Practice Modules --- */}
+            <section className="border-y border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">The discipline</p>
+                    <h2 className="display-2 mt-3 font-medium text-ink">Four pillars of a complete practice</h2>
 
-                        <div className="grid md:grid-cols-4 gap-8">
+                    <div className="mt-12 grid gap-6 md:grid-cols-4">
+                        {[
+                            { title: "Dhyana", desc: "Meditation and focused attention", icon: Sun },
+                            { title: "Pranayama", desc: "Breath-work and conscious breathing", icon: Wind },
+                            { title: "Asana", desc: "Postures and physical alignment", icon: Zap },
+                            { title: "Nidra", desc: "Guided deep relaxation", icon: Moon }
+                        ].map((pillar, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.05 }}
+                                className="card p-7"
+                            >
+                                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-paper-dim text-clay">
+                                    <pillar.icon size={22} />
+                                </span>
+                                <h3 className="mt-5 text-xl font-medium text-ink">{pillar.title}</h3>
+                                <p className="mt-2 text-[15px] leading-relaxed text-muted">{pillar.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* --- Sanctuary Archive --- */}
+            <section className="section">
+                <div className="container-x grid items-center gap-12 lg:grid-cols-12">
+                    <div className="lg:col-span-4">
+                        <p className="eyebrow eyebrow-accent">Vetted geography</p>
+                        <h2 className="display-2 mt-3 font-medium text-ink">Where the soul meets.</h2>
+                        <div className="mt-8 space-y-1">
                             {[
-                                { title: "Dhyana", desc: "Meditation and focused attention", icon: Sun, color: "emerald-600" },
-                                { title: "Pranayama", desc: "Breath-work and conscious breathing", icon: Wind, color: "blue-600" },
-                                { title: "Asana", desc: "Postures and physical alignment", icon: Zap, color: "orange-600" },
-                                { title: "Nidra", desc: "Guided deep relaxation", icon: Moon, color: "purple-600" }
-                            ].map((pillar, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: i * 0.1 }}
-                                    className="bg-white p-12 rounded-2xl shadow-xl hover:shadow-md transition-all group"
-                                >
-                                    <pillar.icon className={`text-${pillar.color} mb-8 mb-8 transition-transform group-hover:scale-125 duration-500`} size={40} />
-                                    <h4 className="text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-4">{pillar.title}</h4>
-                                    <p className="text-dark-slate/60 font-bold italic text-sm">{pillar.desc}</p>
-                                </motion.div>
+                                { place: "Rishikesh", tag: "Yoga capital of the world" },
+                                { place: "Varanasi", tag: "Ancient spiritual heart" },
+                                { place: "Jaipur", tag: "Palace courtyard practice" }
+                            ].map((loc, i) => (
+                                <div key={i} className="flex items-center justify-between gap-4 border-b border-line py-5">
+                                    <span className="text-lg font-medium text-ink">{loc.place}</span>
+                                    <span className="text-[12px] font-medium text-clay">{loc.tag}</span>
+                                </div>
                             ))}
                         </div>
                     </div>
-                </section>
-
-                {/* --- Sanctuary Archive --- */}
-                <section className="py-40 container mx-auto px-6">
-                    <div className="grid lg:grid-cols-12 gap-12 items-center">
-                        <div className="lg:col-span-4">
-                            <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-xs mb-8">Vetted Geography</h4>
-                            <h3 className="text-4xl md:text-6xl font-semibold text-royal-blue uppercase tracking-tight leading-none mb-12">
-                                WHERE THE <br /> <span className="text-white bg-royal-blue px-4">SOUL MEETS.</span>
-                            </h3>
-                            <div className="space-y-6">
-                                {[
-                                    { place: "RISHIKESH", tag: "Yoga Capital of the World" },
-                                    { place: "VARANASI", tag: "Ancient Spiritual Heart" },
-                                    { place: "JAIPUR", tag: "Palace Courtyard Practice" }
-                                ].map((loc, i) => (
-                                    <div key={i} className="flex justify-between items-center py-6 border-b border-royal-blue/10">
-                                        <span className="text-xl font-semibold text-royal-blue tracking-tight uppercase">{loc.place}</span>
-                                        <span className="text-[10px] font-semibold uppercase tracking-widest text-sunset-orange opacity-60">{loc.tag}</span>
-                                    </div>
-                                ))}
+                    <div className="grid grid-cols-2 gap-6 lg:col-span-8">
+                        <div className="group relative h-[400px] overflow-hidden rounded-2xl">
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Rishikesh_Ganga_View.jpg" alt="View of the Ganges river at Rishikesh in the Himalayan foothills" fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/70 to-transparent p-8">
+                                <p className="text-[13px] font-medium text-paper">Himalayan foothills retreat</p>
                             </div>
                         </div>
-                        <div className="lg:col-span-8 grid grid-cols-2 gap-8">
-                            <div className="h-[400px] rounded-2xl overflow-hidden relative group">
-                                <Image src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Rishikesh_Ganga_View.jpg" alt="View of the Ganges river at Rishikesh in the Himalayan foothills" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
-                                <div className="absolute inset-0 bg-stone-900/40 flex items-end p-10">
-                                    <p className="text-white font-semibold uppercase tracking-widest text-xs">Himalayan Foothills Retreat</p>
-                                </div>
-                            </div>
-                            <div className="h-[400px] rounded-2xl overflow-hidden relative group mt-12">
-                                <Image src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Rambagh_Palace_hotel_Jaipur_lobby_courtyard.jpg" alt="Courtyard of Rambagh Palace in Jaipur, Rajasthan" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
-                                <div className="absolute inset-0 bg-stone-900/40 flex items-end p-10">
-                                    <p className="text-white font-semibold uppercase tracking-widest text-xs">Royal Courtyard Yoga</p>
-                                </div>
+                        <div className="group relative mt-12 h-[400px] overflow-hidden rounded-2xl">
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Rambagh_Palace_hotel_Jaipur_lobby_courtyard.jpg" alt="Courtyard of Rambagh Palace in Jaipur, Rajasthan" fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/70 to-transparent p-8">
+                                <p className="text-[13px] font-medium text-paper">Royal courtyard yoga</p>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* --- Authority Summary --- */}
-                <section className="py-40 bg-royal-blue">
-                    <div className="container mx-auto px-6 text-center">
-                        <div className="max-w-4xl mx-auto">
-                            <Shield className="text-sunset-orange mx-auto mb-12" size={60} />
-                            <h2 className="text-4xl md:text-8xl font-semibold text-white uppercase tracking-tight leading-[0.9] mb-16">
-                                AUTHENTIC <br /> <span className="text-sunset-orange">PRACTICE.</span>
-                            </h2>
-                            <p className="text-white/60 font-bold italic text-2xl mb-16 px-12">
-                                Every yoga retreat arranged by MyTripMyTravel is led by qualified teachers with a genuine lineage, in settings chosen for their authenticity. We don't sell generic tours, we design considered, master-led practice for every level.
-                            </p>
-                            <Magnetic>
-                                <Link href="/booking">
-                                    <button className="bg-white text-royal-blue px-20 py-8 rounded-full font-semibold uppercase tracking-[0.3em] text-sm hover:bg-sunset-orange hover:text-white transition-all duration-500">
-                                        Plan Your Retreat
-                                    </button>
-                                </Link>
-                            </Magnetic>
-                        </div>
+            {/* --- Authority Summary --- */}
+            <section className="bg-ink py-20 sm:py-28">
+                <div className="container-x text-center">
+                    <div className="mx-auto max-w-3xl">
+                        <Shield className="mx-auto mb-8 text-clay-soft" size={44} />
+                        <h2 className="display-2 font-medium leading-tight text-paper">
+                            Authentic <span className="text-clay-soft">practice.</span>
+                        </h2>
+                        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">
+                            Every yoga retreat arranged by MyTripMyTravel is led by qualified teachers with a genuine lineage, in settings chosen for their authenticity. We don't sell generic tours, we design considered, master-led practice for every level.
+                        </p>
+                        <Link href="/booking" className="btn mt-9 rounded-full bg-paper px-7 py-3.5 text-ink hover:bg-clay hover:text-paper">
+                            Plan your retreat
+                        </Link>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* --- Shared programme detail: quick facts, variants, FAQ, CTA --- */}
-                <WellnessProgrammeDetail programme={programme} />
+            {/* --- Shared programme detail: quick facts, variants, FAQ, CTA --- */}
+            <WellnessProgrammeDetail programme={programme} />
 
-                <LeadBlock
-                    source={`Wellness: ${programme.name}`}
-                    context={{ "Inquiry Type": "Wellness", Programme: programme.name }}
-                    heading={`Plan your ${programme.name} journey`}
-                    pitch={`Master-led yoga and meditation with qualified teachers of genuine lineage, private transfers and handpicked stays, arranged with honest guidance for every level. Tell us what you are looking for and we reply within a few hours with a tailored plan.`}
-                    waMessage={`Hi MyTripMyTravel, I am interested in ${programme.name} in India.`}
-                    breadcrumbs={[
-                        { name: "Home", item: "https://www.mytripmytravel.com" },
-                        { name: "Wellness", item: "https://www.mytripmytravel.com/wellness" },
-                        { name: programme.name },
-                    ]}
-                />
+            <LeadBlock
+                source={`Wellness: ${programme.name}`}
+                context={{ "Inquiry Type": "Wellness", Programme: programme.name }}
+                heading={`Plan your ${programme.name} journey`}
+                pitch={`Master-led yoga and meditation with qualified teachers of genuine lineage, private transfers and handpicked stays, arranged with honest guidance for every level. Tell us what you are looking for and we reply within a few hours with a tailored plan.`}
+                waMessage={`Hi MyTripMyTravel, I am interested in ${programme.name} in India.`}
+                breadcrumbs={[
+                    { name: "Home", item: "https://www.mytripmytravel.com" },
+                    { name: "Wellness", item: "https://www.mytripmytravel.com/wellness" },
+                    { name: programme.name },
+                ]}
+            />
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <Footer />
+        </main>
     );
 }

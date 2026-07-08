@@ -5,91 +5,78 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LeadBlock } from "@/components/lead/Lead";
-import { SmoothScroll, CharBlurIn, Magnetic, Tilt3D } from "@/components/ClientComponents";
 import Link from "next/link";
 import { Utensils, Crown, ChefHat, ArrowRight } from "lucide-react";
 
 export default function HeritageDiningView() {
     return (
-        <SmoothScroll>
-            <main className="bg-white min-h-screen relative overflow-hidden">
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                <section className="pt-60 pb-32 container mx-auto px-6 relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
-                        <div>
-                            <motion.h4
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6"
-                            >
-                                Culinary Archive
-                            </motion.h4>
-                            <CharBlurIn
-                                text="HERITAGE DINING"
-                                className="text-5xl md:text-[6.5rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
-                            />
-                            <p className="text-dark-slate font-bold italic text-lg opacity-60 leading-relaxed mb-12">
-                                We favour heritage settings over commercial restaurants, authentic, architecturally significant dining featuring colourful, balanced Indian thalis served in historic palace courtyards.
-                            </p>
-                            <Magnetic>
-                                <Link href="/booking">
-                                    <button className="bg-sunset-orange text-white px-10 py-5 rounded-full font-semibold uppercase tracking-widest text-xs hover:bg-royal-blue transition-all duration-500 flex items-center gap-4 shadow-xl shadow-sunset-orange/20">
-                                        Reserve a Table <ArrowRight size={16} />
-                                    </button>
-                                </Link>
-                            </Magnetic>
-                        </div>
-                        <div className="grid grid-cols-2 gap-6 relative">
-                            <Tilt3D>
-                                <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-royal-blue/10 bg-royal-blue/5">
-                                    <Crown className="text-royal-blue" size={40} />
-                                    <div>
-                                        <h5 className="text-royal-blue font-semibold uppercase tracking-widest text-xs mb-2">Palatial Settings</h5>
-                                        <p className="text-dark-slate/60 text-[10px] font-bold italic">Curated access to heritage dining rooms and courtyards.</p>
-                                    </div>
-                                </div>
-                            </Tilt3D>
-                            <Tilt3D>
-                                <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-royal-blue/10 mt-12 bg-sunset-orange/5 border-sunset-orange/20 shadow-xl">
-                                    <ChefHat className="text-sunset-orange" size={40} />
-                                    <div>
-                                        <h5 className="text-royal-blue font-semibold uppercase tracking-widest text-xs mb-2">Heritage Kitchens</h5>
-                                        <p className="text-dark-slate/60 text-[10px] font-bold italic">Regional royal-kitchen recipes cooked by vetted heritage kitchens.</p>
-                                    </div>
-                                </div>
-                            </Tilt3D>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="py-32 bg-royal-blue relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-sunset-orange/5 blur-[150px] -translate-y-1/2 translate-x-1/2 rounded-full" />
-                    <div className="container mx-auto px-6 relative z-10 text-center">
-                        <Utensils className="text-sunset-orange mx-auto mb-10" size={60} />
-                        <h2 className="text-4xl md:text-7xl font-semibold text-white uppercase tracking-tight leading-[0.9] mb-12">
-                            THE THALI <br /> <span className="text-sunset-orange">PROTOCOL.</span>
-                        </h2>
-                        <p className="text-white/60 font-bold italic text-xl mb-16 max-w-2xl mx-auto">
-                            The thali is a complete regional meal, a balanced circle of colourful, local dishes spanning textures and flavours, curated to the city you are dining in.
+            <section className="container-x pt-40 pb-24">
+                <div className="grid items-center gap-20 lg:grid-cols-2">
+                    <div>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="eyebrow eyebrow-accent"
+                        >
+                            Culinary Archive
+                        </motion.p>
+                        <h1 className="display-1 mt-4 font-medium text-ink">Heritage dining</h1>
+                        <p className="mt-8 max-w-lg text-[16px] leading-relaxed text-muted">
+                            We favour heritage settings over commercial restaurants, authentic, architecturally significant dining featuring colourful, balanced Indian thalis served in historic palace courtyards.
                         </p>
+                        <div className="mt-8">
+                            <Link href="/booking" className="btn-primary">
+                                Reserve a Table <ArrowRight size={16} />
+                            </Link>
+                        </div>
                     </div>
-                </section>
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="card flex aspect-square flex-col justify-between p-7">
+                            <Crown className="text-clay" size={36} />
+                            <div>
+                                <h3 className="text-[15px] font-medium text-ink">Palatial Settings</h3>
+                                <p className="mt-2 text-[13px] leading-relaxed text-muted">Curated access to heritage dining rooms and courtyards.</p>
+                            </div>
+                        </div>
+                        <div className="card mt-12 flex aspect-square flex-col justify-between p-7">
+                            <ChefHat className="text-clay" size={36} />
+                            <div>
+                                <h3 className="text-[15px] font-medium text-ink">Heritage Kitchens</h3>
+                                <p className="mt-2 text-[13px] leading-relaxed text-muted">Regional royal-kitchen recipes cooked by vetted heritage kitchens.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <LeadBlock
-                    source="Heritage dining hub"
-                    variant="cta"
-                    heading="Reserve a heritage dining experience"
-                    subheading="Tell us your cities and dates, and our dining desk arranges thalis and royal-kitchen tables in historic palace settings."
-                    waMessage="Hi MyTripMyTravel, I would like to arrange heritage dining during my trip in India."
-                    breadcrumbs={[
-                        { name: "Home", item: "https://www.mytripmytravel.com" },
-                        { name: "Heritage dining" },
-                    ]}
-                />
+            <section className="bg-ink py-20 sm:py-24">
+                <div className="container-x text-center">
+                    <Utensils className="mx-auto mb-8 text-clay-soft" size={48} />
+                    <h2 className="display-2 font-medium text-paper">
+                        The thali <span className="text-clay-soft">protocol.</span>
+                    </h2>
+                    <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-relaxed text-paper/70">
+                        The thali is a complete regional meal, a balanced circle of colourful, local dishes spanning textures and flavours, curated to the city you are dining in.
+                    </p>
+                </div>
+            </section>
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <LeadBlock
+                source="Heritage dining hub"
+                variant="cta"
+                heading="Reserve a heritage dining experience"
+                subheading="Tell us your cities and dates, and our dining desk arranges thalis and royal-kitchen tables in historic palace settings."
+                waMessage="Hi MyTripMyTravel, I would like to arrange heritage dining during my trip in India."
+                breadcrumbs={[
+                    { name: "Home", item: "https://www.mytripmytravel.com" },
+                    { name: "Heritage dining" },
+                ]}
+            />
+
+            <Footer />
+        </main>
     );
 }

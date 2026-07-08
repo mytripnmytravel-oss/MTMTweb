@@ -5,90 +5,78 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LeadBlock } from "@/components/lead/Lead";
-import { SmoothScroll, CharBlurIn, Magnetic, Tilt3D } from "@/components/ClientComponents";
 import Link from "next/link";
 import { Landmark, Award, ArrowRight, Languages } from "lucide-react";
 
 export default function ExpertGuidesView() {
     return (
-        <SmoothScroll>
-            <main className="bg-white min-h-screen relative overflow-hidden">
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                <section className="pt-60 pb-32 container mx-auto px-6 relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
-                        <div>
-                            <motion.h4
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="text-royal-blue font-semibold uppercase tracking-[0.8em] text-sm mb-6"
-                            >
-                                The Storytellers
-                            </motion.h4>
-                            <CharBlurIn
-                                text="EXPERT GUARDIANS"
-                                className="text-5xl md:text-[6.5rem] font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] mb-12"
-                            />
-                            <p className="text-dark-slate font-bold italic text-lg opacity-60 leading-relaxed mb-12">
-                                We do not use generic tour guides. Our guides are vetted, licensed heritage specialists and multi-lingual storytellers who frame the true narrative of the subcontinent.
-                            </p>
-                            <Magnetic>
-                                <Link href="/booking">
-                                    <button className="bg-royal-blue text-white px-10 py-5 rounded-full font-semibold uppercase tracking-widest text-xs hover:bg-sunset-orange transition-all duration-500 flex items-center gap-4 shadow-xl">
-                                        Request an Attaché <ArrowRight size={16} />
-                                    </button>
-                                </Link>
-                            </Magnetic>
-                        </div>
-                        <div className="grid grid-cols-2 gap-6 relative">
-                            <Tilt3D>
-                                <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-royal-blue/10 bg-royal-blue/5">
-                                    <Award className="text-royal-blue" size={40} />
-                                    <div>
-                                        <h5 className="text-royal-blue font-semibold uppercase tracking-widest text-xs mb-2">Vetted Guides</h5>
-                                        <p className="text-dark-slate/60 text-[10px] font-bold italic">Licensed heritage professionals, matched to your party.</p>
-                                    </div>
-                                </div>
-                            </Tilt3D>
-                            <Tilt3D>
-                                <div className="glass-card p-8 rounded-2xl aspect-square flex flex-col justify-between border-royal-blue/10 mt-12 bg-sunset-orange/5 border-sunset-orange/20 shadow-xl">
-                                    <Languages className="text-sunset-orange" size={40} />
-                                    <div>
-                                        <h5 className="text-royal-blue font-semibold uppercase tracking-widest text-xs mb-2">Multi-Lingual</h5>
-                                        <p className="text-dark-slate/60 text-[10px] font-bold italic">Guiding in your own language, not translated tours.</p>
-                                    </div>
-                                </div>
-                            </Tilt3D>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="py-32 bg-slate-50 relative overflow-hidden">
-                    <div className="container mx-auto px-6 relative z-10 text-center">
-                        <Landmark className="text-royal-blue mx-auto mb-10" size={60} />
-                        <h2 className="text-4xl md:text-7xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.9] mb-12">
-                            SKIP THE <br /> <span className="text-sunset-orange">NOISE.</span>
-                        </h2>
-                        <p className="text-dark-slate/60 font-bold italic text-xl mb-16 max-w-2xl mx-auto">
-                            Our guides provide more than history; they smooth your access. Expect priority monument entry, careful scheduling, and the removal of friction from your journey.
+            <section className="container-x pt-40 pb-24">
+                <div className="grid items-center gap-20 lg:grid-cols-2">
+                    <div>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="eyebrow eyebrow-accent"
+                        >
+                            The Storytellers
+                        </motion.p>
+                        <h1 className="display-1 mt-4 font-medium text-ink">Expert guardians</h1>
+                        <p className="mt-8 max-w-lg text-[16px] leading-relaxed text-muted">
+                            We do not use generic tour guides. Our guides are vetted, licensed heritage specialists and multi-lingual storytellers who frame the true narrative of the subcontinent.
                         </p>
+                        <div className="mt-8">
+                            <Link href="/booking" className="btn-primary">
+                                Request an Attaché <ArrowRight size={16} />
+                            </Link>
+                        </div>
                     </div>
-                </section>
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="card flex aspect-square flex-col justify-between p-7">
+                            <Award className="text-clay" size={36} />
+                            <div>
+                                <h3 className="text-[15px] font-medium text-ink">Vetted Guides</h3>
+                                <p className="mt-2 text-[13px] leading-relaxed text-muted">Licensed heritage professionals, matched to your party.</p>
+                            </div>
+                        </div>
+                        <div className="card mt-12 flex aspect-square flex-col justify-between p-7">
+                            <Languages className="text-clay" size={36} />
+                            <div>
+                                <h3 className="text-[15px] font-medium text-ink">Multi-Lingual</h3>
+                                <p className="mt-2 text-[13px] leading-relaxed text-muted">Guiding in your own language, not translated tours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <LeadBlock
-                    source="Expert guides hub"
-                    variant="cta"
-                    heading="Request a licensed expert guide"
-                    subheading="Tell us your cities and languages, and we will match you with a vetted, licensed heritage specialist who guides in your own language."
-                    waMessage="Hi MyTripMyTravel, I would like to arrange a licensed expert guide in India."
-                    breadcrumbs={[
-                        { name: "Home", item: "https://www.mytripmytravel.com" },
-                        { name: "Expert guides" },
-                    ]}
-                />
+            <section className="border-y border-line bg-paper-dim/60 py-20 sm:py-24">
+                <div className="container-x text-center">
+                    <Landmark className="mx-auto mb-8 text-clay" size={48} />
+                    <h2 className="display-2 font-medium text-ink">
+                        Skip the <span className="text-clay">noise.</span>
+                    </h2>
+                    <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-relaxed text-muted">
+                        Our guides provide more than history; they smooth your access. Expect priority monument entry, careful scheduling, and the removal of friction from your journey.
+                    </p>
+                </div>
+            </section>
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <LeadBlock
+                source="Expert guides hub"
+                variant="cta"
+                heading="Request a licensed expert guide"
+                subheading="Tell us your cities and languages, and we will match you with a vetted, licensed heritage specialist who guides in your own language."
+                waMessage="Hi MyTripMyTravel, I would like to arrange a licensed expert guide in India."
+                breadcrumbs={[
+                    { name: "Home", item: "https://www.mytripmytravel.com" },
+                    { name: "Expert guides" },
+                ]}
+            />
+
+            <Footer />
+        </main>
     );
 }
