@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight, HelpCircle, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
 import type { MethodologyStage } from "@/data/methodology";
 
 export default function MethodologyStageView({
@@ -17,94 +16,90 @@ export default function MethodologyStageView({
     others: MethodologyStage[];
 }) {
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
-                <GlassyProgressBar />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                <section className="pt-60 pb-16 container mx-auto px-6">
-                    <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-3 mb-8 text-royal-blue/50 font-semibold uppercase text-[10px] tracking-[0.3em]">
-                        <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
-                        <ChevronRight size={12} />
-                        <Link href="/methodology" className="hover:text-sunset-orange transition-colors">Methodology</Link>
-                        <ChevronRight size={12} />
-                        <span className="text-sunset-orange">{stage.name}</span>
-                    </nav>
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">The Mission Protocol &middot; {stage.phase}</h4>
-                    <CharBlurIn text={stage.name.toUpperCase()} className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] block mb-10" />
-                    <p className="text-2xl md:text-3xl font-semibold text-royal-blue leading-snug tracking-tight max-w-4xl mb-10">{stage.answer}</p>
-                    <div className="space-y-6 max-w-3xl">
-                        {stage.intro.map((p, i) => (
-                            <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-lg md:text-xl text-dark-slate/70 font-bold leading-relaxed">{p}</motion.p>
-                        ))}
-                    </div>
-                </section>
+            <section className="container-x pt-36 pb-16 sm:pt-40">
+                <nav aria-label="Breadcrumb" className="mb-8 flex flex-wrap items-center gap-2 text-[12px] text-muted">
+                    <Link href="/" className="hover:text-clay">Home</Link>
+                    <ChevronRight size={12} />
+                    <Link href="/methodology" className="hover:text-clay">Methodology</Link>
+                    <ChevronRight size={12} />
+                    <span className="text-clay">{stage.name}</span>
+                </nav>
+                <p className="eyebrow eyebrow-accent">The Mission Protocol &middot; {stage.phase}</p>
+                <h1 className="display-1 font-medium text-ink mt-5">{stage.name}</h1>
+                <p className="mt-8 max-w-4xl font-display text-[24px] font-medium leading-snug text-ink sm:text-[30px]">{stage.answer}</p>
+                <div className="mt-10 max-w-3xl space-y-5">
+                    {stage.intro.map((p, i) => (
+                        <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[17px] leading-relaxed text-muted">{p}</motion.p>
+                    ))}
+                </div>
+            </section>
 
-                <section className="py-20 bg-royal-blue/5">
-                    <div className="container mx-auto px-6">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-10">What This Phase Covers</h4>
-                        <div className="grid sm:grid-cols-2 gap-5 max-w-5xl">
-                            {stage.features.map((f, i) => (
-                                <div key={i} className="glass-card rounded-3xl p-8 border-royal-blue/5">
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <CheckCircle2 className="text-sunset-orange shrink-0" size={18} />
-                                        <span className="text-lg font-semibold uppercase tracking-tight text-royal-blue">{f.name}</span>
-                                    </div>
-                                    <p className="text-base text-dark-slate/70 font-bold italic leading-relaxed">{f.detail}</p>
+            <section className="border-y border-line bg-paper-dim/60 section">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">What This Phase Covers</p>
+                    <div className="mt-10 grid max-w-5xl gap-5 sm:grid-cols-2">
+                        {stage.features.map((f, i) => (
+                            <div key={i} className="card p-8">
+                                <div className="mb-3 flex items-center gap-3">
+                                    <CheckCircle2 className="shrink-0 text-clay" size={18} />
+                                    <span className="text-lg font-medium text-ink">{f.name}</span>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <section className="py-24 container mx-auto px-6">
-                    <div className="text-center mb-14">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-5">Intelligence</h4>
-                        <CharBlurIn text={`${stage.name} FAQ`.toUpperCase()} className="text-2xl md:text-5xl font-semibold text-royal-blue uppercase tracking-tight block leading-none" />
-                    </div>
-                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        {stage.faqs.map((f, i) => (
-                            <div key={i} className="glass-card p-10 rounded-3xl border-royal-blue/5">
-                                <div className="flex items-start gap-4 mb-4">
-                                    <HelpCircle className="text-sunset-orange shrink-0 mt-1" size={20} />
-                                    <h3 className="font-semibold text-royal-blue uppercase tracking-tight text-base leading-tight">{f.q}</h3>
-                                </div>
-                                <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed pl-9">{f.a}</p>
+                                <p className="text-[15px] leading-relaxed text-muted">{f.detail}</p>
                             </div>
                         ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="py-20 bg-royal-blue/5">
-                    <div className="container mx-auto px-6">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-8">The Full Protocol</h4>
-                        <div className="grid sm:grid-cols-3 gap-5">
-                            {others.map((s) => (
-                                <Link key={s.slug} href={`/methodology/${s.slug}`} className="glass-card rounded-3xl p-7 border-royal-blue/5 group hover:border-sunset-orange/30 transition-all">
-                                    <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-sunset-orange mb-2">{s.phase}</div>
-                                    <span className="text-xl font-semibold uppercase tracking-tight text-royal-blue group-hover:text-sunset-orange transition-colors">{s.name}</span>
-                                </Link>
-                            ))}
-                            <Link href="/methodology" className="glass-card rounded-3xl p-7 border-sunset-orange/30 bg-sunset-orange/10 group hover:bg-sunset-orange/20 transition-all flex items-center justify-between">
-                                <span className="text-xl font-semibold uppercase tracking-tight text-royal-blue">Methodology Overview</span>
-                                <ArrowRight size={18} className="text-sunset-orange shrink-0" />
-                            </Link>
+            <section className="container-x section">
+                <div className="mb-12 text-center">
+                    <p className="eyebrow eyebrow-accent">Intelligence</p>
+                    <h2 className="display-2 font-medium text-ink mt-3">{stage.name} FAQ</h2>
+                </div>
+                <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
+                    {stage.faqs.map((f, i) => (
+                        <div key={i} className="card p-8">
+                            <div className="mb-3 flex items-start gap-3">
+                                <HelpCircle className="mt-0.5 shrink-0 text-clay" size={20} />
+                                <h3 className="text-[17px] font-medium leading-snug text-ink">{f.q}</h3>
+                            </div>
+                            <p className="pl-8 text-[15px] leading-relaxed text-muted">{f.a}</p>
                         </div>
-                    </div>
-                </section>
+                    ))}
+                </div>
+            </section>
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-10 relative z-10">Run the <span className="text-sunset-orange">Protocol</span></h2>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">Begin a Mission Brief</Link>
-                        </Magnetic>
+            <section className="border-y border-line bg-paper-dim/60 section">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">The Full Protocol</p>
+                    <div className="mt-8 grid gap-5 sm:grid-cols-3">
+                        {others.map((s) => (
+                            <Link key={s.slug} href={`/methodology/${s.slug}`} className="card card-hover p-7">
+                                <div className="eyebrow eyebrow-accent">{s.phase}</div>
+                                <span className="mt-2 block text-xl font-medium text-ink">{s.name}</span>
+                            </Link>
+                        ))}
+                        <Link href="/methodology" className="card card-hover flex items-center justify-between bg-paper-dim/60 p-7">
+                            <span className="text-xl font-medium text-ink">Methodology Overview</span>
+                            <ArrowRight size={18} className="shrink-0 text-clay" />
+                        </Link>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <section className="container-x section">
+                <div className="rounded-2xl bg-ink p-12 text-center sm:p-16">
+                    <h2 className="display-2 font-medium text-paper">Run the Protocol</h2>
+                    <div className="mt-10">
+                        <Link href="/booking" className="btn-primary">Begin a Mission Brief</Link>
+                    </div>
+                </div>
+            </section>
+
+            <Footer />
+        </main>
     );
 }

@@ -3,10 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronRight, ArrowRight, Compass } from "lucide-react";
+import { ChevronRight, Compass } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll, CharBlurIn, Magnetic, GlassyProgressBar } from "@/components/ClientComponents";
 
 const ROLE_AREAS = [
     { name: "Mission Architects", detail: "Bespoke itinerary design across the Golden Triangle, Rajasthan, and beyond, the people who turn an enquiry into a sequenced private mission." },
@@ -25,73 +24,69 @@ const PRINCIPLES = [
 
 export default function CareersView() {
     return (
-        <SmoothScroll>
-            <main className="min-h-screen bg-white text-royal-blue overflow-hidden">
-                <GlassyProgressBar />
-                <Navbar />
+        <main className="min-h-screen bg-paper">
+            <Navbar />
 
-                <section className="pt-60 pb-20 container mx-auto px-6">
-                    <nav aria-label="Breadcrumb" className="flex items-center gap-3 mb-8 text-royal-blue/50 font-semibold uppercase text-[10px] tracking-[0.3em]">
-                        <Link href="/" className="hover:text-sunset-orange transition-colors">Home</Link>
-                        <ChevronRight size={12} />
-                        <span className="text-sunset-orange">Careers</span>
-                    </nav>
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.8em] text-sm mb-6">Join the Mission</h4>
-                    <CharBlurIn text="CAREERS AT MYTRIPMYTRAVEL" className="text-5xl md:text-8xl font-semibold text-royal-blue uppercase tracking-tight leading-[0.85] block mb-8" />
-                    <p className="text-dark-slate font-bold italic text-xl opacity-60 leading-relaxed max-w-2xl">
-                        We are a luxury inbound-India travel architect, building the most precise private-travel
-                        operation in the country. We hire for judgement, discretion, and craft &mdash; and we
-                        grow deliberately.
-                    </p>
-                </section>
+            <section className="container-x pt-36 pb-16 sm:pt-40">
+                <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-[12px] text-muted">
+                    <Link href="/" className="hover:text-clay">Home</Link>
+                    <ChevronRight size={12} />
+                    <span className="text-clay">Careers</span>
+                </nav>
+                <p className="eyebrow eyebrow-accent">Join the Mission</p>
+                <h1 className="display-1 font-medium text-ink mt-5">Careers at MyTripMyTravel</h1>
+                <p className="mt-8 max-w-2xl text-[17px] leading-relaxed text-muted">
+                    We are a luxury inbound-India travel architect, building the most precise private-travel
+                    operation in the country. We hire for judgement, discretion, and craft, and we
+                    grow deliberately.
+                </p>
+            </section>
 
-                <section className="pb-8 container mx-auto px-6">
-                    <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-10">Where We Hire</h4>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {ROLE_AREAS.map((r, i) => (
-                            <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 3) * 0.06 }} className="glass-card rounded-2xl p-9 border-royal-blue/5">
-                                <h3 className="text-2xl font-semibold text-royal-blue uppercase tracking-tight mb-4 leading-tight">{r.name}</h3>
-                                <p className="text-dark-slate/60 font-bold italic text-sm leading-relaxed">{r.detail}</p>
-                            </motion.div>
+            <section className="container-x pb-8">
+                <p className="eyebrow eyebrow-accent">Where We Hire</p>
+                <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {ROLE_AREAS.map((r, i) => (
+                        <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 3) * 0.06 }} className="card p-8">
+                            <h3 className="text-xl font-medium leading-snug text-ink">{r.name}</h3>
+                            <p className="mt-3 text-[15px] leading-relaxed text-muted">{r.detail}</p>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
+
+            <section className="border-y border-line bg-paper-dim/60 section">
+                <div className="container-x">
+                    <p className="eyebrow eyebrow-accent">How We Work</p>
+                    <div className="mt-10 grid max-w-5xl gap-5 sm:grid-cols-2">
+                        {PRINCIPLES.map((p, i) => (
+                            <div key={i} className="card flex gap-4 p-7">
+                                <span className="shrink-0 font-display text-2xl font-medium text-clay">0{i + 1}</span>
+                                <span className="text-[16px] leading-relaxed text-muted">{p}</span>
+                            </div>
                         ))}
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="py-24 bg-royal-blue/5">
-                    <div className="container mx-auto px-6">
-                        <h4 className="text-sunset-orange font-semibold uppercase tracking-[0.6em] text-xs mb-10">How We Work</h4>
-                        <div className="grid sm:grid-cols-2 gap-5 max-w-5xl">
-                            {PRINCIPLES.map((p, i) => (
-                                <div key={i} className="glass-card rounded-3xl p-7 border-royal-blue/5 flex gap-4">
-                                    <span className="text-sunset-orange font-semibold text-2xl shrink-0">0{i + 1}</span>
-                                    <span className="text-base md:text-lg text-dark-slate/70 font-bold italic leading-relaxed">{p}</span>
-                                </div>
-                            ))}
-                        </div>
+            <section className="container-x section">
+                <div className="rounded-2xl bg-ink p-12 text-center sm:p-16">
+                    <Compass className="mx-auto mb-8 text-clay-soft" size={44} />
+                    <h2 className="display-2 font-medium text-paper">
+                        No open posting that fits? Tell us anyway.
+                    </h2>
+                    <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-relaxed text-paper/70">
+                        We do not run a rolling job board. We meet exceptional people before we have the role,
+                        and build the role around them. Introduce yourself via the contact desk.
+                    </p>
+                    <div className="mt-10">
+                        <Link href="/booking" className="btn-primary">
+                            Introduce Yourself
+                        </Link>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="py-28 container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-20 rounded-3xl bg-royal-blue text-white text-center shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-sunset-orange/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <Compass className="mx-auto mb-8 text-sunset-orange opacity-40" size={52} />
-                        <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight leading-none mb-8 relative z-10">
-                            No open posting that fits? <span className="text-sunset-orange">Tell us anyway.</span>
-                        </h2>
-                        <p className="max-w-2xl mx-auto font-bold italic text-white/70 mb-10 relative z-10">
-                            We do not run a rolling job board. We meet exceptional people before we have the role,
-                            and build the role around them. Introduce yourself via the contact desk.
-                        </p>
-                        <Magnetic>
-                            <Link href="/booking" className="inline-block relative z-10 bg-sunset-orange text-white py-6 px-12 rounded-2xl font-semibold uppercase tracking-widest text-sm hover:bg-white hover:text-royal-blue transition-all duration-500 shadow-xl">
-                                Introduce Yourself
-                            </Link>
-                        </Magnetic>
-                    </div>
-                </section>
-
-                <Footer />
-            </main>
-        </SmoothScroll>
+            <Footer />
+        </main>
     );
 }
