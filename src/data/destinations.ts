@@ -922,7 +922,7 @@ const coreDestinations: Destination[] = [
         regionSlug: "himalayas",
         state: "Ladakh",
         tagline: "The High-Altitude Desert Kingdom",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/0/03/Leh_Palace_Ladakh.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Leh_Palace_2011.jpg/3840px-Leh_Palace_2011.jpg",
         coordinates: { lat: 34.1526, lng: 77.5771 },
         answer:
             "Leh is the principal town of Ladakh, India, set at roughly 3,500 m in a high-altitude cold desert in the Trans-Himalaya. It was the capital of the historic Kingdom of Ladakh and is dominated by the nine-storey Leh Palace. The region is known for Buddhist monasteries (Thiksey, Hemis, Diskit), the Pangong and Tso Moriri lakes, the Nubra Valley, and some of the highest motorable roads in the world. Leh requires acclimatisation. MyTripMyTravel operates Ladakh as a controlled high-altitude mission with medically aware pacing, oxygen-equipped fleet, and curated monastery and lake access.",

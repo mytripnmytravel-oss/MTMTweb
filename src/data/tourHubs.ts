@@ -86,7 +86,7 @@ export const REGIONAL_HUBS: RegionTourHub[] = [
         name: "Himalayas",
         tagline: "Hill stations, high passes, and Trans-Himalayan altitude.",
         locationKeys: ["Himalayas", "North India"],
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/0/03/Leh_Palace_Ladakh.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Leh_Palace_2011.jpg/3840px-Leh_Palace_2011.jpg",
         destinationsRegionSlug: "himalayas",
         blurb: "Colonial hill stations, the Garhwal-Kumaon belt, and the Ladakh altitude circuit, chauffeured and acclimatised end to end.",
         intro: [
