@@ -359,7 +359,7 @@ export const packages: Package[] = [
         price: "₹66,300",
         theme: "Luxury",
         highlight: "Stay at the Oberoi and Taj palaces with helicopter transfers available.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Evening_view%2C_City_Palace%2C_Udaipur.jpg",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg/3840px-20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg",
         location: "Golden Triangle",
         itinerary: [
             { day: 1, plan: "Private flight to Delhi. VIP airport pickup and stay at The Oberoi New Delhi." },
@@ -397,7 +397,7 @@ export const packages: Package[] = [
         price: "₹66,300",
         theme: "Spiritual",
         highlight: "Ganges Aarti and private Yoga sessions at the foothills of the Himalayas.",
-        img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2548&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Parmarth.jpg",
         location: "Himalayas",
         itinerary: [
             { day: 1, plan: "Delhi Arrival & Spiritual briefing. Evening at Birla Mandir." },
@@ -438,7 +438,7 @@ export const packages: Package[] = [
         price: "₹70,500",
         theme: "Luxury",
         highlight: "Explore the Blue City and the mighty Mehrangarh Fort.",
-        img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/1996_-218-20A_Jodhpur_Hotel_Umaid_Bhawan_Palace_%282233393509%29.jpg",
         location: "Rajasthan",
         itinerary: [
             { day: 1, plan: "Delhi Arrival. Evening cultural walk." },
@@ -537,7 +537,7 @@ export const packages: Package[] = [
         price: "₹45,600",
         theme: "Spiritual",
         highlight: "The gateway to the Gods. Witness the grand Ganga Aarti.",
-        img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2548&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Evening_view_of_Har-ki-Pauri%2C_Haridwar.jpg",
         location: "Himalayas",
         itinerary: [
             { day: 1, plan: "Delhi Arrival. Half day tour of spiritual monuments." },
@@ -607,7 +607,7 @@ export const packages: Package[] = [
         price: "₹1,57,600",
         theme: "Wildlife",
         highlight: "From the dry forts of Rajasthan to the tea hills of Kerala.",
-        img: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=2669&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Munnar_Overview.jpg/3840px-Munnar_Overview.jpg",
         location: "South India",
         itinerary: [
             { day: 1, plan: "Delhi Arrival & Heritage intro." },
@@ -656,7 +656,7 @@ export const packages: Package[] = [
         price: "₹2,07,400",
         theme: "Luxury",
         highlight: "The absolute gold standard. Cover 7 cities with private butler service.",
-        img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Chandra_Mahal%2C_City_Palace%2C_Jaipur%2C_20191218_0951_9043.jpg",
         location: "Rajasthan",
         itinerary: [
             { day: 1, plan: "Delhi Arrival. VIP transfer to stay at Taj Mahal Hotel New Delhi." },
@@ -784,7 +784,7 @@ export const packages: Package[] = [
         price: "₹49,700",
         theme: "Adventure",
         highlight: "High-altitude lakes and ancient monasteries on the border of Tibet.",
-        img: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Tsongmo_Lake_or_Changu_Lake_-_East_Sikkim.jpg/3840px-Tsongmo_Lake_or_Changu_Lake_-_East_Sikkim.jpg",
         location: "North East",
         itinerary: [
             { day: 1, plan: "Bagdogra Arrival. Drive to Gangtok. Evening at MG Marg." },
@@ -845,7 +845,7 @@ export const packages: Package[] = [
         price: "₹33,100",
         theme: "Short Tours",
         highlight: "Sun, sand, and Portuguese heritage in a compact tropical break.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/BeachFun.jpg/3840px-BeachFun.jpg",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Baga_Beach%2C_Calangute%2C_Goa.jpg/3840px-Baga_Beach%2C_Calangute%2C_Goa.jpg",
         location: "Goa",
         itinerary: [
             { day: 1, plan: "Goa Arrival. Evening at Baga Beach." },
@@ -862,7 +862,7 @@ export const packages: Package[] = [
         price: "₹78,800",
         theme: "Luxury",
         highlight: "Pristine white beaches and world-class scuba diving in Havelock Island.",
-        img: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Front_View_of_Cellular_Jail%2C_Port_Blair.JPG/3840px-Front_View_of_Cellular_Jail%2C_Port_Blair.JPG",
         location: "Islands",
         itinerary: [
             { day: 1, plan: "Port Blair Arrival. Cellular Jail Sound & Light Show." },
