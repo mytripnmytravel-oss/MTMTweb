@@ -251,7 +251,7 @@ export const packages: Package[] = [
         price: "₹41,400",
         theme: "Short Tours",
         highlight: "A deeper dive into the Mughal history with evening sound & light shows.",
-        img: "https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=2673&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Taj_Mahal_%28Edited%29.jpeg",
         location: "Golden Triangle",
         metaTitle: "5-Day Golden Triangle Tour, Delhi, Agra & Jaipur | MyTripMyTravel",
         metaDescription: "In-depth 5-day Golden Triangle tour: sunrise Taj Mahal, Agra's Baby Taj & Jaipur's three forts. Private car, guides, hotels, from ₹41,400pp. Enquire now.",
@@ -359,7 +359,7 @@ export const packages: Package[] = [
         price: "₹66,300",
         theme: "Luxury",
         highlight: "Stay at the Oberoi and Taj palaces with helicopter transfers available.",
-        img: "https://images.unsplash.com/photo-1590393533632-6858220f8646?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Evening_view%2C_City_Palace%2C_Udaipur.jpg",
         location: "Golden Triangle",
         itinerary: [
             { day: 1, plan: "Private flight to Delhi. VIP airport pickup and stay at The Oberoi New Delhi." },
@@ -376,7 +376,7 @@ export const packages: Package[] = [
         price: "₹74,600",
         theme: "Luxury",
         highlight: "Lakes and Palaces extension. The Venice of the East meets the Golden Triangle.",
-        img: "https://images.unsplash.com/photo-1590393533632-6858220f8646?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Evening_view%2C_City_Palace%2C_Udaipur.jpg",
         location: "Rajasthan",
         itinerary: [
             { day: 1, plan: "Delhi Arrival & Luxury Stay. Evening Rickshaw tour." },
@@ -458,7 +458,7 @@ export const packages: Package[] = [
         price: "₹62,200",
         theme: "Spiritual",
         highlight: "The UNESCO temples of Khajuraho mixed with the Golden Circuit.",
-        img: "https://images.unsplash.com/photo-1622329388062-817cc67a2166?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/e/e7/1_Khajuraho.jpg",
         location: "Central India",
         itinerary: [
             { day: 1, plan: "Delhi Arrival & half day sightseeing." },
@@ -517,7 +517,7 @@ export const packages: Package[] = [
         price: "₹66,300",
         theme: "Luxury",
         highlight: "The city of Nawabs, Awadhi cuisine, and sophisticated manners.",
-        img: "https://images.unsplash.com/photo-1614713568397-b33b6680a656?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/5/51/Harzratganj_Market%2C_Lucknow.jpg",
         location: "North India",
         itinerary: [
             { day: 1, plan: "Delhi Arrival & Luxury Stay." },
@@ -556,7 +556,7 @@ export const packages: Package[] = [
         price: "₹1,07,800",
         theme: "Luxury",
         highlight: "Culture followed by white sands. The ultimate North-South India experience.",
-        img: "https://images.unsplash.com/photo-1512757788165-66720562f146?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/BeachFun.jpg/3840px-BeachFun.jpg",
         location: "Goa",
         itinerary: [
             { day: 1, plan: "Delhi Arrival & stay at 5-star hotel." },
@@ -684,7 +684,7 @@ export const packages: Package[] = [
         price: "₹99,500",
         theme: "Spiritual",
         highlight: "Jaisalmer's golden dunes integrated into your Triangle tour.",
-        img: "https://images.unsplash.com/photo-1591456285821-c614a298884a?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/4/46/Jaisalmer_Fort.jpg",
         location: "Rajasthan",
         itinerary: [
             { day: 1, plan: "Delhi Arrival & introduction to culture." },
@@ -764,7 +764,7 @@ export const packages: Package[] = [
         price: "₹45,600",
         theme: "Adventure",
         highlight: "Snow-capped peaks and valley treks through Manali and Shimla.",
-        img: "https://images.unsplash.com/photo-1597041634447-062e245a499d?q=80&w=2548&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/0/03/Manali_City.jpg",
         location: "Himalayas",
         itinerary: [
             { day: 1, plan: "Chandigarh Arrival. Drive to Shimla. Evening at The Mall Road." },
@@ -845,7 +845,7 @@ export const packages: Package[] = [
         price: "₹33,100",
         theme: "Short Tours",
         highlight: "Sun, sand, and Portuguese heritage in a compact tropical break.",
-        img: "https://images.unsplash.com/photo-1512757788165-66720562f146?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/BeachFun.jpg/3840px-BeachFun.jpg",
         location: "Goa",
         itinerary: [
             { day: 1, plan: "Goa Arrival. Evening at Baga Beach." },
@@ -899,7 +899,7 @@ export const packages: Package[] = [
         price: "₹58,000",
         theme: "Spiritual",
         highlight: "The Great White Desert under the moonlight. Hand-crafted culture.",
-        img: "https://images.unsplash.com/photo-1627063462118-80e927c36a43?q=80&w=2574&auto=format&fit=crop",
+        img: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Rann_of_Kutch_-_White_Desert.jpg",
         location: "West India",
         itinerary: [
             { day: 1, plan: "Bhuj Arrival. Visit Aina Mahal and Prag Mahal." },
@@ -935,7 +935,7 @@ export const packages: Package[] = [
         price: "₹68,500",
         theme: "Adventure",
         highlight: "Gangtok → North Sikkim → Pelling, Kanchenjunga views, Buddhist monasteries, Yumthang rhododendron.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Yumthang_Valley.jpg",
+        img: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Yumthang_valley%2C_Lachung_Sikkim_India_2012.jpg",
         location: "North East",
         itinerary: [
             { day: 1, plan: "Bagdogra arrival. Chauffeured 4-hr ascent to Gangtok via the Teesta Valley." },
@@ -955,7 +955,7 @@ export const packages: Package[] = [
         price: "₹95,400",
         theme: "Luxury",
         highlight: "Port Blair → Havelock → Neil, Cellular Jail heritage, diving / snorkelling, beach luxury.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/7/71/Radhanagar_Beach%2C_Havelock_Island%2C_Andaman%2C_India.jpg",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg/3840px-Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg",
         location: "Islands",
         itinerary: [
             { day: 1, plan: "Port Blair arrival. Afternoon at Cellular Jail heritage circuit. Evening sound-and-light show." },
@@ -974,7 +974,7 @@ export const packages: Package[] = [
         price: "₹89,200",
         theme: "Adventure",
         highlight: "Delhi → Leh fly-in → Nubra Valley → Pangong Lake, Trans-Himalayan high-altitude expedition.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Pangong_Lake.jpg",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Road_Padum_Zanskar_Range_Jun24_A7CR_00818.jpg/3840px-Road_Padum_Zanskar_Range_Jun24_A7CR_00818.jpg",
         location: "Himalayas",
         itinerary: [
             { day: 1, plan: "Delhi arrival. Afternoon at Qutub Minar and Humayun's Tomb." },

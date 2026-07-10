@@ -88,7 +88,7 @@ export const regions: Region[] = [
         slug: "rajasthan",
         name: "Rajasthan Escapes",
         tagline: "Udaipur · Jodhpur · Jaisalmer",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jodhpur-Mehrangarh_Fort-06-Blue_city-20131011.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/9/99/Mehrangarh_Fort_sanhita.jpg",
         blurb: "Deep immersions into the royal heartland, lake palaces, blue cities, and the last great desert forts of the Thar.",
         citySlugs: ["udaipur", "jodhpur", "jaisalmer", "pushkar", "ranthambore", "bikaner", "chittorgarh", "mount-abu", "bundi", "mandawa", "ajmer", "bharatpur", "ranakpur", "kumbhalgarh", "nawalgarh", "osian", "kota", "jawai", "abhaneri", "deogarh", "khimsar", "phalodi", "karauli", "barmer", "nathdwara", "bhangarh"],
     },
@@ -120,7 +120,7 @@ export const regions: Region[] = [
         slug: "andaman",
         name: "Andaman Islands",
         tagline: "Port Blair · Havelock · Neil",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/7/71/Radhanagar_Beach%2C_Havelock_Island%2C_Andaman%2C_India.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg/3840px-Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg",
         blurb: "Private island sanctuaries and ultra-luxury marine operations across the Bay of Bengal archipelago.",
         citySlugs: ["port-blair", "havelock", "neil", "diglipur"],
     },
@@ -242,7 +242,7 @@ const coreDestinations: Destination[] = [
         regionSlug: "golden-triangle",
         state: "Delhi (NCT)",
         tagline: "Eight Cities, One Capital",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Humayun%27s_Tomb%2C_Delhi.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Tomb_of_Humayun%2C_Delhi.jpg/3840px-Tomb_of_Humayun%2C_Delhi.jpg",
         coordinates: { lat: 28.6139, lng: 77.209 },
         answer:
             "Delhi is the capital territory of India and the northern gateway of the Golden Triangle. It is effectively two cities fused: Old Delhi, the walled Mughal capital of Shahjahanabad with the Red Fort and Jama Masjid; and New Delhi, the Lutyens-designed imperial and government quarter. Delhi holds three UNESCO World Heritage Sites, the Red Fort, Humayun's Tomb, and the Qutub Minar complex. It is the primary international air gateway (Indira Gandhi International, DEL) for almost every northern India itinerary. MyTripMyTravel uses Delhi as a mission staging point: airport-to-fleet handover, a curated heritage-and-contrast day across both cities, and the chauffeured launch onto the Yamuna Expressway toward Agra.",
@@ -378,7 +378,7 @@ const coreDestinations: Destination[] = [
         regionSlug: "rajasthan",
         state: "Rajasthan",
         tagline: "The City of Lakes",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Lake_Palace_Udaipur.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/3/32/Udaipur_Lake_Palace.jpg",
         coordinates: { lat: 24.5854, lng: 73.7125 },
         answer:
             "Udaipur is a city in southern Rajasthan, India, founded in 1559 by Maharana Udai Singh II as the capital of the Mewar kingdom. Built around a chain of artificial lakes, chiefly Lake Pichola and Fateh Sagar, it is known as the 'City of Lakes' and the 'Venice of the East'. Its landmarks include the City Palace (the largest palace complex in Rajasthan), the island Lake Palace, and Jagdish Temple. Udaipur is a natural extension of the Golden Triangle into Rajasthan and a leading destination for royal weddings. MyTripMyTravel operates Udaipur as a slow-luxury and celebration base, lake-palace stays, private boat protocols, and Mewar heritage dining.",
@@ -446,7 +446,7 @@ const coreDestinations: Destination[] = [
         regionSlug: "rajasthan",
         state: "Rajasthan",
         tagline: "The Blue City Beneath Mehrangarh",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jodhpur-Mehrangarh_Fort-06-Blue_city-20131011.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/9/99/Mehrangarh_Fort_sanhita.jpg",
         coordinates: { lat: 26.2389, lng: 73.0243 },
         answer:
             "Jodhpur is the second-largest city in Rajasthan, India, founded in 1459 by Rao Jodha as the capital of the Marwar kingdom. It is called the 'Blue City' for the indigo-washed houses of its old quarter, which cluster beneath Mehrangarh, one of the largest and best-preserved forts in India, rising 120 metres on a sheer rock escarpment. Other landmarks include the marble Jaswant Thada cenotaph and the Umaid Bhawan Palace. Jodhpur is the gateway to the Thar Desert and a core stop on the Rajasthan circuit. MyTripMyTravel runs Jodhpur as a fort-and-desert mission with escorted access and heritage-palace stays.",
@@ -1194,7 +1194,7 @@ const coreDestinations: Destination[] = [
         regionSlug: "andaman",
         state: "Andaman & Nicobar Islands",
         tagline: "The Archipelago Gateway",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/7/71/Radhanagar_Beach%2C_Havelock_Island%2C_Andaman%2C_India.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg/3840px-Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg",
         coordinates: { lat: 11.6234, lng: 92.7265 },
         answer:
             "Port Blair is the capital of the Andaman & Nicobar Islands, India, on South Andaman in the Bay of Bengal. It is the entry point and logistics hub for the archipelago, known for the Cellular Jail National Memorial (the colonial-era prison and its sound-and-light show), Ross Island, and Corbyn's Cove. Port Blair is where every Andaman itinerary begins before the ferry to Havelock and Neil. MyTripMyTravel operates Port Blair as the arrival-and-heritage anchor with private transfers and curated ferry logistics to the island sanctuaries.",
@@ -1262,7 +1262,7 @@ const coreDestinations: Destination[] = [
         regionSlug: "andaman",
         state: "Andaman & Nicobar Islands",
         tagline: "Radhanagar & the Diving Reefs",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/7/71/Radhanagar_Beach%2C_Havelock_Island%2C_Andaman%2C_India.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg/3840px-Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg",
         coordinates: { lat: 11.9735, lng: 93.0009 },
         answer:
             "Havelock Island (officially Swaraj Dweep) is the premier resort island of the Andamans, India, in the Bay of Bengal. It is known for Radhanagar Beach, regularly rated among Asia's best beaches, Elephant Beach, and some of the finest scuba diving and snorkelling reefs in the country. Havelock is the centrepiece of any Andaman luxury itinerary. MyTripMyTravel operates Havelock as the marine-sanctuary leg with beachfront luxury stays, private dive arrangements, and managed ferry logistics from Port Blair.",
@@ -1330,7 +1330,7 @@ const coreDestinations: Destination[] = [
         regionSlug: "andaman",
         state: "Andaman & Nicobar Islands",
         tagline: "The Quiet Island",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/7/71/Radhanagar_Beach%2C_Havelock_Island%2C_Andaman%2C_India.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg/3840px-Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg",
         coordinates: { lat: 11.8333, lng: 93.0333 },
         answer:
             "Neil Island (officially Shaheed Dweep) is a small, quiet island in the Andamans, India, near Havelock. It is known for its slow pace, the Natural Bridge rock formation, and the calm beaches of Bharatpur, Laxmanpur, and Sitapur, the last famous for sunrises. Neil is the decompression counterpoint to Havelock's activity. MyTripMyTravel operates Neil as the final stillness leg of an Andaman itinerary, with boutique stays and unhurried, escorted island time.",
@@ -2422,7 +2422,7 @@ const coreDestinations: Destination[] = [
         regionSlug: "himalayas",
         state: "Uttarakhand",
         tagline: "India's Premier Ski Meadow",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Auli_Snow.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/8/83/Auli_Himalayas.jpg",
         coordinates: { lat: 30.5333, lng: 79.5667 },
         answer:
             "Auli is a high-altitude meadow and ski resort in the Garhwal Himalaya of Uttarakhand, India, at roughly 2,800 m. It is the country's foremost developed skiing destination, with views of Nanda Devi (India's second-highest peak), Mana Parvat, and the Hathi Ghodi Parvat massif. Reached via a chairlift / ropeway from Joshimath, it offers winter skiing and summer alpine-meadow walks. MyTripMyTravel operates Auli as a winter-snow or summer-meadow leg of the Garhwal circuit with paced acclimatisation.",
@@ -2772,7 +2772,7 @@ const coreDestinations: Destination[] = [
         regionSlug: "sikkim",
         state: "Sikkim",
         tagline: "The Valley of Flowers of north Sikkim",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Yumthang_Valley.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Yumthang_valley%2C_Lachung_Sikkim_India_2012.jpg",
         coordinates: { lat: 27.8278, lng: 88.6981 },
         answer:
             "Yumthang Valley sits in north Sikkim, India, at 3,564 m, a glacial-fed valley of grassland, rhododendron forest, and hot springs ringed by the eastern Himalayan peaks. From late April to early June it carpets in primula and rhododendron bloom (24 species), giving it the colloquial name 'Sikkim's Valley of Flowers.' Yumthang is reached from Lachung, 23 km south, in turn reached by a 6-7 hour drive from Gangtok with mandatory permits. MyTripMyTravel operates Yumthang as a full-day Lachung extension with a vetted permit-compliant escort and altitude-aware pacing.",
@@ -3345,7 +3345,7 @@ const coreDestinations: Destination[] = [
         regionSlug: "rajasthan",
         state: "Rajasthan",
         tagline: "The open-air fresco gallery of Shekhawati",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Mandawa_Castle.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Haveli_mandawa.jpg",
         coordinates: { lat: 28.0552, lng: 75.1486 },
         answer:
             "Mandawa is a small town in the Shekhawati region of Rajasthan, India, famed for its 18th- and 19th-century havelis (merchant mansions) covered, inside and out, with painted frescoes. The Marwari trading families who controlled the trans-Thar caravan trade built these as both showpiece and statement; the region is sometimes called the world's largest open-air art gallery. Mandawa Castle (the principal fortified haveli) is now a heritage hotel. MyTripMyTravel operates Mandawa as a curated half-day to full-day Shekhawati immersion, a quiet, scholarly counterpoint to the famous palace cities.",

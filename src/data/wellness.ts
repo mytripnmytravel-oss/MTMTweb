@@ -37,7 +37,7 @@ export const programmes: WellnessProgramme[] = [
         slug: "yoga-soul",
         name: "Yoga & Soul Calibration",
         label: "Soul Calibration",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Yoga_Meditation%2C_Rishikesh.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Rishikesh-Lakshman_Jhula_by_Kaustubh_Nayyar.jpg/3840px-Rishikesh-Lakshman_Jhula_by_Kaustubh_Nayyar.jpg",
         blurb: "Master-led practice synchronised with the spiritual meridians of India.",
         variants: [
             {
@@ -386,7 +386,7 @@ export const programmes: WellnessProgramme[] = [
         slug: "massage",
         name: "Therapeutic Massage",
         label: "Bodywork",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Lake_Palace_Udaipur.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/3/32/Udaipur_Lake_Palace.jpg",
         blurb: "Master-therapist bodywork across Indian and global modalities.",
         variants: [
             {

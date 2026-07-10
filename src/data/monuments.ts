@@ -184,7 +184,7 @@ const coreMonuments: Monument[] = [
         type: "Tomb",
         era: "Mughal · completed 1572",
         tagline: "The Prototype of the Taj",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Humayun%27s_Tomb%2C_Delhi.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Tomb_of_Humayun%2C_Delhi.jpg/3840px-Tomb_of_Humayun%2C_Delhi.jpg",
         answer:
             "Humayun's Tomb is a 16th-century Mughal garden-tomb in Delhi, India, completed in 1572 for the second Mughal emperor, Humayun, commissioned by his widow Bega Begum. A UNESCO World Heritage Site, it was the first garden-tomb on the Indian subcontinent and the architectural prototype that culminated in the Taj Mahal. Set in a charbagh garden, it is best visited in early-morning light. MyTripMyTravel includes it on the curated New Delhi heritage day.",
         intro: [
@@ -483,7 +483,7 @@ const coreMonuments: Monument[] = [
         type: "Fort",
         era: "Rajput · founded 1459 (Rao Jodha)",
         tagline: "The Citadel Above the Blue City",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jodhpur-Mehrangarh_Fort-06-Blue_city-20131011.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/9/99/Mehrangarh_Fort_sanhita.jpg",
         answer:
             "Mehrangarh is one of the largest forts in India, founded in 1459 by Rao Jodha in Jodhpur, Rajasthan, rising 120 metres on a sheer rock escarpment above the blue old city. It contains palaces, Moti Mahal, Phool Mahal, Sheesh Mahal, and one of the best-curated fort museums in the country, with the city of Jodhpur spread beneath its ramparts. MyTripMyTravel arranges an escorted early entry before the light hardens and the crowds arrive.",
         intro: [
@@ -535,7 +535,7 @@ const coreMonuments: Monument[] = [
         type: "Palace",
         era: "Mewar · begun 1559 (Udai Singh II)",
         tagline: "The Lake-Edge Palace of Mewar",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Lake_Palace_Udaipur.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/3/32/Udaipur_Lake_Palace.jpg",
         answer:
             "The City Palace of Udaipur, India, is the largest palace complex in Rajasthan, begun in 1559 by Maharana Udai Singh II and extended over nearly four centuries by successive Mewar rulers. Stretching almost a kilometre along the east bank of Lake Pichola, it is a stacked sequence of courtyards, balconies, and mirror rooms, parts of which remain the residence of the Mewar family. MyTripMyTravel arranges escorted access and a private Lake Pichola boat to see it from the water.",
         intro: [

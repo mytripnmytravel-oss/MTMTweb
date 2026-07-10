@@ -104,7 +104,7 @@ export const blogPosts: BlogPost[] = [
             "There is no single best time for India, only the right time for the region you are travelling to. A real seasonal guide, not a generic one.",
         answer:
             "There is no single best time to visit India because the country spans climates from Himalayan altitude to tropical coast. As a rule, October to March is the prime window for North and Central India (Delhi, Agra, Jaipur, Rajasthan) and for the Kerala coast. April to June is high summer, punishing in the plains, but the peak window for the Himalaya (Shimla, Manali, Leh open progressively). July to September is the monsoon: heavy on the southwest coast and in the Western Ghats, lighter and intermittent in the North. The Andamans run on a slightly different calendar, October to May is reliable; June to September brings rough seas. Travelling deliberately to the right region in the right month is the actual answer.",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jodhpur-Mehrangarh_Fort-06-Blue_city-20131011.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/9/99/Mehrangarh_Fort_sanhita.jpg",
         category: "Planning",
         datePublished: "2026-05-21",
         dateModified: "2026-05-21",
@@ -172,7 +172,7 @@ export const blogPosts: BlogPost[] = [
             "What the India e-Visa actually is, who can use it, and the practical entry steps. Plain language, no false specifics, and where to verify before you travel.",
         answer:
             "Most foreign nationals require a visa to enter India. The most common option for travellers is the India e-Visa (electronic tourist visa), applied for online before departure on the official Government of India indianvisaonline portal. Eligibility, the validity bands (typically 30-day, one-year, or five-year tourist e-Visas), and the fee vary by passport, and they change. The official portal is the only authoritative source for current rules; agents are not. On arrival, you present the e-Visa printout and passport at the immigration desk at major airports (DEL, BOM, MAA, BLR, COK, HYD and others). Visa-on-arrival exists for very few nationalities. MyTripMyTravel's concierge advises on the current process for your specific passport during planning but does not file the visa for you.",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Humayun%27s_Tomb%2C_Delhi.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Tomb_of_Humayun%2C_Delhi.jpg/3840px-Tomb_of_Humayun%2C_Delhi.jpg",
         category: "Planning",
         datePublished: "2026-05-21",
         dateModified: "2026-05-21",
@@ -233,7 +233,7 @@ export const blogPosts: BlogPost[] = [
             "What \"recovery travel\" actually means when designed properly, paced itineraries, controlled environments, and the difference from a spa weekend.",
         answer:
             "Recovery travel is a deliberate, paced itinerary structured around restoration rather than sightseeing, controlled environments (heritage havelis, sea-facing or backwater wellness resorts, Himalayan retreats), reduced daily movement, integration of practitioner-led Ayurveda or yoga, and a fleet/logistics layer that absorbs friction. It is distinct from a spa weekend in that it is multi-day, supervised where appropriate, and architected. MyTripMyTravel's Medical Sanctuary pathway runs recovery, post-procedure, and decompression travel with paced logistics, accessible stays, dietary planning, and coordination with care teams. The standard is invisible logistics and a remembered experience, the opposite of a 'tour'.",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Yoga_Meditation%2C_Rishikesh.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Rishikesh-Lakshman_Jhula_by_Kaustubh_Nayyar.jpg/3840px-Rishikesh-Lakshman_Jhula_by_Kaustubh_Nayyar.jpg",
         category: "Wellness",
         datePublished: "2026-05-21",
         dateModified: "2026-05-21",
@@ -294,7 +294,7 @@ export const blogPosts: BlogPost[] = [
             "How a destination wedding in a palace, fort, or lake-palace setting actually gets built, venue first, then design, then logistics. Read this six months out.",
         answer:
             "A royal destination wedding in India, palace, fort, lake-palace, or desert-camp setting, typically requires a six-month lead time minimum, and longer for the largest venues. The order of operations matters: venue securing comes first (heritage palaces and lake-palaces are limited and exclusive), then design and run-of-show, then guest logistics. Operationally a royal wedding is a multi-day production with multi-property room blocks, a GPS-tracked convoy, choreographed event flow across mehndi/sangeet/ceremony/reception, and a single accountable mission lead. MyTripMyTravel's weddings wing runs this end to end, venue, decor, dining, fleet, contingency, under one production owner.",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Lake_Palace_Udaipur.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/3/32/Udaipur_Lake_Palace.jpg",
         category: "Weddings",
         datePublished: "2026-05-21",
         dateModified: "2026-05-21",
@@ -485,7 +485,7 @@ export const blogPosts: BlogPost[] = [
             "When the Triangle is enough, when Rajasthan is what you actually want, and how to combine them. The honest framework for a first or second India trip.",
         answer:
             "The Golden Triangle (Delhi, Agra, Jaipur) is the right choice for a first India trip of 5 to 7 days, where the priority is the iconic monuments and high-density introduction. Full Rajasthan (which typically includes Udaipur, Jodhpur, Jaisalmer, and Pushkar or Ranthambore) is the right choice for 10 to 14 days where the priority is depth and texture over coverage of the most-photographed sites. The two overlap at Jaipur; Rajasthan is the Triangle plus four to five more cities. Most travellers benefit from doing the Triangle on the first trip and full Rajasthan on the second, the contrast is sharper that way. MyTripMyTravel routinely combines them into single 10 to 14 day missions when the dates allow.",
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jodhpur-Mehrangarh_Fort-06-Blue_city-20131011.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/9/99/Mehrangarh_Fort_sanhita.jpg",
         category: "Comparison",
         datePublished: "2026-05-21",
         dateModified: "2026-05-21",

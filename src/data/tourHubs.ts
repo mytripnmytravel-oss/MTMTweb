@@ -30,7 +30,7 @@ export const REGIONAL_HUBS: RegionTourHub[] = [
         name: "Rajasthan",
         tagline: "Lake palaces, desert forts, and the royal heartland.",
         locationKeys: ["Rajasthan"],
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jodhpur-Mehrangarh_Fort-06-Blue_city-20131011.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/9/99/Mehrangarh_Fort_sanhita.jpg",
         destinationsRegionSlug: "rajasthan",
         blurb: "The Mewar lakes, the Marwar fort cities, and the Thar, chauffeured circuits across the state's marquee and quieter heritage layers.",
         intro: [
@@ -142,7 +142,7 @@ export const REGIONAL_HUBS: RegionTourHub[] = [
         name: "Andaman Islands",
         tagline: "Bay of Bengal, beaches, reefs, and the heritage gateway.",
         locationKeys: ["Islands"],
-        heroImg: "https://upload.wikimedia.org/wikipedia/commons/7/71/Radhanagar_Beach%2C_Havelock_Island%2C_Andaman%2C_India.jpg",
+        heroImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg/3840px-Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg",
         destinationsRegionSlug: "andaman",
         blurb: "Port Blair as the gateway, Havelock for diving and Radhanagar, Neil for stillness, small, sequenced island circuits.",
         intro: [
