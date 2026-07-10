@@ -50,6 +50,7 @@ function entry(path: string, priority: number, changeFrequency: string): Sitemap
 const STATIC_ROUTES: { path: string; priority: number }[] = [
     { path: "/", priority: 1 },
     { path: "/destinations", priority: 0.9 },
+    { path: "/destinations/andaman", priority: 0.7 },
     { path: "/tours", priority: 0.9 },
     { path: "/tours/golden-triangle-all", priority: 0.9 },
     { path: "/wellness", priority: 0.8 },
