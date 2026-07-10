@@ -8,10 +8,11 @@ import {
 const REGION = "rajasthan";
 
 export function generateStaticParams() {
-    return getRegionVariantStaticParams(REGION);
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

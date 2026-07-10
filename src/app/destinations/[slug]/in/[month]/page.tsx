@@ -6,10 +6,11 @@ import {
 } from "@/lib/destinationMonthPage";
 
 export function generateStaticParams() {
-    return getDestinationMonthStaticParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

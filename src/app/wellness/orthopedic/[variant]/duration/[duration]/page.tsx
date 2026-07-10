@@ -8,10 +8,11 @@ import {
 const PROGRAMME = "orthopedic";
 
 export function generateStaticParams() {
-    return getAllSubVariantDurationParams(PROGRAMME);
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

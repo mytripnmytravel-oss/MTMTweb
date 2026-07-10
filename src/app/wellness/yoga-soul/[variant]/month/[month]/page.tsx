@@ -8,10 +8,11 @@ import {
 const PROGRAMME = "yoga-soul";
 
 export function generateStaticParams() {
-    return getAllSubVariantMonthParams(PROGRAMME);
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

@@ -5,10 +5,11 @@ import { wellnessDurationMetadata, WellnessDurationRoute } from "@/lib/wellnessF
 const PROGRAMME = "massage";
 
 export function generateStaticParams() {
-    return getDurationParams(PROGRAMME);
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

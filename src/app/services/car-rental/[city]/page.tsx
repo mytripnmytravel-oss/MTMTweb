@@ -5,10 +5,11 @@ import { serviceCityMetadata, ServiceCityRoute } from "@/lib/serviceCityPage";
 const LINE = "car-rental" as const;
 
 export function generateStaticParams() {
-    return getAllServiceCityParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

@@ -11,10 +11,11 @@ import MonumentView from "@/components/destinations/MonumentView";
 const SITE = "https://www.mytripmytravel.com";
 
 export function generateStaticParams() {
-    return getAllMonumentParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

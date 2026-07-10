@@ -5,10 +5,11 @@ import { wellnessOriginMetadata, WellnessOriginRoute } from "@/lib/wellnessOrigi
 const PROGRAMME = "yoga-soul";
 
 export function generateStaticParams() {
-    return ORIGINS.map((o) => ({ origin: o.slug }));
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

@@ -5,10 +5,11 @@ import { getFaqAtom, getAllFaqAtomParams } from "@/data/faq";
 import { FaqAtomView } from "@/components/faq/FaqView";
 
 export function generateStaticParams() {
-    return getAllFaqAtomParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

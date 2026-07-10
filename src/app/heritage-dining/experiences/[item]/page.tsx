@@ -5,10 +5,11 @@ import { diningItemMetadata, DiningItemRoute } from "@/lib/heritageDiningPage";
 const CATEGORY = "experiences";
 
 export function generateStaticParams() {
-    return getDiningCategoryParams(CATEGORY);
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

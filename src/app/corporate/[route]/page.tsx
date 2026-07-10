@@ -11,10 +11,11 @@ import {
 import CorporateRouteView from "@/components/corporate/CorporateRouteView";
 
 export function generateStaticParams() {
-    return getAllCorporateRouteParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

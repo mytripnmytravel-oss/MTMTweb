@@ -11,10 +11,11 @@ import { fleetCitiesForVehicle } from "@/data/fleetCities";
 import FleetDetailView from "@/components/fleet/FleetDetailView";
 
 export function generateStaticParams() {
-    return getAllVehicleIds().map((vehicle) => ({ vehicle }));
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

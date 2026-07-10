@@ -5,10 +5,11 @@ import { wellnessMetadata, WellnessVariantRoute } from "@/lib/wellnessPage";
 const PROGRAMME = "orthopedic";
 
 export function generateStaticParams() {
-    return getProgrammeVariantParams(PROGRAMME);
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

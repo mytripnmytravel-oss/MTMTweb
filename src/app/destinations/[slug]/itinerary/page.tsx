@@ -6,10 +6,11 @@ import { getCityItineraryIndexParams, ITINERARY_DURATIONS } from "@/data/destina
 import { ItineraryIndexView } from "@/components/destinations/DestinationItineraryView";
 
 export function generateStaticParams() {
-    return getCityItineraryIndexParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

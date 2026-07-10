@@ -3,10 +3,11 @@ import { getAllGuideCityParams } from "@/data/expertGuides";
 import { guideCityMetadata, GuideCityRoute } from "@/lib/expertGuidePage";
 
 export function generateStaticParams() {
-    return getAllGuideCityParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

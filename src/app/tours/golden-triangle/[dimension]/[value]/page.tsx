@@ -21,10 +21,11 @@ import TourVariantView from "@/components/tours/TourVariantView";
 const titleCase = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
 export function generateStaticParams() {
-    return getAllVariantParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

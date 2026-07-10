@@ -6,10 +6,11 @@ import {
 } from "@/lib/destinationOriginPage";
 
 export function generateStaticParams() {
-    return getDestinationOriginStaticParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

@@ -7,10 +7,11 @@ import DestinationFacetView from "@/components/destinations/DestinationFacetView
 const SITE = "https://www.mytripmytravel.com";
 
 export function generateStaticParams() {
-    return getAllFacetParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

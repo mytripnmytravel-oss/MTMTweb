@@ -11,10 +11,11 @@ import MonumentsIndexView from "@/components/destinations/MonumentsIndexView";
 const SITE = "https://www.mytripmytravel.com";
 
 export function generateStaticParams() {
-    return citiesWithMonuments().map((slug) => ({ slug }));
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

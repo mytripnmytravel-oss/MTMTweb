@@ -5,10 +5,11 @@ import { weddingItemMetadata, WeddingItemRoute } from "@/lib/weddingPage";
 const CATEGORY = "venues";
 
 export function generateStaticParams() {
-    return getWeddingCategoryParams(CATEGORY);
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

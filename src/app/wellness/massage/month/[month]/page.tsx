@@ -5,10 +5,11 @@ import { wellnessMonthMetadata, WellnessMonthRoute } from "@/lib/wellnessFacetPa
 const PROGRAMME = "massage";
 
 export function generateStaticParams() {
-    return getMonthParams(PROGRAMME);
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

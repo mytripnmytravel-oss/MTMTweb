@@ -6,10 +6,11 @@ import {
 } from "@/lib/monumentMonthPage";
 
 export function generateStaticParams() {
-    return getMonumentMonthStaticParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

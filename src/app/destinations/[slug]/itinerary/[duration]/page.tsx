@@ -12,10 +12,11 @@ import { getPackagesForDestination, packageSlug } from "@/data/tours";
 import { ItineraryView } from "@/components/destinations/DestinationItineraryView";
 
 export function generateStaticParams() {
-    return getAllItineraryParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

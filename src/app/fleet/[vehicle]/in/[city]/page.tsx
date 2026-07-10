@@ -12,10 +12,11 @@ import {
 import FleetCityView from "@/components/fleet/FleetCityView";
 
 export function generateStaticParams() {
-    return getAllFleetCityParams();
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

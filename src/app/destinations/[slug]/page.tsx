@@ -12,10 +12,11 @@ import DestinationCityView from "@/components/destinations/DestinationCityView";
 const SITE = "https://www.mytripmytravel.com";
 
 export function generateStaticParams() {
-    return getAllDestinationSlugs().map((slug) => ({ slug }));
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

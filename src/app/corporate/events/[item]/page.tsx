@@ -5,10 +5,11 @@ import { corporateItemMetadata, CorporateItemRoute } from "@/lib/corporatePage";
 const CATEGORY = "events";
 
 export function generateStaticParams() {
-    return getCorporateCategoryParams(CATEGORY);
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,

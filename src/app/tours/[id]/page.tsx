@@ -10,10 +10,11 @@ import {
 import TourDetailView from "@/components/tours/TourDetailView";
 
 export function generateStaticParams() {
-    return getAllPackageSlugs().map((id) => ({ id }));
+    return [];
 }
 
 export const dynamicParams = true;
+export const revalidate = 86400;
 
 export async function generateMetadata({
     params,
