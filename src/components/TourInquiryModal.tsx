@@ -39,7 +39,7 @@ export const TourInquiryModal = ({ tour, isOpen, onClose }: TourInquiryModalProp
                             <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
                                 <Image src={tour?.img || "/hero-taj.png"} alt={tour?.title || "MyTripMyTravel tour"} fill className="object-cover" />
                             </div>
-                            <h3 className="mt-5 text-2xl font-medium text-paper">{tour?.title}</h3>
+                            <h3 className="mt-5 text-2xl font-semibold text-paper">{tour?.title}</h3>
                             <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[13px] text-paper/70">
                                 {tour?.location && <span className="flex items-center gap-1.5"><MapPin size={14} className="text-clay-soft" /> {tour.location}</span>}
                                 {tour?.duration && <span className="flex items-center gap-1.5"><Clock size={14} className="text-clay-soft" /> {tour.duration}</span>}

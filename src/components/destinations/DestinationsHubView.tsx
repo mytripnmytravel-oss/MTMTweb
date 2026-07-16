@@ -25,7 +25,7 @@ export default function DestinationsHubView({
             <section className="container-x pb-24 pt-40 sm:pt-48">
                 <div className="mx-auto mb-20 max-w-4xl text-center">
                     <p className="eyebrow eyebrow-accent">Global geographies</p>
-                    <h1 className="display-1 mt-5 font-medium text-ink">Destination Archive</h1>
+                    <h1 className="display-1 mt-5 font-semibold text-ink">Destination Archive</h1>
                     <p className="mt-6 text-[17px] leading-relaxed text-muted">
                         Our vetted travel regions across the Indian subcontinent. Every region is a curated
                         journey, chauffeured, escorted, and sequenced for the light. We
@@ -53,7 +53,7 @@ export default function DestinationsHubView({
                             <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/85 via-ink/35 to-transparent p-10">
                                 <div className="mb-3 flex items-center gap-3">
                                     <MapPin className="text-clay-soft" size={20} />
-                                    <h3 className="text-2xl font-medium text-paper">
+                                    <h3 className="text-2xl font-semibold text-paper">
                                         {region.name}
                                     </h3>
                                 </div>
@@ -65,7 +65,7 @@ export default function DestinationsHubView({
                                 </p>
                                 <Link
                                     href={`/destinations/region/${region.slug}`}
-                                    className="inline-flex items-center gap-3 text-[13px] font-medium text-clay-soft transition-colors hover:text-paper"
+                                    className="inline-flex items-center gap-3 text-[13px] font-semibold text-clay-soft transition-colors hover:text-paper"
                                 >
                                     Explore region <ArrowRight size={14} />
                                 </Link>
@@ -80,7 +80,7 @@ export default function DestinationsHubView({
                 <div className="container-x">
                     <div className="mx-auto mb-16 max-w-3xl text-center">
                         <p className="eyebrow eyebrow-accent">Primary city briefs</p>
-                        <h2 className="display-2 mt-4 font-medium text-ink">The Definitive Stops</h2>
+                        <h2 className="display-2 mt-4 font-semibold text-ink">The Definitive Stops</h2>
                         <p className="mt-5 text-[16px] leading-relaxed text-muted">
                             Each city below has a full guide, best time, how to reach,
                             what to do, where to stay and dine, and the journeys that run through it.
@@ -108,7 +108,7 @@ export default function DestinationsHubView({
                                             className="object-cover"
                                         />
                                         <div className="absolute right-5 top-5 rounded-full bg-ink/80 px-4 py-1.5 backdrop-blur-md">
-                                            <span className="text-[11px] font-medium text-paper">
+                                            <span className="text-[11px] font-semibold text-paper">
                                                 {city.region}
                                             </span>
                                         </div>
@@ -117,13 +117,13 @@ export default function DestinationsHubView({
                                         <p className="eyebrow eyebrow-accent mb-2">
                                             {city.state}
                                         </p>
-                                        <h3 className="mb-3 text-2xl font-medium leading-tight text-ink">
+                                        <h3 className="mb-3 text-2xl font-semibold leading-tight text-ink">
                                             {city.name}
                                         </h3>
                                         <p className="mb-6 line-clamp-2 text-[15px] leading-relaxed text-muted">
                                             {city.tagline}
                                         </p>
-                                        <span className="flex items-center gap-2 text-[13px] font-medium text-muted">
+                                        <span className="flex items-center gap-2 text-[13px] font-semibold text-muted">
                                             Open guide <ChevronRight size={14} />
                                         </span>
                                     </div>

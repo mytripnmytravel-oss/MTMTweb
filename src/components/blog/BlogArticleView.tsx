@@ -45,7 +45,7 @@ export default function BlogArticleView({ post, related }: { post: BlogPost; rel
                         <span className="text-clay-soft">{post.category}</span>
                     </nav>
                     <span className="eyebrow text-paper/70">{post.category}</span>
-                    <h1 className="display-2 mt-4 max-w-4xl font-medium text-paper">{post.title}</h1>
+                    <h1 className="display-2 mt-4 max-w-4xl font-semibold text-paper">{post.title}</h1>
                 </div>
             </section>
 
@@ -58,12 +58,12 @@ export default function BlogArticleView({ post, related }: { post: BlogPost; rel
                         <span>By the MyTripMyTravel Editorial Desk</span>
                     </div>
 
-                    <p className="mt-10 font-display text-[22px] font-medium leading-snug text-ink sm:text-[26px]">{post.answer}</p>
+                    <p className="mt-10 font-display text-[22px] font-semibold leading-snug text-ink sm:text-[26px]">{post.answer}</p>
 
                     <div className="mt-12 space-y-12">
                         {post.sections.map((s, i) => (
                             <motion.section key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                                <h2 className="text-2xl font-medium text-ink sm:text-[28px]">{s.heading}</h2>
+                                <h2 className="text-2xl font-semibold text-ink sm:text-[28px]">{s.heading}</h2>
                                 <div className="mt-4 space-y-4">
                                     {s.paragraphs.map((p, j) => (
                                         <p key={j} className="text-[17px] leading-relaxed text-ink-soft">{p}</p>
@@ -75,10 +75,10 @@ export default function BlogArticleView({ post, related }: { post: BlogPost; rel
 
                     {post.related.length > 0 && (
                         <div className="mt-14 rounded-2xl border border-line bg-white p-7">
-                            <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">Explore further</p>
+                            <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">Explore further</p>
                             <div className="mt-4 flex flex-wrap gap-2.5">
                                 {post.related.map((l, i) => (
-                                    <Link key={i} href={l.href} className="inline-flex items-center gap-2 rounded-full border border-line bg-paper-dim px-4 py-2 text-sm font-medium text-ink transition hover:border-ink hover:text-clay">
+                                    <Link key={i} href={l.href} className="inline-flex items-center gap-2 rounded-full border border-line bg-paper-dim px-4 py-2 text-sm font-semibold text-ink transition hover:border-ink hover:text-clay">
                                         {l.label} <ArrowRight size={14} />
                                     </Link>
                                 ))}
@@ -88,11 +88,11 @@ export default function BlogArticleView({ post, related }: { post: BlogPost; rel
 
                     {post.faqs.length > 0 && (
                         <div className="mt-14">
-                            <h2 className="text-2xl font-medium text-ink sm:text-[28px]">Frequently asked</h2>
+                            <h2 className="text-2xl font-semibold text-ink sm:text-[28px]">Frequently asked</h2>
                             <div className="mt-6 divide-y divide-line">
                                 {post.faqs.map((f, i) => (
                                     <details key={i} className="group py-5 [&_summary::-webkit-details-marker]:hidden">
-                                        <summary className="flex cursor-pointer items-center justify-between gap-4 text-[17px] font-medium text-ink">
+                                        <summary className="flex cursor-pointer items-center justify-between gap-4 text-[17px] font-semibold text-ink">
                                             {f.q}
                                             <ChevronRight size={18} className="shrink-0 text-stone transition-transform group-open:rotate-90 group-open:text-clay" />
                                         </summary>
@@ -117,10 +117,10 @@ export default function BlogArticleView({ post, related }: { post: BlogPost; rel
                                     <div className="relative aspect-[16/10] overflow-hidden">
                                         <Image src={p.heroImg} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
-                                        <span className="absolute bottom-4 left-5 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink">{p.category}</span>
+                                        <span className="absolute bottom-4 left-5 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-semibold text-ink">{p.category}</span>
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="text-lg font-medium text-ink group-hover:text-clay">{p.title}</h3>
+                                        <h3 className="text-lg font-semibold text-ink group-hover:text-clay">{p.title}</h3>
                                         <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{p.excerpt}</p>
                                     </div>
                                 </Link>

@@ -27,7 +27,7 @@ export default function BookingView() {
                     >
                         Plan Your Journey
                     </motion.p>
-                    <h1 className="display-1 mt-4 font-medium text-ink">Secure your journey</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-ink">Secure your journey</h1>
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -56,11 +56,11 @@ export default function BookingView() {
                                     <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-clay text-paper">
                                         <Send size={30} />
                                     </div>
-                                    <h3 className="text-2xl font-medium text-paper">Enquiry received</h3>
+                                    <h3 className="text-2xl font-semibold text-paper">Enquiry received</h3>
                                     <p className="mt-3 max-w-md text-[15px] leading-relaxed text-paper/70">Your enquiry has been received. Our travel desk will contact you shortly.</p>
                                     <button
                                         onClick={() => window.location.reload()}
-                                        className="mt-8 text-[13px] font-medium text-clay-soft underline underline-offset-4"
+                                        className="mt-8 text-[13px] font-semibold text-clay-soft underline underline-offset-4"
                                     >
                                         Return to form
                                     </button>
@@ -69,7 +69,7 @@ export default function BookingView() {
                         </AnimatePresence>
 
                         <p className="eyebrow eyebrow-accent">Request a quote</p>
-                        <h2 className="mt-3 text-2xl font-medium text-ink sm:text-[26px]">Tell us about your trip</h2>
+                        <h2 className="mt-3 text-2xl font-semibold text-ink sm:text-[26px]">Tell us about your trip</h2>
 
                         <form
                             onSubmit={handleSubmit}
@@ -80,12 +80,12 @@ export default function BookingView() {
                             <input type="hidden" name="Inquiry Type" value="General Booking" />
                             <div className="grid gap-4 sm:grid-cols-2">
                                 <div>
-                                    <label className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Full Name</label>
+                                    <label className="mb-2 block text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Full Name</label>
                                     <input required name="Full Name" type="text" placeholder="Your name" className="field" />
                                     <ValidationError prefix="Name" field="Full Name" errors={state.errors} className="mt-1 text-xs text-red-500" />
                                 </div>
                                 <div>
-                                    <label className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Email Address</label>
+                                    <label className="mb-2 block text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Email Address</label>
                                     <input required name="Email" type="email" placeholder="Email address" className="field" />
                                     <ValidationError prefix="Email" field="Email" errors={state.errors} className="mt-1 text-xs text-red-500" />
                                 </div>
@@ -93,12 +93,12 @@ export default function BookingView() {
 
                             <div className="grid gap-4 sm:grid-cols-2">
                                 <div>
-                                    <label className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Contact Number</label>
+                                    <label className="mb-2 block text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Contact Number</label>
                                     <input required name="Phone" type="tel" placeholder="Phone or WhatsApp" className="field" />
                                     <ValidationError prefix="Phone" field="Phone" errors={state.errors} className="mt-1 text-xs text-red-500" />
                                 </div>
                                 <div>
-                                    <label className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Service Required</label>
+                                    <label className="mb-2 block text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Service Required</label>
                                     <select name="Service Required" className="field appearance-none">
                                         <option>Tour Master Packages</option>
                                         <option>Elite Fleet Rental</option>
@@ -109,7 +109,7 @@ export default function BookingView() {
                             </div>
 
                             <div>
-                                <label className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Trip Details</label>
+                                <label className="mb-2 block text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Trip Details</label>
                                 <textarea required name="Directives" rows={4} placeholder="Describe your specific requirements." className="field resize-none"></textarea>
                                 <ValidationError prefix="Message" field="Directives" errors={state.errors} className="mt-1 text-xs text-red-500" />
                             </div>
@@ -135,7 +135,7 @@ export default function BookingView() {
                     {/* Right Column: Authority & Proof */}
                     <div className="space-y-8 lg:col-span-5">
                         <div className="rounded-3xl bg-ink p-8 text-paper">
-                            <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-clay-soft">The Authority Standard</p>
+                            <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-clay-soft">The Authority Standard</p>
                             <div className="mt-8 space-y-8">
                                 {[
                                     { icon: Star, title: "Bespoke Experience", desc: "Years of crafting tailored India journeys." },
@@ -147,7 +147,7 @@ export default function BookingView() {
                                             <item.icon size={18} className="text-paper" />
                                         </div>
                                         <div>
-                                            <h3 className="text-[15px] font-medium text-paper">{item.title}</h3>
+                                            <h3 className="text-[15px] font-semibold text-paper">{item.title}</h3>
                                             <p className="mt-1.5 text-[13px] leading-relaxed text-paper/70">{item.desc}</p>
                                         </div>
                                     </div>
@@ -160,15 +160,15 @@ export default function BookingView() {
                             <div className="mt-6 grid gap-4 sm:grid-cols-2">
                                 <a href="tel:+919997812237" className="card flex flex-col gap-3 p-7">
                                     <Phone className="text-clay" size={22} />
-                                    <span className="text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Voice Command</span>
-                                    <span className="text-[15px] font-medium text-ink">+91 99978 12237</span>
+                                    <span className="text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Voice Command</span>
+                                    <span className="text-[15px] font-semibold text-ink">+91 99978 12237</span>
                                 </a>
                                 <a href="mailto:info@mytripmytravel.com" className="card flex flex-col gap-3 break-all p-7">
                                     <Mail className="text-clay" size={22} />
-                                    <span className="text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Intel Dispatch</span>
+                                    <span className="text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Intel Dispatch</span>
                                     <div className="flex flex-col">
-                                        <span className="text-[13px] font-medium text-ink">info@mytripmytravel.com</span>
-                                        <span className="text-[13px] font-medium text-muted">mytripmytravel@gmail.com</span>
+                                        <span className="text-[13px] font-semibold text-ink">info@mytripmytravel.com</span>
+                                        <span className="text-[13px] font-semibold text-muted">mytripmytravel@gmail.com</span>
                                     </div>
                                 </a>
                             </div>
@@ -177,7 +177,7 @@ export default function BookingView() {
                         <div className="flex flex-col gap-4 rounded-3xl bg-ink p-8 text-paper">
                             <div className="flex items-center gap-3">
                                 <MapPin className="text-clay-soft" size={22} />
-                                <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-paper/60">Headquarters</p>
+                                <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-paper/60">Headquarters</p>
                             </div>
                             <p className="text-[14px] leading-relaxed text-paper/80">
                                 House Number 80, Ansal Town,<br />Block C, Agra, Uttar Pradesh 283125
@@ -187,7 +187,7 @@ export default function BookingView() {
                         <div className="flex items-center justify-between rounded-2xl border border-dashed border-line bg-paper-dim/40 p-5">
                             <div className="flex items-center gap-3">
                                 <div className="h-3 w-3 animate-pulse rounded-full bg-emerald-500" />
-                                <span className="text-[13px] font-medium text-ink">Direct WhatsApp access</span>
+                                <span className="text-[13px] font-semibold text-ink">Direct WhatsApp access</span>
                             </div>
                             <a href="https://wa.me/919997812237" target="_blank" rel="noopener noreferrer" className="btn-outline btn-sm">Connect now</a>
                         </div>

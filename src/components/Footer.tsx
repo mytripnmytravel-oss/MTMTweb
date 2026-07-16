@@ -93,7 +93,7 @@ export const Footer = () => {
 
                     {COLUMNS.map((col) => (
                         <div key={col.title}>
-                            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-paper/40">{col.title}</p>
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-paper/40">{col.title}</p>
                             <ul className="mt-5 space-y-3">
                                 {col.links.map((l) => (
                                     <li key={l.href}>

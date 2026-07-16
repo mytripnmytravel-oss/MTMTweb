@@ -38,7 +38,7 @@ export default function FleetDetailView({
                         <span className="text-clay-soft">{vehicle.name}</span>
                     </nav>
                     <p className="eyebrow text-paper/70">{vehicle.category} · {vehicle.type}</p>
-                    <h1 className="display-1 mt-4 font-medium text-paper">{vehicle.name}</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-paper">{vehicle.name}</h1>
                 </div>
             </section>
 
@@ -46,7 +46,7 @@ export default function FleetDetailView({
             <section className="section">
                 <div className="container-x max-w-5xl">
                     <p className="eyebrow eyebrow-accent">The Brief</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{content.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{content.answer}</p>
                     <div className="mt-10 max-w-3xl space-y-5">
                         {content.intro.map((para, i) => (
                             <motion.p key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[17px] leading-relaxed text-muted">
@@ -63,22 +63,22 @@ export default function FleetDetailView({
                     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                         <div className="card p-6">
                             <Users className="text-clay" size={22} />
-                            <p className="mt-3 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Capacity</p>
-                            <p className="mt-1 text-[17px] font-medium text-ink">{vehicle.passengers} passengers</p>
+                            <p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Capacity</p>
+                            <p className="mt-1 text-[17px] font-semibold text-ink">{vehicle.passengers} passengers</p>
                         </div>
                         <div className="card p-6">
                             <Briefcase className="text-clay" size={22} />
-                            <p className="mt-3 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Luggage</p>
-                            <p className="mt-1 text-[17px] font-medium text-ink">{vehicle.luggage}</p>
+                            <p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Luggage</p>
+                            <p className="mt-1 text-[17px] font-semibold text-ink">{vehicle.luggage}</p>
                         </div>
                         <div className="card p-6">
                             <Gauge className="text-clay" size={22} />
-                            <p className="mt-3 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Class</p>
-                            <p className="mt-1 text-[17px] font-medium text-ink">{vehicle.category} {vehicle.type}</p>
+                            <p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Class</p>
+                            <p className="mt-1 text-[17px] font-semibold text-ink">{vehicle.category} {vehicle.type}</p>
                         </div>
                         <div className="card p-6">
-                            <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Pricing band</p>
-                            <p className="mt-1 text-[17px] font-medium text-ink">{vehicle.priceRange}</p>
+                            <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Pricing band</p>
+                            <p className="mt-1 text-[17px] font-semibold text-ink">{vehicle.priceRange}</p>
                         </div>
                     </div>
                     <p className="eyebrow eyebrow-accent mt-12">Configuration</p>
@@ -98,7 +98,7 @@ export default function FleetDetailView({
                         <div className="mt-10 grid gap-6 md:grid-cols-2">
                             {content.faqs.map((f, i) => (
                                 <div key={i} className="card p-7">
-                                    <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                    <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                     <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                                 </div>
                             ))}
@@ -135,7 +135,7 @@ export default function FleetDetailView({
                                     <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
                                     <div className="absolute bottom-5 left-6">
                                         <p className="eyebrow text-paper/80">{r.category}</p>
-                                        <h3 className="mt-1 text-xl font-medium text-paper">{r.name}</h3>
+                                        <h3 className="mt-1 text-xl font-semibold text-paper">{r.name}</h3>
                                     </div>
                                 </div>
                                 <div className="flex items-center justify-between p-6">

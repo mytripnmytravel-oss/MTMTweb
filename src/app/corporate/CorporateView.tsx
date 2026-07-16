@@ -38,7 +38,7 @@ export default function CorporateView() {
                 <div className="container-x grid items-center gap-14 lg:grid-cols-2">
                     <div>
                         <p className="eyebrow eyebrow-accent">Corporate travel</p>
-                        <h1 className="display-1 mt-4 font-medium text-ink">Executive journeys, seamlessly run.</h1>
+                        <h1 className="display-1 mt-4 font-semibold text-ink">Executive journeys, seamlessly run.</h1>
                         <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
                             Zero-friction logistics for executive teams and delegations across India. GPS-tracked ground fleets, private aviation, accommodation and MICE events, all under a single accountable lead.
                         </p>
@@ -53,7 +53,7 @@ export default function CorporateView() {
                             return (
                                 <div key={p.title} className="card p-6">
                                     <Icon className="text-clay" size={26} />
-                                    <h5 className="mt-4 text-[15px] font-medium text-ink">{p.title}</h5>
+                                    <h5 className="mt-4 text-[15px] font-semibold text-ink">{p.title}</h5>
                                     <p className="mt-1.5 text-[13px] leading-relaxed text-muted">{p.desc}</p>
                                 </div>
                             );
@@ -70,7 +70,7 @@ export default function CorporateView() {
                     <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                         {USE_CASES.map((u) => (
                             <div key={u.title} className="card p-7">
-                                <h3 className="text-xl font-medium text-ink">{u.title}</h3>
+                                <h3 className="text-xl font-semibold text-ink">{u.title}</h3>
                                 <p className="mt-3 text-[14px] leading-relaxed text-muted">{u.desc}</p>
                             </div>
                         ))}
@@ -89,7 +89,7 @@ export default function CorporateView() {
                             return (
                                 <div key={a.title}>
                                     <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-paper-dim text-clay"><Icon size={20} /></span>
-                                    <h3 className="mt-4 text-[15px] font-medium text-ink">{a.title}</h3>
+                                    <h3 className="mt-4 text-[15px] font-semibold text-ink">{a.title}</h3>
                                     <p className="mt-1.5 text-[13px] leading-relaxed text-muted">{a.desc}</p>
                                 </div>
                             );

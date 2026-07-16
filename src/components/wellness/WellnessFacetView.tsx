@@ -43,7 +43,7 @@ export default function WellnessFacetView({
                         <span className="text-clay-soft">{breadcrumbSegment}</span>
                     </nav>
                     <p className="eyebrow text-clay-soft">{programme.label}</p>
-                    <h1 className="display-1 mt-4 font-medium text-paper">{content.h1}</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-paper">{content.h1}</h1>
                 </div>
             </section>
 
@@ -51,7 +51,7 @@ export default function WellnessFacetView({
             <section className="section">
                 <div className="container-x max-w-4xl">
                     <p className="eyebrow eyebrow-accent">The brief</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{content.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{content.answer}</p>
                     <div className="mt-10 space-y-5 max-w-3xl">
                         {content.intro.map((p, i) => (
                             <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[17px] leading-relaxed text-muted">{p}</motion.p>
@@ -69,7 +69,7 @@ export default function WellnessFacetView({
                             <div key={i} className="card p-7">
                                 <div className="mb-3 flex items-center gap-3">
                                     <CheckCircle2 className="shrink-0 text-clay" size={18} />
-                                    <span className="text-[11px] font-medium uppercase tracking-[0.12em] text-stone">{pt.label}</span>
+                                    <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-stone">{pt.label}</span>
                                 </div>
                                 <p className="text-[15px] leading-relaxed text-muted">{pt.detail}</p>
                             </div>
@@ -91,7 +91,7 @@ export default function WellnessFacetView({
                     <div className="mt-10 grid gap-6 md:grid-cols-2 max-w-6xl">
                         {content.faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}

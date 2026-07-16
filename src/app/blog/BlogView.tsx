@@ -31,7 +31,7 @@ export default function BlogView() {
             <section className="border-b border-line pb-14 pt-36 sm:pt-40">
                 <div className="container-x">
                     <p className="eyebrow eyebrow-accent">The journal</p>
-                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Guides, deep dives and honest field notes</h1>
+                    <h1 className="display-1 mt-4 max-w-3xl font-semibold text-ink">Guides, deep dives and honest field notes</h1>
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
                         Planning guides, destination deep dives and straight-talking advice from the people who plan India for a living. This is the planning hub of MyTripMyTravel.
                     </p>
@@ -54,7 +54,7 @@ export default function BlogView() {
                                 </div>
                                 <h2 className="display-3 mt-4 text-ink group-hover:text-clay">{feature.title}</h2>
                                 <p className="mt-4 text-[16px] leading-relaxed text-muted">{feature.excerpt}</p>
-                                <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-clay">Read the guide <ArrowRight size={15} /></span>
+                                <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-clay">Read the guide <ArrowRight size={15} /></span>
                             </div>
                         </Link>
                     </div>
@@ -70,16 +70,16 @@ export default function BlogView() {
                                 <Link href={`/blog/${post.slug}`} className="card card-hover group flex h-full flex-col overflow-hidden">
                                     <div className="relative aspect-[16/10] overflow-hidden">
                                         <Image src={post.heroImg} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                                        <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink">{post.category}</span>
+                                        <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-semibold text-ink">{post.category}</span>
                                     </div>
                                     <div className="flex flex-1 flex-col p-6">
                                         <div className="flex items-center gap-3 text-[12px] text-stone">
                                             <span className="flex items-center gap-1.5"><Calendar size={12} className="text-clay" /> {post.datePublished}</span>
                                             <span className="flex items-center gap-1.5"><Clock size={12} className="text-clay" /> {post.readingMinutes} min</span>
                                         </div>
-                                        <h3 className="mt-3 text-lg font-medium text-ink group-hover:text-clay">{post.title}</h3>
+                                        <h3 className="mt-3 text-lg font-semibold text-ink group-hover:text-clay">{post.title}</h3>
                                         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{post.excerpt}</p>
-                                        <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-clay">Read more <ChevronRight size={15} /></span>
+                                        <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-clay">Read more <ChevronRight size={15} /></span>
                                     </div>
                                 </Link>
                             </motion.article>

@@ -71,11 +71,11 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                         <span className="text-clay-soft">{tour.title}</span>
                     </nav>
                     <span className="eyebrow text-paper/70">{tour.theme}</span>
-                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-paper">{tour.title}</h1>
+                    <h1 className="display-1 mt-4 max-w-3xl font-semibold text-paper">{tour.title}</h1>
                     <div className="mt-6 flex flex-wrap gap-2.5">
-                        <span className="inline-flex items-center gap-2 rounded-full bg-paper/90 px-4 py-2 text-[13px] font-medium text-ink"><Clock size={15} className="text-clay" /> {tour.duration}</span>
-                        <span className="inline-flex items-center gap-2 rounded-full bg-paper/90 px-4 py-2 text-[13px] font-medium text-ink"><MapPin size={15} className="text-clay" /> {tour.location}</span>
-                        <span className="inline-flex items-center gap-2 rounded-full bg-paper/90 px-4 py-2 text-[13px] font-medium text-ink"><BadgeIndianRupee size={15} className="text-clay" /> from {tour.price}</span>
+                        <span className="inline-flex items-center gap-2 rounded-full bg-paper/90 px-4 py-2 text-[13px] font-semibold text-ink"><Clock size={15} className="text-clay" /> {tour.duration}</span>
+                        <span className="inline-flex items-center gap-2 rounded-full bg-paper/90 px-4 py-2 text-[13px] font-semibold text-ink"><MapPin size={15} className="text-clay" /> {tour.location}</span>
+                        <span className="inline-flex items-center gap-2 rounded-full bg-paper/90 px-4 py-2 text-[13px] font-semibold text-ink"><BadgeIndianRupee size={15} className="text-clay" /> from {tour.price}</span>
                     </div>
                 </div>
             </section>
@@ -89,7 +89,7 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                             <div key={t.title} className="flex items-start gap-3">
                                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-paper-dim text-clay"><Icon size={18} /></span>
                                 <div>
-                                    <h3 className="text-[14px] font-medium text-ink">{t.title}</h3>
+                                    <h3 className="text-[14px] font-semibold text-ink">{t.title}</h3>
                                     <p className="mt-0.5 text-[12px] leading-relaxed text-muted">{t.desc}</p>
                                 </div>
                             </div>
@@ -103,15 +103,15 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                 <div className="container-x grid gap-14 lg:grid-cols-3">
                     <div className="lg:col-span-2">
                         <p className="eyebrow eyebrow-accent">Overview</p>
-                        <p className="mt-4 font-display text-[24px] font-medium leading-snug text-ink sm:text-[30px]">{tour.highlight}</p>
+                        <p className="mt-4 font-display text-[24px] font-semibold leading-snug text-ink sm:text-[30px]">{tour.highlight}</p>
                         {tour.answer && <p className="mt-6 max-w-3xl text-[17px] leading-relaxed text-muted">{tour.answer}</p>}
 
                         {tour.quickFacts && tour.quickFacts.length > 0 && (
                             <dl className="mt-12 grid gap-x-10 gap-y-4 rounded-2xl border border-line bg-white p-8 sm:grid-cols-2">
                                 {tour.quickFacts.map((f, i) => (
                                     <div key={i} className="flex justify-between gap-6 border-b border-line pb-3 last:border-0">
-                                        <dt className="text-[12px] font-medium uppercase tracking-[0.14em] text-stone">{f.label}</dt>
-                                        <dd className="text-right text-[15px] font-medium text-ink">{f.value}</dd>
+                                        <dt className="text-[12px] font-semibold uppercase tracking-[0.14em] text-stone">{f.label}</dt>
+                                        <dd className="text-right text-[15px] font-semibold text-ink">{f.value}</dd>
                                     </div>
                                 ))}
                             </dl>
@@ -121,7 +121,7 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                             <div className="mt-12 rounded-2xl border border-line bg-paper-dim/60 p-8">
                                 <div className="flex items-center gap-2">
                                     <Calendar size={18} className="text-clay" />
-                                    <h3 className="text-lg font-medium text-ink">Best time to travel</h3>
+                                    <h3 className="text-lg font-semibold text-ink">Best time to travel</h3>
                                 </div>
                                 <p className="mt-3 text-[16px] leading-relaxed text-muted">{tour.bestTime}</p>
                             </div>
@@ -132,8 +132,8 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                             {tour.itinerary.map((day, idx) => (
                                 <motion.div key={idx} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
                                     className="relative border-l border-line pb-2 pl-10 last:border-0">
-                                    <div className="absolute left-0 top-0 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full bg-ink text-[13px] font-medium text-paper">{day.day}</div>
-                                    <h4 className="text-xl font-medium text-ink">Day {day.day}{day.title ? `. ${day.title}` : ""}</h4>
+                                    <div className="absolute left-0 top-0 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full bg-ink text-[13px] font-semibold text-paper">{day.day}</div>
+                                    <h4 className="text-xl font-semibold text-ink">Day {day.day}{day.title ? `. ${day.title}` : ""}</h4>
                                     {day.detail && day.detail.length > 0 ? (
                                         <div className="mt-3 max-w-3xl space-y-3">
                                             {day.detail.map((p, i) => <p key={i} className="text-[16px] leading-relaxed text-muted">{p}</p>)}
@@ -142,7 +142,7 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                                         <p className="mt-3 max-w-3xl text-[16px] leading-relaxed text-muted">{day.plan}</p>
                                     )}
                                     {(day.drive || day.overnight || day.meals) && (
-                                        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-[12px] font-medium text-stone">
+                                        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-[12px] font-semibold text-stone">
                                             {day.drive && <span className="flex items-center gap-1.5"><Car size={13} className="text-clay" />{day.drive}</span>}
                                             {day.overnight && day.overnight !== "Departure" && <span className="flex items-center gap-1.5"><Moon size={13} className="text-clay" />Overnight in {day.overnight}</span>}
                                             {day.meals && <span className="flex items-center gap-1.5"><Utensils size={13} className="text-clay" />{day.meals}</span>}
@@ -156,7 +156,7 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                             <div className="mt-14 grid gap-6 md:grid-cols-2">
                                 {tour.inclusions && tour.inclusions.length > 0 && (
                                     <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04] p-7">
-                                        <h3 className="text-[12px] font-medium uppercase tracking-[0.16em] text-emerald-700">What is included</h3>
+                                        <h3 className="text-[12px] font-semibold uppercase tracking-[0.16em] text-emerald-700">What is included</h3>
                                         <ul className="mt-5 space-y-3">
                                             {tour.inclusions.map((item, i) => <li key={i} className="flex gap-3 text-[15px] leading-snug text-ink-soft"><Check size={17} className="mt-0.5 shrink-0 text-emerald-600" />{item}</li>)}
                                         </ul>
@@ -164,7 +164,7 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                                 )}
                                 {tour.exclusions && tour.exclusions.length > 0 && (
                                     <div className="rounded-2xl border border-line bg-white p-7">
-                                        <h3 className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">Not included</h3>
+                                        <h3 className="text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">Not included</h3>
                                         <ul className="mt-5 space-y-3">
                                             {tour.exclusions.map((item, i) => <li key={i} className="flex gap-3 text-[15px] leading-snug text-muted"><Minus size={17} className="mt-0.5 shrink-0 text-stone" />{item}</li>)}
                                         </ul>
@@ -179,7 +179,7 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                                 <div className="mt-8 divide-y divide-line">
                                     {tour.faqs.map((f, i) => (
                                         <details key={i} className="group py-5 [&_summary::-webkit-details-marker]:hidden">
-                                            <summary className="flex cursor-pointer items-center justify-between gap-4 text-[17px] font-medium text-ink">
+                                            <summary className="flex cursor-pointer items-center justify-between gap-4 text-[17px] font-semibold text-ink">
                                                 {f.q}
                                                 <Plus size={18} className="shrink-0 text-stone transition-transform group-open:rotate-45 group-open:text-clay" />
                                             </summary>
@@ -258,13 +258,13 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                                         <Image src={p.img} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
                                         <div className="absolute bottom-4 left-5 right-5">
-                                            <div className="text-[11px] font-medium text-paper/80">{p.duration} · {p.theme}</div>
-                                            <h3 className="mt-0.5 text-lg font-medium text-paper">{p.title}</h3>
+                                            <div className="text-[11px] font-semibold text-paper/80">{p.duration} · {p.theme}</div>
+                                            <h3 className="mt-0.5 text-lg font-semibold text-paper">{p.title}</h3>
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-between p-5">
-                                        <span className="text-base font-medium text-ink">{p.price}</span>
-                                        <span className="inline-flex items-center gap-1 text-sm font-medium text-clay">Open <ArrowRight size={14} /></span>
+                                        <span className="text-base font-semibold text-ink">{p.price}</span>
+                                        <span className="inline-flex items-center gap-1 text-sm font-semibold text-clay">Open <ArrowRight size={14} /></span>
                                     </div>
                                 </Link>
                             ))}
@@ -281,7 +281,7 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                 <div className="mb-16 flex items-end justify-between border-b-4 border-sunset-orange pb-10">
                     <div>
                         <h1 className="text-5xl font-semibold tracking-tight">MyTripMyTravel</h1>
-                        <h4 className="mt-1 text-xs font-medium uppercase tracking-[0.3em] text-sunset-orange">Itinerary brief</h4>
+                        <h4 className="mt-1 text-xs font-semibold uppercase tracking-[0.3em] text-sunset-orange">Itinerary brief</h4>
                     </div>
                     <div className="text-right text-[10px] uppercase tracking-widest opacity-50">
                         <div>Ref MTMT {packageSlug(tour)}</div>
@@ -290,13 +290,13 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
                 </div>
                 <h2 className="mb-6 text-5xl font-semibold tracking-tight">{tour.title}</h2>
                 <p className="mb-16 max-w-4xl text-xl italic opacity-70">{tour.highlight}</p>
-                <h3 className="mb-8 border-b border-royal-blue/10 pb-3 text-lg font-medium uppercase tracking-[0.2em]">Itinerary</h3>
+                <h3 className="mb-8 border-b border-royal-blue/10 pb-3 text-lg font-semibold uppercase tracking-[0.2em]">Itinerary</h3>
                 <div className="space-y-8">
                     {tour.itinerary.map((day, idx) => (
                         <div key={idx} className="flex gap-8">
                             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-royal-blue font-semibold text-white">{day.day}</div>
                             <div>
-                                <h4 className="text-[10px] font-medium uppercase tracking-widest text-sunset-orange">Day {day.day}</h4>
+                                <h4 className="text-[10px] font-semibold uppercase tracking-widest text-sunset-orange">Day {day.day}</h4>
                                 <p className="mt-1 text-lg">{day.plan}</p>
                             </div>
                         </div>

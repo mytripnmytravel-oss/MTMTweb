@@ -41,7 +41,7 @@ export default function WellnessHubView() {
             <section className="border-b border-line pb-14 pt-36 sm:pt-40">
                 <div className="container-x">
                     <p className="eyebrow eyebrow-accent">Wellness & sanctuary</p>
-                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Recovery, quietly held.</h1>
+                    <h1 className="display-1 mt-4 max-w-3xl font-semibold text-ink">Recovery, quietly held.</h1>
                     <div className="mt-6 flex flex-col items-start gap-6 lg:flex-row lg:items-end lg:justify-between">
                         <p className="max-w-2xl text-lg leading-relaxed text-muted">
                             India is the world's wellness heartland, authentic Ayurveda, master-led yoga, therapeutic bodywork and carefully arranged recovery travel, delivered with vetted practitioners and honest guidance.
@@ -64,12 +64,12 @@ export default function WellnessHubView() {
                                     </div>
                                     <div className="flex flex-1 flex-col p-7">
                                         <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-paper-dim text-clay"><Icon size={22} /></span>
-                                        <h3 className="mt-5 text-2xl font-medium text-ink">{p.title}</h3>
+                                        <h3 className="mt-5 text-2xl font-semibold text-ink">{p.title}</h3>
                                         <p className="mt-3 text-[15px] leading-relaxed text-muted">{p.desc}</p>
                                         <div className="mt-5 flex flex-wrap gap-2">
                                             {p.tags.map((t) => <span key={t} className="pill">{t}</span>)}
                                         </div>
-                                        <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-clay">Explore programme <ArrowUpRight size={15} /></span>
+                                        <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-clay">Explore programme <ArrowUpRight size={15} /></span>
                                     </div>
                                 </Link>
                             </motion.div>
@@ -100,7 +100,7 @@ export default function WellnessHubView() {
                             return (
                                 <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
                                     <Icon className="text-clay-soft" size={26} />
-                                    <h5 className="mt-5 text-base font-medium text-paper">{a.title}</h5>
+                                    <h5 className="mt-5 text-base font-semibold text-paper">{a.title}</h5>
                                     <p className="mt-1 text-[13px] leading-relaxed text-paper/50">{a.desc}</p>
                                 </div>
                             );
@@ -122,7 +122,7 @@ export default function WellnessHubView() {
                         <div className="absolute inset-x-0 bottom-0 p-8 sm:p-12">
                             <div className="flex items-center gap-2 text-paper/80">
                                 <MapPin className="text-clay-soft" size={16} />
-                                <span className="text-[12px] font-medium uppercase tracking-[0.18em]">Aravalli ranges, Rajasthan</span>
+                                <span className="text-[12px] font-semibold uppercase tracking-[0.18em]">Aravalli ranges, Rajasthan</span>
                             </div>
                             <h3 className="display-3 mt-3 max-w-xl text-paper">A retreat of real quiet.</h3>
                             <p className="mt-3 max-w-xl text-paper/75">Remote, unhurried settings chosen for genuine rest and an unplugged, digital-light stay.</p>

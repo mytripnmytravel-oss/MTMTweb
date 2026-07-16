@@ -37,7 +37,7 @@ export default function CorporateRouteView({
                         <span className="text-clay-soft">{route.originLabel} → {destination.name}</span>
                     </nav>
                     <p className="eyebrow text-paper/70">Corporate Offsite Route</p>
-                    <h1 className="display-1 mt-4 font-medium text-paper">{content.h1}</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-paper">{content.h1}</h1>
                 </div>
             </section>
 
@@ -45,7 +45,7 @@ export default function CorporateRouteView({
             <section className="section">
                 <div className="container-x max-w-5xl">
                     <p className="eyebrow eyebrow-accent">The Brief</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{content.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{content.answer}</p>
                     <div className="mt-10 max-w-3xl space-y-5">
                         {content.intro.map((p, i) => (
                             <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[17px] leading-relaxed text-muted">{p}</motion.p>
@@ -54,10 +54,10 @@ export default function CorporateRouteView({
                     <div className="mt-10 flex flex-wrap gap-3">
                         <div className="card flex items-center gap-3 px-6 py-4">
                             <Plane className="text-clay" size={18} />
-                            <span className="text-[14px] font-medium text-ink">Fly: {route.originGateway} → {destination.name}</span>
+                            <span className="text-[14px] font-semibold text-ink">Fly: {route.originGateway} → {destination.name}</span>
                         </div>
                         <div className="card flex items-center gap-3 px-6 py-4">
-                            <span className="text-[14px] font-medium text-ink">Ground operation: MyTripMyTravel</span>
+                            <span className="text-[14px] font-semibold text-ink">Ground operation: MyTripMyTravel</span>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ export default function CorporateRouteView({
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {content.faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}

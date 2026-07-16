@@ -13,7 +13,7 @@ import { fleet, Vehicle } from "@/data/fleet";
 const Pill = ({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) => (
     <button
         onClick={onClick}
-        className={`rounded-full px-4 py-2 text-[13px] font-medium transition-all duration-300 ${
+        className={`rounded-full px-4 py-2 text-[13px] font-semibold transition-all duration-300 ${
             active ? "bg-ink text-paper" : "border border-line bg-white text-muted hover:border-ink hover:text-ink"
         }`}
     >
@@ -50,7 +50,7 @@ export default function FleetView() {
             <section className="border-b border-line pb-14 pt-36 sm:pt-40">
                 <div className="container-x">
                     <p className="eyebrow eyebrow-accent">The fleet</p>
-                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Chauffeured, immaculate, GPS-tracked.</h1>
+                    <h1 className="display-1 mt-4 max-w-3xl font-semibold text-ink">Chauffeured, immaculate, GPS-tracked.</h1>
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
                         From executive sedans to royal-convoy SUVs, every vehicle with a vetted performance-chauffeur, pre-calculated fuel, tolls and permits, and transparent pricing.
                     </p>
@@ -61,11 +61,11 @@ export default function FleetView() {
             <section className="sticky top-[60px] z-40 border-b border-line bg-paper/90 py-4 backdrop-blur-md">
                 <div className="container-x flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                     <div className="flex flex-wrap items-center gap-2">
-                        <span className="mr-1 text-[12px] font-medium uppercase tracking-[0.16em] text-stone">Type</span>
+                        <span className="mr-1 text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">Type</span>
                         {vehicleTypes.map((t) => <Pill key={t} active={activeType === t} onClick={() => setActiveType(t)}>{t}</Pill>)}
                     </div>
                     <div className="flex flex-wrap items-center gap-2">
-                        <span className="mr-1 text-[12px] font-medium uppercase tracking-[0.16em] text-stone">Class</span>
+                        <span className="mr-1 text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">Class</span>
                         {categories.map((c) => <Pill key={c} active={activeCategory === c} onClick={() => setActiveCategory(c)}>{c}</Pill>)}
                     </div>
                 </div>
@@ -86,7 +86,7 @@ export default function FleetView() {
                                     <div className="grid h-full sm:grid-cols-2">
                                         <div className="relative aspect-[4/3] overflow-hidden sm:aspect-auto">
                                             <Image src={v.img} alt={`${v.name}, chauffeured ${v.category.toLowerCase()} ${v.type.toLowerCase()} for hire`} fill className="object-cover" />
-                                            <span className={`absolute left-4 top-4 rounded-full px-3 py-1 text-[11px] font-medium ${v.category === "Elite" ? "bg-clay text-white" : "bg-paper/90 text-ink"}`}>
+                                            <span className={`absolute left-4 top-4 rounded-full px-3 py-1 text-[11px] font-semibold ${v.category === "Elite" ? "bg-clay text-white" : "bg-paper/90 text-ink"}`}>
                                                 {v.category}
                                             </span>
                                         </div>
@@ -97,7 +97,7 @@ export default function FleetView() {
                                                     <span className="text-stone">·</span>
                                                     <span className="text-[12px] text-muted">{v.priceRange}</span>
                                                 </div>
-                                                <h3 className="mt-2 text-2xl font-medium text-ink">{v.name}</h3>
+                                                <h3 className="mt-2 text-2xl font-semibold text-ink">{v.name}</h3>
                                                 <p className="mt-3 text-sm leading-relaxed text-muted">{v.description}</p>
                                                 <div className="mt-6 flex gap-6">
                                                     <div className="flex items-center gap-2 text-sm text-ink-soft"><Users size={16} className="text-clay" /> {v.passengers} seats</div>

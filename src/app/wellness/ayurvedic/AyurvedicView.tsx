@@ -21,7 +21,7 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                 <div className="grid items-center gap-16 lg:grid-cols-2">
                     <div>
                         <p className="eyebrow eyebrow-accent">Ancient science</p>
-                        <h1 className="display-1 mt-4 font-medium text-ink">Ayurvedic restoration</h1>
+                        <h1 className="display-1 mt-4 font-semibold text-ink">Ayurvedic restoration</h1>
                         <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
                             Practitioner-led classical Ayurveda in its Keralan home, authentic Panchakarma and herbal therapies delivered at AYUSH-certified centres, framed honestly as recuperative care rather than a medical cure.
                         </p>
@@ -31,7 +31,7 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-paper-dim text-clay">
                                     <Leaf size={20} />
                                 </span>
-                                <span className="text-[13px] font-medium text-ink">AYUSH-certified partners</span>
+                                <span className="text-[13px] font-semibold text-ink">AYUSH-certified partners</span>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
             <section className="border-y border-line bg-paper-dim/60 py-20 sm:py-24">
                 <div className="container-x">
                     <p className="eyebrow eyebrow-accent">Panchakarma</p>
-                    <h2 className="display-2 mt-3 font-medium text-ink">The five classical cleansing therapies</h2>
+                    <h2 className="display-2 mt-3 font-semibold text-ink">The five classical cleansing therapies</h2>
 
                     <div className="mt-12 grid gap-6 md:grid-cols-3">
                         {[
@@ -72,7 +72,7 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-paper-dim text-clay">
                                     <pillar.icon size={22} />
                                 </span>
-                                <h3 className="mt-5 text-xl font-medium text-ink">{pillar.title}</h3>
+                                <h3 className="mt-5 text-xl font-semibold text-ink">{pillar.title}</h3>
                                 <p className="mt-2 text-[15px] leading-relaxed text-muted">{pillar.desc}</p>
                             </motion.div>
                         ))}
@@ -85,7 +85,7 @@ export default function AyurvedicView({ programme }: { programme: WellnessProgra
                 <div className="container-x text-center">
                     <div className="mx-auto max-w-3xl">
                         <ShieldCheck className="mx-auto mb-8 text-clay-soft" size={44} />
-                        <h2 className="display-2 font-medium leading-tight text-paper">
+                        <h2 className="display-2 font-semibold leading-tight text-paper">
                             Certified <span className="text-clay-soft">care.</span>
                         </h2>
                         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">

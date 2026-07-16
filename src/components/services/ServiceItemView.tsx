@@ -30,8 +30,8 @@ export default function ServiceItemView({
                         <span className="text-ink">{item.name}</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent">{item.category}</p>
-                    <h1 className="display-1 mt-4 font-medium text-ink">{item.name}</h1>
-                    <p className="mt-8 max-w-4xl font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{item.answer}</p>
+                    <h1 className="display-1 mt-4 font-semibold text-ink">{item.name}</h1>
+                    <p className="mt-8 max-w-4xl font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{item.answer}</p>
                     <div className="mt-10 max-w-3xl space-y-5">
                         {item.intro.map((p, i) => (
                             <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[17px] leading-relaxed text-muted">{p}</motion.p>
@@ -49,7 +49,7 @@ export default function ServiceItemView({
                             <div key={i} className="card p-6">
                                 <div className="flex items-center gap-2">
                                     <CheckCircle2 className="shrink-0 text-clay" size={18} />
-                                    <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-stone">{pt.label}</p>
+                                    <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">{pt.label}</p>
                                 </div>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{pt.detail}</p>
                             </div>
@@ -71,7 +71,7 @@ export default function ServiceItemView({
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {item.faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}

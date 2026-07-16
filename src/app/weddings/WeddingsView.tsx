@@ -40,7 +40,7 @@ export default function WeddingsView() {
             <section className="section pt-36 sm:pt-40">
                 <div className="container-x max-w-4xl">
                     <p className="eyebrow eyebrow-accent">Weddings</p>
-                    <h1 className="display-1 mt-4 font-medium text-ink">Royal weddings, orchestrated.</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-ink">Royal weddings, orchestrated.</h1>
                     <div className="mt-6 flex flex-col items-start gap-6 lg:flex-row lg:items-end lg:justify-between">
                         <p className="max-w-2xl text-lg leading-relaxed text-muted">
                             We don't simply plan events, we run complete productions. Venue buyouts, coordinated air and ground transit, and discreet professional security for a considered Indian royal wedding.
@@ -65,12 +65,12 @@ export default function WeddingsView() {
                                     </div>
                                     <div className="p-7">
                                         <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-paper-dim text-clay"><Icon size={22} /></span>
-                                        <h3 className="mt-5 text-2xl font-medium text-ink">{v.title}</h3>
+                                        <h3 className="mt-5 text-2xl font-semibold text-ink">{v.title}</h3>
                                         <p className="mt-3 text-[15px] leading-relaxed text-muted">{v.desc}</p>
                                         <div className="mt-5 flex flex-wrap gap-2">
                                             {v.features.map((f) => <span key={f} className="pill">{f}</span>)}
                                         </div>
-                                        <Link href="/booking" className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-clay">Enquire about this venue <ArrowRight size={15} /></Link>
+                                        <Link href="/booking" className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-clay">Enquire about this venue <ArrowRight size={15} /></Link>
                                     </div>
                                 </motion.div>
                             );
@@ -95,7 +95,7 @@ export default function WeddingsView() {
                                     <div key={i} className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
                                         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-clay text-paper"><Icon size={18} /></span>
                                         <div>
-                                            <h5 className="text-base font-medium text-paper">{s.title}</h5>
+                                            <h5 className="text-base font-semibold text-paper">{s.title}</h5>
                                             <p className="mt-1 text-[13px] leading-relaxed text-paper/50">{s.desc}</p>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@ export default function WeddingsView() {
                             return (
                                 <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
                                     <Icon className="text-clay-soft" size={28} />
-                                    <h5 className="mt-5 text-base font-medium text-paper">{e.title}</h5>
+                                    <h5 className="mt-5 text-base font-semibold text-paper">{e.title}</h5>
                                     <p className="mt-1 text-[13px] leading-relaxed text-paper/50">{e.desc}</p>
                                 </div>
                             );

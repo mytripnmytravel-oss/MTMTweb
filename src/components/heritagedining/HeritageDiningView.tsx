@@ -31,7 +31,7 @@ export function DiningCategoryView({ category }: { category: DiningCategory }) {
                     <span className="text-clay">{category.segment}</span>
                 </nav>
                 <p className="eyebrow eyebrow-accent">Heritage Dining</p>
-                <h1 className="display-1 mt-4 font-medium text-ink">{category.name}</h1>
+                <h1 className="display-1 mt-4 font-semibold text-ink">{category.name}</h1>
                 <p className="mt-6 max-w-2xl text-[16px] leading-relaxed text-muted">{category.blurb}</p>
             </section>
             <section className="container-x pb-28">
@@ -39,9 +39,9 @@ export function DiningCategoryView({ category }: { category: DiningCategory }) {
                     {category.items.map((it, idx) => (
                         <motion.div key={it.slug} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (idx % 3) * 0.06 }}>
                             <Link href={`/heritage-dining/${category.slug}/${it.slug}`} className="card group block h-full p-7">
-                                <h3 className="text-xl font-medium leading-snug text-ink">{it.name}</h3>
+                                <h3 className="text-xl font-semibold leading-snug text-ink">{it.name}</h3>
                                 <p className="mt-3 line-clamp-3 text-[15px] leading-relaxed text-muted">{it.answer}</p>
-                                <span className="mt-6 inline-flex items-center gap-2 text-[13px] font-medium text-clay">Open <ArrowRight size={14} /></span>
+                                <span className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold text-clay">Open <ArrowRight size={14} /></span>
                             </Link>
                         </motion.div>
                     ))}
@@ -72,8 +72,8 @@ export function DiningItemView({
                     <span className="text-clay">{item.name}</span>
                 </nav>
                 <p className="eyebrow eyebrow-accent">{category.name}</p>
-                <h1 className="display-1 mt-4 font-medium text-ink">{item.name}</h1>
-                <p className="mt-6 max-w-4xl font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{item.answer}</p>
+                <h1 className="display-1 mt-4 font-semibold text-ink">{item.name}</h1>
+                <p className="mt-6 max-w-4xl font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{item.answer}</p>
                 <div className="mt-10 max-w-3xl space-y-5">
                     {item.intro.map((p, i) => (
                         <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[16px] leading-relaxed text-muted">{p}</motion.p>
@@ -89,7 +89,7 @@ export function DiningItemView({
                             <div key={i} className="card p-7">
                                 <div className="flex items-center gap-3">
                                     <CheckCircle2 className="shrink-0 text-clay" size={18} />
-                                    <span className="text-[13px] font-medium uppercase tracking-[0.12em] text-stone">{pt.label}</span>
+                                    <span className="text-[13px] font-semibold uppercase tracking-[0.12em] text-stone">{pt.label}</span>
                                 </div>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{pt.detail}</p>
                             </div>
@@ -114,7 +114,7 @@ export function DiningItemView({
                     <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
                         {item.faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}

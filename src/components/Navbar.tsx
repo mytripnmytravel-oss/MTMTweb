@@ -10,7 +10,7 @@ const NavItem = ({ title, items, href }: { title: string; items?: { label: strin
     <div className="relative group px-1">
         <Link
             href={href ?? "#"}
-            className="flex items-center gap-1 rounded-full px-3 py-2 text-[13px] font-medium text-ink/80 transition-colors hover:text-clay whitespace-nowrap"
+            className="flex items-center gap-1 rounded-full px-3 py-2 text-[13px] font-semibold text-ink/80 transition-colors hover:text-clay whitespace-nowrap"
         >
             {title}
             {items && <ChevronDown size={13} className="text-stone transition-transform duration-300 group-hover:rotate-180" />}
@@ -21,7 +21,7 @@ const NavItem = ({ title, items, href }: { title: string; items?: { label: strin
                     <Link
                         key={idx}
                         href={item.href}
-                        className="block rounded-xl px-4 py-2.5 text-[13px] font-medium text-ink-soft transition-colors hover:bg-paper-dim hover:text-clay whitespace-nowrap"
+                        className="block rounded-xl px-4 py-2.5 text-[13px] font-semibold text-ink-soft transition-colors hover:bg-paper-dim hover:text-clay whitespace-nowrap"
                     >
                         {item.label}
                     </Link>
@@ -33,15 +33,17 @@ const NavItem = ({ title, items, href }: { title: string; items?: { label: strin
 
 export const Logo3D = ({ light = false }: { light?: boolean; isScrolled?: boolean }) => (
     <Link href="/" className="flex items-center gap-3 group">
-        <div className="relative h-10 w-10 shrink-0">
-            <Image src="/logo.png" alt="MyTripMyTravel" width={44} height={44} className="h-full w-full object-contain" />
+        <div className="relative h-11 w-11 shrink-0 sm:h-12 sm:w-12">
+            <Image src="/logo.png" alt="MyTripMyTravel logo" width={52} height={52} className="h-full w-full object-contain drop-shadow-[0_3px_6px_rgba(0,0,0,0.12)]" />
         </div>
         <div className="flex flex-col leading-none">
-            <span className={`font-display text-[17px] font-semibold tracking-tight whitespace-nowrap ${light ? "text-paper" : "text-ink"}`}>
-                MyTrip<span className="text-clay">MyTravel</span>
+            <span className={`font-display text-xl font-black uppercase leading-none tracking-tight whitespace-nowrap sm:text-2xl ${light ? "text-paper" : "text-ink"}`}>
+                MYTRIP<span className="text-clay">MYTRAVEL</span>
             </span>
-            <span className="mt-1 text-[9px] font-medium uppercase tracking-[0.24em] text-stone whitespace-nowrap">
-                Journeys, curated
+            <span className="mt-1.5 flex items-center gap-1.5">
+                <span className="h-px w-4 bg-clay" />
+                <span className="text-[8px] font-bold uppercase tracking-[0.28em] text-clay whitespace-nowrap">Journeys That Inspire</span>
+                <span className="h-px w-4 bg-clay" />
             </span>
         </div>
     </Link>
@@ -165,7 +167,7 @@ export default function Navbar() {
                                         key={m.href}
                                         href={m.href}
                                         onClick={() => setIsMobileMenuOpen(false)}
-                                        className="flex items-center justify-between py-4 font-display text-2xl font-medium text-ink hover:text-clay"
+                                        className="flex items-center justify-between py-4 font-display text-2xl font-semibold text-ink hover:text-clay"
                                     >
                                         {m.label}
                                         <ChevronDown size={18} className="-rotate-90 text-stone" />

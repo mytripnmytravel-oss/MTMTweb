@@ -51,7 +51,7 @@ export default function AndamanView() {
                         transition={{ delay: 0.5 }}
                     >
                         <p className="eyebrow eyebrow-accent justify-center">Island Sanctuary</p>
-                        <h1 className="display-1 mt-5 font-medium text-paper">Andaman Expedition</h1>
+                        <h1 className="display-1 mt-5 font-semibold text-paper">Andaman Expedition</h1>
                         <div className="mt-12 flex flex-wrap justify-center gap-4">
                             {stats.map((stat, i) => (
                                 <motion.div
@@ -64,7 +64,7 @@ export default function AndamanView() {
                                     <div className="text-clay">{stat.icon}</div>
                                     <div className="text-left">
                                         <div className="text-[12px] text-muted">{stat.detail}</div>
-                                        <div className="text-sm font-medium text-ink md:text-lg">{stat.label}</div>
+                                        <div className="text-sm font-semibold text-ink md:text-lg">{stat.label}</div>
                                     </div>
                                 </motion.div>
                             ))}
@@ -79,7 +79,7 @@ export default function AndamanView() {
                     className="absolute bottom-12 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
                 >
                     <div className="h-12 w-px bg-gradient-to-b from-paper/60 to-transparent" />
-                    <span className="text-[11px] font-medium tracking-[0.22em] text-clay-soft">Scroll to explore</span>
+                    <span className="text-[11px] font-semibold tracking-[0.22em] text-clay-soft">Scroll to explore</span>
                 </motion.div>
             </section>
 
@@ -89,7 +89,7 @@ export default function AndamanView() {
                     <div className="grid items-start gap-20 lg:grid-cols-2">
                         <div className="lg:sticky lg:top-32">
                             <p className="eyebrow eyebrow-accent">Strategic Deployment</p>
-                            <h2 className="display-2 mt-4 font-medium text-ink">The Master Itinerary</h2>
+                            <h2 className="display-2 mt-4 font-semibold text-ink">The Master Itinerary</h2>
                             <p className="mt-6 text-[17px] leading-relaxed text-muted md:text-[19px]">
                                 Our Andaman plan is designed for those who demand pristine environments and zero-friction logistics in the heart of the Bay of Bengal.
                             </p>
@@ -100,7 +100,7 @@ export default function AndamanView() {
                                         <ShieldCheck size={30} />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-medium text-ink">Elite Logistics</h3>
+                                        <h3 className="text-xl font-semibold text-ink">Elite Logistics</h3>
                                         <p className="mt-1 text-[14px] leading-relaxed text-muted">Private cruise and island shuttles</p>
                                     </div>
                                 </div>
@@ -109,7 +109,7 @@ export default function AndamanView() {
                                         <Star size={30} />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-medium text-ink">Premium Stays</h3>
+                                        <h3 className="text-xl font-semibold text-ink">Premium Stays</h3>
                                         <p className="mt-1 text-[14px] leading-relaxed text-muted">Luxury eco-retreats</p>
                                     </div>
                                 </div>
@@ -135,11 +135,11 @@ export default function AndamanView() {
                                     viewport={{ once: true }}
                                     className="relative border-l border-line pb-12 pl-12 last:border-0 md:pl-20"
                                 >
-                                    <div className="absolute left-0 top-0 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border-2 border-ink bg-paper text-[11px] font-medium">
+                                    <div className="absolute left-0 top-0 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border-2 border-ink bg-paper text-[11px] font-semibold">
                                         {day.day}
                                     </div>
                                     <p className="eyebrow eyebrow-accent">Day {day.day}</p>
-                                    <h3 className="mt-3 text-2xl font-medium text-ink md:text-3xl">
+                                    <h3 className="mt-3 text-2xl font-semibold text-ink md:text-3xl">
                                         {idx === 0 ? "Strategic Arrival" :
                                          idx === 1 ? "Island Deployment" :
                                          idx === 2 ? "Marine Operations" :
@@ -162,7 +162,7 @@ export default function AndamanView() {
                 <div className="container-x">
                     <div className="mb-16 text-center">
                         <p className="eyebrow eyebrow-accent justify-center">Sea Assets</p>
-                        <h2 className="display-2 mt-4 font-medium text-paper">Marine Fleet Selection</h2>
+                        <h2 className="display-2 mt-4 font-semibold text-paper">Marine Fleet Selection</h2>
                         <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-relaxed text-paper/70">
                             From private catamarans to high-speed luxury shuttles, our marine wing ensures your inter-island transition is as refined as our land-based journeys.
                         </p>
@@ -182,7 +182,7 @@ export default function AndamanView() {
                             >
                                 <Image src={asset.img} alt={`${asset.title}, private inter-island transfer, Andaman`} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink via-ink/50 to-transparent p-10">
-                                    <h3 className="mb-3 text-2xl font-medium text-paper">{asset.title}</h3>
+                                    <h3 className="mb-3 text-2xl font-semibold text-paper">{asset.title}</h3>
                                     <p className="text-[15px] leading-relaxed text-paper/70">{asset.desc}</p>
                                 </div>
                             </motion.div>
@@ -197,7 +197,7 @@ export default function AndamanView() {
                     <div className="mx-auto max-w-4xl">
                         <div className="mb-12">
                             <p className="eyebrow eyebrow-accent">Good to know</p>
-                            <h2 className="display-2 mt-4 font-medium text-ink">Frequently asked questions</h2>
+                            <h2 className="display-2 mt-4 font-semibold text-ink">Frequently asked questions</h2>
                         </div>
 
                         <div className="space-y-6">
@@ -207,7 +207,7 @@ export default function AndamanView() {
                                 { q: "Can we customize the inter-island transfer timing?", a: "Yes. We coordinate around your preferred rhythm, though certain marine transfers are subject to local harbour authority schedules." }
                             ].map((faq, idx) => (
                                 <div key={idx} className="card p-7">
-                                    <h3 className="text-[17px] font-medium text-ink">{faq.q}</h3>
+                                    <h3 className="text-[17px] font-semibold text-ink">{faq.q}</h3>
                                     <p className="mt-3 text-[15px] leading-relaxed text-muted">{faq.a}</p>
                                 </div>
                             ))}

@@ -62,7 +62,7 @@ export default function MonumentView({
                     </nav>
                     <motion.div initial="hidden" animate="visible" variants={fade}>
                         <span className="eyebrow text-paper/70">{monument.type} · {monument.era}</span>
-                        <h1 className="display-1 mt-4 font-medium text-paper">{monument.name}</h1>
+                        <h1 className="display-1 mt-4 font-semibold text-paper">{monument.name}</h1>
                         <p className="mt-4 max-w-2xl text-lg text-paper/80">{monument.tagline}</p>
                     </motion.div>
                 </div>
@@ -72,7 +72,7 @@ export default function MonumentView({
             <section className="section">
                 <div className="container-x max-w-4xl">
                     <Eyebrow>Overview</Eyebrow>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{monument.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{monument.answer}</p>
                     <div className="mt-10 space-y-5">
                         {monument.intro.map((para, i) => (
                             <p key={i} className="text-[17px] leading-relaxed text-muted">{para}</p>
@@ -90,7 +90,7 @@ export default function MonumentView({
                         {monument.quickFacts.map((f, i) => (
                             <div key={i} className="card p-6">
                                 <div className="eyebrow">{f.label}</div>
-                                <div className="mt-2 text-lg font-medium text-ink">{f.value}</div>
+                                <div className="mt-2 text-lg font-semibold text-ink">{f.value}</div>
                             </div>
                         ))}
                     </div>
@@ -108,7 +108,7 @@ export default function MonumentView({
                                 className="rounded-2xl border border-white/10 bg-white/[0.04] p-7">
                                 <div className="flex items-center gap-3">
                                     <Landmark className="text-clay-soft" size={18} />
-                                    <h3 className="text-xl font-medium text-paper">{h.name}</h3>
+                                    <h3 className="text-xl font-semibold text-paper">{h.name}</h3>
                                 </div>
                                 <p className="mt-3 text-sm leading-relaxed text-paper/60">{h.detail}</p>
                             </motion.div>
@@ -125,7 +125,7 @@ export default function MonumentView({
                         <div className="mt-8 divide-y divide-line">
                             {monument.visitorInfo.map((v, i) => (
                                 <div key={i} className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-8">
-                                    <span className="shrink-0 text-[11px] font-medium uppercase tracking-[0.18em] text-stone sm:w-40">{v.label}</span>
+                                    <span className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.18em] text-stone sm:w-40">{v.label}</span>
                                     <span className="text-[16px] leading-relaxed text-ink-soft">{v.value}</span>
                                 </div>
                             ))}
@@ -154,7 +154,7 @@ export default function MonumentView({
                         <div className="mt-10 grid gap-6 md:grid-cols-2">
                             {monument.faqs.map((f, i) => (
                                 <div key={i} className="card p-7">
-                                    <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                    <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                     <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                                 </div>
                             ))}
@@ -171,12 +171,12 @@ export default function MonumentView({
                             <Eyebrow>More in {dest.name}</Eyebrow>
                             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                 <Link href={`/destinations/${dest.slug}`} className="card card-hover group flex items-center justify-between p-6">
-                                    <span className="text-[15px] font-medium text-ink group-hover:text-clay">{dest.name}, full guide</span>
+                                    <span className="text-[15px] font-semibold text-ink group-hover:text-clay">{dest.name}, full guide</span>
                                     <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                                 </Link>
                                 {siblings.map((s) => (
                                     <Link key={s.slug} href={`/destinations/${dest.slug}/monuments/${s.slug}`} className="card card-hover group flex items-center justify-between p-6">
-                                        <span className="text-[15px] font-medium text-ink group-hover:text-clay">{s.name}</span>
+                                        <span className="text-[15px] font-semibold text-ink group-hover:text-clay">{s.name}</span>
                                         <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                                     </Link>
                                 ))}

@@ -20,7 +20,7 @@ export default function OrthopedicView({ programme }: { programme: WellnessProgr
                 <div className="grid items-center gap-16 lg:grid-cols-2">
                     <div>
                         <p className="eyebrow eyebrow-accent">Travel & recovery logistics</p>
-                        <h1 className="display-1 mt-4 font-medium text-ink">Orthopedic recovery</h1>
+                        <h1 className="display-1 mt-4 font-semibold text-ink">Orthopedic recovery</h1>
                         <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
                             We are travel architects, not a medical provider. Around orthopedic treatment you arrange with accredited hospitals and surgeons of your choice, we design the luxury transit, accommodation and gentle-paced recovery logistics that make the journey comfortable.
                         </p>
@@ -30,7 +30,7 @@ export default function OrthopedicView({ programme }: { programme: WellnessProgr
                                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-paper-dim text-clay">
                                     <Building2 size={20} />
                                 </span>
-                                <span className="text-[13px] font-medium text-ink">Near accredited hospitals</span>
+                                <span className="text-[13px] font-semibold text-ink">Near accredited hospitals</span>
                             </div>
                         </div>
                     </div>
@@ -44,8 +44,8 @@ export default function OrthopedicView({ programme }: { programme: WellnessProgr
                         <div className="absolute inset-0 flex items-center justify-center p-12">
                             <div className="text-center">
                                 <HeartPulse className="mx-auto mb-6 text-clay" size={64} />
-                                <h3 className="text-2xl font-medium text-ink">Recovery, orchestrated</h3>
-                                <p className="mt-2 text-[13px] font-medium text-muted">Logistics you can trust</p>
+                                <h3 className="text-2xl font-semibold text-ink">Recovery, orchestrated</h3>
+                                <p className="mt-2 text-[13px] font-semibold text-muted">Logistics you can trust</p>
                             </div>
                         </div>
                     </div>
@@ -56,12 +56,12 @@ export default function OrthopedicView({ programme }: { programme: WellnessProgr
             <section className="section">
                 <div className="container-x grid gap-12 lg:grid-cols-3">
                     <div className="lg:col-span-1">
-                        <h2 className="display-2 font-medium text-ink">How we help.</h2>
+                        <h2 className="display-2 font-semibold text-ink">How we help.</h2>
                         <p className="mt-6 text-[16px] leading-relaxed text-muted">
                             A dedicated travel coordinator manages your itinerary from arrival to departure, flights, transfers, stays and paced rest days, so the non-medical side of recovery runs smoothly while your clinical care stays entirely with your chosen providers.
                         </p>
                         <div className="mt-8 rounded-2xl border border-line bg-paper-dim/60 p-7">
-                            <h3 className="flex items-center gap-2 text-[13px] font-medium text-ink">
+                            <h3 className="flex items-center gap-2 text-[13px] font-semibold text-ink">
                                 <Award size={16} className="text-clay" /> Accredited partners
                             </h3>
                             <p className="mt-3 text-[13px] leading-relaxed text-muted">
@@ -80,7 +80,7 @@ export default function OrthopedicView({ programme }: { programme: WellnessProgr
                                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-paper-dim text-clay">
                                     <spec.icon size={22} />
                                 </span>
-                                <h3 className="mt-5 text-xl font-medium text-ink">{spec.title}</h3>
+                                <h3 className="mt-5 text-xl font-semibold text-ink">{spec.title}</h3>
                                 <p className="mt-2 text-[15px] leading-relaxed text-muted">{spec.desc}</p>
                             </div>
                         ))}
@@ -94,7 +94,7 @@ export default function OrthopedicView({ programme }: { programme: WellnessProgr
                     <div className="mb-14 flex flex-col justify-between gap-8 md:flex-row md:items-end">
                         <div>
                             <p className="eyebrow text-clay-soft">Where we base you</p>
-                            <h2 className="display-2 mt-4 font-medium text-paper">Primary gateways</h2>
+                            <h2 className="display-2 mt-4 font-semibold text-paper">Primary gateways</h2>
                         </div>
                         <p className="max-w-md text-[16px] leading-relaxed text-paper/70 md:text-right">
                             Cities chosen for their international connectivity and their concentration of accredited hospitals.
@@ -109,7 +109,7 @@ export default function OrthopedicView({ programme }: { programme: WellnessProgr
                             <div key={i} className="group relative h-[400px] overflow-hidden rounded-2xl">
                                 <Image src={loc.img} alt={`Landmark view of ${loc.city}, India`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
                                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink via-ink/20 to-transparent p-8">
-                                    <h3 className="text-2xl font-medium text-paper">{loc.city}</h3>
+                                    <h3 className="text-2xl font-semibold text-paper">{loc.city}</h3>
                                     <p className="mt-2 text-[13px] text-paper/70">{loc.desc}</p>
                                 </div>
                             </div>

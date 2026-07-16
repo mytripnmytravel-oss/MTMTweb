@@ -57,7 +57,7 @@ export default function GoldenTriangleHubView({
                         <span className="text-clay">Golden Triangle</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent">The definitive circuit</p>
-                    <h1 className="display-1 mt-4 font-medium text-ink">Golden Triangle</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-ink">Golden Triangle</h1>
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
                         Delhi, Agra, and Jaipur, sliced every way travellers actually search. Pick the
                         angle that matches your trip: by theme, by duration, or by the month you travel.

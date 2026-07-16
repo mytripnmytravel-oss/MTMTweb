@@ -16,7 +16,7 @@ import { packages, packageSlug, type Package } from "@/data/tours";
 const Pill = ({ active, label, onClick }: { active: boolean; label: string; onClick: () => void }) => (
     <button
         onClick={onClick}
-        className={`rounded-full px-3.5 py-1.5 text-[12px] font-medium transition-all duration-300 ${
+        className={`rounded-full px-3.5 py-1.5 text-[12px] font-semibold transition-all duration-300 ${
             active ? "bg-ink text-paper" : "border border-line bg-white text-muted hover:border-ink hover:text-ink"
         }`}
     >
@@ -28,7 +28,7 @@ const Feature = ({ icon: Icon, title, desc }: { icon: any; title: string; desc: 
     <div className="flex items-start gap-3">
         <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-paper-dim text-clay"><Icon size={15} /></span>
         <div>
-            <h5 className="text-[13px] font-medium text-ink">{title}</h5>
+            <h5 className="text-[13px] font-semibold text-ink">{title}</h5>
             <p className="mt-0.5 text-[12px] leading-relaxed text-muted">{desc}</p>
         </div>
     </div>
@@ -73,11 +73,11 @@ export default function GoldenTriangleAllView() {
             <section className="border-b border-line pb-14 pt-36 sm:pt-40">
                 <div className="container-x max-w-4xl">
                     <p className="eyebrow eyebrow-accent">The full collection</p>
-                    <h1 className="display-1 mt-4 font-medium text-ink">Golden Triangle & beyond</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-ink">Golden Triangle & beyond</h1>
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
                         Every variation of India's most iconic routes and regional escapes. Each itinerary is a starting point, ready to shape around how you actually want to travel.
                     </p>
-                    <div className="mt-8 flex flex-wrap items-center gap-6 text-[12px] font-medium text-stone">
+                    <div className="mt-8 flex flex-wrap items-center gap-6 text-[12px] font-semibold text-stone">
                         <span className="flex items-center gap-2"><ShieldCheck size={14} className="text-clay" /> Transparent pricing</span>
                         <span className="flex items-center gap-2"><Sparkles size={14} className="text-clay" /> Bespoke itineraries</span>
                         <span className="flex items-center gap-2"><MessageCircle size={14} className="text-clay" /> Human concierge</span>
@@ -92,15 +92,15 @@ export default function GoldenTriangleAllView() {
                     <aside className="lg:sticky lg:top-24 lg:self-start">
                         <div className="space-y-7 rounded-2xl border border-line bg-white p-6 lg:border-0 lg:bg-transparent lg:p-0">
                             <div>
-                                <h4 className="mb-4 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-stone"><Map size={13} className="text-clay" /> Region</h4>
+                                <h4 className="mb-4 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone"><Map size={13} className="text-clay" /> Region</h4>
                                 <div className="flex flex-wrap gap-2">{locations.map((l) => <Pill key={l} label={l} active={activeLocation === l} onClick={() => setActiveLocation(l)} />)}</div>
                             </div>
                             <div className="lg:border-t lg:border-line lg:pt-6">
-                                <h4 className="mb-4 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-stone"><Filter size={13} className="text-clay" /> Theme</h4>
+                                <h4 className="mb-4 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone"><Filter size={13} className="text-clay" /> Theme</h4>
                                 <div className="flex flex-wrap gap-2">{themes.map((t) => <Pill key={t} label={t} active={activeTheme === t} onClick={() => setActiveTheme(t)} />)}</div>
                             </div>
                             <div className="lg:border-t lg:border-line lg:pt-6">
-                                <h4 className="mb-4 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-stone"><Clock size={13} className="text-clay" /> Duration</h4>
+                                <h4 className="mb-4 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone"><Clock size={13} className="text-clay" /> Duration</h4>
                                 <div className="flex flex-wrap gap-2">{durations.map((d) => <Pill key={d} label={d} active={activeDuration === d} onClick={() => setActiveDuration(d)} />)}</div>
                             </div>
                         </div>
@@ -115,17 +115,17 @@ export default function GoldenTriangleAllView() {
                                         className="card card-hover group overflow-hidden">
                                         <div className="relative aspect-[16/10] overflow-hidden">
                                             <Image src={pkg.img} alt={`${pkg.title}, ${pkg.duration} ${pkg.location} tour`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                                            <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink">{pkg.duration}</span>
-                                            <span className="absolute right-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-[11px] font-medium text-paper backdrop-blur-sm">{pkg.location}</span>
+                                            <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-semibold text-ink">{pkg.duration}</span>
+                                            <span className="absolute right-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-[11px] font-semibold text-paper backdrop-blur-sm">{pkg.location}</span>
                                         </div>
                                         <div className="p-6">
                                             <div className="eyebrow">{pkg.theme}</div>
-                                            <h3 className="mt-2 text-lg font-medium text-ink group-hover:text-clay">{pkg.title}</h3>
+                                            <h3 className="mt-2 text-lg font-semibold text-ink group-hover:text-clay">{pkg.title}</h3>
                                             <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{pkg.highlight}</p>
                                             <div className="mt-5 flex items-end justify-between border-t border-line pt-5">
                                                 <div>
                                                     <span className="block text-[11px] uppercase tracking-[0.14em] text-stone">from</span>
-                                                    <span className="text-xl font-medium text-ink">{pkg.price}</span>
+                                                    <span className="text-xl font-semibold text-ink">{pkg.price}</span>
                                                 </div>
                                                 <div className="flex gap-2">
                                                     <button onClick={() => setSelected(pkg)} className="btn-outline btn-sm">Preview</button>
@@ -143,7 +143,7 @@ export default function GoldenTriangleAllView() {
                                 <button disabled={currentPage === 1} onClick={() => goPage(currentPage - 1)} className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition hover:border-ink disabled:opacity-30"><ArrowLeft size={18} /></button>
                                 <div className="flex gap-2">
                                     {[...Array(totalPages)].map((_, i) => (
-                                        <button key={i} onClick={() => goPage(i + 1)} className={`h-11 w-11 rounded-full text-sm font-medium transition ${currentPage === i + 1 ? "bg-ink text-paper" : "border border-line text-ink hover:border-ink"}`}>{i + 1}</button>
+                                        <button key={i} onClick={() => goPage(i + 1)} className={`h-11 w-11 rounded-full text-sm font-semibold transition ${currentPage === i + 1 ? "bg-ink text-paper" : "border border-line text-ink hover:border-ink"}`}>{i + 1}</button>
                                     ))}
                                 </div>
                                 <button disabled={currentPage === totalPages} onClick={() => goPage(currentPage + 1)} className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition hover:border-ink disabled:opacity-30"><ArrowRight size={18} /></button>
@@ -164,7 +164,7 @@ export default function GoldenTriangleAllView() {
                     <aside className="hidden lg:block">
                         <div className="sticky top-24 space-y-5">
                             <div className="rounded-2xl bg-ink p-6 text-paper">
-                                <h3 className="text-lg font-medium text-paper">Design your own route</h3>
+                                <h3 className="text-lg font-semibold text-paper">Design your own route</h3>
                                 <p className="mt-2 text-[13px] leading-relaxed text-paper/70">Don't settle for a template, our team can merge any of these into one bespoke journey.</p>
                                 <div className="my-5 space-y-2.5">
                                     {["Custom stop-overs", "Your kind of hotels", "Dietary-ready", "24/7 human backup"].map((f) => (
@@ -174,7 +174,7 @@ export default function GoldenTriangleAllView() {
                                 <Link href="/booking" className="btn w-full rounded-full bg-paper px-5 py-3 text-ink hover:bg-clay hover:text-paper">Build a custom itinerary</Link>
                             </div>
                             <div className="card space-y-5 p-6">
-                                <h4 className="text-[11px] font-medium uppercase tracking-[0.16em] text-stone">The MyTripMyTravel standard</h4>
+                                <h4 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-stone">The MyTripMyTravel standard</h4>
                                 <Feature icon={Map} title="Tracked chauffeurs" desc="Every car is GPS-tracked so you always know where your driver is." />
                                 <Feature icon={ShieldCheck} title="Transparent pricing" desc="Fuel, permits and tolls pre-calculated. No hidden gate fees." />
                                 <Feature icon={Calendar} title="Flexible days" desc="Want a slow day in Jaipur? We adjust the pace on the fly." />
@@ -199,7 +199,7 @@ export default function GoldenTriangleAllView() {
                                 <div key={i} className="flex gap-6">
                                     <div className="font-display text-4xl font-semibold text-line-strong">0{i + 1}</div>
                                     <div>
-                                        <h4 className="text-xl font-medium text-ink">{item.t}</h4>
+                                        <h4 className="text-xl font-semibold text-ink">{item.t}</h4>
                                         <p className="mt-2 leading-relaxed text-muted">{item.d}</p>
                                     </div>
                                 </div>
@@ -214,7 +214,7 @@ export default function GoldenTriangleAllView() {
                         <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/10 bg-ink/70 p-7 backdrop-blur-sm">
                             <Star className="text-clay-soft" fill="currentColor" size={20} />
                             <p className="mt-4 text-lg leading-relaxed text-paper">"Every route here is a starting point, we tailor the pace, hotels and stops to how you want to travel."</p>
-                            <span className="mt-4 block text-[12px] font-medium uppercase tracking-[0.16em] text-clay-soft">, The MyTripMyTravel team</span>
+                            <span className="mt-4 block text-[12px] font-semibold uppercase tracking-[0.16em] text-clay-soft">, The MyTripMyTravel team</span>
                         </div>
                     </div>
                 </div>
@@ -233,7 +233,7 @@ export default function GoldenTriangleAllView() {
                             { q: "How is golden-hour photography handled?", a: "We plan visits around the best light, arriving early where possible to enjoy monuments before the busiest crowds." },
                         ].map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h4 className="text-[17px] font-medium text-ink">{f.q}</h4>
+                                <h4 className="text-[17px] font-semibold text-ink">{f.q}</h4>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}
@@ -266,8 +266,8 @@ export default function GoldenTriangleAllView() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent sm:bg-gradient-to-r" />
                                 <div className="absolute bottom-8 left-8 right-8 text-paper">
                                     <div className="eyebrow text-clay-soft">{selected.theme}</div>
-                                    <h3 className="mt-2 text-2xl font-medium text-paper">{selected.title}</h3>
-                                    <div className="mt-3 flex items-center gap-2 text-[12px] font-medium text-paper/80"><Clock size={14} className="text-clay-soft" /> {selected.duration}</div>
+                                    <h3 className="mt-2 text-2xl font-semibold text-paper">{selected.title}</h3>
+                                    <div className="mt-3 flex items-center gap-2 text-[12px] font-semibold text-paper/80"><Clock size={14} className="text-clay-soft" /> {selected.duration}</div>
                                 </div>
                             </div>
                             <div className="flex-1 overflow-y-auto p-8 sm:p-10" data-lenis-prevent>
@@ -275,8 +275,8 @@ export default function GoldenTriangleAllView() {
                                 <div className="relative mt-6 space-y-8">
                                     {selected.itinerary.map((step) => (
                                         <div key={step.day} className="relative border-l border-line pl-8 last:border-0">
-                                            <div className="absolute left-0 top-0 flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full bg-ink text-[12px] font-medium text-paper">{step.day}</div>
-                                            <h6 className="text-[15px] font-medium text-ink">Day {step.day}</h6>
+                                            <div className="absolute left-0 top-0 flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full bg-ink text-[12px] font-semibold text-paper">{step.day}</div>
+                                            <h6 className="text-[15px] font-semibold text-ink">Day {step.day}</h6>
                                             <p className="mt-1 text-sm leading-relaxed text-muted">{step.plan}</p>
                                         </div>
                                     ))}
@@ -284,7 +284,7 @@ export default function GoldenTriangleAllView() {
                                 <div className="mt-10 flex flex-col items-start justify-between gap-5 border-t border-line pt-8 sm:flex-row sm:items-center">
                                     <div>
                                         <span className="block text-[11px] uppercase tracking-[0.14em] text-stone">from</span>
-                                        <span className="text-3xl font-medium text-ink">{selected.price}</span>
+                                        <span className="text-3xl font-semibold text-ink">{selected.price}</span>
                                     </div>
                                     <Link href={`/tours/${packageSlug(selected)}`} className="btn-primary w-full sm:w-auto">View full itinerary <ArrowRight size={16} /></Link>
                                 </div>

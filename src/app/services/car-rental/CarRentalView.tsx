@@ -29,11 +29,11 @@ export default function CarRentalView() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/15" />
                 <div className="container-x relative z-10 pb-14 pt-32">
                     <p className="eyebrow text-paper/70">Chauffeured car rental</p>
-                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-paper">A private fleet, always chauffeured.</h1>
+                    <h1 className="display-1 mt-4 max-w-3xl font-semibold text-paper">A private fleet, always chauffeured.</h1>
                     <p className="mt-5 max-w-xl text-lg text-paper/80">Performance and comfort with a vetted driver, never self-drive.</p>
                     <div className="mt-6 flex flex-wrap gap-5">
                         {["GPS tracking", "Onboard WiFi", "Vetted crew"].map((t) => (
-                            <span key={t} className="flex items-center gap-2 text-[13px] font-medium text-paper/85"><CheckCircle2 size={16} className="text-clay-soft" /> {t}</span>
+                            <span key={t} className="flex items-center gap-2 text-[13px] font-semibold text-paper/85"><CheckCircle2 size={16} className="text-clay-soft" /> {t}</span>
                         ))}
                     </div>
                 </div>
@@ -58,10 +58,10 @@ export default function CarRentalView() {
                             <motion.div key={idx} variants={fade} className="card overflow-hidden">
                                 <div className="relative aspect-[16/10] overflow-hidden">
                                     <Image src={car.image} alt={`${car.title}, chauffeur-driven ${car.capacity} rental in India`} fill className="object-cover" />
-                                    <span className="absolute left-4 top-4 rounded-full bg-clay px-3 py-1 text-[11px] font-medium text-paper">Chauffeured</span>
+                                    <span className="absolute left-4 top-4 rounded-full bg-clay px-3 py-1 text-[11px] font-semibold text-paper">Chauffeured</span>
                                 </div>
                                 <div className="p-7">
-                                    <h3 className="text-2xl font-medium text-ink">{car.title}</h3>
+                                    <h3 className="text-2xl font-semibold text-ink">{car.title}</h3>
                                     <p className="mt-3 text-[15px] leading-relaxed text-muted">{car.description}</p>
                                     <div className="mt-6 flex gap-8">
                                         <div className="flex items-center gap-2 text-sm text-ink-soft"><Users size={17} className="text-clay" /> {car.capacity}</div>

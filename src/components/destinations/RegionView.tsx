@@ -34,7 +34,7 @@ export default function RegionView({
                         <span className="text-clay-soft">{region.name}</span>
                     </nav>
                     <p className="eyebrow text-paper/70 mb-4">{region.tagline}</p>
-                    <h1 className="display-1 font-medium text-paper">{region.name}</h1>
+                    <h1 className="display-1 font-semibold text-paper">{region.name}</h1>
                     <p className="mt-4 max-w-3xl text-lg leading-relaxed text-paper/80">{region.blurb}</p>
                 </div>
             </section>
@@ -43,7 +43,7 @@ export default function RegionView({
             <section className="section">
                 <div className="container-x">
                     <p className="eyebrow eyebrow-accent">City briefs</p>
-                    <h2 className="display-2 mt-3 font-medium text-ink">Places in {region.name}</h2>
+                    <h2 className="display-2 mt-3 font-semibold text-ink">Places in {region.name}</h2>
 
                     {cities.length > 0 ? (
                         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -63,10 +63,10 @@ export default function RegionView({
                                         <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/85 via-ink/35 to-transparent p-8">
                                             <div className="flex items-center gap-2">
                                                 <MapPin className="text-clay-soft" size={18} />
-                                                <h3 className="text-2xl font-medium text-paper">{c.name}</h3>
+                                                <h3 className="text-2xl font-semibold text-paper">{c.name}</h3>
                                             </div>
                                             <p className="mt-2 text-[14px] leading-relaxed text-paper/70">{c.tagline}</p>
-                                            <span className="mt-6 flex items-center gap-2 text-[13px] font-medium text-clay-soft transition-colors group-hover:text-paper">
+                                            <span className="mt-6 flex items-center gap-2 text-[13px] font-semibold text-clay-soft transition-colors group-hover:text-paper">
                                                 Open brief <ArrowRight size={14} />
                                             </span>
                                         </div>
@@ -77,7 +77,7 @@ export default function RegionView({
                     ) : (
                         <div className="card mt-12 py-24 text-center">
                             <Compass className="mx-auto mb-8 text-clay opacity-40" size={56} />
-                            <h3 className="text-2xl font-medium text-ink">Briefs in progress</h3>
+                            <h3 className="text-2xl font-semibold text-ink">Briefs in progress</h3>
                             <p className="mx-auto mt-4 max-w-xl text-[16px] leading-relaxed text-muted">
                                 Detailed city guides for the {region.name} corridor are being authored. Contact us
                                 for a bespoke journey through this region in the meantime.

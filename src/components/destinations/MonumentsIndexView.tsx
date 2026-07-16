@@ -36,7 +36,7 @@ export default function MonumentsIndexView({
                         <span className="text-clay-soft">Monuments</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent">{dest.name} · Heritage sites</p>
-                    <h1 className="display-1 mt-4 font-medium text-paper">Monuments of {dest.name}</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-paper">Monuments of {dest.name}</h1>
                 </div>
             </section>
 
@@ -65,9 +65,9 @@ export default function MonumentsIndexView({
                                             <Landmark className="text-clay-soft" size={18} />
                                             <span className="eyebrow eyebrow-accent">{m.type}</span>
                                         </div>
-                                        <h3 className="mb-3 text-2xl font-medium leading-tight text-paper">{m.name}</h3>
+                                        <h3 className="mb-3 text-2xl font-semibold leading-tight text-paper">{m.name}</h3>
                                         <p className="mb-7 text-[15px] leading-relaxed text-paper/70">{m.tagline}</p>
-                                        <span className="inline-flex items-center gap-3 text-[13px] font-medium text-clay-soft transition-colors group-hover:text-paper">
+                                        <span className="inline-flex items-center gap-3 text-[13px] font-semibold text-clay-soft transition-colors group-hover:text-paper">
                                             Open guide <ArrowRight size={14} />
                                         </span>
                                     </div>

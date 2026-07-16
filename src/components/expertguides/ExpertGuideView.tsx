@@ -42,7 +42,7 @@ export function GuideCityView({
                         <span className="text-clay-soft">{dest.name}</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent text-paper/70">{dest.state}</p>
-                    <h1 className="display-1 mt-4 font-medium text-paper">Expert guides in {dest.name}</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-paper">Expert guides in {dest.name}</h1>
                 </div>
             </section>
             <section className="section">
@@ -56,10 +56,10 @@ export function GuideCityView({
                                 <Link href={`/expert-guides/${dest.slug}/${l.slug}`} className="card group block p-7">
                                     <div className="flex items-center gap-3">
                                         <Languages className="text-clay" size={20} />
-                                        <h3 className="text-xl font-medium text-ink">{l.name}</h3>
+                                        <h3 className="text-xl font-semibold text-ink">{l.name}</h3>
                                     </div>
                                     <p className="mt-3 text-[15px] leading-relaxed text-muted">{l.name}-speaking expert guide in {dest.name}.</p>
-                                    <span className="mt-6 inline-flex items-center gap-2 text-[13px] font-medium text-clay">Open <ArrowRight size={14} /></span>
+                                    <span className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold text-clay">Open <ArrowRight size={14} /></span>
                                 </Link>
                             </motion.div>
                         ))}
@@ -97,14 +97,14 @@ export function GuideDetailView({
                         <span className="text-clay-soft">{lang.name}</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent text-paper/70">{lang.name} · {dest.state}</p>
-                    <h1 className="display-1 mt-4 font-medium text-paper">{content.h1}</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-paper">{content.h1}</h1>
                 </div>
             </section>
 
             <section className="section">
                 <div className="container-x max-w-5xl">
                     <p className="eyebrow eyebrow-accent">The Brief</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{content.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{content.answer}</p>
                     <div className="mt-10 max-w-3xl space-y-5">
                         {content.intro.map((p, i) => (
                             <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[16px] leading-relaxed text-muted">{p}</motion.p>
@@ -140,7 +140,7 @@ export function GuideDetailView({
                     <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
                         {content.faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}

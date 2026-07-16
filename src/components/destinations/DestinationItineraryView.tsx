@@ -32,7 +32,7 @@ export function ItineraryIndexView({ dest }: { dest: Destination }) {
                         <span className="text-clay-soft">Itineraries</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent">{dest.name} · Itinerary by length</p>
-                    <h1 className="display-1 mt-4 font-medium text-paper">{dest.name} Itineraries</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-paper">{dest.name} Itineraries</h1>
                 </div>
             </section>
 
@@ -47,7 +47,7 @@ export function ItineraryIndexView({ dest }: { dest: Destination }) {
                             <Link key={n} href={`/destinations/${dest.slug}/itinerary/${n}-day`} className="card card-hover p-7">
                                 <div className="mb-3 flex items-center gap-3">
                                     <Calendar className="text-clay" size={20} />
-                                    <span className="text-xl font-medium text-ink">{n}-Day {dest.name}</span>
+                                    <span className="text-xl font-semibold text-ink">{n}-Day {dest.name}</span>
                                 </div>
                                 <p className="text-[15px] leading-relaxed text-muted">{n <= 3 ? "Headlines-only sprint" : n <= 5 ? "Balanced classic" : n <= 7 ? "Unhurried deep dive" : n <= 10 ? "Deep dive + regional extension" : "Comprehensive regional mission"}.</p>
                             </Link>
@@ -105,14 +105,14 @@ export function ItineraryView({
                         <span className="text-clay-soft">{content.duration}-Day</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent">{dest.name} · {content.duration}-day plan</p>
-                    <h1 className="display-1 mt-4 font-medium text-paper">{content.h1}</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-paper">{content.h1}</h1>
                 </div>
             </section>
 
             <section className="section">
                 <div className="container-x max-w-5xl">
                     <p className="eyebrow eyebrow-accent">The brief</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{content.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{content.answer}</p>
                     <div className="mt-10 max-w-3xl space-y-5">
                         {content.intro.map((p, i) => (
                             <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[17px] leading-relaxed text-muted">{p}</motion.p>
@@ -128,8 +128,8 @@ export function ItineraryView({
                         {content.days.map((d) => (
                             <motion.div key={d.day} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card p-8">
                                 <div className="mb-4 flex items-center gap-4">
-                                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink font-medium text-paper">{d.day}</div>
-                                    <h3 className="text-xl font-medium text-ink md:text-2xl">{d.title}</h3>
+                                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink font-semibold text-paper">{d.day}</div>
+                                    <h3 className="text-xl font-semibold text-ink md:text-2xl">{d.title}</h3>
                                 </div>
                                 <div className="space-y-4 pl-14">
                                     {d.paragraphs.map((p, i) => (
@@ -148,7 +148,7 @@ export function ItineraryView({
                     <div className="mt-10 grid max-w-6xl gap-6 md:grid-cols-3">
                         {content.closing.map((c, i) => (
                             <div key={i} className="card p-8">
-                                <h3 className="mb-4 text-xl font-medium text-ink">{c.heading}</h3>
+                                <h3 className="mb-4 text-xl font-semibold text-ink">{c.heading}</h3>
                                 <div className="space-y-3">
                                     {c.paragraphs.map((p, j) => (
                                         <p key={j} className="text-[15px] leading-relaxed text-muted">{p}</p>
@@ -163,11 +163,11 @@ export function ItineraryView({
             <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
                 <div className="container-x">
                     <p className="eyebrow eyebrow-accent">Good to know</p>
-                    <h2 className="display-3 mt-3 font-medium text-ink">{content.duration}-day {dest.name} FAQ</h2>
+                    <h2 className="display-3 mt-3 font-semibold text-ink">{content.duration}-day {dest.name} FAQ</h2>
                     <div className="mt-10 grid max-w-6xl gap-6 md:grid-cols-2">
                         {content.faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}
@@ -196,7 +196,7 @@ export function ItineraryView({
                 <section className="border-t border-line bg-paper-dim/60 py-20 sm:py-24">
                     <div className="container-x">
                         <p className="eyebrow eyebrow-accent">Ready to book</p>
-                        <h2 className="display-3 mt-3 font-medium text-ink">Itineraries featuring {dest.name}</h2>
+                        <h2 className="display-3 mt-3 font-semibold text-ink">Itineraries featuring {dest.name}</h2>
                         <p className="mt-4 max-w-3xl text-[16px] leading-relaxed text-muted">
                             Prefer a fully planned, day-by-day tour? These private, chauffeured itineraries feature {dest.name} or the wider {dest.region}, each customisable to this {content.duration}-day plan.
                         </p>
@@ -206,15 +206,15 @@ export function ItineraryView({
                                     <div className="relative h-44">
                                         <Image src={t.img} alt={`${t.title}, itinerary featuring ${dest.name}`} fill className="object-cover" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
-                                        <div className="absolute bottom-5 left-6 right-6 flex items-center gap-3 text-[11px] font-medium text-paper">
+                                        <div className="absolute bottom-5 left-6 right-6 flex items-center gap-3 text-[11px] font-semibold text-paper">
                                             <Clock size={13} className="text-clay-soft" />{t.duration}<span className="text-clay-soft">·</span>{t.theme}
                                         </div>
                                     </div>
                                     <div className="p-7">
-                                        <h3 className="mb-4 text-xl font-medium leading-tight text-ink">{t.title}</h3>
+                                        <h3 className="mb-4 text-xl font-semibold leading-tight text-ink">{t.title}</h3>
                                         <div className="flex items-center justify-between">
-                                            <span className="text-lg font-medium text-ink">from {t.price}</span>
-                                            <span className="flex items-center gap-2 text-[13px] font-medium text-muted">View itinerary <ArrowRight size={14} /></span>
+                                            <span className="text-lg font-semibold text-ink">from {t.price}</span>
+                                            <span className="flex items-center gap-2 text-[13px] font-semibold text-muted">View itinerary <ArrowRight size={14} /></span>
                                         </div>
                                     </div>
                                 </Link>

@@ -42,7 +42,7 @@ export default function DestinationFacetView({
                         <span className="text-clay-soft">{content.label}</span>
                     </nav>
                     <p className="eyebrow text-paper/70 mb-4">{dest.name} &middot; {content.label}</p>
-                    <h1 className="display-1 font-medium text-paper">{content.h1}</h1>
+                    <h1 className="display-1 font-semibold text-paper">{content.h1}</h1>
                 </div>
             </section>
 
@@ -50,7 +50,7 @@ export default function DestinationFacetView({
             <section className="section">
                 <div className="container-x max-w-4xl">
                     <p className="eyebrow eyebrow-accent">The brief</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">
                         {content.answer}
                     </p>
                     <p className="mt-8 max-w-3xl text-[17px] leading-relaxed text-muted">
@@ -75,7 +75,7 @@ export default function DestinationFacetView({
                                 {b.sub && (
                                     <p className="eyebrow eyebrow-accent mb-3">{b.sub}</p>
                                 )}
-                                <h3 className="text-xl font-medium text-ink">{b.heading}</h3>
+                                <h3 className="text-xl font-semibold text-ink">{b.heading}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{b.body}</p>
                             </motion.div>
                         ))}
@@ -93,7 +93,7 @@ export default function DestinationFacetView({
                             href={`/destinations/${dest.slug}`}
                             className="card group flex items-center justify-between p-7 transition-colors hover:border-clay/40"
                         >
-                            <span className="text-[15px] font-medium text-ink group-hover:text-clay">{dest.name}, full brief</span>
+                            <span className="text-[15px] font-semibold text-ink group-hover:text-clay">{dest.name}, full brief</span>
                             <ArrowRight size={16} className="text-clay" />
                         </Link>
                         {FACET_SLUGS.filter((f) => f !== content.facet).map((f: FacetSlug) => (
@@ -102,7 +102,7 @@ export default function DestinationFacetView({
                                 href={`/destinations/${dest.slug}/${f}`}
                                 className="card group flex items-center justify-between p-7 transition-colors hover:border-clay/40"
                             >
-                                <span className="text-[15px] font-medium text-ink group-hover:text-clay">{FACET_LABELS[f]}</span>
+                                <span className="text-[15px] font-semibold text-ink group-hover:text-clay">{FACET_LABELS[f]}</span>
                                 <ArrowRight size={16} className="text-clay" />
                             </Link>
                         ))}
@@ -119,7 +119,7 @@ export default function DestinationFacetView({
                         <div className="mt-10 grid gap-6 md:grid-cols-2">
                             {content.faqs.map((f, i) => (
                                 <div key={i} className="card p-7">
-                                    <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                    <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                     <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                                 </div>
                             ))}
@@ -142,7 +142,7 @@ export default function DestinationFacetView({
                                 >
                                     <div className="flex items-center gap-2">
                                         <MapPin className="text-clay" size={16} />
-                                        <span className="text-lg font-medium text-ink group-hover:text-clay">{c.name}</span>
+                                        <span className="text-lg font-semibold text-ink group-hover:text-clay">{c.name}</span>
                                     </div>
                                     <span className="eyebrow mt-2 block text-stone">{content.label}</span>
                                 </Link>

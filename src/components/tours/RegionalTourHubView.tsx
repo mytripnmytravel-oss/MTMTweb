@@ -48,7 +48,7 @@ export default function RegionalTourHubView({
                         <span className="text-clay-soft">{hub.name}</span>
                     </nav>
                     <p className="eyebrow text-paper/70">{hub.tagline}</p>
-                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-paper">{h1}</h1>
+                    <h1 className="display-1 mt-4 max-w-3xl font-semibold text-paper">{h1}</h1>
                 </div>
             </section>
 
@@ -56,7 +56,7 @@ export default function RegionalTourHubView({
             <section className="section">
                 <div className="container-x max-w-5xl">
                     <p className="eyebrow eyebrow-accent">The brief</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{answer}</p>
                     <div className="mt-10 max-w-3xl space-y-5">
                         {hub.intro.map((p, i) => (
                             <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[16px] leading-relaxed text-muted">{p}</motion.p>
@@ -67,8 +67,8 @@ export default function RegionalTourHubView({
                         <dl className="mt-12 grid max-w-3xl gap-x-10 gap-y-4 rounded-2xl border border-line bg-white p-8 sm:grid-cols-2">
                             {hub.quickFacts.map((f, i) => (
                                 <div key={i} className="flex justify-between gap-6 border-b border-line pb-3 last:border-0 sm:[&:nth-last-child(2)]:border-0">
-                                    <dt className="text-[12px] font-medium uppercase tracking-[0.14em] text-stone">{f.label}</dt>
-                                    <dd className="text-right text-[15px] font-medium text-ink">{f.value}</dd>
+                                    <dt className="text-[12px] font-semibold uppercase tracking-[0.14em] text-stone">{f.label}</dt>
+                                    <dd className="text-right text-[15px] font-semibold text-ink">{f.value}</dd>
                                 </div>
                             ))}
                         </dl>
@@ -78,7 +78,7 @@ export default function RegionalTourHubView({
                         <div className="mt-10 max-w-3xl rounded-2xl border border-line bg-paper-dim/60 p-8">
                             <div className="flex items-center gap-2">
                                 <Clock size={18} className="text-clay" />
-                                <h3 className="text-lg font-medium text-ink">How many days do you need?</h3>
+                                <h3 className="text-lg font-semibold text-ink">How many days do you need?</h3>
                             </div>
                             <p className="mt-3 text-[16px] leading-relaxed text-muted">{hub.durationGuide}</p>
                         </div>
@@ -92,7 +92,7 @@ export default function RegionalTourHubView({
                     <div className="mb-8 flex items-center gap-5">
                         <h2 className="display-3 text-ink">{hub.name} packages</h2>
                         <div className="h-px flex-1 bg-line" />
-                        <span className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">{packages.length} listed</span>
+                        <span className="text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">{packages.length} listed</span>
                     </div>
                     {packages.length > 0 ? (
                         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -101,15 +101,15 @@ export default function RegionalTourHubView({
                                     <Link href={`/tours/${packageSlug(p)}`} className="card card-hover group flex h-full flex-col overflow-hidden">
                                         <div className="relative aspect-[16/10] overflow-hidden">
                                             <Image src={p.img} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                                            <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink"><Clock size={12} className="text-clay" /> {p.duration}</span>
+                                            <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-semibold text-ink"><Clock size={12} className="text-clay" /> {p.duration}</span>
                                         </div>
                                         <div className="flex flex-1 flex-col p-6">
                                             <div className="eyebrow">{p.theme}</div>
-                                            <h3 className="mt-2 text-lg font-medium text-ink group-hover:text-clay">{p.title}</h3>
+                                            <h3 className="mt-2 text-lg font-semibold text-ink group-hover:text-clay">{p.title}</h3>
                                             <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{p.highlight}</p>
                                             <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
-                                                <span className="text-lg font-medium text-ink">from {p.price}</span>
-                                                <span className="inline-flex items-center gap-1 text-sm font-medium text-clay">Open <ArrowRight size={14} /></span>
+                                                <span className="text-lg font-semibold text-ink">from {p.price}</span>
+                                                <span className="inline-flex items-center gap-1 text-sm font-semibold text-clay">Open <ArrowRight size={14} /></span>
                                             </div>
                                         </div>
                                     </Link>
@@ -133,7 +133,7 @@ export default function RegionalTourHubView({
                         <p className="eyebrow eyebrow-accent">Slice the {hub.name} circuit</p>
                         {themeLinks.length > 0 && (
                             <div className="mt-10">
-                                <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">By theme</p>
+                                <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">By theme</p>
                                 <div className="mt-4 flex flex-wrap gap-3">
                                     {themeLinks.map((l) => (
                                         <Link key={l.href} href={l.href} className="btn-outline btn-sm">{l.label}</Link>
@@ -143,7 +143,7 @@ export default function RegionalTourHubView({
                         )}
                         {durationLinks.length > 0 && (
                             <div className="mt-10">
-                                <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">By duration</p>
+                                <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">By duration</p>
                                 <div className="mt-4 flex flex-wrap gap-3">
                                     {durationLinks.map((l) => (
                                         <Link key={l.href} href={l.href} className="btn-outline btn-sm">{l.label}</Link>
@@ -153,7 +153,7 @@ export default function RegionalTourHubView({
                         )}
                         {monthLinks.length > 0 && (
                             <div className="mt-10">
-                                <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">By month</p>
+                                <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">By month</p>
                                 <div className="mt-4 flex flex-wrap gap-3">
                                     {monthLinks.map((l) => (
                                         <Link key={l.href} href={l.href} className="btn-outline btn-sm">{l.label}</Link>
@@ -163,7 +163,7 @@ export default function RegionalTourHubView({
                         )}
                         {originLinks.length > 0 && (
                             <div className="mt-10">
-                                <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">From your origin city</p>
+                                <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">From your origin city</p>
                                 <div className="mt-4 flex flex-wrap gap-3">
                                     {originLinks.map((l) => (
                                         <Link key={l.href} href={l.href} className="btn-outline btn-sm">{l.label}</Link>
@@ -173,7 +173,7 @@ export default function RegionalTourHubView({
                         )}
                         {comboLinks.length > 0 && (
                             <div className="mt-10">
-                                <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">By duration and theme</p>
+                                <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">By duration and theme</p>
                                 <div className="mt-4 flex flex-wrap gap-3">
                                     {comboLinks.map((l) => (
                                         <Link key={l.href} href={l.href} className="btn-outline btn-sm">{l.label}</Link>
@@ -193,7 +193,7 @@ export default function RegionalTourHubView({
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}

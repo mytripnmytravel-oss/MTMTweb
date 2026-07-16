@@ -34,7 +34,7 @@ const CustomDropdown = ({ label, name, icon: Icon, value, options, onSelect, id,
     return (
         <div className="relative space-y-2">
             <input type="hidden" name={name} value={typeof value === 'string' ? value : (value?.name || "")} />
-            <label className="ml-1 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">{label}</label>
+            <label className="ml-1 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">{label}</label>
             <div className="relative">
                 <button
                     type="button"
@@ -167,7 +167,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                             <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl border border-white/10">
                                 <Image src={currentVehicle.img} alt={currentVehicle.name} fill className="object-cover" />
                             </div>
-                            <h3 className="mb-3 text-2xl font-medium leading-tight text-paper md:text-3xl">{currentVehicle.name}</h3>
+                            <h3 className="mb-3 text-2xl font-semibold leading-tight text-paper md:text-3xl">{currentVehicle.name}</h3>
                             <p className="mb-8 text-[13px] text-paper/60">{currentVehicle.type} • {currentVehicle.category} Class</p>
 
                             <div className="space-y-4 border-t border-white/10 pt-6 text-left">
@@ -200,14 +200,14 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                     <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-emerald-500">
                                         <CheckCircle2 className="text-white" size={38} />
                                     </div>
-                                    <h3 className="mb-4 text-3xl font-medium text-ink">Transmission successful</h3>
+                                    <h3 className="mb-4 text-3xl font-semibold text-ink">Transmission successful</h3>
                                     <p className="mb-6 text-[15px] leading-relaxed text-muted">
                                         Your availability request for the {currentVehicle.name} has been logged. Our fleet manager will contact you within 15 minutes.
                                     </p>
                                     <div className="mb-10 w-full rounded-2xl border border-line bg-paper-dim/60 p-6">
-                                        <p className="mb-2 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Priority support</p>
-                                        <p className="text-[15px] font-medium text-ink">+91 99978 12237</p>
-                                        <p className="text-[15px] font-medium text-ink">info@mytripmytravel.com</p>
+                                        <p className="mb-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Priority support</p>
+                                        <p className="text-[15px] font-semibold text-ink">+91 99978 12237</p>
+                                        <p className="text-[15px] font-semibold text-ink">info@mytripmytravel.com</p>
                                     </div>
                                     <button onClick={onClose} className="btn-primary">
                                         Return to platform
@@ -216,7 +216,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                             ) : (
                                 <motion.div key="form">
                                     <div className="mb-10">
-                                        <h3 className="mb-3 text-3xl font-medium text-ink">Availability request</h3>
+                                        <h3 className="mb-3 text-3xl font-semibold text-ink">Availability request</h3>
                                         <p className="text-[15px] text-muted">Send your logistics request for the Golden Triangle.</p>
                                     </div>
 
@@ -245,7 +245,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         {/* Row 1: Contact Info */}
                                         <div className="grid gap-6 md:grid-cols-2">
                                             <div className="space-y-2">
-                                                <label className="ml-1 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Full name</label>
+                                                <label className="ml-1 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Full name</label>
                                                 <div className="relative">
                                                     <input required name="Full Name" type="text" placeholder="Alexander Vance" className="w-full rounded-2xl border border-line bg-paper-dim/60 p-4 pl-12 text-ink transition-all placeholder:text-stone focus:border-clay focus:ring-2 focus:ring-clay/40" />
                                                     <Users className="absolute left-4 top-1/2 -translate-y-1/2 text-stone" size={18} />
@@ -253,7 +253,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                                 <ValidationError prefix="Name" field="Full Name" errors={state.errors} className="ml-1 text-[12px] text-red-500" />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="ml-1 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Phone</label>
+                                                <label className="ml-1 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Phone</label>
                                                 <div className="relative">
                                                     <input required name="Phone" type="tel" placeholder="+91 999 000 0000" className="w-full rounded-2xl border border-line bg-paper-dim/60 p-4 pl-12 text-ink transition-all placeholder:text-stone focus:border-clay focus:ring-2 focus:ring-clay/40" />
                                                     <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-stone" size={18} />
@@ -265,7 +265,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         {/* Row 2: Email & Passengers */}
                                         <div className="grid gap-6 md:grid-cols-2">
                                             <div className="space-y-2">
-                                                <label className="ml-1 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Email</label>
+                                                <label className="ml-1 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Email</label>
                                                 <div className="relative">
                                                     <input required name="Email" type="email" placeholder="vance@mission.com" className="w-full rounded-2xl border border-line bg-paper-dim/60 p-4 pl-12 text-ink transition-all placeholder:text-stone focus:border-clay focus:ring-2 focus:ring-clay/40" />
                                                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-stone" size={18} />
@@ -289,14 +289,14 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         {/* Row 3: Pickup Details */}
                                         <div className="grid gap-6 md:grid-cols-3">
                                             <div className="space-y-2 md:col-span-2">
-                                                <label className="ml-1 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Pickup location</label>
+                                                <label className="ml-1 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Pickup location</label>
                                                 <div className="relative">
                                                     <input required name="Pickup Location" type="text" placeholder="IGIA Terminal 3, New Delhi" className="w-full rounded-2xl border border-line bg-paper-dim/60 p-4 pl-12 text-ink transition-all placeholder:text-stone focus:border-clay focus:ring-2 focus:ring-clay/40" />
                                                     <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-stone" size={18} />
                                                 </div>
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="ml-1 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Pickup time</label>
+                                                <label className="ml-1 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Pickup time</label>
                                                 <div className="relative">
                                                     <input required name="Pickup Time" type="time" className="w-full appearance-none rounded-2xl border border-line bg-paper-dim/60 p-4 pl-12 text-ink transition-all focus:border-clay focus:ring-2 focus:ring-clay/40" />
                                                     <Clock className="absolute left-4 top-1/2 -translate-y-1/2 text-stone" size={18} />
@@ -307,7 +307,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         {/* Row 4: Date & Duration */}
                                         <div className="grid gap-6 md:grid-cols-2">
                                             <div className="space-y-2">
-                                                <label className="ml-1 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Start date</label>
+                                                <label className="ml-1 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Start date</label>
                                                 <div className="relative">
                                                     <input required name="Start Date" type="date" className="w-full appearance-none rounded-2xl border border-line bg-paper-dim/60 p-4 pl-12 text-ink transition-all focus:border-clay focus:ring-2 focus:ring-clay/40" />
                                                     <CalendarIcon className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-stone" size={18} />
@@ -328,7 +328,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
                                         </div>
 
                                         <div className="space-y-2">
-                                            <label className="ml-1 text-[12px] font-medium uppercase tracking-[0.12em] text-stone">Specific directives / itinerary</label>
+                                            <label className="ml-1 text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">Specific directives / itinerary</label>
                                             <div className="relative">
                                                 <textarea required name="Directives" rows={3} placeholder="Enter extra requirements or trip details..." className="w-full resize-none rounded-2xl border border-line bg-paper-dim/60 p-4 pl-12 text-ink transition-all placeholder:text-stone focus:border-clay focus:ring-2 focus:ring-clay/40"></textarea>
                                                 <Info className="absolute left-4 top-4 text-stone" size={18} />

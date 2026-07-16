@@ -47,7 +47,7 @@ export default function AboutView() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/20" />
                 <div className="container-x relative z-10 pb-16 pt-40">
                     <span className="eyebrow text-paper/70">About us</span>
-                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-paper">We architect journeys, not tours.</h1>
+                    <h1 className="display-1 mt-4 max-w-3xl font-semibold text-paper">We architect journeys, not tours.</h1>
                     <p className="mt-5 max-w-xl text-lg text-paper/80">
                         Translating chauffeured intent into calm, considered travel across India, one traveller at a time.
                     </p>
@@ -63,7 +63,7 @@ export default function AboutView() {
                         <div className="mt-6 space-y-5 text-[17px] leading-relaxed text-muted">
                             <p>India is not a country you simply look at; it is an environment you absorb, navigate and respect, and that takes a master key. MyTripMyTravel was born from an obsession with getting the execution right: the luxury the market was missing was predictability, wrapped in absolute comfort.</p>
                             <p>We didn't just want to provide cars, we wanted to build a fleet. We didn't want to hand over an itinerary, we wanted to craft a journey.</p>
-                            <p className="font-medium text-ink">Every part of what we do, the Golden Triangle, the elite fleet, the wellness journeys, is built for one thing: your peace of mind.</p>
+                            <p className="font-semibold text-ink">Every part of what we do, the Golden Triangle, the elite fleet, the wellness journeys, is built for one thing: your peace of mind.</p>
                         </div>
                     </div>
                     <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
@@ -84,8 +84,8 @@ export default function AboutView() {
                                     <Image src={m.img} alt={`${m.name}, ${m.role} at MyTripMyTravel`} fill className="object-cover" />
                                 </div>
                                 <div className="mt-5 border-l-2 border-clay pl-4">
-                                    <h3 className="text-xl font-medium text-paper">{m.name}</h3>
-                                    <p className="mt-1 text-[12px] font-medium uppercase tracking-[0.18em] text-clay-soft">{m.role}</p>
+                                    <h3 className="text-xl font-semibold text-paper">{m.name}</h3>
+                                    <p className="mt-1 text-[12px] font-semibold uppercase tracking-[0.18em] text-clay-soft">{m.role}</p>
                                 </div>
                                 <p className="mt-4 text-[14px] leading-relaxed text-paper/60">{m.bio}</p>
                             </div>
@@ -105,7 +105,7 @@ export default function AboutView() {
                             return (
                                 <div key={v.title} className="card p-7">
                                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-paper-dim text-clay"><Icon size={22} /></span>
-                                    <h3 className="mt-5 text-xl font-medium text-ink">{v.title}</h3>
+                                    <h3 className="mt-5 text-xl font-semibold text-ink">{v.title}</h3>
                                     <p className="mt-2 text-[14px] leading-relaxed text-muted">{v.desc}</p>
                                 </div>
                             );
@@ -123,7 +123,7 @@ export default function AboutView() {
                         {PROCESS.map((p) => (
                             <div key={p.step} className="border-l border-line pl-6">
                                 <div className="font-display text-3xl font-semibold text-line-strong">{p.step}</div>
-                                <h3 className="mt-4 text-xl font-medium text-ink">{p.title}</h3>
+                                <h3 className="mt-4 text-xl font-semibold text-ink">{p.title}</h3>
                                 <p className="mt-2 text-[14px] leading-relaxed text-muted">{p.desc}</p>
                             </div>
                         ))}

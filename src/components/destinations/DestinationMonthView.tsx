@@ -59,10 +59,10 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                         <span className="text-clay-soft">{content.monthLabel}</span>
                     </nav>
                     <div className="mb-4 flex items-center gap-3">
-                        <span className={`rounded-full px-3 py-1 text-[11px] font-medium ${toneClass(content.verdictTone)}`}>{content.verdictTag}</span>
+                        <span className={`rounded-full px-3 py-1 text-[11px] font-semibold ${toneClass(content.verdictTone)}`}>{content.verdictTag}</span>
                         <span className="eyebrow text-paper/70">{dest.name} in {content.monthLabel}</span>
                     </div>
-                    <h1 className="display-1 font-medium text-paper">{content.h1}</h1>
+                    <h1 className="display-1 font-semibold text-paper">{content.h1}</h1>
                     <p className="mt-4 max-w-3xl text-lg text-paper/80">{content.headline}</p>
                 </div>
             </section>
@@ -71,7 +71,7 @@ export default function DestinationMonthView({ content }: { content: MonthConten
             <section className="section">
                 <div className="container-x max-w-4xl">
                     <p className="eyebrow eyebrow-accent">Overview</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{content.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{content.answer}</p>
                     <div className="mt-10 space-y-5">
                         {content.intro.map((p, i) => (
                             <p key={i} className="text-[17px] leading-relaxed text-muted">{p}</p>
@@ -96,7 +96,7 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                                 return (
                                     <div key={c.label} className="rounded-2xl border border-line bg-paper-dim/60 p-6">
                                         <Icon className="text-clay" size={20} />
-                                        <h3 className="mt-3 text-[13px] font-medium uppercase tracking-[0.12em] text-stone">{c.label}</h3>
+                                        <h3 className="mt-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-stone">{c.label}</h3>
                                         <p className="mt-1.5 text-[14px] leading-relaxed text-muted">{c.value}</p>
                                     </div>
                                 );
@@ -116,7 +116,7 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                     <div className="card p-8">
                         <div className="flex items-center gap-3">
                             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-600 text-white"><Check size={16} /></span>
-                            <h3 className="text-xl font-medium text-ink">What {content.monthLabel} delivers</h3>
+                            <h3 className="text-xl font-semibold text-ink">What {content.monthLabel} delivers</h3>
                         </div>
                         <ul className="mt-6 space-y-3">
                             {content.forThisMonth.map((f, i) => (
@@ -127,7 +127,7 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                     <div className="card p-8">
                         <div className="flex items-center gap-3">
                             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber-500 text-white"><X size={16} /></span>
-                            <h3 className="text-xl font-medium text-ink">What {content.monthLabel} asks you to skip</h3>
+                            <h3 className="text-xl font-semibold text-ink">What {content.monthLabel} asks you to skip</h3>
                         </div>
                         <ul className="mt-6 space-y-3">
                             {content.avoidThisMonth.map((f, i) => (
@@ -145,7 +145,7 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                         <Clock className="text-clay" size={18} />
                         <p className="eyebrow eyebrow-accent">Recommended length in {content.monthLabel}</p>
                     </div>
-                    <p className="mt-4 font-display text-[22px] font-medium leading-snug text-ink sm:text-[26px]">{content.recommendedDuration}</p>
+                    <p className="mt-4 font-display text-[22px] font-semibold leading-snug text-ink sm:text-[26px]">{content.recommendedDuration}</p>
                     <div className="mt-7 flex flex-wrap gap-3">
                         {["3-day", "5-day", "7-day", "10-day"].map((d) => (
                             <Link key={d} href={`/destinations/${dest.slug}/itinerary/${d}`} className="btn-outline btn-sm">{d.replace("-day", "")} day itinerary <ArrowRight size={14} /></Link>
@@ -161,7 +161,7 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {content.facets.map((f, i) => (
                             <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade} transition={{ delay: (i % 2) * 0.05 }} className="card p-8">
-                                <h3 className="text-xl font-medium text-ink">{f.heading}</h3>
+                                <h3 className="text-xl font-semibold text-ink">{f.heading}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.body}</p>
                             </motion.div>
                         ))}
@@ -190,12 +190,12 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                     <p className="eyebrow eyebrow-accent">{dest.name} month by month</p>
                     <div className="mt-8 grid grid-cols-3 gap-3 md:grid-cols-4 lg:grid-cols-6">
                         {content.siblingMonths.map((m) => (
-                            <Link key={m.href} href={m.href} className={`rounded-xl bg-white px-4 py-3 text-center text-[12px] font-medium transition-colors ${siblingChipClass(m.verdict, false)}`}>
+                            <Link key={m.href} href={m.href} className={`rounded-xl bg-white px-4 py-3 text-center text-[12px] font-semibold transition-colors ${siblingChipClass(m.verdict, false)}`}>
                                 <span className="block">{m.label}</span>
                                 <span className="mt-1 block text-[9px] opacity-70">{VERDICT_TAG[m.verdict]}</span>
                             </Link>
                         ))}
-                        <div className={`rounded-xl px-4 py-3 text-center text-[12px] font-medium ${siblingChipClass(content.verdict, true)}`}>
+                        <div className={`rounded-xl px-4 py-3 text-center text-[12px] font-semibold ${siblingChipClass(content.verdict, true)}`}>
                             <span className="block">{content.monthLabel}</span>
                             <span className="mt-1 block text-[9px] opacity-70">Current</span>
                         </div>
@@ -211,7 +211,7 @@ export default function DestinationMonthView({ content }: { content: MonthConten
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {content.faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}

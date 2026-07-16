@@ -34,7 +34,7 @@ export default function CareersView() {
                     <span className="text-clay">Careers</span>
                 </nav>
                 <p className="eyebrow eyebrow-accent">Join the Mission</p>
-                <h1 className="display-1 font-medium text-ink mt-5">Careers at MyTripMyTravel</h1>
+                <h1 className="display-1 font-semibold text-ink mt-5">Careers at MyTripMyTravel</h1>
                 <p className="mt-8 max-w-2xl text-[17px] leading-relaxed text-muted">
                     We are a luxury inbound-India travel architect, building the most precise private-travel
                     operation in the country. We hire for judgement, discretion, and craft, and we
@@ -47,7 +47,7 @@ export default function CareersView() {
                 <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {ROLE_AREAS.map((r, i) => (
                         <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 3) * 0.06 }} className="card p-8">
-                            <h3 className="text-xl font-medium leading-snug text-ink">{r.name}</h3>
+                            <h3 className="text-xl font-semibold leading-snug text-ink">{r.name}</h3>
                             <p className="mt-3 text-[15px] leading-relaxed text-muted">{r.detail}</p>
                         </motion.div>
                     ))}
@@ -60,7 +60,7 @@ export default function CareersView() {
                     <div className="mt-10 grid max-w-5xl gap-5 sm:grid-cols-2">
                         {PRINCIPLES.map((p, i) => (
                             <div key={i} className="card flex gap-4 p-7">
-                                <span className="shrink-0 font-display text-2xl font-medium text-clay">0{i + 1}</span>
+                                <span className="shrink-0 font-display text-2xl font-semibold text-clay">0{i + 1}</span>
                                 <span className="text-[16px] leading-relaxed text-muted">{p}</span>
                             </div>
                         ))}
@@ -71,7 +71,7 @@ export default function CareersView() {
             <section className="container-x section">
                 <div className="rounded-2xl bg-ink p-12 text-center sm:p-16">
                     <Compass className="mx-auto mb-8 text-clay-soft" size={44} />
-                    <h2 className="display-2 font-medium text-paper">
+                    <h2 className="display-2 font-semibold text-paper">
                         No open posting that fits? Tell us anyway.
                     </h2>
                     <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-relaxed text-paper/70">

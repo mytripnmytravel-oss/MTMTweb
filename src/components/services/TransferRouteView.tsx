@@ -41,7 +41,7 @@ export default function TransferRouteView({
                         <span className="text-clay-soft">{origin.name} → {destination.name}</span>
                     </nav>
                     <p className="eyebrow text-paper/70">Inter-City Transfer</p>
-                    <h1 className="display-1 mt-4 font-medium text-paper">{content.h1}</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-paper">{content.h1}</h1>
                 </div>
             </section>
 
@@ -49,7 +49,7 @@ export default function TransferRouteView({
             <section className="section">
                 <div className="container-x max-w-5xl">
                     <p className="eyebrow eyebrow-accent">The Brief</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{content.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{content.answer}</p>
                     <div className="mt-10 max-w-3xl space-y-5">
                         {content.intro.map((p, i) => (
                             <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[17px] leading-relaxed text-muted">{p}</motion.p>
@@ -58,15 +58,15 @@ export default function TransferRouteView({
                     <div className="mt-10 flex flex-wrap gap-3">
                         <div className="card flex items-center gap-3 px-6 py-4">
                             <Navigation2 className="text-clay" size={18} />
-                            <span className="text-[14px] font-medium text-ink">~{route.distanceKm} km</span>
+                            <span className="text-[14px] font-semibold text-ink">~{route.distanceKm} km</span>
                         </div>
                         <div className="card flex items-center gap-3 px-6 py-4">
                             <Clock className="text-clay" size={18} />
-                            <span className="text-[14px] font-medium text-ink">~{route.driveHrs} hrs</span>
+                            <span className="text-[14px] font-semibold text-ink">~{route.driveHrs} hrs</span>
                         </div>
                         {route.via && (
                             <div className="card flex items-center gap-3 px-6 py-4">
-                                <span className="text-[14px] font-medium text-ink">via {route.via}</span>
+                                <span className="text-[14px] font-semibold text-ink">via {route.via}</span>
                             </div>
                         )}
                     </div>
@@ -95,8 +95,8 @@ export default function TransferRouteView({
                     <div className="mt-8 grid gap-5 sm:grid-cols-3">
                         {content.vehicleClasses.map((v, i) => (
                             <div key={i} className="card p-7">
-                                <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-stone">{v.tier} tier</p>
-                                <p className="mt-2 text-xl font-medium text-ink">{v.name}</p>
+                                <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">{v.tier} tier</p>
+                                <p className="mt-2 text-xl font-semibold text-ink">{v.name}</p>
                                 <div className="mt-4 space-y-2 text-[14px] text-ink-soft">
                                     <div className="flex items-center gap-2"><Users size={14} className="text-clay" /> {v.passengers} passengers</div>
                                     <div className="flex items-center gap-2"><Briefcase size={14} className="text-clay" /> {v.luggage}</div>
@@ -118,7 +118,7 @@ export default function TransferRouteView({
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {content.faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}

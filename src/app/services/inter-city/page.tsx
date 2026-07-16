@@ -60,7 +60,7 @@ export default function Page() {
                 <section className="pb-20 pt-36 sm:pt-40">
                     <div className="container-x">
                         <p className="eyebrow eyebrow-accent">Inter-City Transfers</p>
-                        <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Curated routes</h1>
+                        <h1 className="display-1 mt-4 max-w-3xl font-semibold text-ink">Curated routes</h1>
                         <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-muted">
                             Private, GPS-tracked, pre-priced chauffeured transfers between the cities MyTripMyTravel operates, the same Elite Fleet protocol as the rest of every mission, no surprise fees on the road.
                         </p>
@@ -71,8 +71,8 @@ export default function Page() {
                         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                             {items.map((r) => (
                                 <Link key={r.slug} href={`/services/inter-city/${r.slug}`} className="card group p-7">
-                                    <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-stone">~{r.distanceKm} km · ~{r.driveHrs} hrs{r.via ? ` · via ${r.via}` : ""}</p>
-                                    <span className="mt-3 block text-xl font-medium text-ink transition-colors group-hover:text-clay">{r.originName} → {r.destinationName}</span>
+                                    <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-stone">~{r.distanceKm} km · ~{r.driveHrs} hrs{r.via ? ` · via ${r.via}` : ""}</p>
+                                    <span className="mt-3 block text-xl font-semibold text-ink transition-colors group-hover:text-clay">{r.originName} → {r.destinationName}</span>
                                 </Link>
                             ))}
                         </div>

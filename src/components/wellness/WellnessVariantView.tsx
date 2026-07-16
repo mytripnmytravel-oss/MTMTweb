@@ -38,7 +38,7 @@ export default function WellnessVariantView({
                         <span className="text-clay-soft">{variant.name}</span>
                     </nav>
                     <p className="eyebrow text-clay-soft">{programme.label}</p>
-                    <h1 className="display-1 mt-4 font-medium text-paper">{variant.name}</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-paper">{variant.name}</h1>
                 </div>
             </section>
 
@@ -46,7 +46,7 @@ export default function WellnessVariantView({
             <section className="section">
                 <div className="container-x max-w-4xl">
                     <p className="eyebrow eyebrow-accent">The brief</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{variant.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{variant.answer}</p>
                     <div className="mt-10 space-y-5 max-w-3xl">
                         {variant.intro.map((para, i) => (
                             <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[17px] leading-relaxed text-muted">
@@ -57,11 +57,11 @@ export default function WellnessVariantView({
                     <div className="mt-10 flex flex-wrap gap-3">
                         <div className="flex items-center gap-3 rounded-xl border border-line bg-paper-dim/60 px-5 py-3">
                             <Clock className="text-clay" size={18} />
-                            <span className="text-[13px] font-medium text-ink">{variant.duration}</span>
+                            <span className="text-[13px] font-semibold text-ink">{variant.duration}</span>
                         </div>
                         <div className="flex items-center gap-3 rounded-xl border border-line bg-paper-dim/60 px-5 py-3">
                             <UserCheck className="text-clay" size={18} />
-                            <span className="text-[13px] font-medium text-ink">{variant.idealFor}</span>
+                            <span className="text-[13px] font-semibold text-ink">{variant.idealFor}</span>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ export default function WellnessVariantView({
                         <div className="mt-8">
                             {variant.protocol.map((p, i) => (
                                 <div key={i} className="border-b border-line py-6">
-                                    <div className="mb-2 text-[11px] font-medium uppercase tracking-[0.12em] text-stone">{p.phase}</div>
+                                    <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-stone">{p.phase}</div>
                                     <p className="text-[15px] leading-relaxed text-muted">{p.detail}</p>
                                 </div>
                             ))}
@@ -103,7 +103,7 @@ export default function WellnessVariantView({
                         <div className="mt-10 grid gap-6 md:grid-cols-2 max-w-6xl">
                             {variant.faqs.map((f, i) => (
                                 <div key={i} className="card p-7">
-                                    <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                    <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                     <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                                 </div>
                             ))}
@@ -117,12 +117,12 @@ export default function WellnessVariantView({
                     <p className="eyebrow eyebrow-accent">More {programme.label}</p>
                     <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                         <Link href={`/wellness/${programme.slug}`} className="card card-hover group flex items-center justify-between p-7">
-                            <span className="text-[15px] font-medium text-ink transition-colors group-hover:text-clay">{programme.name}, overview</span>
+                            <span className="text-[15px] font-semibold text-ink transition-colors group-hover:text-clay">{programme.name}, overview</span>
                             <ArrowRight size={16} className="shrink-0 text-clay" />
                         </Link>
                         {siblings.map((s) => (
                             <Link key={s.slug} href={`/wellness/${programme.slug}/${s.slug}`} className="card card-hover group flex items-center justify-between p-7">
-                                <span className="text-[15px] font-medium text-ink transition-colors group-hover:text-clay">{s.name}</span>
+                                <span className="text-[15px] font-semibold text-ink transition-colors group-hover:text-clay">{s.name}</span>
                                 <ArrowRight size={16} className="shrink-0 text-clay" />
                             </Link>
                         ))}

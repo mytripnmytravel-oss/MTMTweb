@@ -60,7 +60,7 @@ export default function ToursHubView({ grouped }: { grouped: { location: string;
                         <span className="text-clay">Tours</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent">India tour packages</p>
-                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Private, chauffeured journeys across India</h1>
+                    <h1 className="display-1 mt-4 max-w-3xl font-semibold text-ink">Private, chauffeured journeys across India</h1>
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
                         {totalCount}+ handcrafted itineraries across the Golden Triangle, Rajasthan, Kerala, the Himalayas and beyond. Each one is private, fully tailored, and ready to shape around how you actually want to travel.
                     </p>
@@ -79,7 +79,7 @@ export default function ToursHubView({ grouped }: { grouped: { location: string;
                         return (
                             <div key={w.title}>
                                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-paper-dim text-clay"><Icon size={20} /></span>
-                                <h3 className="mt-4 text-[15px] font-medium text-ink">{w.title}</h3>
+                                <h3 className="mt-4 text-[15px] font-semibold text-ink">{w.title}</h3>
                                 <p className="mt-1.5 text-[13px] leading-relaxed text-muted">{w.desc}</p>
                             </div>
                         );
@@ -102,16 +102,16 @@ export default function ToursHubView({ grouped }: { grouped: { location: string;
                                 <Link key={p.id} href={`/tours/${packageSlug(p)}`} className="card card-hover group overflow-hidden">
                                     <div className="relative aspect-[16/10] overflow-hidden">
                                         <Image src={p.img} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                                        <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-clay px-3 py-1 text-[11px] font-medium text-paper"><Star size={11} fill="currentColor" /> Popular</span>
-                                        <span className="absolute right-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink">{p.duration}</span>
+                                        <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-clay px-3 py-1 text-[11px] font-semibold text-paper"><Star size={11} fill="currentColor" /> Popular</span>
+                                        <span className="absolute right-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-semibold text-ink">{p.duration}</span>
                                     </div>
                                     <div className="p-6">
                                         <div className="eyebrow">{p.location} · {p.theme}</div>
-                                        <h3 className="mt-2 text-xl font-medium text-ink group-hover:text-clay">{p.title}</h3>
+                                        <h3 className="mt-2 text-xl font-semibold text-ink group-hover:text-clay">{p.title}</h3>
                                         <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{p.highlight}</p>
                                         <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
-                                            <span className="text-lg font-medium text-ink">from {p.price}</span>
-                                            <span className="inline-flex items-center gap-1 text-sm font-medium text-clay">View itinerary <ArrowRight size={14} /></span>
+                                            <span className="text-lg font-semibold text-ink">from {p.price}</span>
+                                            <span className="inline-flex items-center gap-1 text-sm font-semibold text-clay">View itinerary <ArrowRight size={14} /></span>
                                         </div>
                                     </div>
                                 </Link>
@@ -128,7 +128,7 @@ export default function ToursHubView({ grouped }: { grouped: { location: string;
                         <div className="mb-8 flex items-center gap-5">
                             <h2 className="display-3 text-ink">{group.location}</h2>
                             <div className="h-px flex-1 bg-line" />
-                            <span className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">{group.items.length} itineraries</span>
+                            <span className="text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">{group.items.length} itineraries</span>
                         </div>
                         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {group.items.map((p, idx) => (
@@ -136,15 +136,15 @@ export default function ToursHubView({ grouped }: { grouped: { location: string;
                                     <Link href={`/tours/${packageSlug(p)}`} className="card card-hover group flex h-full flex-col overflow-hidden">
                                         <div className="relative aspect-[16/10] overflow-hidden">
                                             <Image src={p.img} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                                            <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink"><Clock size={12} className="text-clay" /> {p.duration}</span>
+                                            <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-semibold text-ink"><Clock size={12} className="text-clay" /> {p.duration}</span>
                                         </div>
                                         <div className="flex flex-1 flex-col p-6">
                                             <div className="eyebrow">{p.theme}</div>
-                                            <h3 className="mt-2 text-lg font-medium text-ink group-hover:text-clay">{p.title}</h3>
+                                            <h3 className="mt-2 text-lg font-semibold text-ink group-hover:text-clay">{p.title}</h3>
                                             <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{p.highlight}</p>
                                             <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
-                                                <span className="text-lg font-medium text-ink">from {p.price}</span>
-                                                <span className="inline-flex items-center gap-1 text-sm font-medium text-clay">Details <ArrowRight size={14} /></span>
+                                                <span className="text-lg font-semibold text-ink">from {p.price}</span>
+                                                <span className="inline-flex items-center gap-1 text-sm font-semibold text-clay">Details <ArrowRight size={14} /></span>
                                             </div>
                                         </div>
                                     </Link>
@@ -164,7 +164,7 @@ export default function ToursHubView({ grouped }: { grouped: { location: string;
                         {STEPS.map((s) => (
                             <div key={s.n} className="border-l border-line pl-6">
                                 <div className="font-display text-3xl font-semibold text-line-strong">{s.n}</div>
-                                <h3 className="mt-4 text-xl font-medium text-ink">{s.t}</h3>
+                                <h3 className="mt-4 text-xl font-semibold text-ink">{s.t}</h3>
                                 <p className="mt-2 leading-relaxed text-muted">{s.d}</p>
                             </div>
                         ))}
@@ -183,7 +183,7 @@ export default function ToursHubView({ grouped }: { grouped: { location: string;
                     <div className="divide-y divide-line">
                         {FAQS.map((f, i) => (
                             <details key={i} className="group py-5 [&_summary::-webkit-details-marker]:hidden">
-                                <summary className="flex cursor-pointer items-center justify-between gap-4 text-[17px] font-medium text-ink">
+                                <summary className="flex cursor-pointer items-center justify-between gap-4 text-[17px] font-semibold text-ink">
                                     {f.q}
                                     <ChevronRight size={18} className="shrink-0 text-stone transition-transform group-open:rotate-90 group-open:text-clay" />
                                 </summary>

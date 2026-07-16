@@ -55,7 +55,7 @@ export default function WellnessProgrammeDetail({
             <section className="section">
                 <div className="container-x max-w-4xl">
                     <p className="eyebrow eyebrow-accent">The programme</p>
-                    <h2 className="display-2 mt-3 font-medium text-ink">{programme.name}</h2>
+                    <h2 className="display-2 mt-3 font-semibold text-ink">{programme.name}</h2>
                     <p className="mt-6 text-[18px] leading-relaxed text-muted">{programme.blurb}</p>
                     {meta && (
                         <div className="mt-8 flex items-start gap-4 rounded-2xl border border-line bg-paper-dim/60 p-7">
@@ -77,8 +77,8 @@ export default function WellnessProgrammeDetail({
                             { label: "Best time", value: meta.bestTime },
                         ].map((f, i) => (
                             <div key={i} className="flex justify-between gap-6 border-b border-line pb-4 last:border-0 sm:[&:nth-last-child(2)]:border-0">
-                                <dt className="shrink-0 pt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-stone">{f.label}</dt>
-                                <dd className="text-right text-sm font-medium text-ink md:text-base">{f.value}</dd>
+                                <dt className="shrink-0 pt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-stone">{f.label}</dt>
+                                <dd className="text-right text-sm font-semibold text-ink md:text-base">{f.value}</dd>
                             </div>
                         ))}
                     </dl>
@@ -89,9 +89,9 @@ export default function WellnessProgrammeDetail({
             <section className="border-y border-line bg-paper-dim/60 py-20 sm:py-24">
                 <div className="container-x">
                     <div className="mb-12 flex items-center gap-5">
-                        <h2 className="display-3 font-medium text-ink">Choose your programme</h2>
+                        <h2 className="display-3 font-semibold text-ink">Choose your programme</h2>
                         <div className="h-px flex-1 bg-line" />
-                        <span className="text-[11px] font-medium uppercase tracking-[0.12em] text-stone">{programme.variants.length} options</span>
+                        <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-stone">{programme.variants.length} options</span>
                     </div>
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {programme.variants.map((v, idx) => (
@@ -100,12 +100,12 @@ export default function WellnessProgrammeDetail({
                                     href={`/wellness/${programme.slug}/${v.slug}`}
                                     className="card card-hover group flex h-full flex-col p-7"
                                 >
-                                    <div className="mb-4 flex items-center gap-2 text-[12px] font-medium text-clay">
+                                    <div className="mb-4 flex items-center gap-2 text-[12px] font-semibold text-clay">
                                         <Clock size={13} />{v.duration}
                                     </div>
-                                    <h3 className="mb-4 text-xl font-medium leading-tight text-ink transition-colors group-hover:text-clay">{v.name}</h3>
+                                    <h3 className="mb-4 text-xl font-semibold leading-tight text-ink transition-colors group-hover:text-clay">{v.name}</h3>
                                     <p className="mb-6 line-clamp-3 text-[15px] leading-relaxed text-muted">{v.idealFor}</p>
-                                    <span className="mt-auto flex items-center gap-2 text-sm font-medium text-clay">
+                                    <span className="mt-auto flex items-center gap-2 text-sm font-semibold text-clay">
                                         View programme <ArrowRight size={14} />
                                     </span>
                                 </Link>
@@ -124,7 +124,7 @@ export default function WellnessProgrammeDetail({
                         <div className="mt-10 grid max-w-6xl gap-6 md:grid-cols-2">
                             {faqs.map((f, i) => (
                                 <div key={i} className="card p-7">
-                                    <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                    <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                     <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                                 </div>
                             ))}
@@ -139,7 +139,7 @@ export default function WellnessProgrammeDetail({
                     <div className="rounded-3xl bg-ink p-12 md:p-16">
                         <div className="max-w-3xl">
                             <ShieldCheck className="mb-8 text-clay-soft" size={44} />
-                            <h2 className="display-2 font-medium leading-tight text-paper">
+                            <h2 className="display-2 font-semibold leading-tight text-paper">
                                 Plan your <span className="text-clay-soft">{programme.label}</span>
                             </h2>
                             <p className="mt-6 text-[17px] leading-relaxed text-paper/70">

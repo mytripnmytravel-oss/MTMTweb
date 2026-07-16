@@ -92,7 +92,7 @@ export default function HomeView() {
         <div className="container-x relative z-10 pb-16 pt-40 sm:pb-24">
           <motion.div initial="hidden" animate="visible" variants={fade} className="max-w-3xl">
             <span className="eyebrow text-paper/70">Private, chauffeured travel across India</span>
-            <h1 className="display-1 mt-5 font-medium text-paper">
+            <h1 className="display-1 mt-5 font-semibold text-paper">
               The India you imagined,<br className="hidden sm:block" /> quietly arranged.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-paper/75">
@@ -190,13 +190,13 @@ export default function HomeView() {
               <Link key={j.id} href={`/tours/${j.id}`} className="card card-hover group overflow-hidden">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image src={j.img} alt={`${j.title}, ${j.region}, India`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                  <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink">{j.duration}</span>
+                  <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-semibold text-ink">{j.duration}</span>
                 </div>
                 <div className="p-6">
                   <div className="eyebrow">{j.region}</div>
-                  <h3 className="mt-2 text-xl font-medium text-ink">{j.title}</h3>
+                  <h3 className="mt-2 text-xl font-semibold text-ink">{j.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{j.desc}</p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-clay">View journey <ChevronRight size={15} /></span>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-clay">View journey <ChevronRight size={15} /></span>
                 </div>
               </Link>
             ))}
@@ -219,7 +219,7 @@ export default function HomeView() {
                 </div>
                 <div className="p-6">
                   <div className="eyebrow">{v.type}</div>
-                  <h3 className="mt-2 text-xl font-medium text-ink">{v.name}</h3>
+                  <h3 className="mt-2 text-xl font-semibold text-ink">{v.name}</h3>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {v.features.slice(0, 3).map((f: string, i: number) => <span key={i} className="pill">{f}</span>)}
                   </div>
@@ -247,7 +247,7 @@ export default function HomeView() {
                   <Link key={w.href} href={w.href} className="card card-hover flex items-start gap-4 p-5">
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-paper-dim text-clay"><Icon size={20} /></span>
                     <div>
-                      <h4 className="text-base font-medium text-ink">{w.title}</h4>
+                      <h4 className="text-base font-semibold text-ink">{w.title}</h4>
                       <p className="mt-1 text-sm text-muted">{w.desc}</p>
                     </div>
                     <ChevronRight size={16} className="ml-auto mt-1 shrink-0 text-stone" />
@@ -260,11 +260,11 @@ export default function HomeView() {
           {/* Medical enquiry, lead capture */}
           <div className="card p-8">
             <Eyebrow>Medical concierge</Eyebrow>
-            <h3 className="mt-3 text-2xl font-medium text-ink">Enquire about a recovery stay</h3>
+            <h3 className="mt-3 text-2xl font-semibold text-ink">Enquire about a recovery stay</h3>
             {medicalFormState.succeeded ? (
               <div className="py-10 text-center">
                 <CheckCircle2 className="mx-auto mb-4 text-emerald-600" size={40} />
-                <h4 className="text-lg font-medium text-ink">Enquiry received</h4>
+                <h4 className="text-lg font-semibold text-ink">Enquiry received</h4>
                 <p className="mt-2 text-sm text-muted">Our medical concierge will be in touch shortly.</p>
               </div>
             ) : (
@@ -317,9 +317,9 @@ export default function HomeView() {
             return (
               <Link key={c.href} href={c.href} className="card card-hover group p-8">
                 <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-paper-dim text-clay transition group-hover:bg-clay group-hover:text-paper"><Icon size={26} /></span>
-                <h3 className="mt-6 text-2xl font-medium text-ink">{c.title}</h3>
+                <h3 className="mt-6 text-2xl font-semibold text-ink">{c.title}</h3>
                 <p className="mt-3 max-w-md leading-relaxed text-muted">{c.desc}</p>
-                <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-clay">Explore <ArrowUpRight size={15} /></span>
+                <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-clay">Explore <ArrowUpRight size={15} /></span>
               </Link>
             );
           })}
@@ -334,7 +334,7 @@ export default function HomeView() {
             {FAQS.map((f, i) => (
               <div key={i} className="py-5">
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="flex w-full items-center justify-between gap-6 text-left">
-                  <span className="text-lg font-medium text-ink">{f.q}</span>
+                  <span className="text-lg font-semibold text-ink">{f.q}</span>
                   <Plus size={18} className={`shrink-0 text-stone transition-transform duration-300 ${openFaq === i ? "rotate-45 text-clay" : ""}`} />
                 </button>
                 <AnimatePresence>

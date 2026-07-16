@@ -23,7 +23,7 @@ export default function ExpertGuidesView() {
                         >
                             The Storytellers
                         </motion.p>
-                        <h1 className="display-1 mt-4 font-medium text-ink">Expert guardians</h1>
+                        <h1 className="display-1 mt-4 font-semibold text-ink">Expert guardians</h1>
                         <p className="mt-8 max-w-lg text-[16px] leading-relaxed text-muted">
                             We do not use generic tour guides. Our guides are vetted, licensed heritage specialists and multi-lingual storytellers who frame the true narrative of the subcontinent.
                         </p>
@@ -37,14 +37,14 @@ export default function ExpertGuidesView() {
                         <div className="card flex aspect-square flex-col justify-between p-7">
                             <Award className="text-clay" size={36} />
                             <div>
-                                <h3 className="text-[15px] font-medium text-ink">Vetted Guides</h3>
+                                <h3 className="text-[15px] font-semibold text-ink">Vetted Guides</h3>
                                 <p className="mt-2 text-[13px] leading-relaxed text-muted">Licensed heritage professionals, matched to your party.</p>
                             </div>
                         </div>
                         <div className="card mt-12 flex aspect-square flex-col justify-between p-7">
                             <Languages className="text-clay" size={36} />
                             <div>
-                                <h3 className="text-[15px] font-medium text-ink">Multi-Lingual</h3>
+                                <h3 className="text-[15px] font-semibold text-ink">Multi-Lingual</h3>
                                 <p className="mt-2 text-[13px] leading-relaxed text-muted">Guiding in your own language, not translated tours.</p>
                             </div>
                         </div>
@@ -55,7 +55,7 @@ export default function ExpertGuidesView() {
             <section className="border-y border-line bg-paper-dim/60 py-20 sm:py-24">
                 <div className="container-x text-center">
                     <Landmark className="mx-auto mb-8 text-clay" size={48} />
-                    <h2 className="display-2 font-medium text-ink">
+                    <h2 className="display-2 font-semibold text-ink">
                         Skip the <span className="text-clay">noise.</span>
                     </h2>
                     <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-relaxed text-muted">

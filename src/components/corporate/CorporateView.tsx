@@ -32,7 +32,7 @@ export function CorporateCategoryView({ category }: { category: CorporateCategor
                         <span className="text-clay">{category.segment}</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent">Corporate travel</p>
-                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">{category.name}</h1>
+                    <h1 className="display-1 mt-4 max-w-3xl font-semibold text-ink">{category.name}</h1>
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{category.blurb}</p>
                 </div>
             </section>
@@ -41,9 +41,9 @@ export function CorporateCategoryView({ category }: { category: CorporateCategor
                     {category.items.map((it, idx) => (
                         <motion.div key={it.slug} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (idx % 3) * 0.05 }}>
                             <Link href={`/corporate/${category.slug}/${it.slug}`} className="card card-hover group flex h-full flex-col p-7">
-                                <h3 className="text-xl font-medium text-ink group-hover:text-clay">{it.name}</h3>
+                                <h3 className="text-xl font-semibold text-ink group-hover:text-clay">{it.name}</h3>
                                 <p className="mt-3 line-clamp-3 text-[15px] leading-relaxed text-muted">{it.answer}</p>
-                                <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-clay">Open <ArrowRight size={14} /></span>
+                                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-clay">Open <ArrowRight size={14} /></span>
                             </Link>
                         </motion.div>
                     ))}
@@ -69,8 +69,8 @@ export function CorporateItemView({ category, item }: { category: CorporateCateg
                         <span className="text-clay">{item.name}</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent">{category.name}</p>
-                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">{item.name}</h1>
-                    <p className="mt-6 max-w-4xl font-display text-[24px] font-medium leading-snug text-ink sm:text-[30px]">{item.answer}</p>
+                    <h1 className="display-1 mt-4 max-w-3xl font-semibold text-ink">{item.name}</h1>
+                    <p className="mt-6 max-w-4xl font-display text-[24px] font-semibold leading-snug text-ink sm:text-[30px]">{item.answer}</p>
                     <div className="mt-8 max-w-3xl space-y-5">
                         {item.intro.map((p, i) => (
                             <p key={i} className="text-[17px] leading-relaxed text-muted">{p}</p>
@@ -110,7 +110,7 @@ export function CorporateItemView({ category, item }: { category: CorporateCateg
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {item.faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}

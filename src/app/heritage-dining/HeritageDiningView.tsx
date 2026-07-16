@@ -23,7 +23,7 @@ export default function HeritageDiningView() {
                         >
                             Culinary Archive
                         </motion.p>
-                        <h1 className="display-1 mt-4 font-medium text-ink">Heritage dining</h1>
+                        <h1 className="display-1 mt-4 font-semibold text-ink">Heritage dining</h1>
                         <p className="mt-8 max-w-lg text-[16px] leading-relaxed text-muted">
                             We favour heritage settings over commercial restaurants, authentic, architecturally significant dining featuring colourful, balanced Indian thalis served in historic palace courtyards.
                         </p>
@@ -37,14 +37,14 @@ export default function HeritageDiningView() {
                         <div className="card flex aspect-square flex-col justify-between p-7">
                             <Crown className="text-clay" size={36} />
                             <div>
-                                <h3 className="text-[15px] font-medium text-ink">Palatial Settings</h3>
+                                <h3 className="text-[15px] font-semibold text-ink">Palatial Settings</h3>
                                 <p className="mt-2 text-[13px] leading-relaxed text-muted">Curated access to heritage dining rooms and courtyards.</p>
                             </div>
                         </div>
                         <div className="card mt-12 flex aspect-square flex-col justify-between p-7">
                             <ChefHat className="text-clay" size={36} />
                             <div>
-                                <h3 className="text-[15px] font-medium text-ink">Heritage Kitchens</h3>
+                                <h3 className="text-[15px] font-semibold text-ink">Heritage Kitchens</h3>
                                 <p className="mt-2 text-[13px] leading-relaxed text-muted">Regional royal-kitchen recipes cooked by vetted heritage kitchens.</p>
                             </div>
                         </div>
@@ -55,7 +55,7 @@ export default function HeritageDiningView() {
             <section className="bg-ink py-20 sm:py-24">
                 <div className="container-x text-center">
                     <Utensils className="mx-auto mb-8 text-clay-soft" size={48} />
-                    <h2 className="display-2 font-medium text-paper">
+                    <h2 className="display-2 font-semibold text-paper">
                         The thali <span className="text-clay-soft">protocol.</span>
                     </h2>
                     <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-relaxed text-paper/70">

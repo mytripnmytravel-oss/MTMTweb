@@ -44,7 +44,7 @@ export default function FleetCityView({
                         <span className="text-clay-soft">in {dest.name}</span>
                     </nav>
                     <p className="eyebrow text-paper/70">{vehicle.category} {vehicle.type} · {dest.state}</p>
-                    <h1 className="display-1 mt-4 font-medium text-paper">{vehicle.name} in {dest.name}</h1>
+                    <h1 className="display-1 mt-4 font-semibold text-paper">{vehicle.name} in {dest.name}</h1>
                 </div>
             </section>
 
@@ -52,7 +52,7 @@ export default function FleetCityView({
             <section className="section">
                 <div className="container-x max-w-5xl">
                     <p className="eyebrow eyebrow-accent">The Brief</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{content.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{content.answer}</p>
                     <div className="mt-10 max-w-3xl space-y-5">
                         {content.intro.map((para, i) => (
                             <motion.p key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[17px] leading-relaxed text-muted">
@@ -63,11 +63,11 @@ export default function FleetCityView({
                     <div className="mt-10 flex flex-wrap gap-3">
                         <div className="card flex items-center gap-3 px-6 py-4">
                             <Users className="text-clay" size={18} />
-                            <span className="text-[14px] font-medium text-ink">{vehicle.passengers} passengers</span>
+                            <span className="text-[14px] font-semibold text-ink">{vehicle.passengers} passengers</span>
                         </div>
                         <div className="card flex items-center gap-3 px-6 py-4">
                             <Briefcase className="text-clay" size={18} />
-                            <span className="text-[14px] font-medium text-ink">{vehicle.luggage}</span>
+                            <span className="text-[14px] font-semibold text-ink">{vehicle.luggage}</span>
                         </div>
                         <Link href={`/destinations/${dest.slug}`} className="btn-outline btn-sm"><MapPin size={14} /> Explore {dest.name}</Link>
                     </div>
@@ -82,7 +82,7 @@ export default function FleetCityView({
                         <div className="mt-10 grid gap-6 md:grid-cols-2">
                             {content.faqs.map((f, i) => (
                                 <div key={i} className="card p-7">
-                                    <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                    <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                     <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                                 </div>
                             ))}

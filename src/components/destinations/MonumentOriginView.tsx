@@ -36,7 +36,7 @@ export default function MonumentOriginView({ content }: { content: MonumentOrigi
                         <Plane size={16} className="text-clay-soft" />
                         <p className="eyebrow text-paper/70">{origin.city} to {monument.name}</p>
                     </div>
-                    <h1 className="display-1 font-medium text-paper">{content.h1}</h1>
+                    <h1 className="display-1 font-semibold text-paper">{content.h1}</h1>
                 </div>
             </section>
 
@@ -44,7 +44,7 @@ export default function MonumentOriginView({ content }: { content: MonumentOrigi
             <section className="section">
                 <div className="container-x max-w-4xl">
                     <p className="eyebrow eyebrow-accent">The brief</p>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{content.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{content.answer}</p>
                     <div className="mt-8 space-y-5">
                         {content.intro.map((p, i) => (
                             <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl text-[17px] leading-relaxed text-muted">
@@ -63,17 +63,17 @@ export default function MonumentOriginView({ content }: { content: MonumentOrigi
                         <div className="mt-8 grid gap-5 md:grid-cols-3">
                             <div className="rounded-2xl border border-line bg-paper-dim/60 p-6">
                                 <Plane className="text-clay" size={20} />
-                                <h3 className="mt-3 text-[13px] font-medium uppercase tracking-[0.12em] text-stone">Flight</h3>
+                                <h3 className="mt-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-stone">Flight</h3>
                                 <p className="mt-1.5 text-[14px] leading-relaxed text-muted">{content.flightBand}</p>
                             </div>
                             <div className="rounded-2xl border border-line bg-paper-dim/60 p-6">
                                 <MapPin className="text-clay" size={20} />
-                                <h3 className="mt-3 text-[13px] font-medium uppercase tracking-[0.12em] text-stone">Gateway</h3>
+                                <h3 className="mt-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-stone">Gateway</h3>
                                 <p className="mt-1.5 text-[14px] leading-relaxed text-muted">{content.gateway.label}</p>
                             </div>
                             <div className="rounded-2xl border border-line bg-paper-dim/60 p-6">
                                 <Clock className="text-clay" size={20} />
-                                <h3 className="mt-3 text-[13px] font-medium uppercase tracking-[0.12em] text-stone">Access</h3>
+                                <h3 className="mt-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-stone">Access</h3>
                                 <p className="mt-1.5 text-[14px] leading-relaxed text-muted">{content.accessNote}</p>
                             </div>
                         </div>
@@ -88,7 +88,7 @@ export default function MonumentOriginView({ content }: { content: MonumentOrigi
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {content.facets.map((f, i) => (
                             <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="card p-8">
-                                <h3 className="text-xl font-medium text-ink">{f.heading}</h3>
+                                <h3 className="text-xl font-semibold text-ink">{f.heading}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.body}</p>
                             </motion.div>
                         ))}
@@ -104,7 +104,7 @@ export default function MonumentOriginView({ content }: { content: MonumentOrigi
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {content.faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}

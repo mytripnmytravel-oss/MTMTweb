@@ -41,7 +41,7 @@ export function EnquiryForm({
                 <span className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600">
                     <CheckCircle2 size={30} />
                 </span>
-                <h3 className="mt-5 text-2xl font-medium text-ink">Thank you, your enquiry is in.</h3>
+                <h3 className="mt-5 text-2xl font-semibold text-ink">Thank you, your enquiry is in.</h3>
                 <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">
                     Our travel desk will reach out shortly with a personalised plan and quote. Prefer to talk now? Message us on WhatsApp.
                 </p>
@@ -55,7 +55,7 @@ export function EnquiryForm({
     return (
         <div className="card p-7 sm:p-9">
             <p className="eyebrow eyebrow-accent">Plan your trip</p>
-            <h3 className="mt-3 text-2xl font-medium text-ink sm:text-[26px]">{heading}</h3>
+            <h3 className="mt-3 text-2xl font-semibold text-ink sm:text-[26px]">{heading}</h3>
             <p className="mt-3 text-[15px] leading-relaxed text-muted">{subheading}</p>
 
             <form onSubmit={handleSubmit} action="https://formspree.io/f/maqaanvz" method="POST" className="mt-7 space-y-4">

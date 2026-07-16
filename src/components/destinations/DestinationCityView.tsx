@@ -75,7 +75,7 @@ export default function DestinationCityView({
                     </nav>
                     <motion.div initial="hidden" animate="visible" variants={fade}>
                         <span className="eyebrow text-paper/70">{dest.state}</span>
-                        <h1 className="display-1 mt-4 font-medium text-paper">{dest.name}</h1>
+                        <h1 className="display-1 mt-4 font-semibold text-paper">{dest.name}</h1>
                         <p className="mt-4 max-w-2xl text-lg text-paper/80">{dest.tagline}</p>
                     </motion.div>
                 </div>
@@ -85,7 +85,7 @@ export default function DestinationCityView({
             <section className="section">
                 <div className="container-x max-w-4xl">
                     <Eyebrow>Overview</Eyebrow>
-                    <p className="mt-5 font-display text-[26px] font-medium leading-snug text-ink sm:text-[32px]">{dest.answer}</p>
+                    <p className="mt-5 font-display text-[26px] font-semibold leading-snug text-ink sm:text-[32px]">{dest.answer}</p>
                     <div className="mt-10 space-y-5">
                         {dest.intro.map((para, i) => (
                             <p key={i} className="text-[17px] leading-relaxed text-muted">{para}</p>
@@ -103,7 +103,7 @@ export default function DestinationCityView({
                         {dest.quickFacts.map((f, i) => (
                             <div key={i} className="card p-6">
                                 <div className="eyebrow">{f.label}</div>
-                                <div className="mt-2 text-lg font-medium text-ink">{f.value}</div>
+                                <div className="mt-2 text-lg font-semibold text-ink">{f.value}</div>
                             </div>
                         ))}
                     </div>
@@ -134,7 +134,7 @@ export default function DestinationCityView({
                             <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}
                                 className="rounded-2xl border border-white/10 bg-white/[0.04] p-7 transition-colors hover:bg-white/[0.07]">
                                 <div className="eyebrow text-clay-soft">{t.category}</div>
-                                <h3 className="mt-3 text-xl font-medium text-paper">{t.name}</h3>
+                                <h3 className="mt-3 text-xl font-semibold text-paper">{t.name}</h3>
                                 <p className="mt-2 text-sm leading-relaxed text-paper/60">{t.blurb}</p>
                             </motion.div>
                         ))}
@@ -154,7 +154,7 @@ export default function DestinationCityView({
                                 <div key={i} className="flex flex-col gap-3 py-7 md:flex-row md:items-center md:gap-10">
                                     <div className="flex shrink-0 items-center gap-4 md:w-60">
                                         <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-paper-dim text-clay"><Icon size={19} /></span>
-                                        <span className="text-lg font-medium text-ink">{m.mode}</span>
+                                        <span className="text-lg font-semibold text-ink">{m.mode}</span>
                                     </div>
                                     <p className="text-[16px] leading-relaxed text-muted">{m.detail}</p>
                                 </div>
@@ -210,14 +210,14 @@ export default function DestinationCityView({
                                     className="card card-hover group flex items-center justify-between p-6">
                                     <div>
                                         <div className="eyebrow">{m.type}</div>
-                                        <span className="mt-1 block text-lg font-medium text-ink group-hover:text-clay">{m.name}</span>
+                                        <span className="mt-1 block text-lg font-semibold text-ink group-hover:text-clay">{m.name}</span>
                                     </div>
                                     <ArrowRight size={17} className="shrink-0 text-stone group-hover:text-clay" />
                                 </Link>
                             ))}
                             <Link href={`/destinations/${dest.slug}/monuments`}
                                 className="card card-hover group flex items-center justify-between border-clay/30 bg-clay/[0.06] p-6">
-                                <span className="text-lg font-medium text-ink">All {dest.name} monuments</span>
+                                <span className="text-lg font-semibold text-ink">All {dest.name} monuments</span>
                                 <ArrowRight size={17} className="shrink-0 text-clay" />
                             </Link>
                         </div>
@@ -233,16 +233,16 @@ export default function DestinationCityView({
                     <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         {FACET_SLUGS.map((f) => (
                             <Link key={f} href={`/destinations/${dest.slug}/${f}`} className="card card-hover group flex items-center justify-between p-6">
-                                <span className="text-[15px] font-medium text-ink group-hover:text-clay">{FACET_LABELS[f]}</span>
+                                <span className="text-[15px] font-semibold text-ink group-hover:text-clay">{FACET_LABELS[f]}</span>
                                 <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                             </Link>
                         ))}
                         <Link href={`/destinations/${dest.slug}/itinerary`} className="card card-hover group flex items-center justify-between p-6">
-                            <span className="text-[15px] font-medium text-ink group-hover:text-clay">Itineraries (3 to 14 days)</span>
+                            <span className="text-[15px] font-semibold text-ink group-hover:text-clay">Itineraries (3 to 14 days)</span>
                             <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                         </Link>
                         <Link href={`/destinations/${dest.slug}/in/january`} className="card card-hover group flex items-center justify-between p-6">
-                            <span className="text-[15px] font-medium text-ink group-hover:text-clay">Month-by-month guide</span>
+                            <span className="text-[15px] font-semibold text-ink group-hover:text-clay">Month-by-month guide</span>
                             <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                         </Link>
                     </div>
@@ -264,15 +264,15 @@ export default function DestinationCityView({
                                     <div className="relative aspect-[16/10] overflow-hidden">
                                         <Image src={t.img} alt={`${t.title}, itinerary including ${dest.name}`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
-                                        <div className="absolute bottom-4 left-5 flex items-center gap-2 text-[11px] font-medium text-paper">
+                                        <div className="absolute bottom-4 left-5 flex items-center gap-2 text-[11px] font-semibold text-paper">
                                             <Clock size={12} className="text-clay-soft" />{t.duration} · {t.theme}
                                         </div>
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="text-lg font-medium text-ink group-hover:text-clay">{t.title}</h3>
+                                        <h3 className="text-lg font-semibold text-ink group-hover:text-clay">{t.title}</h3>
                                         <div className="mt-4 flex items-center justify-between">
-                                            <span className="text-base font-medium text-ink">from {t.price}</span>
-                                            <span className="inline-flex items-center gap-1 text-sm font-medium text-clay">View <ArrowRight size={14} /></span>
+                                            <span className="text-base font-semibold text-ink">from {t.price}</span>
+                                            <span className="inline-flex items-center gap-1 text-sm font-semibold text-clay">View <ArrowRight size={14} /></span>
                                         </div>
                                     </div>
                                 </Link>
@@ -291,7 +291,7 @@ export default function DestinationCityView({
                     <div className="mt-10 grid gap-6 md:grid-cols-2">
                         {dest.faqs.map((f, i) => (
                             <div key={i} className="card p-7">
-                                <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                             </div>
                         ))}
@@ -314,14 +314,14 @@ export default function DestinationCityView({
                                         <div className="absolute bottom-5 left-5">
                                             <div className="flex items-center gap-1.5">
                                                 <MapPin className="text-clay-soft" size={15} />
-                                                <h3 className="text-xl font-medium text-paper">{c.name}</h3>
+                                                <h3 className="text-xl font-semibold text-paper">{c.name}</h3>
                                             </div>
                                             <p className="mt-0.5 text-xs text-paper/70">{c.tagline}</p>
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-between p-5">
                                         <span className="eyebrow">{c.region}</span>
-                                        <span className="inline-flex items-center gap-1 text-sm font-medium text-clay">Open <ArrowRight size={14} /></span>
+                                        <span className="inline-flex items-center gap-1 text-sm font-semibold text-clay">Open <ArrowRight size={14} /></span>
                                     </div>
                                 </Link>
                             ))}
@@ -341,10 +341,10 @@ export default function DestinationCityView({
                         </p>
                         {dest.relatedTours.length > 0 && (
                             <div className="mt-8">
-                                <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-stone">Related journeys</p>
+                                <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-stone">Related journeys</p>
                                 <div className="mt-3 flex flex-wrap gap-2.5">
                                     {dest.relatedTours.map((r, i) => (
-                                        <Link key={i} href={r.href} className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-ink transition hover:border-ink hover:text-clay">
+                                        <Link key={i} href={r.href} className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink transition hover:border-ink hover:text-clay">
                                             {r.label} <ArrowUpRight size={14} />
                                         </Link>
                                     ))}

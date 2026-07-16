@@ -21,7 +21,7 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                 <div className="grid items-center gap-16 lg:grid-cols-2">
                     <div>
                         <p className="eyebrow eyebrow-accent">Deep reset</p>
-                        <h1 className="display-1 mt-4 font-medium text-ink">Kinetic recovery</h1>
+                        <h1 className="display-1 mt-4 font-semibold text-ink">Kinetic recovery</h1>
                         <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
                             Restorative bodywork drawing on classical Indian massage traditions (Abhyanga, Marma therapy). Skilled therapists work the muscles and soft tissue to ease tension and support physical recovery and relaxation.
                         </p>
@@ -31,7 +31,7 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-paper-dim text-clay">
                                     <Activity size={20} />
                                 </span>
-                                <span className="text-[13px] font-medium text-ink">Tension release</span>
+                                <span className="text-[13px] font-semibold text-ink">Tension release</span>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-paper-dim text-clay">
                                     <modality.icon size={22} />
                                 </span>
-                                <h3 className="mt-5 text-xl font-medium text-ink">{modality.title}</h3>
+                                <h3 className="mt-5 text-xl font-semibold text-ink">{modality.title}</h3>
                                 <p className="mt-2 text-[15px] leading-relaxed text-muted">{modality.desc}</p>
                             </motion.div>
                         ))}
@@ -82,7 +82,7 @@ export default function MassageView({ programme }: { programme: WellnessProgramm
                 <div className="container-x text-center">
                     <div className="mx-auto max-w-3xl">
                         <BedDouble className="mx-auto mb-8 text-clay-soft" size={44} />
-                        <h2 className="display-2 font-medium leading-tight text-paper">
+                        <h2 className="display-2 font-semibold leading-tight text-paper">
                             Uncompromising <span className="text-clay-soft">relaxation.</span>
                         </h2>
                         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">

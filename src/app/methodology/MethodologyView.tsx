@@ -8,8 +8,8 @@ import Link from "next/link";
 
 const StatItem = ({ label, value, desc }: { label: string; value: string; desc: string }) => (
     <div className="card p-7">
-        <div className="text-clay font-display text-3xl font-medium">{value}</div>
-        <div className="mt-2 text-[13px] font-medium text-ink">{label}</div>
+        <div className="text-clay font-display text-3xl font-semibold">{value}</div>
+        <div className="mt-2 text-[13px] font-semibold text-ink">{label}</div>
         <p className="mt-4 text-[13px] leading-relaxed text-muted">{desc}</p>
     </div>
 );
@@ -20,14 +20,14 @@ const ProtocolBlock = ({ step, title, desc, icon: Icon, features }: { step: stri
             <Icon size={20} />
         </div>
         <p className="eyebrow eyebrow-accent">Phase {step}</p>
-        <h3 className="display-3 font-medium text-ink mt-3">{title}</h3>
+        <h3 className="display-3 font-semibold text-ink mt-3">{title}</h3>
         <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-muted">{desc}</p>
 
         <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-2">
             {features.map((feature, i) => (
                 <div key={i} className="flex items-center gap-3 rounded-xl border border-line bg-paper-dim/60 p-4">
                     <div className="h-1.5 w-1.5 rounded-full bg-clay" />
-                    <span className="text-[13px] font-medium text-ink">{feature}</span>
+                    <span className="text-[13px] font-semibold text-ink">{feature}</span>
                 </div>
             ))}
         </div>
@@ -44,7 +44,7 @@ export default function MethodologyView() {
                 <div className="container-x">
                     <div className="max-w-4xl">
                         <p className="eyebrow text-clay-soft">Mission protocol briefing</p>
-                        <h1 className="display-1 font-medium text-paper mt-5">The Methodology</h1>
+                        <h1 className="display-1 font-semibold text-paper mt-5">The Methodology</h1>
                         <p className="mt-8 max-w-2xl text-[18px] leading-relaxed text-paper/70">
                             Luxury is not a commodity. It is an operational standard. Our methodology is the blueprint for translating high-intent travel into absolute cinematic reality.
                         </p>
@@ -66,14 +66,14 @@ export default function MethodologyView() {
                         <div className="lg:w-1/3">
                             <div className="sticky top-40">
                                 <p className="eyebrow eyebrow-accent">Master Protocol</p>
-                                <h2 className="display-2 font-medium text-ink mt-4">The Full Dossier</h2>
+                                <h2 className="display-2 font-semibold text-ink mt-4">The Full Dossier</h2>
                                 <p className="mt-6 max-w-sm text-[16px] leading-relaxed text-muted">
                                     Our operational cycle is a systematic loop designed to eliminate friction. It is the invisible layer between you and the environment.
                                 </p>
 
                                 <div className="mt-10 space-y-4">
                                     {['01 Curation', '02 Activation', '03 Execution', '04 Retention'].map((p) => (
-                                        <div key={p} className="flex items-center gap-4 text-[12px] font-medium text-stone">
+                                        <div key={p} className="flex items-center gap-4 text-[12px] font-semibold text-stone">
                                             <div className="h-px w-8 bg-line" /> {p}
                                         </div>
                                     ))}
@@ -120,23 +120,23 @@ export default function MethodologyView() {
                 <div className="container-x">
                     <div className="mb-16 text-center">
                         <p className="eyebrow text-clay-soft">Directives</p>
-                        <h2 className="display-2 font-medium text-paper mt-4">The Core Values</h2>
+                        <h2 className="display-2 font-semibold text-paper mt-4">The Core Values</h2>
                     </div>
 
                     <div className="grid gap-6 md:grid-cols-3">
                         <div className="rounded-2xl border border-paper/10 bg-paper/5 p-10 text-center">
                             <Shield className="mx-auto mb-6 text-clay-soft" size={40} />
-                            <h3 className="text-xl font-medium text-paper">Uncompromising Safety</h3>
+                            <h3 className="text-xl font-semibold text-paper">Uncompromising Safety</h3>
                             <p className="mt-3 text-[14px] leading-relaxed text-paper/60">Every vehicle is checked and prepared before it reaches you. No exceptions.</p>
                         </div>
                         <div className="rounded-2xl border border-paper/10 bg-paper/5 p-10 text-center">
                             <Activity className="mx-auto mb-6 text-clay-soft" size={40} />
-                            <h3 className="text-xl font-medium text-paper">Real-Time Agility</h3>
+                            <h3 className="text-xl font-semibold text-paper">Real-Time Agility</h3>
                             <p className="mt-3 text-[14px] leading-relaxed text-paper/60">We adapt to environmental shifts in seconds. Traffic, weather, or preference changes.</p>
                         </div>
                         <div className="rounded-2xl border border-paper/10 bg-paper/5 p-10 text-center">
                             <Target className="mx-auto mb-6 text-clay-soft" size={40} />
-                            <h3 className="text-xl font-medium text-paper">Absolute Precision</h3>
+                            <h3 className="text-xl font-semibold text-paper">Absolute Precision</h3>
                             <p className="mt-3 text-[14px] leading-relaxed text-paper/60">We measure success by the second. On-time performance is our fundamental protocol.</p>
                         </div>
                     </div>
@@ -146,7 +146,7 @@ export default function MethodologyView() {
             {/* Final CTA */}
             <section className="section">
                 <div className="container-x text-center">
-                    <h2 className="display-2 font-medium text-ink">Experience the Absolute Protocol</h2>
+                    <h2 className="display-2 font-semibold text-ink">Experience the Absolute Protocol</h2>
                     <div className="mt-10">
                         <Link href="/booking" className="btn-primary">
                             Execute Destination <ArrowRight size={18} />

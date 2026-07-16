@@ -35,8 +35,8 @@ export default function RegionVariantView({
                         <span className="text-clay">{content.label}</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent">{content.regionName}</p>
-                    <h1 className="display-1 mt-4 max-w-4xl font-medium text-ink">{content.h1}</h1>
-                    <p className="mt-6 max-w-5xl font-display text-[24px] font-medium leading-snug text-ink sm:text-[30px]">{content.answer}</p>
+                    <h1 className="display-1 mt-4 max-w-4xl font-semibold text-ink">{content.h1}</h1>
+                    <p className="mt-6 max-w-5xl font-display text-[24px] font-semibold leading-snug text-ink sm:text-[30px]">{content.answer}</p>
                     <p className="mt-6 max-w-3xl text-[16px] leading-relaxed text-muted">{content.intro}</p>
                 </div>
             </section>
@@ -51,15 +51,15 @@ export default function RegionVariantView({
                                     <Link href={`/tours/${packageSlug(p)}`} className="card card-hover group flex h-full flex-col overflow-hidden">
                                         <div className="relative aspect-[16/10] overflow-hidden">
                                             <Image src={p.img} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                                            <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink"><Clock size={12} className="text-clay" /> {p.duration}</span>
+                                            <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-semibold text-ink"><Clock size={12} className="text-clay" /> {p.duration}</span>
                                         </div>
                                         <div className="flex flex-1 flex-col p-6">
                                             <div className="eyebrow">{p.theme}</div>
-                                            <h3 className="mt-2 text-lg font-medium text-ink group-hover:text-clay">{p.title}</h3>
+                                            <h3 className="mt-2 text-lg font-semibold text-ink group-hover:text-clay">{p.title}</h3>
                                             <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{p.highlight}</p>
                                             <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
-                                                <span className="text-lg font-medium text-ink">from {p.price}</span>
-                                                <span className="inline-flex items-center gap-1 text-sm font-medium text-clay">Open <ArrowRight size={14} /></span>
+                                                <span className="text-lg font-semibold text-ink">from {p.price}</span>
+                                                <span className="inline-flex items-center gap-1 text-sm font-semibold text-clay">Open <ArrowRight size={14} /></span>
                                             </div>
                                         </div>
                                     </Link>
@@ -83,7 +83,7 @@ export default function RegionVariantView({
                         <div className="mt-10 grid gap-6 md:grid-cols-2">
                             {content.faqs.map((f, i) => (
                                 <div key={i} className="card p-7">
-                                    <h3 className="text-[17px] font-medium text-ink">{f.q}</h3>
+                                    <h3 className="text-[17px] font-semibold text-ink">{f.q}</h3>
                                     <p className="mt-3 text-[15px] leading-relaxed text-muted">{f.a}</p>
                                 </div>
                             ))}

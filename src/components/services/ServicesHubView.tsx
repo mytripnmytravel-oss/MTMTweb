@@ -26,7 +26,7 @@ export default function ServicesHubView({
                         <span className="text-clay">Services</span>
                     </nav>
                     <p className="eyebrow eyebrow-accent">Ground services</p>
-                    <h1 className="display-1 mt-4 max-w-3xl font-medium text-ink">Chauffeured ground operations</h1>
+                    <h1 className="display-1 mt-4 max-w-3xl font-semibold text-ink">Chauffeured ground operations</h1>
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
                         Private, GPS-tracked, pre-priced transport across our hub cities, and continuous into any itinerary.
                     </p>
@@ -37,11 +37,11 @@ export default function ServicesHubView({
                 <div className="container-x grid gap-6 md:grid-cols-2">
                     {lines.map((l, idx) => (
                         <motion.div key={l.slug} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.05 }} className="card p-8">
-                            <h3 className="text-2xl font-medium text-ink">{l.name}</h3>
+                            <h3 className="text-2xl font-semibold text-ink">{l.name}</h3>
                             <p className="mt-3 text-[15px] leading-relaxed text-muted">{l.blurb}</p>
                             <div className="mt-6 flex flex-wrap gap-2">
                                 {cities.map((c) => (
-                                    <Link key={c.slug} href={`/services/${l.slug}/${c.slug}`} className="rounded-full border border-line bg-paper-dim px-4 py-2 text-[12px] font-medium text-muted transition hover:border-ink hover:text-ink">
+                                    <Link key={c.slug} href={`/services/${l.slug}/${c.slug}`} className="rounded-full border border-line bg-paper-dim px-4 py-2 text-[12px] font-semibold text-muted transition hover:border-ink hover:text-ink">
                                         {c.name}
                                     </Link>
                                 ))}
