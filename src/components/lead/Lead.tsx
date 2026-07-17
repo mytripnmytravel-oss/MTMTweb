@@ -10,6 +10,15 @@ export const WA_NUMBER = "919997812237";
 export const PHONE_DISPLAY = "+91 99978 12237";
 export const EMAIL = "info@mytripmytravel.com";
 
+/**
+ * Single source of truth for the Formspree form that receives every enquiry.
+ * To route leads to a different inbox, create a form at formspree.io (set its
+ * notification email to info@mytripmytravel.com and confirm it), then change
+ * ONLY this value — every form on the site updates.
+ */
+export const FORMSPREE_FORM_ID = "maqaanvz";
+export const FORMSPREE_ACTION = `https://formspree.io/f/${FORMSPREE_FORM_ID}`;
+
 /** Build a WhatsApp deep link with a pre-filled, dash-free message. */
 export function waLink(message: string) {
     return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -33,7 +42,7 @@ export function EnquiryForm({
     subheading?: string;
     compact?: boolean;
 }) {
-    const [state, handleSubmit] = useForm("maqaanvz");
+    const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
 
     if (state.succeeded) {
         return (
@@ -58,7 +67,7 @@ export function EnquiryForm({
             <h3 className="mt-3 text-2xl font-semibold text-ink sm:text-[26px]">{heading}</h3>
             <p className="mt-3 text-[15px] leading-relaxed text-muted">{subheading}</p>
 
-            <form onSubmit={handleSubmit} action="https://formspree.io/f/maqaanvz" method="POST" className="mt-7 space-y-4">
+            <form onSubmit={handleSubmit} action={FORMSPREE_ACTION} method="POST" className="mt-7 space-y-4">
                 <input type="hidden" name="Enquiry Source" value={source} />
                 {context && Object.entries(context).map(([k, v]) => <input key={k} type="hidden" name={k} value={v} />)}
 
@@ -98,6 +107,14 @@ export function EnquiryForm({
                 <button type="submit" disabled={state.submitting} className="btn-primary w-full py-4 disabled:opacity-50">
                     {state.submitting ? "Sending your enquiry" : "Send my enquiry"} <ArrowRight size={17} />
                 </button>
+
+                {state.errors && (
+                    <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-center text-[13px] text-red-700">
+                        Something went wrong sending your enquiry. Please email{" "}
+                        <a href={`mailto:${EMAIL}`} className="font-semibold underline">{EMAIL}</a> or{" "}
+                        <a href={waLink("Hi MyTripMyTravel, my enquiry form did not go through. I would like to plan a trip.")} target="_blank" rel="noopener noreferrer" className="font-semibold underline">message us on WhatsApp</a>.
+                    </div>
+                )}
 
                 <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 pt-1 text-[12px] text-stone">
                     <span className="flex items-center gap-1.5"><ShieldCheck size={13} className="text-clay" /> Private and confidential</span>

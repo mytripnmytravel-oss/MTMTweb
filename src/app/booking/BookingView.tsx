@@ -7,11 +7,12 @@ import {
     ShieldCheck, Send, ArrowRight, Clock, Star
 } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
+import { FORMSPREE_FORM_ID, FORMSPREE_ACTION } from "@/components/lead/Lead";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export default function BookingView() {
-    const [state, handleSubmit] = useForm("maqaanvz");
+    const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
 
     return (
         <main className="min-h-screen bg-paper">
@@ -73,7 +74,7 @@ export default function BookingView() {
 
                         <form
                             onSubmit={handleSubmit}
-                            action="https://formspree.io/f/maqaanvz"
+                            action={FORMSPREE_ACTION}
                             method="POST"
                             className="mt-7 space-y-4"
                         >

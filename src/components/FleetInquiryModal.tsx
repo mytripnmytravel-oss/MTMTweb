@@ -8,6 +8,7 @@ import {
     Mail, Phone, Calendar as CalendarIcon, Clock, Zap, MapPin, Info, ArrowRight, ChevronDown, Car
 } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
+import { FORMSPREE_FORM_ID, FORMSPREE_ACTION } from "./lead/Lead";
 import { fleet, Vehicle } from "@/data/fleet";
 
 interface FleetInquiryModalProps {
@@ -123,7 +124,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
         };
     }, [isOpen]);
 
-    const [state, handleSubmit] = useForm("maqaanvz");
+    const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
 
     // Sync selected vehicle when initialVehicle changes (modal opens)
     React.useEffect(() => {
@@ -222,7 +223,7 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
 
                                     <form
                                         onSubmit={handleSubmit}
-                                        action="https://formspree.io/f/maqaanvz"
+                                        action={FORMSPREE_ACTION}
                                         method="POST"
                                         className="space-y-7"
                                     >

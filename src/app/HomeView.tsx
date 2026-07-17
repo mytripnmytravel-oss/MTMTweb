@@ -12,6 +12,7 @@ import {
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useForm, ValidationError } from "@formspree/react";
+import { FORMSPREE_FORM_ID, FORMSPREE_ACTION } from "@/components/lead/Lead";
 import { fleet, Vehicle } from "@/data/fleet";
 import { FleetInquiryModal } from "@/components/FleetInquiryModal";
 
@@ -62,7 +63,7 @@ const jsonLd = [
 ];
 
 export default function HomeView() {
-  const [medicalFormState, handleMedicalSubmit] = useForm("maqaanvz");
+  const [medicalFormState, handleMedicalSubmit] = useForm(FORMSPREE_FORM_ID);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -268,7 +269,7 @@ export default function HomeView() {
                 <p className="mt-2 text-sm text-muted">Our medical concierge will be in touch shortly.</p>
               </div>
             ) : (
-              <form onSubmit={handleMedicalSubmit} action="https://formspree.io/f/maqaanvz" method="POST" className="mt-6 space-y-4">
+              <form onSubmit={handleMedicalSubmit} action={FORMSPREE_ACTION} method="POST" className="mt-6 space-y-4">
                 <input type="hidden" name="Inquiry Type" value="Medical Sanctuary" />
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>

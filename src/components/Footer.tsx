@@ -2,8 +2,10 @@
 
 import React from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Instagram, Facebook, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook, ArrowUpRight, Check } from "lucide-react";
+import { useForm } from "@formspree/react";
 import { Logo3D } from "./Navbar";
+import { FORMSPREE_FORM_ID } from "./lead/Lead";
 
 const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
     {
@@ -41,6 +43,7 @@ const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
 ];
 
 export const Footer = () => {
+    const [nlState, nlSubmit] = useForm(FORMSPREE_FORM_ID);
     return (
         <footer className="relative z-20 bg-ink text-paper">
             <div className="container-x pb-12 pt-20 sm:pt-24">
@@ -52,16 +55,25 @@ export const Footer = () => {
                             Quiet notes on new journeys, seasons, and openings.
                         </h3>
                     </div>
-                    <form className="flex w-full max-w-md gap-3 lg:justify-self-end">
-                        <input
-                            type="email"
-                            placeholder="Your email"
-                            className="flex-1 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-paper placeholder:text-paper/40 outline-none transition focus:border-clay-soft"
-                        />
-                        <button type="submit" className="btn rounded-full bg-paper px-6 py-3 text-ink hover:bg-clay hover:text-paper">
-                            Subscribe
-                        </button>
-                    </form>
+                    {nlState.succeeded ? (
+                        <div className="flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-paper lg:justify-self-end">
+                            <Check size={18} className="text-clay-soft" /> Thank you, you are subscribed.
+                        </div>
+                    ) : (
+                        <form onSubmit={nlSubmit} action={`https://formspree.io/f/${FORMSPREE_FORM_ID}`} method="POST" className="flex w-full max-w-md gap-3 lg:justify-self-end">
+                            <input type="hidden" name="Inquiry Type" value="Newsletter" />
+                            <input
+                                required
+                                type="email"
+                                name="Email"
+                                placeholder="Your email"
+                                className="flex-1 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-paper placeholder:text-paper/40 outline-none transition focus:border-clay-soft"
+                            />
+                            <button type="submit" disabled={nlState.submitting} className="btn rounded-full bg-paper px-6 py-3 text-ink hover:bg-clay hover:text-paper disabled:opacity-50">
+                                {nlState.submitting ? "…" : "Subscribe"}
+                            </button>
+                        </form>
+                    )}
                 </div>
 
                 {/* Directory */}
