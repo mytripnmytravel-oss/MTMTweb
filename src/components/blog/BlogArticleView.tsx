@@ -16,7 +16,7 @@ export default function BlogArticleView({ post, related }: { post: BlogPost; rel
             "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description: post.excerpt,
             image: post.heroImg, datePublished: post.datePublished, dateModified: post.dateModified,
             author: { "@type": "Organization", name: "MyTripMyTravel Editorial Desk" },
-            publisher: { "@type": "Organization", name: "MyTripMyTravel", logo: { "@type": "ImageObject", url: "https://www.mytripmytravel.com/logo.png" } },
+            publisher: { "@type": "Organization", name: "MyTripMyTravel", logo: { "@type": "ImageObject", url: "https://www.mytripmytravel.com/logo-full.png" } },
             mainEntityOfPage: `https://www.mytripmytravel.com/blog/${post.slug}`,
         },
         ...(post.faqs.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: post.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] : []),

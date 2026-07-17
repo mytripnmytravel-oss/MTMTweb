@@ -32,20 +32,16 @@ const NavItem = ({ title, items, href }: { title: string; items?: { label: strin
 );
 
 export const Logo3D = ({ light = false }: { light?: boolean; isScrolled?: boolean }) => (
-    <Link href="/" className="flex items-center gap-3 group">
-        <div className="relative h-11 w-11 shrink-0 sm:h-12 sm:w-12">
-            <Image src="/logo.png" alt="MyTripMyTravel logo" width={52} height={52} className="h-full w-full object-contain drop-shadow-[0_3px_6px_rgba(0,0,0,0.12)]" />
-        </div>
-        <div className="flex flex-col leading-none">
-            <span className={`font-display text-xl font-black uppercase leading-none tracking-tight whitespace-nowrap sm:text-2xl ${light ? "text-paper" : "text-ink"}`}>
-                MYTRIP<span className="text-clay">MYTRAVEL</span>
+    <Link href="/" aria-label="MyTripMyTravel home" className="group inline-flex items-center">
+        {light ? (
+            // Dark surface (footer): the wordmark's blue + grey read poorly on ink,
+            // so sit the full-colour lockup on a clean white chip.
+            <span className="inline-flex rounded-xl bg-white px-3.5 py-2 shadow-sm">
+                <Image src="/logo-full.png" alt="MyTripMyTravel" width={1165} height={257} priority className="h-8 w-auto" />
             </span>
-            <span className="mt-1.5 flex items-center gap-1.5">
-                <span className="h-px w-4 bg-clay" />
-                <span className="text-[8px] font-bold uppercase tracking-[0.28em] text-clay whitespace-nowrap">Journeys That Inspire</span>
-                <span className="h-px w-4 bg-clay" />
-            </span>
-        </div>
+        ) : (
+            <Image src="/logo-full.png" alt="MyTripMyTravel" width={1165} height={257} priority className="h-9 w-auto sm:h-10" />
+        )}
     </Link>
 );
 

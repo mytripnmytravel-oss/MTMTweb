@@ -69,7 +69,7 @@ export function DestinationOriginRoute({
                 datePublished: "2026-05-28",
                 dateModified: "2026-05-28",
                 author: { "@type": "Organization", name: "MyTripMyTravel Editorial Desk", url: SITE_URL },
-                publisher: { "@type": "Organization", name: "MyTripMyTravel", url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` } },
+                publisher: { "@type": "Organization", name: "MyTripMyTravel", url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-full.png` } },
                 mainEntityOfPage: url,
             },
             {

@@ -9,7 +9,7 @@ export const ORGANIZATION = {
     name: "MyTripMyTravel",
     legalName: "MyTripMyTravel",
     url: SITE_URL,
-    logo: `${SITE_URL}/logo.png`,
+    logo: `${SITE_URL}/logo-full.png`,
     description:
         "Luxury inbound India travel architect, Golden Triangle, Rajasthan, Kerala, Himalayas, Sikkim and the Andamans. Chauffeured, escorted, sequenced for the light.",
     telephone: "+91-99978-12237",

@@ -98,7 +98,7 @@ export function DestinationMonthRoute({
                     url: SITE_URL,
                     logo: {
                         "@type": "ImageObject",
-                        url: `${SITE_URL}/logo.png`,
+                        url: `${SITE_URL}/logo-full.png`,
                     },
                 },
                 mainEntityOfPage: url,
