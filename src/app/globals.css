@@ -15,12 +15,12 @@
      colours so the minimal design language uses only the MTMT combinations. */
   --color-ink: #1e40af;          /* royal-blue — primary / brand-dark surfaces */
   --color-ink-soft: #1e293b;     /* slate-800 — body copy (richer, higher contrast) */
-  --color-paper: #f8fafc;        /* soft-white canvas */
-  --color-paper-dim: #f1f5f9;    /* slate-100 — faint section fill */
-  --color-line: #e2e8f0;         /* slate-200 — hairline borders */
-  --color-line-strong: #cbd5e1;  /* slate-300 */
-  --color-muted: #475569;        /* slate-600 — secondary text */
-  --color-stone: #94a3b8;        /* slate-400 — tertiary / captions */
+  --color-paper: #f4f7fe;        /* royal-blue tinted white — brand tone across the page */
+  --color-paper-dim: #e6eefc;    /* light royal-blue — section fills read as brand, not grey */
+  --color-line: #d6e0f5;         /* royal-blue tinted hairline borders */
+  --color-line-strong: #b9caee;  /* stronger blue-tinted border */
+  --color-muted: #465a86;        /* blue-slate secondary text */
+  --color-stone: #7f92b8;        /* blue-slate tertiary / captions */
   --color-clay: #f97316;         /* sunset-orange — the accent */
   --color-clay-soft: #fb923c;    /* orange-400 — accent on dark surfaces */
 

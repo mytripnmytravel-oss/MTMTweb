@@ -140,7 +140,7 @@ export const Footer = () => {
                         <Link href="/legal/privacy" className="text-xs text-paper/40 hover:text-clay-soft">Privacy</Link>
                         <Link href="/legal/terms" className="text-xs text-paper/40 hover:text-clay-soft">Terms</Link>
                         <Link href="/legal/cookies" className="text-xs text-paper/40 hover:text-clay-soft">Cookies</Link>
-                        <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="text-xs text-paper/40 hover:text-clay-soft">Sitemap</a>
+                        <Link href="/site-map" className="text-xs text-paper/40 hover:text-clay-soft">Sitemap</Link>
                         <a href="https://www.frameleads.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-paper/40 hover:text-clay-soft">
                             FrameLeads <ArrowUpRight size={12} />
                         </a>

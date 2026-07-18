@@ -65,6 +65,7 @@ const STATIC_ROUTES: { path: string; priority: number }[] = [
     { path: "/careers", priority: 0.4 },
     { path: "/blog", priority: 0.6 },
     { path: "/booking", priority: 0.6 },
+    { path: "/site-map", priority: 0.3 },
     { path: "/telemetry", priority: 0.4 },
     { path: "/wellness/yoga-soul", priority: 0.6 },
     { path: "/wellness/ayurvedic", priority: 0.6 },

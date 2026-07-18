@@ -162,23 +162,6 @@ export default function HomeView() {
         </div>
       </section>
 
-      {/* About preview */}
-      <section className="section">
-        <div className="container-x grid items-center gap-14 lg:grid-cols-2">
-          <div className="relative order-2 aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl lg:order-1">
-            <Image src="/team-1.jpg" alt="The MyTripMyTravel team" fill className="object-cover" />
-          </div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fade} className="order-1 lg:order-2">
-            <SectionHead
-              kicker="Who we are"
-              title="Architects of the journey."
-              intro="India rewards those who move through it with care. We bridge absolute comfort with authentic immersion, planning every transfer, stay and experience so you can simply be present. Not tours off a shelf, but journeys built around you."
-            />
-            <Link href="/about" className="btn-primary mt-8">Read our story <ArrowRight size={16} /></Link>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Curated journeys */}
       <section className="section border-t border-line bg-paper-dim/60">
         <div className="container-x">
