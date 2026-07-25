@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { NOINDEX_ROBOTS } from "@/lib/seoFocus";
 import { SITE_URL } from "@/lib/site";
 import AndamanView from "./AndamanView";
 
@@ -7,6 +8,7 @@ const description =
     "Andaman Islands luxury travel: a private, concierge-led 7-day itinerary through Port Blair, Havelock and Neil, pristine beaches, snorkelling and calm-sea inter-island cruises.";
 
 export const metadata: Metadata = {
+    robots: NOINDEX_ROBOTS,
     title: "Andaman Islands Luxury Travel, Havelock & Neil Itinerary | MyTripMyTravel",
     description,
     alternates: { canonical: url },

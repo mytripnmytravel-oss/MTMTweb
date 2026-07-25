@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { focusRobots } from "@/lib/seoFocus";
 import { notFound } from "next/navigation";
 import { getDestination } from "@/data/destinations";
 import {
@@ -31,6 +32,7 @@ export async function generateMetadata({
     const description = `The definitive monument briefs for ${dest.name}, history, highlights, visitor protocol, and escorted access by MyTripMyTravel.`;
     const url = `${SITE}/destinations/${dest.slug}/monuments`;
     return {
+        ...focusRobots(slug),
         title,
         description,
         alternates: { canonical: url },

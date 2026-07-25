@@ -1,4 +1,5 @@
 import { SITE_URL } from "@/lib/site";
+import { isCoreDestination, isCoreRegion } from "@/lib/seoFocus";
 import { regions, destinations } from "@/data/destinations";
 import { getAllFacetParams } from "@/data/destinationFacets";
 import { getAllMonumentParams, citiesWithMonuments } from "@/data/monuments";
@@ -6,13 +7,6 @@ import { getAllPackageSlugs } from "@/data/tours";
 import { getAllVariantParams, variantHref } from "@/data/tourVariants";
 import { getAllVariantRegions, getRegionVariantParams, regionVariantHref } from "@/data/regionVariants";
 import { getAllWellnessPaths } from "@/data/wellness";
-import { WELLNESS_DURATIONS, PROGRAMME_LOCATIONS } from "@/data/wellnessFacets";
-import { WELLNESS_MONTHS } from "@/data/wellnessMonths";
-import { getAllWellnessOriginParams } from "@/data/wellnessOrigins";
-import { getAllSubVariantLocationParams } from "@/data/wellnessSubVariantLocations";
-import { getAllSubVariantOriginParams } from "@/data/wellnessSubVariantOrigins";
-import { getAllSubVariantMonthParams } from "@/data/wellnessSubVariantMonths";
-import { getAllSubVariantDurationParams } from "@/data/wellnessSubVariantDurations";
 import { getAllVehicleIds } from "@/data/fleet";
 import { getAllFleetCityParams } from "@/data/fleetCities";
 import { getAllFaqTopicParams, getAllFaqAtomParams } from "@/data/faq";
@@ -20,7 +14,6 @@ import { SERVICE_LINES, getAllServiceCityParams } from "@/data/services";
 import { getAllServiceItemSlugs } from "@/data/serviceItems";
 import { weddingCategories } from "@/data/weddings";
 import { corporateCategories } from "@/data/corporate";
-import { getAllCorporateRouteParams } from "@/data/corporateRoutes";
 import { diningCategories } from "@/data/heritageDining";
 import { getAllMethodologyParams } from "@/data/methodology";
 import { getAllBlogSlugs } from "@/data/blog";
@@ -50,7 +43,6 @@ function entry(path: string, priority: number, changeFrequency: string): Sitemap
 const STATIC_ROUTES: { path: string; priority: number }[] = [
     { path: "/", priority: 1 },
     { path: "/destinations", priority: 0.9 },
-    { path: "/destinations/andaman", priority: 0.7 },
     { path: "/tours", priority: 0.9 },
     { path: "/tours/golden-triangle-all", priority: 0.9 },
     { path: "/wellness", priority: 0.8 },
@@ -83,42 +75,33 @@ export function buildAllUrls(): SitemapItem[] {
     const urls: SitemapItem[] = [];
 
     for (const r of STATIC_ROUTES) urls.push(entry(r.path, r.priority, r.path === "/" ? "daily" : "weekly"));
-    for (const region of regions) urls.push(entry(`/destinations/region/${region.slug}`, 0.8, "weekly"));
-    for (const d of destinations) urls.push(entry(`/destinations/${d.slug}`, 0.8, "weekly"));
-    for (const { slug, facet } of getAllFacetParams()) urls.push(entry(`/destinations/${slug}/${facet}`, 0.6, "monthly"));
-    for (const citySlug of citiesWithMonuments()) urls.push(entry(`/destinations/${citySlug}/monuments`, 0.6, "monthly"));
-    for (const { slug, monument } of getAllMonumentParams()) urls.push(entry(`/destinations/${slug}/monuments/${monument}`, 0.7, "monthly"));
+    // SEO focus: only Golden Triangle + core Rajasthan destinations are submitted.
+    // Non-core destination pages (and their sub-pages) are noindex and kept out
+    // of the sitemap so crawl budget + topical authority concentrate on the
+    // Golden Triangle. See lib/seoFocus.ts.
+    for (const region of regions) if (isCoreRegion(region.slug)) urls.push(entry(`/destinations/region/${region.slug}`, 0.9, "weekly"));
+    for (const d of destinations) if (isCoreDestination(d.slug)) urls.push(entry(`/destinations/${d.slug}`, 0.8, "weekly"));
+    for (const { slug, facet } of getAllFacetParams()) if (isCoreDestination(slug)) urls.push(entry(`/destinations/${slug}/${facet}`, 0.6, "monthly"));
+    for (const citySlug of citiesWithMonuments()) if (isCoreDestination(citySlug)) urls.push(entry(`/destinations/${citySlug}/monuments`, 0.6, "monthly"));
+    for (const { slug, monument } of getAllMonumentParams()) if (isCoreDestination(slug)) urls.push(entry(`/destinations/${slug}/monuments/${monument}`, 0.7, "monthly"));
     for (const slug of getAllPackageSlugs()) urls.push(entry(`/tours/${slug}`, 0.8, "weekly"));
     for (const r of ["rajasthan", "kerala", "himalayas", "sikkim", "andaman"]) urls.push(entry(`/tours/${r}`, 0.8, "weekly"));
 
-    urls.push(entry("/tours/golden-triangle", 0.8, "weekly"));
-    for (const { dimension, value } of getAllVariantParams()) urls.push(entry(variantHref(dimension, value), 0.6, "monthly"));
+    // Golden Triangle is the focus: highest crawl priority + weekly freshness.
+    urls.push(entry("/tours/golden-triangle", 1.0, "weekly"));
+    for (const { dimension, value } of getAllVariantParams()) urls.push(entry(variantHref(dimension, value), 0.8, "weekly"));
     for (const region of getAllVariantRegions()) {
+        if (!isCoreRegion(region)) continue; // only Rajasthan region variants (GT variants handled above)
         for (const { dimension, value } of getRegionVariantParams(region)) urls.push(entry(regionVariantHref(region, dimension, value), 0.6, "monthly"));
     }
 
+    // Wellness: submit the programme + main variant pages only. The deep
+    // location/origin/month/duration combos are thin long-tail and stay out of
+    // the sitemap so the focus holds on Golden Triangle + core products.
     for (const { programme, variant } of getAllWellnessPaths()) urls.push(entry(`/wellness/${programme}/${variant}`, 0.7, "monthly"));
-    for (const prog of Object.keys(PROGRAMME_LOCATIONS)) {
-        for (const n of WELLNESS_DURATIONS) urls.push(entry(`/wellness/${prog}/duration/${n}-day`, 0.6, "monthly"));
-        for (const loc of PROGRAMME_LOCATIONS[prog]) urls.push(entry(`/wellness/${prog}/in/${loc}`, 0.6, "monthly"));
-        for (const m of WELLNESS_MONTHS) urls.push(entry(`/wellness/${prog}/month/${m}`, 0.6, "monthly"));
-    }
-    for (const { programme, origin } of getAllWellnessOriginParams()) urls.push(entry(`/wellness/${programme}/from/${origin}`, 0.5, "monthly"));
-    for (const prog of Object.keys(PROGRAMME_LOCATIONS)) {
-        for (const { variant, location } of getAllSubVariantLocationParams(prog)) urls.push(entry(`/wellness/${prog}/${variant}/in/${location}`, 0.5, "monthly"));
-    }
-    for (const prog of Object.keys(PROGRAMME_LOCATIONS)) {
-        for (const { variant, origin } of getAllSubVariantOriginParams(prog)) urls.push(entry(`/wellness/${prog}/${variant}/from/${origin}`, 0.5, "monthly"));
-    }
-    for (const prog of Object.keys(PROGRAMME_LOCATIONS)) {
-        for (const { variant, month } of getAllSubVariantMonthParams(prog)) urls.push(entry(`/wellness/${prog}/${variant}/month/${month}`, 0.5, "monthly"));
-    }
-    for (const prog of Object.keys(PROGRAMME_LOCATIONS)) {
-        for (const { variant, duration } of getAllSubVariantDurationParams(prog)) urls.push(entry(`/wellness/${prog}/${variant}/duration/${duration}`, 0.5, "monthly"));
-    }
 
     for (const id of getAllVehicleIds()) urls.push(entry(`/fleet/${id}`, 0.7, "monthly"));
-    for (const { vehicle, city } of getAllFleetCityParams()) urls.push(entry(`/fleet/${vehicle}/in/${city}`, 0.5, "monthly"));
+    for (const { vehicle, city } of getAllFleetCityParams()) if (isCoreDestination(city)) urls.push(entry(`/fleet/${vehicle}/in/${city}`, 0.5, "monthly"));
 
     urls.push(entry("/faq", 0.7, "monthly"));
     for (const { topic } of getAllFaqTopicParams()) urls.push(entry(`/faq/${topic}`, 0.6, "monthly"));
@@ -126,7 +109,7 @@ export function buildAllUrls(): SitemapItem[] {
 
     urls.push(entry("/services", 0.7, "monthly"));
     for (const line of SERVICE_LINES) {
-        for (const { city } of getAllServiceCityParams()) urls.push(entry(`/services/${line.slug}/${city}`, 0.6, "monthly"));
+        for (const { city } of getAllServiceCityParams()) if (isCoreDestination(city)) urls.push(entry(`/services/${line.slug}/${city}`, 0.6, "monthly"));
     }
 
     for (const c of weddingCategories) {
@@ -137,10 +120,11 @@ export function buildAllUrls(): SitemapItem[] {
         urls.push(entry(`/corporate/${c.slug}`, 0.7, "monthly"));
         for (const it of c.items) urls.push(entry(`/corporate/${c.slug}/${it.slug}`, 0.6, "monthly"));
     }
-    for (const { route } of getAllCorporateRouteParams()) urls.push(entry(`/corporate/${route}`, 0.6, "monthly"));
+    // Corporate route matrix (origin-to-destination) is a large B2B long-tail;
+    // keep the corporate hub + categories in the sitemap, leave the route matrix out.
 
-    for (const { city } of getAllGuideCityParams()) urls.push(entry(`/expert-guides/${city}`, 0.6, "monthly"));
-    for (const { city, language } of getAllGuideParams()) urls.push(entry(`/expert-guides/${city}/${language}`, 0.6, "monthly"));
+    for (const { city } of getAllGuideCityParams()) if (isCoreDestination(city)) urls.push(entry(`/expert-guides/${city}`, 0.6, "monthly"));
+    for (const { city, language } of getAllGuideParams()) if (isCoreDestination(city)) urls.push(entry(`/expert-guides/${city}/${language}`, 0.6, "monthly"));
 
     for (const { stage } of getAllMethodologyParams()) urls.push(entry(`/methodology/${stage}`, 0.6, "monthly"));
     for (const slug of getAllBlogSlugs()) urls.push(entry(`/blog/${slug}`, 0.7, "monthly"));
@@ -149,12 +133,12 @@ export function buildAllUrls(): SitemapItem[] {
     urls.push(entry("/services/inter-city", 0.7, "monthly"));
     for (const { route } of getAllRouteParams()) urls.push(entry(`/services/inter-city/${route}`, 0.7, "monthly"));
 
-    for (const { slug } of getCityItineraryIndexParams()) urls.push(entry(`/destinations/${slug}/itinerary`, 0.6, "monthly"));
-    for (const { slug, duration } of getAllItineraryParams()) urls.push(entry(`/destinations/${slug}/itinerary/${duration}`, 0.6, "monthly"));
-    for (const { slug, month } of getAllCityMonthParams()) urls.push(entry(`/destinations/${slug}/in/${month}`, 0.6, "monthly"));
-    for (const { slug, origin } of getAllCityOriginParams()) urls.push(entry(`/destinations/${slug}/from/${origin}`, 0.5, "monthly"));
-    for (const { slug, monument, origin } of getAllMonumentOriginParams()) urls.push(entry(`/destinations/${slug}/monuments/${monument}/from/${origin}`, 0.5, "monthly"));
-    for (const { slug, monument, month } of getAllMonumentMonthParams()) urls.push(entry(`/destinations/${slug}/monuments/${monument}/in/${month}`, 0.5, "monthly"));
+    for (const { slug } of getCityItineraryIndexParams()) if (isCoreDestination(slug)) urls.push(entry(`/destinations/${slug}/itinerary`, 0.6, "monthly"));
+    for (const { slug, duration } of getAllItineraryParams()) if (isCoreDestination(slug)) urls.push(entry(`/destinations/${slug}/itinerary/${duration}`, 0.6, "monthly"));
+    for (const { slug, month } of getAllCityMonthParams()) if (isCoreDestination(slug)) urls.push(entry(`/destinations/${slug}/in/${month}`, 0.6, "monthly"));
+    for (const { slug, origin } of getAllCityOriginParams()) if (isCoreDestination(slug)) urls.push(entry(`/destinations/${slug}/from/${origin}`, 0.5, "monthly"));
+    for (const { slug, monument, origin } of getAllMonumentOriginParams()) if (isCoreDestination(slug)) urls.push(entry(`/destinations/${slug}/monuments/${monument}/from/${origin}`, 0.5, "monthly"));
+    for (const { slug, monument, month } of getAllMonumentMonthParams()) if (isCoreDestination(slug)) urls.push(entry(`/destinations/${slug}/monuments/${monument}/in/${month}`, 0.5, "monthly"));
 
     for (const c of diningCategories) {
         urls.push(entry(`/heritage-dining/${c.slug}`, 0.7, "monthly"));

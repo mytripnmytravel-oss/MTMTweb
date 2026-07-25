@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { focusRobotsRegion } from "@/lib/seoFocus";
 import { notFound } from "next/navigation";
 import {
     getRegion,
@@ -27,6 +28,7 @@ export async function generateMetadata({
     const title = `${region.name}, Luxury Travel | MyTripMyTravel`;
     const url = `${SITE}/destinations/region/${region.slug}`;
     return {
+        ...focusRobotsRegion(regionSlug),
         title,
         description: region.blurb,
         alternates: { canonical: url },

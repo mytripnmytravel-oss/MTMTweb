@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { focusRobotsRegion } from "@/lib/seoFocus";
 import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
 import {
@@ -32,6 +33,7 @@ export async function regionVariantMetadata(
     const description = content.answer.slice(0, 300);
     const url = `${SITE_URL}${regionVariantHref(regionSlug, dimension, value)}`;
     return {
+        ...focusRobotsRegion(regionSlug),
         title,
         description,
         alternates: { canonical: url },
