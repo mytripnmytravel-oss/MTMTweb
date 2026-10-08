@@ -1,0 +1,14 @@
+{
+  // Static-only Worker: the Next.js `output: "export"` build in ./out is served
+  // directly as assets, so there is no Worker script and no server rendering.
+  // Asset requests are free and unlimited; the free tier allows 20,000 files.
+  "name": "mytripmytravel",
+  "compatibility_date": "2026-10-08",
+  "assets": {
+    "directory": "./out",
+    // Canonical URLs have no trailing slash (next.config.ts leaves trailingSlash off),
+    // so /destinations/jaipur is served from destinations/jaipur.html as-is.
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
