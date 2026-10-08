@@ -69,17 +69,58 @@ the zone has to move to Cloudflare:
 
 ### Records that MUST survive the move
 
-Email is live on Hostinger. Losing these breaks mail on the domain.
+Full inventory taken from live DNS on 2026-10-08, before any change. Mail runs on
+**Hostinger**; losing these breaks email on the domain.
 
-| Type  | Name           | Value                                            |
-|-------|----------------|--------------------------------------------------|
-| MX    | @              | `mx1.hostinger.com` (priority 5)                 |
-| MX    | @              | `mx2.hostinger.com` (priority 10)                |
-| TXT   | @              | `v=spf1 include:_spf.mail.hostinger.com ~all`    |
-| TXT   | @              | `google-site-verification=WYUlUIEF4ExjfPt5fA5sSRy9GqL2FyeHwgZlRvfY4eM` |
-| CNAME | autodiscover   | `autodiscover.mail.hostinger.com`                |
+| Type  | Name           | Value                                                        | Why |
+|-------|----------------|--------------------------------------------------------------|-----|
+| MX    | `@`            | `mx1.hostinger.com` (priority 5)                             | mail |
+| MX    | `@`            | `mx2.hostinger.com` (priority 10)                            | mail |
+| TXT   | `@`            | `v=spf1 include:_spf.mail.hostinger.com ~all`                | mail passes SPF |
+| TXT   | `_dmarc`       | `v=DMARC1; p=none`                                           | DMARC policy |
+| CNAME | `autoconfig`   | `autoconfig.mail.hostinger.com`                              | mail client setup |
+| CNAME | `autodiscover` | `autodiscover.mail.hostinger.com`                            | mail client setup |
+| TXT   | `@`            | `google-site-verification=WYUlUIEF4ExjfPt5fA5sSRy9GqL2FyeHwgZlRvfY4eM` | Search Console access |
+
+**Do NOT copy these** — they point at the old host and are replaced by the
+Worker custom domain:
+
+| Type  | Name  | Current value                        |
+|-------|-------|--------------------------------------|
+| A     | `@`   | `76.76.21.21`, `216.198.79.1`        |
+| CNAME | `www` | `cname.vercel-dns.com`               |
+
+No AAAA and no CAA records exist. **DKIM:** no record was found at the common
+selectors (`default._domainkey`, `hostingermail._domainkey`), but DKIM selectors
+cannot be enumerated from outside — check Hostinger's email panel for the DKIM
+record it publishes and recreate it, or mail may start landing in spam.
 
 Dropping the `google-site-verification` TXT also drops Search Console access.
+
+### Who has to do what
+
+Two steps need access this machine does not have:
+
+1. **Add the zone + write DNS** — wrangler's OAuth token is scoped `zone:read`
+   only (no zone create, no `dns_records:write`), so it cannot create the zone or
+   its records. Do it in the Cloudflare dashboard (Free plan), or issue a scoped
+   API token with `Zone:Zone:Edit` + `Zone:DNS:Edit`.
+2. **Switch nameservers at GoDaddy** — registrar access. Nothing goes live until
+   this happens, so the records above can be staged safely in advance.
+
+Then bind the domain: Workers > `mytripmytravel` > Settings > Domains & Routes >
+add `mytripmytravel.com` and `www.mytripmytravel.com`.
+
+### Cost
+
+The MTMT Worker is **static-assets-only**: asset requests are free and unlimited,
+there is no Worker script, no KV, no R2, no D1. Adding this site introduces no
+new subscription, and a Cloudflare zone is on the **Free Website** plan like the
+account's other three. The build also stays inside the *free* Workers limit of
+20,000 files, so it does not depend on the account's Workers plan.
+
+Note: this account already carries Workers Paid for Frameleads, so the account
+itself is not on the free Workers plan — but MTMT adds **no incremental cost**.
 
 After the cutover, resubmit `https://mytripmytravel.com/sitemap.xml` in Search
 Console. Expect Google to drop the ~42,000 URLs that are no longer built; they
