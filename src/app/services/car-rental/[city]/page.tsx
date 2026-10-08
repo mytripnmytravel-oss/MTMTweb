@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { coreParams } from "@/lib/seoFocus";
 import { getAllServiceCityParams } from "@/data/services";
 import { serviceCityMetadata, ServiceCityRoute } from "@/lib/serviceCityPage";
 
 const LINE = "car-rental" as const;
 
 export function generateStaticParams() {
-    return [];
+    return coreParams(getAllServiceCityParams(), "city");
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

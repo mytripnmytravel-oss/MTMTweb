@@ -9,10 +9,10 @@ import {
 import MethodologyStageView from "@/components/methodology/MethodologyStageView";
 
 export function generateStaticParams() {
-    return [];
+    return getAllMethodologyParams();
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

@@ -36,9 +36,11 @@ export interface CityTour {
 }
 
 export default function DestinationCityView({
-    dest, related, monuments = [], tours = [],
+    dest, related, monuments = [], tours = [], deepLinks = true,
 }: {
     dest: Destination; related: Destination[]; monuments?: Monument[]; tours?: CityTour[];
+    /** Non-core cities ship only the hub + itinerary index, so their deeper pages are not linked. */
+    deepLinks?: boolean;
 }) {
     const waMsg = `Hi MyTripMyTravel, I would like to plan a journey through ${dest.name}, ${dest.state}.`;
     const waHref = `https://wa.me/919997812237?text=${encodeURIComponent(waMsg)}`;
@@ -199,7 +201,7 @@ export default function DestinationCityView({
             </section>
 
             {/* Monuments */}
-            {monuments.length > 0 && (
+            {deepLinks && monuments.length > 0 && (
                 <section className="section">
                     <div className="container-x">
                         <Eyebrow>Landmarks</Eyebrow>
@@ -231,20 +233,24 @@ export default function DestinationCityView({
                     <Eyebrow>Go deeper</Eyebrow>
                     <h2 className="display-3 mt-3 text-ink">More on {dest.name}</h2>
                     <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        {FACET_SLUGS.map((f) => (
+                        {deepLinks && FACET_SLUGS.map((f) => (
                             <Link key={f} href={`/destinations/${dest.slug}/${f}`} className="card card-hover group flex items-center justify-between p-6">
                                 <span className="text-[15px] font-semibold text-ink group-hover:text-clay">{FACET_LABELS[f]}</span>
                                 <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
                             </Link>
                         ))}
-                        <Link href={`/destinations/${dest.slug}/itinerary`} className="card card-hover group flex items-center justify-between p-6">
-                            <span className="text-[15px] font-semibold text-ink group-hover:text-clay">Itineraries (3 to 14 days)</span>
-                            <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
-                        </Link>
-                        <Link href={`/destinations/${dest.slug}/in/january`} className="card card-hover group flex items-center justify-between p-6">
-                            <span className="text-[15px] font-semibold text-ink group-hover:text-clay">Month-by-month guide</span>
-                            <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
-                        </Link>
+                        {deepLinks && (
+                            <Link href={`/destinations/${dest.slug}/itinerary`} className="card card-hover group flex items-center justify-between p-6">
+                                <span className="text-[15px] font-semibold text-ink group-hover:text-clay">Itineraries (3 to 14 days)</span>
+                                <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
+                            </Link>
+                        )}
+                        {deepLinks && (
+                            <Link href={`/destinations/${dest.slug}/in/january`} className="card card-hover group flex items-center justify-between p-6">
+                                <span className="text-[15px] font-semibold text-ink group-hover:text-clay">Month-by-month guide</span>
+                                <ArrowRight size={16} className="shrink-0 text-stone group-hover:text-clay" />
+                            </Link>
+                        )}
                     </div>
                 </div>
             </section>

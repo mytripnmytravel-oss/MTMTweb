@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { focusRobots } from "@/lib/seoFocus";
+import { focusRobots, coreParams } from "@/lib/seoFocus";
 import { notFound } from "next/navigation";
 import { getRelatedCities } from "@/data/destinations";
 import { getAllFacetParams, resolveFacet } from "@/data/destinationFacets";
@@ -8,10 +8,10 @@ import DestinationFacetView from "@/components/destinations/DestinationFacetView
 const SITE = "https://www.mytripmytravel.com";
 
 export function generateStaticParams() {
-    return [];
+    return coreParams(getAllFacetParams(), "slug");
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

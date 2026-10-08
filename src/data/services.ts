@@ -4,6 +4,7 @@
 // data, no fabricated identities or specifics.
 
 import { getDestination, type Destination } from "./destinations";
+import { isCoreDestination } from "@/lib/seoFocus";
 import { fleet, type Vehicle } from "./fleet";
 import { FLEET_CITY_SLUGS } from "./fleetCities";
 
@@ -133,7 +134,8 @@ export function getAllServiceCityParams(): { city: string }[] {
 }
 
 export function serviceCitiesResolved(): { slug: string; name: string }[] {
-    return SERVICE_CITY_SLUGS.map((slug) => {
+    // Only core-destination city pages are built, so only those are linked.
+    return SERVICE_CITY_SLUGS.filter(isCoreDestination).map((slug) => {
         const d = getDestination(slug);
         return { slug, name: d ? d.name : slug };
     });

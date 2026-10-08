@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { focusRobots } from "@/lib/seoFocus";
+import { focusRobots, coreParams } from "@/lib/seoFocus";
 import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
 import { getDestination } from "@/data/destinations";
@@ -7,10 +7,10 @@ import { getCityItineraryIndexParams, ITINERARY_DURATIONS } from "@/data/destina
 import { ItineraryIndexView } from "@/components/destinations/DestinationItineraryView";
 
 export function generateStaticParams() {
-    return [];
+    return coreParams(getCityItineraryIndexParams(), "slug");
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

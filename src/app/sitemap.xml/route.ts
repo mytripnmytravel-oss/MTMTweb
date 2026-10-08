@@ -2,7 +2,7 @@ import { renderIndex } from "@/lib/sitemapData";
 
 // Sitemap index at /sitemap.xml, referencing the chunked child sitemaps at
 // /sitemaps/0.xml ... /sitemaps/N.xml (each under Google's 50,000-URL cap).
-export const revalidate = 86400;
+export const dynamic = "force-static";
 
 export async function GET() {
     return new Response(renderIndex(), {

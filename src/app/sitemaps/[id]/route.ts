@@ -1,7 +1,12 @@
-import { renderChunk } from "@/lib/sitemapData";
+import { chunkCount, renderChunk } from "@/lib/sitemapData";
 
 // Child sitemap chunks served at /sitemaps/0.xml ... /sitemaps/N.xml.
-export const revalidate = 86400;
+export const dynamic = "force-static";
+
+// Every chunk must be enumerated at build time for the static export.
+export function generateStaticParams() {
+    return Array.from({ length: chunkCount() }, (_, i) => ({ id: `${i}.xml` }));
+}
 
 export async function GET(_req: Request, { params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;

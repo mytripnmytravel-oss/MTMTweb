@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { focusRobots } from "@/lib/seoFocus";
+import { focusRobots, coreParams } from "@/lib/seoFocus";
 import { notFound } from "next/navigation";
 import { getDestination } from "@/data/destinations";
 import {
@@ -12,10 +12,10 @@ import MonumentsIndexView from "@/components/destinations/MonumentsIndexView";
 const SITE = "https://www.mytripmytravel.com";
 
 export function generateStaticParams() {
-    return [];
+    return coreParams(citiesWithMonuments().map((slug) => ({ slug })), "slug");
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

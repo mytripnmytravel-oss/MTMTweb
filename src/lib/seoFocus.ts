@@ -39,6 +39,23 @@ export function isCoreRegion(slug: string | undefined | null): boolean {
     return !!slug && CORE_REGIONS.has(slug);
 }
 
+/**
+ * Build-time gate for `generateStaticParams`.
+ *
+ * The static export ships only the focus set, the same pages `buildAllUrls()`
+ * submits to the sitemap, so the exported file count stays inside the static
+ * hosting tier. Non-core params are dropped at build time rather than built and
+ * then noindexed at runtime.
+ */
+export function coreParams<T>(params: T[], key: keyof T): T[] {
+    return params.filter((p) => isCoreDestination(String(p[key])));
+}
+
+/** Same gate, keyed on region slug. */
+export function coreRegionParams<T>(params: T[], key: keyof T): T[] {
+    return params.filter((p) => isCoreRegion(String(p[key])));
+}
+
 /** Metadata.robots fragment that keeps a page out of the index but link-followable. */
 export const NOINDEX_ROBOTS: Metadata["robots"] = {
     index: false,

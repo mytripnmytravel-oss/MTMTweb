@@ -5,10 +5,10 @@ import { getFaqTopic, getAllFaqTopicParams, faqTopics } from "@/data/faq";
 import { FaqTopicView } from "@/components/faq/FaqView";
 
 export function generateStaticParams() {
-    return [];
+    return getAllFaqTopicParams();
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

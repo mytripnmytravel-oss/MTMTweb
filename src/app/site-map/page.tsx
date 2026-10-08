@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SITE_URL } from "@/lib/site";
 import { regions, destinations } from "@/data/destinations";
+import { isCoreDestination, isCoreRegion } from "@/lib/seoFocus";
 import { packages, packageSlug } from "@/data/tours";
 import { blogPosts } from "@/data/blog";
 
@@ -87,10 +88,10 @@ export default function SiteMapPage() {
                 <div className="container-x space-y-14">
                     <Group title="Main pages" links={MAIN} />
 
-                    <Group title="Regions" links={regions.map((r) => ({ label: r.name, href: `/destinations/region/${r.slug}` }))} />
+                    <Group title="Regions" links={regions.filter((r) => isCoreRegion(r.slug)).map((r) => ({ label: r.name, href: `/destinations/region/${r.slug}` }))} />
 
                     {regions.map((r) => {
-                        const cities = destinations.filter((d) => d.regionSlug === r.slug);
+                        const cities = destinations.filter((d) => d.regionSlug === r.slug && isCoreDestination(d.slug));
                         if (cities.length === 0) return null;
                         return (
                             <Group

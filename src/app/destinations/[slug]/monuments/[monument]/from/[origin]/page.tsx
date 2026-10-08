@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { coreParams } from "@/lib/seoFocus";
 import {
     getMonumentOriginStaticParams,
     monumentOriginMetadata,
@@ -6,10 +7,10 @@ import {
 } from "@/lib/monumentOriginPage";
 
 export function generateStaticParams() {
-    return [];
+    return coreParams(getMonumentOriginStaticParams(), "slug");
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

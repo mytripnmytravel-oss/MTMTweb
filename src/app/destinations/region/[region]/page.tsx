@@ -11,10 +11,10 @@ import RegionView from "@/components/destinations/RegionView";
 const SITE = "https://www.mytripmytravel.com";
 
 export function generateStaticParams() {
-    return [];
+    return regions.map((r) => ({ region: r.slug }));
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

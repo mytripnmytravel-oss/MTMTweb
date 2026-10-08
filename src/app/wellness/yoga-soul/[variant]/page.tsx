@@ -5,10 +5,10 @@ import { wellnessMetadata, WellnessVariantRoute } from "@/lib/wellnessPage";
 const PROGRAMME = "yoga-soul";
 
 export function generateStaticParams() {
-    return [];
+    return getProgrammeVariantParams(PROGRAMME);
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

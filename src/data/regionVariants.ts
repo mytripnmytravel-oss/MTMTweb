@@ -4,6 +4,7 @@
 // by-theme / by-duration / in-month variant content.
 
 import { packages, packageSlug, slugify, type Package } from "./tours";
+import { isCoreRegion } from "@/lib/seoFocus";
 import { REGIONAL_HUBS } from "./tourHubs";
 import {
     ORIGINS,
@@ -236,7 +237,8 @@ function isShortHop(flightBand: string): boolean {
 }
 
 export function regionHasVariants(regionSlug: string): boolean {
-    return VARIANT_REGIONS.has(regionSlug);
+    // Variant pages are only built for core regions, so only those are linked.
+    return VARIANT_REGIONS.has(regionSlug) && isCoreRegion(regionSlug);
 }
 
 export function getAllVariantRegions(): string[] {
@@ -606,7 +608,7 @@ export function regionMonthLinks(regionSlug: string): { label: string; href: str
 }
 
 export function regionOriginLinks(regionSlug: string): { label: string; href: string }[] {
-    return ORIGINS.map((o) => ({
+    return ORIGINS.filter((o) => !o.domestic).map((o) => ({
         label: o.city,
         href: regionVariantHref(regionSlug, "from-origin", o.slug),
     }));
@@ -637,7 +639,7 @@ export function regionThemeFromLinks(regionSlug: string): { label: string; href:
     const out: { label: string; href: string }[] = [];
     for (const t of themes) {
         if (!all.some((p) => p.theme === t)) continue;
-        for (const o of ORIGINS) {
+        for (const o of ORIGINS.filter((o) => !o.domestic)) {
             out.push({
                 label: `${t} · ${o.city}`,
                 href: regionVariantHref(regionSlug, "theme-from", themeFromValue(t, o.slug)),
@@ -654,7 +656,7 @@ export function regionDurationFromLinks(regionSlug: string): { label: string; hr
     for (const d of durations) {
         const days = Number.parseInt(d, 10);
         if (!all.some((p) => dayCount(p) === days)) continue;
-        for (const o of ORIGINS) {
+        for (const o of ORIGINS.filter((o) => !o.domestic)) {
             out.push({
                 label: `${days}-Day · ${o.city}`,
                 href: regionVariantHref(regionSlug, "duration-from", durationFromValue(days, o.slug)),
@@ -667,7 +669,7 @@ export function regionDurationFromLinks(regionSlug: string): { label: string; hr
 export function regionMonthFromLinks(regionSlug: string): { label: string; href: string }[] {
     const out: { label: string; href: string }[] = [];
     for (const m of MONTHS) {
-        for (const o of ORIGINS) {
+        for (const o of ORIGINS.filter((o) => !o.domestic)) {
             out.push({
                 label: `${titleCase(m)} · ${o.city}`,
                 href: regionVariantHref(regionSlug, "month-from", monthFromValue(m, o.slug)),

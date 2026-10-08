@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { regions, destinations } from "@/data/destinations";
+import { isCoreDestination, isCoreRegion } from "@/lib/seoFocus";
 import DestinationsHubView from "@/components/destinations/DestinationsHubView";
 
 export const metadata: Metadata = {
@@ -17,6 +18,10 @@ export const metadata: Metadata = {
 };
 
 export default function DestinationsPage() {
+    // Only focus pages exist in the static build, so only link to those.
+    const coreRegions = regions.filter((r) => isCoreRegion(r.slug));
+    const coreDestinations = destinations.filter((d) => isCoreDestination(d.slug));
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
@@ -33,7 +38,7 @@ export default function DestinationsPage() {
         },
         mainEntity: {
             "@type": "ItemList",
-            itemListElement: destinations.map((d, i) => ({
+            itemListElement: coreDestinations.map((d, i) => ({
                 "@type": "ListItem",
                 position: i + 1,
                 name: d.name,
@@ -48,7 +53,7 @@ export default function DestinationsPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <DestinationsHubView regions={regions} featured={destinations} />
+            <DestinationsHubView regions={coreRegions} featured={coreDestinations} />
         </>
     );
 }

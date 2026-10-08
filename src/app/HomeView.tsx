@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { packages as allPackages } from "@/data/tours";
+import { packages as allPackages, packageSlug, getPackageByIdOrSlug } from "@/data/tours";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -32,6 +32,13 @@ const SectionHead = ({ kicker, title, intro }: { kicker: string; title: string; 
     {intro && <p className="mt-5 text-[17px] leading-relaxed text-muted">{intro}</p>}
   </div>
 );
+
+// JOURNEYS references packages by their legacy numeric id; link the canonical slug,
+// which is the URL that actually gets built.
+const journeyHref = (id: number) => {
+  const pkg = getPackageByIdOrSlug(String(id));
+  return pkg ? `/tours/${packageSlug(pkg)}` : "/tours";
+};
 
 const JOURNEYS = [
   { id: 11, region: "Golden Triangle", title: "The Classic Triangle", desc: "Taj Mahal at sunrise, Amber Fort and the Pink City, chauffeured, with skip-the-line palace entry.", duration: "5 days", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1600&auto=format&fit=crop" },
@@ -171,7 +178,7 @@ export default function HomeView() {
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {JOURNEYS.map((j) => (
-              <Link key={j.id} href={`/tours/${j.id}`} className="card card-hover group overflow-hidden">
+              <Link key={j.id} href={journeyHref(j.id)} className="card card-hover group overflow-hidden">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image src={j.img} alt={`${j.title}, ${j.region}, India`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                   <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[11px] font-semibold text-ink">{j.duration}</span>

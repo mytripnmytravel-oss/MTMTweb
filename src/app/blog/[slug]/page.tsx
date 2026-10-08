@@ -5,10 +5,10 @@ import { getBlogPost, getAllBlogSlugs, getRelatedBlogPosts } from "@/data/blog";
 import BlogArticleView from "@/components/blog/BlogArticleView";
 
 export function generateStaticParams() {
-    return [];
+    return getAllBlogSlugs().map((slug) => ({ slug }));
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

@@ -9,10 +9,10 @@ import {
 import ServiceItemView from "@/components/services/ServiceItemView";
 
 export function generateStaticParams() {
-    return [];
+    return getAllServiceItemSlugs().map((service) => ({ service }));
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

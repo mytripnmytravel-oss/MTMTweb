@@ -11,10 +11,10 @@ import {
 import TransferRouteView from "@/components/services/TransferRouteView";
 
 export function generateStaticParams() {
-    return [];
+    return getAllRouteParams();
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

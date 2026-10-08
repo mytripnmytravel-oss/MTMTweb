@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { coreParams } from "@/lib/seoFocus";
 import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
 import { getVehicle, fleet } from "@/data/fleet";
@@ -12,10 +13,10 @@ import {
 import FleetCityView from "@/components/fleet/FleetCityView";
 
 export function generateStaticParams() {
-    return [];
+    return coreParams(getAllFleetCityParams(), "city");
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

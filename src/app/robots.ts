@@ -1,6 +1,9 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 
+// Emitted as a flat file by `output: "export"` (Cloudflare static hosting).
+export const dynamic = "force-static";
+
 // Explicitly welcome search AND AI/LLM crawlers, MyTripMyTravel's
 // strategy depends on AI Overview + LLM citation, not just classic search.
 const AI_CRAWLERS = [

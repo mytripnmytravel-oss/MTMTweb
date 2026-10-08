@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { isCoreDestination } from "@/lib/seoFocus";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -132,7 +133,9 @@ export default function TransferRouteView({
                     <div className="mt-6 flex flex-wrap gap-3">
                         <Link href={`/destinations/${origin.slug}`} className="btn-outline btn-sm">Explore {origin.name}</Link>
                         <Link href={`/destinations/${destination.slug}`} className="btn-outline btn-sm">Explore {destination.name}</Link>
-                        <Link href={`/destinations/${destination.slug}/itinerary`} className="btn-outline btn-sm">{destination.name} itineraries</Link>
+                        {isCoreDestination(destination.slug) && (
+                            <Link href={`/destinations/${destination.slug}/itinerary`} className="btn-outline btn-sm">{destination.name} itineraries</Link>
+                        )}
                         <Link href="/services/inter-city" className="btn-outline btn-sm">All inter-city routes <ArrowRight size={14} /></Link>
                     </div>
                 </div>

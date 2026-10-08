@@ -5,10 +5,10 @@ import { corporateItemMetadata, CorporateItemRoute } from "@/lib/corporatePage";
 const CATEGORY = "by-team-size";
 
 export function generateStaticParams() {
-    return [];
+    return getCorporateCategoryParams(CATEGORY);
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

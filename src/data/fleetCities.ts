@@ -4,6 +4,7 @@
 // content stays accurate and cross-linkable.
 
 import { fleet, getVehicle, type Vehicle } from "./fleet";
+import { isCoreDestination } from "@/lib/seoFocus";
 import { getDestination, type Destination } from "./destinations";
 
 // Major arrival / operating hubs where "chauffeur hire in X" has real
@@ -98,7 +99,8 @@ export function getAllFleetCityParams(): { vehicle: string; city: string }[] {
 }
 
 export function fleetCitiesForVehicle(): { slug: string; name: string }[] {
-    return FLEET_CITY_SLUGS.map((slug) => {
+    // Only core-destination city pages are built, so only those are linked.
+    return FLEET_CITY_SLUGS.filter(isCoreDestination).map((slug) => {
         const d = getDestination(slug);
         return { slug, name: d ? d.name : slug };
     });

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { coreParams } from "@/lib/seoFocus";
 import {
     getMonumentMonthStaticParams,
     monumentMonthMetadata,
@@ -6,10 +7,10 @@ import {
 } from "@/lib/monumentMonthPage";
 
 export function generateStaticParams() {
-    return [];
+    return coreParams(getMonumentMonthStaticParams(), "slug");
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({

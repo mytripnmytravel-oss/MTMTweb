@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { focusRobots } from "@/lib/seoFocus";
+import { focusRobots, isCoreDestination } from "@/lib/seoFocus";
 import { notFound } from "next/navigation";
 import {
     getDestination,
@@ -13,10 +13,10 @@ import DestinationCityView from "@/components/destinations/DestinationCityView";
 const SITE = "https://www.mytripmytravel.com";
 
 export function generateStaticParams() {
-    return [];
+    return getAllDestinationSlugs().map((slug) => ({ slug }));
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateMetadata({
@@ -126,7 +126,7 @@ export default async function DestinationCityPage({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <DestinationCityView dest={dest} related={related} monuments={cityMonuments} tours={cityTours} />
+            <DestinationCityView dest={dest} related={related} monuments={cityMonuments} tours={cityTours} deepLinks={isCoreDestination(slug)} />
         </>
     );
 }
