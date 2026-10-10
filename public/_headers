@@ -1,4 +1,13 @@
-# https://developers.cloudflare.com/workers/static-assets/headers
-# https://opennext.js.org/cloudflare/caching#static-assets-caching
+# Cloudflare-only file (Vercel ignores it; it uses vercel.json instead).
+# Docs: https://developers.cloudflare.com/workers/static-assets/headers
+
+# Content-hashed assets never change, so cache them hard.
 /_next/static/*
   Cache-Control: public,max-age=31536000,immutable
+
+# !!! The Cloudflare deployment is a STANDBY copy of a site whose primary host
+# !!! is Vercel on mytripmytravel.com. It is noindexed so it cannot compete with
+# !!! the real domain in search. IF CLOUDFLARE EVER BECOMES THE PRIMARY HOST,
+# !!! DELETE THE TWO LINES BELOW FIRST or the live site will be deindexed.
+/*
+  X-Robots-Tag: noindex
