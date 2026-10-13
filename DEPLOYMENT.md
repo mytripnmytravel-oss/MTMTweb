@@ -1,92 +1,102 @@
 # Deployment
 
-The site is a **static export** (`output: "export"` in `next.config.ts`). There is
-no server rendering, no ISR and no serverless functions: `npm run build` writes
-plain HTML to `./out` and the host just serves files.
+The site is a **static export** (`output: "export"` in `next.config.ts`): no server
+rendering, no ISR, no serverless functions. `npm run build` writes plain HTML to
+`./out` and the host just serves files.
 
-**Primary host: Vercel** — project `mtm-tweb` on the client's account, Git-connected
-to `mytripnmytravel-oss/MTMTweb`, production branch `main`. Pushing `main`
-deploys. The domain already points here, so no DNS work is needed.
+**Host: Cloudflare Workers static assets, free plan.**
+Worker `mytripmytravel`, account `workajsal@gmail.com`.
+Current URL: `https://mytripmytravel.workajsal.workers.dev`
 
-**Standby: Cloudflare** — `https://mytripmytravel.workajsal.workers.dev`, a free
-static copy, noindexed via `public/_headers`. Useful if Vercel pauses again.
+Canonical hostname is **`https://www.mytripmytravel.com`** (`src/lib/site.ts`), so
+the apex must redirect to `www`.
 
 ## Why the site is a static export
 
 Every one of the 74 `generateStaticParams()` used to return `[]` with
 `dynamicParams = true`, so all ~50,000 URLs rendered **on demand** — each cold URL
-a crawler hit cost a serverless render. That exhausted the client's Hobby limits;
-Vercel pauses rather than bills on Hobby, so the project went
-`402 DEPLOYMENT_DISABLED` and the whole site went down, `*.vercel.app` included.
+a crawler hit cost a serverless render. That exhausted the previous host's limits
+(Vercel Hobby, the client's account), which pauses rather than bills, so the
+project went `402 DEPLOYMENT_DISABLED` and the whole site went down.
 
 Only 8,140 of those 50,118 pages were ever in the sitemap.
 
-## Build
+## Build and deploy
 
 ```bash
-npm run build          # writes ./out  (8,431 pages, ~20s of page generation)
-```
-
-On Vercel this runs on the builder, so the output file count is not a constraint:
-Vercel documents **no upper limit on build output files** (the 15,000-file cap
-applies only to CLI *source* uploads), and the 45-minute build ceiling is far away.
-
-### Deploying to Cloudflare instead (standby)
-
-```bash
-npm run build
-find out -name '__next.*' -type f -delete   # see note below
+npm run build                                # 8,431 pages, ~20s of generation
+find out -name '__next.*' -type f -delete    # REQUIRED, see below
 find out -type d -empty -delete
-npx wrangler deploy
+npx wrangler deploy                          # uploads ./out (~4 min)
 ```
 
-Next 16 emits ~10 per-page `__next.*.txt` segment prefetch files, which takes the
-export to ~94,000 files. Cloudflare's free plan allows **20,000 files** per Worker
-version, so they must be pruned; that leaves ~17,000 and costs only prefetch
-granularity. Deleting them is **not** needed on Vercel.
+The prune step is **not optional on Cloudflare.** Next 16 emits ~10 per-page
+`__next.*.txt` segment prefetch files, which takes the export to ~94,000 files.
+The free plan allows **20,000 files** per Worker version. Pruning leaves ~17,000
+and costs only client-side prefetch granularity; navigation still works via each
+route's `.txt` payload.
+
+### Free-plan file budget
+
+| | |
+|---|---|
+| Free cap | **20,000 files** per Worker version (100,000 on Workers Paid) |
+| Current build | 8,431 pages / **17,008 files** |
+| Headroom | ~12% |
+| Page ceiling | ~9,900 pages (2 files ship per page) |
+
+The ~39,000 multilingual pages on the roadmap will **not** fit the free plan. That
+is a Workers Paid ($5/mo) decision, not something to discover at deploy time.
 
 ## What gets built
 
 `lib/seoFocus.ts` is the gate. Only the focus set is built — the 8,140 sitemap
 URLs plus a small noindexed tail (city hubs, all region pages) that the nav and
-prose link to. The deep combinatorial tails that were never in the sitemap are
-not built: the corporate route matrix, non-core region tour variants, and the
-wellness location/origin/month/duration combos.
+prose link to. The deep combinatorial tails that were never in the sitemap are not
+built: the corporate route matrix, non-core region tour variants, and the wellness
+location/origin/month/duration combos.
 
 Since nothing renders on demand any more, **any URL not built is a 404.** When
-adding links, link only to pages that are built. The commit
-"Host as a static export on Cloudflare free tier" verified 0 broken internal
-links across all 8,431 pages; re-run that audit after adding routes.
+adding links, link only to pages that are built. The commit "Host as a static
+export on Cloudflare free tier" verified 0 broken internal links across all 8,431
+pages; re-run that audit after adding routes.
 
-## Usage, and whether Hobby is enough
+> **Do not add a blanket `X-Robots-Tag: noindex` to `public/_headers`.** An earlier
+> revision had one, from when Cloudflare was only a standby copy behind Vercel.
+> Cloudflare is now the primary host — that header would deindex the live site.
 
-A static export uses no function invocations and ~no CPU, which is what blew the
-limit before. Hobby allows 100 GB bandwidth, 1M edge requests, 4 CPU-hours and
-100 build minutes per month; this build uses roughly 2 build minutes and no
-compute, so the site may now fit Hobby.
+## Domain cutover (outstanding)
 
-Two caveats:
-- Pages are heavy (~200 KB of HTML each, and `/destinations` was measured at
-  ~2.7 MB/request), so **bandwidth** is the remaining ceiling. Trimming the
-  three.js / gsap / framer-motion payload is the highest-value optimisation left.
-- Vercel's Hobby plan is for non-commercial use. This is a client's commercial
-  site, so Pro is the correct plan regardless of whether Hobby would technically
-  hold.
+The domain still resolves to the old host, which serves `402`, so the site is down
+on `mytripmytravel.com` until these are done. Nothing here is reversible by code.
 
-Upgrading to Pro unpauses a disabled project immediately; on Hobby it unpauses at
-the usage-cycle reset.
+**A partial/CNAME zone setup — which would let the website move while mail DNS
+stayed at GoDaddy — is Business/Enterprise only, not available on free.** So the
+nameserver move takes *all* DNS with it, mail included. That is the one real risk
+in this cutover.
 
-## If the domain ever moves to Cloudflare
-
-Not needed while Vercel is the host — the domain already resolves there. Kept only
-in case it is ever required. The domain is on GoDaddy nameservers
-(`ns75`/`ns76.domaincontrol.com`) and moving the zone to Cloudflare moves **all**
-DNS, including live Hostinger email.
+1. **Add `mytripmytravel.com` to Cloudflare** on the **Free** plan. Wrangler's
+   OAuth token is scoped `zone:read` only, so it cannot create the zone or write
+   DNS; use the dashboard, or issue a token with `Zone:Zone:Edit` + `Zone:DNS:Edit`.
+2. **Verify every record below survived Cloudflare's import** before touching the
+   registrar. Records can be staged safely — nothing takes effect until step 4.
+3. **Add a Single Redirect rule** (included on Free): `mytripmytravel.com/*` →
+   `https://www.mytripmytravel.com/$1`, status 301. The old host did this as a 308;
+   without it the apex serves duplicate content against the `www` canonical.
+4. **Change the nameservers at GoDaddy** (`ns75`/`ns76.domaincontrol.com` → the two
+   Cloudflare assigns). Registrar action. Propagation is low-risk here: the old
+   host is already returning 402, so any resolver that switches is an improvement.
+5. **Bind the hostnames to the Worker**: Workers > `mytripmytravel` > Settings >
+   Domains & Routes > add `www.mytripmytravel.com` (and the apex if you prefer
+   binding over the redirect rule).
+6. **Resubmit** `https://www.mytripmytravel.com/sitemap.xml` in Search Console.
+   Expect Google to drop the ~42,000 URLs that are no longer built; they were
+   already `noindex` and absent from the sitemap, so impact should be minimal.
 
 ### Records that MUST survive the move
 
-Full inventory taken from live DNS on 2026-10-08, before any change. Mail runs on
-**Hostinger**; losing these breaks email on the domain.
+Inventory taken from live DNS on 2026-10-08. Mail runs on **Hostinger**; losing
+these breaks email on the domain.
 
 | Type  | Name           | Value                                                        | Why |
 |-------|----------------|--------------------------------------------------------------|-----|
@@ -98,25 +108,42 @@ Full inventory taken from live DNS on 2026-10-08, before any change. Mail runs o
 | CNAME | `autodiscover` | `autodiscover.mail.hostinger.com`                            | mail client setup |
 | TXT   | `@`            | `google-site-verification=WYUlUIEF4ExjfPt5fA5sSRy9GqL2FyeHwgZlRvfY4eM` | Search Console access |
 
-**Do NOT copy these** — they point at the old host and are replaced by the
-Worker custom domain:
+**DKIM is the gap.** Nothing is published at the common selectors
+(`default._domainkey`, `hostingermail._domainkey`) and selectors cannot be
+enumerated from outside. Pull the DKIM record from Hostinger's email panel and
+recreate it, or outbound mail may start landing in spam.
 
-| Type  | Name  | Current value                        |
-|-------|-------|--------------------------------------|
-| A     | `@`   | `76.76.21.21`, `216.198.79.1`        |
-| CNAME | `www` | `cname.vercel-dns.com`               |
+**Do NOT copy these** — they point at the old host and are replaced by the Worker
+binding:
 
-No AAAA and no CAA records exist. **DKIM:** no record was found at the common
-selectors (`default._domainkey`, `hostingermail._domainkey`), but DKIM selectors
-cannot be enumerated from outside — check Hostinger's email panel for the DKIM
-record it publishes and recreate it, or mail may start landing in spam.
+| Type  | Name  | Old value                      |
+|-------|-------|--------------------------------|
+| A     | `@`   | `76.76.21.21`, `216.198.79.1`  |
+| CNAME | `www` | `cname.vercel-dns.com`         |
 
-Dropping the `google-site-verification` TXT also drops Search Console access.
+No AAAA and no CAA records exist.
 
-Also note: no AAAA or CAA records exist, and DKIM selectors cannot be enumerated
-from outside — check Hostinger's email panel for the DKIM record it publishes.
+### Post-cutover verification
 
-Wrangler's OAuth token is scoped `zone:read` only, so it cannot create the zone or
-write DNS; that needs the Cloudflare dashboard or a token with
-`Zone:Zone:Edit` + `Zone:DNS:Edit`. The nameserver switch itself is a registrar
-action at GoDaddy.
+```bash
+dig +short MX mytripmytravel.com                    # Hostinger MX intact
+dig +short TXT mytripmytravel.com                   # SPF + GSC verification intact
+curl -sI https://www.mytripmytravel.com | head -1   # 200
+curl -sI https://mytripmytravel.com | head -1       # 301 -> www
+curl -s https://www.mytripmytravel.com/sitemap.xml | head -3
+```
+
+Send a test email to a mailbox on the domain, and from it to an external address,
+before considering the cutover done.
+
+## Cost
+
+Static-asset requests are free and unlimited; there is no Worker script, no KV, R2
+or D1, and a zone is on the Free Website plan. Note the account already carries
+Workers Paid for Frameleads, so the *account* is not on the free Workers plan —
+but this site adds **no incremental cost** and stays inside the free limits.
+
+The remaining ceiling is **bandwidth-shaped, not compute-shaped**: pages are
+~200 KB of HTML and `/destinations` was measured at ~2.7 MB/request. Cloudflare
+does not meter egress, but trimming the three.js / gsap / framer-motion payload is
+the highest-value optimisation left.
