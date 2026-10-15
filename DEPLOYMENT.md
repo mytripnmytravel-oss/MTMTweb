@@ -5,8 +5,23 @@ rendering, no ISR, no serverless functions. `npm run build` writes plain HTML to
 `./out` and the host just serves files.
 
 **Host: Cloudflare Workers static assets, free plan.**
-Worker `mytripmytravel`, account `workajsal@gmail.com`.
-Current URL: `https://mytripmytravel.workajsal.workers.dev`
+
+**Target account: a dedicated Cloudflare account on the client's email**
+(`mytripnmytravel@gmail.com`), mirroring how the Vercel side was consolidated onto
+the client's own account on 2026-09-06. This keeps MTMT's usage off the
+`workajsal@gmail.com` account, which carries Workers Paid for Frameleads, and
+leaves the client owning their own hosting.
+
+Access without sharing credentials: the client's account invites
+`workajsal@gmail.com` as an **Administrator** (Free supports unlimited
+administrators), after which one wrangler login can target either account with
+`--account-id`. Note that an OAuth token's *scopes* still apply regardless of
+role: wrangler's is `zone:read`, so zone creation and DNS writes remain dashboard
+work.
+
+**Interim:** the build is currently deployed in the `workajsal@gmail.com` account
+at `https://mytripmytravel.workajsal.workers.dev`. Delete that Worker once the
+client-account deployment is live, so no stray public duplicate remains.
 
 Canonical hostname is **`https://www.mytripmytravel.com`** (`src/lib/site.ts`), so
 the apex must redirect to `www`.
@@ -75,9 +90,14 @@ stayed at GoDaddy — is Business/Enterprise only, not available on free.** So t
 nameserver move takes *all* DNS with it, mail included. That is the one real risk
 in this cutover.
 
-1. **Add `mytripmytravel.com` to Cloudflare** on the **Free** plan. Wrangler's
+0. **Create the client's Cloudflare account** under `mytripnmytravel@gmail.com`
+   (Free plan), then invite `workajsal@gmail.com` as an **Administrator** and
+   accept the invite. `wrangler whoami` should then list two accounts.
+1. **Add `mytripmytravel.com` to that account** on the **Free** plan. Wrangler's
    OAuth token is scoped `zone:read` only, so it cannot create the zone or write
    DNS; use the dashboard, or issue a token with `Zone:Zone:Edit` + `Zone:DNS:Edit`.
+   Make sure the zone and the Worker end up in the **same** account, or the
+   hostname cannot be bound to the Worker.
 2. **Verify every record below survived Cloudflare's import** before touching the
    registrar. Records can be staged safely — nothing takes effect until step 4.
 3. **Add a Single Redirect rule** (included on Free): `mytripmytravel.com/*` →
@@ -86,10 +106,13 @@ in this cutover.
 4. **Change the nameservers at GoDaddy** (`ns75`/`ns76.domaincontrol.com` → the two
    Cloudflare assigns). Registrar action. Propagation is low-risk here: the old
    host is already returning 402, so any resolver that switches is an improvement.
-5. **Bind the hostnames to the Worker**: Workers > `mytripmytravel` > Settings >
-   Domains & Routes > add `www.mytripmytravel.com` (and the apex if you prefer
-   binding over the redirect rule).
-6. **Resubmit** `https://www.mytripmytravel.com/sitemap.xml` in Search Console.
+5. **Deploy the Worker into the client's account** and bind the hostname:
+   `npx wrangler deploy --account-id <client account id>`, then Workers >
+   `mytripmytravel` > Settings > Domains & Routes > add `www.mytripmytravel.com`
+   (and the apex if you prefer binding over the redirect rule).
+6. **Delete the interim Worker** in `workajsal@gmail.com` once the client-account
+   deployment serves the domain, so there is no duplicate copy online.
+7. **Resubmit** `https://www.mytripmytravel.com/sitemap.xml` in Search Console.
    Expect Google to drop the ~42,000 URLs that are no longer built; they were
    already `noindex` and absent from the sitemap, so impact should be minimal.
 
