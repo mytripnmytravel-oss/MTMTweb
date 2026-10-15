@@ -4,6 +4,15 @@
   // Asset requests are free and unlimited; the free tier allows 20,000 files.
   "name": "mytripmytravel",
   "compatibility_date": "2026-10-08",
+  // Keep the workers.dev URL as a verification endpoint; it costs nothing and
+  // gives a way to test the deployment independently of the live domain.
+  "workers_dev": true,
+  "routes": [
+    // Canonical host serves the site; the apex is bound so Cloudflare answers for
+    // it at all, letting the apex -> www Redirect Rule fire before the Worker.
+    { "pattern": "www.mytripmytravel.com", "custom_domain": true },
+    { "pattern": "mytripmytravel.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./out",
     // Canonical URLs have no trailing slash (next.config.ts leaves trailingSlash off),
