@@ -9,6 +9,8 @@ import {
 import { getMonumentsByCity } from "@/data/monuments";
 import { getPackagesForDestination, packageSlug } from "@/data/tours";
 import DestinationCityView from "@/components/destinations/DestinationCityView";
+import { destinationChildLinkGroups } from "@/lib/destinationLinks";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 const SITE = "https://www.mytripmytravel.com";
 
@@ -29,8 +31,8 @@ export async function generateMetadata({
     if (!dest) {
         return { title: "Destination Not Found | MyTripMyTravel" };
     }
-    const title = `${dest.name}, ${dest.state}, Luxury Travel Guide | MyTripMyTravel`;
-    const description = dest.answer.slice(0, 300);
+    const title = pageTitle(`${dest.name} Travel Guide, ${dest.state}`);
+    const description = metaDescription(dest.answer);
     const url = `${SITE}/destinations/${dest.slug}`;
     return {
         ...focusRobots(slug),
@@ -126,7 +128,14 @@ export default async function DestinationCityPage({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <DestinationCityView dest={dest} related={related} monuments={cityMonuments} tours={cityTours} deepLinks={isCoreDestination(slug)} />
+            <DestinationCityView
+                dest={dest}
+                related={related}
+                monuments={cityMonuments}
+                tours={cityTours}
+                deepLinks={isCoreDestination(slug)}
+                facetGroups={destinationChildLinkGroups(slug, dest.name)}
+            />
         </>
     );
 }

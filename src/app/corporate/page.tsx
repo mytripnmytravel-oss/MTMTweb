@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import CorporateView from "./CorporateView";
+import { pageTitle } from "@/lib/meta";
 
 const TITLE = "Corporate & MICE Travel in India | MyTripMyTravel";
 const DESCRIPTION =
@@ -8,11 +9,11 @@ const DESCRIPTION =
 const URL = `${SITE_URL}/corporate`;
 
 export const metadata: Metadata = {
-    title: TITLE,
+    title: pageTitle(TITLE),
     description: DESCRIPTION,
     alternates: { canonical: URL },
     openGraph: {
-        title: TITLE,
+        title: pageTitle(TITLE),
         description: DESCRIPTION,
         url: URL,
         type: "website",

@@ -10,13 +10,15 @@ import { Footer } from "@/components/Footer";
 import { LeadBlock } from "@/components/lead/Lead";
 import { packageSlug } from "@/data/tours";
 import type { RegionVariantContent } from "@/data/regionVariants";
+import type { VariantLinkGroup } from "@/lib/variantLinks";
+import FacetLinkGroups from "@/components/seo/FacetLinkGroups";
 
 export default function RegionVariantView({
     content,
-    siblings,
+    linkGroups,
 }: {
     content: RegionVariantContent;
-    siblings: { label: string; href: string }[];
+    linkGroups: VariantLinkGroup[];
 }) {
     return (
         <main className="min-h-screen bg-paper">
@@ -92,18 +94,12 @@ export default function RegionVariantView({
                 </section>
             )}
 
-            {/* Siblings */}
-            <section className="section">
-                <div className="container-x">
-                    <p className="eyebrow eyebrow-accent">Other slices of {content.regionName}</p>
-                    <div className="mt-6 flex flex-wrap gap-3">
-                        {siblings.map((s) => (
-                            <Link key={s.href} href={s.href} className="btn-outline btn-sm">{s.label}</Link>
-                        ))}
-                        <Link href={`/destinations/region/${content.regionSlug}`} className="btn-outline btn-sm">{content.regionName} destinations <ArrowRight size={14} /></Link>
-                    </div>
-                </div>
-            </section>
+            {/* Facet navigation: up, down and sideways through the variant tree */}
+            <FacetLinkGroups
+                groups={linkGroups}
+                eyebrow={`Other slices of ${content.regionName}`}
+                trailing={{ label: `${content.regionName} destinations`, href: `/destinations/region/${content.regionSlug}` }}
+            />
 
             <LeadBlock
                 source={`Region variant: ${content.label}`}

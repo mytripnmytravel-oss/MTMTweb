@@ -6,6 +6,8 @@ import { Footer } from "@/components/Footer";
 import { EnquiryForm, WhatsAppFab } from "@/components/lead/Lead";
 import Link from "next/link";
 import { Briefcase, Plane, Building, Target, ArrowRight, Users, ShieldCheck, CalendarClock, Headset } from "lucide-react";
+import FacetLinkGroups from "@/components/seo/FacetLinkGroups";
+import { corporateHubGroups } from "@/lib/hubLinks";
 
 const PILLARS = [
     { title: "GPS-tracked fleet", icon: Building, desc: "Chauffeured sedans, SUVs and coaches for teams of any size, tracked in real time." },
@@ -116,6 +118,10 @@ export default function CorporateView() {
                     />
                 </div>
             </section>
+
+            {/* Child links: this hub previously rendered none, leaving its
+                sub-pages reachable only through the XML sitemap. */}
+            <FacetLinkGroups groups={corporateHubGroups()} eyebrow="Explore corporate travel" />
 
             <Footer />
             <WhatsAppFab message="Hi MyTripMyTravel, I would like to plan corporate travel or an offsite in India." />

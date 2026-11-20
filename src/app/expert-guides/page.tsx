@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import ExpertGuidesView from "./ExpertGuidesView";
+import { pageTitle } from "@/lib/meta";
 
 const TITLE =
-    "Expert Local Guides in India, Multilingual Heritage Specialists | MyTripMyTravel";
+    "Expert Local Guides in India, by Language";
 const DESCRIPTION =
     "Vetted, licensed local guides across India's heritage cities, Delhi, Agra, Jaipur, Udaipur and Kerala, leading private escorted visits in your own language.";
 const URL = `${SITE_URL}/expert-guides`;
 
 export const metadata: Metadata = {
-    title: TITLE,
+    title: pageTitle(TITLE),
     description: DESCRIPTION,
     alternates: { canonical: URL },
     openGraph: {
-        title: TITLE,
+        title: pageTitle(TITLE),
         description: DESCRIPTION,
         url: URL,
         type: "website",

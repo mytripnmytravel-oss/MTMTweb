@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
 import { getFaqTopic, getAllFaqTopicParams, faqTopics } from "@/data/faq";
 import { FaqTopicView } from "@/components/faq/FaqView";
+import { pageTitle } from "@/lib/meta";
 
 export function generateStaticParams() {
     return getAllFaqTopicParams();
@@ -19,7 +20,7 @@ export async function generateMetadata({
     const { topic: slug } = await params;
     const topic = getFaqTopic(slug);
     if (!topic) return { title: "Not Found | MyTripMyTravel" };
-    const title = `${topic.name}, FAQ | MyTripMyTravel`;
+    const title = pageTitle(`${topic.name}, FAQ`);
     const url = `${SITE_URL}/faq/${topic.slug}`;
     return {
         title,

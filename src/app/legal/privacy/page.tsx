@@ -7,7 +7,7 @@ const url = `${SITE_URL}/legal/privacy`;
 export const metadata: Metadata = {
     title: "Privacy Policy | MyTripMyTravel",
     description:
-        "How MyTripMyTravel collects, uses and protects your personal information when you enquire about or book luxury travel in India, and how to exercise your data rights.",
+        "How MyTripMyTravel collects, uses and protects your personal information when you enquire or book, and how to exercise your data rights.",
     alternates: { canonical: url },
     openGraph: { title: "Privacy Policy | MyTripMyTravel", description: "How we collect, use and protect your data.", url, type: "website" },
 };

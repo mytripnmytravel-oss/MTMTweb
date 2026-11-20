@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import AboutView from "./AboutView";
+import { pageTitle } from "@/lib/meta";
 
-const TITLE = "About MyTripMyTravel, Luxury India Travel Architects | MyTripMyTravel";
+const TITLE = "About Us, Luxury India Travel Architects";
 const DESCRIPTION =
     "Meet the boutique team behind MyTripMyTravel, architecting private, chauffeured luxury journeys across India's Golden Triangle, Rajasthan, Kerala and beyond.";
 const URL = `${SITE_URL}/about`;
 
 export const metadata: Metadata = {
-    title: TITLE,
+    title: pageTitle(TITLE),
     description: DESCRIPTION,
     alternates: { canonical: URL },
     openGraph: {
-        title: TITLE,
+        title: pageTitle(TITLE),
         description: DESCRIPTION,
         url: URL,
         type: "website",

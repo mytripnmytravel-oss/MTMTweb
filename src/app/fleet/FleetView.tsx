@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -109,6 +110,9 @@ export default function FleetView() {
                                             </div>
                                             <div className="mt-8 flex gap-3">
                                                 <button onClick={() => openModal(v)} className="btn-primary flex-1">Check availability</button>
+                                                {/* The card used to offer only a modal, which left /fleet/<vehicle>
+                                                    with no internal inbound link at all. */}
+                                                <Link href={`/fleet/${v.id}`} className="btn-outline btn-sm shrink-0 self-center">Details</Link>
                                                 <button onClick={() => whatsapp(v)} aria-label="WhatsApp" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line text-ink transition hover:border-ink hover:text-clay">
                                                     <MessageCircle size={18} />
                                                 </button>

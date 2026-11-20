@@ -7,6 +7,7 @@ import {
     methodologyStages,
 } from "@/data/methodology";
 import MethodologyStageView from "@/components/methodology/MethodologyStageView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function generateStaticParams() {
     return getAllMethodologyParams();
@@ -23,8 +24,8 @@ export async function generateMetadata({
     const { stage: slug } = await params;
     const stage = getMethodologyStage(slug);
     if (!stage) return { title: "Not Found | MyTripMyTravel" };
-    const title = `${stage.name}, The Mission Protocol | MyTripMyTravel`;
-    const description = stage.answer.slice(0, 300);
+    const title = pageTitle(`${stage.name}, The Mission Protocol`);
+    const description = metaDescription(stage.answer);
     const url = `${SITE_URL}/methodology/${stage.slug}`;
     return {
         title,

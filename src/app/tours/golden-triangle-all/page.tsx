@@ -5,14 +5,14 @@ import GoldenTriangleAllView from "./GoldenTriangleAllView";
 
 const url = `${SITE_URL}/tours/golden-triangle-all`;
 const description =
-    "Browse every Golden Triangle tour variation and India itinerary in one archive, filter by region, theme and duration, then tailor any route into a bespoke, chauffeured trip.";
+    "Every Golden Triangle tour variation in one archive. Filter by region, theme and duration, then tailor any route into a private, chauffeured trip.";
 
 export const metadata: Metadata = {
-    title: "Golden Triangle Tours, All Itinerary Variations & India Tour Archive | MyTripMyTravel",
+    title: "Golden Triangle Tours: Every Itinerary Variation",
     description,
     alternates: { canonical: url },
     openGraph: {
-        title: "Golden Triangle Tours, All Itinerary Variations & India Tour Archive | MyTripMyTravel",
+        title: "Golden Triangle Tours: Every Itinerary Variation",
         description,
         url,
         type: "website",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Golden Triangle Tours, All Itinerary Variations & India Tour Archive | MyTripMyTravel",
+        title: "Golden Triangle Tours: Every Itinerary Variation",
         description,
     },
 };

@@ -9,11 +9,11 @@ const description =
 
 export const metadata: Metadata = {
     robots: NOINDEX_ROBOTS,
-    title: "Andaman Islands Luxury Travel, Havelock & Neil Itinerary | MyTripMyTravel",
+    title: "Andaman Islands: Havelock & Neil Itineraries",
     description,
     alternates: { canonical: url },
     openGraph: {
-        title: "Andaman Islands Luxury Travel, Havelock & Neil Itinerary | MyTripMyTravel",
+        title: "Andaman Islands: Havelock & Neil Itineraries",
         description,
         url,
         type: "article",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Andaman Islands Luxury Travel, Havelock & Neil Itinerary | MyTripMyTravel",
+        title: "Andaman Islands: Havelock & Neil Itineraries",
         description,
     },
 };

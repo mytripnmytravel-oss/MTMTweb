@@ -8,6 +8,8 @@ import {
     getAllMonumentParams,
 } from "@/data/monuments";
 import MonumentView from "@/components/destinations/MonumentView";
+import { monumentChildLinkGroups } from "@/lib/destinationLinks";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 const SITE = "https://www.mytripmytravel.com";
 
@@ -27,8 +29,8 @@ export async function generateMetadata({
     const dest = getDestination(slug);
     const m = getMonument(slug, monument);
     if (!dest || !m) return { title: "Not Found | MyTripMyTravel" };
-    const title = `${m.name}, ${dest.name}, Guide, History & Visitor Info | MyTripMyTravel`;
-    const description = m.answer.slice(0, 300);
+    const title = pageTitle(`${m.name}, ${dest.name}: Visitor Guide`);
+    const description = metaDescription(m.answer);
     const url = `${SITE}/destinations/${dest.slug}/monuments/${m.slug}`;
     return {
         ...focusRobots(slug),
@@ -103,7 +105,12 @@ export default async function MonumentPage({
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <MonumentView dest={dest} monument={m} siblings={siblings} />
+            <MonumentView
+                dest={dest}
+                monument={m}
+                siblings={siblings}
+                facetGroups={monumentChildLinkGroups(dest.slug, m.slug, m.name)}
+            />
         </>
     );
 }

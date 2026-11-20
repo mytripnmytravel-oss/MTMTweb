@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { SITE_URL, ORGANIZATION } from "@/lib/site";
 import BookingView from "./BookingView";
+import { pageTitle } from "@/lib/meta";
 
 const url = `${SITE_URL}/booking`;
-const title = "Plan Your India Trip, Enquire | MyTripMyTravel";
+const title = pageTitle("Plan Your India Trip, Enquire");
 const description =
     "Tell us your dates, group and interests and our concierge will craft a bespoke India itinerary, Golden Triangle, Rajasthan, Kerala and beyond. Enquire now.";
 

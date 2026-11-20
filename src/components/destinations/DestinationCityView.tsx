@@ -14,6 +14,8 @@ import { EnquiryForm, WhatsAppFab } from "@/components/lead/Lead";
 import type { Destination } from "@/data/destinations";
 import type { Monument } from "@/data/monuments";
 import { FACET_SLUGS, FACET_LABELS } from "@/data/destinationFacets";
+import type { VariantLinkGroup } from "@/lib/variantLinks";
+import FacetLinkGroups from "@/components/seo/FacetLinkGroups";
 
 const fade = {
     hidden: { opacity: 0, y: 16 },
@@ -36,11 +38,13 @@ export interface CityTour {
 }
 
 export default function DestinationCityView({
-    dest, related, monuments = [], tours = [], deepLinks = true,
+    dest, related, monuments = [], tours = [], deepLinks = true, facetGroups = [],
 }: {
     dest: Destination; related: Destination[]; monuments?: Monument[]; tours?: CityTour[];
     /** Non-core cities ship only the hub + itinerary index, so their deeper pages are not linked. */
     deepLinks?: boolean;
+    /** Origin + month sub-pages for this city, so they are not sitemap-only. */
+    facetGroups?: VariantLinkGroup[];
 }) {
     const waMsg = `Hi MyTripMyTravel, I would like to plan a journey through ${dest.name}, ${dest.state}.`;
     const waHref = `https://wa.me/919997812237?text=${encodeURIComponent(waMsg)}`;
@@ -304,6 +308,10 @@ export default function DestinationCityView({
                     </div>
                 </div>
             </section>
+
+            {deepLinks && (
+                <FacetLinkGroups groups={facetGroups} eyebrow={`Plan ${dest.name} your way`} />
+            )}
 
             {/* Related cities */}
             {related.length > 0 && (

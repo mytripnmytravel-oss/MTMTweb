@@ -11,6 +11,7 @@ import {
     findOrigin,
 } from "@/data/monumentOrigins";
 import MonumentOriginView from "@/components/destinations/MonumentOriginView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function getMonumentOriginStaticParams() {
     return getAllMonumentOriginParams();
@@ -26,8 +27,8 @@ export async function monumentOriginMetadata(
     const origin = findOrigin(originSlug);
     if (!dest || !monument || !origin) return { title: "Not Found | MyTripMyTravel" };
     const content = getMonumentOriginContent(monument, dest, origin);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/destinations/${citySlug}/monuments/${monumentSlug}/from/${originSlug}`;
     return {
         ...focusRobots(citySlug),

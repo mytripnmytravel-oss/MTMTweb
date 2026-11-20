@@ -280,8 +280,10 @@ export default function TourDetailView({ tour, related }: { tour: Package; relat
             <div id="printable-brief" className="hidden bg-white p-20 text-royal-blue print:block">
                 <div className="mb-16 flex items-end justify-between border-b-4 border-sunset-orange pb-10">
                     <div>
-                        <h1 className="text-5xl font-semibold tracking-tight">MyTripMyTravel</h1>
-                        <h4 className="mt-1 text-xs font-semibold uppercase tracking-[0.3em] text-sunset-orange">Itinerary brief</h4>
+                        {/* Brand lockup for the print-only brief. Not a heading:
+                            as an <h1> it gave all 35 tour pages a second H1. */}
+                        <p className="text-5xl font-semibold tracking-tight">MyTripMyTravel</p>
+                        <p className="mt-1 text-xs font-semibold uppercase tracking-[0.3em] text-sunset-orange">Itinerary brief</p>
                     </div>
                     <div className="text-right text-[10px] uppercase tracking-widest opacity-50">
                         <div>Ref MTMT {packageSlug(tour)}</div>

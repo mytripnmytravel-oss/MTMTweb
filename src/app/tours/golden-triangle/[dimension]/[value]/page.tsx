@@ -5,20 +5,25 @@ import {
     resolveVariant,
     getAllVariantParams,
     variantHref,
-    comboValue,
-    themeFromValue,
-    durationFromValue,
-    monthFromValue,
-    gtPackages,
-    GT_THEMES,
-    GT_DURATIONS,
-    MONTHS,
     ORIGINS,
 } from "@/data/tourVariants";
-import { packageSlug, slugify } from "@/data/tours";
+import { packageSlug } from "@/data/tours";
 import TourVariantView from "@/components/tours/TourVariantView";
+import { variantLinkGroups } from "@/lib/variantLinks";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 const titleCase = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
+
+/**
+ * Every built variant param, evaluated once per render worker. The internal
+ * link graph is filtered from this exact list, so a facet link can never point
+ * at a URL `generateStaticParams` did not build (a hard 404 under `output: "export"`).
+ */
+const ALL_VARIANTS = getAllVariantParams();
+
+/** Pretty departure-city name for an origin slug ("abu-dhabi" -> "Abu Dhabi"). */
+const originCity = (slug: string) =>
+    ORIGINS.find((o) => o.slug === slug)?.city ?? titleCase(slug.replace(/-/g, " "));
 
 export function generateStaticParams() {
     return getAllVariantParams();
@@ -35,8 +40,8 @@ export async function generateMetadata({
     const { dimension, value } = await params;
     const content = resolveVariant(dimension, value);
     if (!content) return { title: "Not Found | MyTripMyTravel" };
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}${variantHref(dimension, value)}`;
     return {
         title,
@@ -44,68 +49,6 @@ export async function generateMetadata({
         alternates: { canonical: url },
         openGraph: { title, description, url, type: "website" },
     };
-}
-
-function siblingsFor(dimension: string): { label: string; href: string }[] {
-    if (dimension === "by-theme") {
-        return GT_THEMES.map((t) => ({ label: t, href: variantHref("by-theme", slugify(t)) }));
-    }
-    if (dimension === "by-duration") {
-        return GT_DURATIONS.map((d) => ({ label: d.replace("-day", "-Day"), href: variantHref("by-duration", d) }));
-    }
-    if (dimension === "from-origin") {
-        return ORIGINS.map((o) => ({ label: o.city, href: variantHref("from-origin", o.slug) }));
-    }
-    if (dimension === "combo") {
-        const gt = gtPackages();
-        const dayCount = (s: string) => Number.parseInt(s, 10) || 0;
-        const combos: { label: string; href: string }[] = [];
-        for (const t of GT_THEMES) {
-            for (const d of GT_DURATIONS) {
-                const days = Number.parseInt(d, 10);
-                if (gt.some((p) => dayCount(p.duration) === days && p.theme === t)) {
-                    combos.push({ label: `${days}-Day ${t}`, href: variantHref("combo", comboValue(days, t)) });
-                }
-            }
-        }
-        return combos;
-    }
-    if (dimension === "theme-from") {
-        const gt = gtPackages();
-        const out: { label: string; href: string }[] = [];
-        for (const t of GT_THEMES) {
-            if (gt.some((p) => p.theme === t)) {
-                for (const o of ORIGINS) {
-                    out.push({ label: `${t} from ${o.city}`, href: variantHref("theme-from", themeFromValue(t, o.slug)) });
-                }
-            }
-        }
-        return out;
-    }
-    if (dimension === "duration-from") {
-        const gt = gtPackages();
-        const dayCount = (s: string) => Number.parseInt(s, 10) || 0;
-        const out: { label: string; href: string }[] = [];
-        for (const d of GT_DURATIONS) {
-            const days = Number.parseInt(d, 10);
-            if (gt.some((p) => dayCount(p.duration) === days)) {
-                for (const o of ORIGINS) {
-                    out.push({ label: `${days}-Day · ${o.city}`, href: variantHref("duration-from", durationFromValue(days, o.slug)) });
-                }
-            }
-        }
-        return out;
-    }
-    if (dimension === "month-from") {
-        const out: { label: string; href: string }[] = [];
-        for (const m of MONTHS) {
-            for (const o of ORIGINS) {
-                out.push({ label: `${titleCase(m)} · ${o.city}`, href: variantHref("month-from", monthFromValue(m, o.slug)) });
-            }
-        }
-        return out;
-    }
-    return MONTHS.map((m) => ({ label: titleCase(m), href: variantHref("in-month", m) }));
 }
 
 export default async function TourVariantPage({
@@ -118,6 +61,7 @@ export default async function TourVariantPage({
     if (!content) notFound();
 
     const url = `${SITE_URL}${variantHref(dimension, value)}`;
+    const linkGroups = variantLinkGroups(ALL_VARIANTS, dimension, value, variantHref, originCity);
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -155,7 +99,7 @@ export default async function TourVariantPage({
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <TourVariantView content={content} siblings={siblingsFor(dimension)} />
+            <TourVariantView content={content} linkGroups={linkGroups} />
         </>
     );
 }

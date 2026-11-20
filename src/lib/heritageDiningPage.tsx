@@ -3,11 +3,12 @@ import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
 import { getDiningCategory, getDiningItem } from "@/data/heritageDining";
 import { DiningCategoryView, DiningItemView } from "@/components/heritagedining/HeritageDiningView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export async function diningCategoryMetadata(slug: string): Promise<Metadata> {
     const c = getDiningCategory(slug);
     if (!c) return { title: "Not Found | MyTripMyTravel" };
-    const title = `Heritage Dining, ${c.name} | MyTripMyTravel`;
+    const title = pageTitle(`Heritage Dining, ${c.name}`);
     const url = `${SITE_URL}/heritage-dining/${c.slug}`;
     return { title, description: c.blurb, alternates: { canonical: url }, openGraph: { title, description: c.blurb, url, type: "website" } };
 }
@@ -54,8 +55,8 @@ export async function diningItemMetadata(
     const resolved = getDiningItem(categorySlug, itemSlug);
     if (!resolved) return { title: "Not Found | MyTripMyTravel" };
     const { item } = resolved;
-    const title = `${item.name} | MyTripMyTravel`;
-    const description = item.answer.slice(0, 300);
+    const title = pageTitle(`${item.name}`);
+    const description = metaDescription(item.answer);
     const url = `${SITE_URL}/heritage-dining/${categorySlug}/${itemSlug}`;
     return { title, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "article" } };
 }

@@ -2,19 +2,20 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import { blogPosts } from "@/data/blog";
 import BlogView from "./BlogView";
+import { pageTitle } from "@/lib/meta";
 
 const TITLE =
-    "India Travel Blog, Golden Triangle, Rajasthan & Kerala Guides | MyTripMyTravel";
+    "India Travel Journal & Planning Guides";
 const DESCRIPTION =
     "Field notes and planning guides for luxury India travel, Golden Triangle routes, best time to visit, India e-Visa, Ayurveda and tiger-safari deep-dives.";
 const URL = `${SITE_URL}/blog`;
 
 export const metadata: Metadata = {
-    title: TITLE,
+    title: pageTitle(TITLE),
     description: DESCRIPTION,
     alternates: { canonical: URL },
     openGraph: {
-        title: TITLE,
+        title: pageTitle(TITLE),
         description: DESCRIPTION,
         url: URL,
         type: "website",

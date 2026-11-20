@@ -10,6 +10,7 @@ import {
 import { PROGRAMME_LOCATIONS } from "@/data/wellnessFacets";
 import type { WellnessFacetContent } from "@/data/wellnessFacets";
 import WellnessFacetView from "@/components/wellness/WellnessFacetView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export async function subVariantLocationMetadata(
     programmeSlug: string,
@@ -21,8 +22,8 @@ export async function subVariantLocationMetadata(
     if (!found || !dest) return { title: "Not Found | MyTripMyTravel" };
     const { programme, variant } = found;
     const content = getSubVariantLocationContent(programme, variant, dest);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/wellness/${programmeSlug}/${variantSlug}/in/${locationSlug}`;
     return {
         title,

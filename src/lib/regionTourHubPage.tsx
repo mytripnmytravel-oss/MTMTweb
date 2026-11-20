@@ -4,14 +4,15 @@ import { SITE_URL } from "@/lib/site";
 import { getRegionalTourHubContent, type RegionTourHub } from "@/data/tourHubs";
 import { packageSlug } from "@/data/tours";
 import RegionalTourHubView from "@/components/tours/RegionalTourHubView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export async function regionalTourHubMetadata(
     slug: RegionTourHub["slug"]
 ): Promise<Metadata> {
     const content = getRegionalTourHubContent(slug);
     if (!content) return { title: "Not Found | MyTripMyTravel" };
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/tours/${slug}`;
     return {
         title,

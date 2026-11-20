@@ -3,11 +3,12 @@ import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
 import { getCorporateCategory, getCorporateItem } from "@/data/corporate";
 import { CorporateCategoryView, CorporateItemView } from "@/components/corporate/CorporateView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export async function corporateCategoryMetadata(slug: string): Promise<Metadata> {
     const c = getCorporateCategory(slug);
     if (!c) return { title: "Not Found | MyTripMyTravel" };
-    const title = `Corporate ${c.name} | MyTripMyTravel`;
+    const title = pageTitle(`Corporate ${c.name}`);
     const url = `${SITE_URL}/corporate/${c.slug}`;
     return {
         title,
@@ -59,8 +60,8 @@ export async function corporateItemMetadata(
     const resolved = getCorporateItem(categorySlug, itemSlug);
     if (!resolved) return { title: "Not Found | MyTripMyTravel" };
     const { item } = resolved;
-    const title = `${item.name} | MyTripMyTravel`;
-    const description = item.answer.slice(0, 300);
+    const title = pageTitle(`${item.name}`);
+    const description = metaDescription(item.answer);
     const url = `${SITE_URL}/corporate/${categorySlug}/${itemSlug}`;
     return {
         title,

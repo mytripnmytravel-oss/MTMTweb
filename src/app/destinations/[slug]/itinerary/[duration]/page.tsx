@@ -11,6 +11,7 @@ import {
 } from "@/data/destinationItineraries";
 import { getPackagesForDestination, packageSlug } from "@/data/tours";
 import { ItineraryView } from "@/components/destinations/DestinationItineraryView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function generateStaticParams() {
     return coreParams(getAllItineraryParams(), "slug");
@@ -31,8 +32,8 @@ export async function generateMetadata({
         return { title: "Not Found | MyTripMyTravel" };
     }
     const content = getItineraryContent(dest, d);
-    const title = `${content.h1}, ${dest.state} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}, ${dest.state}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/destinations/${dest.slug}/itinerary/${duration}`;
     return {
         ...focusRobots(slug),

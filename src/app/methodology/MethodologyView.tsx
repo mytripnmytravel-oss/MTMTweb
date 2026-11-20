@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Target, Zap, ShieldCheck, Search, Activity, Shield, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import FacetLinkGroups from "@/components/seo/FacetLinkGroups";
+import { methodologyHubGroups } from "@/lib/hubLinks";
 
 const StatItem = ({ label, value, desc }: { label: string; value: string; desc: string }) => (
     <div className="card p-7">
@@ -154,6 +156,10 @@ export default function MethodologyView() {
                     </div>
                 </div>
             </section>
+
+            {/* Child links: this hub previously rendered none, leaving its
+                sub-pages reachable only through the XML sitemap. */}
+            <FacetLinkGroups groups={methodologyHubGroups()} eyebrow="The Mission Protocol" />
 
             <Footer />
         </main>

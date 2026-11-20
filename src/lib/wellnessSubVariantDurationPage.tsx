@@ -9,6 +9,7 @@ import {
 } from "@/data/wellnessSubVariantDurations";
 import type { WellnessFacetContent } from "@/data/wellnessFacets";
 import WellnessFacetView from "@/components/wellness/WellnessFacetView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export async function subVariantDurationMetadata(
     programmeSlug: string,
@@ -19,8 +20,8 @@ export async function subVariantDurationMetadata(
     const duration = parseSubVariantDurationSlug(durationSlug);
     if (!found || !duration) return { title: "Not Found | MyTripMyTravel" };
     const content = getSubVariantDurationContent(found.programme, found.variant, duration);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/wellness/${programmeSlug}/${variantSlug}/duration/${durationSlug}`;
     return {
         title,

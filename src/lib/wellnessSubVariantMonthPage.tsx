@@ -9,6 +9,7 @@ import {
 } from "@/data/wellnessSubVariantMonths";
 import type { WellnessFacetContent } from "@/data/wellnessFacets";
 import WellnessFacetView from "@/components/wellness/WellnessFacetView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export async function subVariantMonthMetadata(
     programmeSlug: string,
@@ -19,8 +20,8 @@ export async function subVariantMonthMetadata(
     const month = parseMonthSlug(monthSlug);
     if (!found || !month) return { title: "Not Found | MyTripMyTravel" };
     const content = getSubVariantMonthContent(found.programme, found.variant, month);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/wellness/${programmeSlug}/${variantSlug}/month/${monthSlug}`;
     return {
         title,

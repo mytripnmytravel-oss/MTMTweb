@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { getBlogPost, getAllBlogSlugs, getRelatedBlogPosts } from "@/data/blog";
 import BlogArticleView from "@/components/blog/BlogArticleView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function generateStaticParams() {
     return getAllBlogSlugs().map((slug) => ({ slug }));
@@ -19,8 +20,8 @@ export async function generateMetadata({
     const { slug } = await params;
     const post = getBlogPost(slug);
     if (!post) return { title: "Not Found | MyTripMyTravel" };
-    const title = `${post.title} | ${SITE_NAME}`;
-    const description = post.excerpt;
+    const title = pageTitle(`${post.title}`);
+    const description = metaDescription(post.excerpt);
     const url = `${SITE_URL}/blog/${post.slug}`;
     return {
         title,

@@ -10,6 +10,7 @@ import {
     type ServiceLine,
 } from "@/data/services";
 import ServiceCityView from "@/components/services/ServiceCityView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 function lineName(line: ServiceLine): string {
     return SERVICE_LINES.find((s) => s.slug === line)?.name ?? line;
@@ -24,8 +25,8 @@ export async function serviceCityMetadata(
         return { title: "Not Found | MyTripMyTravel" };
     }
     const content = getServiceCityContent(line, dest);
-    const title = `${content.h1}, ${dest.state} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}, ${dest.state}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/services/${line}/${dest.slug}`;
     return {
         title,

@@ -15,9 +15,9 @@ import GoldenTriangleHubView from "@/components/tours/GoldenTriangleHubView";
 const titleCase = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
 export const metadata: Metadata = {
-    title: "Golden Triangle Tours, By Theme, Duration & Month | MyTripMyTravel",
+    title: "Golden Triangle Tours by Theme, Duration & Month",
     description:
-        "The Delhi to Agra to Jaipur Golden Triangle, sliced by theme, duration, and travel month. Private, chauffeured, escorted luxury circuits by MyTripMyTravel.",
+        "Delhi, Agra and Jaipur by theme, duration, month and departure city. Private, chauffeured, escorted luxury circuits, planned around you.",
     alternates: { canonical: `${SITE_URL}/tours/golden-triangle` },
     openGraph: {
         title: "Golden Triangle Tours | MyTripMyTravel",

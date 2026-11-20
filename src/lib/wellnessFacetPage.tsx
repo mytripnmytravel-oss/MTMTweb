@@ -17,6 +17,7 @@ import {
     WELLNESS_MONTHS,
 } from "@/data/wellnessMonths";
 import WellnessFacetView from "@/components/wellness/WellnessFacetView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 const titleCase = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
@@ -30,8 +31,8 @@ export async function wellnessDurationMetadata(
     const d = parseDurationSlug(durationSlug);
     if (!programme || !d) return { title: "Not Found | MyTripMyTravel" };
     const content = getDurationContent(programme, d);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/wellness/${programmeSlug}/duration/${durationSlug}`;
     return {
         title,
@@ -116,8 +117,8 @@ export async function wellnessLocationMetadata(
         return { title: "Not Found | MyTripMyTravel" };
     }
     const content = getLocationContent(programme, dest);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/wellness/${programmeSlug}/in/${citySlug}`;
     return {
         title,
@@ -207,8 +208,8 @@ export async function wellnessMonthMetadata(
     const month = parseMonthSlug(monthSlug);
     if (!programme || !month) return { title: "Not Found | MyTripMyTravel" };
     const content = getMonthContent(programme, month);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/wellness/${programmeSlug}/month/${monthSlug}`;
     return {
         title,

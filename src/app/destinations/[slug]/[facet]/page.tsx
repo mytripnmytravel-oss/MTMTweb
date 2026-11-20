@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getRelatedCities } from "@/data/destinations";
 import { getAllFacetParams, resolveFacet } from "@/data/destinationFacets";
 import DestinationFacetView from "@/components/destinations/DestinationFacetView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 const SITE = "https://www.mytripmytravel.com";
 
@@ -23,8 +24,8 @@ export async function generateMetadata({
     const resolved = resolveFacet(slug, facet);
     if (!resolved) return { title: "Not Found | MyTripMyTravel" };
     const { dest, content } = resolved;
-    const title = `${content.h1}, ${dest.state} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}, ${dest.state}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE}/destinations/${dest.slug}/${content.facet}`;
     return {
         ...focusRobots(slug),

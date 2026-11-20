@@ -9,12 +9,13 @@ import {
     guideExists,
 } from "@/data/expertGuides";
 import { GuideCityView, GuideDetailView } from "@/components/expertguides/ExpertGuideView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export async function guideCityMetadata(citySlug: string): Promise<Metadata> {
     const dest = getDestination(citySlug);
     if (!dest) return { title: "Not Found | MyTripMyTravel" };
-    const title = `Expert Guides in ${dest.name}, ${dest.state} | MyTripMyTravel`;
-    const description = `Vetted, licensed multilingual heritage guides in ${dest.name}, guiding directly in English, Hindi, French, German, Spanish, Italian, and Japanese.`;
+    const title = pageTitle(`Expert Guides in ${dest.name}, ${dest.state}`);
+    const description = metaDescription(`Vetted, licensed multilingual heritage guides in ${dest.name}, guiding directly in English, Hindi, French, German, Spanish, Italian, and Japanese.`);
     const url = `${SITE_URL}/expert-guides/${dest.slug}`;
     return { title, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "website" } };
 }
@@ -55,8 +56,8 @@ export async function guideMetadata(
         return { title: "Not Found | MyTripMyTravel" };
     }
     const content = getGuideContent(lang, dest);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/expert-guides/${dest.slug}/${lang.slug}`;
     return {
         title,

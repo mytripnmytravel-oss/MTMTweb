@@ -6,9 +6,9 @@ import WellnessHubView from "./WellnessHubView";
 const url = `${SITE_URL}/wellness`;
 
 export const metadata: Metadata = {
-    title: "Wellness Retreats in India, Ayurveda, Yoga & Recovery | MyTripMyTravel",
+    title: "Wellness Retreats in India: Ayurveda & Yoga",
     description:
-        "Private wellness travel in India, AYUSH-certified Ayurveda, master-led yoga & meditation, therapeutic massage and gentle-paced recovery, arranged with vetted practitioners. Enquire now.",
+        "Private wellness travel in India: AYUSH-certified Ayurveda, master-led yoga, therapeutic massage and gentle-paced recovery with vetted practitioners.",
     alternates: { canonical: url },
     openGraph: {
         title: "Wellness Retreats in India | MyTripMyTravel",

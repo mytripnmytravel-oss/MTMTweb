@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
 import { getFaqAtom, getAllFaqAtomParams } from "@/data/faq";
 import { FaqAtomView } from "@/components/faq/FaqView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function generateStaticParams() {
     return getAllFaqAtomParams();
@@ -20,8 +21,8 @@ export async function generateMetadata({
     const resolved = getFaqAtom(topic, question);
     if (!resolved) return { title: "Not Found | MyTripMyTravel" };
     const { topic: t, atom } = resolved;
-    const title = `${atom.q} | MyTripMyTravel`;
-    const description = atom.a.slice(0, 300);
+    const title = pageTitle(`${atom.q}`);
+    const description = metaDescription(atom.a);
     const url = `${SITE_URL}/faq/${t.slug}/${atom.slug}`;
     return {
         title,

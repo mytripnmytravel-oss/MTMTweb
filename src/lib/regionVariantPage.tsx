@@ -6,17 +6,12 @@ import {
     resolveRegionVariant,
     getRegionVariantParams,
     regionVariantHref,
-    regionThemeLinks,
-    regionDurationLinks,
-    regionMonthLinks,
-    regionOriginLinks,
-    regionComboLinks,
-    regionThemeFromLinks,
-    regionDurationFromLinks,
-    regionMonthFromLinks,
     packageSlug,
+    ORIGINS,
 } from "@/data/regionVariants";
 import RegionVariantView from "@/components/tours/RegionVariantView";
+import { variantLinkGroups } from "@/lib/variantLinks";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function getRegionVariantStaticParams(regionSlug: string) {
     return getRegionVariantParams(regionSlug);
@@ -29,8 +24,8 @@ export async function regionVariantMetadata(
 ): Promise<Metadata> {
     const content = resolveRegionVariant(regionSlug, dimension, value);
     if (!content) return { title: "Not Found | MyTripMyTravel" };
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}${regionVariantHref(regionSlug, dimension, value)}`;
     return {
         ...focusRobotsRegion(regionSlug),
@@ -39,17 +34,6 @@ export async function regionVariantMetadata(
         alternates: { canonical: url },
         openGraph: { title, description, url, type: "website" },
     };
-}
-
-function siblingsFor(regionSlug: string, dimension: string): { label: string; href: string }[] {
-    if (dimension === "by-theme") return regionThemeLinks(regionSlug);
-    if (dimension === "by-duration") return regionDurationLinks(regionSlug);
-    if (dimension === "from-origin") return regionOriginLinks(regionSlug);
-    if (dimension === "combo") return regionComboLinks(regionSlug);
-    if (dimension === "theme-from") return regionThemeFromLinks(regionSlug);
-    if (dimension === "duration-from") return regionDurationFromLinks(regionSlug);
-    if (dimension === "month-from") return regionMonthFromLinks(regionSlug);
-    return regionMonthLinks(regionSlug);
 }
 
 export function RegionVariantRoute({
@@ -65,7 +49,15 @@ export function RegionVariantRoute({
     if (!content) notFound();
 
     const url = `${SITE_URL}${regionVariantHref(regionSlug, dimension, value)}`;
-    const siblings = siblingsFor(regionSlug, dimension);
+    // Filtered from the region's own built param list, so every facet link
+    // resolves to a page the static export produced.
+    const linkGroups = variantLinkGroups(
+        getRegionVariantParams(regionSlug),
+        dimension,
+        value,
+        (d, v) => regionVariantHref(regionSlug, d, v),
+        (slug) => ORIGINS.find((o) => o.slug === slug)?.city ?? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+    );
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -103,7 +95,7 @@ export function RegionVariantRoute({
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <RegionVariantView content={content} siblings={siblings} />
+            <RegionVariantView content={content} linkGroups={linkGroups} />
         </>
     );
 }

@@ -9,6 +9,7 @@ import {
 } from "@/data/wellnessSubVariantOrigins";
 import type { WellnessFacetContent } from "@/data/wellnessFacets";
 import WellnessFacetView from "@/components/wellness/WellnessFacetView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export async function subVariantOriginMetadata(
     programmeSlug: string,
@@ -19,8 +20,8 @@ export async function subVariantOriginMetadata(
     const origin = findOrigin(originSlug);
     if (!found || !origin) return { title: "Not Found | MyTripMyTravel" };
     const content = getSubVariantOriginContent(found.programme, found.variant, origin);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/wellness/${programmeSlug}/${variantSlug}/from/${originSlug}`;
     return {
         title,

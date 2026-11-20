@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import HeritageDiningView from "./HeritageDiningView";
+import { pageTitle } from "@/lib/meta";
 
 const TITLE =
-    "Heritage Dining in India, Royal Thali & Palace Tables | MyTripMyTravel";
+    "Heritage Dining in India: Palace Tables";
 const DESCRIPTION =
     "Private heritage dining across India, royal thali tables, exclusive haveli dinners, chef's tables, escorted street-food trails and sundowner folk evenings.";
 const URL = `${SITE_URL}/heritage-dining`;
 
 export const metadata: Metadata = {
-    title: TITLE,
+    title: pageTitle(TITLE),
     description: DESCRIPTION,
     alternates: { canonical: URL },
     openGraph: {
-        title: TITLE,
+        title: pageTitle(TITLE),
         description: DESCRIPTION,
         url: URL,
         type: "website",

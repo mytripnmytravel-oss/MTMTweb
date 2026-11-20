@@ -9,6 +9,7 @@ import {
 } from "@/data/fleet";
 import { fleetCitiesForVehicle } from "@/data/fleetCities";
 import FleetDetailView from "@/components/fleet/FleetDetailView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function generateStaticParams() {
     return getAllVehicleIds().map((vehicle) => ({ vehicle }));
@@ -25,8 +26,8 @@ export async function generateMetadata({
     const { vehicle: id } = await params;
     const v = getVehicle(id);
     if (!v) return { title: "Vehicle Not Found | MyTripMyTravel" };
-    const title = `${v.name}, Chauffeured ${v.type} Hire | MyTripMyTravel`;
-    const description = `${v.description} Seats ${v.passengers}, ${v.luggage}. Chauffeured, GPS-tracked, ${v.priceRange}-band. Golden Triangle & all-India.`;
+    const title = pageTitle(`${v.name}, Chauffeured ${v.type} Hire`);
+    const description = metaDescription(`${v.description} Seats ${v.passengers}, ${v.luggage}. Chauffeured, GPS-tracked, ${v.priceRange}-band. Golden Triangle & all-India.`);
     const url = `${SITE_URL}/fleet/${v.id}`;
     return {
         title,

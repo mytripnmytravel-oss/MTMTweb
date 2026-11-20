@@ -7,6 +7,8 @@ import { Footer } from "@/components/Footer";
 import { LeadBlock } from "@/components/lead/Lead";
 import Link from "next/link";
 import { Landmark, Award, ArrowRight, Languages } from "lucide-react";
+import FacetLinkGroups from "@/components/seo/FacetLinkGroups";
+import { expertGuideHubGroups } from "@/lib/hubLinks";
 
 export default function ExpertGuidesView() {
     return (
@@ -75,6 +77,10 @@ export default function ExpertGuidesView() {
                     { name: "Expert guides" },
                 ]}
             />
+
+            {/* Child links: this hub previously rendered none, leaving its
+                sub-pages reachable only through the XML sitemap. */}
+            <FacetLinkGroups groups={expertGuideHubGroups()} eyebrow="Expert guides, city by city" />
 
             <Footer />
         </main>

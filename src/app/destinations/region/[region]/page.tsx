@@ -7,6 +7,7 @@ import {
     regions,
 } from "@/data/destinations";
 import RegionView from "@/components/destinations/RegionView";
+import { pageTitle } from "@/lib/meta";
 
 const SITE = "https://www.mytripmytravel.com";
 
@@ -25,7 +26,7 @@ export async function generateMetadata({
     const { region: regionSlug } = await params;
     const region = getRegion(regionSlug);
     if (!region) return { title: "Region Not Found | MyTripMyTravel" };
-    const title = `${region.name}, Luxury Travel | MyTripMyTravel`;
+    const title = pageTitle(`${region.name}, Luxury Travel`);
     const url = `${SITE}/destinations/region/${region.slug}`;
     return {
         ...focusRobotsRegion(regionSlug),

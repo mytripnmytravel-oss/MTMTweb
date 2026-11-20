@@ -5,7 +5,7 @@ import CareersView from "@/components/careers/CareersView";
 export const metadata: Metadata = {
     title: "Careers, Join the Mission | MyTripMyTravel",
     description:
-        "Careers at MyTripMyTravel, a luxury inbound-India travel architect. We hire mission architects, performance chauffeurs, heritage curators, growth, and guest-operations talent, for judgement, discretion, and craft.",
+        "Careers at MyTripMyTravel, a luxury inbound-India travel architect. We hire for judgement, discretion and craft across planning, chauffeur and guest operations.",
     alternates: { canonical: `${SITE_URL}/careers` },
     openGraph: {
         title: "Careers | MyTripMyTravel",

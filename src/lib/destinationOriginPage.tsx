@@ -10,6 +10,7 @@ import {
     findOrigin,
 } from "@/data/destinationOrigins";
 import DestinationOriginView from "@/components/destinations/DestinationOriginView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function getDestinationOriginStaticParams() {
     return getAllCityOriginParams();
@@ -23,8 +24,8 @@ export async function destinationOriginMetadata(
     const origin = findOrigin(originSlug);
     if (!dest || !origin) return { title: "Not Found | MyTripMyTravel" };
     const content = getCityOriginContent(dest, origin);
-    const title = `${content.h1}, ${dest.state} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}, ${dest.state}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/destinations/${citySlug}/from/${originSlug}`;
     return {
         ...focusRobots(citySlug),

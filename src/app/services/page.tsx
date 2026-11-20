@@ -4,7 +4,7 @@ import { SERVICE_LINES, serviceCitiesResolved } from "@/data/services";
 import ServicesHubView from "@/components/services/ServicesHubView";
 
 export const metadata: Metadata = {
-    title: "Ground Services, Chauffeured Car Rental & Airport Transfer | MyTripMyTravel",
+    title: "Chauffeured Car Rental & Airport Transfers",
     description:
         "Private, GPS-tracked chauffeured car rental and airport transfers across MyTripMyTravel's hub cities, pre-priced and continuous into any itinerary.",
     alternates: { canonical: `${SITE_URL}/services` },

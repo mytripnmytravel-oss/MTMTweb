@@ -11,6 +11,7 @@ import {
     fleetCitiesForVehicle,
 } from "@/data/fleetCities";
 import FleetCityView from "@/components/fleet/FleetCityView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function generateStaticParams() {
     return coreParams(getAllFleetCityParams(), "city");
@@ -30,9 +31,9 @@ export async function generateMetadata({
     if (!v || !dest || !fleetCityExists(vId, city)) {
         return { title: "Not Found | MyTripMyTravel" };
     }
-    const title = `${v.name} Chauffeur Hire in ${dest.name}, ${dest.state} | MyTripMyTravel`;
+    const title = pageTitle(`${v.name} Chauffeur Hire in ${dest.name}, ${dest.state}`);
     const content = getFleetCityContent(v, dest);
-    const description = content.answer.slice(0, 300);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/fleet/${v.id}/in/${dest.slug}`;
     return {
         title,

@@ -10,13 +10,15 @@ import { Footer } from "@/components/Footer";
 import { LeadBlock } from "@/components/lead/Lead";
 import { packageSlug } from "@/data/tours";
 import type { VariantContent } from "@/data/tourVariants";
+import type { VariantLinkGroup } from "@/lib/variantLinks";
+import FacetLinkGroups from "@/components/seo/FacetLinkGroups";
 
 export default function TourVariantView({
     content,
-    siblings,
+    linkGroups,
 }: {
     content: VariantContent;
-    siblings: { label: string; href: string }[];
+    linkGroups: VariantLinkGroup[];
 }) {
     return (
         <main className="min-h-screen bg-paper">
@@ -101,26 +103,12 @@ export default function TourVariantView({
                 </section>
             )}
 
-            {/* Siblings */}
-            <section className="section">
-                <div className="container-x">
-                    <p className="eyebrow eyebrow-accent">Explore other slices</p>
-                    <div className="mt-6 flex flex-wrap gap-3">
-                        {siblings.map((s) => (
-                            <Link
-                                key={s.href}
-                                href={s.href}
-                                className="btn-outline btn-sm"
-                            >
-                                {s.label}
-                            </Link>
-                        ))}
-                        <Link href="/destinations/region/golden-triangle" className="btn-outline btn-sm">
-                            Golden Triangle destinations <ArrowRight size={14} />
-                        </Link>
-                    </div>
-                </div>
-            </section>
+            {/* Facet navigation: up, down and sideways through the variant tree */}
+            <FacetLinkGroups
+                groups={linkGroups}
+                eyebrow="Explore other slices"
+                trailing={{ label: "Golden Triangle destinations", href: "/destinations/region/golden-triangle" }}
+            />
 
             <LeadBlock
                 source={`Tour variant: ${content.label}`}

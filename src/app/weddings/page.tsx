@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import WeddingsView from "./WeddingsView";
+import { pageTitle } from "@/lib/meta";
 
-const TITLE = "Destination Weddings in India, Palace & Fort Venues | MyTripMyTravel";
+const TITLE = "Destination Weddings in India: Palace Venues";
 const DESCRIPTION =
     "Destination weddings in India, lake palaces, Rajput forts, heritage havelis and desert camps. MyTripMyTravel runs venue, fleet, decor and dining together.";
 const URL = `${SITE_URL}/weddings`;
 const HERO_IMG = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Umaid_Bhawan_Palace%2C_Jodhpur.JPG";
 
 export const metadata: Metadata = {
-    title: TITLE,
+    title: pageTitle(TITLE),
     description: DESCRIPTION,
     alternates: { canonical: URL },
     openGraph: {
-        title: TITLE,
+        title: pageTitle(TITLE),
         description: DESCRIPTION,
         url: URL,
         type: "website",

@@ -7,6 +7,8 @@ import { ChevronRight, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LeadCTA, WhatsAppFab } from "@/components/lead/Lead";
+import FacetLinkGroups from "@/components/seo/FacetLinkGroups";
+import { SERVICE_ITEMS } from "@/data/serviceItems";
 
 export default function ServicesHubView({
     lines, cities,
@@ -63,6 +65,12 @@ export default function ServicesHubView({
                 title="Need a chauffeured transfer or rental?"
                 subtitle="Airport pickups, day hire or a full multi-city circuit. Tell us your route and we quote it transparently, with a vetted driver every time."
                 waMessage="Hi MyTripMyTravel, I would like a chauffeured transfer or car rental in India."
+            />
+
+            {/* The /services/<item> pages had no internal inbound link. */}
+            <FacetLinkGroups
+                groups={[{ heading: "Individual services", links: SERVICE_ITEMS.map((i) => ({ label: i.name, href: `/services/${i.slug}` })) }]}
+                eyebrow="Every service we run"
             />
 
             <Footer />

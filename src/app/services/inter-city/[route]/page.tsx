@@ -9,6 +9,7 @@ import {
     routeExists,
 } from "@/data/transferRoutes";
 import TransferRouteView from "@/components/services/TransferRouteView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function generateStaticParams() {
     return getAllRouteParams();
@@ -29,8 +30,8 @@ export async function generateMetadata({
     const destination = getDestination(route.destinationSlug);
     if (!origin || !destination) return { title: "Not Found | MyTripMyTravel" };
     const content = getRouteContent(route, origin, destination);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/services/inter-city/${slug}`;
     return {
         title,

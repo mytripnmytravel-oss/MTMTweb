@@ -10,6 +10,7 @@ import {
 } from "@/data/wellnessOrigins";
 import type { WellnessFacetContent } from "@/data/wellnessFacets";
 import WellnessFacetView from "@/components/wellness/WellnessFacetView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function getWellnessOriginStaticParams() {
     return getAllWellnessOriginParams();
@@ -23,8 +24,8 @@ export async function wellnessOriginMetadata(
     const origin = findOrigin(originSlug);
     if (!programme || !origin) return { title: "Not Found | MyTripMyTravel" };
     const content = getWellnessOriginContent(programme, origin);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/wellness/${programmeSlug}/from/${originSlug}`;
     return {
         title,

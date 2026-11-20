@@ -7,6 +7,7 @@ import {
     SERVICE_ITEMS,
 } from "@/data/serviceItems";
 import ServiceItemView from "@/components/services/ServiceItemView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function generateStaticParams() {
     return getAllServiceItemSlugs().map((service) => ({ service }));
@@ -23,8 +24,8 @@ export async function generateMetadata({
     const { service: slug } = await params;
     const item = getServiceItem(slug);
     if (!item) return { title: "Not Found | MyTripMyTravel" };
-    const title = `${item.name} | MyTripMyTravel`;
-    const description = item.answer.slice(0, 300);
+    const title = pageTitle(`${item.name}`);
+    const description = metaDescription(item.answer);
     const url = `${SITE_URL}/services/${slug}`;
     return {
         title,

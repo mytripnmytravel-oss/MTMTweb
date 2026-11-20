@@ -10,6 +10,7 @@ import {
     monthExists,
 } from "@/data/destinationMonths";
 import DestinationMonthView from "@/components/destinations/DestinationMonthView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function getDestinationMonthStaticParams() {
     return getAllCityMonthParams();
@@ -23,8 +24,8 @@ export async function destinationMonthMetadata(
     const month = parseMonthSlug(monthSlug);
     if (!dest || !month) return { title: "Not Found | MyTripMyTravel" };
     const content = getMonthContent(dest, month);
-    const title = `${content.h1}, ${dest.state} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}, ${dest.state}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/destinations/${citySlug}/in/${monthSlug}`;
     return {
         ...focusRobots(citySlug),

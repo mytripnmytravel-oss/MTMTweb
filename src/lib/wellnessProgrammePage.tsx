@@ -1,42 +1,43 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import { getProgramme, programmeFaqs } from "@/data/wellness";
+import { pageTitle } from "@/lib/meta";
 
 /** Hand-crafted, keyword-front-loaded metadata per wellness programme. */
 const META: Record<string, { title: string; description: string }> = {
     "yoga-soul": {
-        title: "Yoga Retreats in India, Rishikesh & Himalayan Immersions | MyTripMyTravel",
+        title: "Yoga Retreats in India: Rishikesh & Himalaya",
         description:
-            "Private, master-led yoga & meditation retreats in Rishikesh and Himalayan sanctuaries, Hatha, Vinyasa, meditation, pranayama and yin, calibrated to every level. Enquire now.",
+            "Private, master-led yoga and meditation retreats in Rishikesh and Himalayan sanctuaries. Hatha, Vinyasa, pranayama and yin, at every level.",
     },
     ayurvedic: {
-        title: "Ayurveda Retreats in Kerala, Panchakarma & Therapies | MyTripMyTravel",
+        title: "Ayurveda Retreats in Kerala: Panchakarma",
         description:
             "AYUSH-certified Ayurveda programmes in Kerala, physician-led Panchakarma, Abhyanga, Shirodhara and Rasayana. Honest recuperative care, not a cure. Enquire now.",
     },
     orthopedic: {
-        title: "Orthopaedic Recovery Travel in India, Rehab Logistics | MyTripMyTravel",
+        title: "Orthopaedic Recovery Travel in India",
         description:
-            "Gentle-paced orthopaedic recovery travel, knee, spine, joint and sports rehab logistics around accredited providers, with luxury transit and concierge. Enquire now.",
+            "Gentle-paced recovery travel for knee, spine, joint and sports rehab, arranged around accredited providers with private transit and concierge.",
     },
     massage: {
-        title: "Therapeutic Massage in India, Deep-Tissue, Marma & Hot-Stone | MyTripMyTravel",
+        title: "Therapeutic Massage in India",
         description:
-            "Master-therapist bodywork across India, deep-tissue, Swedish, Thai, marma-point and hot-stone therapy at Kerala, Rajasthan palaces and city sanctuaries. Enquire now.",
+            "Master-therapist bodywork across India: deep-tissue, Swedish, Thai, marma-point and hot-stone therapy in Kerala and Rajasthan palaces.",
     },
 };
 
 export function wellnessProgrammeMetadata(slug: string): Metadata {
     const programme = getProgramme(slug);
     const meta = META[slug];
-    if (!programme || !meta) return { title: "Wellness | MyTripMyTravel" };
+    if (!programme || !meta) return { title: pageTitle("Wellness") };
     const url = `${SITE_URL}/wellness/${slug}`;
     return {
-        title: meta.title,
+        title: pageTitle(meta.title),
         description: meta.description,
         alternates: { canonical: url },
         openGraph: {
-            title: meta.title,
+            title: pageTitle(meta.title),
             description: meta.description,
             url,
             type: "website",

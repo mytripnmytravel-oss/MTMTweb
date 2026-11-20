@@ -8,6 +8,8 @@ import { Footer } from "@/components/Footer";
 import { EnquiryForm, WhatsAppFab } from "@/components/lead/Lead";
 import Link from "next/link";
 import Image from "next/image";
+import FacetLinkGroups from "@/components/seo/FacetLinkGroups";
+import { weddingsHubGroups } from "@/lib/hubLinks";
 
 const fade = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } } as const;
 
@@ -141,6 +143,10 @@ export default function WeddingsView() {
                     />
                 </div>
             </section>
+
+            {/* Child links: this hub previously rendered none, leaving its
+                sub-pages reachable only through the XML sitemap. */}
+            <FacetLinkGroups groups={weddingsHubGroups()} eyebrow="Explore wedding planning" />
 
             <Footer />
             <WhatsAppFab message="Hi MyTripMyTravel, I would like to plan a wedding in India." />

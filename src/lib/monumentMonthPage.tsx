@@ -11,6 +11,7 @@ import {
     monumentMonthExists,
 } from "@/data/monumentMonths";
 import MonumentMonthView from "@/components/destinations/MonumentMonthView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export function getMonumentMonthStaticParams() {
     return getAllMonumentMonthParams();
@@ -26,8 +27,8 @@ export async function monumentMonthMetadata(
     const month = parseMonthSlug(monthSlug);
     if (!dest || !monument || !month) return { title: "Not Found | MyTripMyTravel" };
     const content = getMonumentMonthContent(monument, dest, month);
-    const title = `${content.h1} | MyTripMyTravel`;
-    const description = content.answer.slice(0, 300);
+    const title = pageTitle(`${content.h1}`);
+    const description = metaDescription(content.answer);
     const url = `${SITE_URL}/destinations/${citySlug}/monuments/${monumentSlug}/in/${monthSlug}`;
     return {
         ...focusRobots(citySlug),

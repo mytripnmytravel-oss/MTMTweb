@@ -9,6 +9,8 @@ import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LeadCTA, WhatsAppFab, waLink } from "@/components/lead/Lead";
 import { packageSlug, type Package } from "@/data/tours";
+import FacetLinkGroups from "@/components/seo/FacetLinkGroups";
+import { REGIONAL_HUBS } from "@/data/tourHubs";
 
 const fade = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } } as const;
 
@@ -198,6 +200,19 @@ export default function ToursHubView({ grouped }: { grouped: { location: string;
                 title="Not sure which tour is right?"
                 subtitle="Tell us what you love and how long you have. We will suggest the perfect itinerary and quote it transparently."
                 waMessage="Hi MyTripMyTravel, I would like help choosing the right tour."
+            />
+
+            {/* /tours/andaman and /tours/sikkim had zero inbound links: the hub
+                listed individual packages but never the regional hubs. */}
+            <FacetLinkGroups
+                groups={[{
+                    heading: "Regional tour collections",
+                    links: [
+                        { label: "Golden Triangle tours", href: "/tours/golden-triangle" },
+                        ...REGIONAL_HUBS.map((h) => ({ label: `${h.name} tours`, href: `/tours/${h.slug}` })),
+                    ],
+                }]}
+                eyebrow="Browse by region"
             />
 
             <Footer />

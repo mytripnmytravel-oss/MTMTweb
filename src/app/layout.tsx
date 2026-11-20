@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { SITE_URL, SITE_NAME, ORGANIZATION } from "@/lib/site";
+import Analytics from "@/components/analytics/Analytics";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -15,9 +16,12 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "MyTripMyTravel | Luxury Golden Triangle Tours & Premium India Car Rental",
-  description: "Experience the ultimate luxury travel in India. We offer premium Golden Triangle tours, private guided experiences, and elite car rental services in Delhi, Agra, and Jaipur.",
+  title: "Luxury Golden Triangle Tours | MyTripMyTravel",
+  description: "Private, chauffeured Golden Triangle tours from an Agra-based travel architect. Delhi, Agra and Jaipur, sequenced around the light and the crowds.",
   keywords: ["Luxury Golden Triangle Tours", "Premium India Car Rental", "Chauffeur Driven Cars India", "Luxury Travel Agra", "Private Tours India", "India Private Tours"],
+  ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } }
+    : {}),
   openGraph: {
     title: "MyTripMyTravel | Premium India Travel Services",
     description: "Bespoke luxury tours and premium car rentals across India's Golden Triangle.",
@@ -83,6 +87,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );

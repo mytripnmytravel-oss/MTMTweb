@@ -4,9 +4,9 @@ import { packages, packageSlug } from "@/data/tours";
 import ToursHubView from "@/components/tours/ToursHubView";
 
 export const metadata: Metadata = {
-    title: "Tour Master Packages, Luxury India Itineraries | MyTripMyTravel",
+    title: "Luxury India Tours & Private Itineraries",
     description:
-        "Every MyTripMyTravel itinerary is a precise mission architecture, not a fixed package, Golden Triangle, Rajasthan, Kerala, the Himalayas and beyond, chauffeured and escorted.",
+        "Private, chauffeured itineraries across the Golden Triangle, Rajasthan, Kerala and the Himalayas. Built to a brief, never sold off a shelf.",
     alternates: { canonical: `${SITE_URL}/tours` },
     openGraph: {
         title: "Tour Master Packages | MyTripMyTravel",

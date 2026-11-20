@@ -7,6 +7,16 @@ import { regions, destinations } from "@/data/destinations";
 import { isCoreDestination, isCoreRegion } from "@/lib/seoFocus";
 import { packages, packageSlug } from "@/data/tours";
 import { blogPosts } from "@/data/blog";
+import { getAllVariantParams, variantHref, ORIGINS } from "@/data/tourVariants";
+import { getAllVariantRegions, getRegionVariantParams, regionVariantHref } from "@/data/regionVariants";
+import { REGIONAL_HUBS } from "@/data/tourHubs";
+import { SERVICE_ITEMS } from "@/data/serviceItems";
+import { guideCitiesResolved } from "@/data/expertGuides";
+import { methodologyStages } from "@/data/methodology";
+import { diningCategories } from "@/data/heritageDining";
+import { weddingCategories } from "@/data/weddings";
+import { corporateCategories } from "@/data/corporate";
+import { fleet } from "@/data/fleet";
 
 export const metadata: Metadata = {
     title: "Sitemap | MyTripMyTravel",
@@ -43,6 +53,10 @@ const WELLNESS = [
     { label: "Therapeutic Massage", href: "/wellness/massage" },
 ];
 
+const OPERATIONS = [
+    { label: "Telemetry & live tracking", href: "/telemetry" },
+];
+
 const LEGAL = [
     { label: "Privacy Policy", href: "/legal/privacy" },
     { label: "Terms", href: "/legal/terms" },
@@ -66,8 +80,67 @@ function Group({ title, links }: { title: string; links: { label: string; href: 
     );
 }
 
+const titleCase = (s: string) =>
+    s.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+
+/**
+ * Entry points into the facet engines.
+ *
+ * The HTML sitemap used to carry 107 links -- top-level pages only -- so it was
+ * no help to the 6,851 pages the 2026-11-20 crawl audit found unreachable. It
+ * does not need to list all 8,140 URLs: listing each engine's *hub* dimensions
+ * (every duration, theme, month and departure city) gives a crawler a short
+ * path into every combinator, because each hub page now links down to its own
+ * refinements. This is the safety net under the per-template link work.
+ */
+function variantEntryPoints(): { label: string; href: string }[] {
+    const hubDimensions = new Set(["by-duration", "by-theme", "in-month", "from-origin", "combo"]);
+    const city = (slug: string) => ORIGINS.find((o) => o.slug === slug)?.city ?? titleCase(slug);
+    return getAllVariantParams()
+        .filter((p) => hubDimensions.has(p.dimension))
+        .map((p) => ({
+            label:
+                p.dimension === "from-origin"
+                    ? `Golden Triangle from ${city(p.value)}`
+                    : `Golden Triangle, ${titleCase(p.value).replace(/(\d+) Day/, "$1-day")}`,
+            href: variantHref(p.dimension, p.value),
+        }));
+}
+
+function regionVariantEntryPoints(): { label: string; href: string }[] {
+    const hubDimensions = new Set(["by-duration", "by-theme", "in-month", "from-origin"]);
+    const city = (slug: string) => ORIGINS.find((o) => o.slug === slug)?.city ?? titleCase(slug);
+    const out: { label: string; href: string }[] = [];
+    for (const region of getAllVariantRegions()) {
+        if (!isCoreRegion(region)) continue;
+        for (const p of getRegionVariantParams(region)) {
+            if (!hubDimensions.has(p.dimension)) continue;
+            out.push({
+                label:
+                    p.dimension === "from-origin"
+                        ? `${titleCase(region)} from ${city(p.value)}`
+                        : `${titleCase(region)}, ${titleCase(p.value).replace(/(\d+) Day/, "$1-day")}`,
+                href: regionVariantHref(region, p.dimension, p.value),
+            });
+        }
+    }
+    return out;
+}
+
 export default function SiteMapPage() {
     const tourLinks = packages.map((p) => ({ label: p.title, href: `/tours/${packageSlug(p)}` }));
+    const regionalHubs = REGIONAL_HUBS.map((h) => ({ label: `${h.name} tours`, href: `/tours/${h.slug}` }));
+    const serviceItems = SERVICE_ITEMS.map((i) => ({ label: i.name, href: `/services/${i.slug}` }));
+    const guideCities = guideCitiesResolved()
+        .filter((c) => isCoreDestination(c.slug))
+        .map((c) => ({ label: `${c.name} guides`, href: `/expert-guides/${c.slug}` }));
+    const stages = methodologyStages.map((st) => ({ label: st.name, href: `/methodology/${st.slug}` }));
+    const vehicles = fleet.map((v) => ({ label: v.name, href: `/fleet/${v.id}` }));
+    const categoryLinks = (base: string, cats: { slug: string; name: string; items: { slug: string; name: string }[] }[]) =>
+        cats.flatMap((c) => [
+            { label: c.name, href: `${base}/${c.slug}` },
+            ...c.items.map((i) => ({ label: `${c.name}: ${i.name}`, href: `${base}/${c.slug}/${i.slug}` })),
+        ]);
 
     return (
         <main className="min-h-screen bg-paper">
@@ -103,7 +176,18 @@ export default function SiteMapPage() {
                     })}
 
                     <Group title="Tours & itineraries" links={tourLinks} />
+                    <Group title="Regional tour hubs" links={regionalHubs} />
+                    <Group title="Golden Triangle, every way to plan it" links={variantEntryPoints()} />
+                    <Group title="Rajasthan, every way to plan it" links={regionVariantEntryPoints()} />
+                    <Group title="Elite Fleet" links={vehicles} />
+                    <Group title="Ground services" links={serviceItems} />
+                    <Group title="Expert guides" links={guideCities} />
+                    <Group title="Heritage dining" links={categoryLinks("/heritage-dining", diningCategories)} />
+                    <Group title="Weddings" links={categoryLinks("/weddings", weddingCategories)} />
+                    <Group title="Corporate travel" links={categoryLinks("/corporate", corporateCategories)} />
+                    <Group title="The Mission Protocol" links={stages} />
                     <Group title="Wellness" links={WELLNESS} />
+                    <Group title="Operations" links={OPERATIONS} />
                     <Group title="Journal" links={blogPosts.map((b) => ({ label: b.title, href: `/blog/${b.slug}` }))} />
                     <Group title="Legal" links={LEGAL} />
                 </div>

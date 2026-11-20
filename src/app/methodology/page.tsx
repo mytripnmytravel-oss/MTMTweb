@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import MethodologyView from "./MethodologyView";
+import { pageTitle } from "@/lib/meta";
 
-const TITLE = "Our Methodology, How MyTripMyTravel Plans Private India Journeys | MyTripMyTravel";
+const TITLE = "How We Plan Private India Journeys";
 const DESCRIPTION =
     "How MyTripMyTravel plans private luxury India journeys, a three-phase Mission Protocol of intelligent curation, kinetic activation and memory archiving.";
 const URL = `${SITE_URL}/methodology`;
 
 export const metadata: Metadata = {
-    title: TITLE,
+    title: pageTitle(TITLE),
     description: DESCRIPTION,
     alternates: { canonical: URL },
     openGraph: {
-        title: TITLE,
+        title: pageTitle(TITLE),
         description: DESCRIPTION,
         url: URL,
         type: "article",

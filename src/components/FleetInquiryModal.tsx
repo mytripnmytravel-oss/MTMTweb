@@ -10,6 +10,7 @@ import {
 import { useForm, ValidationError } from "@formspree/react";
 import { FORMSPREE_FORM_ID, FORMSPREE_ACTION } from "./lead/Lead";
 import { fleet, Vehicle } from "@/data/fleet";
+import { trackLead } from "@/lib/analytics";
 
 interface FleetInquiryModalProps {
     vehicle: Vehicle | null;
@@ -125,6 +126,15 @@ export const FleetInquiryModal = ({ vehicle: initialVehicle, isOpen, onClose }: 
     }, [isOpen]);
 
     const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
+
+    // Fleet enquiries are a separate conversion path from the page forms.
+    const reported = React.useRef(false);
+    React.useEffect(() => {
+        if (state.succeeded && !reported.current) {
+            reported.current = true;
+            trackLead(selectedVehicle ? `Fleet: ${selectedVehicle.name}` : "Fleet enquiry", { form: "fleet_modal" });
+        }
+    }, [state.succeeded, selectedVehicle]);
 
     // Sync selected vehicle when initialVehicle changes (modal opens)
     React.useEffect(() => {

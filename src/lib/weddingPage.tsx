@@ -3,11 +3,12 @@ import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
 import { getWeddingCategory, getWeddingItem } from "@/data/weddings";
 import { WeddingCategoryView, WeddingItemView } from "@/components/weddings/WeddingView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export async function weddingCategoryMetadata(slug: string): Promise<Metadata> {
     const c = getWeddingCategory(slug);
     if (!c) return { title: "Not Found | MyTripMyTravel" };
-    const title = `Wedding ${c.name} | MyTripMyTravel`;
+    const title = pageTitle(`Wedding ${c.name}`);
     const url = `${SITE_URL}/weddings/${c.slug}`;
     return {
         title,
@@ -59,8 +60,8 @@ export async function weddingItemMetadata(
     const resolved = getWeddingItem(categorySlug, itemSlug);
     if (!resolved) return { title: "Not Found | MyTripMyTravel" };
     const { item } = resolved;
-    const title = `${item.name} | MyTripMyTravel`;
-    const description = item.answer.slice(0, 300);
+    const title = pageTitle(`${item.name}`);
+    const description = metaDescription(item.answer);
     const url = `${SITE_URL}/weddings/${categorySlug}/${itemSlug}`;
     return {
         title,

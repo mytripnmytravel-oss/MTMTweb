@@ -10,7 +10,7 @@ import { LeadBlock } from "@/components/lead/Lead";
 export const metadata: Metadata = {
     title: "Inter-City Chauffeur Transfers | MyTripMyTravel",
     description:
-        "Curated chauffeured inter-city routes across India, Delhi to Agra, Agra to Jaipur, Jodhpur to Jaisalmer, Kochi to Munnar and more, private, GPS-tracked, pre-priced.",
+        "Chauffeured inter-city routes across India: Delhi to Agra, Agra to Jaipur, Jodhpur to Jaisalmer and more. Private, GPS-tracked and pre-priced.",
     alternates: { canonical: `${SITE_URL}/services/inter-city` },
     openGraph: {
         title: "Inter-City Transfers | MyTripMyTravel",

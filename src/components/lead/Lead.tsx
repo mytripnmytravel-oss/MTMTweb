@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm, ValidationError } from "@formspree/react";
 import { CheckCircle2, ArrowRight, Phone, Mail, MessageCircle, ShieldCheck, Clock } from "lucide-react";
+import { trackLead, trackContact } from "@/lib/analytics";
 
 export const WA_NUMBER = "919997812237";
 export const PHONE_DISPLAY = "+91 99978 12237";
@@ -43,6 +44,16 @@ export function EnquiryForm({
     compact?: boolean;
 }) {
     const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
+
+    // Report the conversion once, on the transition to succeeded. Formspree
+    // re-renders on every state change, so the ref guards against duplicates.
+    const reported = React.useRef(false);
+    React.useEffect(() => {
+        if (state.succeeded && !reported.current) {
+            reported.current = true;
+            trackLead(source, { form: "enquiry" });
+        }
+    }, [state.succeeded, source]);
 
     if (state.succeeded) {
         return (
@@ -147,8 +158,8 @@ export function LeadCTA({
                         </div>
                         <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row lg:flex-col xl:flex-row">
                             <Link href="/booking" className="btn rounded-full bg-paper px-7 py-3.5 text-ink hover:bg-clay hover:text-paper">Plan your trip <ArrowRight size={16} /></Link>
-                            <a href={waLink(waMessage)} target="_blank" rel="noopener noreferrer" className="btn rounded-full bg-[#25D366] px-7 py-3.5 text-white hover:opacity-90"><MessageCircle size={16} /> WhatsApp us</a>
-                            <a href={`tel:+${WA_NUMBER}`} className="btn rounded-full border border-white/25 px-7 py-3.5 text-paper hover:bg-paper hover:text-ink"><Phone size={15} /> Call</a>
+                            <a href={waLink(waMessage)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp", "lead_cta")} className="btn rounded-full bg-[#25D366] px-7 py-3.5 text-white hover:opacity-90"><MessageCircle size={16} /> WhatsApp us</a>
+                            <a href={`tel:+${WA_NUMBER}`} onClick={() => trackContact("phone", "lead_cta")} className="btn rounded-full border border-white/25 px-7 py-3.5 text-paper hover:bg-paper hover:text-ink"><Phone size={15} /> Call</a>
                         </div>
                     </div>
                 </div>
@@ -164,6 +175,7 @@ export function WhatsAppFab({ message = "Hi MyTripMyTravel, I am interested in a
             href={waLink(message)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackContact("whatsapp", "whatsapp_fab")}
             aria-label="Chat on WhatsApp"
             className="fixed bottom-6 right-6 z-[500] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
         >
@@ -176,9 +188,9 @@ export function WhatsAppFab({ message = "Hi MyTripMyTravel, I am interested in a
 export function ContactChips({ waMessage = "Hi MyTripMyTravel, I have a question about a trip." }: { waMessage?: string }) {
     return (
         <div className="flex flex-wrap gap-3">
-            <a href={waLink(waMessage)} target="_blank" rel="noopener noreferrer" className="btn rounded-full bg-[#25D366] px-5 py-2.5 text-[13px] text-white hover:opacity-90"><MessageCircle size={15} /> WhatsApp</a>
-            <a href={`tel:+${WA_NUMBER}`} className="btn-outline btn-sm"><Phone size={14} /> {PHONE_DISPLAY}</a>
-            <a href={`mailto:${EMAIL}`} className="btn-outline btn-sm"><Mail size={14} /> {EMAIL}</a>
+            <a href={waLink(waMessage)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp", "contact_chips")} className="btn rounded-full bg-[#25D366] px-5 py-2.5 text-[13px] text-white hover:opacity-90"><MessageCircle size={15} /> WhatsApp</a>
+            <a href={`tel:+${WA_NUMBER}`} onClick={() => trackContact("phone", "contact_chips")} className="btn-outline btn-sm"><Phone size={14} /> {PHONE_DISPLAY}</a>
+            <a href={`mailto:${EMAIL}`} onClick={() => trackContact("email", "contact_chips")} className="btn-outline btn-sm"><Mail size={14} /> {EMAIL}</a>
         </div>
     );
 }

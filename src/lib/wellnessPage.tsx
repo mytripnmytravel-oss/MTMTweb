@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
 import { getVariant } from "@/data/wellness";
 import WellnessVariantView from "@/components/wellness/WellnessVariantView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 export async function wellnessMetadata(
     programmeSlug: string,
@@ -11,8 +12,8 @@ export async function wellnessMetadata(
     const resolved = getVariant(programmeSlug, variantSlug);
     if (!resolved) return { title: "Not Found | MyTripMyTravel" };
     const { programme, variant } = resolved;
-    const title = `${variant.name}, ${programme.name} | MyTripMyTravel`;
-    const description = variant.answer.slice(0, 300);
+    const title = pageTitle(`${variant.name}, ${programme.name}`);
+    const description = metaDescription(variant.answer);
     const url = `${SITE_URL}/wellness/${programme.slug}/${variant.slug}`;
     return {
         title,

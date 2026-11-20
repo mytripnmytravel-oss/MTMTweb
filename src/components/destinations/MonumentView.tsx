@@ -10,6 +10,8 @@ import { Footer } from "@/components/Footer";
 import { EnquiryForm, WhatsAppFab } from "@/components/lead/Lead";
 import type { Destination } from "@/data/destinations";
 import type { Monument } from "@/data/monuments";
+import type { VariantLinkGroup } from "@/lib/variantLinks";
+import FacetLinkGroups from "@/components/seo/FacetLinkGroups";
 
 const fade = {
     hidden: { opacity: 0, y: 16 },
@@ -21,9 +23,11 @@ const Eyebrow = ({ children }: { children: React.ReactNode }) => (
 );
 
 export default function MonumentView({
-    dest, monument, siblings,
+    dest, monument, siblings, facetGroups = [],
 }: {
     dest: Destination; monument: Monument; siblings: Monument[];
+    /** Origin + month sub-pages for this monument, so they are not sitemap-only. */
+    facetGroups?: VariantLinkGroup[];
 }) {
     const waMsg = `Hi MyTripMyTravel, I would like to visit ${monument.name} in ${dest.name}. Could you help me plan?`;
     const waHref = `https://wa.me/919997812237?text=${encodeURIComponent(waMsg)}`;
@@ -162,6 +166,8 @@ export default function MonumentView({
                     </div>
                 </section>
             )}
+
+            <FacetLinkGroups groups={facetGroups} eyebrow={`Plan your ${monument.name} visit`} />
 
             {/* Siblings + CTA */}
             <section className="section">

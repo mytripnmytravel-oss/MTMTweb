@@ -8,6 +8,7 @@ import {
     cityHasMonuments,
 } from "@/data/monuments";
 import MonumentsIndexView from "@/components/destinations/MonumentsIndexView";
+import { metaDescription, pageTitle } from "@/lib/meta";
 
 const SITE = "https://www.mytripmytravel.com";
 
@@ -28,8 +29,8 @@ export async function generateMetadata({
     if (!dest || !cityHasMonuments(slug)) {
         return { title: "Not Found | MyTripMyTravel" };
     }
-    const title = `Monuments of ${dest.name}, ${dest.state} | MyTripMyTravel`;
-    const description = `The definitive monument briefs for ${dest.name}, history, highlights, visitor protocol, and escorted access by MyTripMyTravel.`;
+    const title = pageTitle(`Monuments of ${dest.name}, ${dest.state}`);
+    const description = metaDescription(`The definitive monument briefs for ${dest.name}, history, highlights, visitor protocol, and escorted access by MyTripMyTravel.`);
     const url = `${SITE}/destinations/${dest.slug}/monuments`;
     return {
         ...focusRobots(slug),

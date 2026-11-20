@@ -4,9 +4,9 @@ import { isCoreDestination, isCoreRegion } from "@/lib/seoFocus";
 import DestinationsHubView from "@/components/destinations/DestinationsHubView";
 
 export const metadata: Metadata = {
-    title: "Destination Archive | Curated Luxury India by MyTripMyTravel",
+    title: "India Destination Guides | MyTripMyTravel",
     description:
-        "Explore MyTripMyTravel's vetted deployment zones across India, the Golden Triangle, Rajasthan, Kerala, the Himalayas, Sikkim and the Andamans. Chauffeured, escorted, sequenced for the light.",
+        "City and region guides across India: the Golden Triangle, Rajasthan, Kerala, the Himalayas, Sikkim and the Andamans. Chauffeured and escorted.",
     alternates: { canonical: "https://www.mytripmytravel.com/destinations" },
     openGraph: {
         title: "Destination Archive | MyTripMyTravel",
