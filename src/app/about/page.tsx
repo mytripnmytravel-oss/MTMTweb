@@ -5,7 +5,7 @@ import { pageTitle } from "@/lib/meta";
 
 const TITLE = "About Us, Luxury India Travel Architects";
 const DESCRIPTION =
-    "Meet the boutique team behind MyTripMyTravel, architecting private, chauffeured luxury journeys across India's Golden Triangle, Rajasthan, Kerala and beyond.";
+    "Meet the boutique team behind MyTripMyTravel, architecting private, chauffeured journeys across India's Golden Triangle, Rajasthan and Kerala.";
 const URL = `${SITE_URL}/about`;
 
 export const metadata: Metadata = {

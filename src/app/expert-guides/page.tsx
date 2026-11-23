@@ -6,7 +6,7 @@ import { pageTitle } from "@/lib/meta";
 const TITLE =
     "Expert Local Guides in India, by Language";
 const DESCRIPTION =
-    "Vetted, licensed local guides across India's heritage cities, Delhi, Agra, Jaipur, Udaipur and Kerala, leading private escorted visits in your own language.";
+    "Vetted, licensed local guides across Delhi, Agra, Jaipur, Udaipur and Kerala, leading private escorted visits in your own language.";
 const URL = `${SITE_URL}/expert-guides`;
 
 export const metadata: Metadata = {

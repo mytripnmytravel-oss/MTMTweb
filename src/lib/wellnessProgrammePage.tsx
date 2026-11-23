@@ -13,7 +13,7 @@ const META: Record<string, { title: string; description: string }> = {
     ayurvedic: {
         title: "Ayurveda Retreats in Kerala: Panchakarma",
         description:
-            "AYUSH-certified Ayurveda programmes in Kerala, physician-led Panchakarma, Abhyanga, Shirodhara and Rasayana. Honest recuperative care, not a cure. Enquire now.",
+            "AYUSH-certified Ayurveda in Kerala: physician-led Panchakarma, Abhyanga, Shirodhara and Rasayana. Honest recuperative care, not a cure.",
     },
     orthopedic: {
         title: "Orthopaedic Recovery Travel in India",

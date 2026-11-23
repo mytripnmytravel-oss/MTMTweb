@@ -5,14 +5,14 @@ import GoldenTriangleAllView from "./GoldenTriangleAllView";
 
 const url = `${SITE_URL}/tours/golden-triangle-all`;
 const description =
-    "Every Golden Triangle tour variation in one archive. Filter by region, theme and duration, then tailor any route into a private, chauffeured trip.";
+    "Every Golden Triangle tour package in one archive. Compare by region, theme and duration, then tailor any route into a private, chauffeured trip.";
 
 export const metadata: Metadata = {
-    title: "Golden Triangle Tours: Every Itinerary Variation",
+    title: "Golden Triangle Tour Packages: Every Variation",
     description,
     alternates: { canonical: url },
     openGraph: {
-        title: "Golden Triangle Tours: Every Itinerary Variation",
+        title: "Golden Triangle Tour Packages: Every Variation",
         description,
         url,
         type: "website",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Golden Triangle Tours: Every Itinerary Variation",
+        title: "Golden Triangle Tour Packages: Every Variation",
         description,
     },
 };
@@ -34,7 +34,7 @@ const jsonLd = {
     "@graph": [
         {
             "@type": "CollectionPage",
-            name: "Golden Triangle Tours, All Itinerary Variations",
+            name: "Golden Triangle Tour Packages, All Variations",
             description,
             url,
         },

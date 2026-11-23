@@ -118,6 +118,13 @@ export interface VariantContent {
     value: string;
     label: string;
     h1: string;
+    /**
+     * Purpose-built meta description (<=155 chars). Separate from `answer`
+     * because `answer` is premium body prose whose first sentence always ended
+     * before the price, so `metaDescription(answer)` never surfaced a number.
+     * Front-loads the head term ("tour package") and the real starting price.
+     */
+    seoDesc: string;
     answer: string;
     intro: string;
     packages: Package[];
@@ -336,6 +343,29 @@ function monthNarrative(month: string): { answer: string; intro: string } {
     };
 }
 
+/**
+ * Lowest real price in a package list, in the exact form the data states it.
+ * `list[0].price` is list order, not the minimum, so "from X" could overstate
+ * the floor. Prices are per person (see `tours.ts` quickFacts).
+ */
+export function fromPrice(list: Package[]): string {
+    let best: Package | null = null;
+    let bestN = Number.POSITIVE_INFINITY;
+    for (const p of list) {
+        const n = Number.parseInt(p.price.replace(/[^0-9]/g, ""), 10);
+        if (Number.isFinite(n) && n > 0 && n < bestN) {
+            bestN = n;
+            best = p;
+        }
+    }
+    return (best ?? list[0])?.price ?? "";
+}
+
+/** "3 nights / 4 days" -- the duration phrasing buyers actually search. */
+function nightsLabel(days: number): string {
+    return days > 1 ? `${days - 1} nights / ${days} days` : "1 day";
+}
+
 // ---- Resolver ----
 
 export function resolveVariant(
@@ -353,7 +383,8 @@ export function resolveVariant(
             dimension: "by-theme",
             value,
             label: theme,
-            h1: `${theme} Golden Triangle Tours`,
+            h1: `${theme} Golden Triangle Tour Packages`,
+            seoDesc: `${theme} Golden Triangle tour packages from ${fromPrice(list)} per person. ${list.length} private chauffeured Delhi, Agra and Jaipur itineraries, fully customisable.`,
             answer: `${theme} Golden Triangle tours by MyTripMyTravel are private, chauffeured itineraries through Delhi, Agra, and Jaipur built around a ${theme.toLowerCase()} register. ${list.length} mission architecture${list.length > 1 ? "s are" : " is"} available, from ${list[0].price}, each escorted and fully customisable. The Delhi to Agra to Jaipur core is preserved; what changes is the weighting, the pace, the stays, the dining, the access, and the time given to each stop are all tuned to a ${theme.toLowerCase()} emphasis rather than a generic sightseeing run.`,
             intro: `These are our ${theme.toLowerCase()} Golden Triangle architectures, the classic circuit reframed for travellers who want a ${theme.toLowerCase()} emphasis without losing the canonical Delhi to Agra to Jaipur arc. A ${theme.toLowerCase()} reading of the Triangle is not a different route; it is a different set of priorities laid over the same three cities, which monuments get the unhurried treatment, which are seen at first light, where the nights are spent, and how the chauffeured legs are paced. Every itinerary below is a foundation, not a fixed product: it is the starting architecture from which the weddings-grade planning desk builds your exact trip, adjusting duration, hotels, and stops while holding the ${theme.toLowerCase()} character. All of it is run on the private GPS-tracked Elite Fleet protocol with escorted monument access and contingency handled end to end.`,
             packages: list,
@@ -375,7 +406,8 @@ export function resolveVariant(
             dimension: "by-duration",
             value,
             label: `${days}-Day`,
-            h1: `${days}-Day Golden Triangle Tours`,
+            h1: `${days}-Day Golden Triangle Tour Packages`,
+            seoDesc: `${days}-Day Golden Triangle tour packages from ${fromPrice(list)} per person. ${nightsLabel(days)}, private and chauffeured through Delhi, Agra and Jaipur.`,
             answer: `A ${days}-day Golden Triangle tour by MyTripMyTravel covers Delhi, Agra, and Jaipur over ${days} days as a private, chauffeured, escorted circuit. ${list.length} ${days}-day architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, each sequenced for a sunrise Taj Mahal entry and early fort access before the crowds. The number of days does not just change how much you see, it changes the entire character of the trip: what is unhurried, what is compressed, where the nights fall, and how much the chauffeured legs can double as part of the experience rather than pure transfer.`,
             intro: `The ${days}-day Golden Triangle is ${days <= 3 ? "a high-efficiency sprint for time-constrained travellers, the essential Delhi, Agra, and Jaipur with a sunrise Taj, run tight but never rushed past the point of enjoyment" : days <= 5 ? "the balanced classic, enough time for the big monuments at their best hours, Fatehpur Sikri en route, and a slower Jaipur, without compression" : "an unhurried deep circuit with room for layered exploration, second visits in better light, and the slower texture the three cities reward"}. Duration is the single biggest determinant of pace, and we sequence the ${days}-day plan around the prime hours, sunrise at the Taj, early fort entry, monument timing against the Friday Taj closure, so the available days are spent on experience, not queues or recovery. Each itinerary below is a foundation for bespoke modification: hotels, inclusions, and the exact day split are tuned to your party while the ${days}-day rhythm is held. It runs on the private GPS-tracked Elite Fleet protocol with contingency end to end.`,
             packages: list,
@@ -396,7 +428,8 @@ export function resolveVariant(
             dimension: "in-month",
             value,
             label: titleCase(month),
-            h1: `Golden Triangle Tours in ${titleCase(month)}`,
+            h1: `Golden Triangle Tour Packages in ${titleCase(month)}`,
+            seoDesc: `Golden Triangle tour packages in ${titleCase(month)} from ${fromPrice(gt)} per person. Private chauffeured Delhi, Agra and Jaipur, timed for ${titleCase(month)} weather.`,
             answer: n.answer,
             intro: n.intro,
             packages: gt,
@@ -417,7 +450,8 @@ export function resolveVariant(
             dimension: "combo",
             value,
             label: `${days}-Day ${theme}`,
-            h1: `${days}-Day ${theme} Golden Triangle Tours`,
+            h1: `${days}-Day ${theme} Golden Triangle Tour Packages`,
+            seoDesc: `${days}-Day ${theme} Golden Triangle tour packages from ${fromPrice(list)} per person. Private chauffeured Delhi, Agra and Jaipur, paced over ${days} days.`,
             answer: `A ${days}-day ${theme.toLowerCase()} Golden Triangle tour by MyTripMyTravel is a private, chauffeured Delhi to Agra to Jaipur circuit operated over ${days} days with the pacing, stays, and inclusions tuned to a ${theme.toLowerCase()} register. ${list.length} architecture${list.length > 1 ? "s are" : " is"} available, from ${list[0].price}, each escorted and fully customisable. The combination, a specific length sequenced for a specific character, is what the planning desk uses as a starting frame rather than a generic tour brief.`,
             intro: `The ${days}-day ${theme.toLowerCase()} Golden Triangle is the intersection of two decisions: how long you want the trip to last and what you want it to be about. ${days <= 3 ? "Three days run tight by design, the ${theme.toLowerCase()} signature moments are sequenced for prime hours; everything else is deliberately left off." : days <= 5 ? "Five days carries the canonical Delhi to Agra to Jaipur arc with enough ${theme.toLowerCase()} depth to feel real, not garnished." : days <= 7 ? "A seven-day window is the balanced ${theme.toLowerCase()} reading, full coverage, the ${theme.toLowerCase()} signature moments unhurried, with slower days built in." : "Longer than seven days opens the ${theme.toLowerCase()} circuit to second visits in better light, an extension into Rajasthan or the Himalayas, and the slow texture the ${theme.toLowerCase()} register actually rewards."} The ${theme.toLowerCase()} reading of the Triangle is not a different route; it is a different set of priorities laid over Delhi to Agra to Jaipur. Each architecture below is a foundation, customisable while holding both the ${days}-day rhythm and the ${theme.toLowerCase()} character. Operated on the GPS-tracked Elite Fleet protocol with escorted monument access.`,
             packages: list,
@@ -443,7 +477,8 @@ export function resolveVariant(
             dimension: "theme-month",
             value,
             label: `${theme} in ${m}`,
-            h1: `${theme} Golden Triangle Tours in ${m}`,
+            h1: `${theme} Golden Triangle Tour Packages in ${m}`,
+            seoDesc: `${theme} Golden Triangle tour packages in ${m} from ${fromPrice(list)} per person. Private, chauffeured Delhi, Agra and Jaipur, tuned for ${m}.`,
             answer: `A ${theme.toLowerCase()} Golden Triangle tour in ${m} combines a specific experiential register with the regional season's character. ${n.answer.split(".").slice(0, 2).join(".")}. ${list.length} ${theme.toLowerCase()} architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, each operated on the GPS-tracked Elite Fleet protocol.`,
             intro: `${n.intro} For the ${theme.toLowerCase()} reading specifically, the pacing, stays, dining, and access slots are reweighted to a ${theme.toLowerCase()} register. The Delhi to Agra to Jaipur core is preserved; what changes is the priority on each leg, refined to your party during planning.`,
             packages: list,
@@ -468,7 +503,8 @@ export function resolveVariant(
             dimension: "duration-month",
             value,
             label: `${days}-Day in ${m}`,
-            h1: `${days}-Day Golden Triangle Tours in ${m}`,
+            h1: `${days}-Day Golden Triangle Tour Packages in ${m}`,
+            seoDesc: `${days}-Day Golden Triangle tour packages in ${m} from ${fromPrice(list)} per person. ${nightsLabel(days)}, private and chauffeured, paced for ${m}.`,
             answer: `A ${days}-day Golden Triangle tour in ${m} pairs a specific length with the regional season's character. ${n.answer.split(".").slice(0, 2).join(".")}. ${list.length} ${days}-day architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, paced for the ${m} conditions rather than against them.`,
             intro: `${n.intro} A ${days}-day window is ${days <= 3 ? "compressed, the headline experiences sequenced for prime hours within ${m}'s constraints" : days <= 5 ? "the balanced canonical arc, paced for ${m}" : "an unhurried reading with the slow days the ${m} pacing rewards"}. Every architecture below is a foundation, refined to your party.`,
             packages: list,
@@ -491,7 +527,8 @@ export function resolveVariant(
             dimension: "duration-from",
             value,
             label: `${days}-Day from ${origin.city}`,
-            h1: `${days}-Day Golden Triangle Tours from ${origin.city}`,
+            h1: `${days}-Day Golden Triangle Tour Packages from ${origin.city}`,
+            seoDesc: `${days}-Day Golden Triangle tour packages from ${origin.city}, from ${fromPrice(list)} per person. ${nightsLabel(days)} private chauffeured Delhi, Agra and Jaipur.`,
             answer: `A ${days}-day Golden Triangle tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured Delhi to Agra to Jaipur circuit run over ${days} days, beginning at Delhi (DEL). ${travelContextLabel(origin)}: ${origin.flightBand}. ${origin.note} ${list.length} ${days}-day architecture${list.length > 1 ? "s are" : " is"} available from ${list[0].price}, each escorted, ${pacingAdj(origin)}, and fully customisable.`,
             intro: `Travelling the ${days}-day Golden Triangle from ${origin.city} is the intersection of two decisions, how long the trip lasts on the ground, and how the journey from ${origin.city} is absorbed into it. ${origin.note} The first day is sequenced around the ${firstDayClause(origin)}. The Delhi to Agra to Jaipur core is paced for the ${days}-day rhythm, ${days <= 3 ? "compressed to the headline experiences" : days <= 5 ? "the balanced canonical arc with slower days built in" : "the unhurried deeper reading with optional extension"}. Each architecture below is a starting frame, customisable to your party.`,
             packages: list,
@@ -515,7 +552,8 @@ export function resolveVariant(
             dimension: "month-from",
             value,
             label: `${m} from ${origin.city}`,
-            h1: `Golden Triangle Tours in ${m} from ${origin.city}`,
+            h1: `Golden Triangle Tour Packages in ${m} from ${origin.city}`,
+            seoDesc: `Golden Triangle tour packages in ${m} from ${origin.city}, from ${fromPrice(gt)} per person. Private, chauffeured, and timed for ${m} conditions.`,
             answer: `Travelling the Golden Triangle in ${m} from ${origin.city}, ${origin.country} combines the regional season's character with the ${origin.city} arrival window. ${n.answer} ${travelContextLabel(origin)}: ${origin.flightBand}. ${origin.note}`,
             intro: `${n.intro} For ${origin.city} departures, ${origin.note} The first day is sequenced around the ${firstDayClause(origin)} before the Taj sunrise window opens on day two.`,
             packages: gt,
@@ -538,7 +576,8 @@ export function resolveVariant(
             dimension: "theme-from",
             value,
             label: `${theme} from ${origin.city}`,
-            h1: `${theme} Golden Triangle Tours from ${origin.city}`,
+            h1: `${theme} Golden Triangle Tour Packages from ${origin.city}`,
+            seoDesc: `${theme} Golden Triangle tour packages from ${origin.city}, from ${fromPrice(list)} per person. Private, chauffeured, and tuned to a ${theme.toLowerCase()} register.`,
             answer: `A ${theme.toLowerCase()} Golden Triangle tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured Delhi to Agra to Jaipur circuit reweighted to a ${theme.toLowerCase()} register, beginning at Delhi (DEL). ${travelContextLabel(origin)}: ${origin.flightBand}. ${origin.note} ${list.length} ${theme.toLowerCase()} architecture${list.length > 1 ? "s are" : " is"} available, from ${list[0].price}, each escorted, ${pacingAdj(origin)}, and fully customisable.`,
             intro: `The intersection of a ${theme.toLowerCase()} reading of the Golden Triangle with a ${origin.city} departure is both a routing and an experience decision. ${origin.note} The first day is sequenced around the ${firstDayClause(origin)}, with the ${theme.toLowerCase()} register held from the welcome onward. The Delhi to Agra to Jaipur core is preserved; what changes is the weighting, the pace, the stays, the dining, and the access slots tuned to a ${theme.toLowerCase()} emphasis. Every architecture below is a starting frame, customisable while holding the ${theme.toLowerCase()} character and adjusted to your arrival window from ${origin.city}.`,
             packages: list,
@@ -560,7 +599,8 @@ export function resolveVariant(
             dimension: "from-origin",
             value,
             label: `From ${origin.city}`,
-            h1: `Golden Triangle Tours from ${origin.city}`,
+            h1: `Golden Triangle Tour Packages from ${origin.city}`,
+            seoDesc: `Golden Triangle tour packages from ${origin.city}, from ${fromPrice(list)} per person. ${list.length} private chauffeured Delhi, Agra and Jaipur itineraries.`,
             answer: `A Golden Triangle tour from ${origin.city}, ${origin.country} with MyTripMyTravel is a private, chauffeured Delhi to Agra to Jaipur circuit beginning at Delhi (DEL), the arrival gateway. ${travelContextLabel(origin)}: ${origin.flightBand}. ${origin.note} ${list.length} mission architectures are available, each escorted, ${pacingAdj(origin)}, and fully customisable.`,
             intro: `Travelling from ${origin.city} to the Golden Triangle is a logistics question we solve end to end. ${origin.note} We sequence the first day around the ${firstDayClause(origin)}. Every itinerary below is a foundation, ready for bespoke modification.`,
             packages: list,

@@ -68,8 +68,8 @@ export const packages: Package[] = [
         highlight: "For busy pulse-takers. Delhi, Agra, and Jaipur in a high-speed VIP sprint.",
         img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2670&auto=format&fit=crop",
         location: "Golden Triangle",
-        metaTitle: "3-Day Golden Triangle Tour, Delhi, Agra & Jaipur | MyTripMyTravel",
-        metaDescription: "Private 3-day Golden Triangle tour of Delhi, Agra & Jaipur with a sunrise Taj Mahal visit. Chauffeured, escorted, hotels, from ₹24,800pp. Enquire for dates.",
+        metaTitle: "3-Day Golden Triangle Tour Package, Delhi, Agra & Jaipur",
+        metaDescription: "3-day Golden Triangle tour package, Delhi, Agra & Jaipur, from ₹24,800 per person. Private car, guide, hotels and a sunrise Taj Mahal visit included.",
         bestTime: "October to March for clear skies and mild days; the Taj Mahal rewards a sunrise visit year-round.",
         answer: "The 3-Day Express Triangle is a private, chauffeured tour of Delhi, Agra and Jaipur, India's Golden Triangle, paced for travellers who are short on time but want the headline monuments done properly. Across three days you see the Taj Mahal at sunrise, Amber Fort, and Old & New Delhi, travelling by private air-conditioned car with a dedicated driver and licensed local guides at each city. It runs best October to March and starts from ₹24,800 per person.",
         quickFacts: [
@@ -154,8 +154,8 @@ export const packages: Package[] = [
         highlight: "The perfect introduction. Dedicated time for the 'Big Three' monuments.",
         img: "/tour_agra_fort.png",
         location: "Golden Triangle",
-        metaTitle: "4-Day Golden Triangle Tour, Delhi, Agra & Jaipur | MyTripMyTravel",
-        metaDescription: "Classic 4-day Golden Triangle tour: Old Delhi, the Taj Mahal at sunset, Agra Fort & Jaipur's forts. Private car, guides, hotels, from ₹33,100pp. Enquire now.",
+        metaTitle: "4-Day Golden Triangle Tour Package, Delhi, Agra & Jaipur",
+        metaDescription: "4-day Golden Triangle tour package from ₹33,100 per person: Old Delhi, the Taj Mahal at sunset, Agra Fort and Jaipur. Private car, guides and hotels.",
         bestTime: "October to March for the clearest skies; a full day per city keeps the pace comfortable year-round.",
         answer: "The 4-Day Classic Circle is the definitive first-timer's Golden Triangle, a private, chauffeured loop through Delhi, Agra and Jaipur with a full, unhurried day in each. You'll walk Old Delhi, see the Taj Mahal at sunset and Agra Fort, cross to Jaipur via Fatehpur Sikri, and explore the Amber Fort and Pink City bazaars. Travel is by private air-conditioned car with licensed local guides; the tour runs best October to March and starts from ₹33,100 per person.",
         quickFacts: [
@@ -253,8 +253,8 @@ export const packages: Package[] = [
         highlight: "A deeper dive into the Mughal history with evening sound & light shows.",
         img: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Taj_Mahal_%28Edited%29.jpeg",
         location: "Golden Triangle",
-        metaTitle: "5-Day Golden Triangle Tour, Delhi, Agra & Jaipur | MyTripMyTravel",
-        metaDescription: "In-depth 5-day Golden Triangle tour: sunrise Taj Mahal, Agra's Baby Taj & Jaipur's three forts. Private car, guides, hotels, from ₹41,400pp. Enquire now.",
+        metaTitle: "5-Day Golden Triangle Tour Package, Delhi, Agra & Jaipur",
+        metaDescription: "5-day Golden Triangle tour package from ₹41,400 per person: sunrise Taj Mahal, Agra's Baby Taj and Jaipur's three forts. Private car, guides, hotels.",
         bestTime: "October to March for clear light on the forts; two nights in Jaipur keep the pace unhurried.",
         answer: "The 5-Day Heritage Loop is a deeper Golden Triangle, a private, chauffeured circuit through Delhi, Agra and Jaipur with time to go beyond the headline monuments. You'll see the Taj Mahal at sunrise and from Mehtab Bagh, Agra's marble 'Baby Taj' and Agra Fort, and give Jaipur two full days across the Amber, Jaigarh and Nahargarh forts. Travel is by private air-conditioned car with licensed local guides; the tour runs best October to March and starts from ₹41,400 per person.",
         quickFacts: [

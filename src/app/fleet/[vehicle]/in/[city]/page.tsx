@@ -31,7 +31,7 @@ export async function generateMetadata({
     if (!v || !dest || !fleetCityExists(vId, city)) {
         return { title: "Not Found | MyTripMyTravel" };
     }
-    const title = pageTitle(`${v.name} Chauffeur Hire in ${dest.name}, ${dest.state}`);
+    const title = pageTitle(`${v.name} Chauffeur Hire in ${dest.name}`);
     const content = getFleetCityContent(v, dest);
     const description = metaDescription(content.answer);
     const url = `${SITE_URL}/fleet/${v.id}/in/${dest.slug}`;

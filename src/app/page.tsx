@@ -5,7 +5,7 @@ import { pageTitle } from "@/lib/meta";
 
 const title = pageTitle("Luxury India Travel: Golden Triangle & Rajasthan");
 const description =
-    "Bespoke luxury India travel, chauffeured Golden Triangle tours plus Rajasthan, Kerala and Himalayan journeys with private guides and elite fleet. Enquire now.";
+    "Golden Triangle tour packages from ₹24,800 per person, plus Rajasthan, Kerala and Himalayan journeys. Private, chauffeured, with your own guide.";
 
 export const metadata: Metadata = {
     title,

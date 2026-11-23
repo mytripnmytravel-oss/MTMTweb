@@ -8,6 +8,7 @@ import {
     variantHref,
     comboValue,
     gtPackages,
+    fromPrice,
 } from "@/data/tourVariants";
 import { slugify } from "@/data/tours";
 import GoldenTriangleHubView from "@/components/tours/GoldenTriangleHubView";
@@ -15,13 +16,13 @@ import GoldenTriangleHubView from "@/components/tours/GoldenTriangleHubView";
 const titleCase = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
 export const metadata: Metadata = {
-    title: "Golden Triangle Tours by Theme, Duration & Month",
+    title: "Golden Triangle Tour Packages: Price, Duration & Dates",
     description:
-        "Delhi, Agra and Jaipur by theme, duration, month and departure city. Private, chauffeured, escorted luxury circuits, planned around you.",
+        `Golden Triangle tour packages from ${fromPrice(gtPackages())} per person. Compare by nights, theme, month and departure city, India or overseas.`,
     alternates: { canonical: `${SITE_URL}/tours/golden-triangle` },
     openGraph: {
-        title: "Golden Triangle Tours | MyTripMyTravel",
-        description: "Delhi, Agra, Jaipur, by theme, duration, and month.",
+        title: "Golden Triangle Tour Packages | MyTripMyTravel",
+        description: "Delhi, Agra and Jaipur packages by nights, theme, month and departure city.",
         url: `${SITE_URL}/tours/golden-triangle`,
         type: "website",
     },
@@ -62,7 +63,7 @@ export default function GoldenTriangleHubPage() {
     const jsonLd = {
         "@context": "https://schema.org",
         "@graph": [
-            { "@type": "CollectionPage", name: "Golden Triangle Tours", url: `${SITE_URL}/tours/golden-triangle` },
+            { "@type": "CollectionPage", name: "Golden Triangle Tour Packages", url: `${SITE_URL}/tours/golden-triangle` },
             {
                 "@type": "BreadcrumbList",
                 itemListElement: [

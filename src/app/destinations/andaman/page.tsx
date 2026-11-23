@@ -5,7 +5,7 @@ import AndamanView from "./AndamanView";
 
 const url = `${SITE_URL}/destinations/andaman`;
 const description =
-    "Andaman Islands luxury travel: a private, concierge-led 7-day itinerary through Port Blair, Havelock and Neil, pristine beaches, snorkelling and calm-sea inter-island cruises.";
+    "Andaman Islands luxury travel: a private, concierge-led 7-day itinerary through Port Blair, Havelock and Neil, with snorkelling and inter-island cruises.";
 
 export const metadata: Metadata = {
     robots: NOINDEX_ROBOTS,

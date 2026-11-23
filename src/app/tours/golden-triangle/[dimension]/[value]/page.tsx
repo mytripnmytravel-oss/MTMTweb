@@ -41,7 +41,7 @@ export async function generateMetadata({
     const content = resolveVariant(dimension, value);
     if (!content) return { title: "Not Found | MyTripMyTravel" };
     const title = pageTitle(`${content.h1}`);
-    const description = metaDescription(content.answer);
+    const description = metaDescription(content.seoDesc);
     const url = `${SITE_URL}${variantHref(dimension, value)}`;
     return {
         title,
